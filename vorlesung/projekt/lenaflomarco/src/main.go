@@ -1,16 +1,21 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-//main - main function
-func main() {
-	fmt.Print("test")
-	testfunction(1)
+func adder() func(int) int {
+	sum := 0
+	return func(x int) int {
+		sum += x
+		return sum
+	}
 }
 
-//testfunction - function to test for unit tests
-func testfunction(f int) int {
-	return f
+func main() {
+	pos, neg := adder(), adder()
+	for i := 0; i < 10; i++ {
+		fmt.Println(
+			pos(i),
+			neg(-2*i),
+		)
+	}
 }
