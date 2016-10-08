@@ -1,0 +1,9 @@
+Database for users includes:
+- UserID (UID)
+- Email (UID)
+- Name
+- Personal information
+- Password (Hashed and Salted)
+- Salt (Seperate to allow Client side Hashing -> Password as seed for Encryption !?!)
+
+Jede Ordner im datastorage ist der Persönliche ordner eines Nutzers.
