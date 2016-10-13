@@ -4,7 +4,8 @@ import (
 	"bytes"
 	"fmt"
 	"io/ioutil"
-	"log"
+	//"log"
+	"myHash"
 	"net/http"
 	"time"
 )
