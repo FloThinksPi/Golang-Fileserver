@@ -1,14 +1,14 @@
 package myHash
 
 import (
+	"crypto/rand"
 	"crypto/sha512"
+	"encoding/hex"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"os"
 	"strings"
-	"encoding/hex"
-	"io"
-	"crypto/rand"
 )
 
 type usr struct {
@@ -18,12 +18,12 @@ type usr struct {
 }
 
 const (
+	//PW_SALT_BYTES = Length of Salt to add
 	PW_SALT_BYTES = 32
 )
 
-
-//TODO add salt
-func MakeSalt()[]byte {
+//MakeSalt - Salt generieren
+func MakeSalt() []byte {
 	salt := make([]byte, PW_SALT_BYTES)
 	_, err := io.ReadFull(rand.Reader, salt)
 	if err != nil {
@@ -32,7 +32,7 @@ func MakeSalt()[]byte {
 	return salt
 }
 
-//TODO Byte in Hex
+//SetHash - einen hash Setzten
 func SetHash(path string, username string, psw string) {
 	//check if name already
 
@@ -76,7 +76,8 @@ func SetHash(path string, username string, psw string) {
 	}
 }
 
-func VerifyHash(path string, username string, psw string) bool{
+//VerifyHash - Hash überprüfen
+func VerifyHash(path string, username string, psw string) bool {
 	h := sha512.New()
 	var savedHash string
 
@@ -100,7 +101,6 @@ func VerifyHash(path string, username string, psw string) bool{
 
 	if savedHash == bs {
 		return true
-	} else {
-		return false
 	}
+	return false
 }
