@@ -21,8 +21,9 @@ const (
 	PW_SALT_BYTES = 32
 )
 
+
 //TODO add salt
-func makeSalt()[]byte {
+func MakeSalt()[]byte {
 	salt := make([]byte, PW_SALT_BYTES)
 	_, err := io.ReadFull(rand.Reader, salt)
 	if err != nil {
