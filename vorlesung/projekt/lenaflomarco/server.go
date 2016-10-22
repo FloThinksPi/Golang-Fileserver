@@ -28,3 +28,4 @@ func main() {
 	}
 	UserManager.VerifyHash("123", "123", "123")
 }
+
