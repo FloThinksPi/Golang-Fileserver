@@ -27,4 +27,4 @@ type UserRecord struct {
 }
 
 //Actual Global acessible Variable for saving the user Data
-var managersUserStorage UserStorage = make(UserMap)
+var managersUserStorage UserStorage
