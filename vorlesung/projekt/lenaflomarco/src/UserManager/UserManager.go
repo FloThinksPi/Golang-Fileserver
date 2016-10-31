@@ -9,6 +9,8 @@ import (
 	"io/ioutil"
 	"os"
 	"strings"
+
+	"github.com/pkg/errors"
 )
 
 type usr struct {
@@ -17,20 +19,16 @@ type usr struct {
 	hash string
 }
 
-const (
-	//PW_SALT_BYTES = Length of Salt to add
-	PW_SALT_BYTES = 32
-)
-
-
 //MakeSalt - Salt generieren
-func MakeSalt() []byte {
-	salt := make([]byte, PW_SALT_BYTES)
-	_, err := io.ReadFull(rand.Reader, salt)
+func MakeSalt(numBytes int) (salt string, err error) {
+	bytesalt := make([]byte, numBytes)
+	_, err = io.ReadFull(rand.Reader, bytesalt)
 	if err != nil {
-		return nil
+		errors.Wrap(err, "Error in MakeSalt while generatig random number")
+		return
 	}
-	return salt
+	salt = string(bytesalt)
+	return
 }
 
 //SetHash - einen hash Setzten

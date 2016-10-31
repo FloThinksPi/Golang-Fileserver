@@ -9,9 +9,11 @@ const (
 )
 
 func TestMakeSalt(t *testing.T) {
-	var salt string
-	salt = MakeSalt(16)
-	assert.Equal(t,16,strings.Count(salt,""),"Salt is not Generating 16 Characters")
+	salt, err := MakeSalt(16)
+	if err != nil {
+		t.Error(err)
+	}
+	assert.Equal(t, 16, strings.Count(salt, ""), "Salt is not Generating 16 Characters")
 }
 
 func TestSetHash(t *testing.T) {
@@ -22,7 +24,7 @@ func TestSetHash(t *testing.T) {
 func TestVerifyHash(t *testing.T) {
 	var v bool
 	v = VerifyHash("datastorage/userdatabase", "flo", "meinPasswort")
-	if !v {
-		t.Error("Expected 1.5, got ", v)
+	if v {
+		t.Error("Expected false , got ", v)
 	}
 }

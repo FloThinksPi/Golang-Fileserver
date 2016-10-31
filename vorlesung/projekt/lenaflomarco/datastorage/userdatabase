@@ -1,9 +1,1 @@
-Database for users includes:
-- UserID (UID)
-- Email (UID)
-- Name
-- Personal information
-- Password (Hashed and Salted)
-- Salt (Seperate to allow Client side Hashing -> Password as seed for Encryption !?!)
-
-Jede Ordner im datastorage ist der Persönliche ordner eines Nutzers.
+{"flo@myprivatemail.de":{"UID":1,"Email":"flo@myprivatemail.de","Name":"Florian Braun","HashedPassword":"???","Salt":"???","Session":"","SessionLast":"0001-01-01T00:00:00Z"},"lena.hoinkis@gmail.com":{"UID":2,"Email":"lena.hoinkis@gmail.com","Name":"Lena Hoinkis","HashedPassword":"???","Salt":"???","Session":"","SessionLast":"0001-01-01T00:00:00Z"},"someone@somemail.com":{"UID":3,"Email":"someone@somemail.com","Name":"someone","HashedPassword":"???","Salt":"???","Session":"","SessionLast":"0001-01-01T00:00:00Z"}}
