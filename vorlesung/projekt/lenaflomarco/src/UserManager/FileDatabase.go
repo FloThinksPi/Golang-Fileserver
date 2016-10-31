@@ -5,12 +5,13 @@ import (
 	"io/ioutil"
 
 	"github.com/pkg/errors"
-	"path/filepath"
 	"os"
+	"path/filepath"
 )
 
-func ReadDataToMemory(path filepath) (data UserMap, err error) {
+func ReadDataToMemory(path string) (data UserMap, err error) {
 	var bytedata []byte
+	data = make(UserMap)
 	// read the whole file at once
 	bytedata, err = ioutil.ReadFile(path)
 	if err != nil {
@@ -19,7 +20,8 @@ func ReadDataToMemory(path filepath) (data UserMap, err error) {
 	}
 
 	//Decode json byte array to hashmap TODO=Find better serialisation
-	err = json.Unmarshal(bytedata, data)
+	err = json.Unmarshal(bytedata, &data)
+
 	if err != nil {
 		errors.Wrap(err, "Error in ReadFromFile while decoding Json byte array to hashmap")
 		return
@@ -28,11 +30,11 @@ func ReadDataToMemory(path filepath) (data UserMap, err error) {
 	return
 }
 
-func saveDataToFile(data UserMap, path filepath) (err error) {
+func saveDataToFile(data UserMap, path string) (err error) {
 	var bytedata []byte
 
 	if _, err := os.Stat(path); os.IsNotExist(err) {
-		os.MkdirAll(path, os.ModePerm)
+		os.MkdirAll(filepath.Dir(path), os.ModePerm)
 		os.Create(path)
 	}
 
@@ -52,13 +54,13 @@ func saveDataToFile(data UserMap, path filepath) (err error) {
 	return
 }
 
-func WriteUser(record UserRecord) (err error) {
+func WriteUser(record UserRecord, path string) (err error) {
 	managersUserStorage.RWMutex.Lock()
 	defer managersUserStorage.RWMutex.Unlock()
 
 	managersUserStorage.UserMap[record.Email] = record //TODO ADD error handling
 
-	err = saveDataToFile(managersUserStorage.UserMap, DBPATH)
+	err = saveDataToFile(managersUserStorage.UserMap, path)
 	if err != nil {
 		errors.Wrap(err, "Error in Write User while saving data to Disk")
 	}
