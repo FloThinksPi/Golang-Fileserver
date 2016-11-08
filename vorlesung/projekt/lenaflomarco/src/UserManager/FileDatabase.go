@@ -3,12 +3,9 @@ package UserManager
 import (
 	"encoding/json"
 	"io/ioutil"
-
 	"github.com/pkg/errors"
 	"os"
 	"path/filepath"
-	"reflect"
-	"fmt"
 )
 
 func ReadDataToMemory(path string) (data UserMap, err error) {
