@@ -3,7 +3,6 @@ package UserManager
 import (
 	"encoding/json"
 	"io/ioutil"
-
 	"github.com/pkg/errors"
 	"os"
 	"path/filepath"
