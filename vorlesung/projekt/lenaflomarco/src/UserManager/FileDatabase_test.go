@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-const TESTFILEPATH = "testdir/tmp.db"
+const TESTFILEPATH = "testdir"+os.PathSeparator+"tmp.db"
 const TESTFOLDER = "testdir"
 
 func TestMain(m *testing.M) {

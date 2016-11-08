@@ -21,7 +21,7 @@ type usr struct {
 
 //MakeSalt - Salt generieren
 func MakeSalt(numBytes int) (salt string, err error) {
-	bytesalt := make([]byte, numBytes)
+	bytesalt := make([]byte, numBytes-1)
 	_, err = io.ReadFull(rand.Reader, bytesalt)
 	if err != nil {
 		errors.Wrap(err, "Error in MakeSalt while generatig random number")
