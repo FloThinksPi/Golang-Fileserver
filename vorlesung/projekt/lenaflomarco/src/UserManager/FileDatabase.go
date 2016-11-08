@@ -7,6 +7,8 @@ import (
 	"github.com/pkg/errors"
 	"os"
 	"path/filepath"
+	"reflect"
+	"fmt"
 )
 
 func ReadDataToMemory(path string) (data UserMap, err error) {
@@ -57,6 +59,7 @@ func saveDataToFile(data UserMap, path string) (err error) {
 func WriteUser(record UserRecord, path string) (err error) {
 	managersUserStorage.RWMutex.Lock()
 	defer managersUserStorage.RWMutex.Unlock()
+
 
 	managersUserStorage.UserMap[record.Email] = record //TODO ADD error handling
 
