@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 	"reflect"
-	"fmt"
+
 )
 
 func ReadDataToMemory(path string) (data UserMap, err error) {
@@ -60,6 +60,14 @@ func WriteUser(record UserRecord, path string) (err error) {
 	managersUserStorage.RWMutex.Lock()
 	defer managersUserStorage.RWMutex.Unlock()
 
+	//TODO cause error if value is nil and dont add user
+	v := reflect.ValueOf(record)
+	for i := 0; i < v.NumField(); i++ {
+		if  v.Field(i).Interface() == nil {
+			errors.WithMessage(err,"A Field of the userrecord was Nil")
+			return
+		}
+	}
 
 	managersUserStorage.UserMap[record.Email] = record //TODO ADD error handling
 
