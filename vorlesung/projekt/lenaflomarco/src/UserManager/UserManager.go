@@ -15,6 +15,7 @@ type usr struct {
 }
 
 //MakeSalt - Salt generieren
+//TODO byte to string error
 func makeSalt(numBytes int) (salt string, err error) {
 	bytesalt := make([]byte, numBytes)
 	_, err = io.ReadFull(rand.Reader, bytesalt)
