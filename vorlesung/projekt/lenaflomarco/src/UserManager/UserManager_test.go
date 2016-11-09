@@ -9,7 +9,7 @@ const (
 )
 
 func TestMakeSalt(t *testing.T) {
-	salt, err := MakeSalt(16)
+	salt, err := makeSalt(16)
 	if err != nil {
 		t.Error(err)
 	}
@@ -23,8 +23,8 @@ func TestSetHash(t *testing.T) {
 //TestVerifyHash
 func TestVerifyHash(t *testing.T) {
 	var v bool
-	v = VerifyHash("datastorage/userdatabase", "flo", "meinPasswort")
-	if v {
-		t.Error("Expected false , got ", v)
+	v = VerifyHash("Psw","ABC","25928498b28c3268d911dd78d7ff820e0f14ed32b7ac2d397746f1778038b968d9e6364fd4b3da2e7026bdf574c104779fac9ce9064b6b9ae09ac043f8d131d4")
+	if !v {
+		t.Error("Expected true , got ", v)
 	}
 }

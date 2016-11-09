@@ -4,11 +4,7 @@ import (
 	"crypto/rand"
 	"crypto/sha512"
 	"encoding/hex"
-	"fmt"
 	"io"
-	"io/ioutil"
-	"os"
-	"strings"
 	"github.com/pkg/errors"
 )
 
@@ -19,11 +15,11 @@ type usr struct {
 }
 
 //MakeSalt - Salt generieren
-func MakeSalt(numBytes int) (salt string, err error) {
-	bytesalt := make([]byte, numBytes-1)
+func makeSalt(numBytes int) (salt string, err error) {
+	bytesalt := make([]byte, numBytes)
 	_, err = io.ReadFull(rand.Reader, bytesalt)
 	if err != nil {
-		errors.Wrap(err, "Error in MakeSalt while generatig random number")
+		errors.Wrap(err, "Error in makeSalt while generatig random number")
 		return
 	}
 	salt = string(bytesalt)
@@ -31,9 +27,23 @@ func MakeSalt(numBytes int) (salt string, err error) {
 }
 
 //SetHash - einen hash Setzten
-func SetHash(path string, username string, psw string) {
-	//check if name already
+func SetHash(psw string)(hash string,salt string) {
+	var err error
 
+	//salting
+	salt , err = makeSalt(16)
+	if err != nil {
+		return
+	}
+	var saltedPsw = psw+salt
+
+	//hashing
+	shaHasher := sha512.New()
+	shaHasher.Write([]byte(saltedPsw))
+	hash = hex.EncodeToString(shaHasher.Sum(nil))
+	return
+}
+	/*
 	//check if file exists
 	if _, err := os.Stat(path); err != nil {
 		//create empty file
@@ -72,13 +82,19 @@ func SetHash(path string, username string, psw string) {
 		fmt.Println(err)
 		return
 	}
-}
+}*/
 
 //VerifyHash - Hash überprüfen
-func VerifyHash(path string, username string, psw string) bool {
-	h := sha512.New()
-	var savedHash string
+func VerifyHash(psw string, salt string,correctHash string) bool {
+	var saltedPsw = psw+salt
 
+	shaHasher := sha512.New()
+	shaHasher.Write([]byte(saltedPsw))
+	var inputHash = hex.EncodeToString(shaHasher.Sum(nil))
+
+	return inputHash == correctHash
+}
+/*
 	input, err := ioutil.ReadFile(path)
 	if err != nil {
 		fmt.Println(err)
@@ -102,3 +118,4 @@ func VerifyHash(path string, username string, psw string) bool {
 	}
 	return false
 }
+*/
