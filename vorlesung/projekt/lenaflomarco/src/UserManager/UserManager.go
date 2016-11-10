@@ -23,7 +23,7 @@ func makeSalt(numBytes int) (salt string, err error) {
 		errors.Wrap(err, "Error in makeSalt while generatig random number")
 		return
 	}
-	salt = string(bytesalt)
+	salt = hex.EncodeToString(bytesalt)
 	return
 }
 

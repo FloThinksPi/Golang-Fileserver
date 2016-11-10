@@ -8,16 +8,19 @@ const (
 	TestFile = ""
 )
 
+func TestGenerateHash(t *testing.T)  {
+	hash,salt := GenerateHash("MeinPasswort")
+	hash2,salt2 := GenerateHash("MeinPasswort")
+	assert.NotEqual(t,hash,hash2,"Error, Two Hashes of the same Passwort are identical")
+	assert.NotEqual(t,salt,salt2,"Error, Two Runs of generate hash returned the same Salt")
+}
+
 func TestMakeSalt(t *testing.T) {
 	salt, err := makeSalt(16)
 	if err != nil {
 		t.Error(err)
 	}
 	assert.Equal(t, 16, strings.Count(salt, ""), "Salt is not Generating 16 Characters")
-}
-
-func TestSetHash(t *testing.T) {
-	t.SkipNow()
 }
 
 //TestVerifyHash
