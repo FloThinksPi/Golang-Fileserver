@@ -1,11 +1,10 @@
 package UserManager
 
 import (
-	"crypto/rand"
+	"math/rand"
 	"crypto/sha512"
 	"encoding/hex"
-	"io"
-	"github.com/pkg/errors"
+	"time"
 )
 
 type usr struct {
@@ -14,9 +13,37 @@ type usr struct {
 	hash string
 }
 
+const letterBytes = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const (
+	letterIdxBits = 6                    // 6 bits to represent a letter index
+	letterIdxMask = 1<<letterIdxBits - 1 // All 1-bits, as many as letterIdxBits
+	letterIdxMax  = 63 / letterIdxBits   // # of letter indices fitting in 63 bits
+)
+
+var src = rand.NewSource(time.Now().UnixNano())
+
+func makeSalt(n int)  string {
+	b := make([]byte, n-1)
+	// A src.Int63() generates 63 random bits, enough for letterIdxMax characters!
+	for i, cache, remain := n-2, src.Int63(), letterIdxMax; i >= 0; {
+		if remain == 0 {
+			cache, remain = src.Int63(), letterIdxMax
+		}
+		if idx := int(cache & letterIdxMask); idx < len(letterBytes) {
+			b[i] = letterBytes[idx]
+			i--
+		}
+		cache >>= letterIdxBits
+		remain--
+	}
+	return string(b)
+}
+
 //MakeSalt - Salt generieren
-//TODO byte to string error
-func makeSalt(numBytes int) (salt string, err error) {
+
+/*func makeSalt(numBytes int) (salt string, err error) {
+
+
 	bytesalt := make([]byte, numBytes)
 	_, err = io.ReadFull(rand.Reader, bytesalt)
 	if err != nil {
@@ -26,16 +53,12 @@ func makeSalt(numBytes int) (salt string, err error) {
 	salt = hex.EncodeToString(bytesalt)
 	return
 }
+*/
 
 //SetHash - einen hash Setzten
 func SetHash(psw string)(hash string,salt string) {
-	var err error
-
 	//salting
-	salt , err = makeSalt(16)
-	if err != nil {
-		return
-	}
+	salt = makeSalt(16)
 	var saltedPsw = psw+salt
 
 	//hashing
@@ -44,6 +67,8 @@ func SetHash(psw string)(hash string,salt string) {
 	hash = hex.EncodeToString(shaHasher.Sum(nil))
 	return
 }
+
+
 	/*
 	//check if file exists
 	if _, err := os.Stat(path); err != nil {

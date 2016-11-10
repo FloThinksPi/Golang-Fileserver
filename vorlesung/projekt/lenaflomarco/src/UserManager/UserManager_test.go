@@ -9,18 +9,17 @@ const (
 )
 
 func TestGenerateHash(t *testing.T)  {
-	hash,salt := GenerateHash("MeinPasswort")
-	hash2,salt2 := GenerateHash("MeinPasswort")
+	hash,salt := SetHash("MeinPasswort")
+	hash2,salt2 := SetHash("MeinPasswort")
 	assert.NotEqual(t,hash,hash2,"Error, Two Hashes of the same Passwort are identical")
 	assert.NotEqual(t,salt,salt2,"Error, Two Runs of generate hash returned the same Salt")
 }
 
 func TestMakeSalt(t *testing.T) {
-	salt, err := makeSalt(16)
-	if err != nil {
-		t.Error(err)
+	for i:=1;i<10 ;i++ {
+		salt := makeSalt(i)
+		assert.Equal(t, i, strings.Count(salt, ""), "Salt is not Generating "+string(i)+" Characters")
 	}
-	assert.Equal(t, 16, strings.Count(salt, ""), "Salt is not Generating 16 Characters")
 }
 
 //TestVerifyHash
