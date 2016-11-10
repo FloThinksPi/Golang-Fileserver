@@ -12,8 +12,8 @@ import (
 
 func serveMain(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
-	StoredAs := r.Form.Get("main.html") // file name
-	data, err := ioutil.ReadFile("res/html/main.html" + StoredAs)
+	StoredAs := r.Form.Get("index.html") // file name
+	data, err := ioutil.ReadFile("res/html/index.html" + StoredAs)
 	if err != nil {
 		fmt.Fprint(w, err)
 	}
