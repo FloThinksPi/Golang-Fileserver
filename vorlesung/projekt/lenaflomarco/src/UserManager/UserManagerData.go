@@ -16,13 +16,11 @@ type UserStorage struct {
 
 //Entry of a single user
 type UserRecord struct {
-	UID            int64  //Unique ID
-	Email          string //Email
+	UID            int16  //Unique ID
+	Email          string //Email (Must be Unique!)
 	Name           string //Name
 	HashedPassword string //Password Hashed and Salted
 	Salt           string //Salt
-	Session        string //SessionCookie
-	SessionLast    time.Time   //Timestamp when last Interaction took place -> for session timeout
 }
 
 //Actual Global acessible Variable for saving the user Data
