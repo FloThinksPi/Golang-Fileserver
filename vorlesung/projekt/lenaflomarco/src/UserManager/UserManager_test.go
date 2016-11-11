@@ -18,7 +18,7 @@ func TestGenerateHash(t *testing.T)  {
 func TestMakeSalt(t *testing.T) {
 	for i:=1;i<10 ;i++ {
 		salt := makeSalt(i)
-		assert.Equal(t, i, strings.Count(salt, ""), "Salt is not Generating "+string(i)+" Characters")
+		assert.Equal(t, i+1, strings.Count(salt, ""), "Salt is not Generating "+string(i)+" Characters")
 	}
 }
 
