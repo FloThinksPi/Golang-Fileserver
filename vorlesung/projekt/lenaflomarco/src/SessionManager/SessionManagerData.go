@@ -5,6 +5,13 @@ import (
 	"time"
 )
 
+
+// SETTINGS
+const (
+	SESSION_KEY_LENGTH = 200
+	SESSION_TIMEOUT_IN_SECODS = 900 // 900s = 15min
+)
+
 //SessionMap
 
 type SessionMap map[string] SessionRecord
