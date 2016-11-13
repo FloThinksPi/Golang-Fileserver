@@ -50,6 +50,28 @@ Rule #1 KISS , no extra work !!!
 
 #### Error Handling #########
 
+    Create errors
+            errors.New("Erster Fheler")
+
+    Stack Errors onto each other
+            errors.Wrap(oldError,"New Error Text")
+
+    Handle for Errors
+        if err != nil {
+            //DO HANDLING HERE
+        }
+
+    Handle Shortcuts(simplify some handling cases)
+        Utils.HandlePrint(err) // Prints Error if a error is Found WITH STACKTRACE!
+        Utils.HandlePanic(err) // Prints Error if a error is Found and PANICS = runs defer statements backwards to main
+                                  and exits with error 1
+
+    Handling Rules
+        - On unrecoverable error, call panic or use HandlePanic! Dont just quit with os.exit(1)
+        - If you cant handle the error return it to next function
+        - If Error comes from Internal function, Wrap it and add context why selfwritten function failed
+          and what you where trying
+
 
 ### Documentation #######
 
