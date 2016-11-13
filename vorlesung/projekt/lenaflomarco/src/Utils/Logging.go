@@ -3,10 +3,11 @@ package Utils
 import (
 	"fmt"
 	"time"
+	"log"
 )
 
 func LogError(msg string) {
-	fmt.Println(timeNow() + " Error: " + msg)
+	log.Println(timeNow() + " Error: " + msg)
 }
 
 func LogWarning(msg string) {
