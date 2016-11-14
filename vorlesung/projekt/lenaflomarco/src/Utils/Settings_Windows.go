@@ -1,3 +1,5 @@
+// +build windows
+
 package Utils
 
 // 3 = All , 0 = Only Errors
@@ -21,3 +23,15 @@ Debug 	means that something normal and insignificant happened
 	new user came to the site, a page was rendered,	an order was taken, a price was updated.
 	This is the stuff excluded from info because there would be too much of it.
 */
+
+
+// Colors for Unix, set to empty for Windows because windows cant ;)
+const (
+	ANSI_COLOR_RED = ""
+	ANSI_COLOR_GREEN = ""
+	ANSI_COLOR_YELLOW = ""
+	ANSI_COLOR_BLUE = ""
+	ANSI_COLOR_MAGENTA = ""
+	ANSI_COLOR_CYAN = ""
+	ANSI_COLOR_RESET = ""
+)
