@@ -3,10 +3,10 @@ Rule #1 KISS , no extra work !!!
 
 #### Naming Convention #######
 
-    -Packages and Files start in Capital leters.
+    -Packages and Files start with a Capital letter.
     -Packages and Files use CamelCase.
 
-    -Constans are all CAPITAL
+    -Constants are all CAPITAL
 
     -Variables start small and use camelCase
 
@@ -22,7 +22,7 @@ Rule #1 KISS , no extra work !!!
     -Avoid very long files
 
     -Separated package documentation
-    When we have more than one file in a package, it's convention to create a doc.go
+    When we have more than one file in a package, it's convention to create a Doc.go
     containing the package documentation.
 
 #### Logging ########
@@ -51,7 +51,7 @@ Rule #1 KISS , no extra work !!!
 #### Error Handling #########
 
     Create errors
-            errors.New("Erster Fheler")
+            errors.New("Erster Fehler")
 
     Stack Errors onto each other
             errors.Wrap(oldError,"New Error Text")
@@ -75,5 +75,5 @@ Rule #1 KISS , no extra work !!!
 
 ### Documentation #######
 
-    -Pro Paket in doc.go eine Paket doku
-    -Nach Konvention von GoDoc jede Funktion Dokumentieren damit automatisch eine programmdoku generiert werden kann!
+    -Pro Paket in doc.go eine Paketdoku
+    -Nach Konvention von GoDoc jede Funktion dokumentieren, damit automatisch eine Programmdoku generiert werden kann!
