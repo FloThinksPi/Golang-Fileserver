@@ -7,8 +7,6 @@ import (
 	"os"
 	"path/filepath"
 	"reflect"
-	"Utils"
-	"log/syslog"
 )
 
 func ReadDataToMemory(path string) (data UserMap, err error) {
@@ -63,8 +61,8 @@ func WriteUser(record UserRecord, path string) (err error) {
 	//TODO cause error if value is nil and dont add user
 	v := reflect.ValueOf(record)
 	for i := 0; i < v.NumField(); i++ {
-		if  v.Field(i).Interface() == nil {
-			errors.WithMessage(err,"A Field of the userrecord was Nil")
+		if v.Field(i).Interface() == nil {
+			errors.WithMessage(err, "A Field of the userrecord was Nil")
 			return
 		}
 	}

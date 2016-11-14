@@ -2,11 +2,10 @@ package UserManager
 
 import (
 	"sync"
-	"time"
 )
 
 //The Data which is accessed by Go should be loaded in RAM(Hashmap for best reading performance) and only synced to disk if a change is imminent/done.
-type UserMap map[string] UserRecord
+type UserMap map[string]UserRecord
 
 //RWmutex for concurrent access and prevention of Mutual Exclusion, the mutex should be unlocked if data got written to permanent storage
 type UserStorage struct {
