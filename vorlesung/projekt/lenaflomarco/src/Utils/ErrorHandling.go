@@ -2,6 +2,7 @@ package Utils
 
 import (
 	"github.com/pkg/errors"
+	"log"
 )
 
 func HandlePrint(err error) {
@@ -12,8 +13,8 @@ func HandlePrint(err error) {
 
 func HandlePanic(err error) {
 	if err != nil {
-		LogError("!!!PANIC CAUSED!!! : " + errors.Cause(err).Error())
-		panic("!! Panicing Now !!!")
+		log.Panicln("!!!PANIC CAUSED!!! : " + errors.Cause(err).Error())
+		defer log.Println("Calling defer Statements now!")
 	}
 }
 
