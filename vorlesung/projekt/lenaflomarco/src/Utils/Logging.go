@@ -5,8 +5,21 @@ import (
 	"time"
 )
 
+func LogPanic(msg string) {
+	fmt.Print(ANSI_COLOR_RED, timeNow(), "\x1b[31m", "	PANIC:		", msg, ANSI_COLOR_RESET)
+}
+
 func LogError(msg string) {
-	fmt.Println(ANSI_COLOR_RED, timeNow(), "\x1b[31m", " Error:	", msg, ANSI_COLOR_RESET)
+	fmt.Println(ANSI_COLOR_RED, timeNow(), "	Error:		", msg, ANSI_COLOR_RESET)
+}
+
+func LogErrorWithStack(err error)  {
+	fmt.Print(" ",ANSI_COLOR_RED,timeNow(), "	Error:		 ")
+	fmt.Printf("%+v",err)
+	fmt.Println(ANSI_COLOR_RESET)
+	fmt.Println()
+	fmt.Println()
+	fmt.Println()
 }
 
 func LogWarning(msg string) {
@@ -17,13 +30,13 @@ func LogWarning(msg string) {
 
 func LogInfo(msg string) {
 	if (VERBOSITY >= 2) {
-		fmt.Println(ANSI_COLOR_MAGENTA, timeNow(), " Info:	", msg, ANSI_COLOR_RESET)
+		fmt.Println(ANSI_COLOR_MAGENTA, timeNow(), " Info:		", msg, ANSI_COLOR_RESET)
 	}
 }
 
 func LogDebug(msg string) {
 	if (VERBOSITY >= 3) {
-		fmt.Println(timeNow(), " Debug:	", msg)
+		fmt.Println(ANSI_COLOR_RESET, timeNow(), " Debug:		", msg, ANSI_COLOR_RESET)
 	}
 }
 

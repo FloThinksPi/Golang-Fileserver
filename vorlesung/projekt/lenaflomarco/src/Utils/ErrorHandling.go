@@ -2,19 +2,22 @@ package Utils
 
 import (
 	"github.com/pkg/errors"
-	"log"
+	"time"
+	"fmt"
 )
 
 func HandlePrint(err error) {
 	if err != nil {
-		LogError(errors.Cause(err).Error())
+		LogErrorWithStack(err)
 	}
 }
 
 func HandlePanic(err error) {
 	if err != nil {
-		log.Panicln("!!!PANIC CAUSED!!! : " + errors.Cause(err).Error())
-		defer log.Println("Calling defer Statements now!")
+		LogPanic(errors.Cause(err).Error())
+		fmt.Print("		")
+		time.Sleep(time.Millisecond * 100)// For propper output on console
+		panic("Starting Panic Process")
 	}
 }
 

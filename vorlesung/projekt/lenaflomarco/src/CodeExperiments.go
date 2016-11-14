@@ -3,15 +3,22 @@ package main
 
 import (
 	"Utils"
+	"time"
+	"github.com/pkg/errors"
 )
 
 func main() {
-
-	Utils.LogInfo("TEst")
-	Utils.LogWarning("Test")
 	Utils.LogError("Error")
+	Utils.LogWarning("Test")
+	Utils.LogInfo("TEst")
 	Utils.LogDebug("TAda")
 
+	time.Sleep(time.Second * 1)
 
+	err := errors.New("TEST")
+	Utils.HandlePrint(err)
+
+	time.Sleep(time.Second * 1)
+	Utils.HandlePanic(err)
 }
 
