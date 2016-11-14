@@ -1,8 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Go Fileserver - Register</title>
+    <link rel="stylesheet" href="main.css" type="text/css">
+</head>
 <body>
 
-<h1>Hi</h1>
+<h1>Meine Dateien</h1>
 
+Pfad: <span id="path"></span>
+<table border="1">
+    <tr>
+        <th>Name</th><th>Größe</th><th>Datum</th><th>Download</th><th>Löschen</th>
+    </tr>
+    <tr>
+        <td>Testdatei</td><td>123</td><td>01.01.1970</td><td>DownloadMe</td><td>DeleteMe</td>
+    </tr>
+</table>
+<br>
+<form action="" method="post">
+    <label for="addFolder">Ordner anlegen: </label>
+    <input type="text" name="addFolder" id="addFolder">
+    <input type="submit" name="Ordner anlegen">
+</form>
+<br>
+<form action="" method="post">
+    <label for="uploadFile">Datei hochladen: </label>
+    <input type="file" name="uploadFile" id="uploadFile">
+    <input type="submit" name="Datei hochladen">
+</form>
 </body>
 </html>
