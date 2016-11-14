@@ -1,4 +1,4 @@
-// +build !windows
+// +build windows
 
 package Utils
 
@@ -25,13 +25,13 @@ Debug 	means that something normal and insignificant happened
 */
 
 
-// Colors for Terminal , only on Unix systems
+// Colors for Unix, set to empty for Windows because windows cant ;)
 const (
-	ANSI_COLOR_RED = "\x1b[31m"
-	ANSI_COLOR_GREEN = "\x1b[32m"
-	ANSI_COLOR_YELLOW = "\x1b[33m"
-	ANSI_COLOR_BLUE = "\x1b[34m"
-	ANSI_COLOR_MAGENTA = "\x1b[35m"
-	ANSI_COLOR_CYAN = "\x1b[36m"
-	ANSI_COLOR_RESET = "\x1b[0m"
+	ANSI_COLOR_RED = ""
+	ANSI_COLOR_GREEN = ""
+	ANSI_COLOR_YELLOW = ""
+	ANSI_COLOR_BLUE = ""
+	ANSI_COLOR_MAGENTA = ""
+	ANSI_COLOR_CYAN = ""
+	ANSI_COLOR_RESET = ""
 )

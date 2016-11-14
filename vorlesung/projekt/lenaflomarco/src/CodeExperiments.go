@@ -2,28 +2,16 @@
 package main
 
 import (
-	"github.com/pkg/errors"
-
 	"Utils"
 )
 
 func main() {
-	err := errors.New("Erster Fheler")
-	err = errors.Wrap(err, "Zweiter Fehler")
-	err = errors.Wrap(err, "Letzter Fehler")
 
-	err2 := cause(err)
+	Utils.LogInfo("TEst")
+	Utils.LogWarning("Test")
+	Utils.LogError("Error")
+	Utils.LogDebug("TAda")
 
-	//Utils.HandleErrorPrint(err2)
-
-	Utils.HandlePanic(err2)
-
-	//log.Print(err2)
-}
-
-func cause(err error) error {
-	err2 := errors.Errorf("Error: %+v", err)
-	//err2 := errors.New("ErrorTest")
-	return err2
 
 }
+
