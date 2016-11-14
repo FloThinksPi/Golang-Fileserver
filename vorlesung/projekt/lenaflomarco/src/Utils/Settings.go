@@ -1,6 +1,6 @@
 package Utils
 
-// 0 = All , 3 = Only Errors
+// 3 = All , 0 = Only Errors
 const VERBOSITY = 0
 
 /*
