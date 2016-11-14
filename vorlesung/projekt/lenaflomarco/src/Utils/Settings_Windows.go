@@ -21,15 +21,3 @@ Debug 	means that something normal and insignificant happened
 	new user came to the site, a page was rendered,	an order was taken, a price was updated.
 	This is the stuff excluded from info because there would be too much of it.
 */
-
-
-// Colors for Terminal , only on Unix systems
-const (
-	ANSI_COLOR_RED = "\x1b[31m"
-	ANSI_COLOR_GREEN = "\x1b[32m"
-	ANSI_COLOR_YELLOW = "\x1b[33m"
-	ANSI_COLOR_BLUE = "\x1b[34m"
-	ANSI_COLOR_MAGENTA = "\x1b[35m"
-	ANSI_COLOR_CYAN = "\x1b[36m"
-	ANSI_COLOR_RESET = "\x1b[0m"
-)
