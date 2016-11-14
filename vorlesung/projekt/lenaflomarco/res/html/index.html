@@ -7,28 +7,47 @@
 </head>
 <body>
 
+<header>
+    <nav>
+        <a href="logout">Logout</a>
+    </nav>
+</header>
+
 <h1>Meine Dateien</h1>
 
 Pfad: <span id="path"></span>
 <table border="1">
     <tr>
-        <th>Name</th><th>Größe</th><th>Datum</th><th>Download</th><th>Löschen</th>
+        <th></th><th>Name</th><th>Größe</th><th>Datum</th><th>Download</th><th>Löschen</th>
     </tr>
     <tr>
-        <td>Testdatei</td><td>123</td><td>01.01.1970</td><td>DownloadMe</td><td>DeleteMe</td>
+        <td><img src="images/folder.png" alt="Ordner"></td><td>Testordner</td><td></td><td></td><td></td><td>DeleteMe</td>
+    </tr>
+    <tr>
+        <td><img src="images/file.png" alt="Datei"></td><td>Testdatei</td><td>123</td><td>01.01.1970</td><td>DownloadMe</td><td>DeleteMe</td>
     </tr>
 </table>
 <br>
-<form action="" method="post">
-    <label for="addFolder">Ordner anlegen: </label>
-    <input type="text" name="addFolder" id="addFolder">
-    <input type="submit" name="Ordner anlegen">
-</form>
+<fieldset>
+    <legend>Ordner anlegen</legend>
+    <form action="" method="post">
+        <label for="addFolder">Ordnername: </label>
+        <input type="text" name="addFolder" id="addFolder">
+        <br>
+        <input type="submit" value="Ordner anlegen">
+    </form>
+</fieldset>
+
 <br>
-<form action="" method="post">
-    <label for="uploadFile">Datei hochladen: </label>
-    <input type="file" name="uploadFile" id="uploadFile">
-    <input type="submit" name="Datei hochladen">
-</form>
+<fieldset>
+    <legend>Upload</legend>
+    <form action="" method="post">
+        <label for="uploadFile">Datei: </label>
+        <input type="file" name="uploadFile" id="uploadFile">
+        <br>
+        <input type="submit" value="Datei hochladen">
+    </form>
+</fieldset>
+
 </body>
 </html>
