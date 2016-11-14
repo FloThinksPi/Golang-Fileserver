@@ -10,12 +10,13 @@ import (
 	"UserManager"
 	"net/http"
 	"time"
+	"path/filepath"
 )
 
 func serveMain(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	StoredAs := r.Form.Get("index.html") // file name
-	data, err := ioutil.ReadFile("res/html/index.html" + StoredAs)
+	data, err := ioutil.ReadFile(filepath.FromSlash("res/html/index.html") + StoredAs)
 	if err != nil {
 		fmt.Fprint(w, err)
 	}
