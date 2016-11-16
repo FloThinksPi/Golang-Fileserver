@@ -11,6 +11,8 @@ var (
 	verbosity = flag.Int("v", 3, "Verbosity (0=Errors ,3=All)")
 	workDir = flag.String("workdir", standardizePath("datastorage"), "Folder in which the Server stores the Userdatabase aswell as the Users uploaded data")
 	port = flag.Int("port",8080,"Port for the Webserver to listen to (Port 1-1024 need SuperUser Privileges on Unix systems!)")
+	TLScert = flag.String("tlscert", standardizePath("res/certificates/server.pem"), "")
+	TLSkey = flag.String("tlskey", standardizePath("res/certificates/server.key"), "")
 
 )
 
@@ -27,6 +29,15 @@ func GetWorkDir() string {
 func GetPort() int {
 	return *port
 }
+
+func GetTLScert() string {
+	return *TLScert
+}
+
+func GetTLSkey() string {
+	return *TLSkey
+}
+
 
 // Init gets called before main()
 

@@ -4,6 +4,7 @@ import (
 	"crypto/tls"
 	"net/http"
 	"Utils"
+	"Flags"
 )
 
 func init() {
@@ -36,7 +37,7 @@ func main() {
 		TLSNextProto: make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
 	}
 
-	Utils.HandlePanic(srv.ListenAndServeTLS("res/certificates/server.pem", "res/certificates/server.key"))
+	Utils.HandlePanic(srv.ListenAndServeTLS(Flags.GetTLScert(), Flags.GetTLSkey()))
 }
 
 func root(w http.ResponseWriter, req *http.Request)  {
