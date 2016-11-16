@@ -6,6 +6,7 @@ import (
 	"Utils"
 	"Flags"
 	"path/filepath"
+	"strconv"
 )
 
 func init() {
@@ -25,7 +26,7 @@ func main() {
 
 		if (r.URL.Path[1:] == "doc/" || r.URL.Path[1:] == "doc") {
 			Utils.LogDebug("Redirecting from doc to doc/pkg/fileServer.html")
-			http.Redirect(w,r,"pkg/FileServer.html",300)
+			http.Redirect(w, r, "pkg/FileServer.html", 300)
 		} else {
 			http.ServeFile(w, r, path)
 		}
@@ -45,9 +46,9 @@ func main() {
 			tls.TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,
 		},
 	}
-
+	
 	srv := &http.Server{
-		Addr:         ":"+string(Flags.GetPort()),
+		Addr:         ":" + strconv.Itoa(Flags.GetPort()),
 		Handler:      requestMultiplexer,
 		TLSConfig:    cfg,
 		TLSNextProto: make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
