@@ -78,6 +78,7 @@ Rule #1 KISS , no extra work !!!
     Syntax See:
         Simple:     https://blog.golang.org/godoc-documenting-go-code
         Advanced:   https://godoc.org/github.com/fluhus/godoc-tricks
+                    https://godoc.org/github.com/natefinch/godocgo
 
     -Pro Paket in doc.go eine Paketdoku
     -Nach Konvention von GoDoc jede Funktion dokumentieren, damit automatisch eine Programmdoku generiert werden kann!

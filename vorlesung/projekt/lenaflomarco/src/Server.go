@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"Utils"
 	"Flags"
+	"path/filepath"
 )
 
 func init() {
@@ -15,6 +16,13 @@ func main() {
 	requestMultiplexer := http.NewServeMux()
 
 	requestMultiplexer.HandleFunc("/", root)
+	requestMultiplexer.HandleFunc("/doc/", func(w http.ResponseWriter, r *http.Request) {
+		filepath,err := filepath.Abs("res/"+r.URL.Path[1:])
+		Utils.HandlePrint(err)
+
+		Utils.LogDebug(filepath)
+		http.ServeFile(w, r, filepath)
+	})
 
 	cfg := &tls.Config{
 		MinVersion:               tls.VersionTLS12,
@@ -42,5 +50,5 @@ func main() {
 
 func root(w http.ResponseWriter, req *http.Request)  {
 	w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
-	w.Write([]byte("TEST TEST TEST \n"))
+	w.Write([]byte("Test Site \n"))
 }
