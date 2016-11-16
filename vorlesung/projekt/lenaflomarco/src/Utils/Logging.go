@@ -6,7 +6,7 @@ import (
 	"Flags"
 )
 
-var verbosity = Flags.Verbosity
+var verbosity = Flags.GetVerbosity()
 
 func LogPanic(msg string) {
 	fmt.Print(ANSI_COLOR_RED, timeNow(), "\x1b[31m", "	PANIC:		", msg, ANSI_COLOR_RESET)
@@ -26,19 +26,19 @@ func LogErrorWithStack(err error) {
 }
 
 func LogWarning(msg string) {
-	if (*verbosity >= 1) {
+	if (verbosity >= 1) {
 		fmt.Println(ANSI_COLOR_YELLOW, timeNow(), " Warning:	", msg, ANSI_COLOR_RESET)
 	}
 }
 
 func LogInfo(msg string) {
-	if (*verbosity >= 2) {
+	if (verbosity >= 2) {
 		fmt.Println(ANSI_COLOR_MAGENTA, timeNow(), " Info:		", msg, ANSI_COLOR_RESET)
 	}
 }
 
 func LogDebug(msg string) {
-	if (*verbosity >= 3) {
+	if (verbosity >= 3) {
 		fmt.Println(ANSI_COLOR_RESET, timeNow(), " Debug:		", msg, ANSI_COLOR_RESET)
 	}
 }

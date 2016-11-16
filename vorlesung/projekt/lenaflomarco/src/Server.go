@@ -14,7 +14,7 @@ func main() {
 	Utils.LogError("Test")
 	Utils.LogWarning("Test")
 	Utils.LogInfo("Test")
-	Utils.LogDebug(*Flags.WorkDir)
+	Utils.LogDebug(Flags.GetWorkDir())
 
 }
 
