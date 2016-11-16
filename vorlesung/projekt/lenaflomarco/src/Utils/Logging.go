@@ -3,14 +3,10 @@ package Utils
 import (
 	"fmt"
 	"time"
-	"flag"
+	"Flags"
 )
 
-var verbosity = flag.Int("v",3,"Verbosity (0=Errors ,3=All)")
-
-func init() {
-	flag.Parse()
-}
+var verbosity = Flags.Verbosity
 
 func LogPanic(msg string) {
 	fmt.Print(ANSI_COLOR_RED, timeNow(), "\x1b[31m", "	PANIC:		", msg, ANSI_COLOR_RESET)
@@ -20,9 +16,9 @@ func LogError(msg string) {
 	fmt.Println(ANSI_COLOR_RED, timeNow(), "	Error:		", msg, ANSI_COLOR_RESET)
 }
 
-func LogErrorWithStack(err error)  {
-	fmt.Print(" ",ANSI_COLOR_RED,timeNow(), "	Error:		 ")
-	fmt.Printf("%+v",err)
+func LogErrorWithStack(err error) {
+	fmt.Print(" ", ANSI_COLOR_RED, timeNow(), "	Error:		 ")
+	fmt.Printf("%+v", err)
 	fmt.Println(ANSI_COLOR_RESET)
 	fmt.Println()
 	fmt.Println()
