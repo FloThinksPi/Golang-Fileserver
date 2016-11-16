@@ -1,7 +1,6 @@
 package UserManager
 
 import "testing"
-import "strings"
 import "github.com/stretchr/testify/assert"
 
 const (

@@ -28,12 +28,6 @@ func setup() {
 		"lena.hoinkis@gmail.com": {UID: 2, Email: "lena.hoinkis@gmail.com", Name: "Lena Hoinkis", HashedPassword: "???", Salt: "???"},
 	}
 
-	managersUserStorage.Lock()
-	defer managersUserStorage.Unlock()
-
-	//Clear Map
-	managersUserStorage.UserMap = make(UserMap)
-	//Copy Map
 	for k, v := range TestData {
 		managersUserStorage.UserMap[k] = v
 	}

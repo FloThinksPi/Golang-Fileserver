@@ -2,7 +2,10 @@ package UserManager
 
 import (
 	"sync"
+	"flag"
 )
+
+var workdir = flag.String("workdir", "", "Directory in which the Server will store its Database and Userdata")
 
 //The Data which is accessed by Go should be loaded in RAM(Hashmap for best reading performance) and only synced to disk if a change is imminent/done.
 type UserMap map[string]UserRecord
@@ -24,3 +27,12 @@ type UserRecord struct {
 
 //Actual Global acessible Variable for saving the user Data
 var managersUserStorage UserStorage
+
+func init() {
+	managersUserStorage.Lock()
+	defer managersUserStorage.Unlock()
+
+	//Create Map
+	managersUserStorage.UserMap = make(UserMap)
+
+}
