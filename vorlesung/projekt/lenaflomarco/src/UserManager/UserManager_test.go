@@ -15,13 +15,6 @@ func TestGenerateHash(t *testing.T) {
 	assert.NotEqual(t, salt, salt2, "Error, Two Runs of generate hash returned the same Salt")
 }
 
-func TestMakeSalt(t *testing.T) {
-	for i := 1; i < 10; i++ {
-		salt := makeSalt(i)
-		assert.Equal(t, i, strings.Count(salt, "") - 1, "Salt is not Generating " + string(i) + " Characters")
-	}
-}
-
 //TestVerifyHash
 func TestVerifyHash(t *testing.T) {
 	var v bool
