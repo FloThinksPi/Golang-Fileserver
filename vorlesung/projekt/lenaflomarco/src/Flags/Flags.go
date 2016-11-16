@@ -16,8 +16,8 @@ var (
 
 )
 
-//Getters , Dereferencing to keep privacy
-
+//TODO Input Check
+//Getters , Dereferencing to keep privacy. Input Ckack and Handling Here
 func GetVerbosity() int {
 	return *verbosity
 }
