@@ -6,7 +6,6 @@ import (
 
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
-	"time"
 )
 
 const TESTFILEPATH = "testdir/tmp.db"
@@ -25,8 +24,8 @@ var TestData UserMap
 func setup() {
 
 	TestData = UserMap{
-		"flo@myprivatemail.de":   {UID: 1, Email: "flo@myprivatemail.de", Name: "Florian Braun", HashedPassword: "???", Salt: "???", Session:"123", SessionLast:time.Now()},
-		"lena.hoinkis@gmail.com": {UID: 2, Email: "lena.hoinkis@gmail.com", Name: "Lena Hoinkis", HashedPassword: "???", Salt: "???", Session:"123", SessionLast:time.Now()},
+		"flo@myprivatemail.de":   {UID: 1, Email: "flo@myprivatemail.de", Name: "Florian Braun", HashedPassword: "???", Salt: "???"},
+		"lena.hoinkis@gmail.com": {UID: 2, Email: "lena.hoinkis@gmail.com", Name: "Lena Hoinkis", HashedPassword: "???", Salt: "???"},
 	}
 
 	managersUserStorage.Lock()

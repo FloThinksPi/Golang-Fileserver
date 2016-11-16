@@ -5,7 +5,6 @@ import (
 	"reflect"
 	"time"
 	"math/rand"
-	"UserManager"
 )
 
 //TODO Fix copy of code from UserManager
@@ -61,7 +60,7 @@ func ValidateSession(session string) (valid bool, err error) {
 	record := managersSessionStorage.SessionMap[session] //TODO ADD error handling
 
 	// Valid if Session is found in storage and Session didnt timeout!
-	valid = record.Session == session && record.SessionLast.After(time.Now()-(SESSION_TIMEOUT_IN_SECODS * time.Second))
+	valid = record.Session == session && record.SessionLast.After(time.Now().Add(-SESSION_TIMEOUT_IN_SECODS * time.Second))
 
 	return
 }

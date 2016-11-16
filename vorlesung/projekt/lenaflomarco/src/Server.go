@@ -1,17 +1,38 @@
-
-
 package main
 
 import (
-	"bytes"
-	"fmt"
+	"flag"
 	"io/ioutil"
+	"path/filepath"
+	"fmt"
+	"time"
+	"bytes"
 	"log"
 	"UserManager"
 	"net/http"
-	"time"
-	"path/filepath"
 )
+
+
+// note, that variables are pointers
+var strFlag = flag.String("long-string", "", "Description")
+var boolFlag = flag.Bool("bool", false, "Description of flag")
+
+func init() {
+	// example with short version for long flag
+	flag.StringVar(strFlag, "s", "", "Description")
+}
+
+func main() {
+	flag.Parse()
+	println(*strFlag, *boolFlag)
+
+	http.HandleFunc("/", serveMain)          // set router
+	err := http.ListenAndServe(":9090", nil) // set listen port
+	if err != nil {
+		log.Fatal("ListenAndServe: ", err)
+	}
+	UserManager.VerifyHash("123", "123", "123")
+}
 
 func serveMain(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
@@ -23,12 +44,4 @@ func serveMain(w http.ResponseWriter, r *http.Request) {
 	http.ServeContent(w, r, StoredAs, time.Now(), bytes.NewReader(data))
 }
 
-func main() {
-	http.HandleFunc("/", serveMain)          // set router
-	err := http.ListenAndServe(":9090", nil) // set listen port
-	if err != nil {
-		log.Fatal("ListenAndServe: ", err)
-	}
-	UserManager.VerifyHash("123", "123", "123")
-}
 
