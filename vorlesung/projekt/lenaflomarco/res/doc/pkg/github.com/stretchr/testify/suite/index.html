@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>suite - The Go Programming Language</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../lib/godoc/style.css">
+
+<link rel="stylesheet" href="../../../../../lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:9090/">The Go Programming Language</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:9090/">Go</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:9090/search">
+<div id="menu">
+<a href="http://localhost:9090/doc/">Documents</a>
+<a href="../../../../index.html">Packages</a>
+<a href="http://localhost:9090/project/">The Project</a>
+<a href="http://localhost:9090/help/">Help</a>
+<a href="http://localhost:9090/blog/">Blog</a>
+
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>Package suite</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type='text/javascript'>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/stretchr/testify/suite"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Package suite contains logic for creating testing suite structs
+and running the methods on those structs as tests.  The most useful
+piece of this package is that you can create setup/teardown methods
+on your testing suites, which will run before/after the whole suite
+or individual tests (depending on which interface(s) you
+implement).
+</p>
+<p>
+A testing suite is usually built by first extending the built-in
+suite functionality from suite.Suite in testify.  Alternatively,
+you could reproduce that logic on your own if you wanted (you
+just need to implement the TestingSuite interface from
+suite/interfaces.go).
+</p>
+<p>
+After that, you can implement any of the interfaces in
+suite/interfaces.go to add setup/teardown functionality to your
+suite, and add any methods that start with &#34;Test&#34; to add tests.
+Methods that do not match any suite interfaces and do not begin
+with &#34;Test&#34; will not be run by testify, and can safely be used as
+helper methods.
+</p>
+<p>
+Once you&#39;ve built your testing suite, you need to run the suite
+(using suite.Run from testify) inside any function that matches the
+identity that &#34;go test&#34; is already looking for (i.e.
+func(*testing.T)).
+</p>
+<p>
+Regular expression to select test suites specified command-line
+argument &#34;-run&#34;. Regular expression to select the methods
+of test suites specified command-line argument &#34;-m&#34;.
+Suite object has assertion methods.
+</p>
+<p>
+A crude example:
+</p>
+<pre>// Basic imports
+import (
+    &#34;testing&#34;
+    &#34;github.com/stretchr/testify/assert&#34;
+    &#34;github.com/stretchr/testify/suite&#34;
+)
+
+// Define the suite, and absorb the built-in basic suite
+// functionality from testify - including a T() method which
+// returns the current testing context
+type ExampleTestSuite struct {
+    suite.Suite
+    VariableThatShouldStartAtFive int
+}
+
+// Make sure that VariableThatShouldStartAtFive is set to five
+// before each test
+func (suite *ExampleTestSuite) SetupTest() {
+    suite.VariableThatShouldStartAtFive = 5
+}
+
+// All methods that begin with &#34;Test&#34; are run as tests within a
+// suite.
+func (suite *ExampleTestSuite) TestExample() {
+    assert.Equal(suite.T(), 5, suite.VariableThatShouldStartAtFive)
+    suite.Equal(5, suite.VariableThatShouldStartAtFive)
+}
+
+// In order for &#39;go test&#39; to run this suite, we need to create
+// a normal test function and pass our suite to suite.Run
+func TestExampleTestSuite(t *testing.T) {
+    suite.Run(t, new(ExampleTestSuite))
+}
+</pre>
+
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="index.html#Run">func Run(t *testing.T, suite TestingSuite)</a></dd>
+			
+			
+				
+				<dd><a href="index.html#SetupAllSuite">type SetupAllSuite</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#SetupTestSuite">type SetupTestSuite</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Suite">type Suite</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Suite.Assert">func (suite *Suite) Assert() *assert.Assertions</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Suite.Require">func (suite *Suite) Require() *require.Assertions</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Suite.SetT">func (suite *Suite) SetT(t *testing.T)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Suite.T">func (suite *Suite) T() *testing.T</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TearDownAllSuite">type TearDownAllSuite</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#TearDownTestSuite">type TearDownTestSuite</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#TestingSuite">type TestingSuite</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h4>Package files</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:9090/src/github.com/stretchr/testify/suite/doc.go">doc.go</a>
+			
+				<a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go">interfaces.go</a>
+			
+				<a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go">suite.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+		
+		
+			
+			
+			<h2 id="Run">func <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=1500:1542#L49">Run</a></h2>
+			<pre>func Run(t *<a href="../../../../testing/index.html">testing</a>.<a href="../../../../testing/index.html#T">T</a>, suite <a href="index.html#TestingSuite">TestingSuite</a>)</pre>
+			<p>
+Run takes a testing suite and runs all of the tests attached
+to it.
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="SetupAllSuite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=294:340#L4">SetupAllSuite</a></h2>
+			<pre>type SetupAllSuite interface {
+    SetupSuite()
+}</pre>
+			<p>
+SetupAllSuite has a SetupSuite method, which will run before the
+tests in the suite are run.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SetupTestSuite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=433:479#L10">SetupTestSuite</a></h2>
+			<pre>type SetupTestSuite interface {
+    SetupTest()
+}</pre>
+			<p>
+SetupTestSuite has a SetupTest method, which will run before each
+test in the suite.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Suite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=381:471#L9">Suite</a></h2>
+			<pre>type Suite struct {
+    *<a href="../assert/index.html">assert</a>.<a href="../assert/index.html#Assertions">Assertions</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+Suite is a basic testing suite with methods for storing and
+retrieving the current *testing.T context.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Suite.Assert">func (*Suite) <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=1272:1319#L40">Assert</a></h3>
+				<pre>func (suite *<a href="index.html#Suite">Suite</a>) Assert() *<a href="../assert/index.html">assert</a>.<a href="../assert/index.html#Assertions">Assertions</a></pre>
+				<p>
+Assert returns an assert context for suite.  Normally, you can call
+`suite.NoError(expected, actual)`, but for situations where the embedded
+methods are overridden (for example, you might want to override
+assert.Assertions with require.Assertions), this method is provided so you
+can call `suite.Assert().NoError()`.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Suite.Require">func (*Suite) <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=792:841#L28">Require</a></h3>
+				<pre>func (suite *<a href="index.html#Suite">Suite</a>) Require() *<a href="../require/index.html">require</a>.<a href="../require/index.html#Assertions">Assertions</a></pre>
+				<p>
+Require returns a require context for suite.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Suite.SetT">func (*Suite) <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=621:659#L21">SetT</a></h3>
+				<pre>func (suite *<a href="index.html#Suite">Suite</a>) SetT(t *<a href="../../../../testing/index.html">testing</a>.<a href="../../../../testing/index.html#T">T</a>)</pre>
+				<p>
+SetT sets the current *testing.T context.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Suite.T">func (*Suite) <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=520:554#L16">T</a></h3>
+				<pre>func (suite *<a href="index.html#Suite">Suite</a>) T() *<a href="../../../../testing/index.html">testing</a>.<a href="../../../../testing/index.html#T">T</a></pre>
+				<p>
+T retrieves the current *testing.T context.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TearDownAllSuite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=595:647#L16">TearDownAllSuite</a></h2>
+			<pre>type TearDownAllSuite interface {
+    TearDownSuite()
+}</pre>
+			<p>
+TearDownAllSuite has a TearDownSuite method, which will run after
+all the tests in the suite have been run.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="TearDownTestSuite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=745:797#L22">TearDownTestSuite</a></h2>
+			<pre>type TearDownTestSuite interface {
+    TearDownTest()
+}</pre>
+			<p>
+TearDownTestSuite has a TearDownTest method, which will run after
+each test in the suite.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="TestingSuite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=128:193#L1">TestingSuite</a></h2>
+			<pre>type TestingSuite interface {
+    T() *<a href="../../../../testing/index.html">testing</a>.<a href="../../../../testing/index.html#T">T</a>
+    SetT(*<a href="../../../../testing/index.html">testing</a>.<a href="../../../../testing/index.html#T">T</a>)
+}</pre>
+			<p>
+TestingSuite can store and return the current *testing.T context
+generated by &#39;go test&#39;.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.6.3.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:9090/doc/tos.html">Terms of Service</a> | 
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.js"></script>
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.treeview.js"></script>
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="../../../../../lib/godoc/godocs.js"></script>
+
+</body>
+</html>
+

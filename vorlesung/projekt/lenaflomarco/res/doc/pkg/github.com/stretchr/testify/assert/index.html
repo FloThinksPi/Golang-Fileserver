@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>assert - The Go Programming Language</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../lib/godoc/style.css">
+
+<link rel="stylesheet" href="../../../../../lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:9090/">The Go Programming Language</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:9090/">Go</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:9090/search">
+<div id="menu">
+<a href="http://localhost:9090/doc/">Documents</a>
+<a href="../../../../index.html">Packages</a>
+<a href="http://localhost:9090/project/">The Project</a>
+<a href="http://localhost:9090/help/">Help</a>
+<a href="http://localhost:9090/blog/">Blog</a>
+
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>Package assert</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type='text/javascript'>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/stretchr/testify/assert"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Package assert provides a set of comprehensive testing tools for use with the normal Go testing system.
+</p>
+<h3 id="hdr-Example_Usage">Example Usage</h3>
+<p>
+The following is a complete example using assert in a standard test function:
+</p>
+<pre>import (
+  &#34;testing&#34;
+  &#34;github.com/stretchr/testify/assert&#34;
+)
+
+func TestSomething(t *testing.T) {
+
+  var a string = &#34;Hello&#34;
+  var b string = &#34;Hello&#34;
+
+  assert.Equal(t, a, b, &#34;The two words should be the same.&#34;)
+
+}
+</pre>
+<p>
+if you assert many times, use the format below:
+</p>
+<pre>import (
+  &#34;testing&#34;
+  &#34;github.com/stretchr/testify/assert&#34;
+)
+
+func TestSomething(t *testing.T) {
+  assert := assert.New(t)
+
+  var a string = &#34;Hello&#34;
+  var b string = &#34;Hello&#34;
+
+  assert.Equal(a, b, &#34;The two words should be the same.&#34;)
+}
+</pre>
+<h3 id="hdr-Assertions">Assertions</h3>
+<p>
+Assertions allow you to easily write test code, and are global funcs in the `assert` package.
+All assertion functions take, as the first argument, the `*testing.T` object provided by the
+testing framework. This allows the assertion funcs to write the failings and other details to
+the correct place.
+</p>
+<p>
+Every assertion function also takes an optional string message as the final argument,
+allowing custom error messages to be appended to the message the assertion method outputs.
+</p>
+
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#CallerInfo">func CallerInfo() []string</a></dd>
+			
+				
+				<dd><a href="index.html#Condition">func Condition(t TestingT, comp Comparison, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Contains">func Contains(t TestingT, s, contains interface{}, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Empty">func Empty(t TestingT, object interface{}, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Equal">func Equal(t TestingT, expected, actual interface{}, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#EqualError">func EqualError(t TestingT, theError error, errString string, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#EqualValues">func EqualValues(t TestingT, expected, actual interface{}, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Error">func Error(t TestingT, err error, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Exactly">func Exactly(t TestingT, expected, actual interface{}, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Fail">func Fail(t TestingT, failureMessage string, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#FailNow">func FailNow(t TestingT, failureMessage string, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#False">func False(t TestingT, value bool, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#HTTPBody">func HTTPBody(handler http.HandlerFunc, method, url string, values url.Values) string</a></dd>
+			
+				
+				<dd><a href="index.html#HTTPBodyContains">func HTTPBodyContains(t TestingT, handler http.HandlerFunc, method, url string, values url.Values, str interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#HTTPBodyNotContains">func HTTPBodyNotContains(t TestingT, handler http.HandlerFunc, method, url string, values url.Values, str interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#HTTPError">func HTTPError(t TestingT, handler http.HandlerFunc, method, url string, values url.Values) bool</a></dd>
+			
+				
+				<dd><a href="index.html#HTTPRedirect">func HTTPRedirect(t TestingT, handler http.HandlerFunc, method, url string, values url.Values) bool</a></dd>
+			
+				
+				<dd><a href="index.html#HTTPSuccess">func HTTPSuccess(t TestingT, handler http.HandlerFunc, method, url string, values url.Values) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Implements">func Implements(t TestingT, interfaceObject interface{}, object interface{}, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#InDelta">func InDelta(t TestingT, expected, actual interface{}, delta float64, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#InDeltaSlice">func InDeltaSlice(t TestingT, expected, actual interface{}, delta float64, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#InEpsilon">func InEpsilon(t TestingT, expected, actual interface{}, epsilon float64, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#InEpsilonSlice">func InEpsilonSlice(t TestingT, expected, actual interface{}, epsilon float64, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#IsType">func IsType(t TestingT, expectedType interface{}, object interface{}, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#JSONEq">func JSONEq(t TestingT, expected string, actual string, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Len">func Len(t TestingT, object interface{}, length int, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Nil">func Nil(t TestingT, object interface{}, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#NoError">func NoError(t TestingT, err error, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#NotContains">func NotContains(t TestingT, s, contains interface{}, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#NotEmpty">func NotEmpty(t TestingT, object interface{}, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#NotEqual">func NotEqual(t TestingT, expected, actual interface{}, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#NotNil">func NotNil(t TestingT, object interface{}, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#NotPanics">func NotPanics(t TestingT, f PanicTestFunc, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#NotRegexp">func NotRegexp(t TestingT, rx interface{}, str interface{}, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#NotZero">func NotZero(t TestingT, i interface{}, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#ObjectsAreEqual">func ObjectsAreEqual(expected, actual interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#ObjectsAreEqualValues">func ObjectsAreEqualValues(expected, actual interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Panics">func Panics(t TestingT, f PanicTestFunc, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Regexp">func Regexp(t TestingT, rx interface{}, str interface{}, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#True">func True(t TestingT, value bool, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#WithinDuration">func WithinDuration(t TestingT, expected, actual time.Time, delta time.Duration, msgAndArgs ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#Zero">func Zero(t TestingT, i interface{}, msgAndArgs ...interface{}) bool</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Assertions">type Assertions</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#New">func New(t TestingT) *Assertions</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.Condition">func (a *Assertions) Condition(comp Comparison, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.Contains">func (a *Assertions) Contains(s interface{}, contains interface{}, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.Empty">func (a *Assertions) Empty(object interface{}, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.Equal">func (a *Assertions) Equal(expected interface{}, actual interface{}, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.EqualError">func (a *Assertions) EqualError(theError error, errString string, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.EqualValues">func (a *Assertions) EqualValues(expected interface{}, actual interface{}, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.Error">func (a *Assertions) Error(err error, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.Exactly">func (a *Assertions) Exactly(expected interface{}, actual interface{}, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.Fail">func (a *Assertions) Fail(failureMessage string, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.FailNow">func (a *Assertions) FailNow(failureMessage string, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.False">func (a *Assertions) False(value bool, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.HTTPBodyContains">func (a *Assertions) HTTPBodyContains(handler http.HandlerFunc, method string, url string, values url.Values, str interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.HTTPBodyNotContains">func (a *Assertions) HTTPBodyNotContains(handler http.HandlerFunc, method string, url string, values url.Values, str interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.HTTPError">func (a *Assertions) HTTPError(handler http.HandlerFunc, method string, url string, values url.Values) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.HTTPRedirect">func (a *Assertions) HTTPRedirect(handler http.HandlerFunc, method string, url string, values url.Values) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.HTTPSuccess">func (a *Assertions) HTTPSuccess(handler http.HandlerFunc, method string, url string, values url.Values) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.Implements">func (a *Assertions) Implements(interfaceObject interface{}, object interface{}, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.InDelta">func (a *Assertions) InDelta(expected interface{}, actual interface{}, delta float64, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.InDeltaSlice">func (a *Assertions) InDeltaSlice(expected interface{}, actual interface{}, delta float64, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.InEpsilon">func (a *Assertions) InEpsilon(expected interface{}, actual interface{}, epsilon float64, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.InEpsilonSlice">func (a *Assertions) InEpsilonSlice(expected interface{}, actual interface{}, epsilon float64, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.IsType">func (a *Assertions) IsType(expectedType interface{}, object interface{}, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.JSONEq">func (a *Assertions) JSONEq(expected string, actual string, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.Len">func (a *Assertions) Len(object interface{}, length int, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.Nil">func (a *Assertions) Nil(object interface{}, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.NoError">func (a *Assertions) NoError(err error, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.NotContains">func (a *Assertions) NotContains(s interface{}, contains interface{}, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.NotEmpty">func (a *Assertions) NotEmpty(object interface{}, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.NotEqual">func (a *Assertions) NotEqual(expected interface{}, actual interface{}, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.NotNil">func (a *Assertions) NotNil(object interface{}, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.NotPanics">func (a *Assertions) NotPanics(f PanicTestFunc, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.NotRegexp">func (a *Assertions) NotRegexp(rx interface{}, str interface{}, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.NotZero">func (a *Assertions) NotZero(i interface{}, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.Panics">func (a *Assertions) Panics(f PanicTestFunc, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.Regexp">func (a *Assertions) Regexp(rx interface{}, str interface{}, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.True">func (a *Assertions) True(value bool, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.WithinDuration">func (a *Assertions) WithinDuration(expected time.Time, actual time.Time, delta time.Duration, msgAndArgs ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Assertions.Zero">func (a *Assertions) Zero(i interface{}, msgAndArgs ...interface{}) bool</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Comparison">type Comparison</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#PanicTestFunc">type PanicTestFunc</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#TestingT">type TestingT</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h4>Package files</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go">assertion_forward.go</a>
+			
+				<a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go">assertions.go</a>
+			
+				<a href="http://localhost:9090/src/github.com/stretchr/testify/assert/doc.go">doc.go</a>
+			
+				<a href="http://localhost:9090/src/github.com/stretchr/testify/assert/errors.go">errors.go</a>
+			
+				<a href="http://localhost:9090/src/github.com/stretchr/testify/assert/forward_assertions.go">forward_assertions.go</a>
+			
+				<a href="http://localhost:9090/src/github.com/stretchr/testify/assert/http_assertions.go">http_assertions.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				<pre>var <span id="AnError">AnError</span> = <a href="../../../../errors/index.html">errors</a>.<a href="../../../../errors/index.html#New">New</a>(&#34;assert.AnError general error for testing&#34;)</pre>
+				<p>
+AnError is an error instance useful for testing.  If the code does not care
+about error specifics, and only needs to return the error for example, this
+error should be used to make the test code more readable.
+</p>
+
+			
+		
+		
+			
+			
+			<h2 id="CallerInfo">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=1798:1824#L67">CallerInfo</a></h2>
+			<pre>func CallerInfo() []<a href="../../../../builtin/index.html#string">string</a></pre>
+			<p>
+CallerInfo returns an array of strings containing the file and line number
+of each stack frame leading from the current test to the assert call that
+failed.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Condition">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=17613:17688#L646">Condition</a></h2>
+			<pre>func Condition(t <a href="index.html#TestingT">TestingT</a>, comp <a href="index.html#Comparison">Comparison</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+Condition uses a Comparison to assert a complex condition.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Contains">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=16301:16383#L609">Contains</a></h2>
+			<pre>func Contains(t <a href="index.html#TestingT">TestingT</a>, s, contains interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+Contains asserts that the specified string, list(array, slice...) or map contains the
+specified substring or element.
+</p>
+<pre>assert.Contains(t, &#34;Hello World&#34;, &#34;World&#34;, &#34;But &#39;Hello World&#39; does contain &#39;World&#39;&#34;)
+assert.Contains(t, [&#34;Hello&#34;, &#34;World&#34;], &#34;World&#34;, &#34;But [&#34;Hello&#34;, &#34;World&#34;] does contain &#39;World&#39;&#34;)
+assert.Contains(t, {&#34;Hello&#34;: &#34;World&#34;}, &#34;Hello&#34;, &#34;But {&#39;Hello&#39;: &#39;World&#39;} does contain &#39;Hello&#39;&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Empty">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=12089:12163#L458">Empty</a></h2>
+			<pre>func Empty(t <a href="index.html#TestingT">TestingT</a>, object interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+Empty asserts that the specified object is empty.  I.e. nil, &#34;&#34;, false, 0 or either
+a slice or a channel with len == 0.
+</p>
+<pre>assert.Empty(t, obj)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Equal">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=7211:7295#L267">Equal</a></h2>
+			<pre>func Equal(t <a href="index.html#TestingT">TestingT</a>, expected, actual interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+Equal asserts that two objects are equal.
+</p>
+<pre>assert.Equal(t, 123, 123, &#34;123 and 123 should be equal&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="EqualError">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=25167:25260#L909">EqualError</a></h2>
+			<pre>func EqualError(t <a href="index.html#TestingT">TestingT</a>, theError <a href="../../../../builtin/index.html#error">error</a>, errString <a href="../../../../builtin/index.html#string">string</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+EqualError asserts that a function returned an error (i.e. not `nil`)
+and that it is equal to the provided error.
+</p>
+<pre>actualObj, err := SomeFunction()
+assert.EqualError(t, err,  expectedErrorString, &#34;An error was expected&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="EqualValues">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=8883:8973#L319">EqualValues</a></h2>
+			<pre>func EqualValues(t <a href="index.html#TestingT">TestingT</a>, expected, actual interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+EqualValues asserts that two objects are equal or convertable to the same types
+and equal.
+</p>
+<pre>assert.EqualValues(t, uint32(123), int32(123), &#34;123 and 123 should be equal&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Error">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=24679:24744#L893">Error</a></h2>
+			<pre>func Error(t <a href="index.html#TestingT">TestingT</a>, err <a href="../../../../builtin/index.html#error">error</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+Error asserts that a function returned an error (i.e. not `nil`).
+</p>
+<pre>  actualObj, err := SomeFunction()
+  if assert.Error(t, err, &#34;An error was expected&#34;) {
+	   assert.Equal(t, err, expectedError)
+  }
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Exactly">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=9490:9576#L338">Exactly</a></h2>
+			<pre>func Exactly(t <a href="index.html#TestingT">TestingT</a>, expected, actual interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+Exactly asserts that two objects are equal is value and type.
+</p>
+<pre>assert.Exactly(t, int32(123), int64(123), &#34;123 and 123 should NOT be equal&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Fail">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=5541:5617#L213">Fail</a></h2>
+			<pre>func Fail(t <a href="index.html#TestingT">TestingT</a>, failureMessage <a href="../../../../builtin/index.html#string">string</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+Fail reports a failure through
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="FailNow">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=5069:5148#L195">FailNow</a></h2>
+			<pre>func FailNow(t <a href="index.html#TestingT">TestingT</a>, failureMessage <a href="../../../../builtin/index.html#string">string</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+FailNow fails test
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="False">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=14223:14289#L538">False</a></h2>
+			<pre>func False(t <a href="index.html#TestingT">TestingT</a>, value <a href="../../../../builtin/index.html#bool">bool</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+False asserts that the specified value is false.
+</p>
+<pre>assert.False(t, myBool, &#34;myBool should be false&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="HTTPBody">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/http_assertions.go?s=2046:2131#L54">HTTPBody</a></h2>
+			<pre>func HTTPBody(handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>) <a href="../../../../builtin/index.html#string">string</a></pre>
+			<p>
+HTTPBody is a helper that returns HTTP body of the response. It returns
+empty string if building a new request fails.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="HTTPBodyContains">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/http_assertions.go?s=2564:2684#L70">HTTPBodyContains</a></h2>
+			<pre>func HTTPBodyContains(t <a href="index.html#TestingT">TestingT</a>, handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>, str interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+HTTPBodyContains asserts that a specified handler returns a
+body that contains a string.
+</p>
+<pre>assert.HTTPBodyContains(t, myHandler, &#34;www.google.com&#34;, nil, &#34;I&#39;m Feeling Lucky&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="HTTPBodyNotContains">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/http_assertions.go?s=3232:3355#L87">HTTPBodyNotContains</a></h2>
+			<pre>func HTTPBodyNotContains(t <a href="index.html#TestingT">TestingT</a>, handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>, str interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+HTTPBodyNotContains asserts that a specified handler returns a
+body that does not contain a string.
+</p>
+<pre>assert.HTTPBodyNotContains(t, myHandler, &#34;www.google.com&#34;, nil, &#34;I&#39;m Feeling Lucky&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="HTTPError">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/http_assertions.go?s=1699:1795#L44">HTTPError</a></h2>
+			<pre>func HTTPError(t <a href="index.html#TestingT">TestingT</a>, handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+HTTPError asserts that a specified handler returns an error status code.
+</p>
+<pre>assert.HTTPError(t, myHandler, &#34;POST&#34;, &#34;/a/b/c&#34;, url.Values{&#34;a&#34;: []string{&#34;b&#34;, &#34;c&#34;}}
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="HTTPRedirect">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/http_assertions.go?s=1186:1285#L31">HTTPRedirect</a></h2>
+			<pre>func HTTPRedirect(t <a href="index.html#TestingT">TestingT</a>, handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+HTTPRedirect asserts that a specified handler returns a redirect status code.
+</p>
+<pre>assert.HTTPRedirect(t, myHandler, &#34;GET&#34;, &#34;/a/b/c&#34;, url.Values{&#34;a&#34;: []string{&#34;b&#34;, &#34;c&#34;}}
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="HTTPSuccess">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/http_assertions.go?s=683:781#L18">HTTPSuccess</a></h2>
+			<pre>func HTTPSuccess(t <a href="index.html#TestingT">TestingT</a>, handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+HTTPSuccess asserts that a specified handler returns a success status code.
+</p>
+<pre>assert.HTTPSuccess(t, myHandler, &#34;POST&#34;, &#34;<a href="http://www.google.com">http://www.google.com</a>&#34;, nil)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Implements">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=6271:6379#L240">Implements</a></h2>
+			<pre>func Implements(t <a href="index.html#TestingT">TestingT</a>, interfaceObject interface{}, object interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+Implements asserts that an object is implemented by the specified interface.
+</p>
+<pre>assert.Implements(t, (*MyInterface)(nil), new(MyObject), &#34;MyObject&#34;)
+</pre>
+
+			
+			
+
+		
+			
+			
+			<h2 id="InDelta">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=20732:20833#L766">InDelta</a></h2>
+			<pre>func InDelta(t <a href="index.html#TestingT">TestingT</a>, expected, actual interface{}, delta <a href="../../../../builtin/index.html#float64">float64</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+InDelta asserts that the two numerals are within delta of each other.
+</p>
+<pre>assert.InDelta(t, math.Pi, (22 / 7.0), 0.01)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="InDeltaSlice">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=21506:21612#L792">InDeltaSlice</a></h2>
+			<pre>func InDeltaSlice(t <a href="index.html#TestingT">TestingT</a>, expected, actual interface{}, delta <a href="../../../../builtin/index.html#float64">float64</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+InDeltaSlice is the same as InDelta, except it compares two slices.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="InEpsilon">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=22774:22879#L831">InEpsilon</a></h2>
+			<pre>func InEpsilon(t <a href="index.html#TestingT">TestingT</a>, expected, actual interface{}, epsilon <a href="../../../../builtin/index.html#float64">float64</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+InEpsilon asserts that expected and actual have a relative error less than epsilon
+</p>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="InEpsilonSlice">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=23293:23403#L845">InEpsilonSlice</a></h2>
+			<pre>func InEpsilonSlice(t <a href="index.html#TestingT">TestingT</a>, expected, actual interface{}, epsilon <a href="../../../../builtin/index.html#float64">float64</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+InEpsilonSlice is the same as InEpsilon, except it compares each value from two slices.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="IsType">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=6677:6778#L253">IsType</a></h2>
+			<pre>func IsType(t <a href="index.html#TestingT">TestingT</a>, expectedType interface{}, object interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+IsType asserts that the specified objects are of the same type.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="JSONEq">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=27841:27928#L993">JSONEq</a></h2>
+			<pre>func JSONEq(t <a href="index.html#TestingT">TestingT</a>, expected <a href="../../../../builtin/index.html#string">string</a>, actual <a href="../../../../builtin/index.html#string">string</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+JSONEq asserts that two JSON strings are equivalent.
+</p>
+<pre>assert.JSONEq(t, `{&#34;hello&#34;: &#34;world&#34;, &#34;foo&#34;: &#34;bar&#34;}`, `{&#34;foo&#34;: &#34;bar&#34;, &#34;hello&#34;: &#34;world&#34;}`)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Len">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=13327:13411#L506">Len</a></h2>
+			<pre>func Len(t <a href="index.html#TestingT">TestingT</a>, object interface{}, length <a href="../../../../builtin/index.html#int">int</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+Len asserts that the specified object has specific length.
+Len also fails if the object has a type that len() not accept.
+</p>
+<pre>assert.Len(t, mySlice, 3, &#34;The size of slice is not 3&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Nil">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=10689:10761#L383">Nil</a></h2>
+			<pre>func Nil(t <a href="index.html#TestingT">TestingT</a>, object interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+Nil asserts that the specified object is nil.
+</p>
+<pre>assert.Nil(t, err, &#34;err should be nothing&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="NoError">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=24198:24265#L877">NoError</a></h2>
+			<pre>func NoError(t <a href="index.html#TestingT">TestingT</a>, err <a href="../../../../builtin/index.html#error">error</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+NoError asserts that a function returned no error (i.e. `nil`).
+</p>
+<pre>  actualObj, err := SomeFunction()
+  if assert.NoError(t, err) {
+	   assert.Equal(t, actualObj, expectedObj)
+  }
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="NotContains">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=17187:17272#L631">NotContains</a></h2>
+			<pre>func NotContains(t <a href="index.html#TestingT">TestingT</a>, s, contains interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+NotContains asserts that the specified string, list(array, slice...) or map does NOT contain the
+specified substring or element.
+</p>
+<pre>assert.NotContains(t, &#34;Hello World&#34;, &#34;Earth&#34;, &#34;But &#39;Hello World&#39; does NOT contain &#39;Earth&#39;&#34;)
+assert.NotContains(t, [&#34;Hello&#34;, &#34;World&#34;], &#34;Earth&#34;, &#34;But [&#39;Hello&#39;, &#39;World&#39;] does NOT contain &#39;Earth&#39;&#34;)
+assert.NotContains(t, {&#34;Hello&#34;: &#34;World&#34;}, &#34;Earth&#34;, &#34;But {&#39;Hello&#39;: &#39;World&#39;} does NOT contain &#39;Earth&#39;&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="NotEmpty">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=12592:12669#L477">NotEmpty</a></h2>
+			<pre>func NotEmpty(t <a href="index.html#TestingT">TestingT</a>, object interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+NotEmpty asserts that the specified object is NOT empty.  I.e. not nil, &#34;&#34;, false, 0 or either
+a slice or a channel with len == 0.
+</p>
+<pre>if assert.NotEmpty(t, obj) {
+  assert.Equal(t, &#34;two&#34;, obj[1])
+}
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="NotEqual">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=14595:14682#L553">NotEqual</a></h2>
+			<pre>func NotEqual(t <a href="index.html#TestingT">TestingT</a>, expected, actual interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+NotEqual asserts that the specified values are NOT equal.
+</p>
+<pre>assert.NotEqual(t, obj1, obj2, &#34;two objects shouldn&#39;t be equal&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="NotNil">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=10024:10099#L356">NotNil</a></h2>
+			<pre>func NotNil(t <a href="index.html#TestingT">TestingT</a>, object interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+NotNil asserts that the specified object is not nil.
+</p>
+<pre>assert.NotNil(t, err, &#34;err should be something&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="NotPanics">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=19136:19211#L703">NotPanics</a></h2>
+			<pre>func NotPanics(t <a href="index.html#TestingT">TestingT</a>, f <a href="index.html#PanicTestFunc">PanicTestFunc</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+NotPanics asserts that the code inside the specified PanicTestFunc does NOT panic.
+</p>
+<pre>assert.NotPanics(t, func(){
+  RemainCalm()
+}, &#34;Calling RemainCalm() should NOT panic&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="NotRegexp">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=26697:26788#L961">NotRegexp</a></h2>
+			<pre>func NotRegexp(t <a href="index.html#TestingT">TestingT</a>, rx interface{}, str interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+NotRegexp asserts that a specified regexp does not match a string.
+</p>
+<pre>assert.NotRegexp(t, regexp.MustCompile(&#34;starts&#34;), &#34;it&#39;s starting&#34;)
+assert.NotRegexp(t, &#34;^start&#34;, &#34;it&#39;s not starting&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="NotZero">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=27356:27427#L981">NotZero</a></h2>
+			<pre>func NotZero(t <a href="index.html#TestingT">TestingT</a>, i interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+NotZero asserts that i is not the zero value for its type and returns the truth.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ObjectsAreEqual">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=670:725#L30">ObjectsAreEqual</a></h2>
+			<pre>func ObjectsAreEqual(expected, actual interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+ObjectsAreEqual determines if two objects are considered equal.
+</p>
+<p>
+This function does no assertion of any kind.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ObjectsAreEqualValues">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=942:1003#L42">ObjectsAreEqualValues</a></h2>
+			<pre>func ObjectsAreEqualValues(expected, actual interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+ObjectsAreEqualValues gets whether two objects are equal, or if their
+values are equal.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Panics">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=18607:18679#L687">Panics</a></h2>
+			<pre>func Panics(t <a href="index.html#TestingT">TestingT</a>, f <a href="index.html#PanicTestFunc">PanicTestFunc</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+Panics asserts that the code inside the specified PanicTestFunc panics.
+</p>
+<pre>assert.Panics(t, func(){
+  GoCrazy()
+}, &#34;Calling GoCrazy() should panic&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Regexp">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=26186:26274#L944">Regexp</a></h2>
+			<pre>func Regexp(t <a href="index.html#TestingT">TestingT</a>, rx interface{}, str interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+Regexp asserts that a specified regexp matches a string.
+</p>
+<pre>assert.Regexp(t, regexp.MustCompile(&#34;start&#34;), &#34;it&#39;s starting&#34;)
+assert.Regexp(t, &#34;start...$&#34;, &#34;it&#39;s not starting&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="True">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=13878:13943#L523">True</a></h2>
+			<pre>func True(t <a href="index.html#TestingT">TestingT</a>, value <a href="../../../../builtin/index.html#bool">bool</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+True asserts that the specified value is true.
+</p>
+<pre>assert.True(t, myBool, &#34;myBool should be true&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="WithinDuration">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=19685:19797#L717">WithinDuration</a></h2>
+			<pre>func WithinDuration(t <a href="index.html#TestingT">TestingT</a>, expected, actual <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Time">Time</a>, delta <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Duration">Duration</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+WithinDuration asserts that the two times are within duration delta of each other.
+</p>
+<pre>assert.WithinDuration(t, time.Now(), time.Now(), 10*time.Second, &#34;The difference should not be more than 10s&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Zero">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=27019:27087#L973">Zero</a></h2>
+			<pre>func Zero(t <a href="index.html#TestingT">TestingT</a>, i interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+Zero asserts that i is the zero value for its type and returns the truth.
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Assertions">type <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/forward_assertions.go?s=91:129#L1">Assertions</a></h2>
+			<pre>type Assertions struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+Assertions provides assertion methods around the
+TestingT interface.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="New">func <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/forward_assertions.go?s=196:228#L1">New</a></h3>
+				<pre>func New(t <a href="index.html#TestingT">TestingT</a>) *<a href="index.html#Assertions">Assertions</a></pre>
+				<p>
+New makes a new Assertions object for the specified TestingT.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Assertions.Condition">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=255:334#L5">Condition</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Condition(comp <a href="index.html#Comparison">Comparison</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+Condition uses a Comparison to assert a complex condition.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.Contains">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=854:952#L17">Contains</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Contains(s interface{}, contains interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+Contains asserts that the specified string, list(array, slice...) or map contains the
+specified substring or element.
+</p>
+<pre>a.Contains(&#34;Hello World&#34;, &#34;World&#34;, &#34;But &#39;Hello World&#39; does contain &#39;World&#39;&#34;)
+a.Contains([&#34;Hello&#34;, &#34;World&#34;], &#34;World&#34;, &#34;But [&#34;Hello&#34;, &#34;World&#34;] does contain &#39;World&#39;&#34;)
+a.Contains({&#34;Hello&#34;: &#34;World&#34;}, &#34;Hello&#34;, &#34;But {&#39;Hello&#39;: &#39;World&#39;} does contain &#39;Hello&#39;&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.Empty">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=1228:1306#L27">Empty</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Empty(object interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+Empty asserts that the specified object is empty.  I.e. nil, &#34;&#34;, false, 0 or either
+a slice or a channel with len == 0.
+</p>
+<pre>a.Empty(obj)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.Equal">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=1531:1631#L36">Equal</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Equal(expected interface{}, actual interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+Equal asserts that two objects are equal.
+</p>
+<pre>a.Equal(123, 123, &#34;123 and 123 should be equal&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.EqualError">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=1994:2091#L47">EqualError</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) EqualError(theError <a href="../../../../builtin/index.html#error">error</a>, errString <a href="../../../../builtin/index.html#string">string</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+EqualError asserts that a function returned an error (i.e. not `nil`)
+and that it is equal to the provided error.
+</p>
+<pre>actualObj, err := SomeFunction()
+a.EqualError(err,  expectedErrorString, &#34;An error was expected&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.EqualValues">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=2407:2513#L57">EqualValues</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) EqualValues(expected interface{}, actual interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+EqualValues asserts that two objects are equal or convertable to the same types
+and equal.
+</p>
+<pre>a.EqualValues(uint32(123), int32(123), &#34;123 and 123 should be equal&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.Error">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=2859:2928#L69">Error</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Error(err <a href="../../../../builtin/index.html#error">error</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+Error asserts that a function returned an error (i.e. not `nil`).
+</p>
+<pre>  actualObj, err := SomeFunction()
+  if a.Error(err, &#34;An error was expected&#34;) {
+	   assert.Equal(t, err, expectedError)
+  }
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.Exactly">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=3190:3292#L78">Exactly</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Exactly(expected interface{}, actual interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+Exactly asserts that two objects are equal is value and type.
+</p>
+<pre>a.Exactly(int32(123), int64(123), &#34;123 and 123 should NOT be equal&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.Fail">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=3386:3466#L83">Fail</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Fail(failureMessage <a href="../../../../builtin/index.html#string">string</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+Fail reports a failure through
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.FailNow">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=3543:3626#L88">FailNow</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) FailNow(failureMessage <a href="../../../../builtin/index.html#string">string</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+FailNow fails test
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.False">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=3861:3931#L97">False</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) False(value <a href="../../../../builtin/index.html#bool">bool</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+False asserts that the specified value is false.
+</p>
+<pre>a.False(myBool, &#34;myBool should be false&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.HTTPBodyContains">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=4228:4359#L107">HTTPBodyContains</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) HTTPBodyContains(handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method <a href="../../../../builtin/index.html#string">string</a>, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>, str interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+HTTPBodyContains asserts that a specified handler returns a
+body that contains a string.
+</p>
+<pre>a.HTTPBodyContains(myHandler, &#34;www.google.com&#34;, nil, &#34;I&#39;m Feeling Lucky&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.HTTPBodyNotContains">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=4694:4828#L117">HTTPBodyNotContains</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) HTTPBodyNotContains(handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method <a href="../../../../builtin/index.html#string">string</a>, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>, str interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+HTTPBodyNotContains asserts that a specified handler returns a
+body that does not contain a string.
+</p>
+<pre>a.HTTPBodyNotContains(myHandler, &#34;www.google.com&#34;, nil, &#34;I&#39;m Feeling Lucky&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.HTTPError">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=5136:5243#L126">HTTPError</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) HTTPError(handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method <a href="../../../../builtin/index.html#string">string</a>, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+HTTPError asserts that a specified handler returns an error status code.
+</p>
+<pre>a.HTTPError(myHandler, &#34;POST&#34;, &#34;/a/b/c&#34;, url.Values{&#34;a&#34;: []string{&#34;b&#34;, &#34;c&#34;}}
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.HTTPRedirect">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=5543:5653#L135">HTTPRedirect</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) HTTPRedirect(handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method <a href="../../../../builtin/index.html#string">string</a>, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+HTTPRedirect asserts that a specified handler returns a redirect status code.
+</p>
+<pre>a.HTTPRedirect(myHandler, &#34;GET&#34;, &#34;/a/b/c&#34;, url.Values{&#34;a&#34;: []string{&#34;b&#34;, &#34;c&#34;}}
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.HTTPSuccess">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=5938:6047#L144">HTTPSuccess</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) HTTPSuccess(handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method <a href="../../../../builtin/index.html#string">string</a>, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+HTTPSuccess asserts that a specified handler returns a success status code.
+</p>
+<pre>a.HTTPSuccess(myHandler, &#34;POST&#34;, &#34;<a href="http://www.google.com">http://www.google.com</a>&#34;, nil)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.Implements">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=6258:6370#L151">Implements</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Implements(interfaceObject interface{}, object interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+Implements asserts that an object is implemented by the specified interface.
+</p>
+<pre>a.Implements((*MyInterface)(nil), new(MyObject), &#34;MyObject&#34;)
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.InDelta">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=6632:6749#L160">InDelta</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) InDelta(expected interface{}, actual interface{}, delta <a href="../../../../builtin/index.html#float64">float64</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+InDelta asserts that the two numerals are within delta of each other.
+</p>
+<pre>a.InDelta(math.Pi, (22 / 7.0), 0.01)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.InDeltaSlice">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=6887:7009#L165">InDeltaSlice</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) InDeltaSlice(expected interface{}, actual interface{}, delta <a href="../../../../builtin/index.html#float64">float64</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+InDeltaSlice is the same as InDelta, except it compares two slices.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.InEpsilon">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=7241:7362#L172">InEpsilon</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) InEpsilon(expected interface{}, actual interface{}, epsilon <a href="../../../../builtin/index.html#float64">float64</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+InEpsilon asserts that expected and actual have a relative error less than epsilon
+</p>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.InEpsilonSlice">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=7524:7650#L177">InEpsilonSlice</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) InEpsilonSlice(expected interface{}, actual interface{}, epsilon <a href="../../../../builtin/index.html#float64">float64</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+InEpsilonSlice is the same as InEpsilon, except it compares each value from two slices.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.IsType">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=7793:7898#L182">IsType</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) IsType(expectedType interface{}, object interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+IsType asserts that the specified objects are of the same type.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.JSONEq">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=8179:8270#L191">JSONEq</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) JSONEq(expected <a href="../../../../builtin/index.html#string">string</a>, actual <a href="../../../../builtin/index.html#string">string</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+JSONEq asserts that two JSON strings are equivalent.
+</p>
+<pre>a.JSONEq(`{&#34;hello&#34;: &#34;world&#34;, &#34;foo&#34;: &#34;bar&#34;}`, `{&#34;foo&#34;: &#34;bar&#34;, &#34;hello&#34;: &#34;world&#34;}`)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.Len">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=8588:8676#L201">Len</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Len(object interface{}, length <a href="../../../../builtin/index.html#int">int</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+Len asserts that the specified object has specific length.
+Len also fails if the object has a type that len() not accept.
+</p>
+<pre>a.Len(mySlice, 3, &#34;The size of slice is not 3&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.Nil">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=8898:8974#L210">Nil</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Nil(object interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+Nil asserts that the specified object is nil.
+</p>
+<pre>a.Nil(err, &#34;err should be nothing&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.NoError">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=9281:9352#L222">NoError</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) NoError(err <a href="../../../../builtin/index.html#error">error</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+NoError asserts that a function returned no error (i.e. `nil`).
+</p>
+<pre>  actualObj, err := SomeFunction()
+  if a.NoError(err) {
+	   assert.Equal(t, actualObj, expectedObj)
+  }
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.NotContains">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=9901:10002#L234">NotContains</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) NotContains(s interface{}, contains interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+NotContains asserts that the specified string, list(array, slice...) or map does NOT contain the
+specified substring or element.
+</p>
+<pre>a.NotContains(&#34;Hello World&#34;, &#34;Earth&#34;, &#34;But &#39;Hello World&#39; does NOT contain &#39;Earth&#39;&#34;)
+a.NotContains([&#34;Hello&#34;, &#34;World&#34;], &#34;Earth&#34;, &#34;But [&#39;Hello&#39;, &#39;World&#39;] does NOT contain &#39;Earth&#39;&#34;)
+a.NotContains({&#34;Hello&#34;: &#34;World&#34;}, &#34;Earth&#34;, &#34;But {&#39;Hello&#39;: &#39;World&#39;} does NOT contain &#39;Earth&#39;&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.NotEmpty">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=10343:10424#L246">NotEmpty</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) NotEmpty(object interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+NotEmpty asserts that the specified object is NOT empty.  I.e. not nil, &#34;&#34;, false, 0 or either
+a slice or a channel with len == 0.
+</p>
+<pre>if a.NotEmpty(obj) {
+  assert.Equal(t, &#34;two&#34;, obj[1])
+}
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.NotEqual">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=10676:10779#L255">NotEqual</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) NotEqual(expected interface{}, actual interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+NotEqual asserts that the specified values are NOT equal.
+</p>
+<pre>a.NotEqual(obj1, obj2, &#34;two objects shouldn&#39;t be equal&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.NotNil">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=11020:11099#L264">NotNil</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) NotNil(object interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+NotNil asserts that the specified object is not nil.
+</p>
+<pre>a.NotNil(err, &#34;err should be something&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.NotPanics">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=11405:11484#L275">NotPanics</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) NotPanics(f <a href="index.html#PanicTestFunc">PanicTestFunc</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+NotPanics asserts that the code inside the specified PanicTestFunc does NOT panic.
+</p>
+<pre>a.NotPanics(func(){
+  RemainCalm()
+}, &#34;Calling RemainCalm() should NOT panic&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.NotRegexp">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=11788:11883#L285">NotRegexp</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) NotRegexp(rx interface{}, str interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+NotRegexp asserts that a specified regexp does not match a string.
+</p>
+<pre>a.NotRegexp(regexp.MustCompile(&#34;starts&#34;), &#34;it&#39;s starting&#34;)
+a.NotRegexp(&#34;^start&#34;, &#34;it&#39;s not starting&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.NotZero">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=12020:12095#L290">NotZero</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) NotZero(i interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+NotZero asserts that i is not the zero value for its type and returns the truth.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.Panics">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=12373:12449#L301">Panics</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Panics(f <a href="index.html#PanicTestFunc">PanicTestFunc</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+Panics asserts that the code inside the specified PanicTestFunc panics.
+</p>
+<pre>a.Panics(func(){
+  GoCrazy()
+}, &#34;Calling GoCrazy() should panic&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.Regexp">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=12736:12828#L311">Regexp</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Regexp(rx interface{}, str interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+Regexp asserts that a specified regexp matches a string.
+</p>
+<pre>a.Regexp(regexp.MustCompile(&#34;start&#34;), &#34;it&#39;s starting&#34;)
+a.Regexp(&#34;start...$&#34;, &#34;it&#39;s not starting&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.True">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=13051:13120#L320">True</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) True(value <a href="../../../../builtin/index.html#bool">bool</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+True asserts that the specified value is true.
+</p>
+<pre>a.True(myBool, &#34;myBool should be true&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.WithinDuration">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=13437:13563#L329">WithinDuration</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) WithinDuration(expected <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Time">Time</a>, actual <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Time">Time</a>, delta <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Duration">Duration</a>, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+WithinDuration asserts that the two times are within duration delta of each other.
+</p>
+<pre>a.WithinDuration(time.Now(), time.Now(), 10*time.Second, &#34;The difference should not be more than 10s&#34;)
+</pre>
+<p>
+Returns whether the assertion was successful (true) or not (false).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Assertions.Zero">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertion_forward.go?s=13714:13786#L334">Zero</a></h3>
+				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Zero(i interface{}, msgAndArgs ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+Zero asserts that i is the zero value for its type and returns the truth.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Comparison">type <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=488:525#L21">Comparison</a></h2>
+			<pre>type Comparison func() (success <a href="../../../../builtin/index.html#bool">bool</a>)</pre>
+			<p>
+Comparison a custom function that returns true on success and false on failure
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="PanicTestFunc">type <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=17973:17998#L656">PanicTestFunc</a></h2>
+			<pre>type PanicTestFunc func()</pre>
+			<p>
+PanicTestFunc defines a func that should be passed to the assert.Panics and assert.NotPanics
+methods, and represents a simple func that takes no arguments, and returns nothing.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="TestingT">type <a href="http://localhost:9090/src/github.com/stretchr/testify/assert/assertions.go?s=333:404#L16">TestingT</a></h2>
+			<pre>type TestingT interface {
+    Errorf(format <a href="../../../../builtin/index.html#string">string</a>, args ...interface{})
+}</pre>
+			<p>
+TestingT is an interface wrapper around *testing.T
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.6.3.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:9090/doc/tos.html">Terms of Service</a> | 
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.js"></script>
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.treeview.js"></script>
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="../../../../../lib/godoc/godocs.js"></script>
+
+</body>
+</html>
+

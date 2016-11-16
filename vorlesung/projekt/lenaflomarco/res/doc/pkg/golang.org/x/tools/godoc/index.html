@@ -1,0 +1,2448 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>godoc - The Go Programming Language</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../lib/godoc/style.css">
+
+<link rel="stylesheet" href="../../../../../lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:9090/">The Go Programming Language</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:9090/">Go</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:9090/search">
+<div id="menu">
+<a href="http://localhost:9090/doc/">Documents</a>
+<a href="../../../../index.html">Packages</a>
+<a href="http://localhost:9090/project/">The Project</a>
+<a href="http://localhost:9090/help/">Help</a>
+<a href="http://localhost:9090/blog/">Blog</a>
+
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>Package godoc</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type='text/javascript'>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "golang.org/x/tools/godoc"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-subdirectories">Subdirectories</a></dd>
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Package godoc is a work-in-progress (2013-07-17) package to
+begin splitting up the godoc binary into multiple pieces.
+</p>
+<p>
+This package comment will evolve over time as this package splits
+into smaller pieces.
+</p>
+
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#CommandLine">func CommandLine(w io.Writer, fs vfs.NameSpace, pres *Presentation, args []string) error</a></dd>
+			
+				
+				<dd><a href="index.html#FormatSelections">func FormatSelections(w io.Writer, text []byte, lw LinkWriter, links Selection, sw SegmentWriter, selections ...Selection)</a></dd>
+			
+				
+				<dd><a href="index.html#FormatText">func FormatText(w io.Writer, text []byte, line int, goSource bool, pattern string, selection Selection)</a></dd>
+			
+				
+				<dd><a href="index.html#Linkify">func Linkify(out io.Writer, src []byte)</a></dd>
+			
+				
+				<dd><a href="index.html#LinkifyText">func LinkifyText(w io.Writer, text []byte, n ast.Node)</a></dd>
+			
+			
+				
+				<dd><a href="index.html#AltWords">type AltWords</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Corpus">type Corpus</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewCorpus">func NewCorpus(fs vfs.FileSystem) *Corpus</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Corpus.CurrentIndex">func (c *Corpus) CurrentIndex() (*Index, time.Time)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Corpus.FSModifiedTime">func (c *Corpus) FSModifiedTime() time.Time</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Corpus.Init">func (c *Corpus) Init() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Corpus.Lookup">func (c *Corpus) Lookup(query string) SearchResult</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Corpus.MetadataFor">func (c *Corpus) MetadataFor(relpath string) *Metadata</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Corpus.NewIndex">func (c *Corpus) NewIndex() *Index</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Corpus.ReadIndexFrom">func (c *Corpus) ReadIndexFrom(r io.Reader) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Corpus.RunIndexer">func (c *Corpus) RunIndexer()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Corpus.UpdateIndex">func (c *Corpus) UpdateIndex()</a></dd>
+				
+			
+				
+				<dd><a href="index.html#DirEntry">type DirEntry</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#DirList">type DirList</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Directory">type Directory</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#File">type File</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#File.Path">func (f *File) Path() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#FileLines">type FileLines</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#FileRun">type FileRun</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#HitList">type HitList</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Ident">type Ident</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Index">type Index</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Index.CompatibleWith">func (x *Index) CompatibleWith(c *Corpus) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Index.Exports">func (x *Index) Exports() map[string]map[string]SpotKind</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Index.Idents">func (x *Index) Idents() map[SpotKind]map[string][]Ident</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Index.ImportCount">func (x *Index) ImportCount() map[string]int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Index.Lookup">func (x *Index) Lookup(query string) (*SearchResult, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Index.LookupRegexp">func (x *Index) LookupRegexp(r *regexp.Regexp, n int) (found int, result []FileLines)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Index.PackagePath">func (x *Index) PackagePath() map[string]map[string]bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Index.ReadFrom">func (x *Index) ReadFrom(r io.Reader) (n int64, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Index.Snippet">func (x *Index) Snippet(i int) *Snippet</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Index.Stats">func (x *Index) Stats() Statistics</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Index.WriteTo">func (x *Index) WriteTo(w io.Writer) (n int64, err error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#IndexResult">type IndexResult</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Indexer">type Indexer</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Indexer.Visit">func (x *Indexer) Visit(node ast.Node) ast.Visitor</a></dd>
+				
+			
+				
+				<dd><a href="index.html#KindRun">type KindRun</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#KindRun.Len">func (k KindRun) Len() int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#KindRun.Less">func (k KindRun) Less(i, j int) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#KindRun.Swap">func (k KindRun) Swap(i, j int)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#LinkWriter">type LinkWriter</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#LookupResult">type LookupResult</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Metadata">type Metadata</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Metadata.FilePath">func (m *Metadata) FilePath() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Page">type Page</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#PageInfo">type PageInfo</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PageInfo.IsEmpty">func (info *PageInfo) IsEmpty() bool</a></dd>
+				
+			
+				
+				<dd><a href="index.html#PageInfoMode">type PageInfoMode</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Pak">type Pak</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#PakRun">type PakRun</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PakRun.Len">func (p *PakRun) Len() int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PakRun.Less">func (p *PakRun) Less(i, j int) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PakRun.Swap">func (p *PakRun) Swap(i, j int)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Presentation">type Presentation</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewPresentation">func NewPresentation(c *Corpus) *Presentation</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.CmdFSRoot">func (p *Presentation) CmdFSRoot() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.FileServer">func (p *Presentation) FileServer() http.Handler</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.FuncMap">func (p *Presentation) FuncMap() template.FuncMap</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.GetCmdPageInfo">func (p *Presentation) GetCmdPageInfo(abspath, relpath string, mode PageInfoMode) *PageInfo</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.GetPageInfoMode">func (p *Presentation) GetPageInfoMode(r *http.Request) PageInfoMode</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.GetPkgPageInfo">func (p *Presentation) GetPkgPageInfo(abspath, relpath string, mode PageInfoMode) *PageInfo</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.HandleSearch">func (p *Presentation) HandleSearch(w http.ResponseWriter, r *http.Request)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.NewSnippet">func (p *Presentation) NewSnippet(fset *token.FileSet, decl ast.Decl, id *ast.Ident) *Snippet</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.PkgFSRoot">func (p *Presentation) PkgFSRoot() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.SearchResultCode">func (p *Presentation) SearchResultCode(result SearchResult) []byte</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.SearchResultDoc">func (p *Presentation) SearchResultDoc(result SearchResult) []byte</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.SearchResultTxt">func (p *Presentation) SearchResultTxt(result SearchResult) []byte</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.ServeError">func (p *Presentation) ServeError(w http.ResponseWriter, r *http.Request, relpath string, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.ServeFile">func (p *Presentation) ServeFile(w http.ResponseWriter, r *http.Request)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.ServeHTMLDoc">func (p *Presentation) ServeHTMLDoc(w http.ResponseWriter, r *http.Request, abspath, relpath string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.ServeHTTP">func (p *Presentation) ServeHTTP(w http.ResponseWriter, r *http.Request)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.ServePage">func (p *Presentation) ServePage(w http.ResponseWriter, page Page)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.ServeText">func (p *Presentation) ServeText(w http.ResponseWriter, text []byte)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.TemplateFuncs">func (p *Presentation) TemplateFuncs() template.FuncMap</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Presentation.WriteNode">func (p *Presentation) WriteNode(w io.Writer, fset *token.FileSet, x interface{})</a></dd>
+				
+			
+				
+				<dd><a href="index.html#RunList">type RunList</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#SearchResult">type SearchResult</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#SearchResultFunc">type SearchResultFunc</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Segment">type Segment</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#SegmentWriter">type SegmentWriter</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Selection">type Selection</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#RangeSelection">func RangeSelection(str string) Selection</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Snippet">type Snippet</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewSnippet">func NewSnippet(fset *token.FileSet, decl ast.Decl, id *ast.Ident) *Snippet</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Spot">type Spot</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#SpotInfo">type SpotInfo</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SpotInfo.IsIndex">func (x SpotInfo) IsIndex() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SpotInfo.Kind">func (x SpotInfo) Kind() SpotKind</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SpotInfo.Lori">func (x SpotInfo) Lori() int</a></dd>
+				
+			
+				
+				<dd><a href="index.html#SpotKind">type SpotKind</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SpotKind.Name">func (x SpotKind) Name() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Statistics">type Statistics</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h4>Package files</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/cmdline.go">cmdline.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/corpus.go">corpus.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/dirtrees.go">dirtrees.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/format.go">format.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/godoc.go">godoc.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go">index.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/linkify.go">linkify.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/meta.go">meta.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/page.go">page.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/parser.go">parser.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/pres.go">pres.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/search.go">search.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/server.go">server.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/snippet.go">snippet.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/spec.go">spec.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/spot.go">spot.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/tab.go">tab.go</a>
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/godoc/template.go">template.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				<pre>var <span id="ErrFileIndexVersion">ErrFileIndexVersion</span> = <a href="../../../../errors/index.html">errors</a>.<a href="../../../../errors/index.html#New">New</a>(&#34;file index version out of date&#34;)</pre>
+				
+			
+		
+		
+			
+			
+			<h2 id="CommandLine">func <a href="http://localhost:9090/src/golang.org/x/tools/godoc/cmdline.go?s=524:612#L21">CommandLine</a></h2>
+			<pre>func CommandLine(w <a href="../../../../io/index.html">io</a>.<a href="../../../../io/index.html#Writer">Writer</a>, fs <a href="vfs/index.html">vfs</a>.<a href="vfs/index.html#NameSpace">NameSpace</a>, pres *<a href="index.html#Presentation">Presentation</a>, args []<a href="../../../../builtin/index.html#string">string</a>) <a href="../../../../builtin/index.html#error">error</a></pre>
+			<p>
+CommandLine returns godoc results to w.
+Note that it may add a /target path to fs.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="FormatSelections">func <a href="http://localhost:9090/src/golang.org/x/tools/godoc/format.go?s=2198:2320#L52">FormatSelections</a></h2>
+			<pre>func FormatSelections(w <a href="../../../../io/index.html">io</a>.<a href="../../../../io/index.html#Writer">Writer</a>, text []<a href="../../../../builtin/index.html#byte">byte</a>, lw <a href="index.html#LinkWriter">LinkWriter</a>, links <a href="index.html#Selection">Selection</a>, sw <a href="index.html#SegmentWriter">SegmentWriter</a>, selections ...<a href="index.html#Selection">Selection</a>)</pre>
+			<p>
+FormatSelections takes a text and writes it to w using link and segment
+writers lw and sw as follows: lw is invoked for consecutive segment starts
+and ends as specified through the links selection, and sw is invoked for
+consecutive segments of text overlapped by the same selections as specified
+by selections. The link writer lw may be nil, in which case the links
+Selection is ignored.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="FormatText">func <a href="http://localhost:9090/src/golang.org/x/tools/godoc/format.go?s=10066:10169#L339">FormatText</a></h2>
+			<pre>func FormatText(w <a href="../../../../io/index.html">io</a>.<a href="../../../../io/index.html#Writer">Writer</a>, text []<a href="../../../../builtin/index.html#byte">byte</a>, line <a href="../../../../builtin/index.html#int">int</a>, goSource <a href="../../../../builtin/index.html#bool">bool</a>, pattern <a href="../../../../builtin/index.html#string">string</a>, selection <a href="index.html#Selection">Selection</a>)</pre>
+			<p>
+FormatText HTML-escapes text and writes it to w.
+Consecutive text segments are wrapped in HTML spans (with tags as
+defined by startTags and endTag) as follows:
+</p>
+<pre>- if line &gt;= 0, line number (ln) spans are inserted before each line,
+  starting with the value of line
+- if the text is Go source, comments get the &#34;comment&#34; span class
+- each occurrence of the regular expression pattern gets the &#34;highlight&#34;
+  span class
+- text segments covered by selection get the &#34;selection&#34; span class
+</pre>
+<p>
+Comments, highlights, and selections may overlap arbitrarily; the respective
+HTML span classes are specified in the startTags variable.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Linkify">func <a href="http://localhost:9090/src/golang.org/x/tools/godoc/spec.go?s=3034:3073#L144">Linkify</a></h2>
+			<pre>func Linkify(out <a href="../../../../io/index.html">io</a>.<a href="../../../../io/index.html#Writer">Writer</a>, src []<a href="../../../../builtin/index.html#byte">byte</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="LinkifyText">func <a href="http://localhost:9090/src/golang.org/x/tools/godoc/linkify.go?s=774:828#L17">LinkifyText</a></h2>
+			<pre>func LinkifyText(w <a href="../../../../io/index.html">io</a>.<a href="../../../../io/index.html#Writer">Writer</a>, text []<a href="../../../../builtin/index.html#byte">byte</a>, n <a href="../../../../go/ast/index.html">ast</a>.<a href="../../../../go/ast/index.html#Node">Node</a>)</pre>
+			<p>
+LinkifyText HTML-escapes source text and writes it to w.
+Identifiers that are in a &#34;use&#34; position (i.e., that are
+not being declared), are wrapped with HTML links pointing
+to the respective declaration, if possible. Comments are
+formatted the same way as with FormatText.
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="AltWords">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=9378:9519#L311">AltWords</a></h2>
+			<pre>type AltWords struct {
+    Canon <a href="../../../../builtin/index.html#string">string</a>   <span class="comment">// canonical word spelling (all lowercase)</span>
+    Alts  []<a href="../../../../builtin/index.html#string">string</a> <span class="comment">// alternative spelling for the same word</span>
+}</pre>
+			<p>
+An AltWords describes a list of alternative spellings for a
+canonical (all lowercase) spelling of a word.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Corpus">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/corpus.go?s=512:3626#L12">Corpus</a></h2>
+			<pre>type Corpus struct {
+
+    <span class="comment">// Verbose logging.</span>
+    Verbose <a href="../../../../builtin/index.html#bool">bool</a>
+
+    <span class="comment">// IndexEnabled controls whether indexing is enabled.</span>
+    IndexEnabled <a href="../../../../builtin/index.html#bool">bool</a>
+
+    <span class="comment">// IndexFiles specifies a glob pattern specifying index files.</span>
+    <span class="comment">// If not empty, the index is read from these files in sorted</span>
+    <span class="comment">// order.</span>
+    IndexFiles <a href="../../../../builtin/index.html#string">string</a>
+
+    <span class="comment">// IndexThrottle specifies the indexing throttle value</span>
+    <span class="comment">// between 0.0 and 1.0. At 0.0, the indexer always sleeps.</span>
+    <span class="comment">// At 1.0, the indexer never sleeps. Because 0.0 is useless</span>
+    <span class="comment">// and redundant with setting IndexEnabled to false, the</span>
+    <span class="comment">// zero value for IndexThrottle means 0.9.</span>
+    IndexThrottle <a href="../../../../builtin/index.html#float64">float64</a>
+
+    <span class="comment">// IndexInterval specifies the time to sleep between reindexing</span>
+    <span class="comment">// all the sources.</span>
+    <span class="comment">// If zero, a default is used. If negative, the index is only</span>
+    <span class="comment">// built once.</span>
+    IndexInterval <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Duration">Duration</a>
+
+    <span class="comment">// IndexDocs enables indexing of Go documentation.</span>
+    <span class="comment">// This will produce search results for exported types, functions,</span>
+    <span class="comment">// methods, variables, and constants, and will link to the godoc</span>
+    <span class="comment">// documentation for those identifiers.</span>
+    IndexDocs <a href="../../../../builtin/index.html#bool">bool</a>
+
+    <span class="comment">// IndexGoCode enables indexing of Go source code.</span>
+    <span class="comment">// This will produce search results for internal and external identifiers</span>
+    <span class="comment">// and will link to both declarations and uses of those identifiers in</span>
+    <span class="comment">// source code.</span>
+    IndexGoCode <a href="../../../../builtin/index.html#bool">bool</a>
+
+    <span class="comment">// IndexFullText enables full-text indexing.</span>
+    <span class="comment">// This will provide search results for any matching text in any file that</span>
+    <span class="comment">// is indexed, including non-Go files (see whitelisted in index.go).</span>
+    <span class="comment">// Regexp searching is supported via full-text indexing.</span>
+    IndexFullText <a href="../../../../builtin/index.html#bool">bool</a>
+
+    <span class="comment">// MaxResults optionally specifies the maximum results for indexing.</span>
+    MaxResults <a href="../../../../builtin/index.html#int">int</a>
+
+    <span class="comment">// SummarizePackage optionally specifies a function to</span>
+    <span class="comment">// summarize a package. It exists as an optimization to</span>
+    <span class="comment">// avoid reading files to parse package comments.</span>
+    <span class="comment">//</span>
+    <span class="comment">// If SummarizePackage returns false for ok, the caller</span>
+    <span class="comment">// ignores all return values and parses the files in the package</span>
+    <span class="comment">// as if SummarizePackage were nil.</span>
+    <span class="comment">//</span>
+    <span class="comment">// If showList is false, the package is hidden from the</span>
+    <span class="comment">// package listing.</span>
+    SummarizePackage func(pkg <a href="../../../../builtin/index.html#string">string</a>) (summary <a href="../../../../builtin/index.html#string">string</a>, showList, ok <a href="../../../../builtin/index.html#bool">bool</a>)
+
+    <span class="comment">// IndexDirectory optionally specifies a function to determine</span>
+    <span class="comment">// whether the provided directory should be indexed.  The dir</span>
+    <span class="comment">// will be of the form &#34;/src/cmd/6a&#34;, &#34;/doc/play&#34;,</span>
+    <span class="comment">// &#34;/src/io&#34;, etc.</span>
+    <span class="comment">// If nil, all directories are indexed if indexing is enabled.</span>
+    IndexDirectory func(dir <a href="../../../../builtin/index.html#string">string</a>) <a href="../../../../builtin/index.html#bool">bool</a>
+
+    <span class="comment">// Analysis is the result of type and pointer analysis.</span>
+    Analysis <a href="analysis/index.html">analysis</a>.<a href="analysis/index.html#Result">Result</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+A Corpus holds all the state related to serving and indexing a
+collection of Go code.
+</p>
+<p>
+Construct a new Corpus with NewCorpus, then modify options,
+then call its Init method.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewCorpus">func <a href="http://localhost:9090/src/golang.org/x/tools/godoc/corpus.go?s=3835:3876#L101">NewCorpus</a></h3>
+				<pre>func NewCorpus(fs <a href="vfs/index.html">vfs</a>.<a href="vfs/index.html#FileSystem">FileSystem</a>) *<a href="index.html#Corpus">Corpus</a></pre>
+				<p>
+NewCorpus returns a new Corpus from a filesystem.
+The returned corpus has all indexing enabled and MaxResults set to 1000.
+Change or set any options on Corpus before calling the Corpus.Init method.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Corpus.CurrentIndex">func (*Corpus) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/corpus.go?s=4081:4132#L115">CurrentIndex</a></h3>
+				<pre>func (c *<a href="index.html#Corpus">Corpus</a>) CurrentIndex() (*<a href="index.html#Index">Index</a>, <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Time">Time</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Corpus.FSModifiedTime">func (*Corpus) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/corpus.go?s=4204:4247#L121">FSModifiedTime</a></h3>
+				<pre>func (c *<a href="index.html#Corpus">Corpus</a>) FSModifiedTime() <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Time">Time</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Corpus.Init">func (*Corpus) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/corpus.go?s=4410:4439#L128">Init</a></h3>
+				<pre>func (c *<a href="index.html#Corpus">Corpus</a>) Init() <a href="../../../../builtin/index.html#error">error</a></pre>
+				<p>
+Init initializes Corpus, once options on Corpus are set.
+It must be called before any subsequent method calls.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Corpus.Lookup">func (*Corpus) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/search.go?s=742:792#L21">Lookup</a></h3>
+				<pre>func (c *<a href="index.html#Corpus">Corpus</a>) Lookup(query <a href="../../../../builtin/index.html#string">string</a>) <a href="index.html#SearchResult">SearchResult</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Corpus.MetadataFor">func (*Corpus) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/meta.go?s=2640:2694#L98">MetadataFor</a></h3>
+				<pre>func (c *<a href="index.html#Corpus">Corpus</a>) MetadataFor(relpath <a href="../../../../builtin/index.html#string">string</a>) *<a href="index.html#Metadata">Metadata</a></pre>
+				<p>
+MetadataFor returns the *Metadata for a given relative path or nil if none
+exists.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Corpus.NewIndex">func (*Corpus) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=27548:27582#L983">NewIndex</a></h3>
+				<pre>func (c *<a href="index.html#Corpus">Corpus</a>) NewIndex() *<a href="index.html#Index">Index</a></pre>
+				<p>
+NewIndex creates a new index for the .go files provided by the corpus.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Corpus.ReadIndexFrom">func (*Corpus) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=41314:41363#L1484">ReadIndexFrom</a></h3>
+				<pre>func (c *<a href="index.html#Corpus">Corpus</a>) ReadIndexFrom(r <a href="../../../../io/index.html">io</a>.<a href="../../../../io/index.html#Reader">Reader</a>) <a href="../../../../builtin/index.html#error">error</a></pre>
+				<p>
+ReadIndexFrom sets the current index from the serialized version found in r.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Corpus.RunIndexer">func (*Corpus) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=42378:42407#L1523">RunIndexer</a></h3>
+				<pre>func (c *<a href="index.html#Corpus">Corpus</a>) RunIndexer()</pre>
+				<p>
+RunIndexer runs forever, indexing.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Corpus.UpdateIndex">func (*Corpus) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=41579:41609#L1496">UpdateIndex</a></h3>
+				<pre>func (c *<a href="index.html#Corpus">Corpus</a>) UpdateIndex()</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="DirEntry">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/dirtrees.go?s=7144:7479#L270">DirEntry</a></h2>
+			<pre>type DirEntry struct {
+    Depth    <a href="../../../../builtin/index.html#int">int</a>    <span class="comment">// &gt;= 0</span>
+    Height   <a href="../../../../builtin/index.html#int">int</a>    <span class="comment">// = DirList.MaxHeight - Depth, &gt; 0</span>
+    Path     <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// directory path; includes Name, relative to DirList root</span>
+    Name     <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// directory name</span>
+    HasPkg   <a href="../../../../builtin/index.html#bool">bool</a>   <span class="comment">// true if the directory contains at least one package</span>
+    Synopsis <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// package documentation, if any</span>
+}</pre>
+			<p>
+DirEntry describes a directory entry. The Depth and Height values
+are useful for presenting an entry in an indented fashion.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="DirList">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/dirtrees.go?s=7481:7571#L279">DirList</a></h2>
+			<pre>type DirList struct {
+    MaxHeight <a href="../../../../builtin/index.html#int">int</a> <span class="comment">// directory tree height, &gt; 0</span>
+    List      []<a href="index.html#DirEntry">DirEntry</a>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Directory">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/dirtrees.go?s=473:784#L15">Directory</a></h2>
+			<pre>type Directory struct {
+    Depth    <a href="../../../../builtin/index.html#int">int</a>
+    Path     <a href="../../../../builtin/index.html#string">string</a>       <span class="comment">// directory path; includes Name</span>
+    Name     <a href="../../../../builtin/index.html#string">string</a>       <span class="comment">// directory name</span>
+    HasPkg   <a href="../../../../builtin/index.html#bool">bool</a>         <span class="comment">// true if the directory contains at least one package</span>
+    Synopsis <a href="../../../../builtin/index.html#string">string</a>       <span class="comment">// package documentation, if any</span>
+    Dirs     []*<a href="index.html#Directory">Directory</a> <span class="comment">// subdirectories</span>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="File">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=5910:6026#L183">File</a></h2>
+			<pre>type File struct {
+    Name <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// directory-local file name</span>
+    Pak  *<a href="index.html#Pak">Pak</a>   <span class="comment">// the package to which the file belongs</span>
+}</pre>
+			<p>
+A File describes a Go file.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="File.Path">func (*File) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=6064:6092#L189">Path</a></h3>
+				<pre>func (f *<a href="index.html#File">File</a>) Path() <a href="../../../../builtin/index.html#string">string</a></pre>
+				<p>
+Path returns the file path of f.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="FileLines">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=37260:37318#L1344">FileLines</a></h2>
+			<pre>type FileLines struct {
+    Filename <a href="../../../../builtin/index.html#string">string</a>
+    Lines    []<a href="../../../../builtin/index.html#int">int</a>
+}</pre>
+			<p>
+A FileLines value specifies a file and line numbers within that file.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="FileRun">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=6302:6357#L200">FileRun</a></h2>
+			<pre>type FileRun struct {
+    File   *<a href="index.html#File">File</a>
+    Groups []<a href="index.html#KindRun">KindRun</a>
+}</pre>
+			<p>
+A FileRun is a list of KindRuns belonging to the same file.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="HitList">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=8249:8271#L269">HitList</a></h2>
+			<pre>type HitList []*<a href="index.html#PakRun">PakRun</a></pre>
+			<p>
+A HitList describes a list of PakRuns.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Ident">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=10255:10441#L344">Ident</a></h2>
+			<pre>type Ident struct {
+    Path    <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// e.g. &#34;net/http&#34;</span>
+    Package <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// e.g. &#34;http&#34;</span>
+    Name    <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// e.g. &#34;NewRequest&#34;</span>
+    Doc     <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// e.g. &#34;NewRequest returns a new Request...&#34;</span>
+}</pre>
+			<p>
+Ident stores information about external identifiers in order to create
+links to package documentation.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Index">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=26177:26980#L948">Index</a></h2>
+			<pre>type Index struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Index.CompatibleWith">func (*Index) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=40505:40551#L1456">CompatibleWith</a></h3>
+				<pre>func (x *<a href="index.html#Index">Index</a>) CompatibleWith(c *<a href="index.html#Corpus">Corpus</a>) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+CompatibleWith reports whether the Index x is compatible with the corpus
+indexing options set in c.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Index.Exports">func (*Index) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=33969:34025#L1223">Exports</a></h3>
+				<pre>func (x *<a href="index.html#Index">Index</a>) Exports() map[<a href="../../../../builtin/index.html#string">string</a>]map[<a href="../../../../builtin/index.html#string">string</a>]<a href="index.html#SpotKind">SpotKind</a></pre>
+				<p>
+Exports returns a map from full package path to exported
+symbol name to its type.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Index.Idents">func (*Index) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=34168:34224#L1229">Idents</a></h3>
+				<pre>func (x *<a href="index.html#Index">Index</a>) Idents() map[<a href="index.html#SpotKind">SpotKind</a>]map[<a href="../../../../builtin/index.html#string">string</a>][]<a href="index.html#Ident">Ident</a></pre>
+				<p>
+Idents returns a map from identifier type to exported
+symbol name to the list of identifiers matching that name.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Index.ImportCount">func (*Index) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=33599:33643#L1211">ImportCount</a></h3>
+				<pre>func (x *<a href="index.html#Index">Index</a>) ImportCount() map[<a href="../../../../builtin/index.html#string">string</a>]<a href="../../../../builtin/index.html#int">int</a></pre>
+				<p>
+ImportCount returns a map from import paths to how many times they were seen.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Index.Lookup">func (*Index) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=35117:35176#L1260">Lookup</a></h3>
+				<pre>func (x *<a href="index.html#Index">Index</a>) Lookup(query <a href="../../../../builtin/index.html#string">string</a>) (*<a href="index.html#SearchResult">SearchResult</a>, <a href="../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+For a given query, which is either a single identifier or a qualified
+identifier, Lookup returns a SearchResult containing packages, a LookupResult, a
+list of alternative spellings, and identifiers, if any. Any and all results
+may be nil.  If the query syntax is wrong, an error is reported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Index.LookupRegexp">func (*Index) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=37503:37588#L1353">LookupRegexp</a></h3>
+				<pre>func (x *<a href="index.html#Index">Index</a>) LookupRegexp(r *<a href="../../../../regexp/index.html">regexp</a>.<a href="../../../../regexp/index.html#Regexp">Regexp</a>, n <a href="../../../../builtin/index.html#int">int</a>) (found <a href="../../../../builtin/index.html#int">int</a>, result []<a href="index.html#FileLines">FileLines</a>)</pre>
+				<p>
+LookupRegexp returns the number of matches and the matches where a regular
+expression r is found in the full text index. At most n matches are
+returned (thus found &lt;= n).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Index.PackagePath">func (*Index) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=33797:33853#L1217">PackagePath</a></h3>
+				<pre>func (x *<a href="index.html#Index">Index</a>) PackagePath() map[<a href="../../../../builtin/index.html#string">string</a>]map[<a href="../../../../builtin/index.html#string">string</a>]<a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+PackagePath returns a map from short package name to a set
+of full package path names that use that short package name.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Index.ReadFrom">func (*Index) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=32504:32562#L1167">ReadFrom</a></h3>
+				<pre>func (x *<a href="index.html#Index">Index</a>) ReadFrom(r <a href="../../../../io/index.html">io</a>.<a href="../../../../io/index.html#Reader">Reader</a>) (n <a href="../../../../builtin/index.html#int64">int64</a>, err <a href="../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+ReadFrom reads the index from r into x; x must not be nil.
+If r does not also implement io.ByteReader, it will be wrapped in a bufio.Reader.
+If the index is from an old version, the error is ErrFileIndexVersion.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Index.Snippet">func (*Index) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=36460:36499#L1311">Snippet</a></h3>
+				<pre>func (x *<a href="index.html#Index">Index</a>) Snippet(i <a href="../../../../builtin/index.html#int">int</a>) *<a href="index.html#Snippet">Snippet</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Index.Stats">func (*Index) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=33462:33496#L1206">Stats</a></h3>
+				<pre>func (x *<a href="index.html#Index">Index</a>) Stats() <a href="index.html#Statistics">Statistics</a></pre>
+				<p>
+Stats returns index statistics.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Index.WriteTo">func (*Index) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=31512:31569#L1128">WriteTo</a></h3>
+				<pre>func (x *<a href="index.html#Index">Index</a>) WriteTo(w <a href="../../../../io/index.html">io</a>.<a href="../../../../io/index.html#Writer">Writer</a>) (n <a href="../../../../builtin/index.html#int64">int64</a>, err <a href="../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+WriteTo writes the index x to w.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="IndexResult">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=11811:11941#L410">IndexResult</a></h2>
+			<pre>type IndexResult struct {
+    Decls  <a href="index.html#RunList">RunList</a> <span class="comment">// package-level declarations (with snippets)</span>
+    Others <a href="index.html#RunList">RunList</a> <span class="comment">// all other occurrences</span>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Indexer">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=12498:13678#L428">Indexer</a></h2>
+			<pre>type Indexer struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+An Indexer maintains the data structures and provides the machinery
+for indexing .go files under a file tree. It implements the path.Visitor
+interface for walking file trees, and the ast.Visitor interface for
+walking Go ASTs.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Indexer.Visit">func (*Indexer) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=16089:16139#L559">Visit</a></h3>
+				<pre>func (x *<a href="index.html#Indexer">Indexer</a>) Visit(node <a href="../../../../go/ast/index.html">ast</a>.<a href="../../../../go/ast/index.html#Node">Node</a>) <a href="../../../../go/ast/index.html">ast</a>.<a href="../../../../go/ast/index.html#Visitor">Visitor</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="KindRun">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=4197:4220#L126">KindRun</a></h2>
+			<pre>type KindRun []<a href="index.html#SpotInfo">SpotInfo</a></pre>
+			<p>
+A KindRun is a run of SpotInfos of the same kind in a given file.
+The kind (3 bits) is stored in each SpotInfo element; to find the
+kind of a KindRun, look at any of its elements.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="KindRun.Len">func (KindRun) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=4363:4389#L130">Len</a></h3>
+				<pre>func (k <a href="index.html#KindRun">KindRun</a>) Len() <a href="../../../../builtin/index.html#int">int</a></pre>
+				<p>
+KindRuns are sorted by line number or index. Since the isIndex bit
+is always the same for all infos in one list we can compare lori&#39;s.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="KindRun.Less">func (KindRun) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=4418:4454#L131">Less</a></h3>
+				<pre>func (k <a href="index.html#KindRun">KindRun</a>) Less(i, j <a href="../../../../builtin/index.html#int">int</a>) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="KindRun.Swap">func (KindRun) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=4492:4523#L132">Swap</a></h3>
+				<pre>func (k <a href="index.html#KindRun">KindRun</a>) Swap(i, j <a href="../../../../builtin/index.html#int">int</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="LinkWriter">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/format.go?s=1330:1385#L35">LinkWriter</a></h2>
+			<pre>type LinkWriter func(w <a href="../../../../io/index.html">io</a>.<a href="../../../../io/index.html#Writer">Writer</a>, offs <a href="../../../../builtin/index.html#int">int</a>, start <a href="../../../../builtin/index.html#bool">bool</a>)</pre>
+			<p>
+A LinkWriter writes some start or end &#34;tag&#34; to w for the text offset offs.
+It is called by FormatSelections at the start or end of each link segment.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="LookupResult">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=26044:26175#L943">LookupResult</a></h2>
+			<pre>type LookupResult struct {
+    Decls  <a href="index.html#HitList">HitList</a> <span class="comment">// package-level declarations (with snippets)</span>
+    Others <a href="index.html#HitList">HitList</a> <span class="comment">// all other occurrences</span>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Metadata">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/meta.go?s=554:756#L18">Metadata</a></h2>
+			<pre>type Metadata struct {
+    Title    <a href="../../../../builtin/index.html#string">string</a>
+    Subtitle <a href="../../../../builtin/index.html#string">string</a>
+    Template <a href="../../../../builtin/index.html#bool">bool</a>   <span class="comment">// execute as template</span>
+    Path     <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// canonical path for this page</span>
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+TODO(adg): why are some exported and some aren&#39;t? -brad
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Metadata.FilePath">func (*Metadata) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/meta.go?s=758:794#L26">FilePath</a></h3>
+				<pre>func (m *<a href="index.html#Metadata">Metadata</a>) FilePath() <a href="../../../../builtin/index.html#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Page">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/page.go?s=296:497#L5">Page</a></h2>
+			<pre>type Page struct {
+    Title    <a href="../../../../builtin/index.html#string">string</a>
+    Tabtitle <a href="../../../../builtin/index.html#string">string</a>
+    Subtitle <a href="../../../../builtin/index.html#string">string</a>
+    Query    <a href="../../../../builtin/index.html#string">string</a>
+    Body     []<a href="../../../../builtin/index.html#byte">byte</a>
+    Share    <a href="../../../../builtin/index.html#bool">bool</a>
+
+    <span class="comment">// filled in by servePage</span>
+    SearchBox  <a href="../../../../builtin/index.html#bool">bool</a>
+    Playground <a href="../../../../builtin/index.html#bool">bool</a>
+    Version    <a href="../../../../builtin/index.html#string">string</a>
+}</pre>
+			<p>
+Page describes the contents of the top-level godoc webpage.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="PageInfo">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/godoc.go?s=7695:8858#L271">PageInfo</a></h2>
+			<pre>type PageInfo struct {
+    Dirname <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// directory containing the package</span>
+    Err     <a href="../../../../builtin/index.html#error">error</a>  <span class="comment">// error or nil</span>
+    Share   <a href="../../../../builtin/index.html#bool">bool</a>   <span class="comment">// show share button on examples</span>
+
+    <span class="comment">// package info</span>
+    FSet       *<a href="../../../../go/token/index.html">token</a>.<a href="../../../../go/token/index.html#FileSet">FileSet</a>         <span class="comment">// nil if no package documentation</span>
+    PDoc       *<a href="../../../../go/doc/index.html">doc</a>.<a href="../../../../go/doc/index.html#Package">Package</a>           <span class="comment">// nil if no package documentation</span>
+    Examples   []*<a href="../../../../go/doc/index.html">doc</a>.<a href="../../../../go/doc/index.html#Example">Example</a>         <span class="comment">// nil if no example code</span>
+    Notes      map[<a href="../../../../builtin/index.html#string">string</a>][]*<a href="../../../../go/doc/index.html">doc</a>.<a href="../../../../go/doc/index.html#Note">Note</a> <span class="comment">// nil if no package Notes</span>
+    PAst       map[<a href="../../../../builtin/index.html#string">string</a>]*<a href="../../../../go/ast/index.html">ast</a>.<a href="../../../../go/ast/index.html#File">File</a>   <span class="comment">// nil if no AST with package exports</span>
+    IsMain     <a href="../../../../builtin/index.html#bool">bool</a>                   <span class="comment">// true for package main</span>
+    IsFiltered <a href="../../../../builtin/index.html#bool">bool</a>                   <span class="comment">// true if results were filtered</span>
+
+    <span class="comment">// analysis info</span>
+    TypeInfoIndex  map[<a href="../../../../builtin/index.html#string">string</a>]<a href="../../../../builtin/index.html#int">int</a>  <span class="comment">// index of JSON datum for type T (if -analysis=type)</span>
+    AnalysisData   <a href="../../../../html/template/index.html">htmltemplate</a>.<a href="../../../../html/template/index.html#JS">JS</a> <span class="comment">// array of TypeInfoJSON values</span>
+    CallGraph      <a href="../../../../html/template/index.html">htmltemplate</a>.<a href="../../../../html/template/index.html#JS">JS</a> <span class="comment">// array of PCGNodeJSON values    (if -analysis=pointer)</span>
+    CallGraphIndex map[<a href="../../../../builtin/index.html#string">string</a>]<a href="../../../../builtin/index.html#int">int</a>  <span class="comment">// maps func name to index in CallGraph</span>
+
+    <span class="comment">// directory info</span>
+    Dirs    *<a href="index.html#DirList">DirList</a>  <span class="comment">// nil if no directory information</span>
+    DirTime <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Time">Time</a> <span class="comment">// directory time stamp</span>
+    DirFlat <a href="../../../../builtin/index.html#bool">bool</a>      <span class="comment">// if set, show directory in a flat (non-indented) manner</span>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="PageInfo.IsEmpty">func (*PageInfo) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/godoc.go?s=8860:8896#L297">IsEmpty</a></h3>
+				<pre>func (info *<a href="index.html#PageInfo">PageInfo</a>) IsEmpty() <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="PageInfoMode">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/server.go?s=9298:9320#L310">PageInfoMode</a></h2>
+			<pre>type PageInfoMode <a href="../../../../builtin/index.html#uint">uint</a></pre>
+			
+
+			
+				<pre>const (
+    <span id="NoFiltering">NoFiltering</span> <a href="index.html#PageInfoMode">PageInfoMode</a> = 1 &lt;&lt; <a href="../../../../builtin/index.html#iota">iota</a> <span class="comment">// do not filter exports</span>
+    <span id="AllMethods">AllMethods</span>                           <span class="comment">// show all embedded methods</span>
+    <span id="ShowSource">ShowSource</span>                           <span class="comment">// show source code, do not extract documentation</span>
+    <span id="NoHTML">NoHTML</span>                               <span class="comment">// show result in textual form, do not generate HTML</span>
+    <span id="FlatDir">FlatDir</span>                              <span class="comment">// show directory in a flat (non-indented) manner</span>
+    <span id="NoTypeAssoc">NoTypeAssoc</span>                          <span class="comment">// don&#39;t associate consts, vars, and factory functions with types</span>
+)</pre>
+				
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Pak">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=5565:5700#L172">Pak</a></h2>
+			<pre>type Pak struct {
+    Path <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// path of directory containing the package</span>
+    Name <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// package name as declared by package clause</span>
+}</pre>
+			<p>
+A Pak describes a Go package.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="PakRun">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=7268:7320#L238">PakRun</a></h2>
+			<pre>type PakRun struct {
+    Pak   *<a href="index.html#Pak">Pak</a>
+    Files []*<a href="index.html#FileRun">FileRun</a>
+}</pre>
+			<p>
+A PakRun describes a run of *FileRuns of a package.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="PakRun.Len">func (*PakRun) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=7368:7394#L244">Len</a></h3>
+				<pre>func (p *<a href="index.html#PakRun">PakRun</a>) Len() <a href="../../../../builtin/index.html#int">int</a></pre>
+				<p>
+Sorting support for files within a PakRun.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PakRun.Less">func (*PakRun) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=7429:7465#L245">Less</a></h3>
+				<pre>func (p *<a href="index.html#PakRun">PakRun</a>) Less(i, j <a href="../../../../builtin/index.html#int">int</a>) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="PakRun.Swap">func (*PakRun) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=7521:7552#L246">Swap</a></h3>
+				<pre>func (p *<a href="index.html#PakRun">PakRun</a>) Swap(i, j <a href="../../../../builtin/index.html#int">int</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Presentation">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/pres.go?s=476:2949#L10">Presentation</a></h2>
+			<pre>type Presentation struct {
+    Corpus *<a href="index.html#Corpus">Corpus</a>
+
+    CallGraphHTML,
+    DirlistHTML,
+    ErrorHTML,
+    ExampleHTML,
+    GodocHTML,
+    ImplementsHTML,
+    MethodSetHTML,
+    PackageHTML,
+    PackageText,
+    SearchHTML,
+    SearchDocHTML,
+    SearchCodeHTML,
+    SearchTxtHTML,
+    SearchText,
+    SearchDescXML *<a href="../../../../text/template/index.html">template</a>.<a href="../../../../text/template/index.html#Template">Template</a>
+
+    <span class="comment">// TabWidth optionally specifies the tab width.</span>
+    TabWidth <a href="../../../../builtin/index.html#int">int</a>
+
+    ShowTimestamps <a href="../../../../builtin/index.html#bool">bool</a>
+    ShowPlayground <a href="../../../../builtin/index.html#bool">bool</a>
+    ShowExamples   <a href="../../../../builtin/index.html#bool">bool</a>
+    DeclLinks      <a href="../../../../builtin/index.html#bool">bool</a>
+
+    <span class="comment">// SrcMode outputs source code instead of documentation in command-line mode.</span>
+    SrcMode <a href="../../../../builtin/index.html#bool">bool</a>
+    <span class="comment">// HTMLMode outputs HTML instead of plain text in command-line mode.</span>
+    HTMLMode <a href="../../../../builtin/index.html#bool">bool</a>
+
+    <span class="comment">// NotesRx optionally specifies a regexp to match</span>
+    <span class="comment">// notes to render in the output.</span>
+    NotesRx *<a href="../../../../regexp/index.html">regexp</a>.<a href="../../../../regexp/index.html#Regexp">Regexp</a>
+
+    <span class="comment">// AdjustPageInfoMode optionally specifies a function to</span>
+    <span class="comment">// modify the PageInfoMode of a request. The default chosen</span>
+    <span class="comment">// value is provided.</span>
+    AdjustPageInfoMode func(req *<a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#Request">Request</a>, mode <a href="index.html#PageInfoMode">PageInfoMode</a>) <a href="index.html#PageInfoMode">PageInfoMode</a>
+
+    <span class="comment">// URLForSrc optionally specifies a function that takes a source file and</span>
+    <span class="comment">// returns a URL for it.</span>
+    <span class="comment">// The source file argument has the form /src/&lt;path&gt;/&lt;filename&gt;.</span>
+    URLForSrc func(src <a href="../../../../builtin/index.html#string">string</a>) <a href="../../../../builtin/index.html#string">string</a>
+
+    <span class="comment">// URLForSrcPos optionally specifies a function to create a URL given a</span>
+    <span class="comment">// source file, a line from the source file (1-based), and low &amp; high offset</span>
+    <span class="comment">// positions (0-based, bytes from beginning of file). Ideally, the returned</span>
+    <span class="comment">// URL will be for the specified line of the file, while the high &amp; low</span>
+    <span class="comment">// positions will be used to highlight a section of the file.</span>
+    <span class="comment">// The source file argument has the form /src/&lt;path&gt;/&lt;filename&gt;.</span>
+    URLForSrcPos func(src <a href="../../../../builtin/index.html#string">string</a>, line, low, high <a href="../../../../builtin/index.html#int">int</a>) <a href="../../../../builtin/index.html#string">string</a>
+
+    <span class="comment">// URLForSrcQuery optionally specifies a function to create a URL given a</span>
+    <span class="comment">// source file, a query string, and a line from the source file (1-based).</span>
+    <span class="comment">// The source file argument has the form /src/&lt;path&gt;/&lt;filename&gt;.</span>
+    <span class="comment">// The query argument will be escaped for the purposes of embedding in a URL</span>
+    <span class="comment">// query parameter.</span>
+    <span class="comment">// Ideally, the returned URL will be for the specified line of the file with</span>
+    <span class="comment">// the query string highlighted.</span>
+    URLForSrcQuery func(src, query <a href="../../../../builtin/index.html#string">string</a>, line <a href="../../../../builtin/index.html#int">int</a>) <a href="../../../../builtin/index.html#string">string</a>
+
+    <span class="comment">// SearchResults optionally specifies a list of functions returning an HTML</span>
+    <span class="comment">// body for displaying search results.</span>
+    SearchResults []<a href="index.html#SearchResultFunc">SearchResultFunc</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+Presentation generates output from a corpus.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewPresentation">func <a href="http://localhost:9090/src/golang.org/x/tools/godoc/pres.go?s=3096:3141#L90">NewPresentation</a></h3>
+				<pre>func NewPresentation(c *<a href="index.html#Corpus">Corpus</a>) *<a href="index.html#Presentation">Presentation</a></pre>
+				<p>
+NewPresentation returns a new Presentation from a corpus.
+It sets SearchResults to:
+[SearchResultDoc SearchResultCode SearchResultTxt].
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Presentation.CmdFSRoot">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/pres.go?s=4276:4317#L142">CmdFSRoot</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) CmdFSRoot() <a href="../../../../builtin/index.html#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Presentation.FileServer">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/pres.go?s=4025:4073#L130">FileServer</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) FileServer() <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#Handler">Handler</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Presentation.FuncMap">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/godoc.go?s=1126:1175#L33">FuncMap</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) FuncMap() <a href="../../../../text/template/index.html">template</a>.<a href="../../../../text/template/index.html#FuncMap">FuncMap</a></pre>
+				<p>
+FuncMap defines template functions used in godoc templates.
+</p>
+<p>
+Convention: template function names ending in &#34;_html&#34; or &#34;_url&#34; produce
+</p>
+<pre>HTML- or URL-escaped strings; all other function results may
+require explicit escaping in the template.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Presentation.GetCmdPageInfo">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/pres.go?s=4753:4844#L154">GetCmdPageInfo</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) GetCmdPageInfo(abspath, relpath <a href="../../../../builtin/index.html#string">string</a>, mode <a href="index.html#PageInfoMode">PageInfoMode</a>) *<a href="index.html#PageInfo">PageInfo</a></pre>
+				<p>
+TODO(bradfitz): move this to be a method on Corpus. Just moving code around for now,
+but this doesn&#39;t feel right.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Presentation.GetPageInfoMode">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/server.go?s=10245:10313#L333">GetPageInfoMode</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) GetPageInfoMode(r *<a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#Request">Request</a>) <a href="index.html#PageInfoMode">PageInfoMode</a></pre>
+				<p>
+GetPageInfoMode computes the PageInfoMode flags by analyzing the request
+URL form value &#34;m&#34;. It is value is a comma-separated list of mode names
+as defined by modeNames (e.g.: m=src,text).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Presentation.GetPkgPageInfo">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/pres.go?s=4471:4562#L148">GetPkgPageInfo</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) GetPkgPageInfo(abspath, relpath <a href="../../../../builtin/index.html#string">string</a>, mode <a href="index.html#PageInfoMode">PageInfoMode</a>) *<a href="index.html#PageInfo">PageInfo</a></pre>
+				<p>
+TODO(bradfitz): move this to be a method on Corpus. Just moving code around for now,
+but this doesn&#39;t feel right.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Presentation.HandleSearch">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/search.go?s=3158:3233#L88">HandleSearch</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) HandleSearch(w <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#ResponseWriter">ResponseWriter</a>, r *<a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#Request">Request</a>)</pre>
+				<p>
+HandleSearch obtains results for the requested search and returns a page
+to display them.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Presentation.NewSnippet">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/snippet.go?s=2763:2856#L97">NewSnippet</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) NewSnippet(fset *<a href="../../../../go/token/index.html">token</a>.<a href="../../../../go/token/index.html#FileSet">FileSet</a>, decl <a href="../../../../go/ast/index.html">ast</a>.<a href="../../../../go/ast/index.html#Decl">Decl</a>, id *<a href="../../../../go/ast/index.html">ast</a>.<a href="../../../../go/ast/index.html#Ident">Ident</a>) *<a href="index.html#Snippet">Snippet</a></pre>
+				<p>
+NewSnippet creates a text snippet from a declaration decl containing an
+identifier id. Parts of the declaration not containing the identifier
+may be removed for a more compact snippet.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Presentation.PkgFSRoot">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/pres.go?s=4201:4242#L138">PkgFSRoot</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) PkgFSRoot() <a href="../../../../builtin/index.html#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Presentation.SearchResultCode">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/search.go?s=2664:2731#L76">SearchResultCode</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) SearchResultCode(result <a href="index.html#SearchResult">SearchResult</a>) []<a href="../../../../builtin/index.html#byte">byte</a></pre>
+				<p>
+SearchResultCode optionally specifies a function returning an HTML body
+displaying search results matching source code.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Presentation.SearchResultDoc">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/search.go?s=2402:2468#L70">SearchResultDoc</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) SearchResultDoc(result <a href="index.html#SearchResult">SearchResult</a>) []<a href="../../../../builtin/index.html#byte">byte</a></pre>
+				<p>
+SearchResultDoc optionally specifies a function returning an HTML body
+displaying search results matching godoc documentation.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Presentation.SearchResultTxt">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/search.go?s=2926:2992#L82">SearchResultTxt</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) SearchResultTxt(result <a href="index.html#SearchResult">SearchResult</a>) []<a href="../../../../builtin/index.html#byte">byte</a></pre>
+				<p>
+SearchResultTxt optionally specifies a function returning an HTML body
+displaying search results of textual matches.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Presentation.ServeError">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/page.go?s=792:892#L29">ServeError</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) ServeError(w <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#ResponseWriter">ResponseWriter</a>, r *<a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#Request">Request</a>, relpath <a href="../../../../builtin/index.html#string">string</a>, err <a href="../../../../builtin/index.html#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Presentation.ServeFile">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/server.go?s=19846:19918#L669">ServeFile</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) ServeFile(w <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#ResponseWriter">ResponseWriter</a>, r *<a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#Request">Request</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Presentation.ServeHTMLDoc">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/server.go?s=18441:18541#L613">ServeHTMLDoc</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) ServeHTMLDoc(w <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#ResponseWriter">ResponseWriter</a>, r *<a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#Request">Request</a>, abspath, relpath <a href="../../../../builtin/index.html#string">string</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Presentation.ServeHTTP">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/pres.go?s=4100:4172#L134">ServeHTTP</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) ServeHTTP(w <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#ResponseWriter">ResponseWriter</a>, r *<a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#Request">Request</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Presentation.ServePage">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/page.go?s=499:565#L19">ServePage</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) ServePage(w <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#ResponseWriter">ResponseWriter</a>, page <a href="index.html#Page">Page</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Presentation.ServeText">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/server.go?s=21457:21525#L736">ServeText</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) ServeText(w <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#ResponseWriter">ResponseWriter</a>, text []<a href="../../../../builtin/index.html#byte">byte</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Presentation.TemplateFuncs">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/godoc.go?s=1236:1291#L38">TemplateFuncs</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) TemplateFuncs() <a href="../../../../text/template/index.html">template</a>.<a href="../../../../text/template/index.html#FuncMap">FuncMap</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Presentation.WriteNode">func (*Presentation) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/godoc.go?s=17856:17937#L623">WriteNode</a></h3>
+				<pre>func (p *<a href="index.html#Presentation">Presentation</a>) WriteNode(w <a href="../../../../io/index.html">io</a>.<a href="../../../../io/index.html#Writer">Writer</a>, fset *<a href="../../../../go/token/index.html">token</a>.<a href="../../../../go/token/index.html#FileSet">FileSet</a>, x interface{})</pre>
+				<p>
+WriteNode writes x to w.
+TODO(bgarcia) Is this method needed? It&#39;s just a wrapper for p.writeNode.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="RunList">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=2840:2866#L79">RunList</a></h2>
+			<pre>type RunList []interface{}</pre>
+			<p>
+A RunList is a list of entries that can be sorted according to some
+criteria. A RunList may be compressed by grouping &#34;runs&#34; of entries
+which are equal (according to the sort critera) into a new RunList of
+runs. For instance, a RunList containing pairs (x, y) may be compressed
+into a RunList containing pair runs (x, {y}) where each run consists of
+a list of y&#39;s with the same x.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SearchResult">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/search.go?s=236:740#L5">SearchResult</a></h2>
+			<pre>type SearchResult struct {
+    Query <a href="../../../../builtin/index.html#string">string</a>
+    Alert <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// error or warning message</span>
+
+    <span class="comment">// identifier matches</span>
+    Pak <a href="index.html#HitList">HitList</a>       <span class="comment">// packages matching Query</span>
+    Hit *<a href="index.html#LookupResult">LookupResult</a> <span class="comment">// identifier matches of Query</span>
+    Alt *<a href="index.html#AltWords">AltWords</a>     <span class="comment">// alternative identifiers to look for</span>
+
+    <span class="comment">// textual matches</span>
+    Found    <a href="../../../../builtin/index.html#int">int</a>         <span class="comment">// number of textual occurrences found</span>
+    Textual  []<a href="index.html#FileLines">FileLines</a> <span class="comment">// textual matches of Query</span>
+    Complete <a href="../../../../builtin/index.html#bool">bool</a>        <span class="comment">// true if all textual occurrences of Query are reported</span>
+    Idents   map[<a href="index.html#SpotKind">SpotKind</a>][]<a href="index.html#Ident">Ident</a>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SearchResultFunc">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/pres.go?s=355:426#L7">SearchResultFunc</a></h2>
+			<pre>type SearchResultFunc func(p *<a href="index.html#Presentation">Presentation</a>, result <a href="index.html#SearchResult">SearchResult</a>) []<a href="../../../../builtin/index.html#byte">byte</a></pre>
+			<p>
+SearchResultFunc functions return an HTML body for displaying search results.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Segment">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/format.go?s=757:796#L19">Segment</a></h2>
+			<pre>type Segment struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+A Segment describes a text segment [start, end).
+The zero value of a Segment is a ready-to-use empty segment.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SegmentWriter">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/format.go?s=1722:1787#L43">SegmentWriter</a></h2>
+			<pre>type SegmentWriter func(w <a href="../../../../io/index.html">io</a>.<a href="../../../../io/index.html#Writer">Writer</a>, text []<a href="../../../../builtin/index.html#byte">byte</a>, selections <a href="../../../../builtin/index.html#int">int</a>)</pre>
+			<p>
+A SegmentWriter formats a text according to selections and writes it to w.
+The selections parameter is a bit set indicating which selections provided
+to FormatSelections overlap with the text segment: If the n&#39;th bit is set
+in selections, the n&#39;th selection provided to FormatSelections is overlapping
+with the text.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Selection">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/format.go?s=1140:1169#L30">Selection</a></h2>
+			<pre>type Selection func() <a href="index.html#Segment">Segment</a></pre>
+			<p>
+A Selection is an &#34;iterator&#34; function returning a text segment.
+Repeated calls to a selection return consecutive, non-overlapping,
+non-empty segments, followed by an infinite sequence of empty
+segments. The first empty segment marks the end of the selection.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="RangeSelection">func <a href="http://localhost:9090/src/golang.org/x/tools/godoc/format.go?s=8179:8220#L280">RangeSelection</a></h3>
+				<pre>func RangeSelection(str <a href="../../../../builtin/index.html#string">string</a>) <a href="index.html#Selection">Selection</a></pre>
+				<p>
+RangeSelection computes the Selection for a text range described
+by the argument str; the range description must match the selRx
+regular expression.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="Snippet">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/snippet.go?s=375:437#L9">Snippet</a></h2>
+			<pre>type Snippet struct {
+    Line <a href="../../../../builtin/index.html#int">int</a>
+    Text <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// HTML-escaped</span>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewSnippet">func <a href="http://localhost:9090/src/golang.org/x/tools/godoc/snippet.go?s=2268:2343#L86">NewSnippet</a></h3>
+				<pre>func NewSnippet(fset *<a href="../../../../go/token/index.html">token</a>.<a href="../../../../go/token/index.html#FileSet">FileSet</a>, decl <a href="../../../../go/ast/index.html">ast</a>.<a href="../../../../go/ast/index.html#Decl">Decl</a>, id *<a href="../../../../go/ast/index.html">ast</a>.<a href="../../../../go/ast/index.html#Ident">Ident</a>) *<a href="index.html#Snippet">Snippet</a></pre>
+				<p>
+NewSnippet creates a text snippet from a declaration decl containing an
+identifier id. Parts of the declaration not containing the identifier
+may be removed for a more compact snippet.
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="Spot">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=6190:6237#L194">Spot</a></h2>
+			<pre>type Spot struct {
+    File *<a href="index.html#File">File</a>
+    Info <a href="index.html#SpotInfo">SpotInfo</a>
+}</pre>
+			<p>
+A Spot describes a single occurrence of a word.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SpotInfo">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/spot.go?s=587:607#L9">SpotInfo</a></h2>
+			<pre>type SpotInfo <a href="../../../../builtin/index.html#uint32">uint32</a></pre>
+			<p>
+A SpotInfo value describes a particular identifier spot in a given file;
+It encodes three values: the SpotKind (declaration or use), a line or
+snippet index &#34;lori&#34;, and whether it&#39;s a line or index.
+</p>
+<p>
+The following encoding is used:
+</p>
+<pre>bits    32   4    1       0
+value    [lori|kind|isIndex]
+</pre>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="SpotInfo.IsIndex">func (SpotInfo) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/spot.go?s=1886:1918#L73">IsIndex</a></h3>
+				<pre>func (x <a href="index.html#SpotInfo">SpotInfo</a>) IsIndex() <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SpotInfo.Kind">func (SpotInfo) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/spot.go?s=1763:1796#L71">Kind</a></h3>
+				<pre>func (x <a href="index.html#SpotInfo">SpotInfo</a>) Kind() <a href="index.html#SpotKind">SpotKind</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SpotInfo.Lori">func (SpotInfo) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/spot.go?s=1829:1857#L72">Lori</a></h3>
+				<pre>func (x <a href="index.html#SpotInfo">SpotInfo</a>) Lori() <a href="../../../../builtin/index.html#int">int</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="SpotKind">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/spot.go?s=708:728#L13">SpotKind</a></h2>
+			<pre>type SpotKind <a href="../../../../builtin/index.html#uint32">uint32</a></pre>
+			<p>
+SpotKind describes whether an identifier is declared (and what kind of
+declaration) or used.
+</p>
+
+
+			
+				<pre>const (
+    <span id="PackageClause">PackageClause</span> <a href="index.html#SpotKind">SpotKind</a> = <a href="../../../../builtin/index.html#iota">iota</a>
+    <span id="ImportDecl">ImportDecl</span>
+    <span id="ConstDecl">ConstDecl</span>
+    <span id="TypeDecl">TypeDecl</span>
+    <span id="VarDecl">VarDecl</span>
+    <span id="FuncDecl">FuncDecl</span>
+    <span id="MethodDecl">MethodDecl</span>
+    <span id="Use">Use</span>
+)</pre>
+				
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="SpotKind.Name">func (SpotKind) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/spot.go?s=1046:1077#L42">Name</a></h3>
+				<pre>func (x <a href="index.html#SpotKind">SpotKind</a>) Name() <a href="../../../../builtin/index.html#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Statistics">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/index.go?s=12003:12258#L416">Statistics</a></h2>
+			<pre>type Statistics struct {
+    Bytes <a href="../../../../builtin/index.html#int">int</a> <span class="comment">// total size of indexed source files</span>
+    Files <a href="../../../../builtin/index.html#int">int</a> <span class="comment">// number of indexed source files</span>
+    Lines <a href="../../../../builtin/index.html#int">int</a> <span class="comment">// number of lines (all files)</span>
+    Words <a href="../../../../builtin/index.html#int">int</a> <span class="comment">// number of different identifiers</span>
+    Spots <a href="../../../../builtin/index.html#int">int</a> <span class="comment">// number of identifier occurrences</span>
+}</pre>
+			<p>
+Statistics provides statistics information for an index.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+	
+	
+		<h2 id="pkg-subdirectories">Subdirectories</h2>
+	
+	
+
+
+	<div class="pkg-dir">
+		<table>
+			<tr>
+				<th class="pkg-name">Name</th>
+				<th class="pkg-synopsis">Synopsis</th>
+			</tr>
+
+			
+			<tr>
+				<td colspan="2"><a href="../index.html">..</a></td>
+			</tr>
+			
+
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="analysis/index.html">analysis</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package analysis performs type and pointer analysis and generates mark-up for the Go source view.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="dl/index.html">dl</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package dl implements a simple downloads frontend server.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="proxy/index.html">proxy</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package proxy proxies requests to the sandbox compiler service and the playground share handler.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="redirect/index.html">redirect</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package redirect provides hooks to register HTTP handlers that redirect old godoc paths to their new equivalents and assist in accessing the issue tracker, wiki, code review system, etc.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="short/index.html">short</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package short implements a simple URL shortener, serving an administrative interface at /s and shortened urls from /s/key.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="static/index.html">static</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package static exports a map of static file content that supports the godoc user interface.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="util/index.html">util</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package util contains utility types and functions for godoc.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="vfs/index.html">vfs</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package vfs defines types for abstract file system access and provides an implementation accessing the file system of the underlying OS.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 20px;">
+							<a href="vfs/gatefs/index.html">gatefs</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package gatefs provides an implementation of the FileSystem interface that wraps another FileSystem and limits its concurrency.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 20px;">
+							<a href="vfs/httpfs/index.html">httpfs</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package httpfs implements http.FileSystem using a godoc vfs.FileSystem.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 20px;">
+							<a href="vfs/mapfs/index.html">mapfs</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package mapfs file provides an implementation of the FileSystem interface based on the contents of a map[string]string.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 20px;">
+							<a href="vfs/zipfs/index.html">zipfs</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package zipfs file provides an implementation of the FileSystem interface based on the contents of a .zip file.
+						</td>
+					</tr>
+				
+			
+		</table>
+	</div>
+
+
+	
+
+
+
+<div id="footer">
+Build version go1.6.3.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:9090/doc/tos.html">Terms of Service</a> | 
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.js"></script>
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.treeview.js"></script>
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="../../../../../lib/godoc/godocs.js"></script>
+
+</body>
+</html>
+

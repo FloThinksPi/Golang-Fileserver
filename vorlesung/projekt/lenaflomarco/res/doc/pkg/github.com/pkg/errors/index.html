@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>errors - The Go Programming Language</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../lib/godoc/style.css">
+
+<link rel="stylesheet" href="../../../../lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:9090/">The Go Programming Language</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:9090/">Go</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:9090/search">
+<div id="menu">
+<a href="http://localhost:9090/doc/">Documents</a>
+<a href="../../../index.html">Packages</a>
+<a href="http://localhost:9090/project/">The Project</a>
+<a href="http://localhost:9090/help/">Help</a>
+<a href="http://localhost:9090/blog/">Blog</a>
+
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>Package errors</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type='text/javascript'>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/pkg/errors"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+				<dd><a href="index.html#pkg-examples" class="examplesLink">Examples</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Package errors provides simple error handling primitives.
+</p>
+<p>
+The traditional error handling idiom in Go is roughly akin to
+</p>
+<pre>if err != nil {
+        return err
+}
+</pre>
+<p>
+which applied recursively up the call stack results in error reports
+without context or debugging information. The errors package allows
+programmers to add context to the failure path in their code in a way
+that does not destroy the original value of the error.
+</p>
+<h3 id="hdr-Adding_context_to_an_error">Adding context to an error</h3>
+<p>
+The errors.Wrap function returns a new error that adds context to the
+original error by recording a stack trace at the point Wrap is called,
+and the supplied message. For example
+</p>
+<pre>_, err := ioutil.ReadAll(r)
+if err != nil {
+        return errors.Wrap(err, &#34;read failed&#34;)
+}
+</pre>
+<p>
+If additional control is required the errors.WithStack and errors.WithMessage
+functions destructure errors.Wrap into its component operations of annotating
+an error with a stack trace and an a message, respectively.
+</p>
+<h3 id="hdr-Retrieving_the_cause_of_an_error">Retrieving the cause of an error</h3>
+<p>
+Using errors.Wrap constructs a stack of errors, adding context to the
+preceding error. Depending on the nature of the error it may be necessary
+to reverse the operation of errors.Wrap to retrieve the original error
+for inspection. Any error value which implements this interface
+</p>
+<pre>type causer interface {
+        Cause() error
+}
+</pre>
+<p>
+can be inspected by errors.Cause. errors.Cause will recursively retrieve
+the topmost error which does not implement causer, which is assumed to be
+the original cause. For example:
+</p>
+<pre>switch err := errors.Cause(err).(type) {
+case *MyError:
+        // handle specifically
+default:
+        // unknown error
+}
+</pre>
+<p>
+causer interface is not exported by this package, but is considered a part
+of stable public API.
+</p>
+<h3 id="hdr-Formatted_printing_of_errors">Formatted printing of errors</h3>
+<p>
+All error values returned from this package implement fmt.Formatter and can
+be formatted by the fmt package. The following verbs are supported
+</p>
+<pre>%s    print the error. If the error has a Cause it will be
+      printed recursively
+%v    see %s
+%+v   extended format. Each Frame of the error&#39;s StackTrace will
+      be printed in detail.
+</pre>
+<h3 id="hdr-Retrieving_the_stack_trace_of_an_error_or_wrapper">Retrieving the stack trace of an error or wrapper</h3>
+<p>
+New, Errorf, Wrap, and Wrapf record a stack trace at the point they are
+invoked. This information can be retrieved with the following interface.
+</p>
+<pre>type stackTracer interface {
+        StackTrace() errors.StackTrace
+}
+</pre>
+<p>
+Where errors.StackTrace is defined as
+</p>
+<pre>type StackTrace []Frame
+</pre>
+<p>
+The Frame type represents a call site in the stack trace. Frame supports
+the fmt.Formatter interface that can be used for printing information about
+the stack trace of this error. For example:
+</p>
+<pre>if err, ok := err.(stackTracer); ok {
+        for _, f := range err.StackTrace() {
+                fmt.Printf(&#34;%+s:%d&#34;, f)
+        }
+}
+</pre>
+<p>
+stackTracer interface is not exported by this package, but is considered a part
+of stable public API.
+</p>
+<p>
+See the documentation for Frame.Format for more details.
+</p>
+
+			</div>
+		</div>
+		<div id="example__stackTrace" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example (StackTrace)</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example (StackTrace)</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">
+type stackTracer interface {
+    StackTrace() errors.StackTrace
+}
+
+err, ok := errors.Cause(fn()).(stackTracer)
+if !ok {
+    panic(&#34;oops, err does not implement stackTracer&#34;)
+}
+
+st := err.StackTrace()
+fmt.Printf(&#34;%+v&#34;, st[0:2]) <span class="comment">// top two frames</span>
+
+<span class="comment">// Example output:</span>
+<span class="comment">// github.com/pkg/errors_test.fn</span>
+<span class="comment">//	/home/dfc/src/github.com/pkg/errors/example_test.go:47</span>
+<span class="comment">// github.com/pkg/errors_test.Example_stackTrace</span>
+<span class="comment">//	/home/dfc/src/github.com/pkg/errors/example_test.go:127</span>
+</pre>
+			
+		
+	</div>
+</div>
+
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="index.html#Cause">func Cause(err error) error</a></dd>
+			
+				
+				<dd><a href="index.html#Errorf">func Errorf(format string, args ...interface{}) error</a></dd>
+			
+				
+				<dd><a href="index.html#New">func New(message string) error</a></dd>
+			
+				
+				<dd><a href="index.html#WithMessage">func WithMessage(err error, message string) error</a></dd>
+			
+				
+				<dd><a href="index.html#WithStack">func WithStack(err error) error</a></dd>
+			
+				
+				<dd><a href="index.html#Wrap">func Wrap(err error, message string) error</a></dd>
+			
+				
+				<dd><a href="index.html#Wrapf">func Wrapf(err error, format string, args ...interface{}) error</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Frame">type Frame</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Frame.Format">func (f Frame) Format(s fmt.State, verb rune)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#StackTrace">type StackTrace</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#StackTrace.Format">func (st StackTrace) Format(s fmt.State, verb rune)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+		<div id="pkg-examples">
+			<h4>Examples</h4>
+			<dl>
+			
+			<dd><a class="exampleLink" href="index.html#example_Cause">Cause</a></dd>
+			
+			<dd><a class="exampleLink" href="index.html#example_Cause_printf">Cause (Printf)</a></dd>
+			
+			<dd><a class="exampleLink" href="index.html#example_Errorf_extended">Errorf (Extended)</a></dd>
+			
+			<dd><a class="exampleLink" href="index.html#example_New">New</a></dd>
+			
+			<dd><a class="exampleLink" href="index.html#example_New_printf">New (Printf)</a></dd>
+			
+			<dd><a class="exampleLink" href="index.html#example_WithMessage">WithMessage</a></dd>
+			
+			<dd><a class="exampleLink" href="index.html#example_WithStack">WithStack</a></dd>
+			
+			<dd><a class="exampleLink" href="index.html#example_WithStack_printf">WithStack (Printf)</a></dd>
+			
+			<dd><a class="exampleLink" href="index.html#example_Wrap">Wrap</a></dd>
+			
+			<dd><a class="exampleLink" href="index.html#example_Wrap_extended">Wrap (Extended)</a></dd>
+			
+			<dd><a class="exampleLink" href="index.html#example_Wrapf">Wrapf</a></dd>
+			
+			<dd><a class="exampleLink" href="index.html#example__stackTrace">Package (StackTrace)</a></dd>
+			
+			</dl>
+		</div>
+		
+
+		
+			<h4>Package files</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:9090/src/github.com/pkg/errors/errors.go">errors.go</a>
+			
+				<a href="http://localhost:9090/src/github.com/pkg/errors/stack.go">stack.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+		
+		
+			
+			
+			<h2 id="Cause">func <a href="http://localhost:9090/src/github.com/pkg/errors/errors.go?s=6654:6681#L246">Cause</a></h2>
+			<pre>func Cause(err <a href="../../../builtin/index.html#error">error</a>) <a href="../../../builtin/index.html#error">error</a></pre>
+			<p>
+Cause returns the underlying cause of the error, if possible.
+An error value has a cause if it implements the following
+interface:
+</p>
+<pre>type causer interface {
+       Cause() error
+}
+</pre>
+<p>
+If the error does not implement Cause, the original error will
+be returned. If the error is nil, nil will be returned without further
+investigation.
+</p>
+
+			<div id="example_Cause" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">err := fn()
+fmt.Println(err)
+fmt.Println(errors.Cause(err))
+
+<span class="comment"></pre>
+			
+			<p>Output:</p>
+			<pre class="output">outer: middle: inner: error
+error
+</pre>
+			
+		
+	</div>
+</div>
+<div id="example_Cause_printf" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example (Printf)</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example (Printf)</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">err := errors.Wrap(func() error {
+    return func() error {
+        return errors.Errorf(&#34;hello %s&#34;, fmt.Sprintf(&#34;world&#34;))
+    }()
+}(), &#34;failed&#34;)
+
+fmt.Printf(&#34;%v&#34;, err)
+
+<span class="comment"></pre>
+			
+			<p>Output:</p>
+			<pre class="output">failed: hello world
+</pre>
+			
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="Errorf">func <a href="http://localhost:9090/src/github.com/pkg/errors/errors.go?s=3695:3748#L101">Errorf</a></h2>
+			<pre>func Errorf(format <a href="../../../builtin/index.html#string">string</a>, args ...interface{}) <a href="../../../builtin/index.html#error">error</a></pre>
+			<p>
+Errorf formats according to a format specifier and returns the string
+as a value that satisfies error.
+Errorf also records the stack trace at the point it was called.
+</p>
+
+			<div id="example_Errorf_extended" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example (Extended)</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example (Extended)</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">
+err := errors.Errorf(&#34;whoops: %s&#34;, &#34;foo&#34;)
+fmt.Printf(&#34;%+v&#34;, err)
+
+<span class="comment">// Example output:</span>
+<span class="comment">// whoops: foo</span>
+<span class="comment">// github.com/pkg/errors_test.ExampleErrorf</span>
+<span class="comment">//         /home/dfc/src/github.com/pkg/errors/example_test.go:101</span>
+<span class="comment">// testing.runExample</span>
+<span class="comment">//         /home/dfc/go/src/testing/example.go:114</span>
+<span class="comment">// testing.RunExamples</span>
+<span class="comment">//         /home/dfc/go/src/testing/example.go:38</span>
+<span class="comment">// testing.(*M).Run</span>
+<span class="comment">//         /home/dfc/go/src/testing/testing.go:744</span>
+<span class="comment">// main.main</span>
+<span class="comment">//         /github.com/pkg/errors/_test/_testmain.go:102</span>
+<span class="comment">// runtime.main</span>
+<span class="comment">//         /home/dfc/go/src/runtime/proc.go:183</span>
+<span class="comment">// runtime.goexit</span>
+<span class="comment">//         /home/dfc/go/src/runtime/asm_amd64.s:2059</span>
+</pre>
+			
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="New">func <a href="http://localhost:9090/src/github.com/pkg/errors/errors.go?s=3420:3450#L91">New</a></h2>
+			<pre>func New(message <a href="../../../builtin/index.html#string">string</a>) <a href="../../../builtin/index.html#error">error</a></pre>
+			<p>
+New returns an error with the supplied message.
+New also records the stack trace at the point it was called.
+</p>
+
+			<div id="example_New" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">err := errors.New(&#34;whoops&#34;)
+fmt.Println(err)
+
+<span class="comment"></pre>
+			
+			<p>Output:</p>
+			<pre class="output">whoops
+</pre>
+			
+		
+	</div>
+</div>
+<div id="example_New_printf" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example (Printf)</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example (Printf)</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">
+err := errors.New(&#34;whoops&#34;)
+fmt.Printf(&#34;%+v&#34;, err)
+
+<span class="comment">// Example output:</span>
+<span class="comment">// whoops</span>
+<span class="comment">// github.com/pkg/errors_test.ExampleNew_printf</span>
+<span class="comment">//         /home/dfc/src/github.com/pkg/errors/example_test.go:17</span>
+<span class="comment">// testing.runExample</span>
+<span class="comment">//         /home/dfc/go/src/testing/example.go:114</span>
+<span class="comment">// testing.RunExamples</span>
+<span class="comment">//         /home/dfc/go/src/testing/example.go:38</span>
+<span class="comment">// testing.(*M).Run</span>
+<span class="comment">//         /home/dfc/go/src/testing/testing.go:744</span>
+<span class="comment">// main.main</span>
+<span class="comment">//         /github.com/pkg/errors/_test/_testmain.go:106</span>
+<span class="comment">// runtime.main</span>
+<span class="comment">//         /home/dfc/go/src/runtime/proc.go:183</span>
+<span class="comment">// runtime.goexit</span>
+<span class="comment">//         /home/dfc/go/src/runtime/asm_amd64.s:2059</span>
+</pre>
+			
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="WithMessage">func <a href="http://localhost:9090/src/github.com/pkg/errors/errors.go?s=5698:5747#L203">WithMessage</a></h2>
+			<pre>func WithMessage(err <a href="../../../builtin/index.html#error">error</a>, message <a href="../../../builtin/index.html#string">string</a>) <a href="../../../builtin/index.html#error">error</a></pre>
+			<p>
+WithMessage annotates err with a new message.
+If err is nil, WithMessage returns nil.
+</p>
+
+			<div id="example_WithMessage" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">cause := errors.New(&#34;whoops&#34;)
+err := errors.WithMessage(cause, &#34;oh noes&#34;)
+fmt.Println(err)
+
+<span class="comment"></pre>
+			
+			<p>Output:</p>
+			<pre class="output">oh noes: whoops
+</pre>
+			
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="WithStack">func <a href="http://localhost:9090/src/github.com/pkg/errors/errors.go?s=4406:4437#L134">WithStack</a></h2>
+			<pre>func WithStack(err <a href="../../../builtin/index.html#error">error</a>) <a href="../../../builtin/index.html#error">error</a></pre>
+			<p>
+WithStack annotates err with a stack trace at the point WithStack was called.
+If err is nil, WithStack returns nil.
+</p>
+
+			<div id="example_WithStack" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">cause := errors.New(&#34;whoops&#34;)
+err := errors.WithStack(cause)
+fmt.Println(err)
+
+<span class="comment"></pre>
+			
+			<p>Output:</p>
+			<pre class="output">whoops
+</pre>
+			
+		
+	</div>
+</div>
+<div id="example_WithStack_printf" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example (Printf)</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example (Printf)</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">
+cause := errors.New(&#34;whoops&#34;)
+err := errors.WithStack(cause)
+fmt.Printf(&#34;%+v&#34;, err)
+
+<span class="comment">// Example Output:</span>
+<span class="comment">// whoops</span>
+<span class="comment">// github.com/pkg/errors_test.ExampleWithStack_printf</span>
+<span class="comment">//         /home/fabstu/go/src/github.com/pkg/errors/example_test.go:55</span>
+<span class="comment">// testing.runExample</span>
+<span class="comment">//         /usr/lib/go/src/testing/example.go:114</span>
+<span class="comment">// testing.RunExamples</span>
+<span class="comment">//         /usr/lib/go/src/testing/example.go:38</span>
+<span class="comment">// testing.(*M).Run</span>
+<span class="comment">//         /usr/lib/go/src/testing/testing.go:744</span>
+<span class="comment">// main.main</span>
+<span class="comment">//         github.com/pkg/errors/_test/_testmain.go:106</span>
+<span class="comment">// runtime.main</span>
+<span class="comment">//         /usr/lib/go/src/runtime/proc.go:183</span>
+<span class="comment">// runtime.goexit</span>
+<span class="comment">//         /usr/lib/go/src/runtime/asm_amd64.s:2086</span>
+<span class="comment">// github.com/pkg/errors_test.ExampleWithStack_printf</span>
+<span class="comment">//         /home/fabstu/go/src/github.com/pkg/errors/example_test.go:56</span>
+<span class="comment">// testing.runExample</span>
+<span class="comment">//         /usr/lib/go/src/testing/example.go:114</span>
+<span class="comment">// testing.RunExamples</span>
+<span class="comment">//         /usr/lib/go/src/testing/example.go:38</span>
+<span class="comment">// testing.(*M).Run</span>
+<span class="comment">//         /usr/lib/go/src/testing/testing.go:744</span>
+<span class="comment">// main.main</span>
+<span class="comment">//         github.com/pkg/errors/_test/_testmain.go:106</span>
+<span class="comment">// runtime.main</span>
+<span class="comment">//         /usr/lib/go/src/runtime/proc.go:183</span>
+<span class="comment">// runtime.goexit</span>
+<span class="comment">//         /usr/lib/go/src/runtime/asm_amd64.s:2086</span>
+</pre>
+			
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="Wrap">func <a href="http://localhost:9090/src/github.com/pkg/errors/errors.go?s=5050:5092#L170">Wrap</a></h2>
+			<pre>func Wrap(err <a href="../../../builtin/index.html#error">error</a>, message <a href="../../../builtin/index.html#string">string</a>) <a href="../../../builtin/index.html#error">error</a></pre>
+			<p>
+Wrap returns an error annotating err with a stack trace
+at the point Wrap is called, and the supplied message.
+If err is nil, Wrap returns nil.
+</p>
+
+			<div id="example_Wrap" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">cause := errors.New(&#34;whoops&#34;)
+err := errors.Wrap(cause, &#34;oh noes&#34;)
+fmt.Println(err)
+
+<span class="comment"></pre>
+			
+			<p>Output:</p>
+			<pre class="output">oh noes: whoops
+</pre>
+			
+		
+	</div>
+</div>
+<div id="example_Wrap_extended" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example (Extended)</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example (Extended)</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">
+err := fn()
+fmt.Printf(&#34;%+v\n&#34;, err)
+
+<span class="comment">// Example output:</span>
+<span class="comment">// error</span>
+<span class="comment">// github.com/pkg/errors_test.fn</span>
+<span class="comment">//         /home/dfc/src/github.com/pkg/errors/example_test.go:47</span>
+<span class="comment">// github.com/pkg/errors_test.ExampleCause_printf</span>
+<span class="comment">//         /home/dfc/src/github.com/pkg/errors/example_test.go:63</span>
+<span class="comment">// testing.runExample</span>
+<span class="comment">//         /home/dfc/go/src/testing/example.go:114</span>
+<span class="comment">// testing.RunExamples</span>
+<span class="comment">//         /home/dfc/go/src/testing/example.go:38</span>
+<span class="comment">// testing.(*M).Run</span>
+<span class="comment">//         /home/dfc/go/src/testing/testing.go:744</span>
+<span class="comment">// main.main</span>
+<span class="comment">//         /github.com/pkg/errors/_test/_testmain.go:104</span>
+<span class="comment">// runtime.main</span>
+<span class="comment">//         /home/dfc/go/src/runtime/proc.go:183</span>
+<span class="comment">// runtime.goexit</span>
+<span class="comment">//         /home/dfc/go/src/runtime/asm_amd64.s:2059</span>
+<span class="comment">// github.com/pkg/errors_test.fn</span>
+<span class="comment">// 	  /home/dfc/src/github.com/pkg/errors/example_test.go:48: inner</span>
+<span class="comment">// github.com/pkg/errors_test.fn</span>
+<span class="comment">//        /home/dfc/src/github.com/pkg/errors/example_test.go:49: middle</span>
+<span class="comment">// github.com/pkg/errors_test.fn</span>
+<span class="comment">//      /home/dfc/src/github.com/pkg/errors/example_test.go:50: outer</span>
+</pre>
+			
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="Wrapf">func <a href="http://localhost:9090/src/github.com/pkg/errors/errors.go?s=5384:5447#L187">Wrapf</a></h2>
+			<pre>func Wrapf(err <a href="../../../builtin/index.html#error">error</a>, format <a href="../../../builtin/index.html#string">string</a>, args ...interface{}) <a href="../../../builtin/index.html#error">error</a></pre>
+			<p>
+Wrapf returns an error annotating err with a stack trace
+at the point Wrapf is call, and the format specifier.
+If err is nil, Wrapf returns nil.
+</p>
+
+			<div id="example_Wrapf" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">cause := errors.New(&#34;whoops&#34;)
+err := errors.Wrapf(cause, &#34;oh noes #%d&#34;, 2)
+fmt.Println(err)
+
+<span class="comment"></pre>
+			
+			<p>Output:</p>
+			<pre class="output">oh noes #2: whoops
+</pre>
+			
+		
+	</div>
+</div>
+
+			
+
+		
+		
+			
+			
+			<h2 id="Frame">type <a href="http://localhost:9090/src/github.com/pkg/errors/stack.go?s=131:149#L2">Frame</a></h2>
+			<pre>type Frame <a href="../../../builtin/index.html#uintptr">uintptr</a></pre>
+			<p>
+Frame represents a program counter inside a stack frame.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Frame.Format">func (Frame) <a href="http://localhost:9090/src/github.com/pkg/errors/stack.go?s=1133:1178#L41">Format</a></h3>
+				<pre>func (f <a href="index.html#Frame">Frame</a>) Format(s <a href="../../../fmt/index.html">fmt</a>.<a href="../../../fmt/index.html#State">State</a>, verb <a href="../../../builtin/index.html#rune">rune</a>)</pre>
+				<p>
+Format formats the frame according to the fmt.Formatter interface.
+</p>
+<pre>%s    source file
+%d    source line
+%n    function name
+%v    equivalent to %s:%d
+</pre>
+<p>
+Format accepts flags that alter the printing of some verbs, as follows:
+</p>
+<pre>%+s   path of source file relative to the compile time GOPATH
+%+v   equivalent to %+s:%d
+</pre>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="StackTrace">type <a href="http://localhost:9090/src/github.com/pkg/errors/stack.go?s=1783:1806#L70">StackTrace</a></h2>
+			<pre>type StackTrace []<a href="index.html#Frame">Frame</a></pre>
+			<p>
+StackTrace is stack of Frames from innermost (newest) to outermost (oldest).
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="StackTrace.Format">func (StackTrace) <a href="http://localhost:9090/src/github.com/pkg/errors/stack.go?s=1808:1859#L72">Format</a></h3>
+				<pre>func (st <a href="index.html#StackTrace">StackTrace</a>) Format(s <a href="../../../fmt/index.html">fmt</a>.<a href="../../../fmt/index.html#State">State</a>, verb <a href="../../../builtin/index.html#rune">rune</a>)</pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.6.3.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:9090/doc/tos.html">Terms of Service</a> | 
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="../../../../lib/godoc/jquery.js"></script>
+<script type="text/javascript" src="../../../../lib/godoc/jquery.treeview.js"></script>
+<script type="text/javascript" src="../../../../lib/godoc/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="../../../../lib/godoc/godocs.js"></script>
+
+</body>
+</html>
+

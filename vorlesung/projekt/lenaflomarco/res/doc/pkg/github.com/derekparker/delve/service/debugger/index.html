@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>debugger - The Go Programming Language</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../lib/godoc/style.css">
+
+<link rel="stylesheet" href="../../../../../../lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:9090/">The Go Programming Language</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:9090/">Go</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:9090/search">
+<div id="menu">
+<a href="http://localhost:9090/doc/">Documents</a>
+<a href="../../../../../index.html">Packages</a>
+<a href="http://localhost:9090/project/">The Project</a>
+<a href="http://localhost:9090/help/">Help</a>
+<a href="http://localhost:9090/blog/">Blog</a>
+
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>Package debugger</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type='text/javascript'>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/derekparker/delve/service/debugger"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#AddrLocationSpec">type AddrLocationSpec</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AddrLocationSpec.Find">func (loc *AddrLocationSpec) Find(d *Debugger, scope *proc.EvalScope, locStr string) ([]api.Location, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#AmbiguousLocationError">type AmbiguousLocationError</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AmbiguousLocationError.Error">func (ale AmbiguousLocationError) Error() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Config">type Config</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Debugger">type Debugger</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#New">func New(config *Config) (*Debugger, error)</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.AmendBreakpoint">func (d *Debugger) AmendBreakpoint(amend *api.Breakpoint) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.Breakpoints">func (d *Debugger) Breakpoints() []*api.Breakpoint</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.CancelNext">func (d *Debugger) CancelNext() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.ClearBreakpoint">func (d *Debugger) ClearBreakpoint(requestedBp *api.Breakpoint) (*api.Breakpoint, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.Command">func (d *Debugger) Command(command *api.DebuggerCommand) (*api.DebuggerState, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.CreateBreakpoint">func (d *Debugger) CreateBreakpoint(requestedBp *api.Breakpoint) (*api.Breakpoint, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.Detach">func (d *Debugger) Detach(kill bool) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.Disassemble">func (d *Debugger) Disassemble(scope api.EvalScope, startPC, endPC uint64, flavour api.AssemblyFlavour) (api.AsmInstructions, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.EvalVariableInScope">func (d *Debugger) EvalVariableInScope(scope api.EvalScope, symbol string, cfg proc.LoadConfig) (*api.Variable, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.FindBreakpoint">func (d *Debugger) FindBreakpoint(id int) *api.Breakpoint</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.FindBreakpointByName">func (d *Debugger) FindBreakpointByName(name string) *api.Breakpoint</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.FindLocation">func (d *Debugger) FindLocation(scope api.EvalScope, locStr string) ([]api.Location, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.FindThread">func (d *Debugger) FindThread(id int) (*api.Thread, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.FunctionArguments">func (d *Debugger) FunctionArguments(scope api.EvalScope, cfg proc.LoadConfig) ([]api.Variable, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.Functions">func (d *Debugger) Functions(filter string) ([]string, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.Goroutines">func (d *Debugger) Goroutines() ([]*api.Goroutine, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.LocalVariables">func (d *Debugger) LocalVariables(scope api.EvalScope, cfg proc.LoadConfig) ([]api.Variable, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.PackageVariables">func (d *Debugger) PackageVariables(threadID int, filter string, cfg proc.LoadConfig) ([]api.Variable, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.ProcessPid">func (d *Debugger) ProcessPid() int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.Registers">func (d *Debugger) Registers(threadID int) (string, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.Restart">func (d *Debugger) Restart() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.SetVariableInScope">func (d *Debugger) SetVariableInScope(scope api.EvalScope, symbol, value string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.Sources">func (d *Debugger) Sources(filter string) ([]string, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.Stacktrace">func (d *Debugger) Stacktrace(goroutineID, depth int, cfg *proc.LoadConfig) ([]api.Stackframe, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.State">func (d *Debugger) State() (*api.DebuggerState, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.Threads">func (d *Debugger) Threads() ([]*api.Thread, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Debugger.Types">func (d *Debugger) Types(filter string) ([]string, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#FuncLocationSpec">type FuncLocationSpec</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FuncLocationSpec.Match">func (spec *FuncLocationSpec) Match(sym *gosym.Sym) bool</a></dd>
+				
+			
+				
+				<dd><a href="index.html#LineLocationSpec">type LineLocationSpec</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#LineLocationSpec.Find">func (loc *LineLocationSpec) Find(d *Debugger, scope *proc.EvalScope, locStr string) ([]api.Location, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#LocationSpec">type LocationSpec</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#NormalLocationSpec">type NormalLocationSpec</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NormalLocationSpec.FileMatch">func (loc *NormalLocationSpec) FileMatch(path string) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NormalLocationSpec.Find">func (loc *NormalLocationSpec) Find(d *Debugger, scope *proc.EvalScope, locStr string) ([]api.Location, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#OffsetLocationSpec">type OffsetLocationSpec</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#OffsetLocationSpec.Find">func (loc *OffsetLocationSpec) Find(d *Debugger, scope *proc.EvalScope, locStr string) ([]api.Location, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#RegexLocationSpec">type RegexLocationSpec</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#RegexLocationSpec.Find">func (loc *RegexLocationSpec) Find(d *Debugger, scope *proc.EvalScope, locStr string) ([]api.Location, error)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h4>Package files</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go">debugger.go</a>
+			
+				<a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger_linux.go">debugger_linux.go</a>
+			
+				<a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go">locations.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+		
+		
+		
+			
+			
+			<h2 id="AddrLocationSpec">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go?s=515:564#L23">AddrLocationSpec</a></h2>
+			<pre>type AddrLocationSpec struct {
+    AddrExpr <a href="../../../../../builtin/index.html#string">string</a>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="AddrLocationSpec.Find">func (*AddrLocationSpec) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go?s=5436:5544#L251">Find</a></h3>
+				<pre>func (loc *<a href="index.html#AddrLocationSpec">AddrLocationSpec</a>) Find(d *<a href="index.html#Debugger">Debugger</a>, scope *<a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#EvalScope">EvalScope</a>, locStr <a href="../../../../../builtin/index.html#string">string</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Location">Location</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="AmbiguousLocationError">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go?s=7057:7186#L300">AmbiguousLocationError</a></h2>
+			<pre>type AmbiguousLocationError struct {
+    Location           <a href="../../../../../builtin/index.html#string">string</a>
+    CandidatesString   []<a href="../../../../../builtin/index.html#string">string</a>
+    CandidatesLocation []<a href="../api/index.html">api</a>.<a href="../api/index.html#Location">Location</a>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="AmbiguousLocationError.Error">func (AmbiguousLocationError) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go?s=7188:7236#L306">Error</a></h3>
+				<pre>func (ale <a href="index.html#AmbiguousLocationError">AmbiguousLocationError</a>) Error() <a href="../../../../../builtin/index.html#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Config">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=879:1086#L28">Config</a></h2>
+			<pre>type Config struct {
+    <span class="comment">// ProcessArgs are the arguments to launch a new process.</span>
+    ProcessArgs []<a href="../../../../../builtin/index.html#string">string</a>
+    <span class="comment">// AttachPid is the PID of an existing process to which the debugger should</span>
+    <span class="comment">// attach.</span>
+    AttachPid <a href="../../../../../builtin/index.html#int">int</a>
+}</pre>
+			<p>
+Config provides the configuration to start a Debugger.
+</p>
+<p>
+Only one of ProcessArgs or AttachPid should be specified. If ProcessArgs is
+provided, a new process will be launched. Otherwise, the debugger will try
+to attach to an existing process with AttachPid.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Debugger">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=508:607#L17">Debugger</a></h2>
+			<pre>type Debugger struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+Debugger service.
+</p>
+<p>
+Debugger provides a higher level of
+abstraction over proc.Process.
+It handles converting from internal types to
+the types expected by clients. It also handles
+functionality needed by clients, but not needed in
+lower lever packages such as proc.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="New">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=1119:1162#L37">New</a></h3>
+				<pre>func New(config *<a href="index.html#Config">Config</a>) (*<a href="index.html#Debugger">Debugger</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+New creates a new Debugger.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Debugger.AmendBreakpoint">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=5990:6053#L232">AmendBreakpoint</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) AmendBreakpoint(amend *<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Debugger.Breakpoints">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=7478:7528#L281">Breakpoints</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) Breakpoints() []*<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a></pre>
+				<p>
+Breakpoints returns the list of current breakpoints.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.CancelNext">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=6358:6395#L246">CancelNext</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) CancelNext() <a href="../../../../../builtin/index.html#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Debugger.ClearBreakpoint">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=6972:7060#L266">ClearBreakpoint</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) ClearBreakpoint(requestedBp *<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>) (*<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+ClearBreakpoint clears a breakpoint.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.Command">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=9474:9558#L368">Command</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) Command(command *<a href="../api/index.html">api</a>.<a href="../api/index.html#DebuggerCommand">DebuggerCommand</a>) (*<a href="../api/index.html">api</a>.<a href="../api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+Command handles commands which control the debugger lifecycle
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.CreateBreakpoint">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=4182:4271#L170">CreateBreakpoint</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) CreateBreakpoint(requestedBp *<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>) (*<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+CreateBreakpoint creates a breakpoint.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.Detach">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=2073:2115#L73">Detach</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) Detach(kill <a href="../../../../../builtin/index.html#bool">bool</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
+				<p>
+Detach detaches from the target process.
+If `kill` is true we will kill the process after
+detaching.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.Disassemble">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=19710:19842#L764">Disassemble</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) Disassemble(scope <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>, startPC, endPC <a href="../../../../../builtin/index.html#uint64">uint64</a>, flavour <a href="../api/index.html">api</a>.<a href="../api/index.html#AssemblyFlavour">AssemblyFlavour</a>) (<a href="../api/index.html">api</a>.<a href="../api/index.html#AsmInstructions">AsmInstructions</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+Disassembles code between startPC and endPC
+if endPC == 0 it will find the function containing startPC and disassemble the whole function
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.EvalVariableInScope">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=16367:16485#L645">EvalVariableInScope</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) EvalVariableInScope(scope <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>, symbol <a href="../../../../../builtin/index.html#string">string</a>, cfg <a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#LoadConfig">LoadConfig</a>) (*<a href="../api/index.html">api</a>.<a href="../api/index.html#Variable">Variable</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+EvalVariableInScope will attempt to evaluate the variable represented by &#39;symbol&#39;
+in the scope provided.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.FindBreakpoint">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=7899:7956#L299">FindBreakpoint</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) FindBreakpoint(id <a href="../../../../../builtin/index.html#int">int</a>) *<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a></pre>
+				<p>
+FindBreakpoint returns the breakpoint specified by &#39;id&#39;.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.FindBreakpointByName">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=8337:8405#L320">FindBreakpointByName</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) FindBreakpointByName(name <a href="../../../../../builtin/index.html#string">string</a>) *<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a></pre>
+				<p>
+FindBreakpointByName returns the breakpoint specified by &#39;name&#39;
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.FindLocation">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=19046:19137#L741">FindLocation</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) FindLocation(scope <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>, locStr <a href="../../../../../builtin/index.html#string">string</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Location">Location</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+FindLocation will find the location specified by &#39;locStr&#39;.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.FindThread">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=9100:9158#L351">FindThread</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) FindThread(id <a href="../../../../../builtin/index.html#int">int</a>) (*<a href="../api/index.html">api</a>.<a href="../api/index.html#Thread">Thread</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+FindThread returns the thread for the given &#39;id&#39;.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.FunctionArguments">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=15881:15983#L628">FunctionArguments</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) FunctionArguments(scope <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>, cfg <a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#LoadConfig">LoadConfig</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Variable">Variable</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+FunctionArguments returns the arguments to the current function.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.Functions">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=12936:12997#L509">Functions</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) Functions(filter <a href="../../../../../builtin/index.html#string">string</a>) ([]<a href="../../../../../builtin/index.html#string">string</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+Functions returns a list of functions in the target process.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.Goroutines">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=17243:17300#L674">Goroutines</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) Goroutines() ([]*<a href="../api/index.html">api</a>.<a href="../api/index.html#Goroutine">Goroutine</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+Goroutines will return a list of goroutines in the target process.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.LocalVariables">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=15444:15543#L612">LocalVariables</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) LocalVariables(scope <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>, cfg <a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#LoadConfig">LoadConfig</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Variable">Variable</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+LocalVariables returns a list of the local variables.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.PackageVariables">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=14080:14189#L557">PackageVariables</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) PackageVariables(threadID <a href="../../../../../builtin/index.html#int">int</a>, filter <a href="../../../../../builtin/index.html#string">string</a>, cfg <a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#LoadConfig">LoadConfig</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Variable">Variable</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+PackageVariables returns a list of package variables for the thread,
+optionally regexp filtered using regexp described in &#39;filter&#39;.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.ProcessPid">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=1900:1935#L66">ProcessPid</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) ProcessPid() <a href="../../../../../builtin/index.html#int">int</a></pre>
+				<p>
+ProcessPid returns the PID of the process
+the debugger is debugging.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.Registers">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=14866:14924#L588">Registers</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) Registers(threadID <a href="../../../../../builtin/index.html#int">int</a>) (<a href="../../../../../builtin/index.html#string">string</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+Registers returns string representation of the CPU registers.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.Restart">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=2426:2460#L89">Restart</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) Restart() <a href="../../../../../builtin/index.html#error">error</a></pre>
+				<p>
+Restart will restart the target process, first killing
+and then exec&#39;ing it again.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.SetVariableInScope">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=16886:16972#L662">SetVariableInScope</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) SetVariableInScope(scope <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>, symbol, value <a href="../../../../../builtin/index.html#string">string</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
+				<p>
+SetVariableInScope will set the value of the variable represented by
+&#39;symbol&#39; to the value given, in the given scope.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.Sources">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=12481:12540#L490">Sources</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) Sources(filter <a href="../../../../../builtin/index.html#string">string</a>) ([]<a href="../../../../../builtin/index.html#string">string</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+Sources returns a list of the source files for target binary.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.Stacktrace">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=17801:17902#L692">Stacktrace</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) Stacktrace(goroutineID, depth <a href="../../../../../builtin/index.html#int">int</a>, cfg *<a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#LoadConfig">LoadConfig</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Stackframe">Stackframe</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+Stacktrace returns a list of Stackframes for the given goroutine. The
+length of the returned list will be min(stack_len, depth).
+If &#39;full&#39; is true, then local vars, function args, etc will be returned as well.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.State">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=3241:3295#L126">State</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) State() (*<a href="../api/index.html">api</a>.<a href="../api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+State returns the current state of the debugger.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.Threads">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=8723:8774#L336">Threads</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) Threads() ([]*<a href="../api/index.html">api</a>.<a href="../api/index.html#Thread">Thread</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+Threads returns the threads of the target process.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Debugger.Types">func (*Debugger) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/debugger.go?s=13110:13167#L516">Types</a></h3>
+				<pre>func (d *<a href="index.html#Debugger">Debugger</a>) Types(filter <a href="../../../../../builtin/index.html#string">string</a>) ([]<a href="../../../../../builtin/index.html#string">string</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="FuncLocationSpec">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go?s=658:838#L35">FuncLocationSpec</a></h2>
+			<pre>type FuncLocationSpec struct {
+    PackageName           <a href="../../../../../builtin/index.html#string">string</a>
+    AbsolutePackage       <a href="../../../../../builtin/index.html#bool">bool</a>
+    ReceiverName          <a href="../../../../../builtin/index.html#string">string</a>
+    PackageOrReceiverName <a href="../../../../../builtin/index.html#string">string</a>
+    BaseName              <a href="../../../../../builtin/index.html#string">string</a>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="FuncLocationSpec.Match">func (*FuncLocationSpec) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go?s=4328:4384#L209">Match</a></h3>
+				<pre>func (spec *<a href="index.html#FuncLocationSpec">FuncLocationSpec</a>) Match(sym *<a href="../../../../../debug/gosym/index.html">gosym</a>.<a href="../../../../../debug/gosym/index.html#Sym">Sym</a>) <a href="../../../../../builtin/index.html#bool">bool</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="LineLocationSpec">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go?s=614:656#L31">LineLocationSpec</a></h2>
+			<pre>type LineLocationSpec struct {
+    Line <a href="../../../../../builtin/index.html#int">int</a>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="LineLocationSpec.Find">func (*LineLocationSpec) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go?s=9422:9530#L387">Find</a></h3>
+				<pre>func (loc *<a href="index.html#LineLocationSpec">LineLocationSpec</a>) Find(d *<a href="index.html#Debugger">Debugger</a>, scope *<a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#EvalScope">EvalScope</a>, locStr <a href="../../../../../builtin/index.html#string">string</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Location">Location</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="LocationSpec">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go?s=247:359#L9">LocationSpec</a></h2>
+			<pre>type LocationSpec interface {
+    Find(d *<a href="index.html#Debugger">Debugger</a>, scope *<a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#EvalScope">EvalScope</a>, locStr <a href="../../../../../builtin/index.html#string">string</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Location">Location</a>, <a href="../../../../../builtin/index.html#error">error</a>)
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="NormalLocationSpec">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go?s=361:460#L13">NormalLocationSpec</a></h2>
+			<pre>type NormalLocationSpec struct {
+    Base       <a href="../../../../../builtin/index.html#string">string</a>
+    FuncBase   *<a href="index.html#FuncLocationSpec">FuncLocationSpec</a>
+    LineOffset <a href="../../../../../builtin/index.html#int">int</a>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="NormalLocationSpec.FileMatch">func (*NormalLocationSpec) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go?s=6541:6599#L283">FileMatch</a></h3>
+				<pre>func (loc *<a href="index.html#NormalLocationSpec">NormalLocationSpec</a>) FileMatch(path <a href="../../../../../builtin/index.html#string">string</a>) <a href="../../../../../builtin/index.html#bool">bool</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="NormalLocationSpec.Find">func (*NormalLocationSpec) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go?s=7577:7687#L319">Find</a></h3>
+				<pre>func (loc *<a href="index.html#NormalLocationSpec">NormalLocationSpec</a>) Find(d *<a href="index.html#Debugger">Debugger</a>, scope *<a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#EvalScope">EvalScope</a>, locStr <a href="../../../../../builtin/index.html#string">string</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Location">Location</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="OffsetLocationSpec">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go?s=566:612#L27">OffsetLocationSpec</a></h2>
+			<pre>type OffsetLocationSpec struct {
+    Offset <a href="../../../../../builtin/index.html#int">int</a>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="OffsetLocationSpec.Find">func (*OffsetLocationSpec) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go?s=8968:9078#L375">Find</a></h3>
+				<pre>func (loc *<a href="index.html#OffsetLocationSpec">OffsetLocationSpec</a>) Find(d *<a href="index.html#Debugger">Debugger</a>, scope *<a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#EvalScope">EvalScope</a>, locStr <a href="../../../../../builtin/index.html#string">string</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Location">Location</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="RegexLocationSpec">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go?s=462:513#L19">RegexLocationSpec</a></h2>
+			<pre>type RegexLocationSpec struct {
+    FuncRegex <a href="../../../../../builtin/index.html#string">string</a>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="RegexLocationSpec.Find">func (*RegexLocationSpec) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/debugger/locations.go?s=4981:5090#L235">Find</a></h3>
+				<pre>func (loc *<a href="index.html#RegexLocationSpec">RegexLocationSpec</a>) Find(d *<a href="index.html#Debugger">Debugger</a>, scope *<a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#EvalScope">EvalScope</a>, locStr <a href="../../../../../builtin/index.html#string">string</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Location">Location</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.6.3.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:9090/doc/tos.html">Terms of Service</a> | 
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="../../../../../../lib/godoc/jquery.js"></script>
+<script type="text/javascript" src="../../../../../../lib/godoc/jquery.treeview.js"></script>
+<script type="text/javascript" src="../../../../../../lib/godoc/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="../../../../../../lib/godoc/godocs.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>gometalinter - The Go Programming Language</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../lib/godoc/style.css">
+
+<link rel="stylesheet" href="../../../../lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:9090/">The Go Programming Language</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:9090/">Go</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:9090/search">
+<div id="menu">
+<a href="http://localhost:9090/doc/">Documents</a>
+<a href="../../../index.html">Packages</a>
+<a href="http://localhost:9090/project/">The Project</a>
+<a href="http://localhost:9090/help/">Help</a>
+<a href="http://localhost:9090/blog/">Blog</a>
+
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>Command gometalinter</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type='text/javascript'>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		
+	
+
+	
+
+
+
+
+
+	
+	
+		<h2 id="pkg-subdirectories">Subdirectories</h2>
+	
+	
+
+
+	<div class="pkg-dir">
+		<table>
+			<tr>
+				<th class="pkg-name">Name</th>
+				<th class="pkg-synopsis">Synopsis</th>
+			</tr>
+
+			
+			<tr>
+				<td colspan="2"><a href="../index.html">..</a></td>
+			</tr>
+			
+
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="regressiontests/index.html">regressiontests</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="vendor/index.html">vendor</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 20px;">
+							<a href="vendor/src/index.html">src</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 40px;">
+							<a href="vendor/src/github.com/index.html">github.com</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 60px;">
+							<a href="vendor/src/github.com/HewlettPackard/index.html">HewlettPackard</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/github.com/HewlettPackard/gas/index.html">gas</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/github.com/HewlettPackard/gas/core/index.html">core</a>
+						</td>
+						<td class="pkg-synopsis">
+							(c) Copyright 2016 Hewlett Packard Enterprise Development LP Licensed under the Apache License, Version 2.0 (the &#34;License&#34;); you may not use this file except in compliance with the License.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/github.com/HewlettPackard/gas/output/index.html">output</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/github.com/HewlettPackard/gas/rules/index.html">rules</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 60px;">
+							<a href="vendor/src/github.com/alecthomas/index.html">alecthomas</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/github.com/alecthomas/gocyclo/index.html">gocyclo</a>
+						</td>
+						<td class="pkg-synopsis">
+							Gocyclo calculates the cyclomatic complexities of functions and methods in Go source code.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 60px;">
+							<a href="vendor/src/github.com/client9/index.html">client9</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/github.com/client9/misspell/index.html">misspell</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/github.com/client9/misspell/cmd/index.html">cmd</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/github.com/client9/misspell/cmd/genwords/index.html">genwords</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/github.com/client9/misspell/cmd/misspell/index.html">misspell</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 60px;">
+							<a href="vendor/src/github.com/golang/index.html">golang</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/github.com/golang/lint/index.html">lint</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package lint contains a linter for Go source code.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/github.com/golang/lint/golint/index.html">golint</a>
+						</td>
+						<td class="pkg-synopsis">
+							golint lints the Go source files named on its command line.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 60px;">
+							<a href="vendor/src/github.com/gordonklaus/index.html">gordonklaus</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/github.com/gordonklaus/ineffassign/index.html">ineffassign</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 60px;">
+							<a href="vendor/src/github.com/jgautheron/index.html">jgautheron</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/github.com/jgautheron/goconst/index.html">goconst</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package goconst finds repeated strings that could be replaced by a constant.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/github.com/jgautheron/goconst/cmd/index.html">cmd</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/github.com/jgautheron/goconst/cmd/goconst/index.html">goconst</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 60px;">
+							<a href="vendor/src/github.com/kisielk/index.html">kisielk</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/github.com/kisielk/errcheck/index.html">errcheck</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/github.com/kisielk/gotool/index.html">gotool</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package gotool contains utility functions used to implement the standard &#34;cmd/go&#34; tool, provided as a convenience to developers who want to write tools with similar semantics.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 60px;">
+							<a href="vendor/src/github.com/mdempsky/index.html">mdempsky</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/github.com/mdempsky/unconvert/index.html">unconvert</a>
+						</td>
+						<td class="pkg-synopsis">
+							Unconvert removes redundant type conversions from Go packages.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 60px;">
+							<a href="vendor/src/github.com/mibk/index.html">mibk</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/github.com/mibk/dupl/index.html">dupl</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/github.com/mibk/dupl/job/index.html">job</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/github.com/mibk/dupl/output/index.html">output</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/github.com/mibk/dupl/suffixtree/index.html">suffixtree</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/github.com/mibk/dupl/syntax/index.html">syntax</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/github.com/mibk/dupl/syntax/golang/index.html">golang</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 60px;">
+							<a href="vendor/src/github.com/mvdan/index.html">mvdan</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/github.com/mvdan/interfacer/index.html">interfacer</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/github.com/mvdan/interfacer/cmd/index.html">cmd</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/github.com/mvdan/interfacer/cmd/interfacer/index.html">interfacer</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/github.com/mvdan/interfacer/generate/index.html">generate</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/github.com/mvdan/interfacer/generate/std/index.html">std</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 60px;">
+							<a href="vendor/src/github.com/opennota/index.html">opennota</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/github.com/opennota/check/index.html">check</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/github.com/opennota/check/cmd/index.html">cmd</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/github.com/opennota/check/cmd/aligncheck/index.html">aligncheck</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/github.com/opennota/check/cmd/structcheck/index.html">structcheck</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/github.com/opennota/check/cmd/varcheck/index.html">varcheck</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 60px;">
+							<a href="vendor/src/github.com/tsenart/index.html">tsenart</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/github.com/tsenart/deadcode/index.html">deadcode</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 60px;">
+							<a href="vendor/src/github.com/walle/index.html">walle</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/github.com/walle/lll/index.html">lll</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package lll provides validation functions regarding line length
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/github.com/walle/lll/cmd/index.html">cmd</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/github.com/walle/lll/cmd/lll/index.html">lll</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/github.com/walle/lll/vendor/index.html">vendor</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/github.com/walle/lll/vendor/github.com/index.html">github.com</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 140px;">
+							<a href="vendor/src/github.com/walle/lll/vendor/github.com/alexflint/index.html">alexflint</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 160px;">
+							<a href="vendor/src/github.com/walle/lll/vendor/github.com/alexflint/go-arg/index.html">go-arg</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package arg parses command line arguments using the fields from a struct.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 40px;">
+							<a href="vendor/src/golang.org/index.html">golang.org</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 60px;">
+							<a href="vendor/src/golang.org/x/index.html">x</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/golang.org/x/tools/index.html">tools</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/golang.org/x/tools/cmd/index.html">cmd</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/golang.org/x/tools/cmd/goimports/index.html">goimports</a>
+						</td>
+						<td class="pkg-synopsis">
+							Command goimports updates your Go import lines, adding missing ones and removing unreferenced ones.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/golang.org/x/tools/cmd/gotype/index.html">gotype</a>
+						</td>
+						<td class="pkg-synopsis">
+							The gotype command does syntactic and semantic analysis of Go files and packages like the front-end of a Go compiler.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/golang.org/x/tools/container/index.html">container</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/golang.org/x/tools/container/intsets/index.html">intsets</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package intsets provides Sparse, a compact and fast representation for sparse sets of int values.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/golang.org/x/tools/go/index.html">go</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/golang.org/x/tools/go/ast/index.html">ast</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 140px;">
+							<a href="vendor/src/golang.org/x/tools/go/ast/astutil/index.html">astutil</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package astutil contains common utilities for working with the Go AST.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/golang.org/x/tools/go/buildutil/index.html">buildutil</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package buildutil provides utilities related to the go/build package in the standard library.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/golang.org/x/tools/go/gcimporter15/index.html">gcimporter15</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package gcimporter15 provides various functions for reading gc-generated object files that can be used to implement the Importer interface defined by the Go 1.5 standard library package.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/golang.org/x/tools/go/loader/index.html">loader</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package loader loads a complete Go program from source code, parsing and type-checking the initial packages plus their transitive closure of dependencies.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/golang.org/x/tools/go/types/index.html">types</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 140px;">
+							<a href="vendor/src/golang.org/x/tools/go/types/typeutil/index.html">typeutil</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package typeutil defines various utilities for types, such as Map, a mapping from types.Type to interface{} values.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/golang.org/x/tools/imports/index.html">imports</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package imports implements a Go pretty-printer (like package &#34;go/format&#34;) that also adds or removes import statements as necessary.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 40px;">
+							<a href="vendor/src/honnef.co/index.html">honnef.co</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 60px;">
+							<a href="vendor/src/honnef.co/go/index.html">go</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/honnef.co/go/lint/index.html">lint</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package lint provides the foundation for tools like gosimple.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/honnef.co/go/lint/lintutil/index.html">lintutil</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package lintutil provides helpers for writing linter command lines.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/honnef.co/go/lint/testutil/index.html">testutil</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/honnef.co/go/simple/index.html">simple</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package simple contains a linter for Go source code.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/honnef.co/go/simple/cmd/index.html">cmd</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/honnef.co/go/simple/cmd/gosimple/index.html">gosimple</a>
+						</td>
+						<td class="pkg-synopsis">
+							gosimple lints the Go source files named on its command line.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/honnef.co/go/staticcheck/index.html">staticcheck</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package staticcheck contains a linter for Go source code.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/honnef.co/go/staticcheck/cmd/index.html">cmd</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/honnef.co/go/staticcheck/cmd/staticcheck/index.html">staticcheck</a>
+						</td>
+						<td class="pkg-synopsis">
+							staticcheck statically checks arguments to certain functions
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 80px;">
+							<a href="vendor/src/honnef.co/go/unused/index.html">unused</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 100px;">
+							<a href="vendor/src/honnef.co/go/unused/cmd/index.html">cmd</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 120px;">
+							<a href="vendor/src/honnef.co/go/unused/cmd/unused/index.html">unused</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+		</table>
+	</div>
+
+
+	
+
+
+
+<div id="footer">
+Build version go1.6.3.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:9090/doc/tos.html">Terms of Service</a> | 
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="../../../../lib/godoc/jquery.js"></script>
+<script type="text/javascript" src="../../../../lib/godoc/jquery.treeview.js"></script>
+<script type="text/javascript" src="../../../../lib/godoc/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="../../../../lib/godoc/godocs.js"></script>
+
+</body>
+</html>
+

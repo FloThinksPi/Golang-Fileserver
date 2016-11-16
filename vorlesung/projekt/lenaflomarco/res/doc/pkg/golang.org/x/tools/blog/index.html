@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>blog - The Go Programming Language</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../lib/godoc/style.css">
+
+<link rel="stylesheet" href="../../../../../lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:9090/">The Go Programming Language</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:9090/">Go</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:9090/search">
+<div id="menu">
+<a href="http://localhost:9090/doc/">Documents</a>
+<a href="../../../../index.html">Packages</a>
+<a href="http://localhost:9090/project/">The Project</a>
+<a href="http://localhost:9090/help/">Help</a>
+<a href="http://localhost:9090/blog/">Blog</a>
+
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>Package blog</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type='text/javascript'>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "golang.org/x/tools/blog"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-subdirectories">Subdirectories</a></dd>
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Package blog implements a web server for articles written in present format.
+</p>
+
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#Config">type Config</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Doc">type Doc</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Server">type Server</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewServer">func NewServer(cfg Config) (*Server, error)</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Server.ServeHTTP">func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h4>Package files</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:9090/src/golang.org/x/tools/blog/blog.go">blog.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+		
+		
+		
+			
+			
+			<h2 id="Config">type <a href="http://localhost:9090/src/golang.org/x/tools/blog/blog.go?s=628:1321#L20">Config</a></h2>
+			<pre>type Config struct {
+    ContentPath  <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// Relative or absolute location of article files and related content.</span>
+    TemplatePath <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// Relative or absolute location of template files.</span>
+
+    BaseURL  <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// Absolute base URL (for permalinks; no trailing slash).</span>
+    BasePath <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// Base URL path relative to server root (no trailing slash).</span>
+    GodocURL <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// The base URL of godoc (for menu bar; no trailing slash).</span>
+    Hostname <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// Server host name, used for rendering ATOM feeds.</span>
+
+    HomeArticles <a href="../../../../builtin/index.html#int">int</a>    <span class="comment">// Articles to display on the home page.</span>
+    FeedArticles <a href="../../../../builtin/index.html#int">int</a>    <span class="comment">// Articles to include in Atom and JSON feeds.</span>
+    FeedTitle    <a href="../../../../builtin/index.html#string">string</a> <span class="comment">// The title of the Atom XML feed</span>
+
+    PlayEnabled <a href="../../../../builtin/index.html#bool">bool</a>
+}</pre>
+			<p>
+Config specifies Server configuration values.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Doc">type <a href="http://localhost:9090/src/golang.org/x/tools/blog/blog.go?s=1384:1639#L37">Doc</a></h2>
+			<pre>type Doc struct {
+    *<a href="../present/index.html">present</a>.<a href="../present/index.html#Doc">Doc</a>
+    Permalink <a href="../../../../builtin/index.html#string">string</a>        <span class="comment">// Canonical URL for this document.</span>
+    Path      <a href="../../../../builtin/index.html#string">string</a>        <span class="comment">// Path relative to server root (including base).</span>
+    HTML      <a href="../../../../html/template/index.html">template</a>.<a href="../../../../html/template/index.html#HTML">HTML</a> <span class="comment">// rendered article</span>
+
+    Related      []*<a href="index.html#Doc">Doc</a>
+    Newer, Older *<a href="index.html#Doc">Doc</a>
+}</pre>
+			<p>
+Doc represents an article adorned with presentation data.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Server">type <a href="http://localhost:9090/src/golang.org/x/tools/blog/blog.go?s=1705:2045#L48">Server</a></h2>
+			<pre>type Server struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+Server implements an http.Handler that serves blog articles.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewServer">func <a href="http://localhost:9090/src/golang.org/x/tools/blog/blog.go?s=2112:2155#L63">NewServer</a></h3>
+				<pre>func NewServer(cfg <a href="index.html#Config">Config</a>) (*<a href="index.html#Server">Server</a>, <a href="../../../../builtin/index.html#error">error</a>)</pre>
+				<p>
+NewServer constructs a new Server using the specified config.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Server.ServeHTTP">func (*Server) <a href="http://localhost:9090/src/golang.org/x/tools/blog/blog.go?s=8898:8964#L365">ServeHTTP</a></h3>
+				<pre>func (s *<a href="index.html#Server">Server</a>) ServeHTTP(w <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#ResponseWriter">ResponseWriter</a>, r *<a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#Request">Request</a>)</pre>
+				<p>
+ServeHTTP serves the front, index, and article pages
+as well as the ATOM and JSON feeds.
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+	
+	
+		<h2 id="pkg-subdirectories">Subdirectories</h2>
+	
+	
+
+
+	<div class="pkg-dir">
+		<table>
+			<tr>
+				<th class="pkg-name">Name</th>
+				<th class="pkg-synopsis">Synopsis</th>
+			</tr>
+
+			
+			<tr>
+				<td colspan="2"><a href="../index.html">..</a></td>
+			</tr>
+			
+
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="atom/index.html">atom</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package atom defines XML data structures for an Atom feed.
+						</td>
+					</tr>
+				
+			
+		</table>
+	</div>
+
+
+	
+
+
+
+<div id="footer">
+Build version go1.6.3.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:9090/doc/tos.html">Terms of Service</a> | 
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.js"></script>
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.treeview.js"></script>
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="../../../../../lib/godoc/godocs.js"></script>
+
+</body>
+</html>
+

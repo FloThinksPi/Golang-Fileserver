@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>scanner - The Go Programming Language</title>
+
+<link type="text/css" rel="stylesheet" href="../../../lib/godoc/style.css">
+
+<link rel="stylesheet" href="../../../lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:9090/">The Go Programming Language</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:9090/">Go</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:9090/search">
+<div id="menu">
+<a href="http://localhost:9090/doc/">Documents</a>
+<a href="../../index.html">Packages</a>
+<a href="http://localhost:9090/project/">The Project</a>
+<a href="http://localhost:9090/help/">Help</a>
+<a href="http://localhost:9090/blog/">Blog</a>
+
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>Package scanner</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type='text/javascript'>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "text/scanner"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Package scanner provides a scanner and tokenizer for UTF-8-encoded text.
+It takes an io.Reader providing the source, which then can be tokenized
+through repeated calls to the Scan function.  For compatibility with
+existing tools, the NUL character is not allowed. If the first character
+in the source is a UTF-8 encoded byte order mark (BOM), it is discarded.
+</p>
+<p>
+By default, a Scanner skips white space and Go comments and recognizes all
+literals as defined by the Go language specification.  It may be
+customized to recognize only a subset of those literals and to recognize
+different identifier and white space characters.
+</p>
+
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+			
+				
+				<dd><a href="index.html#TokenString">func TokenString(tok rune) string</a></dd>
+			
+			
+				
+				<dd><a href="index.html#Position">type Position</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Position.IsValid">func (pos *Position) IsValid() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Position.String">func (pos Position) String() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Scanner">type Scanner</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Scanner.Init">func (s *Scanner) Init(src io.Reader) *Scanner</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Scanner.Next">func (s *Scanner) Next() rune</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Scanner.Peek">func (s *Scanner) Peek() rune</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Scanner.Pos">func (s *Scanner) Pos() (pos Position)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Scanner.Scan">func (s *Scanner) Scan() rune</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Scanner.TokenText">func (s *Scanner) TokenText() string</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h4>Package files</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:9090/src/text/scanner/scanner.go">scanner.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				<pre>const (
+    <span id="ScanIdents">ScanIdents</span>     = 1 &lt;&lt; -<a href="index.html#Ident">Ident</a>
+    <span id="ScanInts">ScanInts</span>       = 1 &lt;&lt; -<a href="index.html#Int">Int</a>
+    <span id="ScanFloats">ScanFloats</span>     = 1 &lt;&lt; -<a href="index.html#Float">Float</a> <span class="comment">// includes Ints</span>
+    <span id="ScanChars">ScanChars</span>      = 1 &lt;&lt; -<a href="index.html#Char">Char</a>
+    <span id="ScanStrings">ScanStrings</span>    = 1 &lt;&lt; -<a href="index.html#String">String</a>
+    <span id="ScanRawStrings">ScanRawStrings</span> = 1 &lt;&lt; -<a href="index.html#RawString">RawString</a>
+    <span id="ScanComments">ScanComments</span>   = 1 &lt;&lt; -<a href="index.html#Comment">Comment</a>
+    <span id="SkipComments">SkipComments</span>   = 1 &lt;&lt; -skipComment <span class="comment">// if set with ScanComments, comments become white space</span>
+    <span id="GoTokens">GoTokens</span>       = <a href="index.html#ScanIdents">ScanIdents</a> | <a href="index.html#ScanFloats">ScanFloats</a> | <a href="index.html#ScanChars">ScanChars</a> | <a href="index.html#ScanStrings">ScanStrings</a> | <a href="index.html#ScanRawStrings">ScanRawStrings</a> | <a href="index.html#ScanComments">ScanComments</a> | <a href="index.html#SkipComments">SkipComments</a>
+)</pre>
+				<p>
+Predefined mode bits to control recognition of tokens. For instance,
+to configure a Scanner such that it only recognizes (Go) identifiers,
+integers, and skips comments, set the Scanner&#39;s Mode field to:
+</p>
+<pre>ScanIdents | ScanInts | SkipComments
+</pre>
+<p>
+With the exceptions of comments, which are skipped if SkipComments is
+set, unrecognized tokens are not ignored. Instead, the scanner simply
+returns the respective individual characters (or possibly sub-tokens).
+For instance, if the mode is ScanIdents (not ScanStrings), the string
+&#34;foo&#34; is scanned as the token sequence &#39;&#34;&#39; Ident &#39;&#34;&#39;.
+</p>
+
+			
+				<pre>const (
+    <span id="EOF">EOF</span> = -(<a href="../../builtin/index.html#iota">iota</a> + 1)
+    <span id="Ident">Ident</span>
+    <span id="Int">Int</span>
+    <span id="Float">Float</span>
+    <span id="Char">Char</span>
+    <span id="String">String</span>
+    <span id="RawString">RawString</span>
+    <span id="Comment">Comment</span>
+)</pre>
+				<p>
+The result of Scan is one of these tokens or a Unicode character.
+</p>
+
+			
+				<pre>const <span id="GoWhitespace">GoWhitespace</span> = 1&lt;&lt;&#39;\t&#39; | 1&lt;&lt;&#39;\n&#39; | 1&lt;&lt;&#39;\r&#39; | 1&lt;&lt;&#39; &#39;</pre>
+				<p>
+GoWhitespace is the default value for the Scanner&#39;s Whitespace field.
+Its value selects Go&#39;s white space characters.
+</p>
+
+			
+		
+		
+		
+			
+			
+			<h2 id="TokenString">func <a href="http://localhost:9090/src/text/scanner/scanner.go?s=3045:3078#L91">TokenString</a></h2>
+			<pre>func TokenString(tok <a href="../../builtin/index.html#rune">rune</a>) <a href="../../builtin/index.html#string">string</a></pre>
+			<p>
+TokenString returns a printable string for a token or Unicode character.
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Position">type <a href="http://localhost:9090/src/text/scanner/scanner.go?s=989:1220#L18">Position</a></h2>
+			<pre>type Position struct {
+    Filename <a href="../../builtin/index.html#string">string</a> <span class="comment">// filename, if any</span>
+    Offset   <a href="../../builtin/index.html#int">int</a>    <span class="comment">// byte offset, starting at 0</span>
+    Line     <a href="../../builtin/index.html#int">int</a>    <span class="comment">// line number, starting at 1</span>
+    Column   <a href="../../builtin/index.html#int">int</a>    <span class="comment">// column number, starting at 1 (character count per line)</span>
+}</pre>
+			<p>
+A source position is represented by a Position value.
+A position is valid if Line &gt; 0.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Position.IsValid">func (*Position) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=1272:1307#L26">IsValid</a></h3>
+				<pre>func (pos *<a href="index.html#Position">Position</a>) IsValid() <a href="../../builtin/index.html#bool">bool</a></pre>
+				<p>
+IsValid reports whether the position is valid.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Position.String">func (Position) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=1333:1368#L28">String</a></h3>
+				<pre>func (pos <a href="index.html#Position">Position</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Scanner">type <a href="http://localhost:9090/src/text/scanner/scanner.go?s=3490:5944#L105">Scanner</a></h2>
+			<pre>type Scanner struct {
+
+    <span class="comment">// Error is called for each error encountered. If no Error</span>
+    <span class="comment">// function is set, the error is reported to os.Stderr.</span>
+    Error func(s *<a href="index.html#Scanner">Scanner</a>, msg <a href="../../builtin/index.html#string">string</a>)
+
+    <span class="comment">// ErrorCount is incremented by one for each error encountered.</span>
+    ErrorCount <a href="../../builtin/index.html#int">int</a>
+
+    <span class="comment">// The Mode field controls which tokens are recognized. For instance,</span>
+    <span class="comment">// to recognize Ints, set the ScanInts bit in Mode. The field may be</span>
+    <span class="comment">// changed at any time.</span>
+    Mode <a href="../../builtin/index.html#uint">uint</a>
+
+    <span class="comment">// The Whitespace field controls which characters are recognized</span>
+    <span class="comment">// as white space. To recognize a character ch &lt;= &#39; &#39; as white space,</span>
+    <span class="comment">// set the ch&#39;th bit in Whitespace (the Scanner&#39;s behavior is undefined</span>
+    <span class="comment">// for values ch &gt; &#39; &#39;). The field may be changed at any time.</span>
+    Whitespace <a href="../../builtin/index.html#uint64">uint64</a>
+
+    <span class="comment">// IsIdentRune is a predicate controlling the characters accepted</span>
+    <span class="comment">// as the ith rune in an identifier. The set of valid characters</span>
+    <span class="comment">// must not intersect with the set of white space characters.</span>
+    <span class="comment">// If no IsIdentRune function is set, regular Go identifiers are</span>
+    <span class="comment">// accepted instead. The field may be changed at any time.</span>
+    IsIdentRune func(ch <a href="../../builtin/index.html#rune">rune</a>, i <a href="../../builtin/index.html#int">int</a>) <a href="../../builtin/index.html#bool">bool</a>
+
+    <span class="comment">// Start position of most recently scanned token; set by Scan.</span>
+    <span class="comment">// Calling Init or Next invalidates the position (Line == 0).</span>
+    <span class="comment">// The Filename field is always left untouched by the Scanner.</span>
+    <span class="comment">// If an error is reported (via Error) and Position is invalid,</span>
+    <span class="comment">// the scanner is not inside a token. Call Pos to obtain an error</span>
+    <span class="comment">// position in that case.</span>
+    <a href="index.html#Position">Position</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+A Scanner implements reading of Unicode characters and tokens from an io.Reader.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Scanner.Init">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=6124:6170#L169">Init</a></h3>
+				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Init(src <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) *<a href="index.html#Scanner">Scanner</a></pre>
+				<p>
+Init initializes a Scanner with a new source and returns s.
+Error is set to nil, ErrorCount is set to 0, Mode is set to GoTokens,
+and Whitespace is set to GoWhitespace.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Scanner.Next">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=9435:9464#L292">Next</a></h3>
+				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Next() <a href="../../builtin/index.html#rune">rune</a></pre>
+				<p>
+Next reads and returns the next Unicode character.
+It returns EOF at the end of the source. It reports
+a read error by calling s.Error, if not nil; otherwise
+it prints an error message to os.Stderr. Next does not
+update the Scanner&#39;s Position field; use Pos() to
+get the current position.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Scanner.Peek">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=9796:9825#L305">Peek</a></h3>
+				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Peek() <a href="../../builtin/index.html#rune">rune</a></pre>
+				<p>
+Peek returns the next Unicode character in the source without advancing
+the scanner. It returns EOF if the scanner&#39;s position is at the last
+character of the source.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Scanner.Pos">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=16389:16427#L633">Pos</a></h3>
+				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Pos() (pos <a href="index.html#Position">Position</a>)</pre>
+				<p>
+Pos returns the position of the character immediately after
+the character or token returned by the last call to Next or Scan.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Scanner.Scan">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=14348:14377#L531">Scan</a></h3>
+				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Scan() <a href="../../builtin/index.html#rune">rune</a></pre>
+				<p>
+Scan reads the next token or Unicode character from source and returns it.
+It only recognizes tokens t for which the respective Mode bit (1&lt;&lt;-t) is set.
+It returns EOF at the end of the source. It reports scanner errors (read and
+token errors) by calling s.Error, if not nil; otherwise it prints an error
+message to os.Stderr.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Scanner.TokenText">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=16949:16985#L655">TokenText</a></h3>
+				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) TokenText() <a href="../../builtin/index.html#string">string</a></pre>
+				<p>
+TokenText returns the string corresponding to the most recently scanned token.
+Valid after calling Scan().
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.6.3.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:9090/doc/tos.html">Terms of Service</a> | 
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="../../../lib/godoc/jquery.js"></script>
+<script type="text/javascript" src="../../../lib/godoc/jquery.treeview.js"></script>
+<script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
+
+</body>
+</html>
+

@@ -17,11 +17,19 @@ func main() {
 
 	requestMultiplexer.HandleFunc("/", root)
 	requestMultiplexer.HandleFunc("/doc/", func(w http.ResponseWriter, r *http.Request) {
-		filepath,err := filepath.Abs("res/"+r.URL.Path[1:])
+
+		path, err := filepath.Abs("res/" + r.URL.Path[1:])
 		Utils.HandlePrint(err)
 
-		Utils.LogDebug(filepath)
-		http.ServeFile(w, r, filepath)
+		Utils.LogDebug("File Accessed:	" + path)
+
+		if (r.URL.Path[1:] == "doc/" || r.URL.Path[1:] == "doc") {
+			Utils.LogDebug("Redirecting from doc to doc/pkg/fileServer.html")
+			http.Redirect(w,r,"pkg/FileServer.html",300)
+		} else {
+			http.ServeFile(w, r, path)
+		}
+
 	})
 
 	cfg := &tls.Config{
@@ -48,7 +56,7 @@ func main() {
 	Utils.HandlePanic(srv.ListenAndServeTLS(Flags.GetTLScert(), Flags.GetTLSkey()))
 }
 
-func root(w http.ResponseWriter, req *http.Request)  {
+func root(w http.ResponseWriter, req *http.Request) {
 	w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
 	w.Write([]byte("Test Site \n"))
 }

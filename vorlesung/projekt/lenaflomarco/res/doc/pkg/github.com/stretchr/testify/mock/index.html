@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>mock - The Go Programming Language</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../lib/godoc/style.css">
+
+<link rel="stylesheet" href="../../../../../lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:9090/">The Go Programming Language</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:9090/">Go</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:9090/search">
+<div id="menu">
+<a href="http://localhost:9090/doc/">Documents</a>
+<a href="../../../../index.html">Packages</a>
+<a href="http://localhost:9090/project/">The Project</a>
+<a href="http://localhost:9090/help/">Help</a>
+<a href="http://localhost:9090/blog/">Blog</a>
+
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>Package mock</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type='text/javascript'>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/stretchr/testify/mock"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Package mock provides a system by which it is possible to mock your objects
+and verify calls are happening as expected.
+</p>
+<h3 id="hdr-Example_Usage">Example Usage</h3>
+<p>
+The mock package provides an object, Mock, that tracks activity on another object.  It is usually
+embedded into a test object as shown below:
+</p>
+<pre>type MyTestObject struct {
+  // add a Mock object instance
+  mock.Mock
+
+  // other fields go here as normal
+}
+</pre>
+<p>
+When implementing the methods of an interface, you wire your functions up
+to call the Mock.Called(args...) method, and return the appropriate values.
+</p>
+<p>
+For example, to mock a method that saves the name and age of a person and returns
+the year of their birth or an error, you might write this:
+</p>
+<pre>func (o *MyTestObject) SavePersonDetails(firstname, lastname string, age int) (int, error) {
+  args := o.Called(firstname, lastname, age)
+  return args.Int(0), args.Error(1)
+}
+</pre>
+<p>
+The Int, Error and Bool methods are examples of strongly typed getters that take the argument
+index position. Given this argument list:
+</p>
+<pre>(12, true, &#34;Something&#34;)
+</pre>
+<p>
+You could read them out strongly typed like this:
+</p>
+<pre>args.Int(0)
+args.Bool(1)
+args.String(2)
+</pre>
+<p>
+For objects of your own type, use the generic Arguments.Get(index) method and make a type assertion:
+</p>
+<pre>return args.Get(0).(*MyObject), args.Get(1).(*AnotherObjectOfMine)
+</pre>
+<p>
+This may cause a panic if the object you are getting is nil (the type assertion will fail), in those
+cases you should check for nil first.
+</p>
+
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+			
+				
+				<dd><a href="index.html#AssertExpectationsForObjects">func AssertExpectationsForObjects(t TestingT, testObjects ...interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#MatchedBy">func MatchedBy(fn interface{}) argumentMatcher</a></dd>
+			
+			
+				
+				<dd><a href="index.html#AnythingOfTypeArgument">type AnythingOfTypeArgument</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AnythingOfType">func AnythingOfType(t string) AnythingOfTypeArgument</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Arguments">type Arguments</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Arguments.Assert">func (args Arguments) Assert(t TestingT, objects ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Arguments.Bool">func (args Arguments) Bool(index int) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Arguments.Diff">func (args Arguments) Diff(objects []interface{}) (string, int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Arguments.Error">func (args Arguments) Error(index int) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Arguments.Get">func (args Arguments) Get(index int) interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Arguments.Int">func (args Arguments) Int(index int) int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Arguments.Is">func (args Arguments) Is(objects ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Arguments.String">func (args Arguments) String(indexOrNil ...int) string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Call">type Call</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Call.After">func (c *Call) After(d time.Duration) *Call</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Call.On">func (c *Call) On(methodName string, arguments ...interface{}) *Call</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Call.Once">func (c *Call) Once() *Call</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Call.Return">func (c *Call) Return(returnArguments ...interface{}) *Call</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Call.Run">func (c *Call) Run(fn func(Arguments)) *Call</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Call.Times">func (c *Call) Times(i int) *Call</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Call.Twice">func (c *Call) Twice() *Call</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Call.WaitUntil">func (c *Call) WaitUntil(w &lt;-chan time.Time) *Call</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Mock">type Mock</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Mock.AssertCalled">func (m *Mock) AssertCalled(t TestingT, methodName string, arguments ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Mock.AssertExpectations">func (m *Mock) AssertExpectations(t TestingT) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Mock.AssertNotCalled">func (m *Mock) AssertNotCalled(t TestingT, methodName string, arguments ...interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Mock.AssertNumberOfCalls">func (m *Mock) AssertNumberOfCalls(t TestingT, methodName string, expectedCalls int) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Mock.Called">func (m *Mock) Called(arguments ...interface{}) Arguments</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Mock.On">func (m *Mock) On(methodName string, arguments ...interface{}) *Call</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Mock.TestData">func (m *Mock) TestData() objx.Map</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TestingT">type TestingT</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h4>Package files</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:9090/src/github.com/stretchr/testify/mock/doc.go">doc.go</a>
+			
+				<a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go">mock.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				<pre>const (
+    <span class="comment">// Anything is used in Diff and Assert when the argument being tested</span>
+    <span class="comment">// shouldn&#39;t be taken into consideration.</span>
+    <span id="Anything">Anything</span> <a href="../../../../builtin/index.html#string">string</a> = &#34;mock.Anything&#34;
+)</pre>
+				
+			
+		
+		
+		
+			
+			
+			<h2 id="AssertExpectationsForObjects">func <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=9787:9865#L348">AssertExpectationsForObjects</a></h2>
+			<pre>func AssertExpectationsForObjects(t <a href="index.html#TestingT">TestingT</a>, testObjects ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+			<p>
+AssertExpectationsForObjects asserts that everything specified with On and Return
+of the specified objects was in fact called as expected.
+</p>
+<p>
+Calls may have occurred in any order.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="MatchedBy">func <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=15371:15417#L512">MatchedBy</a></h2>
+			<pre>func MatchedBy(fn interface{}) argumentMatcher</pre>
+			<p>
+MatchedBy can be used to match a mock call based on only certain properties
+from a complex struct or some calculation. It takes a function that will be
+evaluated with the called argument and will return true when there&#39;s a match
+and false otherwise.
+</p>
+<p>
+Example:
+m.On(&#34;Do&#34;, MatchedBy(func(req *http.Request) bool { return req.Host == &#34;example.com&#34; }))
+</p>
+<p>
+|fn|, must be a function accepting a single argument (of the expected type)
+which returns a bool. If |fn| doesn&#39;t match the required signature,
+MathedBy() panics.
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="AnythingOfTypeArgument">type <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=13848:13882#L469">AnythingOfTypeArgument</a></h2>
+			<pre>type AnythingOfTypeArgument <a href="../../../../builtin/index.html#string">string</a></pre>
+			<p>
+AnythingOfTypeArgument is a string that contains the type of an argument
+for use when type checking.  Used in Diff and Assert.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="AnythingOfType">func <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=14099:14151#L476">AnythingOfType</a></h3>
+				<pre>func AnythingOfType(t <a href="../../../../builtin/index.html#string">string</a>) <a href="index.html#AnythingOfTypeArgument">AnythingOfTypeArgument</a></pre>
+				<p>
+AnythingOfType returns an AnythingOfTypeArgument object containing the
+name of the type to check for.  Used in Diff and Assert.
+</p>
+<p>
+For example:
+</p>
+<pre>Assert(t, AnythingOfType(&#34;string&#34;), AnythingOfType(&#34;int&#34;))
+</pre>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="Arguments">type <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=13525:13553#L459">Arguments</a></h2>
+			<pre>type Arguments []interface{}</pre>
+			<p>
+Arguments holds an array of method arguments or return values.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Arguments.Assert">func (Arguments) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=18332:18401#L617">Assert</a></h3>
+				<pre>func (args <a href="index.html#Arguments">Arguments</a>) Assert(t <a href="index.html#TestingT">TestingT</a>, objects ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+Assert compares the arguments with the specified objects and fails if
+they do not exactly match.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Arguments.Bool">func (Arguments) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=20591:20633#L691">Bool</a></h3>
+				<pre>func (args <a href="index.html#Arguments">Arguments</a>) Bool(index <a href="../../../../builtin/index.html#int">int</a>) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+Bool gets the argument at the specified index. Panics if there is no argument, or
+if the argument is of the wrong type.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Arguments.Diff">func (Arguments) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=16508:16571#L550">Diff</a></h3>
+				<pre>func (args <a href="index.html#Arguments">Arguments</a>) Diff(objects []interface{}) (<a href="../../../../builtin/index.html#string">string</a>, <a href="../../../../builtin/index.html#int">int</a>)</pre>
+				<p>
+Diff gets a string describing the differences between the arguments
+and the specified objects.
+</p>
+<p>
+Returns the diff string and number of differences found.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Arguments.Error">func (Arguments) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=20165:20209#L676">Error</a></h3>
+				<pre>func (args <a href="index.html#Arguments">Arguments</a>) Error(index <a href="../../../../builtin/index.html#int">int</a>) <a href="../../../../builtin/index.html#error">error</a></pre>
+				<p>
+Error gets the argument at the specified index. Panics if there is no argument, or
+if the argument is of the wrong type.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Arguments.Get">func (Arguments) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=15916:15964#L529">Get</a></h3>
+				<pre>func (args <a href="index.html#Arguments">Arguments</a>) Get(index <a href="../../../../builtin/index.html#int">int</a>) interface{}</pre>
+				<p>
+Get Returns the argument at the specified index.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Arguments.Int">func (Arguments) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=19793:19833#L665">Int</a></h3>
+				<pre>func (args <a href="index.html#Arguments">Arguments</a>) Int(index <a href="../../../../builtin/index.html#int">int</a>) <a href="../../../../builtin/index.html#int">int</a></pre>
+				<p>
+Int gets the argument at the specified index. Panics if there is no argument, or
+if the argument is of the wrong type.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Arguments.Is">func (Arguments) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=16196:16249#L537">Is</a></h3>
+				<pre>func (args <a href="index.html#Arguments">Arguments</a>) Is(objects ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+Is gets whether the objects match the arguments specified.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Arguments.String">func (Arguments) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=18875:18929#L639">String</a></h3>
+				<pre>func (args <a href="index.html#Arguments">Arguments</a>) String(indexOrNil ...<a href="../../../../builtin/index.html#int">int</a>) <a href="../../../../builtin/index.html#string">string</a></pre>
+				<p>
+String gets the argument at the specified index. Panics if there is no argument, or
+if the argument is of the wrong type.
+</p>
+<p>
+If no index is provided, String() returns a complete string representation
+of the arguments.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Call">type <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=579:1416#L25">Call</a></h2>
+			<pre>type Call struct {
+    Parent *<a href="index.html#Mock">Mock</a>
+
+    <span class="comment">// The name of the method that was or will be called.</span>
+    Method <a href="../../../../builtin/index.html#string">string</a>
+
+    <span class="comment">// Holds the arguments of the method.</span>
+    Arguments <a href="index.html#Arguments">Arguments</a>
+
+    <span class="comment">// Holds the arguments that should be returned when</span>
+    <span class="comment">// this method is called.</span>
+    ReturnArguments <a href="index.html#Arguments">Arguments</a>
+
+    <span class="comment">// The number of times to return the return arguments when setting</span>
+    <span class="comment">// expectations. 0 means to always return the value.</span>
+    Repeatability <a href="../../../../builtin/index.html#int">int</a>
+
+    <span class="comment">// Holds a channel that will be used to block the Return until it either</span>
+    <span class="comment">// receives a message or is closed. nil means it returns immediately.</span>
+    WaitFor &lt;-chan <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Time">Time</a>
+
+    <span class="comment">// Holds a handler used to manipulate arguments content that are passed by</span>
+    <span class="comment">// reference. It&#39;s useful when mocking methods such as unmarshalers or</span>
+    <span class="comment">// decoders.</span>
+    RunFn func(<a href="index.html#Arguments">Arguments</a>)
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+Call represents a method call and is used for setting expectations,
+as well as recording activity.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Call.After">func (*Call) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=3191:3234#L126">After</a></h3>
+				<pre>func (c *<a href="index.html#Call">Call</a>) After(d <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Duration">Duration</a>) *<a href="index.html#Call">Call</a></pre>
+				<p>
+After sets how long to block until the call returns
+</p>
+<pre>Mock.On(&#34;MyMethod&#34;, arg1, arg2).After(time.Second)
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Call.On">func (*Call) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=3987:4055#L151">On</a></h3>
+				<pre>func (c *<a href="index.html#Call">Call</a>) On(methodName <a href="../../../../builtin/index.html#string">string</a>, arguments ...interface{}) *<a href="index.html#Call">Call</a></pre>
+				<p>
+On chains a new expectation description onto the mocked interface. This
+allows syntax like.
+</p>
+<pre>Mock.
+   On(&#34;MyMethod&#34;, 1).Return(nil).
+   On(&#34;MyOtherMethod&#34;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;).Return(errors.New(&#34;Some Error&#34;))
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Call.Once">func (*Call) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=2252:2279#L90">Once</a></h3>
+				<pre>func (c *<a href="index.html#Call">Call</a>) Once() *<a href="index.html#Call">Call</a></pre>
+				<p>
+Once indicates that that the mock should only return the value once.
+</p>
+<pre>Mock.On(&#34;MyMethod&#34;, arg1, arg2).Return(returnArg1, returnArg2).Once()
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Call.Return">func (*Call) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=1959:2018#L78">Return</a></h3>
+				<pre>func (c *<a href="index.html#Call">Call</a>) Return(returnArguments ...interface{}) *<a href="index.html#Call">Call</a></pre>
+				<p>
+Return specifies the return arguments for the expectation.
+</p>
+<pre>Mock.On(&#34;DoSomething&#34;).Return(errors.New(&#34;failed&#34;))
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Call.Run">func (*Call) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=3655:3699#L138">Run</a></h3>
+				<pre>func (c *<a href="index.html#Call">Call</a>) Run(fn func(<a href="index.html#Arguments">Arguments</a>)) *<a href="index.html#Call">Call</a></pre>
+				<p>
+Run sets a handler to be called before returning. It can be used when
+mocking a method such as unmarshalers that takes a pointer to a struct and
+sets properties in such struct
+</p>
+<pre>Mock.On(&#34;Unmarshal&#34;, AnythingOfType(&#34;*map[string]interface{}&#34;).Return().Run(func(args Arguments) {
+	arg := args.Get(0).(*map[string]interface{})
+	arg[&#34;foo&#34;] = &#34;bar&#34;
+})
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Call.Times">func (*Call) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=2683:2716#L105">Times</a></h3>
+				<pre>func (c *<a href="index.html#Call">Call</a>) Times(i <a href="../../../../builtin/index.html#int">int</a>) *<a href="index.html#Call">Call</a></pre>
+				<p>
+Times indicates that that the mock should only return the indicated number
+of times.
+</p>
+<pre>Mock.On(&#34;MyMethod&#34;, arg1, arg2).Return(returnArg1, returnArg2).Times(5)
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Call.Twice">func (*Call) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=2458:2486#L97">Twice</a></h3>
+				<pre>func (c *<a href="index.html#Call">Call</a>) Twice() *<a href="index.html#Call">Call</a></pre>
+				<p>
+Twice indicates that that the mock should only return the value twice.
+</p>
+<pre>Mock.On(&#34;MyMethod&#34;, arg1, arg2).Return(returnArg1, returnArg2).Twice()
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Call.WaitUntil">func (*Call) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=2967:3017#L116">WaitUntil</a></h3>
+				<pre>func (c *<a href="index.html#Call">Call</a>) WaitUntil(w &lt;-chan <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Time">Time</a>) *<a href="index.html#Call">Call</a></pre>
+				<p>
+WaitUntil sets the channel that will block the mock&#39;s return until its closed
+or a message is received.
+</p>
+<pre>Mock.On(&#34;MyMethod&#34;, arg1, arg2).WaitUntil(time.After(time.Second))
+</pre>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Mock">type <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=4275:4641#L158">Mock</a></h2>
+			<pre>type Mock struct {
+    <span class="comment">// Represents the calls that are expected of</span>
+    <span class="comment">// an object.</span>
+    ExpectedCalls []*<a href="index.html#Call">Call</a>
+
+    <span class="comment">// Holds the calls that were made to this mocked object.</span>
+    Calls []<a href="index.html#Call">Call</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+Mock is the workhorse used to track activity on another object.
+For an example of its usage, refer to the &#34;Example Usage&#34; section at the top
+of this document.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Mock.AssertCalled">func (*Mock) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=11963:12052#L407">AssertCalled</a></h3>
+				<pre>func (m *<a href="index.html#Mock">Mock</a>) AssertCalled(t <a href="index.html#TestingT">TestingT</a>, methodName <a href="../../../../builtin/index.html#string">string</a>, arguments ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+AssertCalled asserts that the method was called.
+It can produce a false result when an argument is a pointer type and the underlying value changed after calling the mocked method.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Mock.AssertExpectations">func (*Mock) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=10321:10371#L364">AssertExpectations</a></h3>
+				<pre>func (m *<a href="index.html#Mock">Mock</a>) AssertExpectations(t <a href="index.html#TestingT">TestingT</a>) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+AssertExpectations asserts that everything specified with On and Return was
+in fact called as expected.  Calls may have occurred in any order.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Mock.AssertNotCalled">func (*Mock) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=12500:12592#L417">AssertNotCalled</a></h3>
+				<pre>func (m *<a href="index.html#Mock">Mock</a>) AssertNotCalled(t <a href="index.html#TestingT">TestingT</a>, methodName <a href="../../../../builtin/index.html#string">string</a>, arguments ...interface{}) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+AssertNotCalled asserts that the method was not called.
+It can produce a false result when an argument is a pointer type and the underlying value changed after calling the mocked method.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Mock.AssertNumberOfCalls">func (*Mock) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=11396:11485#L395">AssertNumberOfCalls</a></h3>
+				<pre>func (m *<a href="index.html#Mock">Mock</a>) AssertNumberOfCalls(t <a href="index.html#TestingT">TestingT</a>, methodName <a href="../../../../builtin/index.html#string">string</a>, expectedCalls <a href="../../../../builtin/index.html#int">int</a>) <a href="../../../../builtin/index.html#bool">bool</a></pre>
+				<p>
+AssertNumberOfCalls asserts that the method was called expectedCalls times.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Mock.Called">func (*Mock) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=7050:7107#L267">Called</a></h3>
+				<pre>func (m *<a href="index.html#Mock">Mock</a>) Called(arguments ...interface{}) <a href="index.html#Arguments">Arguments</a></pre>
+				<p>
+Called tells the mock object that a method has been called, and gets an array
+of arguments to return.  Panics if the call is unexpected (i.e. not preceded by
+appropriate .On .Return() calls)
+If Call.WaitFor is set, blocks until the channel is closed or receives a message.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Mock.On">func (*Mock) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=5066:5134#L192">On</a></h3>
+				<pre>func (m *<a href="index.html#Mock">Mock</a>) On(methodName <a href="../../../../builtin/index.html#string">string</a>, arguments ...interface{}) *<a href="index.html#Call">Call</a></pre>
+				<p>
+On starts a description of an expectation of the specified method
+being called.
+</p>
+<pre>Mock.On(&#34;MyMethod&#34;, arg1, arg2)
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Mock.TestData">func (*Mock) <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=4791:4825#L175">TestData</a></h3>
+				<pre>func (m *<a href="index.html#Mock">Mock</a>) TestData() <a href="http://localhost:9090/pkg/github.com/stretchr/objx/">objx</a>.<a href="http://localhost:9090/pkg/github.com/stretchr/objx/#Map">Map</a></pre>
+				<p>
+TestData holds any data that might be useful for testing.  Testify ignores
+this data completely allowing you to do whatever you like with it.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TestingT">type <a href="http://localhost:9090/src/github.com/stretchr/testify/mock/mock.go?s=335:459#L13">TestingT</a></h2>
+			<pre>type TestingT interface {
+    Logf(format <a href="../../../../builtin/index.html#string">string</a>, args ...interface{})
+    Errorf(format <a href="../../../../builtin/index.html#string">string</a>, args ...interface{})
+    FailNow()
+}</pre>
+			<p>
+TestingT is an interface wrapper around *testing.T
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.6.3.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:9090/doc/tos.html">Terms of Service</a> | 
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.js"></script>
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.treeview.js"></script>
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="../../../../../lib/godoc/godocs.js"></script>
+
+</body>
+</html>
+

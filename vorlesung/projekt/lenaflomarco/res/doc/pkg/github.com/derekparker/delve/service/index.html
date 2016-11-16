@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>service - The Go Programming Language</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../lib/godoc/style.css">
+
+<link rel="stylesheet" href="../../../../../lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:9090/">The Go Programming Language</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:9090/">Go</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:9090/search">
+<div id="menu">
+<a href="http://localhost:9090/doc/">Documents</a>
+<a href="../../../../index.html">Packages</a>
+<a href="http://localhost:9090/project/">The Project</a>
+<a href="http://localhost:9090/help/">Help</a>
+<a href="http://localhost:9090/blog/">Blog</a>
+
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>Package service</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type='text/javascript'>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/derekparker/delve/service"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+				<dd><a href="index.html#pkg-subdirectories">Subdirectories</a></dd>
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#Client">type Client</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Config">type Config</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#RPCCallback">type RPCCallback</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Server">type Server</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h4>Package files</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:9090/src/github.com/derekparker/delve/service/client.go">client.go</a>
+			
+				<a href="http://localhost:9090/src/github.com/derekparker/delve/service/config.go">config.go</a>
+			
+				<a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccallback.go">rpccallback.go</a>
+			
+				<a href="http://localhost:9090/src/github.com/derekparker/delve/service/server.go">server.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+		
+		
+		
+			
+			
+			<h2 id="Client">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/client.go?s=160:5036#L1">Client</a></h2>
+			<pre>type Client interface {
+    <span class="comment">// Returns the pid of the process we are debugging.</span>
+    ProcessPid() <a href="../../../../builtin/index.html#int">int</a>
+
+    <span class="comment">// Detach detaches the debugger, optionally killing the process.</span>
+    Detach(killProcess <a href="../../../../builtin/index.html#bool">bool</a>) <a href="../../../../builtin/index.html#error">error</a>
+
+    <span class="comment">// Restarts program.</span>
+    Restart() <a href="../../../../builtin/index.html#error">error</a>
+
+    <span class="comment">// GetState returns the current debugger state.</span>
+    GetState() (*<a href="api/index.html">api</a>.<a href="api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../builtin/index.html#error">error</a>)
+
+    <span class="comment">// Continue resumes process execution.</span>
+    Continue() &lt;-chan *<a href="api/index.html">api</a>.<a href="api/index.html#DebuggerState">DebuggerState</a>
+    <span class="comment">// Next continues to the next source line, not entering function calls.</span>
+    Next() (*<a href="api/index.html">api</a>.<a href="api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// Step continues to the next source line, entering function calls.</span>
+    Step() (*<a href="api/index.html">api</a>.<a href="api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// SingleStep will step a single cpu instruction.</span>
+    StepInstruction() (*<a href="api/index.html">api</a>.<a href="api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// SwitchThread switches the current thread context.</span>
+    SwitchThread(threadID <a href="../../../../builtin/index.html#int">int</a>) (*<a href="api/index.html">api</a>.<a href="api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// SwitchGoroutine switches the current goroutine (and the current thread as well)</span>
+    SwitchGoroutine(goroutineID <a href="../../../../builtin/index.html#int">int</a>) (*<a href="api/index.html">api</a>.<a href="api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// Halt suspends the process.</span>
+    Halt() (*<a href="api/index.html">api</a>.<a href="api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../builtin/index.html#error">error</a>)
+
+    <span class="comment">// GetBreakpoint gets a breakpoint by ID.</span>
+    GetBreakpoint(id <a href="../../../../builtin/index.html#int">int</a>) (*<a href="api/index.html">api</a>.<a href="api/index.html#Breakpoint">Breakpoint</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// GetBreakpointByName gets a breakpoint by name.</span>
+    GetBreakpointByName(name <a href="../../../../builtin/index.html#string">string</a>) (*<a href="api/index.html">api</a>.<a href="api/index.html#Breakpoint">Breakpoint</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// CreateBreakpoint creates a new breakpoint.</span>
+    CreateBreakpoint(*<a href="api/index.html">api</a>.<a href="api/index.html#Breakpoint">Breakpoint</a>) (*<a href="api/index.html">api</a>.<a href="api/index.html#Breakpoint">Breakpoint</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// ListBreakpoints gets all breakpoints.</span>
+    ListBreakpoints() ([]*<a href="api/index.html">api</a>.<a href="api/index.html#Breakpoint">Breakpoint</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// ClearBreakpoint deletes a breakpoint by ID.</span>
+    ClearBreakpoint(id <a href="../../../../builtin/index.html#int">int</a>) (*<a href="api/index.html">api</a>.<a href="api/index.html#Breakpoint">Breakpoint</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// ClearBreakpointByName deletes a breakpoint by name</span>
+    ClearBreakpointByName(name <a href="../../../../builtin/index.html#string">string</a>) (*<a href="api/index.html">api</a>.<a href="api/index.html#Breakpoint">Breakpoint</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// Allows user to update an existing breakpoint for example to change the information</span>
+    <span class="comment">// retrieved when the breakpoint is hit or to change, add or remove the break condition</span>
+    AmendBreakpoint(*<a href="api/index.html">api</a>.<a href="api/index.html#Breakpoint">Breakpoint</a>) <a href="../../../../builtin/index.html#error">error</a>
+    <span class="comment">// Cancels a Next or Step call that was interrupted by a manual stop or by another breakpoint</span>
+    CancelNext() <a href="../../../../builtin/index.html#error">error</a>
+
+    <span class="comment">// ListThreads lists all threads.</span>
+    ListThreads() ([]*<a href="api/index.html">api</a>.<a href="api/index.html#Thread">Thread</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// GetThread gets a thread by its ID.</span>
+    GetThread(id <a href="../../../../builtin/index.html#int">int</a>) (*<a href="api/index.html">api</a>.<a href="api/index.html#Thread">Thread</a>, <a href="../../../../builtin/index.html#error">error</a>)
+
+    <span class="comment">// ListPackageVariables lists all package variables in the context of the current thread.</span>
+    ListPackageVariables(filter <a href="../../../../builtin/index.html#string">string</a>, cfg <a href="api/index.html">api</a>.<a href="api/index.html#LoadConfig">LoadConfig</a>) ([]<a href="api/index.html">api</a>.<a href="api/index.html#Variable">Variable</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// EvalVariable returns a variable in the context of the current thread.</span>
+    EvalVariable(scope <a href="api/index.html">api</a>.<a href="api/index.html#EvalScope">EvalScope</a>, symbol <a href="../../../../builtin/index.html#string">string</a>, cfg <a href="api/index.html">api</a>.<a href="api/index.html#LoadConfig">LoadConfig</a>) (*<a href="api/index.html">api</a>.<a href="api/index.html#Variable">Variable</a>, <a href="../../../../builtin/index.html#error">error</a>)
+
+    <span class="comment">// SetVariable sets the value of a variable</span>
+    SetVariable(scope <a href="api/index.html">api</a>.<a href="api/index.html#EvalScope">EvalScope</a>, symbol, value <a href="../../../../builtin/index.html#string">string</a>) <a href="../../../../builtin/index.html#error">error</a>
+
+    <span class="comment">// ListSources lists all source files in the process matching filter.</span>
+    ListSources(filter <a href="../../../../builtin/index.html#string">string</a>) ([]<a href="../../../../builtin/index.html#string">string</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// ListFunctions lists all functions in the process matching filter.</span>
+    ListFunctions(filter <a href="../../../../builtin/index.html#string">string</a>) ([]<a href="../../../../builtin/index.html#string">string</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// ListTypes lists all types in the process matching filter.</span>
+    ListTypes(filter <a href="../../../../builtin/index.html#string">string</a>) ([]<a href="../../../../builtin/index.html#string">string</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// ListLocals lists all local variables in scope.</span>
+    ListLocalVariables(scope <a href="api/index.html">api</a>.<a href="api/index.html#EvalScope">EvalScope</a>, cfg <a href="api/index.html">api</a>.<a href="api/index.html#LoadConfig">LoadConfig</a>) ([]<a href="api/index.html">api</a>.<a href="api/index.html#Variable">Variable</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// ListFunctionArgs lists all arguments to the current function.</span>
+    ListFunctionArgs(scope <a href="api/index.html">api</a>.<a href="api/index.html#EvalScope">EvalScope</a>, cfg <a href="api/index.html">api</a>.<a href="api/index.html#LoadConfig">LoadConfig</a>) ([]<a href="api/index.html">api</a>.<a href="api/index.html#Variable">Variable</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// ListRegisters lists registers and their values.</span>
+    ListRegisters() (<a href="../../../../builtin/index.html#string">string</a>, <a href="../../../../builtin/index.html#error">error</a>)
+
+    <span class="comment">// ListGoroutines lists all goroutines.</span>
+    ListGoroutines() ([]*<a href="api/index.html">api</a>.<a href="api/index.html#Goroutine">Goroutine</a>, <a href="../../../../builtin/index.html#error">error</a>)
+
+    <span class="comment">// Returns stacktrace</span>
+    Stacktrace(<a href="../../../../builtin/index.html#int">int</a>, <a href="../../../../builtin/index.html#int">int</a>, *<a href="api/index.html">api</a>.<a href="api/index.html#LoadConfig">LoadConfig</a>) ([]<a href="api/index.html">api</a>.<a href="api/index.html#Stackframe">Stackframe</a>, <a href="../../../../builtin/index.html#error">error</a>)
+
+    <span class="comment">// Returns whether we attached to a running process or not</span>
+    AttachedToExistingProcess() <a href="../../../../builtin/index.html#bool">bool</a>
+
+    <span class="comment">// Returns concrete location information described by a location expression</span>
+    <span class="comment">// loc ::= &lt;filename&gt;:&lt;line&gt; | &lt;function&gt;[:&lt;line&gt;] | /&lt;regex&gt;/ | (+|-)&lt;offset&gt; | &lt;line&gt; | *&lt;address&gt;</span>
+    <span class="comment">// * &lt;filename&gt; can be the full path of a file or just a suffix</span>
+    <span class="comment">// * &lt;function&gt; ::= &lt;package&gt;.&lt;receiver type&gt;.&lt;name&gt; | &lt;package&gt;.(*&lt;receiver type&gt;).&lt;name&gt; | &lt;receiver type&gt;.&lt;name&gt; | &lt;package&gt;.&lt;name&gt; | (*&lt;receiver type&gt;).&lt;name&gt; | &lt;name&gt;</span>
+    <span class="comment">// * &lt;function&gt; must be unambiguous</span>
+    <span class="comment">// * /&lt;regex&gt;/ will return a location for each function matched by regex</span>
+    <span class="comment">// * +&lt;offset&gt; returns a location for the line that is &lt;offset&gt; lines after the current line</span>
+    <span class="comment">// * -&lt;offset&gt; returns a location for the line that is &lt;offset&gt; lines before the current line</span>
+    <span class="comment">// * &lt;line&gt; returns a location for a line in the current file</span>
+    <span class="comment">// * *&lt;address&gt; returns the location corresponding to the specified address</span>
+    <span class="comment">// NOTE: this function does not actually set breakpoints.</span>
+    FindLocation(scope <a href="api/index.html">api</a>.<a href="api/index.html#EvalScope">EvalScope</a>, loc <a href="../../../../builtin/index.html#string">string</a>) ([]<a href="api/index.html">api</a>.<a href="api/index.html#Location">Location</a>, <a href="../../../../builtin/index.html#error">error</a>)
+
+    <span class="comment">// Disassemble code between startPC and endPC</span>
+    DisassembleRange(scope <a href="api/index.html">api</a>.<a href="api/index.html#EvalScope">EvalScope</a>, startPC, endPC <a href="../../../../builtin/index.html#uint64">uint64</a>, flavour <a href="api/index.html">api</a>.<a href="api/index.html#AssemblyFlavour">AssemblyFlavour</a>) (<a href="api/index.html">api</a>.<a href="api/index.html#AsmInstructions">AsmInstructions</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// Disassemble code of the function containing PC</span>
+    DisassemblePC(scope <a href="api/index.html">api</a>.<a href="api/index.html#EvalScope">EvalScope</a>, pc <a href="../../../../builtin/index.html#uint64">uint64</a>, flavour <a href="api/index.html">api</a>.<a href="api/index.html#AssemblyFlavour">AssemblyFlavour</a>) (<a href="api/index.html">api</a>.<a href="api/index.html#AsmInstructions">AsmInstructions</a>, <a href="../../../../builtin/index.html#error">error</a>)
+}</pre>
+			<p>
+Client represents a debugger service client. All client methods are
+synchronous.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Config">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/config.go?s=333:860#L1">Config</a></h2>
+			<pre>type Config struct {
+    <span class="comment">// Listener is used to serve requests.</span>
+    Listener <a href="../../../../net/index.html">net</a>.<a href="../../../../net/index.html#Listener">Listener</a>
+    <span class="comment">// ProcessArgs are the arguments to launch a new process.</span>
+    ProcessArgs []<a href="../../../../builtin/index.html#string">string</a>
+    <span class="comment">// AttachPid is the PID of an existing process to which the debugger should</span>
+    <span class="comment">// attach.</span>
+    AttachPid <a href="../../../../builtin/index.html#int">int</a>
+    <span class="comment">// AcceptMulti configures the server to accept multiple connection.</span>
+    <span class="comment">// Note that the server API is not reentrant and clients will have to coordinate.</span>
+    AcceptMulti <a href="../../../../builtin/index.html#bool">bool</a>
+    <span class="comment">// APIVersion selects which version of the API to serve (default: 1).</span>
+    APIVersion <a href="../../../../builtin/index.html#int">int</a>
+}</pre>
+			<p>
+Config provides the configuration to start a Debugger and expose it with a
+service.
+</p>
+<p>
+Only one of ProcessArgs or AttachPid should be specified. If ProcessArgs is
+provided, a new process will be launched. Otherwise, the debugger will try
+to attach to an existing process with AttachPid.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="RPCCallback">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccallback.go?s=94:160#L1">RPCCallback</a></h2>
+			<pre>type RPCCallback interface {
+    Return(out interface{}, err <a href="../../../../builtin/index.html#error">error</a>)
+}</pre>
+			<p>
+RPCCallback is used by RPC methods to return their result asynchronously.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Server">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/server.go?s=85:141#L1">Server</a></h2>
+			<pre>type Server interface {
+    Run() <a href="../../../../builtin/index.html#error">error</a>
+    Stop(<a href="../../../../builtin/index.html#bool">bool</a>) <a href="../../../../builtin/index.html#error">error</a>
+}</pre>
+			<p>
+Server represents a server for a remote client
+to connect to.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+	
+	
+		<h2 id="pkg-subdirectories">Subdirectories</h2>
+	
+	
+
+
+	<div class="pkg-dir">
+		<table>
+			<tr>
+				<th class="pkg-name">Name</th>
+				<th class="pkg-synopsis">Synopsis</th>
+			</tr>
+
+			
+			<tr>
+				<td colspan="2"><a href="../index.html">..</a></td>
+			</tr>
+			
+
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="api/index.html">api</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="debugger/index.html">debugger</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="rpc1/index.html">rpc1</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="rpc2/index.html">rpc2</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="rpccommon/index.html">rpccommon</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 0px;">
+							<a href="test/index.html">test</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 20px;">
+							<a href="test/cmd/index.html">cmd</a>
+						</td>
+						<td class="pkg-synopsis">
+							
+						</td>
+					</tr>
+				
+			
+		</table>
+	</div>
+
+
+	
+
+
+
+<div id="footer">
+Build version go1.6.3.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:9090/doc/tos.html">Terms of Service</a> | 
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.js"></script>
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.treeview.js"></script>
+<script type="text/javascript" src="../../../../../lib/godoc/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="../../../../../lib/godoc/godocs.js"></script>
+
+</body>
+</html>
+
