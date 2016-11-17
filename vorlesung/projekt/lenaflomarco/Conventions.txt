@@ -6,7 +6,7 @@ Rule #1 KISS , no extra work !!!
     -Packages and Files start with a Capital letter.
     -Packages and Files use CamelCase.
 
-    -Constants are all CAPITAL
+    -Constants are camelcase and start with Capital or small letter depending on public/private !
 
     -Variables start small and use camelCase
 
