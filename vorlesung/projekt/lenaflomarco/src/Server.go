@@ -8,8 +8,6 @@ import (
 	"path/filepath"
 	"strconv"
 	"encoding/json"
-	"os"
-	"log"
 	"html/template"
 )
 
@@ -28,6 +26,9 @@ func main() {
 	//REST Test
 	requestMultiplexer.HandleFunc(apiURL, apiDoc)
 	requestMultiplexer.HandleFunc(apiURL + "getFileList", apiGetFileList)
+
+	//HtmlTemplate Tests
+	requestMultiplexer.HandleFunc(rootURL + "indexTemplate.html", indexTemplate)
 
 	cfg := &tls.Config{
 		MinVersion:               tls.VersionTLS12,
@@ -62,13 +63,12 @@ func root(w http.ResponseWriter, r *http.Request) {
 	Utils.LogDebug("File Accessed:	" + path)
 	http.ServeFile(w, r, path)
 
-	t := template.Must(template.New("").Parse(`<table>{{range .}}<tr><td>{{.}}</td></tr>{{end}}</table>`))
-	names := []string{"john", "jim"}
-	if err := t.Execute(os.Stdout, names); err != nil {
-		log.Fatal(err)
-	}
+}
 
-
+func indexTemplate(w http.ResponseWriter, r *http.Request) {
+	t, _ := template.ParseFiles("res/html/indexTemplate.html")
+	files, _ := filepath.Glob("*")
+	t.Execute(w, files)
 }
 
 func doc(w http.ResponseWriter, r *http.Request) {
