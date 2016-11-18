@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Go Fileserver - Register</title>
+    <link rel="stylesheet" href="main.css" type="text/css">
+
+    <script>
+
+
+
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://localhost:8080/API/getFileList');
+xhr.onload = function() {
+    if (xhr.status === 200) {
+
+        var arr = JSON.parse(xhr.responseText);
+        console.log(arr);
+
+        var table = document.getElementById("mytable");
+
+          var row = table.insertRow(0);
+          row.insertCell(0).innerHTML="<td></td>";
+          row.insertCell(1).innerHTML="<td>Name</td>";
+          row.insertCell(2).innerHTML="<td>Größe</td>";
+          row.insertCell(3).innerHTML="<td>Datum</td>";
+          row.insertCell(4).innerHTML="<td>Download</td>";
+          row.insertCell(5).innerHTML="<td>Löschen</td>";
+
+        for (var i = 0; i < arr.length; i++){
+          var obj = arr[i];
+          var row = table.insertRow(i+1);
+
+          row.insertCell(0).innerHTML="<td><img src='images/file.png' alt='Datei'></td>";
+          row.insertCell(1).innerHTML="<td>"+obj+"</td>";
+          row.insertCell(2).innerHTML="<td>123</td>";
+          row.insertCell(3).innerHTML="<td>01.01.1970</td>";
+          row.insertCell(4).innerHTML="<td>DownloadMe</td>";
+          row.insertCell(5).innerHTML="<td>DeleteMe</td>";
+
+          }
+
+        //alert('User\'s name is ' + xhr.responseText);
+
+    }
+    else {
+
+        alert('Request failed.  Returned status of ' + xhr.status);
+    }
+};
+xhr.send();
+
+    </script>
+
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="logout">Logout</a>
+    </nav>
+</header>
+
+<h1>Meine Dateien</h1>
+
+Pfad: <span id="path"></span>
+<table border="1" id="mytable">
+
+</table>
+
+<br>
+<fieldset>
+    <legend>Ordner anlegen</legend>
+    <form action="" method="post">
+        <label for="addFolder">Ordnername: </label>
+        <input type="text" name="addFolder" id="addFolder">
+        <br>
+        <input type="submit" value="Ordner anlegen">
+    </form>
+</fieldset>
+
+<br>
+<fieldset>
+    <legend>Upload</legend>
+    <form action="" method="post">
+        <label for="uploadFile">Datei: </label>
+        <input type="file" name="uploadFile" id="uploadFile">
+        <br>
+        <input type="submit" value="Datei hochladen">
+    </form>
+</fieldset>
+
+</body>
+</html>

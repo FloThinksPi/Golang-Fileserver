@@ -16,6 +16,7 @@
 <h1>Meine Dateien</h1>
 
 Pfad: <span id="path"></span>
+
 <table border="1">
     <tr>
         <th></th>
@@ -25,23 +26,20 @@ Pfad: <span id="path"></span>
         <th>Download</th>
         <th>Löschen</th>
     </tr>
+    {{range .}}
     <tr>
-        <td><img src="images/folder.png" alt="Ordner"></td>
-        <td>Testordner</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>DeleteMe</td>
-    </tr>
-    <tr>
-        <td><img src="images/file.png" alt="Datei"></td>
-        <td>Testdatei</td>
+        <td>
+            <img src="images/file.png" alt="Datei">
+        </td>
+        <td>{{.}}</td>
         <td>123</td>
         <td>01.01.1970</td>
         <td>DownloadMe</td>
         <td>DeleteMe</td>
     </tr>
+    {{end}}
 </table>
+
 <br>
 <fieldset>
     <legend>Ordner anlegen</legend>

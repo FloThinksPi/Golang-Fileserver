@@ -7,31 +7,28 @@ import (
 	"Flags"
 	"path/filepath"
 	"strconv"
+	"encoding/json"
+	"html/template"
 )
 
-func init() {
-
-}
+const (
+	rootURL = "/"
+	apiURL = "/API/"
+	docURL = "/doc/"
+)
 
 func main() {
 	requestMultiplexer := http.NewServeMux()
 
-	requestMultiplexer.HandleFunc("/", root)
-	requestMultiplexer.HandleFunc("/doc/", func(w http.ResponseWriter, r *http.Request) {
+	requestMultiplexer.HandleFunc(docURL, doc)
+	requestMultiplexer.HandleFunc(rootURL, root)
 
-		path, err := filepath.Abs("res/" + r.URL.Path[1:])
-		Utils.HandlePrint(err)
+	//REST Test
+	requestMultiplexer.HandleFunc(apiURL, apiDoc)
+	requestMultiplexer.HandleFunc(apiURL + "getFileList", apiGetFileList)
 
-		Utils.LogDebug("File Accessed:	" + path)
-
-		if (r.URL.Path[1:] == "doc/" || r.URL.Path[1:] == "doc") {
-			Utils.LogDebug("Redirecting from doc to doc/pkg/fileServer.html")
-			http.Redirect(w, r, "pkg/FileServer.html", 300)
-		} else {
-			http.ServeFile(w, r, path)
-		}
-
-	})
+	//HtmlTemplate Tests
+	requestMultiplexer.HandleFunc(rootURL + "indexTemplate.html", indexTemplate)
 
 	cfg := &tls.Config{
 		MinVersion:               tls.VersionTLS12,
@@ -46,7 +43,7 @@ func main() {
 			tls.TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,
 		},
 	}
-	
+
 	srv := &http.Server{
 		Addr:         ":" + strconv.Itoa(Flags.GetPort()),
 		Handler:      requestMultiplexer,
@@ -57,7 +54,54 @@ func main() {
 	Utils.HandlePanic(srv.ListenAndServeTLS(Flags.GetTLScert(), Flags.GetTLSkey()))
 }
 
-func root(w http.ResponseWriter, req *http.Request) {
+func root(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
-	w.Write([]byte("Test Site \n"))
+
+	path, err := filepath.Abs("res/html/" + r.URL.Path[1:])
+	Utils.HandlePrint(err)
+
+	Utils.LogDebug("File Accessed:	" + path)
+	http.ServeFile(w, r, path)
+
 }
+
+func indexTemplate(w http.ResponseWriter, r *http.Request) {
+	t, _ := template.ParseFiles("res/html/indexTemplate.html")
+	files, _ := filepath.Glob("*")
+	t.Execute(w, files)
+}
+
+func doc(w http.ResponseWriter, r *http.Request) {
+	w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
+
+	path, err := filepath.Abs("res/" + r.URL.Path[1:])
+	Utils.HandlePrint(err)
+
+	Utils.LogDebug("File Accessed:	" + path)
+
+	if (r.URL.Path[1:] == "doc/" || r.URL.Path[1:] == "doc") {
+		Utils.LogDebug("Redirecting from doc to doc/pkg/fileServer.html")
+		http.Redirect(w, r, "pkg/FileServer.html", 300)
+	} else {
+		http.ServeFile(w, r, path)
+	}
+
+}
+
+//apiDoc Shows Documentation of the Rest Api
+func apiDoc(w http.ResponseWriter, r *http.Request) {
+	w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
+
+	json.NewEncoder(w).Encode("Documentation Of Api May Follow")
+}
+
+func apiGetFileList(w http.ResponseWriter, r *http.Request) {
+	w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
+
+	files, _ := filepath.Glob("*")
+
+	json.NewEncoder(w).Encode(files)
+
+}
+
+
