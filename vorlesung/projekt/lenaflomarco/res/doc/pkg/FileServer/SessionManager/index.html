@@ -88,16 +88,8 @@
 			<div class="expanded">
 				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
 				<p>
-Package SessionManager manages Sessions for the Webserver
-</p>
-<h3 id="hdr-This_Text">This Text</h3>
-<p>
-In the files of a library package, you can attach a comment to the package
-name, which will be shown in the overview for that package&#39;s documentation.
-Just like for command documentation, the convention is to use a file called
-Doc.go for your package documentation, though it is not necessary.  If you
-have comments on the package name in multiple files, they&#39;ll be concatenated,
-but generally it&#39;s best to just have comments in one file.
+Package SessionManager Stores, Creates, Validates and Invalidates a Session for the Webserver.
+Sessions are only stored in-memory
 </p>
 
 			</div>
@@ -217,18 +209,25 @@ SESSION_KEY_LENGTH Length of the SessionKey which gets used after Authentication
 		
 			
 			
-			<h2 id="NewSession">func <a href="http://localhost:9090/src/FileServer/SessionManager/SessionManager.go?s=89:138#L1">NewSession</a></h2>
+			<h2 id="NewSession">func <a href="http://localhost:9090/src/FileServer/SessionManager/SessionManager.go?s=301:350#L2">NewSession</a></h2>
 			<pre>func NewSession(record <a href="index.html#SessionRecord">SessionRecord</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
-			
+			<p>
+NewSession Checks if a supplied SessionRecord is completely filled, reqeust a random SessionID and adds this to the SessionRecord.
+The SessionRecord is then saved in the packageGlobal managersSessionStorage.
+</p>
+
 			
 			
 
 		
 			
 			
-			<h2 id="ValidateSession">func <a href="http://localhost:9090/src/FileServer/SessionManager/SessionManager.go?s=621:681#L20">ValidateSession</a></h2>
+			<h2 id="ValidateSession">func <a href="http://localhost:9090/src/FileServer/SessionManager/SessionManager.go?s=962:1022#L22">ValidateSession</a></h2>
 			<pre>func ValidateSession(session <a href="../../builtin/index.html#string">string</a>) (valid <a href="../../builtin/index.html#bool">bool</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
-			
+			<p>
+ValidateSession checks if a supplied SessionID exists in managersSessionStorage and returns true if the Session didnt time out.
+</p>
+
 			
 			
 

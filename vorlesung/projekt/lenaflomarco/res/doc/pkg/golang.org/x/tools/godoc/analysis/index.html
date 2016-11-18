@@ -268,7 +268,7 @@ error message.
 		
 			
 			
-			<h2 id="Run">func <a href="http://localhost:9090/src/golang.org/x/tools/godoc/analysis/analysis.go?s=10019:10053#L329">Run</a></h2>
+			<h2 id="Run">func <a href="http://localhost:9090/src/golang.org/x/tools/godoc/analysis/analysis.go?s=10040:10074#L330">Run</a></h2>
 			<pre>func Run(pta <a href="../../../../../builtin/index.html#bool">bool</a>, result *<a href="index.html#Result">Result</a>)</pre>
 			<p>
 Run runs program analysis and computes the resulting markup,
@@ -284,7 +284,7 @@ enabled by the pta flag.
 		
 			
 			
-			<h2 id="FileInfo">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/analysis/analysis.go?s=3943:4057#L119">FileInfo</a></h2>
+			<h2 id="FileInfo">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/analysis/analysis.go?s=3964:4078#L120">FileInfo</a></h2>
 			<pre>type FileInfo struct {
     Data  []interface{} <span class="comment">// JSON serializable values</span>
     Links []<a href="index.html#Link">Link</a>        <span class="comment">// HTML link markup</span>
@@ -309,7 +309,7 @@ Clients must not mutate it.
 		
 			
 			
-			<h2 id="Link">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/analysis/analysis.go?s=2335:2455#L62">Link</a></h2>
+			<h2 id="Link">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/analysis/analysis.go?s=2356:2476#L63">Link</a></h2>
 			<pre>type Link interface {
     Start() <a href="../../../../../builtin/index.html#int">int</a>
     End() <a href="../../../../../builtin/index.html#int">int</a>
@@ -361,7 +361,7 @@ The first element is special and represents &#34;all external callers&#34;.
 		
 			
 			
-			<h2 id="PackageInfo">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/analysis/analysis.go?s=5289:5410#L173">PackageInfo</a></h2>
+			<h2 id="PackageInfo">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/analysis/analysis.go?s=5310:5431#L174">PackageInfo</a></h2>
 			<pre>type PackageInfo struct {
     CallGraph      []*<a href="index.html#PCGNodeJSON">PCGNodeJSON</a>
     CallGraphIndex map[<a href="../../../../../builtin/index.html#string">string</a>]<a href="../../../../../builtin/index.html#int">int</a>
@@ -387,7 +387,7 @@ Clients must not mutate it.
 		
 			
 			
-			<h2 id="Result">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/analysis/analysis.go?s=6518:6787#L217">Result</a></h2>
+			<h2 id="Result">type <a href="http://localhost:9090/src/golang.org/x/tools/godoc/analysis/analysis.go?s=6539:6808#L218">Result</a></h2>
 			<pre>type Result struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -410,7 +410,7 @@ and JavaScript data referenced by the links.
 
 			
 				
-				<h3 id="Result.FileInfo">func (*Result) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/analysis/analysis.go?s=7744:7797#L259">FileInfo</a></h3>
+				<h3 id="Result.FileInfo">func (*Result) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/analysis/analysis.go?s=7765:7818#L260">FileInfo</a></h3>
 				<pre>func (res *<a href="index.html#Result">Result</a>) FileInfo(url <a href="../../../../../builtin/index.html#string">string</a>) (fi <a href="index.html#FileInfo">FileInfo</a>)</pre>
 				<p>
 FileInfo returns new slices containing opaque JSON values and the
@@ -424,7 +424,7 @@ It returns &#34;zero&#34; if no data is available.
 				
 			
 				
-				<h3 id="Result.PackageInfo">func (*Result) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/analysis/analysis.go?s=8442:8503#L284">PackageInfo</a></h3>
+				<h3 id="Result.PackageInfo">func (*Result) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/analysis/analysis.go?s=8463:8524#L285">PackageInfo</a></h3>
 				<pre>func (res *<a href="index.html#Result">Result</a>) PackageInfo(importPath <a href="../../../../../builtin/index.html#string">string</a>) <a href="index.html#PackageInfo">PackageInfo</a></pre>
 				<p>
 PackageInfo returns new slices of JSON values for the callgraph and
@@ -438,7 +438,7 @@ PackageInfo returns &#34;zero&#34; if no data is available.
 				
 			
 				
-				<h3 id="Result.Status">func (*Result) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/analysis/analysis.go?s=7245:7279#L241">Status</a></h3>
+				<h3 id="Result.Status">func (*Result) <a href="http://localhost:9090/src/golang.org/x/tools/godoc/analysis/analysis.go?s=7266:7300#L242">Status</a></h3>
 				<pre>func (res *<a href="index.html#Result">Result</a>) Status() <a href="../../../../../builtin/index.html#string">string</a></pre>
 				<p>
 Status returns a human-readable description of the current analysis status.

@@ -245,7 +245,7 @@ ssa.Values/Instructions.
 				<dd><a href="index.html#DefaultType">func DefaultType(typ types.Type) types.Type</a></dd>
 			
 				
-				<dd><a href="index.html#FindTests">func FindTests(pkg *Package) (tests, benchmarks, examples []*Function, main *Function)</a></dd>
+				<dd><a href="index.html#FindTests">func FindTests(pkgs []*Package) (testpkgs []*Package, tests, benchmarks, examples []*Function)</a></dd>
 			
 				
 				<dd><a href="index.html#HasEnclosingFunction">func HasEnclosingFunction(pkg *Package, path []ast.Node) bool</a></dd>
@@ -1253,7 +1253,7 @@ ssa.Values/Instructions.
 					<dd>&nbsp; &nbsp; <a href="index.html#Program.CreatePackage">func (prog *Program) CreatePackage(pkg *types.Package, files []*ast.File, info *types.Info, importable bool) *Package</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Program.CreateTestMainPackage">func (prog *Program) CreateTestMainPackage(pkg *Package) *Package</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Program.CreateTestMainPackage">func (prog *Program) CreateTestMainPackage(pkgs ...*Package) *Package</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#Program.FuncValue">func (prog *Program) FuncValue(obj *types.Func) *Function</a></dd>
@@ -1659,12 +1659,12 @@ TODO(gri): this is a copy of go/types.defaultType; export that function.
 		
 			
 			
-			<h2 id="FindTests">func <a href="http://localhost:9090/src/golang.org/x/tools/go/ssa/testmain.go?s=611:697#L15">FindTests</a></h2>
-			<pre>func FindTests(pkg *<a href="index.html#Package">Package</a>) (tests, benchmarks, examples []*<a href="index.html#Function">Function</a>, main *<a href="index.html#Function">Function</a>)</pre>
+			<h2 id="FindTests">func <a href="http://localhost:9090/src/golang.org/x/tools/go/ssa/testmain.go?s=644:738#L17">FindTests</a></h2>
+			<pre>func FindTests(pkgs []*<a href="index.html#Package">Package</a>) (testpkgs []*<a href="index.html#Package">Package</a>, tests, benchmarks, examples []*<a href="index.html#Function">Function</a>)</pre>
 			<p>
-FindTests returns the Test, Benchmark, and Example functions
-(as defined by &#34;go test&#34;) defined in the specified package,
-and its TestMain function, if any.
+FindTests returns the list of packages that define at least one Test,
+Example or Benchmark function (as defined by &#34;go test&#34;), and the
+lists of all such functions.
 </p>
 
 			
@@ -5870,18 +5870,15 @@ until a subsequent call to Package.Build().
 				
 			
 				
-				<h3 id="Program.CreateTestMainPackage">func (*Program) <a href="http://localhost:9090/src/golang.org/x/tools/go/ssa/testmain.go?s=3306:3371#L84">CreateTestMainPackage</a></h3>
-				<pre>func (prog *<a href="index.html#Program">Program</a>) CreateTestMainPackage(pkg *<a href="index.html#Package">Package</a>) *<a href="index.html#Package">Package</a></pre>
+				<h3 id="Program.CreateTestMainPackage">func (*Program) <a href="http://localhost:9090/src/golang.org/x/tools/go/ssa/testmain.go?s=2990:3059#L86">CreateTestMainPackage</a></h3>
+				<pre>func (prog *<a href="index.html#Program">Program</a>) CreateTestMainPackage(pkgs ...*<a href="index.html#Package">Package</a>) *<a href="index.html#Package">Package</a></pre>
 				<p>
-CreateTestMainPackage creates and returns a synthetic &#34;testmain&#34;
-package for the specified package if it defines tests, benchmarks or
-executable examples, or nil otherwise.  The new package is named
-&#34;main&#34; and provides a function named &#34;main&#34; that runs the tests,
-similar to the one that would be created by the &#39;go test&#39; tool.
+CreateTestMainPackage creates and returns a synthetic &#34;main&#34;
+package that runs all the tests of the supplied packages, similar
+to the one that would be created by the &#39;go test&#39; tool.
 </p>
 <p>
-Subsequent calls to prog.AllPackages include the new package.
-The package pkg must belong to the program prog.
+It returns nil if the program contains no tests.
 </p>
 
 				

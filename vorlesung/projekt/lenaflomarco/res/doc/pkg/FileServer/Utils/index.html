@@ -88,16 +88,7 @@
 			<div class="expanded">
 				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
 				<p>
-Package Utils contains Help Functions for Error Handling and Logging
-</p>
-<h3 id="hdr-This_Text">This Text</h3>
-<p>
-In the files of a library package, you can attach a comment to the package
-name, which will be shown in the overview for that package&#39;s documentation.
-Just like for command documentation, the convention is to use a file called
-Doc.go for your package documentation, though it is not necessary.  If you
-have comments on the package name in multiple files, they&#39;ll be concatenated,
-but generally it&#39;s best to just have comments in one file.
+Package Utils contain Functions for easy ErrorHandling, consistent Logging, and a RandomString generator
 </p>
 
 			</div>
@@ -233,81 +224,108 @@ Colors for Terminal , only on Unix systems
 		
 			
 			
-			<h2 id="HandlePanic">func <a href="http://localhost:9090/src/FileServer/Utils/ErrorHandling.go?s=145:172#L5">HandlePanic</a></h2>
+			<h2 id="HandlePanic">func <a href="http://localhost:9090/src/FileServer/Utils/ErrorHandling.go?s=300:327#L7">HandlePanic</a></h2>
 			<pre>func HandlePanic(err <a href="../../builtin/index.html#error">error</a>)</pre>
-			
+			<p>
+HandlePanic handels an error by printing it as Panic and causing a panic() if err!=nil
+</p>
+
 			
 			
 
 		
 			
 			
-			<h2 id="HandlePrint">func <a href="http://localhost:9090/src/FileServer/Utils/ErrorHandling.go?s=67:94#L1">HandlePrint</a></h2>
+			<h2 id="HandlePrint">func <a href="http://localhost:9090/src/FileServer/Utils/ErrorHandling.go?s=133:160#L1">HandlePrint</a></h2>
 			<pre>func HandlePrint(err <a href="../../builtin/index.html#error">error</a>)</pre>
-			
+			<p>
+HandlePrint handles an error by printig it as Error if err!=nil
+</p>
+
 			
 			
 
 		
 			
 			
-			<h2 id="LogDebug">func <a href="http://localhost:9090/src/FileServer/Utils/Logging.go?s=785:810#L30">LogDebug</a></h2>
+			<h2 id="LogDebug">func <a href="http://localhost:9090/src/FileServer/Utils/Logging.go?s=1033:1058#L36">LogDebug</a></h2>
 			<pre>func LogDebug(msg <a href="../../builtin/index.html#string">string</a>)</pre>
-			
+			<p>
+LogDebug Prints a Message as Debug
+</p>
+
 			
 			
 
 		
 			
 			
-			<h2 id="LogError">func <a href="http://localhost:9090/src/FileServer/Utils/Logging.go?s=206:231#L5">LogError</a></h2>
+			<h2 id="LogError">func <a href="http://localhost:9090/src/FileServer/Utils/Logging.go?s=280:305#L7">LogError</a></h2>
 			<pre>func LogError(msg <a href="../../builtin/index.html#string">string</a>)</pre>
-			
+			<p>
+LogError Prints a Message as Error
+</p>
+
 			
 			
 
 		
 			
 			
-			<h2 id="LogErrorWithStack">func <a href="http://localhost:9090/src/FileServer/Utils/Logging.go?s=313:346#L9">LogErrorWithStack</a></h2>
+			<h2 id="LogErrorWithStack">func <a href="http://localhost:9090/src/FileServer/Utils/Logging.go?s=448:481#L12">LogErrorWithStack</a></h2>
 			<pre>func LogErrorWithStack(err <a href="../../builtin/index.html#error">error</a>)</pre>
-			
+			<p>
+LogErrorWithStack Prints a Error and prints its Stacktrace
+</p>
+
 			
 			
 
 		
 			
 			
-			<h2 id="LogInfo">func <a href="http://localhost:9090/src/FileServer/Utils/Logging.go?s=649:673#L24">LogInfo</a></h2>
+			<h2 id="LogInfo">func <a href="http://localhost:9090/src/FileServer/Utils/Logging.go?s=860:884#L29">LogInfo</a></h2>
 			<pre>func LogInfo(msg <a href="../../builtin/index.html#string">string</a>)</pre>
-			
+			<p>
+LogInfo Prints a Message as Info
+</p>
+
 			
 			
 
 		
 			
 			
-			<h2 id="LogPanic">func <a href="http://localhost:9090/src/FileServer/Utils/Logging.go?s=89:114#L1">LogPanic</a></h2>
+			<h2 id="LogPanic">func <a href="http://localhost:9090/src/FileServer/Utils/Logging.go?s=126:151#L2">LogPanic</a></h2>
 			<pre>func LogPanic(msg <a href="../../builtin/index.html#string">string</a>)</pre>
-			
+			<p>
+LogPanic Prints a Message as Panic
+</p>
+
 			
 			
 
 		
 			
 			
-			<h2 id="LogWarning">func <a href="http://localhost:9090/src/FileServer/Utils/Logging.go?s=509:536#L18">LogWarning</a></h2>
+			<h2 id="LogWarning">func <a href="http://localhost:9090/src/FileServer/Utils/Logging.go?s=685:712#L22">LogWarning</a></h2>
 			<pre>func LogWarning(msg <a href="../../builtin/index.html#string">string</a>)</pre>
-			
+			<p>
+LogWarning Prints a Message as Warning
+</p>
+
 			
 			
 
 		
 			
 			
-			<h2 id="RandString">func <a href="http://localhost:9090/src/FileServer/Utils/Rand.go?s=437:472#L7">RandString</a></h2>
+			<h2 id="RandString">func <a href="http://localhost:9090/src/FileServer/Utils/Rand.go?s=522:557#L8">RandString</a></h2>
 			<pre>func RandString(length <a href="../../builtin/index.html#int">int</a>) <a href="../../builtin/index.html#string">string</a></pre>
-			
+			<p>
+RandString generates a random string with length passed to RandString as parameter
+</p>
+
 			
 			
 

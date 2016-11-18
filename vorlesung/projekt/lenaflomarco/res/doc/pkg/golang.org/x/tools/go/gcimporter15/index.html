@@ -98,10 +98,6 @@ standard library&#39;s go/importer package, specifically customizable
 package data lookup. This package should be deleted once that
 functionality becomes available in the standard library.
 </p>
-<p>
-Deprecated: this package will be deleted in October 2017.
-New code should use golang.org/x/tools/go/gcexportdata.
-</p>
 
 			</div>
 		</div>
@@ -252,7 +248,7 @@ is the string before the export data, either &#34;$$&#34; or &#34;$$B&#34;.
 		
 			
 			
-			<h2 id="FindPkg">func <a href="http://localhost:9090/src/golang.org/x/tools/go/gcimporter15/gcimporter.go?s=1555:1610#L43">FindPkg</a></h2>
+			<h2 id="FindPkg">func <a href="http://localhost:9090/src/golang.org/x/tools/go/gcimporter15/gcimporter.go?s=1429:1484#L39">FindPkg</a></h2>
 			<pre>func FindPkg(path, srcDir <a href="../../../../../builtin/index.html#string">string</a>) (filename, id <a href="../../../../../builtin/index.html#string">string</a>)</pre>
 			<p>
 FindPkg returns the filename and unique package id for an import
@@ -268,7 +264,7 @@ If no file was found, an empty filename is returned.
 		
 			
 			
-			<h2 id="Import">func <a href="http://localhost:9090/src/golang.org/x/tools/go/gcimporter15/gcimporter.go?s=3865:3965#L130">Import</a></h2>
+			<h2 id="Import">func <a href="http://localhost:9090/src/golang.org/x/tools/go/gcimporter15/gcimporter.go?s=3739:3839#L126">Import</a></h2>
 			<pre>func Import(packages map[<a href="../../../../../builtin/index.html#string">string</a>]*<a href="../../../../../go/types/index.html">types</a>.<a href="../../../../../go/types/index.html#Package">Package</a>, path, srcDir <a href="../../../../../builtin/index.html#string">string</a>) (pkg *<a href="../../../../../go/types/index.html">types</a>.<a href="../../../../../go/types/index.html#Package">Package</a>, err <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 			<p>
 Import imports a gc-generated package given its import path and srcDir, adds
@@ -282,7 +278,7 @@ The packages map must contain all packages already imported.
 		
 			
 			
-			<h2 id="ImportData">func <a href="http://localhost:9090/src/golang.org/x/tools/go/gcimporter15/gcimporter.go?s=3226:3346#L106">ImportData</a></h2>
+			<h2 id="ImportData">func <a href="http://localhost:9090/src/golang.org/x/tools/go/gcimporter15/gcimporter.go?s=3100:3220#L102">ImportData</a></h2>
 			<pre>func ImportData(packages map[<a href="../../../../../builtin/index.html#string">string</a>]*<a href="../../../../../go/types/index.html">types</a>.<a href="../../../../../go/types/index.html#Package">Package</a>, filename, id <a href="../../../../../builtin/index.html#string">string</a>, data <a href="../../../../../io/index.html">io</a>.<a href="../../../../../io/index.html#Reader">Reader</a>) (pkg *<a href="../../../../../go/types/index.html">types</a>.<a href="../../../../../go/types/index.html#Package">Package</a>, err <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 			<p>
 ImportData imports a package by reading the gc-generated export data,

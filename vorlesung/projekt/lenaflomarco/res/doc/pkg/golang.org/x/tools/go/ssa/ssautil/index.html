@@ -115,9 +115,6 @@
 				<dd><a href="index.html#CreateProgram">func CreateProgram(lprog *loader.Program, mode ssa.BuilderMode) *ssa.Program</a></dd>
 			
 				
-				<dd><a href="index.html#MainPackages">func MainPackages(pkgs []*ssa.Package) []*ssa.Package</a></dd>
-			
-				
 				<dd><a href="index.html#Switches">func Switches(fn *ssa.Function) []Switch</a></dd>
 			
 			
@@ -265,20 +262,6 @@ on the result.
 </p>
 <p>
 mode controls diagnostics and checking during SSA construction.
-</p>
-
-			
-			
-
-		
-			
-			
-			<h2 id="MainPackages">func <a href="http://localhost:9090/src/golang.org/x/tools/go/ssa/ssautil/visit.go?s=1892:1945#L61">MainPackages</a></h2>
-			<pre>func MainPackages(pkgs []*<a href="../index.html">ssa</a>.<a href="../index.html#Package">Package</a>) []*<a href="../index.html">ssa</a>.<a href="../index.html#Package">Package</a></pre>
-			<p>
-MainPackages returns the subset of the specified packages
-named &#34;main&#34; that define a main function.
-The result may include synthetic &#34;testmain&#34; packages.
 </p>
 
 			

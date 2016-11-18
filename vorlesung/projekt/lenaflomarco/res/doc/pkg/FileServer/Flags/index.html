@@ -88,16 +88,17 @@
 			<div class="expanded">
 				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
 				<p>
-Package Flags contains Help Functions for Error Handling and Logging
+Package Flags contains all Flags(Start Parameters) that are used by this Program. They get defined only in this
+Package and can be accessed trough getters.
 </p>
-<h3 id="hdr-This_Text">This Text</h3>
+<h3 id="hdr-Warning">Warning</h3>
 <p>
-In the files of a library package, you can attach a comment to the package
-name, which will be shown in the overview for that package&#39;s documentation.
-Just like for command documentation, the convention is to use a file called
-Doc.go for your package documentation, though it is not necessary.  If you
-have comments on the package name in multiple files, they&#39;ll be concatenated,
-but generally it&#39;s best to just have comments in one file.
+This Package should not use other Packages to prevent cycling includes. And it should not need to include others!
+</p>
+<h3 id="hdr-Related_Links">Related Links</h3>
+<p>
+Stuff neat to know if you want to understand Flags:
+<a href="https://golang.org/pkg/flag/">https://golang.org/pkg/flag/</a>
 </p>
 
 			</div>
@@ -115,8 +116,6 @@ but generally it&#39;s best to just have comments in one file.
 			<div id="manual-nav">
 			<dl>
 			
-			
-				<dd><a href="index.html#pkg-variables">Variables</a></dd>
 			
 			
 				
@@ -195,57 +194,73 @@ but generally it&#39;s best to just have comments in one file.
 
 		
 		
-			<h2 id="pkg-variables">Variables</h2>
-			
-				<pre>var (
-    <span id="TLScert">TLScert</span> = <a href="../../flag/index.html">flag</a>.<a href="../../flag/index.html#String">String</a>(&#34;tlscert&#34;, standardizePath(&#34;res/certificates/server.pem&#34;), &#34;&#34;)
-    <span id="TLSkey">TLSkey</span>  = <a href="../../flag/index.html">flag</a>.<a href="../../flag/index.html#String">String</a>(&#34;tlskey&#34;, standardizePath(&#34;res/certificates/server.key&#34;), &#34;&#34;)
-)</pre>
-				
-			
-		
 		
 			
 			
-			<h2 id="GetPort">func <a href="http://localhost:9090/src/FileServer/Flags/Flags.go?s=836:854#L19">GetPort</a></h2>
+			<h2 id="GetPort">func <a href="http://localhost:9090/src/FileServer/Flags/Flags.go?s=1246:1264#L24">GetPort</a></h2>
 			<pre>func GetPort() <a href="../../builtin/index.html#int">int</a></pre>
-			
+			<p>
+GetPort returns port
+</p>
+<pre>port = flag.Int(&#34;port&#34;,8080,&#34;Port for the Webserver to listen to (Port 1-1024 need SuperUser Privileges on Unix systems!)&#34;)
+</pre>
+
 			
 			
 
 		
 			
 			
-			<h2 id="GetTLScert">func <a href="http://localhost:9090/src/FileServer/Flags/Flags.go?s=874:898#L23">GetTLScert</a></h2>
+			<h2 id="GetTLScert">func <a href="http://localhost:9090/src/FileServer/Flags/Flags.go?s=1429:1453#L30">GetTLScert</a></h2>
 			<pre>func GetTLScert() <a href="../../builtin/index.html#string">string</a></pre>
-			
+			<p>
+GetTLScert returns tlsCert
+</p>
+<pre>tlsCert = flag.String(&#34;tlscert&#34;, standardizePath(&#34;res/certificates/server.pem&#34;), &#34;Path for the TLS Certificate&#34;)
+</pre>
+
 			
 			
 
 		
 			
 			
-			<h2 id="GetTLSkey">func <a href="http://localhost:9090/src/FileServer/Flags/Flags.go?s=921:944#L27">GetTLSkey</a></h2>
+			<h2 id="GetTLSkey">func <a href="http://localhost:9090/src/FileServer/Flags/Flags.go?s=1609:1632#L36">GetTLSkey</a></h2>
 			<pre>func GetTLSkey() <a href="../../builtin/index.html#string">string</a></pre>
-			
+			<p>
+GetTLSkey returns tlsKey
+</p>
+<pre>tlsKey = flag.String(&#34;tlskey&#34;, standardizePath(&#34;res/certificates/server.key&#34;), &#34;Path for the TLS Key&#34;)
+</pre>
+
 			
 			
 
 		
 			
 			
-			<h2 id="GetVerbosity">func <a href="http://localhost:9090/src/FileServer/Flags/Flags.go?s=741:764#L11">GetVerbosity</a></h2>
+			<h2 id="GetVerbosity">func <a href="http://localhost:9090/src/FileServer/Flags/Flags.go?s=816:839#L12">GetVerbosity</a></h2>
 			<pre>func GetVerbosity() <a href="../../builtin/index.html#int">int</a></pre>
-			
+			<p>
+GetVerbosity returns verbosity
+</p>
+<pre>verbosity = flag.Int(&#34;v&#34;, 3, &#34;Verbosity (0=Errors ,3=All)&#34;)
+</pre>
+
 			
 			
 
 		
 			
 			
-			<h2 id="GetWorkDir">func <a href="http://localhost:9090/src/FileServer/Flags/Flags.go?s=789:813#L15">GetWorkDir</a></h2>
+			<h2 id="GetWorkDir">func <a href="http://localhost:9090/src/FileServer/Flags/Flags.go?s=1049:1073#L18">GetWorkDir</a></h2>
 			<pre>func GetWorkDir() <a href="../../builtin/index.html#string">string</a></pre>
-			
+			<p>
+GetWorkDir returns workDir
+</p>
+<pre>workDir = flag.String(&#34;workdir&#34;, standardizePath(&#34;datastorage&#34;), &#34;Folder in which the Server stores the Userdatabase aswell as the Users uploaded data&#34;)
+</pre>
+
 			
 			
 

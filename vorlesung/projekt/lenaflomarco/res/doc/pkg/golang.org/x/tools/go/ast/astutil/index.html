@@ -239,7 +239,7 @@ adds
 		
 			
 			
-			<h2 id="DeleteImport">func <a href="http://localhost:9090/src/golang.org/x/tools/go/ast/astutil/imports.go?s=5019:5098#L169">DeleteImport</a></h2>
+			<h2 id="DeleteImport">func <a href="http://localhost:9090/src/golang.org/x/tools/go/ast/astutil/imports.go?s=4871:4950#L166">DeleteImport</a></h2>
 			<pre>func DeleteImport(fset *<a href="../../../../../../go/token/index.html">token</a>.<a href="../../../../../../go/token/index.html#FileSet">FileSet</a>, f *<a href="../../../../../../go/ast/index.html">ast</a>.<a href="../../../../../../go/ast/index.html#File">File</a>, path <a href="../../../../../../builtin/index.html#string">string</a>) (deleted <a href="../../../../../../builtin/index.html#bool">bool</a>)</pre>
 			<p>
 DeleteImport deletes the import path from the file f, if present.
@@ -251,7 +251,7 @@ DeleteImport deletes the import path from the file f, if present.
 		
 			
 			
-			<h2 id="DeleteNamedImport">func <a href="http://localhost:9090/src/golang.org/x/tools/go/ast/astutil/imports.go?s=5247:5337#L174">DeleteNamedImport</a></h2>
+			<h2 id="DeleteNamedImport">func <a href="http://localhost:9090/src/golang.org/x/tools/go/ast/astutil/imports.go?s=5099:5189#L171">DeleteNamedImport</a></h2>
 			<pre>func DeleteNamedImport(fset *<a href="../../../../../../go/token/index.html">token</a>.<a href="../../../../../../go/token/index.html#FileSet">FileSet</a>, f *<a href="../../../../../../go/ast/index.html">ast</a>.<a href="../../../../../../go/ast/index.html#File">File</a>, name, path <a href="../../../../../../builtin/index.html#string">string</a>) (deleted <a href="../../../../../../builtin/index.html#bool">bool</a>)</pre>
 			<p>
 DeleteNamedImport deletes the import with the given name and path from the file f, if present.
@@ -263,7 +263,7 @@ DeleteNamedImport deletes the import with the given name and path from the file 
 		
 			
 			
-			<h2 id="Imports">func <a href="http://localhost:9090/src/golang.org/x/tools/go/ast/astutil/imports.go?s=11417:11483#L412">Imports</a></h2>
+			<h2 id="Imports">func <a href="http://localhost:9090/src/golang.org/x/tools/go/ast/astutil/imports.go?s=11269:11335#L409">Imports</a></h2>
 			<pre>func Imports(fset *<a href="../../../../../../go/token/index.html">token</a>.<a href="../../../../../../go/token/index.html#FileSet">FileSet</a>, f *<a href="../../../../../../go/ast/index.html">ast</a>.<a href="../../../../../../go/ast/index.html#File">File</a>) [][]*<a href="../../../../../../go/ast/index.html">ast</a>.<a href="../../../../../../go/ast/index.html#ImportSpec">ImportSpec</a></pre>
 			<p>
 Imports returns the file imports grouped by paragraph.
@@ -356,7 +356,7 @@ Postcondition: path is never nil; it always contains at least &#39;root&#39;.
 		
 			
 			
-			<h2 id="RewriteImport">func <a href="http://localhost:9090/src/golang.org/x/tools/go/ast/astutil/imports.go?s=8815:8907#L301">RewriteImport</a></h2>
+			<h2 id="RewriteImport">func <a href="http://localhost:9090/src/golang.org/x/tools/go/ast/astutil/imports.go?s=8667:8759#L298">RewriteImport</a></h2>
 			<pre>func RewriteImport(fset *<a href="../../../../../../go/token/index.html">token</a>.<a href="../../../../../../go/token/index.html#FileSet">FileSet</a>, f *<a href="../../../../../../go/ast/index.html">ast</a>.<a href="../../../../../../go/ast/index.html#File">File</a>, oldPath, newPath <a href="../../../../../../builtin/index.html#string">string</a>) (rewrote <a href="../../../../../../builtin/index.html#bool">bool</a>)</pre>
 			<p>
 RewriteImport rewrites any import of path oldPath to path newPath.
@@ -380,7 +380,7 @@ Unparen returns e with any enclosing parentheses stripped.
 		
 			
 			
-			<h2 id="UsesImport">func <a href="http://localhost:9090/src/golang.org/x/tools/go/ast/astutil/imports.go?s=9237:9290#L315">UsesImport</a></h2>
+			<h2 id="UsesImport">func <a href="http://localhost:9090/src/golang.org/x/tools/go/ast/astutil/imports.go?s=9089:9142#L312">UsesImport</a></h2>
 			<pre>func UsesImport(f *<a href="../../../../../../go/ast/index.html">ast</a>.<a href="../../../../../../go/ast/index.html#File">File</a>, path <a href="../../../../../../builtin/index.html#string">string</a>) (used <a href="../../../../../../builtin/index.html#bool">bool</a>)</pre>
 			<p>
 UsesImport reports whether a given import is used.

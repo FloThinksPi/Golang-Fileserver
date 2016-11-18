@@ -765,7 +765,7 @@ Template returns an empty template with the action functions in its FuncMap.
 		
 			
 			
-			<h2 id="Author">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=1911:1946#L69">Author</a></h2>
+			<h2 id="Author">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=1878:1913#L68">Author</a></h2>
 			<pre>type Author struct {
     Elem []<a href="index.html#Elem">Elem</a>
 }</pre>
@@ -786,7 +786,7 @@ Author represents the person who wrote and/or is presenting the document.
 
 			
 				
-				<h3 id="Author.TextElem">func (*Author) <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=2115:2157#L76">TextElem</a></h3>
+				<h3 id="Author.TextElem">func (*Author) <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=2082:2124#L75">TextElem</a></h3>
 				<pre>func (p *<a href="index.html#Author">Author</a>) TextElem() (elems []<a href="index.html#Elem">Elem</a>)</pre>
 				<p>
 TextElem returns the first text elements of the author details.
@@ -890,7 +890,7 @@ without the contact details.
 		
 			
 			
-			<h2 id="Context">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=5294:5437#L224">Context</a></h2>
+			<h2 id="Context">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=5261:5404#L223">Context</a></h2>
 			<pre>type Context struct {
     <span class="comment">// ReadFile reads the file named by filename and returns the contents.</span>
     ReadFile func(filename <a href="../../../../builtin/index.html#string">string</a>) ([]<a href="../../../../builtin/index.html#byte">byte</a>, <a href="../../../../builtin/index.html#error">error</a>)
@@ -912,7 +912,7 @@ A Context specifies the supporting context for parsing a presentation.
 
 			
 				
-				<h3 id="Context.Parse">func (*Context) <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=5632:5713#L238">Parse</a></h3>
+				<h3 id="Context.Parse">func (*Context) <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=5599:5680#L237">Parse</a></h3>
 				<pre>func (ctx *<a href="index.html#Context">Context</a>) Parse(r <a href="../../../../io/index.html">io</a>.<a href="../../../../io/index.html#Reader">Reader</a>, name <a href="../../../../builtin/index.html#string">string</a>, mode <a href="index.html#ParseMode">ParseMode</a>) (*<a href="index.html#Doc">Doc</a>, <a href="../../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Parse parses a document from r.
@@ -925,15 +925,14 @@ Parse parses a document from r.
 		
 			
 			
-			<h2 id="Doc">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=1668:1832#L58">Doc</a></h2>
+			<h2 id="Doc">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=1668:1799#L58">Doc</a></h2>
 			<pre>type Doc struct {
-    Title      <a href="../../../../builtin/index.html#string">string</a>
-    Subtitle   <a href="../../../../builtin/index.html#string">string</a>
-    Time       <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Time">Time</a>
-    Authors    []<a href="index.html#Author">Author</a>
-    TitleNotes []<a href="../../../../builtin/index.html#string">string</a>
-    Sections   []<a href="index.html#Section">Section</a>
-    Tags       []<a href="../../../../builtin/index.html#string">string</a>
+    Title    <a href="../../../../builtin/index.html#string">string</a>
+    Subtitle <a href="../../../../builtin/index.html#string">string</a>
+    Time     <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Time">Time</a>
+    Authors  []<a href="index.html#Author">Author</a>
+    Sections []<a href="index.html#Section">Section</a>
+    Tags     []<a href="../../../../builtin/index.html#string">string</a>
 }</pre>
 			<p>
 Doc represents an entire document.
@@ -950,7 +949,7 @@ Doc represents an entire document.
 
 			
 				
-				<h3 id="Parse">func <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=6481:6547#L276">Parse</a></h3>
+				<h3 id="Parse">func <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=6237:6303#L263">Parse</a></h3>
 				<pre>func Parse(r <a href="../../../../io/index.html">io</a>.<a href="../../../../io/index.html#Reader">Reader</a>, name <a href="../../../../builtin/index.html#string">string</a>, mode <a href="index.html#ParseMode">ParseMode</a>) (*<a href="index.html#Doc">Doc</a>, <a href="../../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Parse parses a document from r. Parse reads assets used by the presentation
@@ -976,7 +975,7 @@ Render renders the doc to the given writer using the provided template.
 		
 			
 			
-			<h2 id="Elem">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=3283:3329#L124">Elem</a></h2>
+			<h2 id="Elem">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=3250:3296#L123">Elem</a></h2>
 			<pre>type Elem interface {
     TemplateName() <a href="../../../../builtin/index.html#string">string</a>
 }</pre>
@@ -1088,7 +1087,7 @@ can provide the name of the template used to render the element.
 		
 			
 			
-			<h2 id="Lines">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=4398:4504#L172">Lines</a></h2>
+			<h2 id="Lines">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=4365:4471#L171">Lines</a></h2>
 			<pre>type Lines struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -1140,7 +1139,7 @@ Lines is a helper for parsing line-based input.
 		
 			
 			
-			<h2 id="List">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=4253:4290#L165">List</a></h2>
+			<h2 id="List">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=4220:4257#L164">List</a></h2>
 			<pre>type List struct {
     Bullet []<a href="../../../../builtin/index.html#string">string</a>
 }</pre>
@@ -1161,7 +1160,7 @@ List represents a bulleted list.
 
 			
 				
-				<h3 id="List.TemplateName">func (List) <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=4292:4327#L169">TemplateName</a></h3>
+				<h3 id="List.TemplateName">func (List) <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=4259:4294#L168">TemplateName</a></h3>
 				<pre>func (l <a href="index.html#List">List</a>) TemplateName() <a href="../../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1189,7 +1188,7 @@ List represents a bulleted list.
 		
 			
 			
-			<h2 id="ParseMode">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=5493:5511#L230">ParseMode</a></h2>
+			<h2 id="ParseMode">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=5460:5478#L229">ParseMode</a></h2>
 			<pre>type ParseMode <a href="../../../../builtin/index.html#int">int</a></pre>
 			<p>
 ParseMode represents flags for the Parse function.
@@ -1216,7 +1215,7 @@ ParseMode represents flags for the Parse function.
 		
 			
 			
-			<h2 id="Section">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=2398:2482#L88">Section</a></h2>
+			<h2 id="Section">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=2365:2449#L87">Section</a></h2>
 			<pre>type Section struct {
     Number []<a href="../../../../builtin/index.html#int">int</a>
     Title  <a href="../../../../builtin/index.html#string">string</a>
@@ -1241,7 +1240,7 @@ comprising a title and a list of elements.
 
 			
 				
-				<h3 id="Section.FormattedNumber">func (Section) <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=2929:2970#L112">FormattedNumber</a></h3>
+				<h3 id="Section.FormattedNumber">func (Section) <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=2896:2937#L111">FormattedNumber</a></h3>
 				<pre>func (s <a href="index.html#Section">Section</a>) FormattedNumber() <a href="../../../../builtin/index.html#string">string</a></pre>
 				<p>
 FormattedNumber returns a string containing the concatenation of the
@@ -1253,7 +1252,7 @@ numbers identifying a Section.
 				
 			
 				
-				<h3 id="Section.Level">func (Section) <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=2763:2791#L106">Level</a></h3>
+				<h3 id="Section.Level">func (Section) <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=2730:2758#L105">Level</a></h3>
 				<pre>func (s <a href="index.html#Section">Section</a>) Level() <a href="../../../../builtin/index.html#int">int</a></pre>
 				<p>
 Level returns the level of the given section.
@@ -1276,7 +1275,7 @@ Render renders the section to the given writer using the provided template.
 				
 			
 				
-				<h3 id="Section.Sections">func (Section) <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=2484:2532#L95">Sections</a></h3>
+				<h3 id="Section.Sections">func (Section) <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=2451:2499#L94">Sections</a></h3>
 				<pre>func (s <a href="index.html#Section">Section</a>) Sections() (sections []<a href="index.html#Section">Section</a>)</pre>
 				
 				
@@ -1284,7 +1283,7 @@ Render renders the section to the given writer using the provided template.
 				
 			
 				
-				<h3 id="Section.TemplateName">func (Section) <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=3077:3115#L120">TemplateName</a></h3>
+				<h3 id="Section.TemplateName">func (Section) <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=3044:3082#L119">TemplateName</a></h3>
 				<pre>func (s <a href="index.html#Section">Section</a>) TemplateName() <a href="../../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1294,7 +1293,7 @@ Render renders the section to the given writer using the provided template.
 		
 			
 			
-			<h2 id="Text">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=4112:4160#L157">Text</a></h2>
+			<h2 id="Text">type <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=4079:4127#L156">Text</a></h2>
 			<pre>type Text struct {
     Lines []<a href="../../../../builtin/index.html#string">string</a>
     Pre   <a href="../../../../builtin/index.html#bool">bool</a>
@@ -1316,7 +1315,7 @@ Text represents an optionally preformatted paragraph.
 
 			
 				
-				<h3 id="Text.TemplateName">func (Text) <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=4162:4197#L162">TemplateName</a></h3>
+				<h3 id="Text.TemplateName">func (Text) <a href="http://localhost:9090/src/golang.org/x/tools/present/parse.go?s=4129:4164#L161">TemplateName</a></h3>
 				<pre>func (t <a href="index.html#Text">Text</a>) TemplateName() <a href="../../../../builtin/index.html#string">string</a></pre>
 				
 				
