@@ -1,15 +1,13 @@
-// Package Flags contains Help Functions for Error Handling and Logging
+// Package Flags contains all Flags(Start Parameters) that are used by this Program. They get defined only in this
+// Package and can be accessed trough getters.
 //
-// This Text
+// Warning
 //
-// In the files of a library package, you can attach a comment to the package
-// name, which will be shown in the overview for that package's documentation.
-// Just like for command documentation, the convention is to use a file called
-// Doc.go for your package documentation, though it is not necessary.  If you
-// have comments on the package name in multiple files, they'll be concatenated,
-// but generally it's best to just have comments in one file.
+// This Package should not use other Packages to prevent cycling includes. And it should not need to include others!
 //
+// Related Links
+//
+// Stuff neat to know if you want to understand Flags:
+// https://golang.org/pkg/flag/
 package Flags
 
-
-//TODO DOC
