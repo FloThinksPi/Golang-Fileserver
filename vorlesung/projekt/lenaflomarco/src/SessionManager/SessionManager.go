@@ -7,6 +7,8 @@ import (
 	"Utils"
 )
 
+//NewSession Checks if a supplied SessionRecord is completely filled, reqeust a random SessionID and adds this to the SessionRecord.
+//The SessionRecord is then saved in the packageGlobal managersSessionStorage.
 func NewSession(record SessionRecord) (err error) {
 	managersSessionStorage.RWMutex.Lock()
 	defer managersSessionStorage.RWMutex.Unlock()
@@ -26,7 +28,7 @@ func NewSession(record SessionRecord) (err error) {
 	return
 }
 
-
+//ValidateSession checks if a supplied SessionID exists in managersSessionStorage and returns true if the Session didnt time out.
 func ValidateSession(session string) (valid bool, err error) {
 	managersSessionStorage.RWMutex.RLock()
 	defer managersSessionStorage.RWMutex.RUnlock()

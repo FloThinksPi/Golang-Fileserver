@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+//TestCorrectLength tests if generated random string has the correct length
 func TestCorrectLength(t *testing.T) {
 	for i := 1; i < 10; i++ {
 		salt := RandString(i)

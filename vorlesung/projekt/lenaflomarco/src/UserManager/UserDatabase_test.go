@@ -18,7 +18,7 @@ func TestMain(m *testing.M) {
 	os.Exit(retCode)
 }
 
-//Datatypes from UsermanagerData
+//Testdata which gets populated in setup()
 var TestData UserMap
 
 func setup() {
@@ -34,7 +34,8 @@ func setup() {
 
 }
 
-func Test_FileSaveRead(t *testing.T) {
+//Test_FileSaveRead Tests if File gets Saved correctly and Folders in its path get created automatically
+func Test_FileSave(t *testing.T) {
 
 	var LocalTestStorage UserStorage
 	var err error
@@ -65,7 +66,7 @@ func Test_FileSaveRead(t *testing.T) {
 	}
 
 }
-
+//Test_FileRead Tests if read data from filesystem equals the data in memory
 func Test_FileRead(t *testing.T) {
 
 	var LocalTestStorage UserStorage
@@ -85,7 +86,7 @@ func Test_FileRead(t *testing.T) {
 	assert.Equal(t, TestData, LocalTestStorage.UserMap, "Saved and Read data is not Equal")
 }
 
-// Test Concurrent Access to GlobalUserStorage via "ReadUser" and "WriteUser" -> uses Random acces to trigger a Concurrent Access
+// Test_SynchronizedGlobalUserStorage Tests Concurrent Access to GlobalUserStorage via "ReadUser" and "WriteUser" -> uses Random acces to trigger a Concurrent Access
 func Test_SynchronizedGlobalUserStorage(t *testing.T) {
 
 	for i := 0; i < 1000; i++ {
@@ -94,7 +95,7 @@ func Test_SynchronizedGlobalUserStorage(t *testing.T) {
 
 }
 
-//Helper Function to test Concurrency
+//readWriteTest is a Helper Function to test Concurrency
 func readWriteTest(t *testing.T) {
 	aUserRecord, err := ReadUser("flo@myprivatemail.de")
 	if err != nil {
@@ -108,7 +109,7 @@ func readWriteTest(t *testing.T) {
 	}
 }
 
-//Test Filesync and NIL handling trough uncomplete UserMap
+//Test_SyncToFileSystem Tests Writes to filesystem and NIL handling trough uncomplete UserMap
 func Test_SyncToFileSystem(t *testing.T) {
 
 	//Clear all Variables

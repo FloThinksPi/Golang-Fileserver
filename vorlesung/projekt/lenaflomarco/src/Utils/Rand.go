@@ -14,6 +14,7 @@ const (
 
 var src = rand.NewSource(time.Now().UnixNano())
 
+//RandString generates a random string with length passed to RandString as parameter
 func RandString(length int)  string {
 	b := make([]byte, length)
 	// A src.Int63() generates 63 random bits, enough for letterIdxMax characters!

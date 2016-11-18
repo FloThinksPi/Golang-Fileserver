@@ -6,12 +6,14 @@ import (
 	"fmt"
 )
 
+//HandlePrint handles an error by printig it as Error if err!=nil
 func HandlePrint(err error) {
 	if err != nil {
 		LogErrorWithStack(err)
 	}
 }
 
+//HandlePanic handels an error by printing it as Panic and causing a panic() if err!=nil
 func HandlePanic(err error) {
 	if err != nil {
 		LogPanic(errors.Cause(err).Error())

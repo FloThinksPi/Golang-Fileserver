@@ -3,9 +3,11 @@ package UserManager
 import (
 	"sync"
 	"flag"
+	"Flags"
 )
 
-var workdir = flag.String("workdir", "", "Directory in which the Server will store its Database and Userdata")
+//Workdir in which the UserDatabase gets Written and Users uploaded Files are Stored
+var workdir = Flags.GetWorkDir()
 
 //The Data which is accessed by Go should be loaded in RAM(Hashmap for best reading performance) and only synced to disk if a change is imminent/done.
 type UserMap map[string]UserRecord
@@ -34,5 +36,4 @@ func init() {
 
 	//Create Map
 	managersUserStorage.UserMap = make(UserMap)
-
 }
