@@ -1,18 +1,11 @@
 package UserManager
 
 import (
-	"math/rand"
 	"crypto/sha512"
 	"encoding/hex"
-	"time"
 	"Utils"
-)
 
-type usr struct {
-	name string
-	salt string
-	hash string
-}
+)
 
 //SetHash - einen hash Setzten
 func SetHash(psw string)(hash string,salt string) {
@@ -29,12 +22,20 @@ func SetHash(psw string)(hash string,salt string) {
 
 
 //VerifyHash - Hash überprüfen
-func VerifyHash(psw string, salt string,correctHash string) bool {
+func verifyHash(psw string, salt string,correctHash string) bool {
 	var saltedPsw = psw+salt
-
 	shaHasher := sha512.New()
 	shaHasher.Write([]byte(saltedPsw))
 	var inputHash = hex.EncodeToString(shaHasher.Sum(nil))
 
 	return inputHash == correctHash
+}
+
+//VerifyUser - Read User Data and VerifyHash
+func VerifyUser(email string, psw string) bool{
+	usr, err := ReadUser(email)
+	if err != nil {
+		Utils.HandlePrint(err) //TODO kp was ab geht
+	}
+	return verifyHash(psw,usr.Salt,usr.HashedPassword)
 }
