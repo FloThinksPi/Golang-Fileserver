@@ -9,6 +9,7 @@ import (
 	"strconv"
 	"encoding/json"
 	"html/template"
+	"UserManager"
 )
 
 const (
@@ -29,6 +30,9 @@ func main() {
 
 	//HtmlTemplate Tests
 	requestMultiplexer.HandleFunc(rootURL + "indexTemplate.html", indexTemplate)
+
+	//Login Test
+	requestMultiplexer.HandleFunc(rootURL + "login.html", loginTest)
 
 	cfg := &tls.Config{
 		MinVersion:               tls.VersionTLS12,
@@ -65,10 +69,25 @@ func root(w http.ResponseWriter, r *http.Request) {
 
 }
 
+//TODO Write Test
+//TODO Fix: Wrong Login when open LoginSite
+func loginTest(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	email := r.FormValue("email")
+	password := r.FormValue("password")
+	println(UserManager.VerifyUser(email,password))
+	t, _ := template.ParseFiles("res/html/login.html")
+	//TODO Print invalid Login
+	t.Execute(w, "")
+}
+
+
+
 func indexTemplate(w http.ResponseWriter, r *http.Request) {
 	t, _ := template.ParseFiles("res/html/indexTemplate.html")
 	files, _ := filepath.Glob("*")
 	t.Execute(w, files)
+
 }
 
 func doc(w http.ResponseWriter, r *http.Request) {
