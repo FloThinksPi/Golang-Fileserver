@@ -2,7 +2,6 @@ package UserManager
 
 import (
 	"sync"
-	"flag"
 	"Flags"
 )
 

@@ -3,7 +3,6 @@ package UserManager
 import (
 	"os"
 	"testing"
-
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 )
