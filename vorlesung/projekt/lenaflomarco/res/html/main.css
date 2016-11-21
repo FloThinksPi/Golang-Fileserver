@@ -1,3 +1,69 @@
+body{
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+}
+
 table img {
     height: 20px;
+}
+
+header{
+	background-color: #FFC107;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+h1{
+	padding: 5px;
+	margin: 0px;
+}
+
+fieldset{
+	border: none;
+}
+
+fieldset label{
+	width: 200px;
+	    display: inherit;
+}
+
+fieldset input{
+	width: 200px;
+	    display: inherit;
+}
+
+.btn{
+display: inline-block;
+    position: relative;
+    width: 120px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 2px;
+    font-size: 0.9em;
+    background-color: #fff;
+    color: #646464;
+          border-radius: 2px;
+      overflow: hidden;
+
+}
+
+.btn:hover {
+  background: #FFF8E1;
+  text-decoration: none;
+}
+
+
+#loginContainer{
+	background-color: #FFF8E1;
+	display: table;
+	margin: auto;
+	min-width: 50%;
+	padding: 20px;
+	margin-top:50px;
+}
+
+#loginContainer form{
+	display: table-cell;
 }

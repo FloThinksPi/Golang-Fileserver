@@ -4,19 +4,35 @@
     <meta charset="UTF-8">
     <title>Go Fileserver - Login</title>
     <link rel="stylesheet" href="main.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
+<header>
+    <h1>Login</h1>
+</header>
 <body>
-<h1>Login</h1>
-<fieldset>
-    <form action="" method="post">
-        <label for="mail">E-Mail: </label>
-        <input type="text" name="mail" id="mail">
-        <br>
-        <label for="password">Passwort: </label>
-        <input type="password" name="password" id="password">
-        <br>
-        <input type="submit" value="Registrieren">
-    </form>
-</fieldset>
+    <div id="loginContainer">
+        <form id="login" action="" method="post">
+            <fieldset>       
+                <label for="mail">E-Mail: </label>
+                <input type="text" name="mail" id="mail">
+                <br>
+                <label for="password">Passwort: </label>
+                <input type="password" name="password" id="password">
+                <br>
+                <input class="btn" type="submit" value="Anmelden">
+            </fieldset>
+       </form>
+           <form id="register" action="" method="post">
+            <fieldset>       
+                <label for="mail">E-Mail: </label>
+                <input type="text" name="mail" id="mail">
+                <br>
+                <label for="password">Passwort: </label>
+                <input type="password" name="password" id="password">
+                <br>
+                <input class="btn" type="submit" value="Registrieren">
+            </fieldset>
+        </div>
+   </form>
 </body>
 </html>
