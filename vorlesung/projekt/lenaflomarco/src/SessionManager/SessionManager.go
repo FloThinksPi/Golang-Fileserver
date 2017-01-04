@@ -13,7 +13,7 @@ func NewSession(record SessionRecord) (err error) {
 	managersSessionStorage.RWMutex.Lock()
 	defer managersSessionStorage.RWMutex.Unlock()
 
-	record.Session= Utils.RandString(SESSION_KEY_LENGTH)
+	record.Session = Utils.RandString(SESSION_KEY_LENGTH)
 
 	//TODO cause error if value is nil and dont add user
 	v := reflect.ValueOf(record)
@@ -29,14 +29,30 @@ func NewSession(record SessionRecord) (err error) {
 }
 
 //ValidateSession checks if a supplied SessionID exists in managersSessionStorage and returns true if the Session didnt time out.
-func ValidateSession(session string) (valid bool, err error) {
+func ValidateSession(session string) (valid bool) {
 	managersSessionStorage.RWMutex.RLock()
 	defer managersSessionStorage.RWMutex.RUnlock()
 
 	record := managersSessionStorage.SessionMap[session] //TODO ADD error handling
 
 	// Valid if Session is found in storage and Session didnt timeout!
-	valid = record.Session == session && record.SessionLast.After(time.Now().Add( time.Duration(-*sessionTimeout) * time.Second))
+	valid = record.Session == session && record.SessionLast.After(time.Now().Add(time.Duration(-*sessionTimeout) * time.Second))
+
+	return
+}
+
+//Invalidates a Session by setting SessionLast so that session counts as expired
+func InvalidateSession(session string) (err error) {
+	managersSessionStorage.RWMutex.RLock()
+	defer managersSessionStorage.RWMutex.RUnlock()
+	err = nil
+
+	record, present := managersSessionStorage.SessionMap[session]
+	if present {
+		record.SessionLast = time.Now().Add(time.Duration(-*sessionTimeout+1) * time.Second)
+	}else{
+		err = errors.New("Session not Found to Invalidate")
+	}
 
 	return
 }
