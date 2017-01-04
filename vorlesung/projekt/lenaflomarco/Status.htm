@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		
+		<title>Status</title>
+			
+	</head>
+	<body>
+		<h3>Push CI Status</h3>
+		
+		<p>Datei: lenaflomarco.zip</p>
+		
+		<p>Status: Datei ist ok!</p>
+		
+		<hr>
+	    <h3>Abgeben</h3>
+		<p>Bitte geben Sie die Gruppenmitglieder an:</p>
+		<form action="." id="submitForm" method="post">
+			<table>
+				<tbody><tr>
+				<th>Matrikel</th>
+				<th>Vorname</th>
+				<th>Nachname</th>
+				</tr>
+				<tr>
+				<td><input name="matr1" size="11" maxlength="60" required="1" type="text"></td>
+			    <td><input name="given1" size="20" maxlength="60" type="text"></td>
+			    <td><input name="name1" size="20" maxlength="60" type="text"></td>
+				</tr>
+				<tr>
+				<td><input name="matr2" size="11" maxlength="60" type="text"></td>
+			    <td><input name="given2" size="20" maxlength="60" type="text"></td>
+			    <td><input name="name2" size="20" maxlength="60" type="text"></td>
+				</tr>
+				<tr>
+				<td><input name="matr3" size="11" maxlength="60" type="text"></td>
+			    <td><input name="given3" size="20" maxlength="60" type="text"></td>
+			    <td><input name="name3" size="20" maxlength="60" type="text"></td>
+				</tr>
+			</tbody></table>
+			<div>
+			<label for="comment">Anmerkungen</label><br>
+         	<textarea name="comment" cols="50" rows="6"></textarea>
+			</div>
+			<input value="Datei abgeben" type="submit">
+		</form>
+		<hr>
+		
+		
+		<p>Meldung vom Buildsystem:</p>
+		<p></p><pre>run go [get -v -d -t ./...] in /data/job_390728345/lenaflomarco/src  with GOPATH=/data/job_390728345/lenaflomarco {
+    github.com/pkg/errors (download)
+    github.com/stretchr/testify (download)
+} ok!
+
+run go [build -v] in /data/job_390728345/lenaflomarco/src  with GOPATH=/data/job_390728345/lenaflomarco {
+    Flags
+    github.com/pkg/errors
+    Utils
+    UserManager
+    _/data/job_390728345/lenaflomarco/src
+} ok!
+
+run go [test -v ./...] in /data/job_390728345/lenaflomarco/src  with GOPATH=/data/job_390728345/lenaflomarco {
+    ?   	_/data/job_390728345/lenaflomarco/src	[no test files]
+    ?   	Flags	[no test files]
+    testing: warning: no tests to run
+    PASS
+    ok  	SessionManager	0.003s
+    === RUN   Test_FileSave
+    --- PASS: Test_FileSave (0.00s)
+    === RUN   Test_FileRead
+    --- PASS: Test_FileRead (0.00s)
+    === RUN   Test_SynchronizedGlobalUserStorage
+    --- PASS: Test_SynchronizedGlobalUserStorage (0.00s)
+    === RUN   Test_SyncToFileSystem
+    --- PASS: Test_SyncToFileSystem (0.00s)
+    === RUN   TestGenerateHash
+    --- PASS: TestGenerateHash (0.00s)
+    === RUN   TestVerifyHash
+    --- PASS: TestVerifyHash (0.00s)
+    === RUN   TestVerifyUser
+    --- PASS: TestVerifyUser (0.00s)
+    PASS
+    ok  	UserManager	0.014s
+    === RUN   TestCorrectLength
+    --- PASS: TestCorrectLength (0.00s)
+    PASS
+    ok  	Utils	0.009s
+    === RUN   TestNew
+    --- PASS: TestNew (0.00s)
+    === RUN   TestWrapNil
+    --- PASS: TestWrapNil (0.00s)
+    === RUN   TestWrap
+    --- PASS: TestWrap (0.00s)
+    === RUN   TestCause
+    --- PASS: TestCause (0.00s)
+    === RUN   TestWrapfNil
+    --- PASS: TestWrapfNil (0.00s)
+    === RUN   TestWrapf
+    --- PASS: TestWrapf (0.00s)
+    === RUN   TestErrorf
+    --- PASS: TestErrorf (0.00s)
+    === RUN   TestWithStackNil
+    --- PASS: TestWithStackNil (0.00s)
+    === RUN   TestWithStack
+    --- PASS: TestWithStack (0.00s)
+    === RUN   TestWithMessageNil
+    --- PASS: TestWithMessageNil (0.00s)
+    === RUN   TestWithMessage
+    --- PASS: TestWithMessage (0.00s)
+    === RUN   TestErrorEquality
+    --- PASS: TestErrorEquality (0.00s)
+    === RUN   TestFormatNew
+    --- PASS: TestFormatNew (0.00s)
+    === RUN   TestFormatErrorf
+    --- PASS: TestFormatErrorf (0.00s)
+    === RUN   TestFormatWrap
+    --- PASS: TestFormatWrap (0.00s)
+    === RUN   TestFormatWrapf
+    --- PASS: TestFormatWrapf (0.00s)
+    === RUN   TestFormatWithStack
+    --- PASS: TestFormatWithStack (0.00s)
+    === RUN   TestFormatWithMessage
+    --- PASS: TestFormatWithMessage (0.00s)
+    === RUN   TestFormatGeneric
+    --- PASS: TestFormatGeneric (0.65s)
+    === RUN   TestFrameLine
+    --- PASS: TestFrameLine (0.00s)
+    === RUN   TestFrameFormat
+    --- PASS: TestFrameFormat (0.00s)
+    === RUN   TestFuncname
+    --- PASS: TestFuncname (0.00s)
+    === RUN   TestTrimGOPATH
+    --- PASS: TestTrimGOPATH (0.00s)
+    === RUN   TestStackTrace
+    --- PASS: TestStackTrace (0.00s)
+    === RUN   TestStackTraceFormat
+    --- PASS: TestStackTraceFormat (0.00s)
+    === RUN   ExampleNew
+    --- PASS: ExampleNew (0.00s)
+    === RUN   ExampleWithMessage
+    --- PASS: ExampleWithMessage (0.00s)
+    === RUN   ExampleWithStack
+    --- PASS: ExampleWithStack (0.00s)
+    === RUN   ExampleWrap
+    --- PASS: ExampleWrap (0.00s)
+    === RUN   ExampleCause
+    --- PASS: ExampleCause (0.00s)
+    === RUN   ExampleWrapf
+    --- PASS: ExampleWrapf (0.00s)
+    === RUN   ExampleCause_printf
+    --- PASS: ExampleCause_printf (0.00s)
+    PASS
+    ok  	github.com/pkg/errors	0.662s
+    === RUN   TestImports
+    --- PASS: TestImports (0.00s)
+    PASS
+    ok  	github.com/stretchr/testify	0.008s
+    === RUN   TestObjectsAreEqual
+    --- PASS: TestObjectsAreEqual (0.00s)
+    === RUN   TestImplements
+    --- PASS: TestImplements (0.00s)
+    === RUN   TestIsType
+    --- PASS: TestIsType (0.00s)
+    === RUN   TestEqual
+    --- PASS: TestEqual (0.00s)
+    === RUN   TestEqualFormatting
+    --- PASS: TestEqualFormatting (0.00s)
+    === RUN   TestFormatUnequalValues
+    --- PASS: TestFormatUnequalValues (0.00s)
+    === RUN   TestNotNil
+    --- PASS: TestNotNil (0.00s)
+    === RUN   TestNil
+    --- PASS: TestNil (0.00s)
+    === RUN   TestTrue
+    --- PASS: TestTrue (0.00s)
+    === RUN   TestFalse
+    --- PASS: TestFalse (0.00s)
+    === RUN   TestExactly
+    --- PASS: TestExactly (0.00s)
+    === RUN   TestNotEqual
+    --- PASS: TestNotEqual (0.00s)
+    === RUN   TestContains
+    --- PASS: TestContains (0.00s)
+    === RUN   TestNotContains
+    --- PASS: TestNotContains (0.00s)
+    === RUN   Test_includeElement
+    --- PASS: Test_includeElement (0.00s)
+    === RUN   TestCondition
+    --- PASS: TestCondition (0.00s)
+    === RUN   TestDidPanic
+    --- PASS: TestDidPanic (0.00s)
+    === RUN   TestPanics
+    --- PASS: TestPanics (0.00s)
+    === RUN   TestNotPanics
+    --- PASS: TestNotPanics (0.00s)
+    === RUN   TestNoError
+    --- PASS: TestNoError (0.00s)
+    === RUN   TestError
+    --- PASS: TestError (0.00s)
+    === RUN   TestEqualError
+    --- PASS: TestEqualError (0.00s)
+    === RUN   Test_isEmpty
+    --- PASS: Test_isEmpty (0.00s)
+    === RUN   TestEmpty
+    --- PASS: TestEmpty (0.00s)
+    === RUN   TestNotEmpty
+    --- PASS: TestNotEmpty (0.00s)
+    === RUN   Test_getLen
+    --- PASS: Test_getLen (0.00s)
+    === RUN   TestLen
+    --- PASS: TestLen (0.00s)
+    === RUN   TestWithinDuration
+    --- PASS: TestWithinDuration (0.00s)
+    === RUN   TestInDelta
+    --- PASS: TestInDelta (0.00s)
+    === RUN   TestInDeltaSlice
+    --- PASS: TestInDeltaSlice (0.00s)
+    === RUN   TestInEpsilon
+    --- PASS: TestInEpsilon (0.00s)
+    === RUN   TestInEpsilonSlice
+    --- PASS: TestInEpsilonSlice (0.00s)
+    === RUN   TestRegexp
+    --- PASS: TestRegexp (0.00s)
+    === RUN   TestCallerInfoWithAutogeneratedFunctions
+    --- PASS: TestCallerInfoWithAutogeneratedFunctions (0.00s)
+    === RUN   TestZero
+    --- PASS: TestZero (0.00s)
+    === RUN   TestNotZero
+    --- PASS: TestNotZero (0.00s)
+    === RUN   TestJSONEq_EqualSONString
+    --- PASS: TestJSONEq_EqualSONString (0.00s)
+    === RUN   TestJSONEq_EquivalentButNotEqual
+    --- PASS: TestJSONEq_EquivalentButNotEqual (0.00s)
+    === RUN   TestJSONEq_HashOfArraysAndHashes
+    --- PASS: TestJSONEq_HashOfArraysAndHashes (0.00s)
+    === RUN   TestJSONEq_Array
+    --- PASS: TestJSONEq_Array (0.00s)
+    === RUN   TestJSONEq_HashAndArrayNotEquivalent
+    --- PASS: TestJSONEq_HashAndArrayNotEquivalent (0.00s)
+    === RUN   TestJSONEq_HashesNotEquivalent
+    --- PASS: TestJSONEq_HashesNotEquivalent (0.00s)
+    === RUN   TestJSONEq_ActualIsNotJSON
+    --- PASS: TestJSONEq_ActualIsNotJSON (0.00s)
+    === RUN   TestJSONEq_ExpectedIsNotJSON
+    --- PASS: TestJSONEq_ExpectedIsNotJSON (0.00s)
+    === RUN   TestJSONEq_ExpectedAndActualNotJSON
+    --- PASS: TestJSONEq_ExpectedAndActualNotJSON (0.00s)
+    === RUN   TestJSONEq_ArraysOfDifferentOrder
+    --- PASS: TestJSONEq_ArraysOfDifferentOrder (0.00s)
+    === RUN   TestDiff
+    --- PASS: TestDiff (0.01s)
+    === RUN   TestDiffEmptyCases
+    --- PASS: TestDiffEmptyCases (0.00s)
+    === RUN   TestDiffRace
+    === RUN   TestFailNowWithPlainTestingT
+    --- PASS: TestFailNowWithPlainTestingT (0.00s)
+    === RUN   TestFailNowWithFullTestingT
+    --- PASS: TestFailNowWithFullTestingT (0.00s)
+    === RUN   TestImplementsWrapper
+    --- PASS: TestImplementsWrapper (0.00s)
+    === RUN   TestIsTypeWrapper
+    --- PASS: TestIsTypeWrapper (0.00s)
+    === RUN   TestEqualWrapper
+    --- PASS: TestEqualWrapper (0.00s)
+    === RUN   TestEqualValuesWrapper
+    --- PASS: TestEqualValuesWrapper (0.00s)
+    === RUN   TestNotNilWrapper
+    --- PASS: TestNotNilWrapper (0.00s)
+    === RUN   TestNilWrapper
+    --- PASS: TestNilWrapper (0.00s)
+    === RUN   TestTrueWrapper
+    --- PASS: TestTrueWrapper (0.00s)
+    === RUN   TestFalseWrapper
+    --- PASS: TestFalseWrapper (0.00s)
+    === RUN   TestExactlyWrapper
+    --- PASS: TestExactlyWrapper (0.00s)
+    === RUN   TestNotEqualWrapper
+    --- PASS: TestNotEqualWrapper (0.00s)
+    === RUN   TestContainsWrapper
+    --- PASS: TestContainsWrapper (0.00s)
+    === RUN   TestNotContainsWrapper
+    --- PASS: TestNotContainsWrapper (0.00s)
+    === RUN   TestConditionWrapper
+    --- PASS: TestConditionWrapper (0.00s)
+    === RUN   TestDidPanicWrapper
+    --- PASS: TestDidPanicWrapper (0.00s)
+    === RUN   TestPanicsWrapper
+    --- PASS: TestPanicsWrapper (0.00s)
+    === RUN   TestNotPanicsWrapper
+    --- PASS: TestNotPanicsWrapper (0.00s)
+    === RUN   TestNoErrorWrapper
+    --- PASS: TestNoErrorWrapper (0.00s)
+    === RUN   TestErrorWrapper
+    --- PASS: TestErrorWrapper (0.00s)
+    === RUN   TestEqualErrorWrapper
+    --- PASS: TestEqualErrorWrapper (0.00s)
+    === RUN   TestEmptyWrapper
+    --- PASS: TestEmptyWrapper (0.00s)
+    === RUN   TestNotEmptyWrapper
+    --- PASS: TestNotEmptyWrapper (0.00s)
+    === RUN   TestLenWrapper
+    --- PASS: TestLenWrapper (0.00s)
+    === RUN   TestWithinDurationWrapper
+    --- PASS: TestWithinDurationWrapper (0.00s)
+    === RUN   TestInDeltaWrapper
+    --- PASS: TestInDeltaWrapper (0.00s)
+    === RUN   TestInEpsilonWrapper
+    --- PASS: TestInEpsilonWrapper (0.00s)
+    === RUN   TestRegexpWrapper
+    --- PASS: TestRegexpWrapper (0.00s)
+    === RUN   TestZeroWrapper
+    --- PASS: TestZeroWrapper (0.00s)
+    === RUN   TestNotZeroWrapper
+    --- PASS: TestNotZeroWrapper (0.00s)
+    === RUN   TestJSONEqWrapper_EqualSONString
+    --- PASS: TestJSONEqWrapper_EqualSONString (0.00s)
+    === RUN   TestJSONEqWrapper_EquivalentButNotEqual
+    --- PASS: TestJSONEqWrapper_EquivalentButNotEqual (0.00s)
+    === RUN   TestJSONEqWrapper_HashOfArraysAndHashes
+    --- PASS: TestJSONEqWrapper_HashOfArraysAndHashes (0.00s)
+    === RUN   TestJSONEqWrapper_Array
+    --- PASS: TestJSONEqWrapper_Array (0.00s)
+    === RUN   TestJSONEqWrapper_HashAndArrayNotEquivalent
+    --- PASS: TestJSONEqWrapper_HashAndArrayNotEquivalent (0.00s)
+    === RUN   TestJSONEqWrapper_HashesNotEquivalent
+    --- PASS: TestJSONEqWrapper_HashesNotEquivalent (0.00s)
+    === RUN   TestJSONEqWrapper_ActualIsNotJSON
+    --- PASS: TestJSONEqWrapper_ActualIsNotJSON (0.00s)
+    === RUN   TestJSONEqWrapper_ExpectedIsNotJSON
+    --- PASS: TestJSONEqWrapper_ExpectedIsNotJSON (0.00s)
+    === RUN   TestJSONEqWrapper_ExpectedAndActualNotJSON
+    --- PASS: TestJSONEqWrapper_ExpectedAndActualNotJSON (0.00s)
+    === RUN   TestJSONEqWrapper_ArraysOfDifferentOrder
+    --- PASS: TestJSONEqWrapper_ArraysOfDifferentOrder (0.00s)
+    === RUN   TestHTTPStatuses
+    --- PASS: TestHTTPStatuses (0.00s)
+    === RUN   TestHTTPStatusesWrapper
+    --- PASS: TestHTTPStatusesWrapper (0.00s)
+    === RUN   TestHttpBody
+    --- PASS: TestHttpBody (0.00s)
+    === RUN   TestHttpBodyWrappers
+    --- PASS: TestHttpBodyWrappers (0.00s)
+    --- PASS: TestDiffRace (0.00s)
+    PASS
+    ok  	github.com/stretchr/testify/assert	0.035s
+    ?   	github.com/stretchr/testify/http	[no test files]
+    === RUN   Test_Mock_TestData
+    --- PASS: Test_Mock_TestData (0.00s)
+    === RUN   Test_Mock_On
+    --- PASS: Test_Mock_On (0.00s)
+    === RUN   Test_Mock_Chained_On
+    --- PASS: Test_Mock_Chained_On (0.00s)
+    === RUN   Test_Mock_On_WithArgs
+    --- PASS: Test_Mock_On_WithArgs (0.00s)
+    === RUN   Test_Mock_On_WithFuncArg
+    --- PASS: Test_Mock_On_WithFuncArg (0.00s)
+    === RUN   Test_Mock_On_WithIntArgMatcher
+    --- PASS: Test_Mock_On_WithIntArgMatcher (0.00s)
+    === RUN   Test_Mock_On_WithPtrArgMatcher
+    --- PASS: Test_Mock_On_WithPtrArgMatcher (0.00s)
+    === RUN   Test_Mock_On_WithFuncArgMatcher
+    --- PASS: Test_Mock_On_WithFuncArgMatcher (0.00s)
+    === RUN   Test_Mock_On_WithVariadicFunc
+    --- PASS: Test_Mock_On_WithVariadicFunc (0.00s)
+    === RUN   Test_Mock_On_WithVariadicFuncWithInterface
+    --- PASS: Test_Mock_On_WithVariadicFuncWithInterface (0.00s)
+    === RUN   Test_Mock_On_WithVariadicFuncWithEmptyInterfaceArray
+    --- PASS: Test_Mock_On_WithVariadicFuncWithEmptyInterfaceArray (0.00s)
+    === RUN   Test_Mock_On_WithFuncPanics
+    --- PASS: Test_Mock_On_WithFuncPanics (0.00s)
+    === RUN   Test_Mock_On_WithFuncTypeArg
+    --- PASS: Test_Mock_On_WithFuncTypeArg (0.00s)
+    === RUN   Test_Mock_Return
+    --- PASS: Test_Mock_Return (0.00s)
+    === RUN   Test_Mock_Return_WaitUntil
+    --- PASS: Test_Mock_Return_WaitUntil (0.00s)
+    === RUN   Test_Mock_Return_After
+    --- PASS: Test_Mock_Return_After (0.00s)
+    === RUN   Test_Mock_Return_Run
+    --- PASS: Test_Mock_Return_Run (0.00s)
+    === RUN   Test_Mock_Return_Run_Out_Of_Order
+    --- PASS: Test_Mock_Return_Run_Out_Of_Order (0.00s)
+    === RUN   Test_Mock_Return_Once
+    --- PASS: Test_Mock_Return_Once (0.00s)
+    === RUN   Test_Mock_Return_Twice
+    --- PASS: Test_Mock_Return_Twice (0.00s)
+    === RUN   Test_Mock_Return_Times
+    --- PASS: Test_Mock_Return_Times (0.00s)
+    === RUN   Test_Mock_Return_Nothing
+    --- PASS: Test_Mock_Return_Nothing (0.00s)
+    === RUN   Test_Mock_findExpectedCall
+    --- PASS: Test_Mock_findExpectedCall (0.00s)
+    === RUN   Test_Mock_findExpectedCall_For_Unknown_Method
+    --- PASS: Test_Mock_findExpectedCall_For_Unknown_Method (0.00s)
+    === RUN   Test_Mock_findExpectedCall_Respects_Repeatability
+    --- PASS: Test_Mock_findExpectedCall_Respects_Repeatability (0.00s)
+    === RUN   Test_callString
+    --- PASS: Test_callString (0.00s)
+    === RUN   Test_Mock_Called
+    --- PASS: Test_Mock_Called (0.00s)
+    === RUN   Test_Mock_Called_blocks
+    --- PASS: Test_Mock_Called_blocks (0.00s)
+    === RUN   Test_Mock_Called_For_Bounded_Repeatability
+    --- PASS: Test_Mock_Called_For_Bounded_Repeatability (0.00s)
+    === RUN   Test_Mock_Called_For_SetTime_Expectation
+    --- PASS: Test_Mock_Called_For_SetTime_Expectation (0.00s)
+    === RUN   Test_Mock_Called_Unexpected
+    --- PASS: Test_Mock_Called_Unexpected (0.00s)
+    === RUN   Test_AssertExpectationsForObjects_Helper
+    --- PASS: Test_AssertExpectationsForObjects_Helper (0.00s)
+    	mock.go:357: Deprecated mock.AssertExpectationsForObjects(myMock.Mock) use mock.AssertExpectationsForObjects(myMock)
+    	mock.go:387: ✅	Test_AssertExpectationsForObjects_Helper(int)
+    	mock.go:357: Deprecated mock.AssertExpectationsForObjects(myMock.Mock) use mock.AssertExpectationsForObjects(myMock)
+    	mock.go:387: ✅	Test_AssertExpectationsForObjects_Helper(int)
+    	mock.go:357: Deprecated mock.AssertExpectationsForObjects(myMock.Mock) use mock.AssertExpectationsForObjects(myMock)
+    	mock.go:387: ✅	Test_AssertExpectationsForObjects_Helper(int)
+    	mock.go:387: ✅	Test_AssertExpectationsForObjects_Helper(int)
+    	mock.go:387: ✅	Test_AssertExpectationsForObjects_Helper(int)
+    	mock.go:387: ✅	Test_AssertExpectationsForObjects_Helper(int)
+    === RUN   Test_AssertExpectationsForObjects_Helper_Failed
+    --- PASS: Test_AssertExpectationsForObjects_Helper_Failed (0.00s)
+    === RUN   Test_Mock_AssertExpectations
+    --- PASS: Test_Mock_AssertExpectations (0.00s)
+    === RUN   Test_Mock_AssertExpectations_Placeholder_NoArgs
+    --- PASS: Test_Mock_AssertExpectations_Placeholder_NoArgs (0.00s)
+    === RUN   Test_Mock_AssertExpectations_Placeholder
+    --- PASS: Test_Mock_AssertExpectations_Placeholder (0.00s)
+    === RUN   Test_Mock_AssertExpectations_With_Pointers
+    --- PASS: Test_Mock_AssertExpectations_With_Pointers (0.00s)
+    === RUN   Test_Mock_AssertExpectationsCustomType
+    --- PASS: Test_Mock_AssertExpectationsCustomType (0.00s)
+    === RUN   Test_Mock_AssertExpectations_With_Repeatability
+    --- PASS: Test_Mock_AssertExpectations_With_Repeatability (0.00s)
+    === RUN   Test_Mock_TwoCallsWithDifferentArguments
+    --- PASS: Test_Mock_TwoCallsWithDifferentArguments (0.00s)
+    === RUN   Test_Mock_AssertNumberOfCalls
+    --- PASS: Test_Mock_AssertNumberOfCalls (0.00s)
+    === RUN   Test_Mock_AssertCalled
+    --- PASS: Test_Mock_AssertCalled (0.00s)
+    === RUN   Test_Mock_AssertCalled_WithAnythingOfTypeArgument
+    --- PASS: Test_Mock_AssertCalled_WithAnythingOfTypeArgument (0.00s)
+    === RUN   Test_Mock_AssertCalled_WithArguments
+    --- PASS: Test_Mock_AssertCalled_WithArguments (0.00s)
+    === RUN   Test_Mock_AssertCalled_WithArguments_With_Repeatability
+    --- PASS: Test_Mock_AssertCalled_WithArguments_With_Repeatability (0.00s)
+    === RUN   Test_Mock_AssertNotCalled
+    --- PASS: Test_Mock_AssertNotCalled (0.00s)
+    === RUN   Test_Arguments_Get
+    --- PASS: Test_Arguments_Get (0.00s)
+    === RUN   Test_Arguments_Is
+    --- PASS: Test_Arguments_Is (0.00s)
+    === RUN   Test_Arguments_Diff
+    --- PASS: Test_Arguments_Diff (0.00s)
+    === RUN   Test_Arguments_Diff_DifferentNumberOfArgs
+    --- PASS: Test_Arguments_Diff_DifferentNumberOfArgs (0.00s)
+    === RUN   Test_Arguments_Diff_WithAnythingArgument
+    --- PASS: Test_Arguments_Diff_WithAnythingArgument (0.00s)
+    === RUN   Test_Arguments_Diff_WithAnythingArgument_InActualToo
+    --- PASS: Test_Arguments_Diff_WithAnythingArgument_InActualToo (0.00s)
+    === RUN   Test_Arguments_Diff_WithAnythingOfTypeArgument
+    --- PASS: Test_Arguments_Diff_WithAnythingOfTypeArgument (0.00s)
+    === RUN   Test_Arguments_Diff_WithAnythingOfTypeArgument_Failing
+    --- PASS: Test_Arguments_Diff_WithAnythingOfTypeArgument_Failing (0.00s)
+    === RUN   Test_Arguments_Diff_WithArgMatcher
+    --- PASS: Test_Arguments_Diff_WithArgMatcher (0.00s)
+    === RUN   Test_Arguments_Assert
+    --- PASS: Test_Arguments_Assert (0.00s)
+    === RUN   Test_Arguments_String_Representation
+    --- PASS: Test_Arguments_String_Representation (0.00s)
+    === RUN   Test_Arguments_String
+    --- PASS: Test_Arguments_String (0.00s)
+    === RUN   Test_Arguments_Error
+    --- PASS: Test_Arguments_Error (0.00s)
+    === RUN   Test_Arguments_Error_Nil
+    --- PASS: Test_Arguments_Error_Nil (0.00s)
+    === RUN   Test_Arguments_Int
+    --- PASS: Test_Arguments_Int (0.00s)
+    === RUN   Test_Arguments_Bool
+    --- PASS: Test_Arguments_Bool (0.00s)
+    === RUN   Test_WaitUntil_Parallel
+    --- PASS: Test_WaitUntil_Parallel (0.00s)
+    PASS
+    ok  	github.com/stretchr/testify/mock	0.017s
+    === RUN   TestImplementsWrapper
+    --- PASS: TestImplementsWrapper (0.00s)
+    === RUN   TestIsTypeWrapper
+    --- PASS: TestIsTypeWrapper (0.00s)
+    === RUN   TestEqualWrapper
+    --- PASS: TestEqualWrapper (0.00s)
+    === RUN   TestNotEqualWrapper
+    --- PASS: TestNotEqualWrapper (0.00s)
+    === RUN   TestExactlyWrapper
+    --- PASS: TestExactlyWrapper (0.00s)
+    === RUN   TestNotNilWrapper
+    --- PASS: TestNotNilWrapper (0.00s)
+    === RUN   TestNilWrapper
+    --- PASS: TestNilWrapper (0.00s)
+    === RUN   TestTrueWrapper
+    --- PASS: TestTrueWrapper (0.00s)
+    === RUN   TestFalseWrapper
+    --- PASS: TestFalseWrapper (0.00s)
+    === RUN   TestContainsWrapper
+    --- PASS: TestContainsWrapper (0.00s)
+    === RUN   TestNotContainsWrapper
+    --- PASS: TestNotContainsWrapper (0.00s)
+    === RUN   TestPanicsWrapper
+    --- PASS: TestPanicsWrapper (0.00s)
+    === RUN   TestNotPanicsWrapper
+    --- PASS: TestNotPanicsWrapper (0.00s)
+    === RUN   TestNoErrorWrapper
+    --- PASS: TestNoErrorWrapper (0.00s)
+    === RUN   TestErrorWrapper
+    --- PASS: TestErrorWrapper (0.00s)
+    === RUN   TestEqualErrorWrapper
+    --- PASS: TestEqualErrorWrapper (0.00s)
+    === RUN   TestEmptyWrapper
+    --- PASS: TestEmptyWrapper (0.00s)
+    === RUN   TestNotEmptyWrapper
+    --- PASS: TestNotEmptyWrapper (0.00s)
+    === RUN   TestWithinDurationWrapper
+    --- PASS: TestWithinDurationWrapper (0.00s)
+    === RUN   TestInDeltaWrapper
+    --- PASS: TestInDeltaWrapper (0.00s)
+    === RUN   TestZeroWrapper
+    --- PASS: TestZeroWrapper (0.00s)
+    === RUN   TestNotZeroWrapper
+    --- PASS: TestNotZeroWrapper (0.00s)
+    === RUN   TestJSONEqWrapper_EqualSONString
+    --- PASS: TestJSONEqWrapper_EqualSONString (0.00s)
+    === RUN   TestJSONEqWrapper_EquivalentButNotEqual
+    --- PASS: TestJSONEqWrapper_EquivalentButNotEqual (0.00s)
+    === RUN   TestJSONEqWrapper_HashOfArraysAndHashes
+    --- PASS: TestJSONEqWrapper_HashOfArraysAndHashes (0.00s)
+    === RUN   TestJSONEqWrapper_Array
+    --- PASS: TestJSONEqWrapper_Array (0.00s)
+    === RUN   TestJSONEqWrapper_HashAndArrayNotEquivalent
+    --- PASS: TestJSONEqWrapper_HashAndArrayNotEquivalent (0.00s)
+    === RUN   TestJSONEqWrapper_HashesNotEquivalent
+    --- PASS: TestJSONEqWrapper_HashesNotEquivalent (0.00s)
+    === RUN   TestJSONEqWrapper_ActualIsNotJSON
+    --- PASS: TestJSONEqWrapper_ActualIsNotJSON (0.00s)
+    === RUN   TestJSONEqWrapper_ExpectedIsNotJSON
+    --- PASS: TestJSONEqWrapper_ExpectedIsNotJSON (0.00s)
+    === RUN   TestJSONEqWrapper_ExpectedAndActualNotJSON
+    --- PASS: TestJSONEqWrapper_ExpectedAndActualNotJSON (0.00s)
+    === RUN   TestJSONEqWrapper_ArraysOfDifferentOrder
+    --- PASS: TestJSONEqWrapper_ArraysOfDifferentOrder (0.00s)
+    === RUN   TestImplements
+    --- PASS: TestImplements (0.00s)
+    === RUN   TestIsType
+    --- PASS: TestIsType (0.00s)
+    === RUN   TestEqual
+    --- PASS: TestEqual (0.00s)
+    === RUN   TestNotEqual
+    --- PASS: TestNotEqual (0.00s)
+    === RUN   TestExactly
+    --- PASS: TestExactly (0.00s)
+    === RUN   TestNotNil
+    --- PASS: TestNotNil (0.00s)
+    === RUN   TestNil
+    --- PASS: TestNil (0.00s)
+    === RUN   TestTrue
+    --- PASS: TestTrue (0.00s)
+    === RUN   TestFalse
+    --- PASS: TestFalse (0.00s)
+    === RUN   TestContains
+    --- PASS: TestContains (0.00s)
+    === RUN   TestNotContains
+    --- PASS: TestNotContains (0.00s)
+    === RUN   TestPanics
+    --- PASS: TestPanics (0.00s)
+    === RUN   TestNotPanics
+    --- PASS: TestNotPanics (0.00s)
+    === RUN   TestNoError
+    --- PASS: TestNoError (0.00s)
+    === RUN   TestError
+    --- PASS: TestError (0.00s)
+    === RUN   TestEqualError
+    --- PASS: TestEqualError (0.00s)
+    === RUN   TestEmpty
+    --- PASS: TestEmpty (0.00s)
+    === RUN   TestNotEmpty
+    --- PASS: TestNotEmpty (0.00s)
+    === RUN   TestWithinDuration
+    --- PASS: TestWithinDuration (0.00s)
+    === RUN   TestInDelta
+    --- PASS: TestInDelta (0.00s)
+    === RUN   TestZero
+    --- PASS: TestZero (0.00s)
+    === RUN   TestNotZero
+    --- PASS: TestNotZero (0.00s)
+    === RUN   TestJSONEq_EqualSONString
+    --- PASS: TestJSONEq_EqualSONString (0.00s)
+    === RUN   TestJSONEq_EquivalentButNotEqual
+    --- PASS: TestJSONEq_EquivalentButNotEqual (0.00s)
+    === RUN   TestJSONEq_HashOfArraysAndHashes
+    --- PASS: TestJSONEq_HashOfArraysAndHashes (0.00s)
+    === RUN   TestJSONEq_Array
+    --- PASS: TestJSONEq_Array (0.00s)
+    === RUN   TestJSONEq_HashAndArrayNotEquivalent
+    --- PASS: TestJSONEq_HashAndArrayNotEquivalent (0.00s)
+    === RUN   TestJSONEq_HashesNotEquivalent
+    --- PASS: TestJSONEq_HashesNotEquivalent (0.00s)
+    === RUN   TestJSONEq_ActualIsNotJSON
+    --- PASS: TestJSONEq_ActualIsNotJSON (0.00s)
+    === RUN   TestJSONEq_ExpectedIsNotJSON
+    --- PASS: TestJSONEq_ExpectedIsNotJSON (0.00s)
+    === RUN   TestJSONEq_ExpectedAndActualNotJSON
+    --- PASS: TestJSONEq_ExpectedAndActualNotJSON (0.00s)
+    === RUN   TestJSONEq_ArraysOfDifferentOrder
+    --- PASS: TestJSONEq_ArraysOfDifferentOrder (0.00s)
+    PASS
+    ok  	github.com/stretchr/testify/require	0.017s
+    === RUN   TestSuiteRequireTwice
+    === RUN   TestSuiteRequireTwice
+    === RUN   TestRequireOne
+    --- FAIL: TestRequireOne (0.00s)
+    	assertions.go:226: 
+                          
+	Error Trace:	suite_test.go:36
+    		
+	Error:      	Not equal: 
+    		
+	            	expected: 1
+    		
+	            	received: 2
+    === RUN   TestRequireTwo
+    --- FAIL: TestRequireTwo (0.00s)
+    	assertions.go:226: 
+                          
+	Error Trace:	suite_test.go:41
+    		
+	Error:      	Not equal: 
+    		
+	            	expected: 1
+    		
+	            	received: 2
+    --- FAIL: TestSuiteRequireTwice (0.00s)
+    --- PASS: TestSuiteRequireTwice (0.00s)
+    === RUN   TestRunSuite
+    === RUN   TestOne
+    --- PASS: TestOne (0.00s)
+    === RUN   TestSkip
+    --- SKIP: TestSkip (0.00s)
+    	suite_test.go:145: 
+    === RUN   TestTwo
+    --- PASS: TestTwo (0.00s)
+    --- SKIP: TestRunSuite (0.01s)
+    	suite_test.go:102: 
+    === RUN   TestSuiteGetters
+    --- PASS: TestSuiteGetters (0.00s)
+    === RUN   TestSuiteLogging
+    --- PASS: TestSuiteLogging (0.00s)
+    PASS
+    ok  	github.com/stretchr/testify/suite	0.022s
+    ?   	github.com/stretchr/testify/vendor/github.com/davecgh/go-spew/spew	[no test files]
+    ?   	github.com/stretchr/testify/vendor/github.com/pmezard/go-difflib/difflib	[no test files]
+    ?   	github.com/stretchr/testify/vendor/github.com/stretchr/objx	[no test files]
+} ok!
+
+</pre><p></p>
+		<hr>
+		
+		<a href="https://infprogs2.dhbw-mosbach.de/">Zurück</a>
+		
+
+	
+</body></html>
