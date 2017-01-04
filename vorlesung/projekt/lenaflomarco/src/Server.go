@@ -10,13 +10,29 @@ import (
 	"html/template"
 	"UserManager"
 	"SessionManager"
+	"regexp"
 )
 
 const (
+	// Routes
 	rootURL = "/"
-	docURL = "/doc/"
+	docURL = rootURL + "doc/"
+	funcURL = rootURL + "ops/"
+	loginURL = rootURL + funcURL + "login"
+	logoutURL = rootURL + funcURL + "login"
 
-	debugging = true; // Disables Login for Debugging
+
+	// Paths
+	pivatePath = "res/html/"
+	publicPath = pivatePath + "/public/"
+
+
+	// URLs
+	mainPageURL = rootURL + "index.html"
+	loginPageURL = rootURL + "public/login.html"
+
+	// MISC
+	debugging = false; // Disables Login for Debugging
 )
 
 func main() {
@@ -27,8 +43,8 @@ func main() {
 	requestMultiplexer.HandleFunc(rootURL, sessionCheckHandler)
 
 	//Login,Logout
-	requestMultiplexer.HandleFunc(rootURL + "login", authHandler)
-	requestMultiplexer.HandleFunc(rootURL + "logout", authHandler)
+	requestMultiplexer.HandleFunc(loginURL, authHandler)
+	requestMultiplexer.HandleFunc(logoutURL, authHandler)
 
 	cfg := &tls.Config{
 		MinVersion:               tls.VersionTLS12,
@@ -60,27 +76,32 @@ func sessionCheckHandler(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	session := r.FormValue("session")
 
-	if (SessionManager.ValidateSession(session) || debugging || r.URL.Path[1:] == "login.html") {
+	// Public Folder ?
+	publicFolderRegex, _ := regexp.Compile("^public")
+
+	if (SessionManager.ValidateSession(session) || debugging || publicFolderRegex.MatchString(r.URL.Path[1:])) {
 		rootHandler(w, r)
 		return
 	} else {
-		http.Redirect(w, r, "/login.html", 302)
+		Utils.LogDebug("Access denied for " + r.URL.Path + " by Session Check")
+		http.Redirect(w, r, loginPageURL, 302)
 		return
 	}
 }
 
 func rootHandler(w http.ResponseWriter, r *http.Request) {
 	var url string
+
 	if r.URL.Path[1:] == "" {
-		url = "index.html"
+		url = mainPageURL
 	} else {
 		url = r.URL.Path[1:]
 	}
 
-	path, err := filepath.Abs("res/html/" + url)
+	path, err := filepath.Abs(pivatePath + url)
 	Utils.HandlePrint(err)
 
-	if(url[len(url)-4:]=="html"){
+	if (url[len(url) - 4:] == "html") {
 		t, err := template.ParseFiles(path)
 		Utils.HandlePrint(err)
 		files, err := filepath.Glob("*")
@@ -88,8 +109,8 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 
 		Utils.LogDebug("File Accessed with TemplateEngine:	" + path)
 		t.Execute(w, files)
-	}else{
-		http.ServeFile(w,r,path)
+	} else {
+		http.ServeFile(w, r, path)
 		Utils.LogDebug("File Accessed with StaticFileServer:	" + path)
 	}
 
@@ -102,21 +123,21 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 		email := r.FormValue("email")
 		password := r.FormValue("password")
 		if (UserManager.VerifyUser(email, password)) {
-			http.Redirect(w, r, "/index.html", 302)
+			http.Redirect(w, r, loginPageURL, 302)
 		} else {
-			http.Redirect(w, r, "/login.html?status=failed", 302)
+			http.Redirect(w, r, loginPageURL + "?status=failed", 302)
 		}
 	} else if (intent == "logout") {
 		session := r.FormValue("session")
 		err := SessionManager.InvalidateSession(session)
 		if (err != nil) {
-			http.Redirect(w, r, "/login.html?status=error", 302)
+			http.Redirect(w, r, loginPageURL + "?status=error", 302)
 			return
 		}
-		http.Redirect(w, r, "/login.html?status=logout", 302)
+		http.Redirect(w, r, loginPageURL + "?status=logout", 302)
 		return
 	} else {
-		http.Redirect(w, r, "/login.html?status=badrequest", 302)
+		http.Redirect(w, r, loginPageURL + "?status=badrequest", 302)
 		return
 	}
 }
