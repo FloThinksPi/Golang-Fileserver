@@ -83,11 +83,11 @@ func WriteUser(record UserRecord, path string) (err error) {
 }
 
 //ReadUser finds a UserRecord in the PackageGlobal UserStorage by Email and returns nil or an valid entry.
-func ReadUser(email string) (record UserRecord, err error) {
+func ReadUser(email string) (record UserRecord, present bool, err error) {
 	managersUserStorage.RWMutex.RLock()
 	defer managersUserStorage.RWMutex.RUnlock()
 
-	record = managersUserStorage.UserMap[email] //TODO ADD error handling
+	record , present = managersUserStorage.UserMap[email] //TODO ADD error handling
 	err = nil
 
 	return

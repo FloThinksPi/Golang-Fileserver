@@ -8,7 +8,7 @@ import (
 )
 
 //SetHash - einen hash Setzten
-func SetHash(psw string)(hash string,salt string) {
+func GeneratePasswordHash(psw string)(hash string,salt string) { //TODO die bcyrpt funktion nutzend da stadart und sicher !
 	//salting
 	salt = Utils.RandString(16)
 	var saltedPsw = psw+salt
@@ -22,7 +22,7 @@ func SetHash(psw string)(hash string,salt string) {
 
 
 //VerifyHash - Hash überprüfen
-func verifyHash(psw string, salt string,correctHash string) bool {
+func verifyPasswordHash(psw string, salt string,correctHash string) bool {
 	var saltedPsw = psw+salt
 	shaHasher := sha512.New()
 	shaHasher.Write([]byte(saltedPsw))
@@ -33,9 +33,15 @@ func verifyHash(psw string, salt string,correctHash string) bool {
 
 //VerifyUser - Read User Data and VerifyHash
 func VerifyUser(email string, psw string) bool{
-	usr, err := ReadUser(email)
-	if err != nil {
-		Utils.HandlePrint(err) //TODO kp was ab geht
+	usr, present,err := ReadUser(email)
+	Utils.HandlePrint(err)
+
+	// User Exists ?
+	if present {
+		// Wrong Password?
+		return verifyPasswordHash(psw,usr.Salt,usr.HashedPassword)
+	}else {
+		return false
 	}
-	return verifyHash(psw,usr.Salt,usr.HashedPassword)
+
 }
