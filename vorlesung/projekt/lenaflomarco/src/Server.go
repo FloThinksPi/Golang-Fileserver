@@ -7,32 +7,28 @@ import (
 	"Flags"
 	"path/filepath"
 	"strconv"
-	"encoding/json"
 	"html/template"
 	"UserManager"
+	"SessionManager"
 )
 
 const (
 	rootURL = "/"
-	apiURL = "/API/"
 	docURL = "/doc/"
+
+	debugging = true; // Disables Login for Debugging
 )
 
 func main() {
 	requestMultiplexer := http.NewServeMux()
 
-	requestMultiplexer.HandleFunc(docURL, doc)
-	requestMultiplexer.HandleFunc(rootURL, root)
+	// General Handlers for Website + Godoc
+	requestMultiplexer.HandleFunc(docURL, docHandler)
+	requestMultiplexer.HandleFunc(rootURL, sessionCheckHandler)
 
-	//REST Test
-	requestMultiplexer.HandleFunc(apiURL, apiDoc)
-	requestMultiplexer.HandleFunc(apiURL + "getFileList", apiGetFileList)
-
-	//HtmlTemplate Tests
-	requestMultiplexer.HandleFunc(rootURL + "indexTemplate.html", indexTemplate)
-
-	//Login Test
-	requestMultiplexer.HandleFunc(rootURL + "login.html", loginTest)
+	//Login,Logout
+	requestMultiplexer.HandleFunc(rootURL + "login", authHandler)
+	requestMultiplexer.HandleFunc(rootURL + "logout", authHandler)
 
 	cfg := &tls.Config{
 		MinVersion:               tls.VersionTLS12,
@@ -58,39 +54,68 @@ func main() {
 	Utils.HandlePanic(srv.ListenAndServeTLS(Flags.GetTLScert(), Flags.GetTLSkey()))
 }
 
-func root(w http.ResponseWriter, r *http.Request) {
+func sessionCheckHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
 
-	path, err := filepath.Abs("res/html/" + r.URL.Path[1:])
+	r.ParseForm()
+	session := r.FormValue("session")
+
+	if (SessionManager.ValidateSession(session) || debugging || r.URL.Path[1:] == "login.html") {
+		rootHandler(w, r)
+		return
+	} else {
+		http.Redirect(w, r, "/login.html", 302)
+		return
+	}
+}
+
+func rootHandler(w http.ResponseWriter, r *http.Request) {
+	var url string
+	if r.URL.Path[1:] == "" {
+		url = "index.html"
+	} else {
+		url = r.URL.Path[1:]
+	}
+
+	path, err := filepath.Abs("res/html/" + url)
+	Utils.HandlePrint(err)
+
+	t, err := template.ParseFiles(path)
+	Utils.HandlePrint(err)
+	files, err := filepath.Glob("*")
 	Utils.HandlePrint(err)
 
 	Utils.LogDebug("File Accessed:	" + path)
-	http.ServeFile(w, r, path)
-
-}
-
-//TODO Write Test
-//TODO Fix: Wrong Login when open LoginSite
-func loginTest(w http.ResponseWriter, r *http.Request) {
-	r.ParseForm()
-	email := r.FormValue("email")
-	password := r.FormValue("password")
-	println(UserManager.VerifyUser(email,password))
-	t, _ := template.ParseFiles("res/html/login.html")
-	//TODO Print invalid Login
-	t.Execute(w, "")
-}
-
-
-
-func indexTemplate(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("res/html/indexTemplate.html")
-	files, _ := filepath.Glob("*")
 	t.Execute(w, files)
-
 }
 
-func doc(w http.ResponseWriter, r *http.Request) {
+func authHandler(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	intent := r.FormValue("intent")
+	if (intent == "login") {
+		email := r.FormValue("email")
+		password := r.FormValue("password")
+		if (UserManager.VerifyUser(email, password)) {
+			http.Redirect(w, r, "/index.html", 302)
+		} else {
+			http.Redirect(w, r, "/login.html?status=failed", 302)
+		}
+	} else if (intent == "logout") {
+		session := r.FormValue("session")
+		err := SessionManager.InvalidateSession(session)
+		if (err != nil) {
+			http.Redirect(w, r, "/login.html?status=error", 302)
+			return
+		}
+		http.Redirect(w, r, "/login.html?status=logout", 302)
+		return
+	} else {
+		http.Redirect(w, r, "/login.html?status=badrequest", 302)
+		return
+	}
+}
+
+func docHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
 
 	path, err := filepath.Abs("res/" + r.URL.Path[1:])
@@ -104,23 +129,5 @@ func doc(w http.ResponseWriter, r *http.Request) {
 	} else {
 		http.ServeFile(w, r, path)
 	}
-
 }
-
-//apiDoc Shows Documentation of the Rest Api
-func apiDoc(w http.ResponseWriter, r *http.Request) {
-	w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
-
-	json.NewEncoder(w).Encode("Documentation Of Api May Follow")
-}
-
-func apiGetFileList(w http.ResponseWriter, r *http.Request) {
-	w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
-
-	files, _ := filepath.Glob("*")
-
-	json.NewEncoder(w).Encode(files)
-
-}
-
 
