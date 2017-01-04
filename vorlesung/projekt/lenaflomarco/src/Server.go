@@ -80,13 +80,19 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 	path, err := filepath.Abs("res/html/" + url)
 	Utils.HandlePrint(err)
 
-	t, err := template.ParseFiles(path)
-	Utils.HandlePrint(err)
-	files, err := filepath.Glob("*")
-	Utils.HandlePrint(err)
+	if(url[len(url)-4:]=="html"){
+		t, err := template.ParseFiles(path)
+		Utils.HandlePrint(err)
+		files, err := filepath.Glob("*")
+		Utils.HandlePrint(err)
 
-	Utils.LogDebug("File Accessed:	" + path)
-	t.Execute(w, files)
+		Utils.LogDebug("File Accessed with TemplateEngine:	" + path)
+		t.Execute(w, files)
+	}else{
+		http.ServeFile(w,r,path)
+		Utils.LogDebug("File Accessed with StaticFileServer:	" + path)
+	}
+
 }
 
 func authHandler(w http.ResponseWriter, r *http.Request) {
