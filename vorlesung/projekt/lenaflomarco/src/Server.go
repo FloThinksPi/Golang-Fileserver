@@ -19,7 +19,7 @@ const (
 	docURL = rootURL + "doc/"
 	funcURL = rootURL + "ops/"
 	loginURL = rootURL + funcURL + "login"
-	logoutURL = rootURL + funcURL + "login"
+	logoutURL = rootURL + funcURL + "logout"
 
 
 	// Paths
@@ -32,7 +32,7 @@ const (
 	loginPageURL = rootURL + "public/login.html"
 
 	// MISC
-	debugging = false; // Disables Login for Debugging
+	debugging = true; // Disables Login for Debugging
 )
 
 func main() {
@@ -79,7 +79,7 @@ func sessionCheckHandler(w http.ResponseWriter, r *http.Request) {
 	// Public Folder ?
 	publicFolderRegex, _ := regexp.Compile("^public")
 
-	if (SessionManager.ValidateSession(session) || debugging || publicFolderRegex.MatchString(r.URL.Path[1:])) {
+	if (SessionManager.ValidateSession(session) || publicFolderRegex.MatchString(r.URL.Path[1:]) || debugging) {
 		rootHandler(w, r)
 		return
 	} else {
@@ -104,11 +104,9 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 	if (url[len(url) - 4:] == "html") {
 		t, err := template.ParseFiles(path)
 		Utils.HandlePrint(err)
-		files, err := filepath.Glob("*")
-		Utils.HandlePrint(err)
 
 		Utils.LogDebug("File Accessed with TemplateEngine:	" + path)
-		t.Execute(w, files)
+		t.Execute(w,"")
 	} else {
 		http.ServeFile(w, r, path)
 		Utils.LogDebug("File Accessed with StaticFileServer:	" + path)
