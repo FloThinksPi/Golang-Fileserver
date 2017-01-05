@@ -73,7 +73,7 @@ func WriteUser(record UserRecord, path string) (err error) {
 
 	managersUserStorage.UserMap[record.Email] = record //TODO ADD error handling
 
-	err = saveDataToFile(managersUserStorage.UserMap, path)
+	err = saveDataToFile(managersUserStorage.UserMap, path + "/userdatabase")
 	if err != nil {
 		errors.Wrap(err, "Error in Write User while saving data to Disk")
 		//TODO Revert Changes done to Global UserStorage
