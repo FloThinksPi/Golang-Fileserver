@@ -125,9 +125,26 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 		email := r.FormValue("email")
 		password := r.FormValue("password")
 		if (UserManager.VerifyUser(email, password)) {
-			http.Redirect(w, r, loginPageURL, 302)
+			http.Redirect(w, r, mainPageURL, 302)
 		} else {
 			http.Redirect(w, r, loginPageURL + "?status=failed", 302)
+		}
+	} else if (intent == "register") {
+		name := r.FormValue("name")
+		email := r.FormValue("emailR")
+		password := r.FormValue("passwordR")
+		password2 := r.FormValue("passwordR2")
+
+		if (password != password2) {
+			//Passwords not equal
+			http.Redirect(w, r, loginPageURL + "?status=passwordsNotEqual", 302)
+		}
+
+		registerOK := UserManager.RegisterUser(name, email,password)
+		if(registerOK) {
+			http.Redirect(w, r, mainPageURL, 302)
+		} else {
+			http.Redirect(w, r, loginPageURL + "?status=userAlreadyExists", 302)
 		}
 	} else if (intent == "logout") {
 		session := r.FormValue("session")
