@@ -5,9 +5,7 @@ import (
 	"encoding/hex"
 	"net/http"
 	"Utils"
-
 	"Flags"
-	"github.com/pkg/errors"
 )
 
 //SetHash - einen hash Setzten
