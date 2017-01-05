@@ -18,9 +18,7 @@ const (
 	rootURL = "/"
 	docURL = rootURL + "doc/"
 	funcURL = rootURL + "ops/"
-	loginURL = rootURL + funcURL + "login"
-	logoutURL = rootURL + funcURL + "logout"
-
+	authURL = funcURL + "login"
 
 	// Paths
 	pivatePath = "res/html/"
@@ -38,13 +36,13 @@ const (
 func main() {
 	requestMultiplexer := http.NewServeMux()
 
+	//Login,Logout
+	requestMultiplexer.HandleFunc(authURL, authHandler)
+
 	// General Handlers for Website + Godoc
 	requestMultiplexer.HandleFunc(docURL, docHandler)
 	requestMultiplexer.HandleFunc(rootURL, sessionCheckHandler)
 
-	//Login,Logout
-	requestMultiplexer.HandleFunc(loginURL, authHandler)
-	requestMultiplexer.HandleFunc(logoutURL, authHandler)
 
 	cfg := &tls.Config{
 		MinVersion:               tls.VersionTLS12,
@@ -150,7 +148,7 @@ func docHandler(w http.ResponseWriter, r *http.Request) {
 
 	if (r.URL.Path[1:] == "doc/" || r.URL.Path[1:] == "doc") {
 		Utils.LogDebug("Redirecting from doc to doc/pkg/fileServer.html")
-		http.Redirect(w, r, "pkg/FileServer.html", 300)
+		http.Redirect(w, r, "pkg/FileServer.html", 302)
 	} else {
 		http.ServeFile(w, r, path)
 	}
