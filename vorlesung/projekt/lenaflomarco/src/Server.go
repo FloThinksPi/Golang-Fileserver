@@ -33,11 +33,6 @@ const (
 	debugging = true; // Disables Login for Debugging
 )
 
-func init(){
-	// Init Storages
-	UserManager.ReadDataToMemory(Flags.GetWorkDir()+"/userdatabase")
-	Utils.LogDebug("Init UserDatabase")
-}
 
 func main() {
 	requestMultiplexer := http.NewServeMux()
