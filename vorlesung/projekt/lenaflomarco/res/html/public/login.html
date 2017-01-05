@@ -14,8 +14,9 @@
 </header>
 
     <div id="loginContainer">
-        <form id="login" action="" method="post">
-            <fieldset class="fieldsetLogin">       
+        <form id="login" action="ops/login" method="post">
+            <fieldset class="fieldsetLogin">
+                <input type="hidden" name="intent" value="login">
                 <label for="mail">E-Mail: </label>
                     <input type="text" name="mail" id="mail">
                     <br>
