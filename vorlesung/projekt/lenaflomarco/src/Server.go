@@ -33,6 +33,12 @@ const (
 	debugging = true; // Disables Login for Debugging
 )
 
+func init(){
+	// Init Storages
+	UserManager.ReadDataToMemory(Flags.GetWorkDir()+"/userdatabase")
+	Utils.LogDebug("Init UserDatabase")
+}
+
 func main() {
 	requestMultiplexer := http.NewServeMux()
 
@@ -42,7 +48,6 @@ func main() {
 	// General Handlers for Website + Godoc
 	requestMultiplexer.HandleFunc(docURL, docHandler)
 	requestMultiplexer.HandleFunc(rootURL, sessionCheckHandler)
-
 
 	cfg := &tls.Config{
 		MinVersion:               tls.VersionTLS12,
