@@ -37,10 +37,9 @@ func init() {
 	//Create Map
 	Utils.LogDebug("Init UserDatabase")
 	var err error = nil
-	managersUserStorage.RWMutex.Lock()
-	defer managersUserStorage.Unlock()
 
 	managersUserStorage.UserMap = make(UserMap)
 	managersUserStorage.UserMap,err = ReadDataToMemory(Flags.GetWorkDir()+"/userdatabase")
+
 	Utils.HandlePrint(err)
 }
