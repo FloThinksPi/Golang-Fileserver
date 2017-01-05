@@ -5,7 +5,7 @@ import (
 	"encoding/hex"
 	"net/http"
 	"Utils"
-
+	"Flags"
 )
 
 //SetHash - einen hash Setzten
@@ -58,4 +58,24 @@ func basicAuth(handler http.HandlerFunc) http.HandlerFunc {
 		}
 		handler(w, r)
 	}
+}
+
+func RegisterUser(name, email, password string) (ok bool){
+	record, present, _ := ReadUser(email)
+	if(present) {
+		Utils.LogDebug("Benutzer existiert bereits. Es wird kein neuer Nutzer angelegt")
+		return false
+	}
+
+	hash, salt := GeneratePasswordHash(password)
+	record = UserRecord{
+		UID:getNextUID(),
+		Email:email,
+		Name:name,
+		HashedPassword:hash,
+		Salt:salt,
+	}
+	WriteUser(record, Flags.GetWorkDir())	//TODO Error Handling
+	//TODO Create empty user directory for file upload
+	return true
 }

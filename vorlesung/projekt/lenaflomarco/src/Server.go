@@ -33,6 +33,7 @@ const (
 	debugging = true; // Disables Login for Debugging
 )
 
+
 func main() {
 	requestMultiplexer := http.NewServeMux()
 
@@ -55,7 +56,6 @@ func main() {
 	// General Handlers for Website + Godoc
 	requestMultiplexer.HandleFunc(docURL, docHandler)
 	requestMultiplexer.HandleFunc(rootURL, sessionCheckHandler)
-
 
 	cfg := &tls.Config{
 		MinVersion:               tls.VersionTLS12,
@@ -114,7 +114,14 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 
 	if (url[len(url) - 4:] == "html") {
 		// Split string at / , switch case files
-		Templates.IndexHandler(w,r,path)
+
+		switch url {
+		case "/index.html":
+			Templates.IndexHandler(w,r,path)
+		case "/settings.html":
+			Templates.SettingHandler(w,r,path)
+		}
+
 		Utils.LogDebug("File Accessed with TemplateEngine:	" + path)
 
 	} else {
@@ -131,9 +138,26 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 		email := r.FormValue("email")
 		password := r.FormValue("password")
 		if (UserManager.VerifyUser(email, password)) {
-			http.Redirect(w, r, loginPageURL, 302)
+			http.Redirect(w, r, mainPageURL, 302)
 		} else {
 			http.Redirect(w, r, loginPageURL + "?status=failed", 302)
+		}
+	} else if (intent == "register") {
+		name := r.FormValue("name")
+		email := r.FormValue("emailR")
+		password := r.FormValue("passwordR")
+		password2 := r.FormValue("passwordR2")
+
+		if (password != password2) {
+			//Passwords not equal
+			http.Redirect(w, r, loginPageURL + "?status=passwordsNotEqual", 302)
+		}
+
+		registerOK := UserManager.RegisterUser(name, email,password)
+		if(registerOK) {
+			http.Redirect(w, r, mainPageURL, 302)
+		} else {
+			http.Redirect(w, r, loginPageURL + "?status=userAlreadyExists", 302)
 		}
 	} else if (intent == "logout") {
 		session := r.FormValue("session")
