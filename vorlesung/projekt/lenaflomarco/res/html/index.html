@@ -27,12 +27,12 @@ Pfad: <span id="path"></span>
         </tr>
         {{range .}}
         <tr>
-            <td>Image</td>
+            <td><img src="public/images/{{.Image}}.png" alt="Datei"></td>
             <td>{{.Name}}</td>
             <td>{{.Size}}</td>
             <td>{{.Date}}</td>
-            <td>DownloadMe</td>
-            <td>DeleteMe</td>
+            <td><form action="/ops/download" method="post"><input type="hidden" name="absPath" value="{{.AbsPath}}"><input class="btn" type="submit" value="Download Me"></form></td>
+            <td><form action="/ops/delete" method="post"><input type="hidden" name="absPath" value="{{.AbsPath}}"><input class="btn" type="submit" value="Delete Me"></form></td>
         </tr>
         {{end}}
         <!--<tr>
@@ -49,7 +49,7 @@ Pfad: <span id="path"></span>
 <div class="divNew">
 <fieldset>
     <legend>Ordner anlegen</legend>
-    <form action="" method="post">
+    <form action="/ops/newFolder" method="post">
         <label for="addFolder">Ordnername: </label>
         <input type="text" name="addFolder" id="addFolder">
         <br>
@@ -59,7 +59,7 @@ Pfad: <span id="path"></span>
 
 <fieldset>
     <legend>Upload</legend>
-    <form action="" method="post">
+    <form action="/ops/upload" method="post">
         <label for="uploadFile">Datei: </label>
         <input type="file" name="uploadFile" id="uploadFile">
         <br>

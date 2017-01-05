@@ -39,6 +39,19 @@ func main() {
 	//Login,Logout
 	requestMultiplexer.HandleFunc(authURL, authHandler)
 
+	//Index Functions
+	//DeleteData
+	requestMultiplexer.HandleFunc(funcURL + "delete", Templates.DeleteDataHandler)
+
+	//DownloadData
+	requestMultiplexer.HandleFunc(funcURL + "download", Templates.DownloadDataHandler)
+
+	//UploadData
+	requestMultiplexer.HandleFunc(funcURL + "upload", Templates.UploadDataDataHandler)
+
+	//NewFolder
+	requestMultiplexer.HandleFunc(funcURL + "newFolder", Templates.NewFolderHandler)
+
 	// General Handlers for Website + Godoc
 	requestMultiplexer.HandleFunc(docURL, docHandler)
 	requestMultiplexer.HandleFunc(rootURL, sessionCheckHandler)
