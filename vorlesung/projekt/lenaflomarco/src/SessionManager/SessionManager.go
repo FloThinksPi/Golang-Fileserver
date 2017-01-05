@@ -56,3 +56,11 @@ func InvalidateSession(session string) (err error) {
 
 	return
 }
+
+func GetSessionRecord(session string) SessionRecord {
+	record, _ := managersSessionStorage.SessionMap[session]
+	//if present {
+		return record	//TODO Error Handling
+	//}
+
+}
