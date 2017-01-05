@@ -6,6 +6,8 @@ import (
 	"net/http"
 	"Utils"
 	"Flags"
+	"strconv"
+	"os"
 )
 
 //SetHash - einen hash Setzten
@@ -60,22 +62,30 @@ func basicAuth(handler http.HandlerFunc) http.HandlerFunc {
 	}
 }
 
-func RegisterUser(name, email, password string) (ok bool){
+func RegisterUser(name, email, password string) bool {
 	record, present, _ := ReadUser(email)
 	if(present) {
 		Utils.LogDebug("Benutzer existiert bereits. Es wird kein neuer Nutzer angelegt")
 		return false
 	}
-
+	uid := getNextUID()
 	hash, salt := GeneratePasswordHash(password)
 	record = UserRecord{
-		UID:getNextUID(),
+		UID:uid,
 		Email:email,
 		Name:name,
 		HashedPassword:hash,
-		Salt:salt,
-	}
+		Salt:salt}
 	WriteUser(record, Flags.GetWorkDir())	//TODO Error Handling
+
 	//TODO Create empty user directory for file upload
+	Utils.LogDebug("Workdir: "+workdir)
+	Utils.LogDebug("UID (Foldername): "+strconv.Itoa(int(uid)))
+	err := os.Mkdir(workdir + "/" + strconv.Itoa(int(uid)), 777)
+
+	if err != nil {
+		Utils.LogError("Error in creating user directory")
+		return false
+	}
 	return true
 }

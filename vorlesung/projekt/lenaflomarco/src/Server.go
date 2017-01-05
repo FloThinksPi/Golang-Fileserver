@@ -115,6 +115,7 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	intent := r.FormValue("intent")
 	if (intent == "login") {
+		Utils.LogDebug("Intent=Login")
 		email := r.FormValue("email")
 		password := r.FormValue("password")
 		if (UserManager.VerifyUser(email, password)) {
@@ -123,23 +124,29 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 			http.Redirect(w, r, loginPageURL + "?status=failed", 302)
 		}
 	} else if (intent == "register") {
+		Utils.LogDebug("Intent=Register")
 		name := r.FormValue("name")
-		email := r.FormValue("emailR")
-		password := r.FormValue("passwordR")
-		password2 := r.FormValue("passwordR2")
+		email := r.FormValue("email")
+		password := r.FormValue("password")
+		password2 := r.FormValue("password2")
 
 		if (password != password2) {
 			//Passwords not equal
+			Utils.LogDebug("Passwörter stimmen nicht überein. Registrierung fehlgeschlagen.")
 			http.Redirect(w, r, loginPageURL + "?status=passwordsNotEqual", 302)
+			return
 		}
 
 		registerOK := UserManager.RegisterUser(name, email,password)
 		if(registerOK) {
 			http.Redirect(w, r, mainPageURL, 302)
+			Utils.LogDebug("Registrierung erfolgreich.")
 		} else {
 			http.Redirect(w, r, loginPageURL + "?status=userAlreadyExists", 302)
+			Utils.LogDebug("Benutzer mit angegebener E-Mail-Adresse existiert bereits. Registrierung fehlgeschlagen.")
 		}
 	} else if (intent == "logout") {
+		Utils.LogDebug("Intent=Logout")
 		session := r.FormValue("session")
 		err := SessionManager.InvalidateSession(session)
 		if (err != nil) {
@@ -149,6 +156,7 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, loginPageURL + "?status=logout", 302)
 		return
 	} else{
+		Utils.LogDebug("Intent=BadRequest")
 		http.Redirect(w, r, loginPageURL + "?status=badrequest", 302)
 		return
 	}
