@@ -18,7 +18,6 @@ const (
 	rootURL = "/"
 	docURL = rootURL + "doc/"
 	funcURL = rootURL + "ops/"
-	authURL = funcURL + "login"
 
 	// Paths
 	pivatePath = "res/html/"
@@ -38,7 +37,7 @@ func main() {
 	requestMultiplexer := http.NewServeMux()
 
 	//Login,Logout
-	requestMultiplexer.HandleFunc(authURL, authHandler)
+	requestMultiplexer.HandleFunc(funcURL + "login", authHandler)
 
 	//Index Functions
 	//DeleteData
