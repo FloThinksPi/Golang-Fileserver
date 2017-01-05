@@ -118,11 +118,14 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 		switch url {
 		case "/index.html":
 			Templates.IndexHandler(w,r,path)
+			Utils.LogDebug("File Accessed with TemplateEngine:	" + path)
 		case "/settings.html":
 			Templates.SettingHandler(w,r,path)
+			Utils.LogDebug("File Accessed with TemplateEngine:	" + path)
+		default:
+			http.ServeFile(w, r, path)
+			Utils.LogDebug("File Accessed with StaticFileServer:	" + path)
 		}
-
-		Utils.LogDebug("File Accessed with TemplateEngine:	" + path)
 
 	} else {
 		http.ServeFile(w, r, path)
