@@ -7,10 +7,10 @@ import (
 	"Flags"
 	"path/filepath"
 	"strconv"
-	"html/template"
 	"UserManager"
 	"SessionManager"
 	"regexp"
+	"Templates"
 )
 
 const (
@@ -100,11 +100,10 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 	Utils.HandlePrint(err)
 
 	if (url[len(url) - 4:] == "html") {
-		t, err := template.ParseFiles(path)
-		Utils.HandlePrint(err)
-
+		// Split string at / , switch case files
+		Templates.IndexHandler(w,r,path)
 		Utils.LogDebug("File Accessed with TemplateEngine:	" + path)
-		t.Execute(w,"")
+
 	} else {
 		http.ServeFile(w, r, path)
 		Utils.LogDebug("File Accessed with StaticFileServer:	" + path)
@@ -132,7 +131,7 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		http.Redirect(w, r, loginPageURL + "?status=logout", 302)
 		return
-	} else {
+	} else{
 		http.Redirect(w, r, loginPageURL + "?status=badrequest", 302)
 		return
 	}
