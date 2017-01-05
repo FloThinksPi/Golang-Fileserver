@@ -33,16 +33,29 @@ const (
 	debugging = true; // Disables Login for Debugging
 )
 
+
 func main() {
 	requestMultiplexer := http.NewServeMux()
 
 	//Login,Logout
 	requestMultiplexer.HandleFunc(authURL, authHandler)
 
+	//Index Functions
+	//DeleteData
+	requestMultiplexer.HandleFunc(funcURL + "delete", Templates.DeleteDataHandler)
+
+	//DownloadData
+	requestMultiplexer.HandleFunc(funcURL + "download", Templates.DownloadDataHandler)
+
+	//UploadData
+	requestMultiplexer.HandleFunc(funcURL + "upload", Templates.UploadDataDataHandler)
+
+	//NewFolder
+	requestMultiplexer.HandleFunc(funcURL + "newFolder", Templates.NewFolderHandler)
+
 	// General Handlers for Website + Godoc
 	requestMultiplexer.HandleFunc(docURL, docHandler)
 	requestMultiplexer.HandleFunc(rootURL, sessionCheckHandler)
-
 
 	cfg := &tls.Config{
 		MinVersion:               tls.VersionTLS12,
@@ -101,7 +114,14 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 
 	if (url[len(url) - 4:] == "html") {
 		// Split string at / , switch case files
-		Templates.IndexHandler(w,r,path)
+
+		switch url {
+		case "/index.html":
+			Templates.IndexHandler(w,r,path)
+		case "/settings.html":
+			Templates.SettingHandler(w,r,path)
+		}
+
 		Utils.LogDebug("File Accessed with TemplateEngine:	" + path)
 
 	} else {
