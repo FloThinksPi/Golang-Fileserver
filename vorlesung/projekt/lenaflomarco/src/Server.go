@@ -26,6 +26,7 @@ const (
 
 	// URLs
 	mainPageURL = rootURL + "index.html"
+	settingsPageURL = rootURL + "settings.html"
 	loginPageURL = rootURL + "public/login.html"
 
 	// MISC
@@ -38,6 +39,9 @@ func main() {
 
 	//Login,Logout
 	requestMultiplexer.HandleFunc(funcURL + "login", authHandler)
+
+	//Settings (Change Password)
+	requestMultiplexer.HandleFunc(funcURL + "settings", settingsHandler)
 
 	//Index Functions
 	//DeleteData
@@ -181,6 +185,33 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 		Utils.LogDebug("Intent=BadRequest")
 		http.Redirect(w, r, loginPageURL + "?status=badrequest", 302)
 		return
+	}
+}
+
+func settingsHandler(w http.ResponseWriter, r *http.Request)  {
+	r.ParseForm()
+	session := r.FormValue("session")
+	passwordOld := r.FormValue("passwordOld")
+	passwordNew := r.FormValue("passwordNew")
+	passwordNew2 := r.FormValue("passwordNew2")
+
+	if (passwordNew != passwordNew2) {
+		//Passwords not equal
+		Utils.LogDebug("Neue Passwörter stimmen nicht überein. Änderung fehlgeschlagen.")
+		http.Redirect(w, r, settingsPageURL + "?status=passwordsNotEqual", 302)
+		return
+	}
+
+	email := SessionManager.GetSessionRecord(session).Email
+	Utils.LogDebug("EMail: "+email)
+
+	if(UserManager.VerifyUser(email, passwordOld)) {
+		UserManager.ChangePassword(email,passwordNew)
+		http.Redirect(w, r, settingsPageURL, 302)
+		Utils.LogDebug("Kennwort erfolgreich geändert.")
+	} else {
+		http.Redirect(w, r, settingsPageURL + "?status=oldPasswordNotValid", 302)
+		Utils.LogDebug("Altes Kennwort nicht korrekt. Kennwortänderung fehlgeschlagen.")
 	}
 }
 

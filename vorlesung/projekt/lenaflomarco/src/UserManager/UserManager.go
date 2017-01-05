@@ -78,8 +78,6 @@ func RegisterUser(name, email, password string) bool {
 		Salt:salt}
 	WriteUser(record, Flags.GetWorkDir())	//TODO Error Handling
 
-	//TODO Create empty user directory for file upload
-	Utils.LogDebug("Workdir: "+workdir)
 	Utils.LogDebug("UID (Foldername): "+strconv.Itoa(int(uid)))
 	err := os.Mkdir(workdir + "/" + strconv.Itoa(int(uid)), 777)
 
@@ -88,4 +86,11 @@ func RegisterUser(name, email, password string) bool {
 		return false
 	}
 	return true
+}
+
+func ChangePassword(email, passwordNew string)  {
+	usr, _,_ := ReadUser(email)
+	hash, salt := GeneratePasswordHash(passwordNew)
+	usr.HashedPassword = hash
+	usr.Salt = salt
 }
