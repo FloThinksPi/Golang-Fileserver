@@ -25,22 +25,23 @@ Pfad: <span id="path"></span>
             <th>Download</th>
             <th>Löschen</th>
         </tr>
+        {{range .}}
         <tr>
-            <td><img src="public/images/folder.png" alt="Ordner"></td>
-            <td>Testordner</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Image</td>
+            <td>{{.Name}}</td>
+            <td>{{.Size}}</td>
+            <td>{{.Date}}</td>
+            <td>DownloadMe</td>
             <td>DeleteMe</td>
         </tr>
-        <tr>
+        <!--<tr>
             <td><img src="public/images/file.png" alt="Datei"></td>
             <td>Testdatei</td>
             <td>123</td>
             <td>01.01.1970</td>
             <td>DownloadMe</td>
             <td>DeleteMe</td>
-        </tr>
+        </tr>-->
     </table>
 </div>
 
