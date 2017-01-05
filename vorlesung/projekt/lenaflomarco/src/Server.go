@@ -101,7 +101,14 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 
 	if (url[len(url) - 4:] == "html") {
 		// Split string at / , switch case files
-		Templates.IndexHandler(w,r,path)
+
+		switch url {
+		case "/index.html":
+			Templates.IndexHandler(w,r,path)
+		case "/settings.html":
+			Templates.SettingHandler(w,r,path)
+		}
+
 		Utils.LogDebug("File Accessed with TemplateEngine:	" + path)
 
 	} else {
