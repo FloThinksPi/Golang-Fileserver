@@ -92,3 +92,13 @@ func ReadUser(email string) (record UserRecord, present bool, err error) {
 
 	return
 }
+
+func getNextUID() (id int) {
+	id = 0
+	for _, value := range managersUserStorage.UserMap {
+		if(value.UID > id) {
+			id = value.UID
+		}
+	}
+	return id+1;
+}
