@@ -18,8 +18,6 @@ import (
 	"strings"
 )
 
-
-
 type IndexData struct {
 	Name       string
 	FolderPath string
@@ -31,9 +29,9 @@ type IndexData struct {
 }
 
 type IndexDaten struct {
-	FileData []IndexData
+	FileData   []IndexData
 	FolderPath string
-	UserName string
+	UserName   string
 }
 
 func IndexHandler(w http.ResponseWriter, r *http.Request, path string) {
@@ -43,9 +41,13 @@ func IndexHandler(w http.ResponseWriter, r *http.Request, path string) {
 	userPath := getAbsUserPath(r)
 	wantedPath := ""
 	wantedPath = r.URL.Query().Get("path")
+	if invalidPath(wantedPath) {
+		http.Redirect(w, r, r.Header.Get("Referer"), http.StatusTemporaryRedirect)
+		return
+	}
 
-	fullPath := filepath.Join(userPath,wantedPath)
-	Utils.LogDebug("Showing Files of Folder:	"+fullPath)
+	fullPath := filepath.Join(userPath, wantedPath)
+	Utils.LogDebug("Showing Files of Folder:	" + fullPath)
 	files, _ := ioutil.ReadDir(fullPath)
 
 	cookie, err := r.Cookie("Session")
@@ -69,9 +71,9 @@ func IndexHandler(w http.ResponseWriter, r *http.Request, path string) {
 
 			for _, f := range files {
 				if f.IsDir() {
-					Data.FileData = append(Data.FileData, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"folder", ObjectPath: wantedPath +"/"+ f.Name(),IsFolder:true})
+					Data.FileData = append(Data.FileData, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"folder", ObjectPath: wantedPath + "/" + f.Name(), IsFolder:true})
 				} else {
-					Data.FileData = append(Data.FileData, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"file", ObjectPath: wantedPath +"/"+ f.Name(),IsFolder:false})
+					Data.FileData = append(Data.FileData, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"file", ObjectPath: wantedPath + "/" + f.Name(), IsFolder:false})
 				}
 			}
 
@@ -89,21 +91,30 @@ func IndexHandler(w http.ResponseWriter, r *http.Request, path string) {
 func DeleteDataHandler(w http.ResponseWriter, r *http.Request) {
 
 	path := r.URL.Query().Get("filepath")
-	fullPath := filepath.Join(getAbsUserPath(r),path)
+	if invalidPath(path) {
+		http.Redirect(w, r, r.Header.Get("Referer"), http.StatusTemporaryRedirect)
+		return
+	}
+
+	fullPath := filepath.Join(getAbsUserPath(r), path)
 	Utils.LogDebug("File Deleted by DeleteDataHandler:	" + fullPath)
 	os.RemoveAll(fullPath)
-	http.Redirect(w,r,r.Header.Get("Referer"), http.StatusTemporaryRedirect)
+	http.Redirect(w, r, r.Header.Get("Referer"), http.StatusTemporaryRedirect)
 }
 
 func DownloadDataHandler(w http.ResponseWriter, r *http.Request) {
 	path := r.URL.Query().Get("filepath")
-	fullPath := filepath.Join(getAbsUserPath(r),path)
+	if invalidPath(path) {
+		http.Redirect(w, r, r.Header.Get("Referer"), http.StatusTemporaryRedirect)
+		return
+	}
+
+	fullPath := filepath.Join(getAbsUserPath(r), path)
 	Utils.LogDebug("File Accessed by DownloadDataHandler:	" + fullPath)
-
 	w.Header().Set("Content-Type", "application/octet-stream")
-	w.Header().Set("Content-disposition", `attachment; filename="`+filepath.Base(path)+`"`)
-	http.ServeFile(w, r, fullPath)
+	w.Header().Set("Content-disposition", `attachment; filename="` + filepath.Base(path) + `"`)
 
+	http.ServeFile(w, r, fullPath)
 }
 
 func DownloadBasicAuthDataHandler(w http.ResponseWriter, r *http.Request) {
@@ -112,11 +123,15 @@ func DownloadBasicAuthDataHandler(w http.ResponseWriter, r *http.Request) {
 	Utils.HandlePrint(err)
 	if present {
 		path := r.URL.Query().Get("filepath")
+		if invalidPath(path) {
+			http.Redirect(w, r, r.Header.Get("Referer"), http.StatusTemporaryRedirect)
+			return
+		}
 
-		fullPath := filepath.Join(Flags.GetWorkDir(),strconv.Itoa(int(usr.UID)),path)
+		fullPath := filepath.Join(Flags.GetWorkDir(), strconv.Itoa(int(usr.UID)), path)
 		Utils.LogDebug("File Accessed by DownloadBasicAuthDataHandler:	" + fullPath)
 		w.Header().Set("Content-Type", "application/octet-stream")
-		w.Header().Set("Content-disposition", `attachment; filename="`+filepath.Base(path)+`"`)
+		w.Header().Set("Content-disposition", `attachment; filename="` + filepath.Base(path) + `"`)
 		http.ServeFile(w, r, fullPath)
 	} else {
 		Utils.LogWarning("Inconsistency in User Storage!")
@@ -129,9 +144,17 @@ func NewFolderHandler(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	folderName := r.FormValue("folderName")
 	targetPath := r.FormValue("folderPath")
+	if invalidPath(targetPath) {
+		http.Redirect(w, r, r.Header.Get("Referer"), http.StatusTemporaryRedirect)
+		return
+	}
+	if invalidPath(folderName) {
+		http.Redirect(w, r, r.Header.Get("Referer"), http.StatusTemporaryRedirect)
+		return
+	}
 
 	//join Foldername to UserPath
-	path := filepath.Join(getAbsUserPath(r),targetPath, folderName)
+	path := filepath.Join(getAbsUserPath(r), targetPath, folderName)
 
 	//Try make Dir
 	Utils.LogDebug("Making New Directory with NewFolderHandler:	" + path)
@@ -139,14 +162,18 @@ func NewFolderHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		Utils.LogError("Error creating directory")
 		log.Println(err)
-		return
 	}
-	http.Redirect(w,r,r.Header.Get("Referer"), http.StatusTemporaryRedirect)
+	http.Redirect(w, r, r.Header.Get("Referer"), http.StatusTemporaryRedirect)
 	return
 }
 
 func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
-	targetPath := r.FormValue("folderPath")
+
+	targetPath := r.URL.Query().Get("folderPath")
+	if invalidPath(targetPath) {
+		http.Redirect(w, r, r.Header.Get("Referer"), http.StatusTemporaryRedirect)
+		return
+	}
 
 	var (
 		status int
@@ -173,8 +200,8 @@ func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
 			}
 			// open destination
 			var outfile *os.File
-			Utils.LogDebug("Uploading File to: 	" + filepath.Join(getAbsUserPath(r),targetPath, hdr.Filename))
-			if outfile, err = os.Create(filepath.Join(getAbsUserPath(r),targetPath, hdr.Filename)); nil != err {
+			Utils.LogDebug("Uploading File to: 	" + filepath.Join(getAbsUserPath(r), targetPath, hdr.Filename))
+			if outfile, err = os.Create(filepath.Join(getAbsUserPath(r), targetPath, hdr.Filename)); nil != err {
 				status = http.StatusInternalServerError
 				return
 			}
@@ -185,7 +212,7 @@ func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
 				return
 			}
 
-			http.Redirect(w,r,r.Header.Get("Referer"), http.StatusTemporaryRedirect)
+			http.Redirect(w, r, r.Header.Get("Referer"), http.StatusTemporaryRedirect)
 
 		}
 	}
@@ -200,7 +227,7 @@ func getAbsUserPath(r *http.Request) string {
 		user, present, err := UserManager.ReadUser(session.Email)
 		Utils.HandlePrint(err)
 		if present {
-			return filepath.Join(Flags.GetWorkDir(),"/",strconv.Itoa(int(user.UID)),"/")
+			return filepath.Join(Flags.GetWorkDir(), "/", strconv.Itoa(int(user.UID)), "/")
 		} else {
 			Utils.LogWarning("Inconsistency in Session to User Storage!")
 		}
@@ -208,4 +235,12 @@ func getAbsUserPath(r *http.Request) string {
 		Utils.LogWarning("Inconsistency in Session Storage !")
 	}
 	return ""
+}
+
+func invalidPath(p string) bool {
+	if strings.Contains(p, "./") {
+		Utils.LogWarning("Path Traversal detected in:	" + p)
+		return true
+	}
+	return false
 }
