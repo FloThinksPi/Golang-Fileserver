@@ -1,3 +1,12 @@
+/**
+  * Fileserver
+  * Programmieren II
+  *
+  * 8376497, Florian Braun
+  * 2581381, Lena Hoinkis
+  * 9043064, Marco Fuso
+ */
+
 package Templates
 
 import (
@@ -12,6 +21,7 @@ type SettingDaten struct {
 	UserName string
 }
 
+//SettingHandler stellt die Daten für das Template zur Verfügung
 func SettingHandler(w http.ResponseWriter, r *http.Request, path string) {
 
 	var Data SettingDaten
@@ -33,6 +43,7 @@ func SettingHandler(w http.ResponseWriter, r *http.Request, path string) {
 	}
 }
 
+//Nimmt die Anfrage der Kennwortänderung entgegen und übernimmt die Verarbeitung
 func SettingBackendHandler(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	passwordOld := r.FormValue("passwordOld")

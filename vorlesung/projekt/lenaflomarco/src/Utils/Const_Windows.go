@@ -1,5 +1,14 @@
 // +build windows
 
+/**
+  * Fileserver
+  * Programmieren II
+  *
+  * 8376497, Florian Braun
+  * 2581381, Lena Hoinkis
+  * 9043064, Marco Fuso
+ */
+
 package Utils
 
 // Colors for Unix, set to empty for Windows because windows cant :O

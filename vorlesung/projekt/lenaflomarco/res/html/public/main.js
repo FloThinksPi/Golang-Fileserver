@@ -1,3 +1,12 @@
+/**
+  * Fileserver
+  * Programmieren II
+  *
+  * 8376497, Florian Braun
+  * 2581381, Lena Hoinkis
+  * 9043064, Marco Fuso
+  */
+
 function checkGetParameters() {
     location.search.substr(1).split("&").forEach(function(item) {
         tmp = item.split("=");

@@ -1,3 +1,12 @@
+/**
+  * Fileserver
+  * Programmieren II
+  *
+  * 8376497, Florian Braun
+  * 2581381, Lena Hoinkis
+  * 9043064, Marco Fuso
+ */
+
 package Templates
 
 import (
@@ -14,7 +23,6 @@ import (
 	"path/filepath"
 	"mime/multipart"
 	"io/ioutil"
-	"time"
 	"strings"
 )
 
@@ -22,8 +30,8 @@ type IndexData struct {
 	Name       string
 	FolderPath string
 	ObjectPath string
-	Size       int64
-	Date       time.Time
+	Size       string
+	Date       string
 	Image      string
 	IsFolder   bool
 }
@@ -34,6 +42,7 @@ type IndexDaten struct {
 	UserName   string
 }
 
+//IndexHandler stellt die Daten für das Template zur Verfügung
 func IndexHandler(w http.ResponseWriter, r *http.Request, path string) {
 
 	var Data IndexDaten
@@ -66,14 +75,14 @@ func IndexHandler(w http.ResponseWriter, r *http.Request, path string) {
 				pos := strings.LastIndex(wantedPath, "/")
 				subfolder := wantedPath[0:pos]
 
-				Data.FileData = append(Data.FileData, IndexData{Name:"../", FolderPath: wantedPath, Size:0, Date:time.Time{}, Image:"folder", ObjectPath: subfolder, IsFolder:true})
+				Data.FileData = append(Data.FileData, IndexData{Name:"../", FolderPath: wantedPath, Size:"", Date:"", Image:"folder", ObjectPath: subfolder, IsFolder:true})
 			}
 
 			for _, f := range files {
 				if f.IsDir() {
-					Data.FileData = append(Data.FileData, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"folder", ObjectPath: wantedPath + "/" + f.Name(), IsFolder:true})
+					Data.FileData = append(Data.FileData, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:"", Date:f.ModTime().Format("02.01.2006 15:04:05"), Image:"folder", ObjectPath: wantedPath + "/" + f.Name(), IsFolder:true})
 				} else {
-					Data.FileData = append(Data.FileData, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"file", ObjectPath: wantedPath + "/" + f.Name(), IsFolder:false})
+					Data.FileData = append(Data.FileData, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:getSize(f.Size()), Date:f.ModTime().Format("02.01.2006 15:04:05"), Image:"file", ObjectPath: wantedPath + "/" + f.Name(), IsFolder:false})
 				}
 			}
 
@@ -88,6 +97,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request, path string) {
 
 }
 
+//DeleteDataHandler löscht Dateien und Ordner
 func DeleteDataHandler(w http.ResponseWriter, r *http.Request) {
 
 	path := r.URL.Query().Get("filepath")
@@ -102,6 +112,7 @@ func DeleteDataHandler(w http.ResponseWriter, r *http.Request) {
 	http.Redirect(w, r, r.Header.Get("Referer"), http.StatusTemporaryRedirect)
 }
 
+//DownloadDataHandler bietet die angeforderte Datei zum Download an
 func DownloadDataHandler(w http.ResponseWriter, r *http.Request) {
 	path := r.URL.Query().Get("filepath")
 	if invalidPath(path) {
@@ -117,6 +128,8 @@ func DownloadDataHandler(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, fullPath)
 }
 
+//DownloadBasicAuthDataHandler bietet die per BasicAuth angeforderte Datei zum Download an
+//Der Aufruf erfolgt über /download/?filepath=
 func DownloadBasicAuthDataHandler(w http.ResponseWriter, r *http.Request) {
 	email, _, _ := r.BasicAuth()
 	usr, present, err := UserManager.ReadUser(email)
@@ -138,6 +151,7 @@ func DownloadBasicAuthDataHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+//NewFolderHandler erzeugt neue Ordner im Userverzeichnis
 func NewFolderHandler(w http.ResponseWriter, r *http.Request) {
 	//Todo tested yet
 	//read folderName
@@ -167,6 +181,7 @@ func NewFolderHandler(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
+//UploadDataDataHandler nimmt die hochzuladende Datei entgegen und legt diese im richtigen Userverzeichnis ab
 func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
 
 	targetPath := r.URL.Query().Get("folderPath")
@@ -219,6 +234,7 @@ func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
+//getAbsUserPath gibt den Pfad zum Userverzeichnis zurück, in welchem sich die hochgeladenen Dateien befinden
 func getAbsUserPath(r *http.Request) string {
 	cookie, err := r.Cookie("Session")
 	Utils.HandlePrint(err)
@@ -237,10 +253,27 @@ func getAbsUserPath(r *http.Request) string {
 	return ""
 }
 
+//invalidPath überprüft ob im angegebenen Pfad Path Traversal ausgenutzt wird
 func invalidPath(p string) bool {
 	if strings.Contains(p, "./") {
 		Utils.LogWarning("Path Traversal detected in:	" + p)
 		return true
 	}
 	return false
+}
+
+//getSize gibt die Größe abhängig von der Größenordnung in einer passenden Einheit an
+func getSize(size int64) string {
+	if(size < 1000) {
+		return strconv.Itoa(int(size)) + " Byte"
+	} else if(size < 1000*1000) {
+		i := int(size)/1000
+		return strconv.Itoa(i) + " KB"
+	} else if(size < 1000*1000*1000) {
+		i := int(size)/(1000*1000)
+		return strconv.Itoa(i) + " MB"
+	} else {
+		i := int(size)/(1000*1000*1000)
+		return strconv.Itoa(i) + " GB"
+	}
 }
