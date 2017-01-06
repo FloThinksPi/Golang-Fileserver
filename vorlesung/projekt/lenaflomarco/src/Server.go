@@ -28,7 +28,6 @@ const (
 
 	// URLs
 	mainPageURL = rootURL + "index.html"
-	settingsPageURL = rootURL + "settings.html"
 	loginPageURL = rootURL + "public/login.html"
 
 	// MISC
@@ -42,27 +41,27 @@ func main() {
 	requestMultiplexer.HandleFunc(funcURL + "login", authHandler)
 
 	//Settings (Change Password)
-	requestMultiplexer.HandleFunc(funcURL + "settings", settingsHandler)
+	requestMultiplexer.HandleFunc(funcURL + "settings", sessionCheckHandler(Templates.SettingBackendHandler))
 
 	//Index Functions
 	//DeleteData
-	requestMultiplexer.HandleFunc(funcURL + "delete", Templates.DeleteDataHandler)
+	requestMultiplexer.HandleFunc(funcURL + "delete", sessionCheckHandler(Templates.DeleteDataHandler))
 
 	//DownloadData
-	requestMultiplexer.HandleFunc(funcURL + "download", Templates.DownloadDataHandler)
+	requestMultiplexer.HandleFunc(funcURL + "download", sessionCheckHandler(Templates.DownloadDataHandler))
 
 	//UploadData
-	requestMultiplexer.HandleFunc(funcURL + "upload", Templates.UploadDataDataHandler)
+	requestMultiplexer.HandleFunc(funcURL + "upload", sessionCheckHandler(Templates.UploadDataDataHandler))
 
 	//NewFolder
-	requestMultiplexer.HandleFunc(funcURL + "newFolder", Templates.NewFolderHandler)
+	requestMultiplexer.HandleFunc(funcURL + "newFolder", sessionCheckHandler(Templates.NewFolderHandler))
 
 	//Basic Auth
 	requestMultiplexer.HandleFunc(basicAuthURL, basicAuthHandler(Templates.DownloadBasicAuthDataHandler))
 
 	// General Handlers for Website + Godoc
 	requestMultiplexer.HandleFunc(docURL, docHandler)
-	requestMultiplexer.HandleFunc(rootURL, sessionCheckHandler)
+	requestMultiplexer.HandleFunc(rootURL, sessionCheckHandler(rootHandler))
 
 	cfg := &tls.Config{
 		MinVersion:               tls.VersionTLS12,
@@ -88,31 +87,34 @@ func main() {
 	Utils.HandlePanic(srv.ListenAndServeTLS(Flags.GetTLScert(), Flags.GetTLSkey()))
 }
 
-func sessionCheckHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
 
-	r.ParseForm()
-	cookie, err := r.Cookie("Session")
-	if err != nil {
-		Utils.LogDebug(err.Error())
-		cookie := http.Cookie{Name: "Session", Value: "empty", Expires: time.Now().Add(365 * 24 * time.Hour), Path: "/"}
-		http.SetCookie(w, &cookie)
-		http.Redirect(w, r, loginPageURL, 302)
-		return
-	} else {
-		// Public Folder ?
-		publicFolderRegex, _ := regexp.Compile("^public")
+//basicAuth - Checks submitted user credentials and grants access to handler
+func sessionCheckHandler(handler http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
 
-		if (SessionManager.ValidateSession(cookie.Value) || publicFolderRegex.MatchString(r.URL.EscapedPath()[1:]) || debugging) {
-			rootHandler(w, r)
-			return
-		} else {
-			Utils.LogDebug("Access denied for " + r.URL.EscapedPath() + " by Session Check")
+		r.ParseForm()
+		cookie, err := r.Cookie("Session")
+		if err != nil {
+			Utils.LogDebug(err.Error())
+			cookie := http.Cookie{Name: "Session", Value: "empty", Expires: time.Now().Add(365 * 24 * time.Hour), Path: "/"}
+			http.SetCookie(w, &cookie)
 			http.Redirect(w, r, loginPageURL, 302)
 			return
+		} else {
+			// Public Folder ?
+			publicFolderRegex, _ := regexp.Compile("^public")
+
+			if (SessionManager.ValidateSession(cookie.Value) || publicFolderRegex.MatchString(r.URL.EscapedPath()[1:]) || debugging) {
+				handler(w, r)
+				return
+			} else {
+				Utils.LogDebug("Access denied for " + r.URL.EscapedPath() + " by Session Check")
+				http.Redirect(w, r, loginPageURL, 302)
+				return
+			}
 		}
 	}
-
 }
 
 func rootHandler(w http.ResponseWriter, r *http.Request) {
@@ -216,38 +218,7 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func settingsHandler(w http.ResponseWriter, r *http.Request) {
-	r.ParseForm()
-	passwordOld := r.FormValue("passwordOld")
-	passwordNew := r.FormValue("passwordNew")
-	passwordNew2 := r.FormValue("passwordNew2")
 
-	if (passwordNew != passwordNew2) {
-		//Passwords not equal
-		Utils.LogDebug("Neue Passwörter stimmen nicht überein. Änderung fehlgeschlagen.")
-		http.Redirect(w, r, settingsPageURL + "?status=passwordsNotEqual", 302)
-		return
-	}
-
-	cookie, err := r.Cookie("Session")
-	Utils.HandlePrint(err)
-	session, present := SessionManager.GetSessionRecord(cookie.Value)
-	if(present) {
-		email := session.Email
-
-		Utils.LogDebug("EMail: " + email)
-
-		if (UserManager.VerifyUser(email, passwordOld)) {
-			UserManager.ChangePassword(email, passwordNew)
-			http.Redirect(w, r, settingsPageURL, 302)
-			Utils.LogDebug("Kennwort erfolgreich geändert.")
-		} else {
-			http.Redirect(w, r, settingsPageURL + "?status=oldPasswordNotValid", 302)
-			Utils.LogDebug("Altes Kennwort nicht korrekt. Kennwortänderung fehlgeschlagen.")
-		}
-	}
-
-}
 
 //basicAuth - Checks submitted user credentials and grants access to handler
 func basicAuthHandler(handler http.HandlerFunc) http.HandlerFunc {
