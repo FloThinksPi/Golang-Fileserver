@@ -96,7 +96,7 @@ func Test_SynchronizedGlobalUserStorage(t *testing.T) {
 
 //readWriteTest is a Helper Function to test Concurrency
 func readWriteTest(t *testing.T) {
-	aUserRecord, err := ReadUser("flo@myprivatemail.de")
+	aUserRecord, _, err := ReadUser("flo@myprivatemail.de")
 	if err != nil {
 		errors.Wrap(err, "Error while reading a user with function 'ReadUser'")
 		t.Error(err)
