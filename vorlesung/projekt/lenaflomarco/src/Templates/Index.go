@@ -15,6 +15,7 @@ import (
 	"mime/multipart"
 	"io/ioutil"
 	"time"
+	"strings"
 )
 
 
@@ -56,9 +57,15 @@ func IndexHandler(w http.ResponseWriter, r *http.Request, path string) {
 		if present {
 
 			// All Informations given here!
-
 			Data.FolderPath = wantedPath
 			Data.UserName = user.Name
+
+			if(wantedPath != "") {
+				pos := strings.LastIndex(wantedPath, "/")
+				subfolder := wantedPath[0:pos]
+
+				Data.FileData = append(Data.FileData, IndexData{Name:"../", FolderPath: wantedPath, Size:0, Date:time.Time{}, Image:"folder", ObjectPath: subfolder, IsFolder:true})
+			}
 
 			for _, f := range files {
 				if f.IsDir() {
