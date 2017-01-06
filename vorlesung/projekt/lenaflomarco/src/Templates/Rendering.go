@@ -5,6 +5,7 @@ import (
 	"html/template"
 )
 
+//RenderTemplate Abstraktion zum Verarbeiten einer Templatedatei (HTML) und Übergeben der entsprechenden Werte
 func RenderTemplate(w http.ResponseWriter, tmpl string, p interface{}) {
 	t,err := template.ParseFiles(tmpl)
 	if err != nil {

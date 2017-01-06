@@ -34,6 +34,7 @@ type IndexDaten struct {
 	UserName   string
 }
 
+//IndexHandler stellt die Daten für das Template zur Verfügung
 func IndexHandler(w http.ResponseWriter, r *http.Request, path string) {
 
 	var Data IndexDaten
@@ -88,6 +89,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request, path string) {
 
 }
 
+//DeleteDataHandler löscht Dateien und Ordner
 func DeleteDataHandler(w http.ResponseWriter, r *http.Request) {
 
 	path := r.URL.Query().Get("filepath")
@@ -102,6 +104,7 @@ func DeleteDataHandler(w http.ResponseWriter, r *http.Request) {
 	http.Redirect(w, r, r.Header.Get("Referer"), http.StatusTemporaryRedirect)
 }
 
+//DownloadDataHandler bietet die angeforderte Datei zum Download an
 func DownloadDataHandler(w http.ResponseWriter, r *http.Request) {
 	path := r.URL.Query().Get("filepath")
 	if invalidPath(path) {
@@ -117,6 +120,8 @@ func DownloadDataHandler(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, fullPath)
 }
 
+//DownloadBasicAuthDataHandler bietet die per BasicAuth angeforderte Datei zum Download an
+//Der Aufruf erfolgt über /download/?filepath=
 func DownloadBasicAuthDataHandler(w http.ResponseWriter, r *http.Request) {
 	email, _, _ := r.BasicAuth()
 	usr, present, err := UserManager.ReadUser(email)
@@ -138,6 +143,7 @@ func DownloadBasicAuthDataHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+//NewFolderHandler erzeugt neue Ordner im Userverzeichnis
 func NewFolderHandler(w http.ResponseWriter, r *http.Request) {
 	//Todo tested yet
 	//read folderName
@@ -167,6 +173,7 @@ func NewFolderHandler(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
+//UploadDataDataHandler nimmt die hochzuladende Datei entgegen und legt diese im richtigen Userverzeichnis ab
 func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
 
 	targetPath := r.URL.Query().Get("folderPath")
@@ -219,6 +226,7 @@ func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
+//getAbsUserPath gibt den Pfad zum Userverzeichnis zurück, in welchem sich die hochgeladenen Dateien befinden
 func getAbsUserPath(r *http.Request) string {
 	cookie, err := r.Cookie("Session")
 	Utils.HandlePrint(err)
@@ -237,6 +245,7 @@ func getAbsUserPath(r *http.Request) string {
 	return ""
 }
 
+//invalidPath überprüft ob im angegebenen Pfad Path Traversal ausgenutzt wird
 func invalidPath(p string) bool {
 	if strings.Contains(p, "./") {
 		Utils.LogWarning("Path Traversal detected in:	" + p)
