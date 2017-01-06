@@ -58,7 +58,7 @@ func main() {
 	requestMultiplexer.HandleFunc(funcURL + "newFolder", Templates.NewFolderHandler)
 
 	//Basic Auth
-	requestMultiplexer.HandleFunc(basicAuthURL, basicAuthHandler)
+	requestMultiplexer.HandleFunc(basicAuthURL, basicAuthHandler(downloadFileBAHandler))
 
 	// General Handlers for Website + Godoc
 	requestMultiplexer.HandleFunc(docURL, docHandler)
@@ -220,22 +220,18 @@ func settingsHandler(w http.ResponseWriter, r *http.Request)  {
 }
 
 //basicAuth - Checks submitted user credentials and grants access to handler
-func basicAuthHandler(w http.ResponseWriter, r *http.Request) {
+func basicAuthHandler(handler http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		email, pass, ok := r.BasicAuth()
 
+		if ok && UserManager.VerifyUser(email, pass) {
+			handler(w, r)
+		} else {
+			w.Header().Set("WWW-Authenticate", `Basic realm="Fileserver: Bitte mit E-Mail-Adresse und Kennwort anmelden, um auf Dateien zuzugreifen."`)
+			http.Error(w, "Unauthorized.", http.StatusUnauthorized)
+		}
 
-	email, pass, ok := r.BasicAuth()
-
-	if !ok ||  !UserManager.VerifyUser(email, pass) {
-		w.Header().Set("WWW-Authenticate", `Basic realm="Bitte mit E-Mail-Adresse und Kennwort anmelden, um auf Dateien zuzugreifen."`)
-		http.Error(w, "Unauthorized.", http.StatusUnauthorized)
-		return
 	}
-	usr, _,_ := UserManager.ReadUser(email)
-	path := Flags.GetWorkDir() + "/" + strconv.Itoa(int(usr.UID)) + "/"
-	url := r.URL.Path[10:]
-	Utils.LogDebug(url)
-	Utils.LogDebug(path + url)
-	http.ServeFile(w, r, path + url)
 }
 
 func docHandler(w http.ResponseWriter, r *http.Request) {
@@ -254,3 +250,15 @@ func docHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func downloadFileBAHandler(w http.ResponseWriter, r *http.Request) {
+	email, _, _ := r.BasicAuth()
+	downloadFile(w,r, email, r.URL.Path[10:])
+
+}
+func downloadFile(w http.ResponseWriter, r *http.Request, email, url string)  {
+	usr, _,_ := UserManager.ReadUser(email)
+	path := Flags.GetWorkDir() + "/" + strconv.Itoa(int(usr.UID)) + "/"
+	Utils.LogDebug(url)
+	Utils.LogDebug(path + url)
+	http.ServeFile(w, r, path + url)
+}
