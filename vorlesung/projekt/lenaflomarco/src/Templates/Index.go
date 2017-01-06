@@ -107,7 +107,7 @@ func DownloadBasicAuthDataHandler(w http.ResponseWriter, r *http.Request) {
 	if present {
 		path := r.URL.Query().Get("filepath")
 
-		fullPath := filepath.Join(Flags.GetWorkDir(),"/",strconv.Itoa(int(usr.UID)),"/",path[1:])
+		fullPath := filepath.Join(Flags.GetWorkDir(),strconv.Itoa(int(usr.UID)),path)
 		Utils.LogDebug("File Accessed by DownloadBasicAuthDataHandler:	" + fullPath)
 		w.Header().Set("Content-Type", "application/octet-stream")
 		w.Header().Set("Content-disposition", `attachment; filename="`+filepath.Base(path)+`"`)
