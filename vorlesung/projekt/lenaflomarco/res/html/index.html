@@ -38,22 +38,14 @@
             <td>{{.Size}}</td>
             <td>{{.Date}}</td>
             <td>
-                <form action="/ops/download" method="post">
-                    <input type="hidden" name="filepath"
-                           value="{{.ObjectPath}}">
-                    <input type="hidden" name="returnPath"
-                           value="{{.FolderPath}}">
+                <form action="/ops/download?filepath={{.ObjectPath}}&returnPath={{.FolderPath}}" method="post">
                     <input class="btn"
                            type="submit"
                            value="Download">
                 </form>
             </td>
             <td>
-                <form action="/ops/delete" method="post">
-                    <input type="hidden" name="filepath"
-                           value="{{.ObjectPath}}">
-                    <input type="hidden" name="returnPath"
-                           value="{{.FolderPath}}">
+                <form action="/ops/delete?filepath={{.ObjectPath}}&returnPath={{.FolderPath}}" method="post">
                     <input class="btn" type="submit"
                            value="Delete"></form>
             </td>
