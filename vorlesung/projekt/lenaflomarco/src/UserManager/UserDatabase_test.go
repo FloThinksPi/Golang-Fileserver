@@ -74,7 +74,7 @@ func Test_FileRead(t *testing.T) {
 	LocalTestStorage.UserMap = make(UserMap)
 
 	LocalTestStorage.Lock()
-	LocalTestStorage.UserMap, err = ReadDataToMemory(TESTFILEPATH)
+	LocalTestStorage.UserMap, err = readDataToMemory(TESTFILEPATH)
 	LocalTestStorage.Unlock()
 
 	if err != nil {
@@ -101,9 +101,9 @@ func readWriteTest(t *testing.T) {
 		errors.Wrap(err, "Error while reading a user with function 'ReadUser'")
 		t.Error(err)
 	}
-	err = WriteUser(aUserRecord,TESTFILEPATH)
+	err = writeUser(aUserRecord,TESTFILEPATH)
 	if err != nil {
-		errors.Wrap(err, "Error while writing a user with function 'WriteUser'")
+		errors.Wrap(err, "Error while writing a user with function 'writeUser'")
 		t.Error(err)
 	}
 }
@@ -118,16 +118,16 @@ func Test_SyncToFileSystem(t *testing.T) {
 	var LocalTestStorage UserStorage
 
 	//Test Variable got modifyed
-	err = WriteUser(UserRecord{UID: 3, Email: "someone@somemail.com", Name: "someone", HashedPassword: "???", Salt: "???"},TESTFILEPATH)
+	err = writeUser(UserRecord{UID: 3, Email: "someone@somemail.com", Name: "someone", HashedPassword: "???", Salt: "???"},TESTFILEPATH)
 	if err != nil {
-		errors.Wrap(err, "Error while writing a user with function 'WriteUser'")
+		errors.Wrap(err, "Error while writing a user with function 'writeUser'")
 		t.Error(err)
 	}
 	assert.NotEqual(t, TestData, managersUserStorage.UserMap, "TestData and Modified GobalUserStorage should be different but they are equal")
 
 	//Test File and Variable are Equal
 	LocalTestStorage.Lock()
-	LocalTestStorage.UserMap, err = ReadDataToMemory(TESTFILEPATH)
+	LocalTestStorage.UserMap, err = readDataToMemory(TESTFILEPATH)
 	LocalTestStorage.Unlock()
 
 	if err != nil {

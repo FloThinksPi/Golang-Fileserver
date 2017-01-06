@@ -62,7 +62,7 @@ func RegisterUser(name, email, password string) bool {
 		Name:name,
 		HashedPassword:hash,
 		Salt:salt}
-	WriteUser(record, Flags.GetWorkDir())	//TODO Error Handling
+	writeUser(record, Flags.GetWorkDir())	//TODO Error Handling
 
 	Utils.LogDebug("UID (Foldername): "+strconv.Itoa(int(uid)))
 	err := os.Mkdir(workdir + "/" + strconv.Itoa(int(uid)), 777)

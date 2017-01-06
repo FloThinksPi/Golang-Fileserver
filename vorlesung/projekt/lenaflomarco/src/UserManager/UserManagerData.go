@@ -39,7 +39,7 @@ func init() {
 	var err error = nil
 
 	managersUserStorage.UserMap = make(UserMap)
-	managersUserStorage.UserMap,err = ReadDataToMemory(Flags.GetWorkDir()+"/userdatabase")
+	managersUserStorage.UserMap,err = readDataToMemory(Flags.GetWorkDir()+"/userdatabase")
 
 	Utils.HandlePrint(err)
 }

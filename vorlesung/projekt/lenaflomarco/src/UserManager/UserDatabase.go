@@ -9,8 +9,8 @@ import (
 	"reflect"
 )
 
-//ReadDataToMemory Reads a given file as json , decodes this json to a UserMap and returns the UserMap. The Files data must be an Encoded UserMap(see saveDataToFile)
-func ReadDataToMemory(path string) (data UserMap, err error) {
+//readDataToMemory Reads a given file as json , decodes this json to a UserMap and returns the UserMap. The Files data must be an Encoded UserMap(see saveDataToFile)
+func readDataToMemory(path string) (data UserMap, err error) {
 	var bytedata []byte
 	data = make(UserMap)
 	// read the whole file at once
@@ -56,9 +56,9 @@ func saveDataToFile(data UserMap, path string) (err error) {
 	return
 }
 
-//WriteUser adds a UserRecord to the Persistent UserStorage. checks UserRecord if all elements are set, returns error if not.
+//writeUser adds a UserRecord to the Persistent UserStorage. checks UserRecord if all elements are set, returns error if not.
 //Then the Package Global UserMap(in userStorage) gets written to file by SaveDataToFile.
-func WriteUser(record UserRecord, path string) (err error) {
+func writeUser(record UserRecord, path string) (err error) {
 	managersUserStorage.RWMutex.Lock()
 	defer managersUserStorage.RWMutex.Unlock()
 
