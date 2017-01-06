@@ -219,16 +219,20 @@ func settingsHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	email := SessionManager.GetSessionRecord(session).Email
-	Utils.LogDebug("EMail: " + email)
+	user,present := SessionManager.GetSessionRecord(session)
+	if(present) {
+		email := user.Email
 
-	if (UserManager.VerifyUser(email, passwordOld)) {
-		UserManager.ChangePassword(email, passwordNew)
-		http.Redirect(w, r, settingsPageURL, 302)
-		Utils.LogDebug("Kennwort erfolgreich geändert.")
-	} else {
-		http.Redirect(w, r, settingsPageURL + "?status=oldPasswordNotValid", 302)
-		Utils.LogDebug("Altes Kennwort nicht korrekt. Kennwortänderung fehlgeschlagen.")
+		Utils.LogDebug("EMail: " + email)
+
+		if (UserManager.VerifyUser(email, passwordOld)) {
+			UserManager.ChangePassword(email, passwordNew)
+			http.Redirect(w, r, settingsPageURL, 302)
+			Utils.LogDebug("Kennwort erfolgreich geändert.")
+		} else {
+			http.Redirect(w, r, settingsPageURL + "?status=oldPasswordNotValid", 302)
+			Utils.LogDebug("Altes Kennwort nicht korrekt. Kennwortänderung fehlgeschlagen.")
+		}
 	}
 }
 
