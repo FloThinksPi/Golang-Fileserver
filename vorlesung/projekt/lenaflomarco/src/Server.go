@@ -124,7 +124,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 	if r.URL.EscapedPath()[1:] == "" {
 		url = mainPageURL
 	} else {
-		url = r.URL.EscapedPath()[1:]
+		url = r.URL.EscapedPath()
 	}
 
 	path, err := filepath.Abs(pivatePath + url)
@@ -137,7 +137,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 		case "/index.html":
 			Templates.IndexHandler(w, r, path)
 			Utils.LogDebug("File Accessed with TemplateEngine:	" + path)
-		case "settings.html":
+		case "/settings.html":
 			Templates.SettingHandler(w, r, path)
 			Utils.LogDebug("File Accessed with TemplateEngine:	" + path)
 		default:
