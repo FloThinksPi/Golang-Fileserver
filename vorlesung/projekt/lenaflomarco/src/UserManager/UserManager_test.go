@@ -5,8 +5,8 @@ import "github.com/stretchr/testify/assert"
 
 //TestGenerateHash Tests if two exact same inputs in the hash function get the same output.
 func TestGenerateHash(t *testing.T) {
-	hash, salt := GeneratePasswordHash("MeinPasswort")
-	hash2, salt2 := GeneratePasswordHash("MeinPasswort")
+	hash, salt := generatePasswordHash("MeinPasswort")
+	hash2, salt2 := generatePasswordHash("MeinPasswort")
 	assert.NotEqual(t, hash, hash2, "Error, Two Hashes of the same Passwort are identical")
 	assert.NotEqual(t, salt, salt2, "Error, Two Runs of generate hash returned the same Salt")
 }
