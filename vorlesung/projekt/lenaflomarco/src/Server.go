@@ -17,6 +17,7 @@ const (
 	// Routes
 	rootURL = "/"
 	docURL = rootURL + "doc/"
+	basicAuthURL = rootURL + "download/"
 	funcURL = rootURL + "ops/"
 
 	// Paths
@@ -55,6 +56,9 @@ func main() {
 
 	//NewFolder
 	requestMultiplexer.HandleFunc(funcURL + "newFolder", Templates.NewFolderHandler)
+
+	//Basic Auth
+	requestMultiplexer.HandleFunc(basicAuthURL, basicAuthHandler)
 
 	// General Handlers for Website + Godoc
 	requestMultiplexer.HandleFunc(docURL, docHandler)
@@ -213,6 +217,25 @@ func settingsHandler(w http.ResponseWriter, r *http.Request)  {
 		http.Redirect(w, r, settingsPageURL + "?status=oldPasswordNotValid", 302)
 		Utils.LogDebug("Altes Kennwort nicht korrekt. Kennwortänderung fehlgeschlagen.")
 	}
+}
+
+//basicAuth - Checks submitted user credentials and grants access to handler
+func basicAuthHandler(w http.ResponseWriter, r *http.Request) {
+
+
+	email, pass, ok := r.BasicAuth()
+
+	if !ok ||  !UserManager.VerifyUser(email, pass) {
+		w.Header().Set("WWW-Authenticate", `Basic realm="Bitte mit E-Mail-Adresse und Kennwort anmelden, um auf Dateien zuzugreifen."`)
+		http.Error(w, "Unauthorized.", http.StatusUnauthorized)
+		return
+	}
+	usr, _,_ := UserManager.ReadUser(email)
+	path := Flags.GetWorkDir() + "/" + strconv.Itoa(int(usr.UID)) + "/"
+	url := r.URL.Path[10:]
+	Utils.LogDebug(url)
+	Utils.LogDebug(path + url)
+	http.ServeFile(w, r, path + url)
 }
 
 func docHandler(w http.ResponseWriter, r *http.Request) {

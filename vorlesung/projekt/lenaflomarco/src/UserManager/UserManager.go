@@ -3,7 +3,6 @@ package UserManager
 import (
 	"crypto/sha512"
 	"encoding/hex"
-	"net/http"
 	"Utils"
 	"Flags"
 	"strconv"
@@ -47,19 +46,6 @@ func VerifyUser(email string, psw string) bool{
 		return false
 	}
 
-}
-
-//basicAuth - Checks submitted user credentials and grants access to handler
-func basicAuth(handler http.HandlerFunc) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		user, pass, ok := r.BasicAuth()
-
-		if !ok ||  !VerifyUser(user, pass) {
-			http.Error(w, "Unauthorized.", http.StatusUnauthorized)
-			return
-		}
-		handler(w, r)
-	}
 }
 
 func RegisterUser(name, email, password string) bool {
