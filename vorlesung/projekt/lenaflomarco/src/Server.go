@@ -184,6 +184,11 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 
 		registerOK := UserManager.RegisterUser(name, email, password)
 		if (registerOK) {
+			session := Utils.RandString(128)
+			SessionManager.NewSession(SessionManager.SessionRecord{Email:email, Session: session, SessionLast:time.Now()})
+			cookie := http.Cookie{Name: "Session", Value: session, Expires: time.Now().Add(365 * 24 * time.Hour), Path: "/"}
+			http.SetCookie(w, &cookie)
+
 			http.Redirect(w, r, mainPageURL, 302)
 			Utils.LogDebug("Registrierung erfolgreich.")
 		} else {
