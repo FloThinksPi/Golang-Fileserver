@@ -39,7 +39,13 @@ func IndexHandler(w http.ResponseWriter, r *http.Request, path string) {
 }
 
 func DeleteDataHandler(w http.ResponseWriter, r *http.Request) {
-	Utils.LogDebug("DeleteData Not Implemented")
+
+	path := r.URL.Query().Get("filepath")
+	fullPath := getAbsUserPath(r) + path
+	Utils.LogDebug("File Deleted by DeleteDataHandler:	" + fullPath)
+	os.Remove(fullPath)
+	http.StatusText(http.StatusNoContent)
+
 }
 
 func DownloadDataHandler(w http.ResponseWriter, r *http.Request) {
