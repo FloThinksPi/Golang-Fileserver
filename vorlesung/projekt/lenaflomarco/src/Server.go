@@ -12,6 +12,7 @@ import (
 	"regexp"
 	"Templates"
 	"time"
+	"strings"
 )
 
 const (
@@ -156,7 +157,7 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 	intent := r.FormValue("intent")
 	if (intent == "login") {
 		Utils.LogDebug("Intent=Login")
-		email := r.FormValue("email")
+		email := strings.ToLower(r.FormValue("email"))
 		password := r.FormValue("password")
 		if (UserManager.VerifyUser(email, password)) {
 
@@ -173,7 +174,7 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 	} else if (intent == "register") {
 		Utils.LogDebug("Intent=Register")
 		name := r.FormValue("name")
-		email := r.FormValue("email")
+		email := strings.ToLower(r.FormValue("email"))
 		password := r.FormValue("password")
 		password2 := r.FormValue("password2")
 
