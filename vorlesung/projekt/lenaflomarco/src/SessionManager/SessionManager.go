@@ -56,6 +56,9 @@ func InvalidateSession(session string) (err error) {
 }
 
 func GetSessionRecord(session string) (SessionRecord,bool) {
-	record, present := managersSessionStorage.SessionMap[session]
+	managersSessionStorage.RWMutex.RLock()
+	defer managersSessionStorage.RWMutex.RUnlock()
+	maps := managersSessionStorage.SessionMap
+	record, present := maps[session]
 	return record,present
 }
