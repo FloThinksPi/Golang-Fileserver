@@ -58,7 +58,7 @@ func main() {
 	requestMultiplexer.HandleFunc(funcURL + "newFolder", Templates.NewFolderHandler)
 
 	//Basic Auth
-	requestMultiplexer.HandleFunc(basicAuthURL, basicAuthHandler(downloadFileBAHandler))
+	requestMultiplexer.HandleFunc(basicAuthURL, basicAuthHandler(Templates.DownloadBasicAuthDataHandler))
 
 	// General Handlers for Website + Godoc
 	requestMultiplexer.HandleFunc(docURL, docHandler)
@@ -263,15 +263,3 @@ func docHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func downloadFileBAHandler(w http.ResponseWriter, r *http.Request) {
-	email, _, _ := r.BasicAuth()
-	downloadFile(w,r, email, r.URL.EscapedPath()[10:])
-
-}
-func downloadFile(w http.ResponseWriter, r *http.Request, email, url string)  {
-	usr, _,_ := UserManager.ReadUser(email)
-	path := Flags.GetWorkDir() + "/" + strconv.Itoa(int(usr.UID)) + "/"
-	Utils.LogDebug(url)
-	Utils.LogDebug(path + url)
-	http.ServeFile(w, r, path + url)
-}

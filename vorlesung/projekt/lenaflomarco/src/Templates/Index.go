@@ -10,6 +10,8 @@ import (
 	"strconv"
 	"os"
 	"html/template"
+	"UserManager"
+	"Flags"
 )
 
 type IndexData struct {
@@ -39,6 +41,16 @@ func DeleteDataHandler(w http.ResponseWriter, r *http.Request) {
 
 func DownloadDataHandler(w http.ResponseWriter, r *http.Request) {
 	Utils.LogDebug("DownloadData Not Implemented")
+}
+
+func DownloadBasicAuthDataHandler(w http.ResponseWriter, r *http.Request)  {
+	email, _, _ := r.BasicAuth()
+	usr, _,_ := UserManager.ReadUser(email)
+	path := r.URL.Query().Get("filepath")
+
+	fullPath := Flags.GetWorkDir() + "/" + strconv.Itoa(int(usr.UID)) + "/" + path
+	Utils.LogDebug("File Accessed by DownloadBasicAuthDataHandler:	" + fullPath)
+	http.ServeFile(w, r, fullPath)
 }
 
 func NewFolderHandler(w http.ResponseWriter, r *http.Request) {
