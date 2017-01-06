@@ -84,7 +84,7 @@ func DeleteDataHandler(w http.ResponseWriter, r *http.Request) {
 	path := r.URL.Query().Get("filepath")
 	fullPath := filepath.Join(getAbsUserPath(r),path)
 	Utils.LogDebug("File Deleted by DeleteDataHandler:	" + fullPath)
-	os.Remove(fullPath)
+	os.RemoveAll(fullPath)
 	http.Redirect(w,r,r.Header.Get("Referer"), http.StatusTemporaryRedirect)
 }
 
