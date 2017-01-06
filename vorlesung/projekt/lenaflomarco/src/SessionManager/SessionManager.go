@@ -48,6 +48,7 @@ func InvalidateSession(session string) (err error) {
 	record, present := managersSessionStorage.SessionMap[session]
 	if present {
 		record.SessionLast = time.Now().Add(time.Duration(-*sessionTimeout+1) * time.Second)
+		managersSessionStorage.SessionMap[record.Session] = record
 	}else{
 		err = errors.New("Session not Found to Invalidate")
 	}

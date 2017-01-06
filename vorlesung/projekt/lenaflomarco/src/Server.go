@@ -195,10 +195,14 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 			http.Redirect(w, r, loginPageURL + "?status=userAlreadyExists", 302)
 			Utils.LogDebug("Benutzer mit angegebener E-Mail-Adresse existiert bereits. Registrierung fehlgeschlagen.")
 		}
-	} else if (intent == "logout") {
+	} else if (r.URL.Query().Get("intent") == "logout") {
 		Utils.LogDebug("Intent=Logout")
-		session := r.FormValue("session")
-		err := SessionManager.InvalidateSession(session)
+		cookie, err := r.Cookie("Session")
+		Utils.HandlePrint(err)
+		session, present := SessionManager.GetSessionRecord(cookie.Value)
+		if present {
+			err = SessionManager.InvalidateSession(session.Session)
+		}
 		if (err != nil) {
 			http.Redirect(w, r, loginPageURL + "?status=error", 302)
 			return
