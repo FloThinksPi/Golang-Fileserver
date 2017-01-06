@@ -85,8 +85,8 @@ func DeleteDataHandler(w http.ResponseWriter, r *http.Request) {
 	fullPath := filepath.Join(getAbsUserPath(r),path)
 	Utils.LogDebug("File Deleted by DeleteDataHandler:	" + fullPath)
 	os.Remove(fullPath)
-	http.StatusText(http.StatusNoContent)
-
+	w.Header().Set("Refresh", "0; url=http://www.w3.org/pub/WWW/People.html")
+	http.Redirect(w,r,r.Header.Get("Referer"), http.StatusTemporaryRedirect)
 }
 
 func DownloadDataHandler(w http.ResponseWriter, r *http.Request) {
@@ -113,7 +113,7 @@ func DownloadBasicAuthDataHandler(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-disposition", `attachment; filename="`+filepath.Base(path)+`"`)
 		http.ServeFile(w, r, fullPath)
 	} else {
-		Utils.HandlePanic(errors.New("Inconsistency in User Storage!"))
+		Utils.LogWarning("Inconsistency in User Storage!")
 	}
 }
 
@@ -132,9 +132,12 @@ func NewFolderHandler(w http.ResponseWriter, r *http.Request) {
 	err := os.MkdirAll(path, os.ModePerm)
 	if err != nil {
 		Utils.LogError("Error creating directory")
+		w.Write("Error Creating directory")
 		log.Println(err)
 		return
 	}
+	http.Redirect(w,r,r.Header.Get("Referer"), http.StatusTemporaryRedirect)
+	return
 }
 
 func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
@@ -171,13 +174,14 @@ func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
 				return
 			}
 			// 32K buffer copy
-			var written int64
-			if written, err = io.Copy(outfile, infile); nil != err {
+
+			if _, err = io.Copy(outfile, infile); nil != err {
 				status = http.StatusInternalServerError
 				return
 			}
-			status = http.StatusCreated
-			w.Write([]byte("uploaded file:" + hdr.Filename + ";length:" + strconv.Itoa(int(written))))
+
+			http.Redirect(w,r,r.Header.Get("Referer"), http.StatusTemporaryRedirect)
+
 		}
 	}
 
@@ -193,10 +197,10 @@ func getAbsUserPath(r *http.Request) string {
 		if present {
 			return filepath.Join(Flags.GetWorkDir(),"/",strconv.Itoa(int(user.UID)),"/")
 		} else {
-			Utils.HandlePanic(errors.New("Inconsistency in Session to User Storage!"))
+			Utils.LogWarning("Inconsistency in Session to User Storage!")
 		}
 	} else {
-		Utils.HandlePanic(errors.New("Inconsistency in Session Storage !"))
+		Utils.LogWarning("Inconsistency in Session Storage !")
 	}
 	return ""
 }
