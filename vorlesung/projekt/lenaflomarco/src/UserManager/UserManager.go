@@ -10,7 +10,7 @@ import (
 )
 
 //SetHash - einen hash Setzten
-func GeneratePasswordHash(psw string)(hash string,salt string) { //TODO die bcyrpt funktion nutzend da stadart und sicher !
+func generatePasswordHash(psw string)(hash string,salt string) { //TODO die bcyrpt funktion nutzend da stadart und sicher !
 	//salting
 	salt = Utils.RandString(16)
 	var saltedPsw = psw+salt
@@ -55,7 +55,7 @@ func RegisterUser(name, email, password string) bool {
 		return false
 	}
 	uid := getNextUID()
-	hash, salt := GeneratePasswordHash(password)
+	hash, salt := generatePasswordHash(password)
 	record = UserRecord{
 		UID:uid,
 		Email:email,
@@ -76,7 +76,7 @@ func RegisterUser(name, email, password string) bool {
 
 func ChangePassword(email, passwordNew string)  {
 	usr, _,_ := ReadUser(email)
-	hash, salt := GeneratePasswordHash(passwordNew)
+	hash, salt := generatePasswordHash(passwordNew)
 	usr.HashedPassword = hash
 	usr.Salt = salt
 }
