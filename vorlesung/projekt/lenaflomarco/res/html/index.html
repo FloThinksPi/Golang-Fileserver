@@ -17,7 +17,19 @@
 </header>
 
 <div id="mainContainer">
-    Pfad: <span id="path"></span>
+    Pfad: <span id="path">
+{{range $index, $element := .}}
+    {{ if $index }}
+    {{else}}
+        {{ if .FolderPath }}
+            {{.FolderPath}}
+        {{else}}
+            /
+        {{ end }}
+    {{ end }}
+{{ end }}
+        </span>
+
     <table border="1">
         <tr>
             <th></th>
@@ -66,7 +78,8 @@
         <legend>Ordner anlegen</legend>
         <form action="/ops/newFolder" method="post">
             <label for="addFolder">Ordnername: </label>
-            <input type="text" name="folderName" id="addFolder">
+            <input type="text" name="folderName" id="addFolder">filepath
+            <input type="hidden" name="folderPath" value=>
             <br>
             <input class="btn" type="submit" value="Ordner anlegen">
         </form>
@@ -77,6 +90,7 @@
         <form action="/ops/upload" method="post" enctype="multipart/form-data">
             <label for="uploadFile">Datei: </label>
             <input type="file" name="uploadfile" id="uploadFile">
+            <input type="hidden" name="folderPath" value=>
             <br>
             <input class="btn" type="submit" value="Datei hochladen">
         </form>

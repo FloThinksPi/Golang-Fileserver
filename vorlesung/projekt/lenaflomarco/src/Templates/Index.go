@@ -45,7 +45,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request, path string) {
 		if f.IsDir() {
 			Data = append(Data, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"folder", ObjectPath: wantedPath + f.Name(),IsFolder:true})
 		} else {
-			Data = append(Data, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"file", ObjectPath: wantedPath + f.Name(),IsFolder:false})
+			Data = append(Data, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"file", ObjectPath: wantedPath +"/"+ f.Name(),IsFolder:false})
 		}
 	}
 
@@ -91,9 +91,10 @@ func NewFolderHandler(w http.ResponseWriter, r *http.Request) {
 	//read folderName
 	r.ParseForm()
 	folderName := r.FormValue("folderName")
+	targetPath := r.FormValue("filepath")
 
 	//join Foldername to UserPath
-	path := filepath.Join(getAbsUserPath(r), folderName)
+	path := filepath.Join(getAbsUserPath(r)+targetPath, folderName)
 
 	//Try make Dir
 	err := os.MkdirAll(path, os.ModePerm)
