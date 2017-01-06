@@ -218,7 +218,6 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 
 func settingsHandler(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
-	session := r.FormValue("session")
 	passwordOld := r.FormValue("passwordOld")
 	passwordNew := r.FormValue("passwordNew")
 	passwordNew2 := r.FormValue("passwordNew2")
@@ -230,9 +229,11 @@ func settingsHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	user,present := SessionManager.GetSessionRecord(session)
+	cookie, err := r.Cookie("Session")
+	Utils.HandlePrint(err)
+	session, present := SessionManager.GetSessionRecord(cookie.Value)
 	if(present) {
-		email := user.Email
+		email := session.Email
 
 		Utils.LogDebug("EMail: " + email)
 
@@ -245,6 +246,7 @@ func settingsHandler(w http.ResponseWriter, r *http.Request) {
 			Utils.LogDebug("Altes Kennwort nicht korrekt. Kennwortänderung fehlgeschlagen.")
 		}
 	}
+
 }
 
 //basicAuth - Checks submitted user credentials and grants access to handler

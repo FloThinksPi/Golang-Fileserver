@@ -79,4 +79,5 @@ func ChangePassword(email, passwordNew string)  {
 	hash, salt := generatePasswordHash(passwordNew)
 	usr.HashedPassword = hash
 	usr.Salt = salt
+	writeUser(usr, Flags.GetWorkDir())
 }
