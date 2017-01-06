@@ -11,6 +11,7 @@ import (
 	"SessionManager"
 	"regexp"
 	"Templates"
+	"time"
 )
 
 const (
@@ -33,7 +34,6 @@ const (
 	// MISC
 	debugging = false; // Disables Login for Debugging
 )
-
 
 func main() {
 	requestMultiplexer := http.NewServeMux()
@@ -92,19 +92,25 @@ func sessionCheckHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
 
 	r.ParseForm()
-	session := r.FormValue("session")
-
-	// Public Folder ?
-	publicFolderRegex, _ := regexp.Compile("^public")
-
-	if (SessionManager.ValidateSession(session) || publicFolderRegex.MatchString(r.URL.Path[1:]) || debugging) {
-		rootHandler(w, r)
-		return
-	} else {
-		Utils.LogDebug("Access denied for " + r.URL.Path + " by Session Check")
+	cookie, err := r.Cookie("Session")
+	if err != nil {
+		Utils.LogDebug(err.Error())
 		http.Redirect(w, r, loginPageURL, 302)
 		return
+	} else {
+		// Public Folder ?
+		publicFolderRegex, _ := regexp.Compile("^public")
+
+		if (SessionManager.ValidateSession(cookie.Value) || publicFolderRegex.MatchString(r.URL.EscapedPath()[1:]) || debugging) {
+			rootHandler(w, r)
+			return
+		} else {
+			Utils.LogDebug("Access denied for " + r.URL.EscapedPath() + " by Session Check")
+			http.Redirect(w, r, loginPageURL, 302)
+			return
+		}
 	}
+
 }
 
 func rootHandler(w http.ResponseWriter, r *http.Request) {
@@ -124,10 +130,10 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 
 		switch url {
 		case "/index.html":
-			Templates.IndexHandler(w,r,path)
+			Templates.IndexHandler(w, r, path)
 			Utils.LogDebug("File Accessed with TemplateEngine:	" + path)
 		case "/settings.html":
-			Templates.SettingHandler(w,r,path)
+			Templates.SettingHandler(w, r, path)
 			Utils.LogDebug("File Accessed with TemplateEngine:	" + path)
 		default:
 			http.ServeFile(w, r, path)
@@ -149,7 +155,14 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 		email := r.FormValue("email")
 		password := r.FormValue("password")
 		if (UserManager.VerifyUser(email, password)) {
+
+			session := Utils.RandString(128)
+			SessionManager.NewSession(SessionManager.SessionRecord{Email:email, Session: session, SessionLast:time.Now()})
+			cookie := http.Cookie{Name: "Session", Value: session, Expires: time.Now().Add(365 * 24 * time.Hour), Path: "/"}
+			http.SetCookie(w, &cookie)
+
 			http.Redirect(w, r, mainPageURL, 302)
+
 		} else {
 			http.Redirect(w, r, loginPageURL + "?status=failed", 302)
 		}
@@ -167,8 +180,8 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		registerOK := UserManager.RegisterUser(name, email,password)
-		if(registerOK) {
+		registerOK := UserManager.RegisterUser(name, email, password)
+		if (registerOK) {
 			http.Redirect(w, r, mainPageURL, 302)
 			Utils.LogDebug("Registrierung erfolgreich.")
 		} else {
@@ -185,14 +198,14 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		http.Redirect(w, r, loginPageURL + "?status=logout", 302)
 		return
-	} else{
+	} else {
 		Utils.LogDebug("Intent=BadRequest")
 		http.Redirect(w, r, loginPageURL + "?status=badrequest", 302)
 		return
 	}
 }
 
-func settingsHandler(w http.ResponseWriter, r *http.Request)  {
+func settingsHandler(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	session := r.FormValue("session")
 	passwordOld := r.FormValue("passwordOld")
@@ -207,10 +220,10 @@ func settingsHandler(w http.ResponseWriter, r *http.Request)  {
 	}
 
 	email := SessionManager.GetSessionRecord(session).Email
-	Utils.LogDebug("EMail: "+email)
+	Utils.LogDebug("EMail: " + email)
 
-	if(UserManager.VerifyUser(email, passwordOld)) {
-		UserManager.ChangePassword(email,passwordNew)
+	if (UserManager.VerifyUser(email, passwordOld)) {
+		UserManager.ChangePassword(email, passwordNew)
 		http.Redirect(w, r, settingsPageURL, 302)
 		Utils.LogDebug("Kennwort erfolgreich geändert.")
 	} else {
@@ -222,15 +235,14 @@ func settingsHandler(w http.ResponseWriter, r *http.Request)  {
 //basicAuth - Checks submitted user credentials and grants access to handler
 func basicAuthHandler(w http.ResponseWriter, r *http.Request) {
 
-
 	email, pass, ok := r.BasicAuth()
 
-	if !ok ||  !UserManager.VerifyUser(email, pass) {
+	if !ok || !UserManager.VerifyUser(email, pass) {
 		w.Header().Set("WWW-Authenticate", `Basic realm="Bitte mit E-Mail-Adresse und Kennwort anmelden, um auf Dateien zuzugreifen."`)
 		http.Error(w, "Unauthorized.", http.StatusUnauthorized)
 		return
 	}
-	usr, _,_ := UserManager.ReadUser(email)
+	usr, _, _ := UserManager.ReadUser(email)
 	path := Flags.GetWorkDir() + "/" + strconv.Itoa(int(usr.UID)) + "/"
 	url := r.URL.EscapedPath()[10:]
 	Utils.LogDebug(url)
