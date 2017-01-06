@@ -93,6 +93,7 @@ func ReadUser(email string) (record UserRecord, present bool, err error) {
 	return
 }
 
+//getNextUID finds the next possible UID which can be used for new users
 func getNextUID() (id int16) {
 	id = 0
 	for _, value := range managersUserStorage.UserMap {
