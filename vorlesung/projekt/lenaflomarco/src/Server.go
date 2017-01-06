@@ -31,7 +31,7 @@ const (
 	loginPageURL = rootURL + "public/login.html"
 
 	// MISC
-	debugging = true; // Disables Login for Debugging
+	debugging = false; // Disables Login for Debugging
 )
 
 
@@ -110,10 +110,10 @@ func sessionCheckHandler(w http.ResponseWriter, r *http.Request) {
 func rootHandler(w http.ResponseWriter, r *http.Request) {
 	var url string
 
-	if r.URL.Path[1:] == "" {
+	if r.URL.EscapedPath()[1:] == "" {
 		url = mainPageURL
 	} else {
-		url = r.URL.Path[1:]
+		url = r.URL.EscapedPath()[1:]
 	}
 
 	path, err := filepath.Abs(pivatePath + url)
@@ -237,12 +237,12 @@ func basicAuthHandler(handler http.HandlerFunc) http.HandlerFunc {
 func docHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
 
-	path, err := filepath.Abs("res/" + r.URL.Path[1:])
+	path, err := filepath.Abs("res/" + r.URL.EscapedPath()[1:])
 	Utils.HandlePrint(err)
 
 	Utils.LogDebug("File Accessed:	" + path)
 
-	if (r.URL.Path[1:] == "doc/" || r.URL.Path[1:] == "doc") {
+	if (r.URL.EscapedPath()[1:] == "doc/" || r.URL.EscapedPath()[1:] == "doc") {
 		Utils.LogDebug("Redirecting from doc to doc/pkg/fileServer.html")
 		http.Redirect(w, r, "pkg/FileServer.html", 302)
 	} else {
@@ -252,7 +252,7 @@ func docHandler(w http.ResponseWriter, r *http.Request) {
 
 func downloadFileBAHandler(w http.ResponseWriter, r *http.Request) {
 	email, _, _ := r.BasicAuth()
-	downloadFile(w,r, email, r.URL.Path[10:])
+	downloadFile(w,r, email, r.URL.EscapedPath()[10:])
 
 }
 func downloadFile(w http.ResponseWriter, r *http.Request, email, url string)  {
