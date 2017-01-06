@@ -1,3 +1,5 @@
+// +build windows
+
 /**
   * Fileserver
   * Programmieren II
@@ -6,8 +8,6 @@
   * 2581381, Lena Hoinkis
   * 9043064, Marco Fuso
  */
-
-// +build windows
 
 package Utils
 
