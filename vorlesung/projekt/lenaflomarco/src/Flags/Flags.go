@@ -3,6 +3,7 @@ package Flags
 import (
 	"flag"
 	"path/filepath"
+	"os"
 )
 
 
@@ -51,6 +52,12 @@ func GetTLSkey() string {
 // Init gets called before main()
 func init() {
 	flag.Parse()
+
+	//create workdir folder if it doesn't exist
+	if _, err := os.Stat(GetWorkDir()); os.IsNotExist(err) {
+		os.MkdirAll(GetWorkDir(), os.ModePerm)
+		os.Create(filepath.Join(GetWorkDir(),"/", "userdatabase"))
+	}
 }
 
 //standardizePath = wrapper for filepath.Abs and handles its error
