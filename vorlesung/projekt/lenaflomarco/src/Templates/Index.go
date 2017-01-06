@@ -4,12 +4,9 @@ import (
 	"net/http"
 	"Utils"
 	"fmt"
-	"time"
-	"crypto/md5"
 	"io"
 	"strconv"
 	"os"
-	"html/template"
 	"UserManager"
 	"Flags"
 	"SessionManager"
@@ -73,7 +70,6 @@ func DownloadBasicAuthDataHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func NewFolderHandler(w http.ResponseWriter, r *http.Request) {
-	//Todo tested yet
 	//read folderName
 	r.ParseForm()
 	folderName := r.FormValue("folderName")
@@ -93,13 +89,7 @@ func NewFolderHandler(w http.ResponseWriter, r *http.Request) {
 func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("method:", r.Method)
 	if r.Method == "GET" {
-		crutime := time.Now().Unix()
-		h := md5.New()
-		io.WriteString(h, strconv.FormatInt(crutime, 10))
-		token := fmt.Sprintf("%x", h.Sum(nil))
 
-		t, _ := template.ParseFiles("upload.gtpl")
-		t.Execute(w, token)
 	} else {
 		r.ParseMultipartForm(32 << 20)
 		file, handler, err := r.FormFile("uploadfile")
