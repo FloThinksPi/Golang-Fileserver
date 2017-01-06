@@ -14,7 +14,6 @@ import (
 	"path/filepath"
 	"mime/multipart"
 	"io/ioutil"
-	"time"
 	"strings"
 )
 
@@ -22,8 +21,8 @@ type IndexData struct {
 	Name       string
 	FolderPath string
 	ObjectPath string
-	Size       int64
-	Date       time.Time
+	Size       string
+	Date       string
 	Image      string
 	IsFolder   bool
 }
@@ -67,14 +66,14 @@ func IndexHandler(w http.ResponseWriter, r *http.Request, path string) {
 				pos := strings.LastIndex(wantedPath, "/")
 				subfolder := wantedPath[0:pos]
 
-				Data.FileData = append(Data.FileData, IndexData{Name:"../", FolderPath: wantedPath, Size:0, Date:time.Time{}, Image:"folder", ObjectPath: subfolder, IsFolder:true})
+				Data.FileData = append(Data.FileData, IndexData{Name:"../", FolderPath: wantedPath, Size:"", Date:"", Image:"folder", ObjectPath: subfolder, IsFolder:true})
 			}
 
 			for _, f := range files {
 				if f.IsDir() {
-					Data.FileData = append(Data.FileData, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"folder", ObjectPath: wantedPath + "/" + f.Name(), IsFolder:true})
+					Data.FileData = append(Data.FileData, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:"", Date:f.ModTime().Format("02.01.2006 15:04:05"), Image:"folder", ObjectPath: wantedPath + "/" + f.Name(), IsFolder:true})
 				} else {
-					Data.FileData = append(Data.FileData, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"file", ObjectPath: wantedPath + "/" + f.Name(), IsFolder:false})
+					Data.FileData = append(Data.FileData, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:getSize(f.Size()), Date:f.ModTime().Format("02.01.2006 15:04:05"), Image:"file", ObjectPath: wantedPath + "/" + f.Name(), IsFolder:false})
 				}
 			}
 
@@ -252,4 +251,20 @@ func invalidPath(p string) bool {
 		return true
 	}
 	return false
+}
+
+//getSize gibt die Größe abhängig von der Größenordnung in einer passenden Einheit an
+func getSize(size int64) string {
+	if(size < 1000) {
+		return strconv.Itoa(int(size)) + " Byte"
+	} else if(size < 1000*1000) {
+		i := int(size)/1000
+		return strconv.Itoa(i) + " KB"
+	} else if(size < 1000*1000*1000) {
+		i := int(size)/(1000*1000)
+		return strconv.Itoa(i) + " MB"
+	} else {
+		i := int(size)/(1000*1000*1000)
+		return strconv.Itoa(i) + " GB"
+	}
 }
