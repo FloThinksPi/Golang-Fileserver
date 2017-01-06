@@ -17,7 +17,19 @@
 </header>
 
 <div id="mainContainer">
-    Pfad: <span id="path"></span>
+    Pfad: <span id="path">
+{{range $index, $element := .}}
+    {{ if $index }}
+    {{else}}
+        {{ if .FolderPath }}
+            {{.FolderPath}}
+        {{else}}
+            /
+        {{ end }}
+    {{ end }}
+{{ end }}
+        </span>
+
     <table border="1">
         <tr>
             <th></th>
@@ -30,44 +42,59 @@
         {{range .}}
         <tr>
             <td><img src="public/images/{{.Image}}.png" alt="Datei"></td>
-            <td>{{.Name}}</td>
+            {{if .IsFolder}}
+                <td><a href="index.html?path={{.ObjectPath}}">{{.Name}}</a></td>
+            {{else}}
+                <td>{{.Name}}</td>
+            {{end}}
             <td>{{.Size}}</td>
             <td>{{.Date}}</td>
-            <td><form action="/ops/download" method="post"><input type="hidden" name="absPath" value="{{.AbsPath}}"><input class="btn" type="submit" value="Download"></form></td>
-            <td><form action="/ops/delete" method="post"><input type="hidden" name="absPath" value="{{.AbsPath}}"><input class="btn" type="submit" value="Delete"></form></td>
+            <td>
+                <form action="/ops/download?filepath={{.ObjectPath}}&returnPath={{.FolderPath}}" method="post">
+                    <input class="btn"
+                           type="submit"
+                           value="Download">
+                </form>
+            </td>
+            <td>
+                <form action="/ops/delete?filepath={{.ObjectPath}}&returnPath={{.FolderPath}}" method="post">
+                    <input class="btn" type="submit"
+                           value="Delete"></form>
+            </td>
         </tr>
         {{end}}
         <!--<tr>
-            <td><img src="public/images/file.png" alt="Datei"></td>
-            <td>Testdatei</td>
-            <td>123</td>
-            <td>01.01.1970</td>
-            <td>DownloadMe</td>
-            <td>DeleteMe</td>
+            Name    string
+            folderPath string
+            Size    int64
+            Date    time.Time
+            Image   string
         </tr>-->
     </table>
 </div>
 
 <div class="divNew">
-<fieldset>
-    <legend>Ordner anlegen</legend>
-    <form action="/ops/newFolder" method="post">
-        <label for="addFolder">Ordnername: </label>
-        <input type="text" name="folderName" id="addFolder">
-        <br>
-        <input class="btn" type="submit" value="Ordner anlegen">
-    </form>
-</fieldset>
+    <fieldset>
+        <legend>Ordner anlegen</legend>
+        <form action="/ops/newFolder" method="post">
+            <label for="addFolder">Ordnername: </label>
+            <input type="text" name="folderName" id="addFolder">filepath
+            <input type="hidden" name="folderPath" value=>
+            <br>
+            <input class="btn" type="submit" value="Ordner anlegen">
+        </form>
+    </fieldset>
 
-<fieldset>
-    <legend>Upload</legend>
-    <form action="/ops/upload" method="post" enctype="multipart/form-data">
-        <label for="uploadFile">Datei: </label>
-        <input type="file" name="uploadfile" id="uploadFile">
-        <br>
-        <input class="btn" type="submit" value="Datei hochladen">
-    </form>
-</fieldset>
+    <fieldset>
+        <legend>Upload</legend>
+        <form action="/ops/upload" method="post" enctype="multipart/form-data">
+            <label for="uploadFile">Datei: </label>
+            <input type="file" name="uploadfile" id="uploadFile">
+            <input type="hidden" name="folderPath" value=>
+            <br>
+            <input class="btn" type="submit" value="Datei hochladen">
+        </form>
+    </fieldset>
 </div>
 
 </body>
