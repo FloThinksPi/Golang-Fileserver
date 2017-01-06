@@ -17,6 +17,8 @@ import (
 	"time"
 )
 
+
+
 type IndexData struct {
 	Name       string
 	FolderPath string
@@ -27,7 +29,11 @@ type IndexData struct {
 	IsFolder   bool
 }
 
-type IndexDaten []IndexData
+type IndexDaten struct {
+	FileData []IndexData
+	FolderPath string
+	UserName string
+}
 
 func IndexHandler(w http.ResponseWriter, r *http.Request, path string) {
 
@@ -37,25 +43,46 @@ func IndexHandler(w http.ResponseWriter, r *http.Request, path string) {
 	wantedPath := ""
 	wantedPath = r.URL.Query().Get("path")
 
-	fullPath := userPath + wantedPath
-
+	fullPath := filepath.Join(userPath,wantedPath)
+	Utils.LogDebug("Showing Files of Folder:	"+fullPath)
 	files, _ := ioutil.ReadDir(fullPath)
 
-	for _, f := range files {
-		if f.IsDir() {
-			Data = append(Data, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"folder", ObjectPath: wantedPath +"/"+ f.Name(),IsFolder:true})
+	cookie, err := r.Cookie("Session")
+	Utils.HandlePrint(err)
+	session, present := SessionManager.GetSessionRecord(cookie.Value)
+	if present {
+		user, present, err := UserManager.ReadUser(session.Email)
+		Utils.HandlePrint(err)
+		if present {
+
+			// All Informations given here!
+
+			Data.FolderPath = wantedPath
+			Data.UserName = user.Name
+
+			for _, f := range files {
+				if f.IsDir() {
+					Data.FileData = append(Data.FileData, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"folder", ObjectPath: wantedPath +"/"+ f.Name(),IsFolder:true})
+				} else {
+					Data.FileData = append(Data.FileData, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"file", ObjectPath: wantedPath +"/"+ f.Name(),IsFolder:false})
+				}
+			}
+
+			RenderTemplate(w, path, &Data)
+
 		} else {
-			Data = append(Data, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"file", ObjectPath: wantedPath +"/"+ f.Name(),IsFolder:false})
+			Utils.HandlePanic(errors.New("Inconsistency in Session to User Storage!"))
 		}
+	} else {
+		Utils.HandlePanic(errors.New("Inconsistency in Session Storage !"))
 	}
 
-	RenderTemplate(w, path, &Data)
 }
 
 func DeleteDataHandler(w http.ResponseWriter, r *http.Request) {
 
 	path := r.URL.Query().Get("filepath")
-	fullPath := getAbsUserPath(r) + path
+	fullPath := filepath.Join(getAbsUserPath(r),path)
 	Utils.LogDebug("File Deleted by DeleteDataHandler:	" + fullPath)
 	os.Remove(fullPath)
 	http.StatusText(http.StatusNoContent)
@@ -65,7 +92,7 @@ func DeleteDataHandler(w http.ResponseWriter, r *http.Request) {
 func DownloadDataHandler(w http.ResponseWriter, r *http.Request) {
 
 	path := r.URL.Query().Get("filepath")
-	fullPath := getAbsUserPath(r) + path
+	fullPath := filepath.Join(getAbsUserPath(r),path)
 	Utils.LogDebug("File Accessed by DownloadDataHandler:	" + fullPath)
 	http.ServeFile(w, r, fullPath)
 
@@ -78,7 +105,7 @@ func DownloadBasicAuthDataHandler(w http.ResponseWriter, r *http.Request) {
 	if present {
 		path := r.URL.Query().Get("filepath")
 
-		fullPath := Flags.GetWorkDir() + "/" + strconv.Itoa(int(usr.UID)) + "/" + path
+		fullPath := filepath.Join(Flags.GetWorkDir(),"/",strconv.Itoa(int(usr.UID)),"/",path[1:])
 		Utils.LogDebug("File Accessed by DownloadBasicAuthDataHandler:	" + fullPath)
 		http.ServeFile(w, r, fullPath)
 	} else {
@@ -91,12 +118,13 @@ func NewFolderHandler(w http.ResponseWriter, r *http.Request) {
 	//read folderName
 	r.ParseForm()
 	folderName := r.FormValue("folderName")
-	targetPath := r.FormValue("filepath")
+	targetPath := r.FormValue("folderPath")
 
 	//join Foldername to UserPath
-	path := filepath.Join(getAbsUserPath(r)+targetPath, folderName)
+	path := filepath.Join(getAbsUserPath(r),targetPath, folderName)
 
 	//Try make Dir
+	Utils.LogDebug("Making New Directory with NewFolderHandler:	" + path)
 	err := os.MkdirAll(path, os.ModePerm)
 	if err != nil {
 		Utils.LogError("Error creating directory")
@@ -106,6 +134,7 @@ func NewFolderHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
+	targetPath := r.FormValue("folderPath")
 
 	var (
 		status int
@@ -132,9 +161,8 @@ func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
 			}
 			// open destination
 			var outfile *os.File
-			os.Chdir("/")
-			Utils.LogDebug("Uploading File to: 	" + getAbsUserPath(r) + hdr.Filename)
-			if outfile, err = os.Create(getAbsUserPath(r) + hdr.Filename); nil != err {
+			Utils.LogDebug("Uploading File to: 	" + filepath.Join(getAbsUserPath(r),targetPath, hdr.Filename))
+			if outfile, err = os.Create(filepath.Join(getAbsUserPath(r),targetPath, hdr.Filename)); nil != err {
 				status = http.StatusInternalServerError
 				return
 			}
@@ -159,7 +187,7 @@ func getAbsUserPath(r *http.Request) string {
 		user, present, err := UserManager.ReadUser(session.Email)
 		Utils.HandlePrint(err)
 		if present {
-			return Flags.GetWorkDir() + "/" + strconv.Itoa(int(user.UID)) + "/"
+			return filepath.Join(Flags.GetWorkDir(),"/",strconv.Itoa(int(user.UID)),"/")
 		} else {
 			Utils.HandlePanic(errors.New("Inconsistency in Session to User Storage!"))
 		}
