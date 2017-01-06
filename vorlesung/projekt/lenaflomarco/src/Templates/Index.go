@@ -71,7 +71,7 @@ func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
 		r.ParseMultipartForm(32 << 20)
 		file, handler, err := r.FormFile("uploadfile")
 		if err != nil {
-			Utils.LogError(err)
+			Utils.LogError("File not valid")
 			return
 		}
 		defer file.Close()
@@ -79,7 +79,7 @@ func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
 		//TODO: Path ./test durch Userpath ersetzen, anlegen, falls nicht vorhanden...
 		f, err := os.OpenFile("./test/"+handler.Filename, os.O_WRONLY|os.O_CREATE, 0666)
 		if err != nil {
-			Utils.LogError(err)
+			Utils.LogError("Not such a directory or File")
 			return
 		}
 		defer f.Close()

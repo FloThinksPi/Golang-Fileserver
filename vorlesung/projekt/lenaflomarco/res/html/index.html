@@ -33,8 +33,8 @@
             <td>{{.Name}}</td>
             <td>{{.Size}}</td>
             <td>{{.Date}}</td>
-            <td><form action="/ops/download" method="post"><input type="hidden" name="absPath" value="{{.AbsPath}}"><input class="btn" type="submit" value="Download Me"></form></td>
-            <td><form action="/ops/delete" method="post"><input type="hidden" name="absPath" value="{{.AbsPath}}"><input class="btn" type="submit" value="Delete Me"></form></td>
+            <td><form action="/ops/download" method="post"><input type="hidden" name="absPath" value="{{.AbsPath}}"><input class="btn" type="submit" value="Download"></form></td>
+            <td><form action="/ops/delete" method="post"><input type="hidden" name="absPath" value="{{.AbsPath}}"><input class="btn" type="submit" value="Delete"></form></td>
         </tr>
         {{end}}
         <!--<tr>
