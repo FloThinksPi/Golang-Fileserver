@@ -89,6 +89,8 @@
 				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
 				<p>
 Package csv reads and writes comma-separated values (CSV) files.
+There are many kinds of CSV files; this package supports the format
+described in RFC 4180.
 </p>
 <p>
 A csv file contains zero or more records of one or more fields per record.
@@ -104,12 +106,12 @@ White space is considered part of a field.
 Carriage returns before newline characters are silently removed.
 </p>
 <p>
-Blank lines are ignored.  A line with only whitespace characters (excluding
+Blank lines are ignored. A line with only whitespace characters (excluding
 the ending newline character) is not considered a blank line.
 </p>
 <p>
 Fields which start and stop with the quote character &#34; are called
-quoted-fields.  The beginning and ending quote are not part of the
+quoted-fields. The beginning and ending quote are not part of the
 field.
 </p>
 <p>
@@ -202,10 +204,10 @@ field`, `comma is ,`}
 					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Flush">func (w *Writer) Flush()</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Write">func (w *Writer) Write(record []string) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Write">func (w *Writer) Write(record []string) error</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Writer.WriteAll">func (w *Writer) WriteAll(records [][]string) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Writer.WriteAll">func (w *Writer) WriteAll(records [][]string) error</a></dd>
 				
 			
 			
@@ -286,7 +288,9 @@ These are the errors that can be returned in ParseError.Error
 		
 			
 			
-			<h2 id="ParseError">type <a href="http://localhost:9090/src/encoding/csv/reader.go?s=1568:1737#L53">ParseError</a></h2>
+			<h2 id="ParseError">type <a href="http://localhost:9090/src/encoding/csv/reader.go?s=1663:1832#L55">ParseError</a>
+				<a class="permalink" href="index.html#ParseError">&#xb6;</a>
+			</h2>
 			<pre>type ParseError struct {
     Line   <a href="../../builtin/index.html#int">int</a>   <span class="comment">// Line where the error occurred</span>
     Column <a href="../../builtin/index.html#int">int</a>   <span class="comment">// Column (rune index) where the error occurred</span>
@@ -310,7 +314,9 @@ The first line is 1.  The first column is 0.
 
 			
 				
-				<h3 id="ParseError.Error">func (*ParseError) <a href="http://localhost:9090/src/encoding/csv/reader.go?s=1739:1774#L59">Error</a></h3>
+				<h3 id="ParseError.Error">func (*ParseError) <a href="http://localhost:9090/src/encoding/csv/reader.go?s=1834:1869#L61">Error</a>
+					<a class="permalink" href="index.html#ParseError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#ParseError">ParseError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -320,14 +326,32 @@ The first line is 1.  The first column is 0.
 		
 			
 			
-			<h2 id="Reader">type <a href="http://localhost:9090/src/encoding/csv/reader.go?s=3152:3631#L92">Reader</a></h2>
+			<h2 id="Reader">type <a href="http://localhost:9090/src/encoding/csv/reader.go?s=2531:3792#L80">Reader</a>
+				<a class="permalink" href="index.html#Reader">&#xb6;</a>
+			</h2>
 			<pre>type Reader struct {
-    Comma            <a href="../../builtin/index.html#rune">rune</a> <span class="comment">// field delimiter (set to &#39;,&#39; by NewReader)</span>
-    Comment          <a href="../../builtin/index.html#rune">rune</a> <span class="comment">// comment character for start of line</span>
-    FieldsPerRecord  <a href="../../builtin/index.html#int">int</a>  <span class="comment">// number of expected fields per record</span>
-    LazyQuotes       <a href="../../builtin/index.html#bool">bool</a> <span class="comment">// allow lazy quotes</span>
-    TrailingComma    <a href="../../builtin/index.html#bool">bool</a> <span class="comment">// ignored; here for backwards compatibility</span>
-    TrimLeadingSpace <a href="../../builtin/index.html#bool">bool</a> <span class="comment">// trim leading space</span>
+    <span class="comment">// Comma is the field delimiter.</span>
+    <span class="comment">// It is set to comma (&#39;,&#39;) by NewReader.</span>
+    Comma <a href="../../builtin/index.html#rune">rune</a>
+    <span class="comment">// Comment, if not 0, is the comment character. Lines beginning with the</span>
+    <span class="comment">// Comment character without preceding whitespace are ignored.</span>
+    <span class="comment">// With leading whitespace the Comment character becomes part of the</span>
+    <span class="comment">// field, even if TrimLeadingSpace is true.</span>
+    Comment <a href="../../builtin/index.html#rune">rune</a>
+    <span class="comment">// FieldsPerRecord is the number of expected fields per record.</span>
+    <span class="comment">// If FieldsPerRecord is positive, Read requires each record to</span>
+    <span class="comment">// have the given number of fields. If FieldsPerRecord is 0, Read sets it to</span>
+    <span class="comment">// the number of fields in the first record, so that future records must</span>
+    <span class="comment">// have the same field count. If FieldsPerRecord is negative, no check is</span>
+    <span class="comment">// made and records may have a variable number of fields.</span>
+    FieldsPerRecord <a href="../../builtin/index.html#int">int</a>
+    <span class="comment">// If LazyQuotes is true, a quote may appear in an unquoted field and a</span>
+    <span class="comment">// non-doubled quote may appear in a quoted field.</span>
+    LazyQuotes    <a href="../../builtin/index.html#bool">bool</a>
+    TrailingComma <a href="../../builtin/index.html#bool">bool</a> <span class="comment">// ignored; here for backwards compatibility</span>
+    <span class="comment">// If TrimLeadingSpace is true, leading white space in a field is ignored.</span>
+    <span class="comment">// This is done even if the field delimiter, Comma, is white space.</span>
+    TrimLeadingSpace <a href="../../builtin/index.html#bool">bool</a>
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
@@ -338,27 +362,6 @@ As returned by NewReader, a Reader expects input conforming to RFC 4180.
 The exported fields can be changed to customize the details before the
 first call to Read or ReadAll.
 </p>
-<p>
-Comma is the field delimiter.  It defaults to &#39;,&#39;.
-</p>
-<p>
-Comment, if not 0, is the comment character. Lines beginning with the
-Comment character are ignored.
-</p>
-<p>
-If FieldsPerRecord is positive, Read requires each record to
-have the given number of fields.  If FieldsPerRecord is 0, Read sets it to
-the number of fields in the first record, so that future records must
-have the same field count.  If FieldsPerRecord is negative, no check is
-made and records may have a variable number of fields.
-</p>
-<p>
-If LazyQuotes is true, a quote may appear in an unquoted field and a
-non-doubled quote may appear in a quoted field.
-</p>
-<p>
-If TrimLeadingSpace is true, leading white space in a field is ignored.
-</p>
 
 
 			
@@ -371,7 +374,9 @@ If TrimLeadingSpace is true, leading white space in a field is ignored.
 
 			
 				
-				<h3 id="NewReader">func <a href="http://localhost:9090/src/encoding/csv/reader.go?s=3686:3721#L106">NewReader</a></h3>
+				<h3 id="NewReader">func <a href="http://localhost:9090/src/encoding/csv/reader.go?s=3847:3882#L111">NewReader</a>
+					<a class="permalink" href="index.html#NewReader">&#xb6;</a>
+				</h3>
 				<pre>func NewReader(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) *<a href="index.html#Reader">Reader</a></pre>
 				<p>
 NewReader returns a new Reader that reads from r.
@@ -383,10 +388,12 @@ NewReader returns a new Reader that reads from r.
 
 			
 				
-				<h3 id="Reader.Read">func (*Reader) <a href="http://localhost:9090/src/encoding/csv/reader.go?s=4071:4123#L124">Read</a></h3>
+				<h3 id="Reader.Read">func (*Reader) <a href="http://localhost:9090/src/encoding/csv/reader.go?s=4231:4283#L129">Read</a>
+					<a class="permalink" href="index.html#Reader.Read">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#Reader">Reader</a>) Read() (record []<a href="../../builtin/index.html#string">string</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
-Read reads one record from r.  The record is a slice of strings with each
+Read reads one record from r. The record is a slice of strings with each
 string representing one field.
 </p>
 
@@ -395,7 +402,9 @@ string representing one field.
 				
 			
 				
-				<h3 id="Reader.ReadAll">func (*Reader) <a href="http://localhost:9090/src/encoding/csv/reader.go?s=4756:4814#L151">ReadAll</a></h3>
+				<h3 id="Reader.ReadAll">func (*Reader) <a href="http://localhost:9090/src/encoding/csv/reader.go?s=4916:4974#L156">ReadAll</a>
+					<a class="permalink" href="index.html#Reader.ReadAll">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#Reader">Reader</a>) ReadAll() (records [][]<a href="../../builtin/index.html#string">string</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadAll reads all the remaining records from r.
@@ -412,7 +421,9 @@ reported.
 		
 			
 			
-			<h2 id="Writer">type <a href="http://localhost:9090/src/encoding/csv/writer.go?s=631:792#L14">Writer</a></h2>
+			<h2 id="Writer">type <a href="http://localhost:9090/src/encoding/csv/writer.go?s=630:791#L14">Writer</a>
+				<a class="permalink" href="index.html#Writer">&#xb6;</a>
+			</h2>
 			<pre>type Writer struct {
     Comma   <a href="../../builtin/index.html#rune">rune</a> <span class="comment">// Field delimiter (set to &#39;,&#39; by NewWriter)</span>
     UseCRLF <a href="../../builtin/index.html#bool">bool</a> <span class="comment">// True to use \r\n as the line terminator</span>
@@ -423,7 +434,7 @@ A Writer writes records to a CSV encoded file.
 </p>
 <p>
 As returned by NewWriter, a Writer writes records terminated by a
-newline and uses &#39;,&#39; as the field delimiter.  The exported fields can be
+newline and uses &#39;,&#39; as the field delimiter. The exported fields can be
 changed to customize the details before the first call to Write or WriteAll.
 </p>
 <p>
@@ -444,7 +455,9 @@ If UseCRLF is true, the Writer ends each record with \r\n instead of \n.
 
 			
 				
-				<h3 id="NewWriter">func <a href="http://localhost:9090/src/encoding/csv/writer.go?s=846:881#L21">NewWriter</a></h3>
+				<h3 id="NewWriter">func <a href="http://localhost:9090/src/encoding/csv/writer.go?s=845:880#L21">NewWriter</a>
+					<a class="permalink" href="index.html#NewWriter">&#xb6;</a>
+				</h3>
 				<pre>func NewWriter(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>) *<a href="index.html#Writer">Writer</a></pre>
 				<p>
 NewWriter returns a new Writer that writes to w.
@@ -456,7 +469,9 @@ NewWriter returns a new Writer that writes to w.
 
 			
 				
-				<h3 id="Writer.Error">func (*Writer) <a href="http://localhost:9090/src/encoding/csv/writer.go?s=2339:2369#L91">Error</a></h3>
+				<h3 id="Writer.Error">func (*Writer) <a href="http://localhost:9090/src/encoding/csv/writer.go?s=2392:2422#L93">Error</a>
+					<a class="permalink" href="index.html#Writer.Error">&#xb6;</a>
+				</h3>
 				<pre>func (w *<a href="index.html#Writer">Writer</a>) Error() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Error reports any error that has occurred during a previous Write or Flush.
@@ -467,7 +482,9 @@ Error reports any error that has occurred during a previous Write or Flush.
 				
 			
 				
-				<h3 id="Writer.Flush">func (*Writer) <a href="http://localhost:9090/src/encoding/csv/writer.go?s=2217:2241#L86">Flush</a></h3>
+				<h3 id="Writer.Flush">func (*Writer) <a href="http://localhost:9090/src/encoding/csv/writer.go?s=2270:2294#L88">Flush</a>
+					<a class="permalink" href="index.html#Writer.Flush">&#xb6;</a>
+				</h3>
 				<pre>func (w *<a href="index.html#Writer">Writer</a>) Flush()</pre>
 				<p>
 Flush writes any buffered data to the underlying io.Writer.
@@ -479,8 +496,10 @@ To check if an error occurred during the Flush, call Error.
 				
 			
 				
-				<h3 id="Writer.Write">func (*Writer) <a href="http://localhost:9090/src/encoding/csv/writer.go?s=1094:1145#L30">Write</a></h3>
-				<pre>func (w *<a href="index.html#Writer">Writer</a>) Write(record []<a href="../../builtin/index.html#string">string</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Writer.Write">func (*Writer) <a href="http://localhost:9090/src/encoding/csv/writer.go?s=1093:1138#L30">Write</a>
+					<a class="permalink" href="index.html#Writer.Write">&#xb6;</a>
+				</h3>
+				<pre>func (w *<a href="index.html#Writer">Writer</a>) Write(record []<a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Writer writes a single CSV record to w along with any necessary quoting.
 A record is a slice of strings with each string being one field.
@@ -491,8 +510,10 @@ A record is a slice of strings with each string being one field.
 				
 			
 				
-				<h3 id="Writer.WriteAll">func (*Writer) <a href="http://localhost:9090/src/encoding/csv/writer.go?s=2492:2549#L97">WriteAll</a></h3>
-				<pre>func (w *<a href="index.html#Writer">Writer</a>) WriteAll(records [][]<a href="../../builtin/index.html#string">string</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Writer.WriteAll">func (*Writer) <a href="http://localhost:9090/src/encoding/csv/writer.go?s=2545:2596#L99">WriteAll</a>
+					<a class="permalink" href="index.html#Writer.WriteAll">&#xb6;</a>
+				</h3>
+				<pre>func (w *<a href="index.html#Writer">Writer</a>) WriteAll(records [][]<a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 WriteAll writes multiple CSV records to w using Write and then calls Flush.
 </p>
@@ -513,7 +534,7 @@ WriteAll writes multiple CSV records to w using Write and then calls Flush.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -531,6 +552,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

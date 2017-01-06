@@ -238,7 +238,9 @@ through repeated calls to the Scan method.
 		
 			
 			
-			<h2 id="PrintError">func <a href="http://localhost:9090/src/go/scanner/errors.go?s=2892:2931#L106">PrintError</a></h2>
+			<h2 id="PrintError">func <a href="http://localhost:9090/src/go/scanner/errors.go?s=2892:2931#L106">PrintError</a>
+				<a class="permalink" href="index.html#PrintError">&#xb6;</a>
+			</h2>
 			<pre>func PrintError(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 PrintError is a utility function that prints a list of errors to w,
@@ -253,7 +255,9 @@ it prints the err string.
 		
 			
 			
-			<h2 id="Error">type <a href="http://localhost:9090/src/go/scanner/errors.go?s=413:466#L9">Error</a></h2>
+			<h2 id="Error">type <a href="http://localhost:9090/src/go/scanner/errors.go?s=413:466#L9">Error</a>
+				<a class="permalink" href="index.html#Error">&#xb6;</a>
+			</h2>
 			<pre>type Error struct {
     Pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Position">Position</a>
     Msg <a href="../../builtin/index.html#string">string</a>
@@ -278,7 +282,9 @@ by Msg.
 
 			
 				
-				<h3 id="Error.Error">func (Error) <a href="http://localhost:9090/src/go/scanner/errors.go?s=509:538#L15">Error</a></h3>
+				<h3 id="Error.Error">func (Error) <a href="http://localhost:9090/src/go/scanner/errors.go?s=509:538#L15">Error</a>
+					<a class="permalink" href="index.html#Error.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#Error">Error</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 Error implements the error interface.
@@ -291,7 +297,9 @@ Error implements the error interface.
 		
 			
 			
-			<h2 id="ErrorHandler">type <a href="http://localhost:9090/src/go/scanner/scanner.go?s=687:741#L16">ErrorHandler</a></h2>
+			<h2 id="ErrorHandler">type <a href="http://localhost:9090/src/go/scanner/scanner.go?s=687:741#L16">ErrorHandler</a>
+				<a class="permalink" href="index.html#ErrorHandler">&#xb6;</a>
+			</h2>
 			<pre>type ErrorHandler func(pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Position">Position</a>, msg <a href="../../builtin/index.html#string">string</a>)</pre>
 			<p>
 An ErrorHandler may be provided to Scanner.Init. If a syntax error is
@@ -315,7 +323,9 @@ the offending token.
 		
 			
 			
-			<h2 id="ErrorList">type <a href="http://localhost:9090/src/go/scanner/errors.go?s=853:876#L27">ErrorList</a></h2>
+			<h2 id="ErrorList">type <a href="http://localhost:9090/src/go/scanner/errors.go?s=853:876#L27">ErrorList</a>
+				<a class="permalink" href="index.html#ErrorList">&#xb6;</a>
+			</h2>
 			<pre>type ErrorList []*<a href="index.html#Error">Error</a></pre>
 			<p>
 ErrorList is a list of *Errors.
@@ -335,7 +345,9 @@ The zero value for an ErrorList is an empty ErrorList ready to use.
 
 			
 				
-				<h3 id="ErrorList.Add">func (*ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=954:1009#L30">Add</a></h3>
+				<h3 id="ErrorList.Add">func (*ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=954:1009#L30">Add</a>
+					<a class="permalink" href="index.html#ErrorList.Add">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#ErrorList">ErrorList</a>) Add(pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Position">Position</a>, msg <a href="../../builtin/index.html#string">string</a>)</pre>
 				<p>
 Add adds an Error with given position and error message to an ErrorList.
@@ -346,7 +358,9 @@ Add adds an Error with given position and error message to an ErrorList.
 				
 			
 				
-				<h3 id="ErrorList.Err">func (ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=2638:2668#L95">Err</a></h3>
+				<h3 id="ErrorList.Err">func (ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=2638:2668#L95">Err</a>
+					<a class="permalink" href="index.html#ErrorList.Err">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#ErrorList">ErrorList</a>) Err() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Err returns an error equivalent to this error list.
@@ -358,7 +372,9 @@ If the list is empty, Err returns nil.
 				
 			
 				
-				<h3 id="ErrorList.Error">func (ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=2358:2391#L83">Error</a></h3>
+				<h3 id="ErrorList.Error">func (ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=2358:2391#L83">Error</a>
+					<a class="permalink" href="index.html#ErrorList.Error">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#ErrorList">ErrorList</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 An ErrorList implements the error interface.
@@ -369,7 +385,9 @@ An ErrorList implements the error interface.
 				
 			
 				
-				<h3 id="ErrorList.Len">func (ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=1185:1213#L38">Len</a></h3>
+				<h3 id="ErrorList.Len">func (ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=1185:1213#L38">Len</a>
+					<a class="permalink" href="index.html#ErrorList.Len">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#ErrorList">ErrorList</a>) Len() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 ErrorList implements the sort Interface.
@@ -380,7 +398,9 @@ ErrorList implements the sort Interface.
 				
 			
 				
-				<h3 id="ErrorList.Less">func (ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=1300:1338#L41">Less</a></h3>
+				<h3 id="ErrorList.Less">func (ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=1300:1338#L41">Less</a>
+					<a class="permalink" href="index.html#ErrorList.Less">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#ErrorList">ErrorList</a>) Less(i, j <a href="../../builtin/index.html#int">int</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -388,7 +408,9 @@ ErrorList implements the sort Interface.
 				
 			
 				
-				<h3 id="ErrorList.RemoveMultiples">func (*ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=2019:2056#L68">RemoveMultiples</a></h3>
+				<h3 id="ErrorList.RemoveMultiples">func (*ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=2019:2056#L68">RemoveMultiples</a>
+					<a class="permalink" href="index.html#ErrorList.RemoveMultiples">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#ErrorList">ErrorList</a>) RemoveMultiples()</pre>
 				<p>
 RemoveMultiples sorts an ErrorList and removes all but the first error per line.
@@ -399,7 +421,9 @@ RemoveMultiples sorts an ErrorList and removes all but the first error per line.
 				
 			
 				
-				<h3 id="ErrorList.Reset">func (*ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=1093:1120#L35">Reset</a></h3>
+				<h3 id="ErrorList.Reset">func (*ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=1093:1120#L35">Reset</a>
+					<a class="permalink" href="index.html#ErrorList.Reset">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#ErrorList">ErrorList</a>) Reset()</pre>
 				<p>
 Reset resets an ErrorList to no errors.
@@ -410,7 +434,9 @@ Reset resets an ErrorList to no errors.
 				
 			
 				
-				<h3 id="ErrorList.Sort">func (ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=1890:1915#L63">Sort</a></h3>
+				<h3 id="ErrorList.Sort">func (ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=1890:1915#L63">Sort</a>
+					<a class="permalink" href="index.html#ErrorList.Sort">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#ErrorList">ErrorList</a>) Sort()</pre>
 				<p>
 Sort sorts an ErrorList. *Error entries are sorted by position,
@@ -423,7 +449,9 @@ entry.
 				
 			
 				
-				<h3 id="ErrorList.Swap">func (ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=1237:1270#L39">Swap</a></h3>
+				<h3 id="ErrorList.Swap">func (ErrorList) <a href="http://localhost:9090/src/go/scanner/errors.go?s=1237:1270#L39">Swap</a>
+					<a class="permalink" href="index.html#ErrorList.Swap">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#ErrorList">ErrorList</a>) Swap(i, j <a href="../../builtin/index.html#int">int</a>)</pre>
 				
 				
@@ -433,7 +461,9 @@ entry.
 		
 			
 			
-			<h2 id="Mode">type <a href="http://localhost:9090/src/go/scanner/scanner.go?s=2461:2475#L81">Mode</a></h2>
+			<h2 id="Mode">type <a href="http://localhost:9090/src/go/scanner/scanner.go?s=2469:2483#L81">Mode</a>
+				<a class="permalink" href="index.html#Mode">&#xb6;</a>
+			</h2>
 			<pre>type Mode <a href="../../builtin/index.html#uint">uint</a></pre>
 			<p>
 A mode value is a set of flags (or 0).
@@ -461,7 +491,9 @@ They control scanner behavior.
 		
 			
 			
-			<h2 id="Scanner">type <a href="http://localhost:9090/src/go/scanner/scanner.go?s=931:1526#L22">Scanner</a></h2>
+			<h2 id="Scanner">type <a href="http://localhost:9090/src/go/scanner/scanner.go?s=930:1525#L22">Scanner</a>
+				<a class="permalink" href="index.html#Scanner">&#xb6;</a>
+			</h2>
 			<pre>type Scanner struct {
 
     <span class="comment">// public state - ok to modify</span>
@@ -470,7 +502,7 @@ They control scanner behavior.
 }</pre>
 			<p>
 A Scanner holds the scanner&#39;s internal state while processing
-a given text.  It can be allocated as part of another data
+a given text. It can be allocated as part of another data
 structure but must be initialized via Init before use.
 </p>
 
@@ -487,7 +519,9 @@ structure but must be initialized via Init before use.
 
 			
 				
-				<h3 id="Scanner.Init">func (*Scanner) <a href="http://localhost:9090/src/go/scanner/scanner.go?s=3419:3500#L103">Init</a></h3>
+				<h3 id="Scanner.Init">func (*Scanner) <a href="http://localhost:9090/src/go/scanner/scanner.go?s=3427:3508#L103">Init</a>
+					<a class="permalink" href="index.html#Scanner.Init">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Init(file *<a href="../token/index.html">token</a>.<a href="../token/index.html#File">File</a>, src []<a href="../../builtin/index.html#byte">byte</a>, err <a href="index.html#ErrorHandler">ErrorHandler</a>, mode <a href="index.html#Mode">Mode</a>)</pre>
 				<p>
 Init prepares the scanner s to tokenize the text src by setting the
@@ -513,7 +547,9 @@ of the file.
 				
 			
 				
-				<h3 id="Scanner.Scan">func (*Scanner) <a href="http://localhost:9090/src/go/scanner/scanner.go?s=13662:13731#L588">Scan</a></h3>
+				<h3 id="Scanner.Scan">func (*Scanner) <a href="http://localhost:9090/src/go/scanner/scanner.go?s=13688:13757#L588">Scan</a>
+					<a class="permalink" href="index.html#Scanner.Scan">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Scan() (pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>, tok <a href="../token/index.html">token</a>.<a href="../token/index.html#Token">Token</a>, lit <a href="../../builtin/index.html#string">string</a>)</pre>
 				<p>
 Scan scans the next token and returns the token position, the token,
@@ -571,7 +607,7 @@ and thus relative to the file set.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -589,6 +625,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

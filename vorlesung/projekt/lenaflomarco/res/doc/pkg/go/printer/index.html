@@ -193,7 +193,9 @@ Package printer implements printing of AST nodes.
 		
 			
 			
-			<h2 id="Fprint">func <a href="http://localhost:9090/src/go/printer/printer.go?s=37600:37674#L1286">Fprint</a></h2>
+			<h2 id="Fprint">func <a href="http://localhost:9090/src/go/printer/printer.go?s=37600:37674#L1286">Fprint</a>
+				<a class="permalink" href="index.html#Fprint">&#xb6;</a>
+			</h2>
 			<pre>func Fprint(output <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, fset *<a href="../token/index.html">token</a>.<a href="../token/index.html#FileSet">FileSet</a>, node interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 			<p>
 Fprint &#34;pretty-prints&#34; an AST node to output.
@@ -207,7 +209,9 @@ It calls Config.Fprint with default settings.
 		
 			
 			
-			<h2 id="CommentedNode">type <a href="http://localhost:9090/src/go/printer/printer.go?s=36898:37038#L1269">CommentedNode</a></h2>
+			<h2 id="CommentedNode">type <a href="http://localhost:9090/src/go/printer/printer.go?s=36898:37038#L1269">CommentedNode</a>
+				<a class="permalink" href="index.html#CommentedNode">&#xb6;</a>
+			</h2>
 			<pre>type CommentedNode struct {
     Node     interface{} <span class="comment">// *ast.File, or ast.Expr, ast.Decl, ast.Spec, or ast.Stmt</span>
     Comments []*<a href="../ast/index.html">ast</a>.<a href="../ast/index.html#CommentGroup">CommentGroup</a>
@@ -232,7 +236,9 @@ It may be provided as argument to any of the Fprint functions.
 		
 			
 			
-			<h2 id="Config">type <a href="http://localhost:9090/src/go/printer/printer.go?s=35178:35332#L1211">Config</a></h2>
+			<h2 id="Config">type <a href="http://localhost:9090/src/go/printer/printer.go?s=35178:35332#L1211">Config</a>
+				<a class="permalink" href="index.html#Config">&#xb6;</a>
+			</h2>
 			<pre>type Config struct {
     Mode     <a href="index.html#Mode">Mode</a> <span class="comment">// default: 0</span>
     Tabwidth <a href="../../builtin/index.html#int">int</a>  <span class="comment">// default: 8</span>
@@ -255,7 +261,9 @@ A Config node controls the output of Fprint.
 
 			
 				
-				<h3 id="Config.Fprint">func (*Config) <a href="http://localhost:9090/src/go/printer/printer.go?s=37342:37430#L1279">Fprint</a></h3>
+				<h3 id="Config.Fprint">func (*Config) <a href="http://localhost:9090/src/go/printer/printer.go?s=37342:37430#L1279">Fprint</a>
+					<a class="permalink" href="index.html#Config.Fprint">&#xb6;</a>
+				</h3>
 				<pre>func (cfg *<a href="index.html#Config">Config</a>) Fprint(output <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, fset *<a href="../token/index.html">token</a>.<a href="../token/index.html#FileSet">FileSet</a>, node interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Fprint &#34;pretty-prints&#34; an AST node to output for a given configuration cfg.
@@ -271,7 +279,9 @@ or assignment-compatible to ast.Expr, ast.Decl, ast.Spec, or ast.Stmt.
 		
 			
 			
-			<h2 id="Mode">type <a href="http://localhost:9090/src/go/printer/printer.go?s=34776:34790#L1201">Mode</a></h2>
+			<h2 id="Mode">type <a href="http://localhost:9090/src/go/printer/printer.go?s=34776:34790#L1201">Mode</a>
+				<a class="permalink" href="index.html#Mode">&#xb6;</a>
+			</h2>
 			<pre>type Mode <a href="../../builtin/index.html#uint">uint</a></pre>
 			<p>
 A Mode value is a set of flags (or 0). They control printing.
@@ -309,7 +319,7 @@ A Mode value is a set of flags (or 0). They control printing.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -327,6 +337,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

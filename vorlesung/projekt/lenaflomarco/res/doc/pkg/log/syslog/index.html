@@ -137,35 +137,35 @@ Some external packages provide more functionality. See:
 					<dd>&nbsp; &nbsp; <a href="index.html#Dial">func Dial(network, raddr string, priority Priority, tag string) (*Writer, error)</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#New">func New(priority Priority, tag string) (w *Writer, err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#New">func New(priority Priority, tag string) (*Writer, error)</a></dd>
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Alert">func (w *Writer) Alert(m string) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Alert">func (w *Writer) Alert(m string) error</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Close">func (w *Writer) Close() error</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Crit">func (w *Writer) Crit(m string) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Crit">func (w *Writer) Crit(m string) error</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Debug">func (w *Writer) Debug(m string) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Debug">func (w *Writer) Debug(m string) error</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Emerg">func (w *Writer) Emerg(m string) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Emerg">func (w *Writer) Emerg(m string) error</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Err">func (w *Writer) Err(m string) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Err">func (w *Writer) Err(m string) error</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Info">func (w *Writer) Info(m string) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Info">func (w *Writer) Info(m string) error</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Notice">func (w *Writer) Notice(m string) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Notice">func (w *Writer) Notice(m string) error</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Warning">func (w *Writer) Warning(m string) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Warning">func (w *Writer) Warning(m string) error</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Write">func (w *Writer) Write(b []byte) (int, error)</a></dd>
@@ -240,7 +240,9 @@ Some external packages provide more functionality. See:
 		
 			
 			
-			<h2 id="NewLogger">func <a href="http://localhost:9090/src/log/syslog/syslog.go?s=7160:7220#L296">NewLogger</a></h2>
+			<h2 id="NewLogger">func <a href="http://localhost:9090/src/log/syslog/syslog.go?s=7109:7169#L296">NewLogger</a>
+				<a class="permalink" href="index.html#NewLogger">&#xb6;</a>
+			</h2>
 			<pre>func NewLogger(p <a href="index.html#Priority">Priority</a>, logFlag <a href="../../builtin/index.html#int">int</a>) (*<a href="../index.html">log</a>.<a href="../index.html#Logger">Logger</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 NewLogger creates a log.Logger whose output is written to
@@ -256,7 +258,9 @@ the Logger.
 		
 			
 			
-			<h2 id="Priority">type <a href="http://localhost:9090/src/log/syslog/syslog.go?s=521:538#L14">Priority</a></h2>
+			<h2 id="Priority">type <a href="http://localhost:9090/src/log/syslog/syslog.go?s=521:538#L14">Priority</a>
+				<a class="permalink" href="index.html#Priority">&#xb6;</a>
+			</h2>
 			<pre>type Priority <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 The Priority is a combination of the syslog facility and
@@ -323,7 +327,9 @@ the default facility is LOG_KERN.
 		
 			
 			
-			<h2 id="Writer">type <a href="http://localhost:9090/src/log/syslog/syslog.go?s=1273:1432#L66">Writer</a></h2>
+			<h2 id="Writer">type <a href="http://localhost:9090/src/log/syslog/syslog.go?s=1273:1432#L66">Writer</a>
+				<a class="permalink" href="index.html#Writer">&#xb6;</a>
+			</h2>
 			<pre>type Writer struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -342,11 +348,13 @@ A Writer is a connection to a syslog server.
 
 			
 				
-				<h3 id="Dial">func <a href="http://localhost:9090/src/log/syslog/syslog.go?s=2506:2586#L105">Dial</a></h3>
+				<h3 id="Dial">func <a href="http://localhost:9090/src/log/syslog/syslog.go?s=2495:2575#L105">Dial</a>
+					<a class="permalink" href="index.html#Dial">&#xb6;</a>
+				</h3>
 				<pre>func Dial(network, raddr <a href="../../builtin/index.html#string">string</a>, priority <a href="index.html#Priority">Priority</a>, tag <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#Writer">Writer</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Dial establishes a connection to a log daemon by connecting to
-address raddr on the specified network.  Each write to the returned
+address raddr on the specified network. Each write to the returned
 writer sends a log message with the given facility, severity and
 tag.
 If network is empty, Dial will connect to the local syslog server.
@@ -356,10 +364,12 @@ If network is empty, Dial will connect to the local syslog server.
 				
 			
 				
-				<h3 id="New">func <a href="http://localhost:9090/src/log/syslog/syslog.go?s=2119:2181#L96">New</a></h3>
-				<pre>func New(priority <a href="index.html#Priority">Priority</a>, tag <a href="../../builtin/index.html#string">string</a>) (w *<a href="index.html#Writer">Writer</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="New">func <a href="http://localhost:9090/src/log/syslog/syslog.go?s=2115:2171#L96">New</a>
+					<a class="permalink" href="index.html#New">&#xb6;</a>
+				</h3>
+				<pre>func New(priority <a href="index.html#Priority">Priority</a>, tag <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#Writer">Writer</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
-New establishes a new connection to the system log daemon.  Each
+New establishes a new connection to the system log daemon. Each
 write to the returned writer sends a log message with the given
 priority and prefix.
 </p>
@@ -370,8 +380,10 @@ priority and prefix.
 
 			
 				
-				<h3 id="Writer.Alert">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=4200:4244#L187">Alert</a></h3>
-				<pre>func (w *<a href="index.html#Writer">Writer</a>) Alert(m <a href="../../builtin/index.html#string">string</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Writer.Alert">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=4184:4222#L187">Alert</a>
+					<a class="permalink" href="index.html#Writer.Alert">&#xb6;</a>
+				</h3>
+				<pre>func (w *<a href="index.html#Writer">Writer</a>) Alert(m <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Alert logs a message with severity LOG_ALERT, ignoring the severity
 passed to New.
@@ -382,7 +394,9 @@ passed to New.
 				
 			
 				
-				<h3 id="Writer.Close">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=3762:3792#L166">Close</a></h3>
+				<h3 id="Writer.Close">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=3751:3781#L166">Close</a>
+					<a class="permalink" href="index.html#Writer.Close">&#xb6;</a>
+				</h3>
 				<pre>func (w *<a href="index.html#Writer">Writer</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes a connection to the syslog daemon.
@@ -393,8 +407,10 @@ Close closes a connection to the syslog daemon.
 				
 			
 				
-				<h3 id="Writer.Crit">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=4389:4432#L194">Crit</a></h3>
-				<pre>func (w *<a href="index.html#Writer">Writer</a>) Crit(m <a href="../../builtin/index.html#string">string</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Writer.Crit">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=4368:4405#L194">Crit</a>
+					<a class="permalink" href="index.html#Writer.Crit">&#xb6;</a>
+				</h3>
+				<pre>func (w *<a href="index.html#Writer">Writer</a>) Crit(m <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Crit logs a message with severity LOG_CRIT, ignoring the severity
 passed to New.
@@ -405,8 +421,10 @@ passed to New.
 				
 			
 				
-				<h3 id="Writer.Debug">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=5342:5386#L229">Debug</a></h3>
-				<pre>func (w *<a href="index.html#Writer">Writer</a>) Debug(m <a href="../../builtin/index.html#string">string</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Writer.Debug">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=5296:5334#L229">Debug</a>
+					<a class="permalink" href="index.html#Writer.Debug">&#xb6;</a>
+				</h3>
+				<pre>func (w *<a href="index.html#Writer">Writer</a>) Debug(m <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Debug logs a message with severity LOG_DEBUG, ignoring the severity
 passed to New.
@@ -417,8 +435,10 @@ passed to New.
 				
 			
 				
-				<h3 id="Writer.Emerg">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=4009:4053#L180">Emerg</a></h3>
-				<pre>func (w *<a href="index.html#Writer">Writer</a>) Emerg(m <a href="../../builtin/index.html#string">string</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Writer.Emerg">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=3998:4036#L180">Emerg</a>
+					<a class="permalink" href="index.html#Writer.Emerg">&#xb6;</a>
+				</h3>
+				<pre>func (w *<a href="index.html#Writer">Writer</a>) Emerg(m <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Emerg logs a message with severity LOG_EMERG, ignoring the severity
 passed to New.
@@ -429,8 +449,10 @@ passed to New.
 				
 			
 				
-				<h3 id="Writer.Err">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=4574:4616#L201">Err</a></h3>
-				<pre>func (w *<a href="index.html#Writer">Writer</a>) Err(m <a href="../../builtin/index.html#string">string</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Writer.Err">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=4548:4584#L201">Err</a>
+					<a class="permalink" href="index.html#Writer.Err">&#xb6;</a>
+				</h3>
+				<pre>func (w *<a href="index.html#Writer">Writer</a>) Err(m <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Err logs a message with severity LOG_ERR, ignoring the severity
 passed to New.
@@ -441,8 +463,10 @@ passed to New.
 				
 			
 				
-				<h3 id="Writer.Info">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=5153:5196#L222">Info</a></h3>
-				<pre>func (w *<a href="index.html#Writer">Writer</a>) Info(m <a href="../../builtin/index.html#string">string</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Writer.Info">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=5112:5149#L222">Info</a>
+					<a class="permalink" href="index.html#Writer.Info">&#xb6;</a>
+				</h3>
+				<pre>func (w *<a href="index.html#Writer">Writer</a>) Info(m <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Info logs a message with severity LOG_INFO, ignoring the severity
 passed to New.
@@ -453,8 +477,10 @@ passed to New.
 				
 			
 				
-				<h3 id="Writer.Notice">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=4962:5007#L215">Notice</a></h3>
-				<pre>func (w *<a href="index.html#Writer">Writer</a>) Notice(m <a href="../../builtin/index.html#string">string</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Writer.Notice">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=4926:4965#L215">Notice</a>
+					<a class="permalink" href="index.html#Writer.Notice">&#xb6;</a>
+				</h3>
+				<pre>func (w *<a href="index.html#Writer">Writer</a>) Notice(m <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Notice logs a message with severity LOG_NOTICE, ignoring the
 severity passed to New.
@@ -465,8 +491,10 @@ severity passed to New.
 				
 			
 				
-				<h3 id="Writer.Warning">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=4765:4811#L208">Warning</a></h3>
-				<pre>func (w *<a href="index.html#Writer">Writer</a>) Warning(m <a href="../../builtin/index.html#string">string</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Writer.Warning">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=4734:4774#L208">Warning</a>
+					<a class="permalink" href="index.html#Writer.Warning">&#xb6;</a>
+				</h3>
+				<pre>func (w *<a href="index.html#Writer">Writer</a>) Warning(m <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Warning logs a message with severity LOG_WARNING, ignoring the
 severity passed to New.
@@ -477,7 +505,9 @@ severity passed to New.
 				
 			
 				
-				<h3 id="Writer.Write">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=3613:3658#L161">Write</a></h3>
+				<h3 id="Writer.Write">func (*Writer) <a href="http://localhost:9090/src/log/syslog/syslog.go?s=3602:3647#L161">Write</a>
+					<a class="permalink" href="index.html#Writer.Write">&#xb6;</a>
+				</h3>
 				<pre>func (w *<a href="index.html#Writer">Writer</a>) Write(b []<a href="../../builtin/index.html#byte">byte</a>) (<a href="../../builtin/index.html#int">int</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Write sends a log message to the syslog daemon.
@@ -495,16 +525,22 @@ Write sends a log message to the syslog daemon.
 			<h2 id="pkg-note-BUG">Bugs</h2>
 			<ul style="list-style: none; padding: 0;">
 			
-			<li><a href="http://localhost:9090/src/log/syslog/doc.go?s=640:873#L9">&#x261e;</a> This package is not implemented on Windows. As the
+			<li><a href="http://localhost:9090/src/log/syslog/doc.go?s=640:873#L9" style="float: left;">&#x261e;</a> <p>
+This package is not implemented on Windows. As the
 syslog package is frozen, Windows users are encouraged to
 use a package outside of the standard library. For background,
-see https://golang.org/issue/1108.
+see <a href="https://golang.org/issue/1108">https://golang.org/issue/1108</a>.
+</p>
 </li>
 			
-			<li><a href="http://localhost:9090/src/log/syslog/doc.go?s=875:933#L14">&#x261e;</a> This package is not implemented on Plan 9.
+			<li><a href="http://localhost:9090/src/log/syslog/doc.go?s=875:933#L14" style="float: left;">&#x261e;</a> <p>
+This package is not implemented on Plan 9.
+</p>
 </li>
 			
-			<li><a href="http://localhost:9090/src/log/syslog/doc.go?s=935:1006#L16">&#x261e;</a> This package is not implemented on NaCl (Native Client).
+			<li><a href="http://localhost:9090/src/log/syslog/doc.go?s=935:1006#L16" style="float: left;">&#x261e;</a> <p>
+This package is not implemented on NaCl (Native Client).
+</p>
 </li>
 			
 			</ul>
@@ -518,7 +554,7 @@ see https://golang.org/issue/1108.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -536,6 +572,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

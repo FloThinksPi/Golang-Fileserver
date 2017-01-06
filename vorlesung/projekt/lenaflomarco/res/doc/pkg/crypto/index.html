@@ -222,7 +222,9 @@ Package crypto collects common cryptographic constants.
 		
 			
 			
-			<h2 id="RegisterHash">func <a href="http://localhost:9090/src/crypto/crypto.go?s=2728:2773#L82">RegisterHash</a></h2>
+			<h2 id="RegisterHash">func <a href="http://localhost:9090/src/crypto/crypto.go?s=2728:2773#L82">RegisterHash</a>
+				<a class="permalink" href="index.html#RegisterHash">&#xb6;</a>
+			</h2>
 			<pre>func RegisterHash(h <a href="index.html#Hash">Hash</a>, f func() <a href="../hash/index.html">hash</a>.<a href="../hash/index.html#Hash">Hash</a>)</pre>
 			<p>
 RegisterHash registers a function that returns a new instance of the given
@@ -237,7 +239,9 @@ packages that implement hash functions.
 		
 			
 			
-			<h2 id="Decrypter">type <a href="http://localhost:9090/src/crypto/crypto.go?s=4661:5033#L129">Decrypter</a></h2>
+			<h2 id="Decrypter">type <a href="http://localhost:9090/src/crypto/crypto.go?s=4661:5033#L129">Decrypter</a>
+				<a class="permalink" href="index.html#Decrypter">&#xb6;</a>
+			</h2>
 			<pre>type Decrypter interface {
     <span class="comment">// Public returns the public key corresponding to the opaque,</span>
     <span class="comment">// private key.</span>
@@ -269,7 +273,9 @@ kept in a hardware module.
 		
 			
 			
-			<h2 id="DecrypterOpts">type <a href="http://localhost:9090/src/crypto/crypto.go?s=5035:5065#L140">DecrypterOpts</a></h2>
+			<h2 id="DecrypterOpts">type <a href="http://localhost:9090/src/crypto/crypto.go?s=5035:5065#L140">DecrypterOpts</a>
+				<a class="permalink" href="index.html#DecrypterOpts">&#xb6;</a>
+			</h2>
 			<pre>type DecrypterOpts interface{}</pre>
 			
 
@@ -287,7 +293,9 @@ kept in a hardware module.
 		
 			
 			
-			<h2 id="Hash">type <a href="http://localhost:9090/src/crypto/crypto.go?s=364:378#L6">Hash</a></h2>
+			<h2 id="Hash">type <a href="http://localhost:9090/src/crypto/crypto.go?s=364:378#L6">Hash</a>
+				<a class="permalink" href="index.html#Hash">&#xb6;</a>
+			</h2>
 			<pre>type Hash <a href="../builtin/index.html#uint">uint</a></pre>
 			<p>
 Hash identifies a cryptographic hash function that is implemented in another
@@ -327,7 +335,9 @@ package.
 
 			
 				
-				<h3 id="Hash.Available">func (Hash) <a href="http://localhost:9090/src/crypto/crypto.go?s=2457:2487#L75">Available</a></h3>
+				<h3 id="Hash.Available">func (Hash) <a href="http://localhost:9090/src/crypto/crypto.go?s=2457:2487#L75">Available</a>
+					<a class="permalink" href="index.html#Hash.Available">&#xb6;</a>
+				</h3>
 				<pre>func (h <a href="index.html#Hash">Hash</a>) Available() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Available reports whether the given hash function is linked into the binary.
@@ -338,7 +348,9 @@ Available reports whether the given hash function is linked into the binary.
 				
 			
 				
-				<h3 id="Hash.HashFunc">func (Hash) <a href="http://localhost:9090/src/crypto/crypto.go?s=458:487#L9">HashFunc</a></h3>
+				<h3 id="Hash.HashFunc">func (Hash) <a href="http://localhost:9090/src/crypto/crypto.go?s=458:487#L9">HashFunc</a>
+					<a class="permalink" href="index.html#Hash.HashFunc">&#xb6;</a>
+				</h3>
 				<pre>func (h <a href="index.html#Hash">Hash</a>) HashFunc() <a href="index.html#Hash">Hash</a></pre>
 				<p>
 HashFunc simply returns the value of h so that Hash implements SignerOpts.
@@ -349,7 +361,9 @@ HashFunc simply returns the value of h so that Hash implements SignerOpts.
 				
 			
 				
-				<h3 id="Hash.New">func (Hash) <a href="http://localhost:9090/src/crypto/crypto.go?s=2174:2203#L64">New</a></h3>
+				<h3 id="Hash.New">func (Hash) <a href="http://localhost:9090/src/crypto/crypto.go?s=2174:2203#L64">New</a>
+					<a class="permalink" href="index.html#Hash.New">&#xb6;</a>
+				</h3>
 				<pre>func (h <a href="index.html#Hash">Hash</a>) New() <a href="../hash/index.html">hash</a>.<a href="../hash/index.html#Hash">Hash</a></pre>
 				<p>
 New returns a new hash.Hash calculating the given hash function. New panics
@@ -361,7 +375,9 @@ if the hash function is not linked into the binary.
 				
 			
 				
-				<h3 id="Hash.Size">func (Hash) <a href="http://localhost:9090/src/crypto/crypto.go?s=1855:1879#L53">Size</a></h3>
+				<h3 id="Hash.Size">func (Hash) <a href="http://localhost:9090/src/crypto/crypto.go?s=1855:1879#L53">Size</a>
+					<a class="permalink" href="index.html#Hash.Size">&#xb6;</a>
+				</h3>
 				<pre>func (h <a href="index.html#Hash">Hash</a>) Size() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Size returns the length, in bytes, of a digest resulting from the given hash
@@ -376,7 +392,9 @@ into the program.
 		
 			
 			
-			<h2 id="PrivateKey">type <a href="http://localhost:9090/src/crypto/crypto.go?s=3041:3068#L93">PrivateKey</a></h2>
+			<h2 id="PrivateKey">type <a href="http://localhost:9090/src/crypto/crypto.go?s=3041:3068#L93">PrivateKey</a>
+				<a class="permalink" href="index.html#PrivateKey">&#xb6;</a>
+			</h2>
 			<pre>type PrivateKey interface{}</pre>
 			<p>
 PrivateKey represents a private key using an unspecified algorithm.
@@ -397,7 +415,9 @@ PrivateKey represents a private key using an unspecified algorithm.
 		
 			
 			
-			<h2 id="PublicKey">type <a href="http://localhost:9090/src/crypto/crypto.go?s=2942:2968#L90">PublicKey</a></h2>
+			<h2 id="PublicKey">type <a href="http://localhost:9090/src/crypto/crypto.go?s=2942:2968#L90">PublicKey</a>
+				<a class="permalink" href="index.html#PublicKey">&#xb6;</a>
+			</h2>
 			<pre>type PublicKey interface{}</pre>
 			<p>
 PublicKey represents a public key using an unspecified algorithm.
@@ -418,7 +438,9 @@ PublicKey represents a public key using an unspecified algorithm.
 		
 			
 			
-			<h2 id="Signer">type <a href="http://localhost:9090/src/crypto/crypto.go?s=3217:4212#L97">Signer</a></h2>
+			<h2 id="Signer">type <a href="http://localhost:9090/src/crypto/crypto.go?s=3217:4212#L97">Signer</a>
+				<a class="permalink" href="index.html#Signer">&#xb6;</a>
+			</h2>
 			<pre>type Signer interface {
     <span class="comment">// Public returns the public key corresponding to the opaque,</span>
     <span class="comment">// private key.</span>
@@ -459,7 +481,9 @@ signing operations. For example, an RSA key kept in a hardware module.
 		
 			
 			
-			<h2 id="SignerOpts">type <a href="http://localhost:9090/src/crypto/crypto.go?s=4272:4485#L119">SignerOpts</a></h2>
+			<h2 id="SignerOpts">type <a href="http://localhost:9090/src/crypto/crypto.go?s=4272:4485#L119">SignerOpts</a>
+				<a class="permalink" href="index.html#SignerOpts">&#xb6;</a>
+			</h2>
 			<pre>type SignerOpts interface {
     <span class="comment">// HashFunc returns an identifier for the hash function used to produce</span>
     <span class="comment">// the message passed to Signer.Sign, or else zero to indicate that no</span>
@@ -719,7 +743,7 @@ SignerOpts contains options for signing with a Signer.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -737,6 +761,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

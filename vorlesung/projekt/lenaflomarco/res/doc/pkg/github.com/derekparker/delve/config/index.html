@@ -117,6 +117,16 @@
 				
 				
 			
+				
+				<dd><a href="index.html#SubstitutePathRule">type SubstitutePathRule</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#SubstitutePathRules">type SubstitutePathRules</a></dd>
+				
+				
+			
 			
 			</dl>
 			</div><!-- #manual-nav -->
@@ -178,7 +188,9 @@
 		
 			
 			
-			<h2 id="GetConfigFilePath">func <a href="http://localhost:9090/src/github.com/derekparker/delve/config/config.go?s=2250:2301#L96">GetConfigFilePath</a></h2>
+			<h2 id="GetConfigFilePath">func <a href="http://localhost:9090/src/github.com/derekparker/delve/config/config.go?s=3062:3113#L118">GetConfigFilePath</a>
+				<a class="permalink" href="index.html#GetConfigFilePath">&#xb6;</a>
+			</h2>
 			<pre>func GetConfigFilePath(file <a href="../../../../builtin/index.html#string">string</a>) (<a href="../../../../builtin/index.html#string">string</a>, <a href="../../../../builtin/index.html#error">error</a>)</pre>
 			<p>
 GetConfigFilePath gets the full path to the given config file name.
@@ -191,9 +203,14 @@ GetConfigFilePath gets the full path to the given config file name.
 		
 			
 			
-			<h2 id="Config">type <a href="http://localhost:9090/src/github.com/derekparker/delve/config/config.go?s=261:312#L9">Config</a></h2>
+			<h2 id="Config">type <a href="http://localhost:9090/src/github.com/derekparker/delve/config/config.go?s=591:773#L20">Config</a>
+				<a class="permalink" href="index.html#Config">&#xb6;</a>
+			</h2>
 			<pre>type Config struct {
+    <span class="comment">// Commands aliases.</span>
     Aliases map[<a href="../../../../builtin/index.html#string">string</a>][]<a href="../../../../builtin/index.html#string">string</a>
+    <span class="comment">// Source code path substitution rules.</span>
+    SubstitutePath <a href="index.html#SubstitutePathRules">SubstitutePathRules</a> `yaml:&#34;substitute-path&#34;`
 }</pre>
 			<p>
 Config defines all configuration options available to be set through the config file.
@@ -210,7 +227,9 @@ Config defines all configuration options available to be set through the config 
 
 			
 				
-				<h3 id="LoadConfig">func <a href="http://localhost:9090/src/github.com/derekparker/delve/config/config.go?s=391:416#L14">LoadConfig</a></h3>
+				<h3 id="LoadConfig">func <a href="http://localhost:9090/src/github.com/derekparker/delve/config/config.go?s=852:877#L28">LoadConfig</a>
+					<a class="permalink" href="index.html#LoadConfig">&#xb6;</a>
+				</h3>
 				<pre>func LoadConfig() *<a href="index.html#Config">Config</a></pre>
 				<p>
 LoadConfig attempts to populate a Config object from the config.yml file.
@@ -218,6 +237,57 @@ LoadConfig attempts to populate a Config object from the config.yml file.
 
 				
 				
+			
+
+			
+		
+			
+			
+			<h2 id="SubstitutePathRule">type <a href="http://localhost:9090/src/github.com/derekparker/delve/config/config.go?s=238:404#L9">SubstitutePathRule</a>
+				<a class="permalink" href="index.html#SubstitutePathRule">&#xb6;</a>
+			</h2>
+			<pre>type SubstitutePathRule struct {
+    <span class="comment">// Directory path will be substituted if it matches `From`.</span>
+    From <a href="../../../../builtin/index.html#string">string</a>
+    <span class="comment">// Path to which substitution is performed.</span>
+    To <a href="../../../../builtin/index.html#string">string</a>
+}</pre>
+			<p>
+Describes a rule for substitution of path to source code file.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SubstitutePathRules">type <a href="http://localhost:9090/src/github.com/derekparker/delve/config/config.go?s=455:500#L17">SubstitutePathRules</a>
+				<a class="permalink" href="index.html#SubstitutePathRules">&#xb6;</a>
+			</h2>
+			<pre>type SubstitutePathRules []<a href="index.html#SubstitutePathRule">SubstitutePathRule</a></pre>
+			<p>
+Slice of source code path substitution rules.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
 			
 
 			
@@ -233,7 +303,7 @@ LoadConfig attempts to populate a Config object from the config.yml file.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -251,6 +321,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../../../lib/godoc/godocs.js"></script>
 
 </body>

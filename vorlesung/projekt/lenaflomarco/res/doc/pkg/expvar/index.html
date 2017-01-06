@@ -104,7 +104,7 @@ memstats  runtime.Memstats
 </pre>
 <p>
 The package is sometimes only imported for the side effect of
-registering its HTTP handler and the above variables.  To use it
+registering its HTTP handler and the above variables. To use it
 this way, link this package into your program:
 </p>
 <pre>import _ &#34;expvar&#34;
@@ -293,7 +293,9 @@ this way, link this package into your program:
 		
 			
 			
-			<h2 id="Do">func <a href="http://localhost:9090/src/expvar/expvar.go?s=6018:6043#L287">Do</a></h2>
+			<h2 id="Do">func <a href="http://localhost:9090/src/expvar/expvar.go?s=6259:6284#L293">Do</a>
+				<a class="permalink" href="index.html#Do">&#xb6;</a>
+			</h2>
 			<pre>func Do(f func(<a href="index.html#KeyValue">KeyValue</a>))</pre>
 			<p>
 Do calls f for each exported variable.
@@ -307,7 +309,9 @@ but existing entries may be concurrently updated.
 		
 			
 			
-			<h2 id="Publish">func <a href="http://localhost:9090/src/expvar/expvar.go?s=5093:5125#L240">Publish</a></h2>
+			<h2 id="Publish">func <a href="http://localhost:9090/src/expvar/expvar.go?s=5279:5311#L245">Publish</a>
+				<a class="permalink" href="index.html#Publish">&#xb6;</a>
+			</h2>
 			<pre>func Publish(name <a href="../builtin/index.html#string">string</a>, v <a href="index.html#Var">Var</a>)</pre>
 			<p>
 Publish declares a named exported variable. This should be called from a
@@ -322,7 +326,9 @@ registered then this will log.Panic.
 		
 			
 			
-			<h2 id="Float">type <a href="http://localhost:9090/src/expvar/expvar.go?s=1411:1442#L52">Float</a></h2>
+			<h2 id="Float">type <a href="http://localhost:9090/src/expvar/expvar.go?s=1577:1608#L55">Float</a>
+				<a class="permalink" href="index.html#Float">&#xb6;</a>
+			</h2>
 			<pre>type Float struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -341,7 +347,9 @@ Float is a 64-bit float variable that satisfies the Var interface.
 
 			
 				
-				<h3 id="NewFloat">func <a href="http://localhost:9090/src/expvar/expvar.go?s=5608:5641#L266">NewFloat</a></h3>
+				<h3 id="NewFloat">func <a href="http://localhost:9090/src/expvar/expvar.go?s=5849:5882#L272">NewFloat</a>
+					<a class="permalink" href="index.html#NewFloat">&#xb6;</a>
+				</h3>
 				<pre>func NewFloat(name <a href="../builtin/index.html#string">string</a>) *<a href="index.html#Float">Float</a></pre>
 				
 				
@@ -350,7 +358,9 @@ Float is a 64-bit float variable that satisfies the Var interface.
 
 			
 				
-				<h3 id="Float.Add">func (*Float) <a href="http://localhost:9090/src/expvar/expvar.go?s=1596:1630#L62">Add</a></h3>
+				<h3 id="Float.Add">func (*Float) <a href="http://localhost:9090/src/expvar/expvar.go?s=1762:1796#L65">Add</a>
+					<a class="permalink" href="index.html#Float.Add">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#Float">Float</a>) Add(delta <a href="../builtin/index.html#float64">float64</a>)</pre>
 				<p>
 Add adds delta to v.
@@ -361,7 +371,9 @@ Add adds delta to v.
 				
 			
 				
-				<h3 id="Float.Set">func (*Float) <a href="http://localhost:9090/src/expvar/expvar.go?s=1867:1901#L75">Set</a></h3>
+				<h3 id="Float.Set">func (*Float) <a href="http://localhost:9090/src/expvar/expvar.go?s=2033:2067#L78">Set</a>
+					<a class="permalink" href="index.html#Float.Set">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#Float">Float</a>) Set(value <a href="../builtin/index.html#float64">float64</a>)</pre>
 				<p>
 Set sets v to value.
@@ -372,7 +384,9 @@ Set sets v to value.
 				
 			
 				
-				<h3 id="Float.String">func (*Float) <a href="http://localhost:9090/src/expvar/expvar.go?s=1444:1475#L56">String</a></h3>
+				<h3 id="Float.String">func (*Float) <a href="http://localhost:9090/src/expvar/expvar.go?s=1610:1641#L59">String</a>
+					<a class="permalink" href="index.html#Float.String">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#Float">Float</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -382,7 +396,9 @@ Set sets v to value.
 		
 			
 			
-			<h2 id="Func">type <a href="http://localhost:9090/src/expvar/expvar.go?s=4672:4700#L223">Func</a></h2>
+			<h2 id="Func">type <a href="http://localhost:9090/src/expvar/expvar.go?s=4858:4886#L228">Func</a>
+				<a class="permalink" href="index.html#Func">&#xb6;</a>
+			</h2>
 			<pre>type Func func() interface{}</pre>
 			<p>
 Func implements Var by calling the function
@@ -402,7 +418,9 @@ and formatting the returned value using JSON.
 
 			
 				
-				<h3 id="Func.String">func (Func) <a href="http://localhost:9090/src/expvar/expvar.go?s=4702:4731#L225">String</a></h3>
+				<h3 id="Func.String">func (Func) <a href="http://localhost:9090/src/expvar/expvar.go?s=4888:4917#L230">String</a>
+					<a class="permalink" href="index.html#Func.String">&#xb6;</a>
+				</h3>
 				<pre>func (f <a href="index.html#Func">Func</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -412,7 +430,9 @@ and formatting the returned value using JSON.
 		
 			
 			
-			<h2 id="Int">type <a href="http://localhost:9090/src/expvar/expvar.go?s=1088:1116#L35">Int</a></h2>
+			<h2 id="Int">type <a href="http://localhost:9090/src/expvar/expvar.go?s=1254:1282#L38">Int</a>
+				<a class="permalink" href="index.html#Int">&#xb6;</a>
+			</h2>
 			<pre>type Int struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -431,7 +451,9 @@ Int is a 64-bit integer variable that satisfies the Var interface.
 
 			
 				
-				<h3 id="NewInt">func <a href="http://localhost:9090/src/expvar/expvar.go?s=5530:5559#L260">NewInt</a></h3>
+				<h3 id="NewInt">func <a href="http://localhost:9090/src/expvar/expvar.go?s=5771:5800#L266">NewInt</a>
+					<a class="permalink" href="index.html#NewInt">&#xb6;</a>
+				</h3>
 				<pre>func NewInt(name <a href="../builtin/index.html#string">string</a>) *<a href="index.html#Int">Int</a></pre>
 				
 				
@@ -440,7 +462,9 @@ Int is a 64-bit integer variable that satisfies the Var interface.
 
 			
 				
-				<h3 id="Int.Add">func (*Int) <a href="http://localhost:9090/src/expvar/expvar.go?s=1207:1237#L43">Add</a></h3>
+				<h3 id="Int.Add">func (*Int) <a href="http://localhost:9090/src/expvar/expvar.go?s=1373:1403#L46">Add</a>
+					<a class="permalink" href="index.html#Int.Add">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#Int">Int</a>) Add(delta <a href="../builtin/index.html#int64">int64</a>)</pre>
 				
 				
@@ -448,7 +472,9 @@ Int is a 64-bit integer variable that satisfies the Var interface.
 				
 			
 				
-				<h3 id="Int.Set">func (*Int) <a href="http://localhost:9090/src/expvar/expvar.go?s=1273:1303#L47">Set</a></h3>
+				<h3 id="Int.Set">func (*Int) <a href="http://localhost:9090/src/expvar/expvar.go?s=1439:1469#L50">Set</a>
+					<a class="permalink" href="index.html#Int.Set">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#Int">Int</a>) Set(value <a href="../builtin/index.html#int64">int64</a>)</pre>
 				
 				
@@ -456,7 +482,9 @@ Int is a 64-bit integer variable that satisfies the Var interface.
 				
 			
 				
-				<h3 id="Int.String">func (*Int) <a href="http://localhost:9090/src/expvar/expvar.go?s=1118:1147#L39">String</a></h3>
+				<h3 id="Int.String">func (*Int) <a href="http://localhost:9090/src/expvar/expvar.go?s=1284:1313#L42">String</a>
+					<a class="permalink" href="index.html#Int.String">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#Int">Int</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -466,7 +494,9 @@ Int is a 64-bit integer variable that satisfies the Var interface.
 		
 			
 			
-			<h2 id="KeyValue">type <a href="http://localhost:9090/src/expvar/expvar.go?s=2165:2214#L87">KeyValue</a></h2>
+			<h2 id="KeyValue">type <a href="http://localhost:9090/src/expvar/expvar.go?s=2331:2380#L90">KeyValue</a>
+				<a class="permalink" href="index.html#KeyValue">&#xb6;</a>
+			</h2>
 			<pre>type KeyValue struct {
     Key   <a href="../builtin/index.html#string">string</a>
     Value <a href="index.html#Var">Var</a>
@@ -490,7 +520,9 @@ KeyValue represents a single entry in a Map.
 		
 			
 			
-			<h2 id="Map">type <a href="http://localhost:9090/src/expvar/expvar.go?s=2031:2115#L80">Map</a></h2>
+			<h2 id="Map">type <a href="http://localhost:9090/src/expvar/expvar.go?s=2197:2281#L83">Map</a>
+				<a class="permalink" href="index.html#Map">&#xb6;</a>
+			</h2>
 			<pre>type Map struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -509,7 +541,9 @@ Map is a string-to-Var map variable that satisfies the Var interface.
 
 			
 				
-				<h3 id="NewMap">func <a href="http://localhost:9090/src/expvar/expvar.go?s=5692:5721#L272">NewMap</a></h3>
+				<h3 id="NewMap">func <a href="http://localhost:9090/src/expvar/expvar.go?s=5933:5962#L278">NewMap</a>
+					<a class="permalink" href="index.html#NewMap">&#xb6;</a>
+				</h3>
 				<pre>func NewMap(name <a href="../builtin/index.html#string">string</a>) *<a href="index.html#Map">Map</a></pre>
 				
 				
@@ -518,7 +552,9 @@ Map is a string-to-Var map variable that satisfies the Var interface.
 
 			
 				
-				<h3 id="Map.Add">func (*Map) <a href="http://localhost:9090/src/expvar/expvar.go?s=3074:3116#L141">Add</a></h3>
+				<h3 id="Map.Add">func (*Map) <a href="http://localhost:9090/src/expvar/expvar.go?s=3240:3282#L144">Add</a>
+					<a class="permalink" href="index.html#Map.Add">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#Map">Map</a>) Add(key <a href="../builtin/index.html#string">string</a>, delta <a href="../builtin/index.html#int64">int64</a>)</pre>
 				
 				
@@ -526,7 +562,9 @@ Map is a string-to-Var map variable that satisfies the Var interface.
 				
 			
 				
-				<h3 id="Map.AddFloat">func (*Map) <a href="http://localhost:9090/src/expvar/expvar.go?s=3499:3548#L164">AddFloat</a></h3>
+				<h3 id="Map.AddFloat">func (*Map) <a href="http://localhost:9090/src/expvar/expvar.go?s=3665:3714#L167">AddFloat</a>
+					<a class="permalink" href="index.html#Map.AddFloat">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#Map">Map</a>) AddFloat(key <a href="../builtin/index.html#string">string</a>, delta <a href="../builtin/index.html#float64">float64</a>)</pre>
 				<p>
 AddFloat adds delta to the *Float value stored under the given map key.
@@ -537,7 +575,9 @@ AddFloat adds delta to the *Float value stored under the given map key.
 				
 			
 				
-				<h3 id="Map.Do">func (*Map) <a href="http://localhost:9090/src/expvar/expvar.go?s=3999:4033#L189">Do</a></h3>
+				<h3 id="Map.Do">func (*Map) <a href="http://localhost:9090/src/expvar/expvar.go?s=4165:4199#L192">Do</a>
+					<a class="permalink" href="index.html#Map.Do">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#Map">Map</a>) Do(f func(<a href="index.html#KeyValue">KeyValue</a>))</pre>
 				<p>
 Do calls f for each entry in the map.
@@ -550,7 +590,9 @@ but existing entries may be concurrently updated.
 				
 			
 				
-				<h3 id="Map.Get">func (*Map) <a href="http://localhost:9090/src/expvar/expvar.go?s=2874:2907#L128">Get</a></h3>
+				<h3 id="Map.Get">func (*Map) <a href="http://localhost:9090/src/expvar/expvar.go?s=3040:3073#L131">Get</a>
+					<a class="permalink" href="index.html#Map.Get">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#Map">Map</a>) Get(key <a href="../builtin/index.html#string">string</a>) <a href="index.html#Var">Var</a></pre>
 				
 				
@@ -558,7 +600,9 @@ but existing entries may be concurrently updated.
 				
 			
 				
-				<h3 id="Map.Init">func (*Map) <a href="http://localhost:9090/src/expvar/expvar.go?s=2526:2551#L109">Init</a></h3>
+				<h3 id="Map.Init">func (*Map) <a href="http://localhost:9090/src/expvar/expvar.go?s=2692:2717#L112">Init</a>
+					<a class="permalink" href="index.html#Map.Init">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#Map">Map</a>) Init() *<a href="index.html#Map">Map</a></pre>
 				
 				
@@ -566,7 +610,9 @@ but existing entries may be concurrently updated.
 				
 			
 				
-				<h3 id="Map.Set">func (*Map) <a href="http://localhost:9090/src/expvar/expvar.go?s=2966:3003#L134">Set</a></h3>
+				<h3 id="Map.Set">func (*Map) <a href="http://localhost:9090/src/expvar/expvar.go?s=3132:3169#L137">Set</a>
+					<a class="permalink" href="index.html#Map.Set">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#Map">Map</a>) Set(key <a href="../builtin/index.html#string">string</a>, av <a href="index.html#Var">Var</a>)</pre>
 				
 				
@@ -574,7 +620,9 @@ but existing entries may be concurrently updated.
 				
 			
 				
-				<h3 id="Map.String">func (*Map) <a href="http://localhost:9090/src/expvar/expvar.go?s=2216:2245#L92">String</a></h3>
+				<h3 id="Map.String">func (*Map) <a href="http://localhost:9090/src/expvar/expvar.go?s=2382:2411#L95">String</a>
+					<a class="permalink" href="index.html#Map.String">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#Map">Map</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -584,7 +632,9 @@ but existing entries may be concurrently updated.
 		
 			
 			
-			<h2 id="String">type <a href="http://localhost:9090/src/expvar/expvar.go?s=4336:4386#L204">String</a></h2>
+			<h2 id="String">type <a href="http://localhost:9090/src/expvar/expvar.go?s=4502:4552#L207">String</a>
+				<a class="permalink" href="index.html#String">&#xb6;</a>
+			</h2>
 			<pre>type String struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -603,7 +653,9 @@ String is a string variable, and satisfies the Var interface.
 
 			
 				
-				<h3 id="NewString">func <a href="http://localhost:9090/src/expvar/expvar.go?s=5777:5812#L278">NewString</a></h3>
+				<h3 id="NewString">func <a href="http://localhost:9090/src/expvar/expvar.go?s=6018:6053#L284">NewString</a>
+					<a class="permalink" href="index.html#NewString">&#xb6;</a>
+				</h3>
 				<pre>func NewString(name <a href="../builtin/index.html#string">string</a>) *<a href="index.html#String">String</a></pre>
 				
 				
@@ -612,7 +664,9 @@ String is a string variable, and satisfies the Var interface.
 
 			
 				
-				<h3 id="String.Set">func (*String) <a href="http://localhost:9090/src/expvar/expvar.go?s=4489:4523#L215">Set</a></h3>
+				<h3 id="String.Set">func (*String) <a href="http://localhost:9090/src/expvar/expvar.go?s=4675:4709#L220">Set</a>
+					<a class="permalink" href="index.html#String.Set">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#String">String</a>) Set(value <a href="../builtin/index.html#string">string</a>)</pre>
 				
 				
@@ -620,7 +674,9 @@ String is a string variable, and satisfies the Var interface.
 				
 			
 				
-				<h3 id="String.String">func (*String) <a href="http://localhost:9090/src/expvar/expvar.go?s=4388:4420#L209">String</a></h3>
+				<h3 id="String.String">func (*String) <a href="http://localhost:9090/src/expvar/expvar.go?s=4554:4586#L212">String</a>
+					<a class="permalink" href="index.html#String.String">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#String">String</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -630,8 +686,13 @@ String is a string variable, and satisfies the Var interface.
 		
 			
 			
-			<h2 id="Var">type <a href="http://localhost:9090/src/expvar/expvar.go?s=977:1016#L30">Var</a></h2>
+			<h2 id="Var">type <a href="http://localhost:9090/src/expvar/expvar.go?s=976:1182#L30">Var</a>
+				<a class="permalink" href="index.html#Var">&#xb6;</a>
+			</h2>
 			<pre>type Var interface {
+    <span class="comment">// String returns a valid JSON value for the variable.</span>
+    <span class="comment">// Types with String methods that do not return valid JSON</span>
+    <span class="comment">// (such as time.Time) must not be used as a Var.</span>
     String() <a href="../builtin/index.html#string">string</a>
 }</pre>
 			<p>
@@ -649,10 +710,13 @@ Var is an abstract type for all exported variables.
 
 			
 				
-				<h3 id="Get">func <a href="http://localhost:9090/src/expvar/expvar.go?s=5379:5404#L252">Get</a></h3>
+				<h3 id="Get">func <a href="http://localhost:9090/src/expvar/expvar.go?s=5620:5645#L258">Get</a>
+					<a class="permalink" href="index.html#Get">&#xb6;</a>
+				</h3>
 				<pre>func Get(name <a href="../builtin/index.html#string">string</a>) <a href="index.html#Var">Var</a></pre>
 				<p>
-Get retrieves a named exported variable.
+Get retrieves a named exported variable. It returns nil if the name has
+not been registered.
 </p>
 
 				
@@ -672,7 +736,7 @@ Get retrieves a named exported variable.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -690,6 +754,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

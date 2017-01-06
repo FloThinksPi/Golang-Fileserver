@@ -196,16 +196,21 @@
 		
 			
 			
-			<h2 id="Client">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/client.go?s=160:5036#L1">Client</a></h2>
+			<h2 id="Client">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/client.go?s=169:5321#L1">Client</a>
+				<a class="permalink" href="index.html#Client">&#xb6;</a>
+			</h2>
 			<pre>type Client interface {
     <span class="comment">// Returns the pid of the process we are debugging.</span>
     ProcessPid() <a href="../../../../builtin/index.html#int">int</a>
+
+    <span class="comment">// LastModified returns the time that the process&#39; executable was modified.</span>
+    LastModified() <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Time">Time</a>
 
     <span class="comment">// Detach detaches the debugger, optionally killing the process.</span>
     Detach(killProcess <a href="../../../../builtin/index.html#bool">bool</a>) <a href="../../../../builtin/index.html#error">error</a>
 
     <span class="comment">// Restarts program.</span>
-    Restart() <a href="../../../../builtin/index.html#error">error</a>
+    Restart() ([]<a href="api/index.html">api</a>.<a href="api/index.html#DiscardedBreakpoint">DiscardedBreakpoint</a>, <a href="../../../../builtin/index.html#error">error</a>)
 
     <span class="comment">// GetState returns the current debugger state.</span>
     GetState() (*<a href="api/index.html">api</a>.<a href="api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../builtin/index.html#error">error</a>)
@@ -216,6 +221,9 @@
     Next() (*<a href="api/index.html">api</a>.<a href="api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../builtin/index.html#error">error</a>)
     <span class="comment">// Step continues to the next source line, entering function calls.</span>
     Step() (*<a href="api/index.html">api</a>.<a href="api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    <span class="comment">// StepOut continues to the return address of the current function</span>
+    StepOut() (*<a href="api/index.html">api</a>.<a href="api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../builtin/index.html#error">error</a>)
+
     <span class="comment">// SingleStep will step a single cpu instruction.</span>
     StepInstruction() (*<a href="api/index.html">api</a>.<a href="api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../builtin/index.html#error">error</a>)
     <span class="comment">// SwitchThread switches the current thread context.</span>
@@ -267,7 +275,7 @@
     <span class="comment">// ListFunctionArgs lists all arguments to the current function.</span>
     ListFunctionArgs(scope <a href="api/index.html">api</a>.<a href="api/index.html#EvalScope">EvalScope</a>, cfg <a href="api/index.html">api</a>.<a href="api/index.html#LoadConfig">LoadConfig</a>) ([]<a href="api/index.html">api</a>.<a href="api/index.html#Variable">Variable</a>, <a href="../../../../builtin/index.html#error">error</a>)
     <span class="comment">// ListRegisters lists registers and their values.</span>
-    ListRegisters() (<a href="../../../../builtin/index.html#string">string</a>, <a href="../../../../builtin/index.html#error">error</a>)
+    ListRegisters(threadID <a href="../../../../builtin/index.html#int">int</a>, includeFp <a href="../../../../builtin/index.html#bool">bool</a>) (<a href="api/index.html">api</a>.<a href="api/index.html#Registers">Registers</a>, <a href="../../../../builtin/index.html#error">error</a>)
 
     <span class="comment">// ListGoroutines lists all goroutines.</span>
     ListGoroutines() ([]*<a href="api/index.html">api</a>.<a href="api/index.html#Goroutine">Goroutine</a>, <a href="../../../../builtin/index.html#error">error</a>)
@@ -316,12 +324,18 @@ synchronous.
 		
 			
 			
-			<h2 id="Config">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/config.go?s=333:860#L1">Config</a></h2>
+			<h2 id="Config">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/config.go?s=333:994#L1">Config</a>
+				<a class="permalink" href="index.html#Config">&#xb6;</a>
+			</h2>
 			<pre>type Config struct {
     <span class="comment">// Listener is used to serve requests.</span>
     Listener <a href="../../../../net/index.html">net</a>.<a href="../../../../net/index.html#Listener">Listener</a>
     <span class="comment">// ProcessArgs are the arguments to launch a new process.</span>
     ProcessArgs []<a href="../../../../builtin/index.html#string">string</a>
+    <span class="comment">// WorkingDir is working directory of the new process. This field is used</span>
+    <span class="comment">// only when launching a new process.</span>
+    WorkingDir <a href="../../../../builtin/index.html#string">string</a>
+
     <span class="comment">// AttachPid is the PID of an existing process to which the debugger should</span>
     <span class="comment">// attach.</span>
     AttachPid <a href="../../../../builtin/index.html#int">int</a>
@@ -356,7 +370,9 @@ to attach to an existing process with AttachPid.
 		
 			
 			
-			<h2 id="RPCCallback">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccallback.go?s=94:160#L1">RPCCallback</a></h2>
+			<h2 id="RPCCallback">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccallback.go?s=94:160#L1">RPCCallback</a>
+				<a class="permalink" href="index.html#RPCCallback">&#xb6;</a>
+			</h2>
 			<pre>type RPCCallback interface {
     Return(out interface{}, err <a href="../../../../builtin/index.html#error">error</a>)
 }</pre>
@@ -379,7 +395,9 @@ RPCCallback is used by RPC methods to return their result asynchronously.
 		
 			
 			
-			<h2 id="Server">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/server.go?s=85:141#L1">Server</a></h2>
+			<h2 id="Server">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/server.go?s=85:141#L1">Server</a>
+				<a class="permalink" href="index.html#Server">&#xb6;</a>
+			</h2>
 			<pre>type Server interface {
     Run() <a href="../../../../builtin/index.html#error">error</a>
     Stop(<a href="../../../../builtin/index.html#bool">bool</a>) <a href="../../../../builtin/index.html#error">error</a>
@@ -517,7 +535,7 @@ to connect to.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -535,6 +553,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../../../lib/godoc/godocs.js"></script>
 
 </body>

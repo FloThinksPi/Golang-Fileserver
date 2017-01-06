@@ -127,6 +127,9 @@ used by golang.org and godoc.org.
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#Command">func Command(name string, arg ...string) *Cmd</a></dd>
 				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandContext">func CommandContext(ctx context.Context, name string, arg ...string) *Cmd</a></dd>
+				
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#Cmd.CombinedOutput">func (c *Cmd) CombinedOutput() ([]byte, error)</a></dd>
@@ -247,7 +250,9 @@ ErrNotFound is the error resulting if a path search failed to find an executable
 		
 			
 			
-			<h2 id="LookPath">func <a href="http://localhost:9090/src/os/exec/lp_unix.go?s=915:957#L23">LookPath</a></h2>
+			<h2 id="LookPath">func <a href="http://localhost:9090/src/os/exec/lp_unix.go?s=931:973#L24">LookPath</a>
+				<a class="permalink" href="index.html#LookPath">&#xb6;</a>
+			</h2>
 			<pre>func LookPath(file <a href="../../builtin/index.html#string">string</a>) (<a href="../../builtin/index.html#string">string</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 LookPath searches for an executable binary named file
@@ -263,7 +268,9 @@ The result may be an absolute path or a path relative to the current directory.
 		
 			
 			
-			<h2 id="Cmd">type <a href="http://localhost:9090/src/os/exec/exec.go?s=1021:3661#L32">Cmd</a></h2>
+			<h2 id="Cmd">type <a href="http://localhost:9090/src/os/exec/exec.go?s=1032:3774#L33">Cmd</a>
+				<a class="permalink" href="index.html#Cmd">&#xb6;</a>
+			</h2>
 			<pre>type Cmd struct {
     <span class="comment">// Path is the path of the command to run.</span>
     <span class="comment">//</span>
@@ -347,7 +354,9 @@ methods.
 
 			
 				
-				<h3 id="Command">func <a href="http://localhost:9090/src/os/exec/exec.go?s=4176:4221#L116">Command</a></h3>
+				<h3 id="Command">func <a href="http://localhost:9090/src/os/exec/exec.go?s=4289:4334#L119">Command</a>
+					<a class="permalink" href="index.html#Command">&#xb6;</a>
+				</h3>
 				<pre>func Command(name <a href="../../builtin/index.html#string">string</a>, arg ...<a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Cmd">Cmd</a></pre>
 				<p>
 Command returns the Cmd struct to execute the named program with
@@ -370,10 +379,29 @@ command name itself. For example, Command(&#34;echo&#34;, &#34;hello&#34;)
 				
 				
 			
+				
+				<h3 id="CommandContext">func <a href="http://localhost:9090/src/os/exec/exec.go?s=4779:4852#L139">CommandContext</a>
+					<a class="permalink" href="index.html#CommandContext">&#xb6;</a>
+				</h3>
+				<pre>func CommandContext(ctx <a href="../../context/index.html">context</a>.<a href="../../context/index.html#Context">Context</a>, name <a href="../../builtin/index.html#string">string</a>, arg ...<a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Cmd">Cmd</a></pre>
+				<p>
+CommandContext is like Command but includes a context.
+</p>
+<p>
+The provided context is used to kill the process (by calling
+os.Process.Kill) if the context becomes done before the command
+completes on its own.
+</p>
+
+				
+				
+			
 
 			
 				
-				<h3 id="Cmd.CombinedOutput">func (*Cmd) <a href="http://localhost:9090/src/os/exec/exec.go?s=11924:11970#L433">CombinedOutput</a></h3>
+				<h3 id="Cmd.CombinedOutput">func (*Cmd) <a href="http://localhost:9090/src/os/exec/exec.go?s=12817:12863#L474">CombinedOutput</a>
+					<a class="permalink" href="index.html#Cmd.CombinedOutput">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Cmd">Cmd</a>) CombinedOutput() ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 CombinedOutput runs the command and returns its combined standard
@@ -385,7 +413,9 @@ output and standard error.
 				
 			
 				
-				<h3 id="Cmd.Output">func (*Cmd) <a href="http://localhost:9090/src/os/exec/exec.go?s=11387:11425#L410">Output</a></h3>
+				<h3 id="Cmd.Output">func (*Cmd) <a href="http://localhost:9090/src/os/exec/exec.go?s=12280:12318#L451">Output</a>
+					<a class="permalink" href="index.html#Cmd.Output">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Cmd">Cmd</a>) Output() ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Output runs the command and returns its standard output.
@@ -398,7 +428,9 @@ If c.Stderr was nil, Output populates ExitError.Stderr.
 				
 			
 				
-				<h3 id="Cmd.Run">func (*Cmd) <a href="http://localhost:9090/src/os/exec/exec.go?s=7135:7160#L248">Run</a></h3>
+				<h3 id="Cmd.Run">func (*Cmd) <a href="http://localhost:9090/src/os/exec/exec.go?s=7644:7669#L265">Run</a>
+					<a class="permalink" href="index.html#Cmd.Run">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Cmd">Cmd</a>) Run() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Run starts the specified command and waits for it to complete.
@@ -419,7 +451,9 @@ returned for I/O problems.
 				
 			
 				
-				<h3 id="Cmd.Start">func (*Cmd) <a href="http://localhost:9090/src/os/exec/exec.go?s=8166:8193#L285">Start</a></h3>
+				<h3 id="Cmd.Start">func (*Cmd) <a href="http://localhost:9090/src/os/exec/exec.go?s=8675:8702#L302">Start</a>
+					<a class="permalink" href="index.html#Cmd.Start">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Cmd">Cmd</a>) Start() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Start starts the specified command but does not wait for it to complete.
@@ -434,7 +468,9 @@ once the command exits.
 				
 			
 				
-				<h3 id="Cmd.StderrPipe">func (*Cmd) <a href="http://localhost:9090/src/os/exec/exec.go?s=14580:14629#L520">StderrPipe</a></h3>
+				<h3 id="Cmd.StderrPipe">func (*Cmd) <a href="http://localhost:9090/src/os/exec/exec.go?s=15473:15522#L561">StderrPipe</a>
+					<a class="permalink" href="index.html#Cmd.StderrPipe">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Cmd">Cmd</a>) StderrPipe() (<a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReadCloser">ReadCloser</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 StderrPipe returns a pipe that will be connected to the command&#39;s
@@ -453,7 +489,9 @@ See the StdoutPipe example for idiomatic usage.
 				
 			
 				
-				<h3 id="Cmd.StdinPipe">func (*Cmd) <a href="http://localhost:9090/src/os/exec/exec.go?s=12597:12646#L453">StdinPipe</a></h3>
+				<h3 id="Cmd.StdinPipe">func (*Cmd) <a href="http://localhost:9090/src/os/exec/exec.go?s=13490:13539#L494">StdinPipe</a>
+					<a class="permalink" href="index.html#Cmd.StdinPipe">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Cmd">Cmd</a>) StdinPipe() (<a href="../../io/index.html">io</a>.<a href="../../io/index.html#WriteCloser">WriteCloser</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 StdinPipe returns a pipe that will be connected to the command&#39;s
@@ -469,7 +507,9 @@ is closed, the caller must close the pipe.
 				
 			
 				
-				<h3 id="Cmd.StdoutPipe">func (*Cmd) <a href="http://localhost:9090/src/os/exec/exec.go?s=13694:13743#L495">StdoutPipe</a></h3>
+				<h3 id="Cmd.StdoutPipe">func (*Cmd) <a href="http://localhost:9090/src/os/exec/exec.go?s=14587:14636#L536">StdoutPipe</a>
+					<a class="permalink" href="index.html#Cmd.StdoutPipe">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Cmd">Cmd</a>) StdoutPipe() (<a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReadCloser">ReadCloser</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 StdoutPipe returns a pipe that will be connected to the command&#39;s
@@ -488,7 +528,9 @@ See the example for idiomatic usage.
 				
 			
 				
-				<h3 id="Cmd.Wait">func (*Cmd) <a href="http://localhost:9090/src/os/exec/exec.go?s=10671:10697#L378">Wait</a></h3>
+				<h3 id="Cmd.Wait">func (*Cmd) <a href="http://localhost:9090/src/os/exec/exec.go?s=11516:11542#L415">Wait</a>
+					<a class="permalink" href="index.html#Cmd.Wait">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Cmd">Cmd</a>) Wait() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Wait waits for the command to exit.
@@ -520,7 +562,9 @@ Wait releases any resources associated with the Cmd.
 		
 			
 			
-			<h2 id="Error">type <a href="http://localhost:9090/src/os/exec/exec.go?s=723:769#L19">Error</a></h2>
+			<h2 id="Error">type <a href="http://localhost:9090/src/os/exec/exec.go?s=734:780#L20">Error</a>
+				<a class="permalink" href="index.html#Error">&#xb6;</a>
+			</h2>
 			<pre>type Error struct {
     Name <a href="../../builtin/index.html#string">string</a>
     Err  <a href="../../builtin/index.html#error">error</a>
@@ -543,7 +587,9 @@ and the reason it failed.
 
 			
 				
-				<h3 id="Error.Error">func (*Error) <a href="http://localhost:9090/src/os/exec/exec.go?s=771:801#L24">Error</a></h3>
+				<h3 id="Error.Error">func (*Error) <a href="http://localhost:9090/src/os/exec/exec.go?s=782:812#L25">Error</a>
+					<a class="permalink" href="index.html#Error.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#Error">Error</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -553,7 +599,9 @@ and the reason it failed.
 		
 			
 			
-			<h2 id="ExitError">type <a href="http://localhost:9090/src/os/exec/exec.go?s=9496:10012#L342">ExitError</a></h2>
+			<h2 id="ExitError">type <a href="http://localhost:9090/src/os/exec/exec.go?s=10341:10857#L379">ExitError</a>
+				<a class="permalink" href="index.html#ExitError">&#xb6;</a>
+			</h2>
 			<pre>type ExitError struct {
     *<a href="../index.html">os</a>.<a href="../index.html#ProcessState">ProcessState</a>
 
@@ -586,7 +634,9 @@ An ExitError reports an unsuccessful exit by a command.
 
 			
 				
-				<h3 id="ExitError.Error">func (*ExitError) <a href="http://localhost:9090/src/os/exec/exec.go?s=10014:10048#L358">Error</a></h3>
+				<h3 id="ExitError.Error">func (*ExitError) <a href="http://localhost:9090/src/os/exec/exec.go?s=10859:10893#L395">Error</a>
+					<a class="permalink" href="index.html#ExitError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#ExitError">ExitError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -601,8 +651,10 @@ An ExitError reports an unsuccessful exit by a command.
 			<h2 id="pkg-note-BUG">Bugs</h2>
 			<ul style="list-style: none; padding: 0;">
 			
-			<li><a href="http://localhost:9090/src/os/exec/exec.go?s=2867:2979#L80">&#x261e;</a> On OS X 10.6, child processes may sometimes inherit unwanted fds.
-https://golang.org/issue/2603
+			<li><a href="http://localhost:9090/src/os/exec/exec.go?s=2878:2990#L81" style="float: left;">&#x261e;</a> <p>
+On OS X 10.6, child processes may sometimes inherit unwanted fds.
+<a href="https://golang.org/issue/2603">https://golang.org/issue/2603</a>
+</p>
 </li>
 			
 			</ul>
@@ -616,7 +668,7 @@ https://golang.org/issue/2603
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -634,6 +686,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

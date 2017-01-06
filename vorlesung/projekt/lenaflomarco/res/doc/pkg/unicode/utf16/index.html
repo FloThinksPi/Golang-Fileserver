@@ -185,7 +185,9 @@ Package utf16 implements encoding and decoding of UTF-16 sequences.
 		
 			
 			
-			<h2 id="Decode">func <a href="http://localhost:9090/src/unicode/utf16/utf16.go?s=2324:2354#L76">Decode</a></h2>
+			<h2 id="Decode">func <a href="http://localhost:9090/src/unicode/utf16/utf16.go?s=2378:2408#L78">Decode</a>
+				<a class="permalink" href="index.html#Decode">&#xb6;</a>
+			</h2>
 			<pre>func Decode(s []<a href="../../builtin/index.html#uint16">uint16</a>) []<a href="../../builtin/index.html#rune">rune</a></pre>
 			<p>
 Decode returns the Unicode code point sequence represented
@@ -198,7 +200,9 @@ by the UTF-16 encoding s.
 		
 			
 			
-			<h2 id="DecodeRune">func <a href="http://localhost:9090/src/unicode/utf16/utf16.go?s=1165:1198#L27">DecodeRune</a></h2>
+			<h2 id="DecodeRune">func <a href="http://localhost:9090/src/unicode/utf16/utf16.go?s=1164:1197#L27">DecodeRune</a>
+				<a class="permalink" href="index.html#DecodeRune">&#xb6;</a>
+			</h2>
 			<pre>func DecodeRune(r1, r2 <a href="../../builtin/index.html#rune">rune</a>) <a href="../../builtin/index.html#rune">rune</a></pre>
 			<p>
 DecodeRune returns the UTF-16 decoding of a surrogate pair.
@@ -212,7 +216,9 @@ the Unicode replacement code point U+FFFD.
 		
 			
 			
-			<h2 id="Encode">func <a href="http://localhost:9090/src/unicode/utf16/utf16.go?s=1808:1838#L46">Encode</a></h2>
+			<h2 id="Encode">func <a href="http://localhost:9090/src/unicode/utf16/utf16.go?s=1790:1820#L46">Encode</a>
+				<a class="permalink" href="index.html#Encode">&#xb6;</a>
+			</h2>
 			<pre>func Encode(s []<a href="../../builtin/index.html#rune">rune</a>) []<a href="../../builtin/index.html#uint16">uint16</a></pre>
 			<p>
 Encode returns the UTF-16 encoding of the Unicode code point sequence s.
@@ -224,7 +230,9 @@ Encode returns the UTF-16 encoding of the Unicode code point sequence s.
 		
 			
 			
-			<h2 id="EncodeRune">func <a href="http://localhost:9090/src/unicode/utf16/utf16.go?s=1530:1567#L37">EncodeRune</a></h2>
+			<h2 id="EncodeRune">func <a href="http://localhost:9090/src/unicode/utf16/utf16.go?s=1530:1567#L37">EncodeRune</a>
+				<a class="permalink" href="index.html#EncodeRune">&#xb6;</a>
+			</h2>
 			<pre>func EncodeRune(r <a href="../../builtin/index.html#rune">rune</a>) (r1, r2 <a href="../../builtin/index.html#rune">rune</a>)</pre>
 			<p>
 EncodeRune returns the UTF-16 surrogate pair r1, r2 for the given rune.
@@ -238,7 +246,9 @@ EncodeRune returns U+FFFD, U+FFFD.
 		
 			
 			
-			<h2 id="IsSurrogate">func <a href="http://localhost:9090/src/unicode/utf16/utf16.go?s=917:946#L20">IsSurrogate</a></h2>
+			<h2 id="IsSurrogate">func <a href="http://localhost:9090/src/unicode/utf16/utf16.go?s=916:945#L20">IsSurrogate</a>
+				<a class="permalink" href="index.html#IsSurrogate">&#xb6;</a>
+			</h2>
 			<pre>func IsSurrogate(r <a href="../../builtin/index.html#rune">rune</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 IsSurrogate reports whether the specified Unicode code point
@@ -261,7 +271,7 @@ can appear in a surrogate pair.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -279,6 +289,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

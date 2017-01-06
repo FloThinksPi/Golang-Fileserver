@@ -496,10 +496,12 @@ format of the output and how to control it, see the documentation for PrintDefau
 		
 			
 			
-			<h2 id="Arg">func <a href="http://localhost:9090/src/flag/flag.go?s=15279:15301#L520">Arg</a></h2>
+			<h2 id="Arg">func <a href="http://localhost:9090/src/flag/flag.go?s=15720:15742#L535">Arg</a>
+				<a class="permalink" href="index.html#Arg">&#xb6;</a>
+			</h2>
 			<pre>func Arg(i <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
-Arg returns the i&#39;th command-line argument.  Arg(0) is the first remaining argument
+Arg returns the i&#39;th command-line argument. Arg(0) is the first remaining argument
 after flags have been processed. Arg returns an empty string if the
 requested element does not exist.
 </p>
@@ -510,7 +512,9 @@ requested element does not exist.
 		
 			
 			
-			<h2 id="Args">func <a href="http://localhost:9090/src/flag/flag.go?s=15739:15759#L534">Args</a></h2>
+			<h2 id="Args">func <a href="http://localhost:9090/src/flag/flag.go?s=16180:16200#L549">Args</a>
+				<a class="permalink" href="index.html#Args">&#xb6;</a>
+			</h2>
 			<pre>func Args() []<a href="../builtin/index.html#string">string</a></pre>
 			<p>
 Args returns the non-flag command-line arguments.
@@ -522,7 +526,9 @@ Args returns the non-flag command-line arguments.
 		
 			
 			
-			<h2 id="Bool">func <a href="http://localhost:9090/src/flag/flag.go?s=16847:16901#L558">Bool</a></h2>
+			<h2 id="Bool">func <a href="http://localhost:9090/src/flag/flag.go?s=17288:17342#L573">Bool</a>
+				<a class="permalink" href="index.html#Bool">&#xb6;</a>
+			</h2>
 			<pre>func Bool(name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#bool">bool</a>, usage <a href="../builtin/index.html#string">string</a>) *<a href="../builtin/index.html#bool">bool</a></pre>
 			<p>
 Bool defines a bool flag with specified name, default value, and usage string.
@@ -535,7 +541,9 @@ The return value is the address of a bool variable that stores the value of the 
 		
 			
 			
-			<h2 id="BoolVar">func <a href="http://localhost:9090/src/flag/flag.go?s=16252:16312#L544">BoolVar</a></h2>
+			<h2 id="BoolVar">func <a href="http://localhost:9090/src/flag/flag.go?s=16693:16753#L559">BoolVar</a>
+				<a class="permalink" href="index.html#BoolVar">&#xb6;</a>
+			</h2>
 			<pre>func BoolVar(p *<a href="../builtin/index.html#bool">bool</a>, name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#bool">bool</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 			<p>
 BoolVar defines a bool flag with specified name, default value, and usage string.
@@ -548,7 +556,9 @@ The argument p points to a bool variable in which to store the value of the flag
 		
 			
 			
-			<h2 id="Duration">func <a href="http://localhost:9090/src/flag/flag.go?s=25633:25709#L744">Duration</a></h2>
+			<h2 id="Duration">func <a href="http://localhost:9090/src/flag/flag.go?s=26074:26150#L759">Duration</a>
+				<a class="permalink" href="index.html#Duration">&#xb6;</a>
+			</h2>
 			<pre>func Duration(name <a href="../builtin/index.html#string">string</a>, value <a href="../time/index.html">time</a>.<a href="../time/index.html#Duration">Duration</a>, usage <a href="../builtin/index.html#string">string</a>) *<a href="../time/index.html">time</a>.<a href="../time/index.html#Duration">Duration</a></pre>
 			<p>
 Duration defines a time.Duration flag with specified name, default value, and usage string.
@@ -562,7 +572,9 @@ The flag accepts a value acceptable to time.ParseDuration.
 		
 			
 			
-			<h2 id="DurationVar">func <a href="http://localhost:9090/src/flag/flag.go?s=24809:24891#L728">DurationVar</a></h2>
+			<h2 id="DurationVar">func <a href="http://localhost:9090/src/flag/flag.go?s=25250:25332#L743">DurationVar</a>
+				<a class="permalink" href="index.html#DurationVar">&#xb6;</a>
+			</h2>
 			<pre>func DurationVar(p *<a href="../time/index.html">time</a>.<a href="../time/index.html#Duration">Duration</a>, name <a href="../builtin/index.html#string">string</a>, value <a href="../time/index.html">time</a>.<a href="../time/index.html#Duration">Duration</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 			<p>
 DurationVar defines a time.Duration flag with specified name, default value, and usage string.
@@ -576,7 +588,9 @@ The flag accepts a value acceptable to time.ParseDuration.
 		
 			
 			
-			<h2 id="Float64">func <a href="http://localhost:9090/src/flag/flag.go?s=24035:24098#L714">Float64</a></h2>
+			<h2 id="Float64">func <a href="http://localhost:9090/src/flag/flag.go?s=24476:24539#L729">Float64</a>
+				<a class="permalink" href="index.html#Float64">&#xb6;</a>
+			</h2>
 			<pre>func Float64(name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#float64">float64</a>, usage <a href="../builtin/index.html#string">string</a>) *<a href="../builtin/index.html#float64">float64</a></pre>
 			<p>
 Float64 defines a float64 flag with specified name, default value, and usage string.
@@ -589,7 +603,9 @@ The return value is the address of a float64 variable that stores the value of t
 		
 			
 			
-			<h2 id="Float64Var">func <a href="http://localhost:9090/src/flag/flag.go?s=23395:23464#L700">Float64Var</a></h2>
+			<h2 id="Float64Var">func <a href="http://localhost:9090/src/flag/flag.go?s=23836:23905#L715">Float64Var</a>
+				<a class="permalink" href="index.html#Float64Var">&#xb6;</a>
+			</h2>
 			<pre>func Float64Var(p *<a href="../builtin/index.html#float64">float64</a>, name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#float64">float64</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 			<p>
 Float64Var defines a float64 flag with specified name, default value, and usage string.
@@ -602,7 +618,9 @@ The argument p points to a float64 variable in which to store the value of the f
 		
 			
 			
-			<h2 id="Int">func <a href="http://localhost:9090/src/flag/flag.go?s=17993:18044#L584">Int</a></h2>
+			<h2 id="Int">func <a href="http://localhost:9090/src/flag/flag.go?s=18434:18485#L599">Int</a>
+				<a class="permalink" href="index.html#Int">&#xb6;</a>
+			</h2>
 			<pre>func Int(name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#int">int</a>, usage <a href="../builtin/index.html#string">string</a>) *<a href="../builtin/index.html#int">int</a></pre>
 			<p>
 Int defines an int flag with specified name, default value, and usage string.
@@ -615,7 +633,9 @@ The return value is the address of an int variable that stores the value of the 
 		
 			
 			
-			<h2 id="Int64">func <a href="http://localhost:9090/src/flag/flag.go?s=19185:19242#L610">Int64</a></h2>
+			<h2 id="Int64">func <a href="http://localhost:9090/src/flag/flag.go?s=19626:19683#L625">Int64</a>
+				<a class="permalink" href="index.html#Int64">&#xb6;</a>
+			</h2>
 			<pre>func Int64(name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#int64">int64</a>, usage <a href="../builtin/index.html#string">string</a>) *<a href="../builtin/index.html#int64">int64</a></pre>
 			<p>
 Int64 defines an int64 flag with specified name, default value, and usage string.
@@ -628,7 +648,9 @@ The return value is the address of an int64 variable that stores the value of th
 		
 			
 			
-			<h2 id="Int64Var">func <a href="http://localhost:9090/src/flag/flag.go?s=18571:18634#L596">Int64Var</a></h2>
+			<h2 id="Int64Var">func <a href="http://localhost:9090/src/flag/flag.go?s=19012:19075#L611">Int64Var</a>
+				<a class="permalink" href="index.html#Int64Var">&#xb6;</a>
+			</h2>
 			<pre>func Int64Var(p *<a href="../builtin/index.html#int64">int64</a>, name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#int64">int64</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 			<p>
 Int64Var defines an int64 flag with specified name, default value, and usage string.
@@ -641,7 +663,9 @@ The argument p points to an int64 variable in which to store the value of the fl
 		
 			
 			
-			<h2 id="IntVar">func <a href="http://localhost:9090/src/flag/flag.go?s=17409:17466#L570">IntVar</a></h2>
+			<h2 id="IntVar">func <a href="http://localhost:9090/src/flag/flag.go?s=17850:17907#L585">IntVar</a>
+				<a class="permalink" href="index.html#IntVar">&#xb6;</a>
+			</h2>
 			<pre>func IntVar(p *<a href="../builtin/index.html#int">int</a>, name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#int">int</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 			<p>
 IntVar defines an int flag with specified name, default value, and usage string.
@@ -654,7 +678,9 @@ The argument p points to an int variable in which to store the value of the flag
 		
 			
 			
-			<h2 id="NArg">func <a href="http://localhost:9090/src/flag/flag.go?s=15543:15558#L528">NArg</a></h2>
+			<h2 id="NArg">func <a href="http://localhost:9090/src/flag/flag.go?s=15984:15999#L543">NArg</a>
+				<a class="permalink" href="index.html#NArg">&#xb6;</a>
+			</h2>
 			<pre>func NArg() <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 NArg is the number of arguments remaining after flags have been processed.
@@ -666,7 +692,9 @@ NArg is the number of arguments remaining after flags have been processed.
 		
 			
 			
-			<h2 id="NFlag">func <a href="http://localhost:9090/src/flag/flag.go?s=14743:14759#L505">NFlag</a></h2>
+			<h2 id="NFlag">func <a href="http://localhost:9090/src/flag/flag.go?s=15186:15202#L520">NFlag</a>
+				<a class="permalink" href="index.html#NFlag">&#xb6;</a>
+			</h2>
 			<pre>func NFlag() <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 NFlag returns the number of command-line flags that have been set.
@@ -678,7 +706,9 @@ NFlag returns the number of command-line flags that have been set.
 		
 			
 			
-			<h2 id="Parse">func <a href="http://localhost:9090/src/flag/flag.go?s=30682:30694#L916">Parse</a></h2>
+			<h2 id="Parse">func <a href="http://localhost:9090/src/flag/flag.go?s=31122:31134#L931">Parse</a>
+				<a class="permalink" href="index.html#Parse">&#xb6;</a>
+			</h2>
 			<pre>func Parse()</pre>
 			<p>
 Parse parses the command-line flags from os.Args[1:].  Must be called
@@ -691,7 +721,9 @@ after all flags are defined and before flags are accessed by the program.
 		
 			
 			
-			<h2 id="Parsed">func <a href="http://localhost:9090/src/flag/flag.go?s=30854:30872#L922">Parsed</a></h2>
+			<h2 id="Parsed">func <a href="http://localhost:9090/src/flag/flag.go?s=31294:31312#L937">Parsed</a>
+				<a class="permalink" href="index.html#Parsed">&#xb6;</a>
+			</h2>
 			<pre>func Parsed() <a href="../builtin/index.html#bool">bool</a></pre>
 			<p>
 Parsed reports whether the command-line flags have been parsed.
@@ -703,7 +735,9 @@ Parsed reports whether the command-line flags have been parsed.
 		
 			
 			
-			<h2 id="PrintDefaults">func <a href="http://localhost:9090/src/flag/flag.go?s=13608:13628#L473">PrintDefaults</a></h2>
+			<h2 id="PrintDefaults">func <a href="http://localhost:9090/src/flag/flag.go?s=14051:14071#L488">PrintDefaults</a>
+				<a class="permalink" href="index.html#PrintDefaults">&#xb6;</a>
+			</h2>
 			<pre>func PrintDefaults()</pre>
 			<p>
 PrintDefaults prints, to standard error unless configured otherwise,
@@ -740,7 +774,9 @@ the output will be
 		
 			
 			
-			<h2 id="Set">func <a href="http://localhost:9090/src/flag/flag.go?s=10100:10134#L365">Set</a></h2>
+			<h2 id="Set">func <a href="http://localhost:9090/src/flag/flag.go?s=10108:10142#L366">Set</a>
+				<a class="permalink" href="index.html#Set">&#xb6;</a>
+			</h2>
 			<pre>func Set(name, value <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 Set sets the value of the named command-line flag.
@@ -752,7 +788,9 @@ Set sets the value of the named command-line flag.
 		
 			
 			
-			<h2 id="String">func <a href="http://localhost:9090/src/flag/flag.go?s=22789:22849#L688">String</a></h2>
+			<h2 id="String">func <a href="http://localhost:9090/src/flag/flag.go?s=23230:23290#L703">String</a>
+				<a class="permalink" href="index.html#String">&#xb6;</a>
+			</h2>
 			<pre>func String(name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#string">string</a>, usage <a href="../builtin/index.html#string">string</a>) *<a href="../builtin/index.html#string">string</a></pre>
 			<p>
 String defines a string flag with specified name, default value, and usage string.
@@ -765,7 +803,9 @@ The return value is the address of a string variable that stores the value of th
 		
 			
 			
-			<h2 id="StringVar">func <a href="http://localhost:9090/src/flag/flag.go?s=22164:22230#L674">StringVar</a></h2>
+			<h2 id="StringVar">func <a href="http://localhost:9090/src/flag/flag.go?s=22605:22671#L689">StringVar</a>
+				<a class="permalink" href="index.html#StringVar">&#xb6;</a>
+			</h2>
 			<pre>func StringVar(p *<a href="../builtin/index.html#string">string</a>, name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#string">string</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 			<p>
 StringVar defines a string flag with specified name, default value, and usage string.
@@ -778,7 +818,9 @@ The argument p points to a string variable in which to store the value of the fl
 		
 			
 			
-			<h2 id="Uint">func <a href="http://localhost:9090/src/flag/flag.go?s=20355:20409#L636">Uint</a></h2>
+			<h2 id="Uint">func <a href="http://localhost:9090/src/flag/flag.go?s=20796:20850#L651">Uint</a>
+				<a class="permalink" href="index.html#Uint">&#xb6;</a>
+			</h2>
 			<pre>func Uint(name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#uint">uint</a>, usage <a href="../builtin/index.html#string">string</a>) *<a href="../builtin/index.html#uint">uint</a></pre>
 			<p>
 Uint defines a uint flag with specified name, default value, and usage string.
@@ -791,7 +833,9 @@ The return value is the address of a uint  variable that stores the value of the
 		
 			
 			
-			<h2 id="Uint64">func <a href="http://localhost:9090/src/flag/flag.go?s=21568:21628#L662">Uint64</a></h2>
+			<h2 id="Uint64">func <a href="http://localhost:9090/src/flag/flag.go?s=22009:22069#L677">Uint64</a>
+				<a class="permalink" href="index.html#Uint64">&#xb6;</a>
+			</h2>
 			<pre>func Uint64(name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#uint64">uint64</a>, usage <a href="../builtin/index.html#string">string</a>) *<a href="../builtin/index.html#uint64">uint64</a></pre>
 			<p>
 Uint64 defines a uint64 flag with specified name, default value, and usage string.
@@ -804,7 +848,9 @@ The return value is the address of a uint64 variable that stores the value of th
 		
 			
 			
-			<h2 id="Uint64Var">func <a href="http://localhost:9090/src/flag/flag.go?s=20943:21009#L648">Uint64Var</a></h2>
+			<h2 id="Uint64Var">func <a href="http://localhost:9090/src/flag/flag.go?s=21384:21450#L663">Uint64Var</a>
+				<a class="permalink" href="index.html#Uint64Var">&#xb6;</a>
+			</h2>
 			<pre>func Uint64Var(p *<a href="../builtin/index.html#uint64">uint64</a>, name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#uint64">uint64</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 			<p>
 Uint64Var defines a uint64 flag with specified name, default value, and usage string.
@@ -817,7 +863,9 @@ The argument p points to a uint64 variable in which to store the value of the fl
 		
 			
 			
-			<h2 id="UintVar">func <a href="http://localhost:9090/src/flag/flag.go?s=19758:19818#L622">UintVar</a></h2>
+			<h2 id="UintVar">func <a href="http://localhost:9090/src/flag/flag.go?s=20199:20259#L637">UintVar</a>
+				<a class="permalink" href="index.html#UintVar">&#xb6;</a>
+			</h2>
 			<pre>func UintVar(p *<a href="../builtin/index.html#uint">uint</a>, name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#uint">uint</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 			<p>
 UintVar defines a uint flag with specified name, default value, and usage string.
@@ -830,7 +878,9 @@ The argument p points to a uint  variable in which to store the value of the fla
 		
 			
 			
-			<h2 id="UnquoteUsage">func <a href="http://localhost:9090/src/flag/flag.go?s=10786:10843#L388">UnquoteUsage</a></h2>
+			<h2 id="UnquoteUsage">func <a href="http://localhost:9090/src/flag/flag.go?s=11223:11280#L403">UnquoteUsage</a>
+				<a class="permalink" href="index.html#UnquoteUsage">&#xb6;</a>
+			</h2>
 			<pre>func UnquoteUsage(flag *<a href="index.html#Flag">Flag</a>) (name <a href="../builtin/index.html#string">string</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 			<p>
 UnquoteUsage extracts a back-quoted name from the usage
@@ -846,7 +896,9 @@ type of the flag&#39;s value, or the empty string if the flag is boolean.
 		
 			
 			
-			<h2 id="Var">func <a href="http://localhost:9090/src/flag/flag.go?s=27248:27296#L780">Var</a></h2>
+			<h2 id="Var">func <a href="http://localhost:9090/src/flag/flag.go?s=27689:27737#L795">Var</a>
+				<a class="permalink" href="index.html#Var">&#xb6;</a>
+			</h2>
 			<pre>func Var(value <a href="index.html#Value">Value</a>, name <a href="../builtin/index.html#string">string</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 			<p>
 Var defines a flag with the specified name and usage string. The type and
@@ -863,11 +915,13 @@ decompose the comma-separated string into the slice.
 		
 			
 			
-			<h2 id="Visit">func <a href="http://localhost:9090/src/flag/flag.go?s=9322:9348#L332">Visit</a></h2>
+			<h2 id="Visit">func <a href="http://localhost:9090/src/flag/flag.go?s=9330:9356#L333">Visit</a>
+				<a class="permalink" href="index.html#Visit">&#xb6;</a>
+			</h2>
 			<pre>func Visit(fn func(*<a href="index.html#Flag">Flag</a>))</pre>
 			<p>
 Visit visits the command-line flags in lexicographical order, calling fn
-for each.  It visits only those flags that have been set.
+for each. It visits only those flags that have been set.
 </p>
 
 			
@@ -876,11 +930,13 @@ for each.  It visits only those flags that have been set.
 		
 			
 			
-			<h2 id="VisitAll">func <a href="http://localhost:9090/src/flag/flag.go?s=8898:8927#L318">VisitAll</a></h2>
+			<h2 id="VisitAll">func <a href="http://localhost:9090/src/flag/flag.go?s=8907:8936#L319">VisitAll</a>
+				<a class="permalink" href="index.html#VisitAll">&#xb6;</a>
+			</h2>
 			<pre>func VisitAll(fn func(*<a href="index.html#Flag">Flag</a>))</pre>
 			<p>
 VisitAll visits the command-line flags in lexicographical order, calling
-fn for each.  It visits all flags, even those not set.
+fn for each. It visits all flags, even those not set.
 </p>
 
 			
@@ -890,7 +946,9 @@ fn for each.  It visits all flags, even those not set.
 		
 			
 			
-			<h2 id="ErrorHandling">type <a href="http://localhost:9090/src/flag/flag.go?s=6739:6761#L245">ErrorHandling</a></h2>
+			<h2 id="ErrorHandling">type <a href="http://localhost:9090/src/flag/flag.go?s=6750:6772#L246">ErrorHandling</a>
+				<a class="permalink" href="index.html#ErrorHandling">&#xb6;</a>
+			</h2>
 			<pre>type ErrorHandling <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 ErrorHandling defines how FlagSet.Parse behaves if the parse fails.
@@ -921,7 +979,9 @@ These constants cause FlagSet.Parse to behave as described if the parse fails.
 		
 			
 			
-			<h2 id="Flag">type <a href="http://localhost:9090/src/flag/flag.go?s=7702:7906#L272">Flag</a></h2>
+			<h2 id="Flag">type <a href="http://localhost:9090/src/flag/flag.go?s=7712:7916#L273">Flag</a>
+				<a class="permalink" href="index.html#Flag">&#xb6;</a>
+			</h2>
 			<pre>type Flag struct {
     Name     <a href="../builtin/index.html#string">string</a> <span class="comment">// name as it appears on command line</span>
     Usage    <a href="../builtin/index.html#string">string</a> <span class="comment">// help message</span>
@@ -943,7 +1003,9 @@ A Flag represents the state of a flag.
 
 			
 				
-				<h3 id="Lookup">func <a href="http://localhost:9090/src/flag/flag.go?s=9637:9667#L343">Lookup</a></h3>
+				<h3 id="Lookup">func <a href="http://localhost:9090/src/flag/flag.go?s=9645:9675#L344">Lookup</a>
+					<a class="permalink" href="index.html#Lookup">&#xb6;</a>
+				</h3>
 				<pre>func Lookup(name <a href="../builtin/index.html#string">string</a>) *<a href="index.html#Flag">Flag</a></pre>
 				<p>
 Lookup returns the Flag structure of the named command-line flag,
@@ -958,7 +1020,9 @@ returning nil if none exists.
 		
 			
 			
-			<h2 id="FlagSet">type <a href="http://localhost:9090/src/flag/flag.go?s=7193:7658#L256">FlagSet</a></h2>
+			<h2 id="FlagSet">type <a href="http://localhost:9090/src/flag/flag.go?s=7203:7668#L257">FlagSet</a>
+				<a class="permalink" href="index.html#FlagSet">&#xb6;</a>
+			</h2>
 			<pre>type FlagSet struct {
     <span class="comment">// Usage is the function called when an error occurs while parsing flags.</span>
     <span class="comment">// The field is a function (not a method) that may be changed to point to</span>
@@ -967,7 +1031,7 @@ returning nil if none exists.
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
-A FlagSet represents a set of defined flags.  The zero value of a FlagSet
+A FlagSet represents a set of defined flags. The zero value of a FlagSet
 has no name and has ContinueOnError error handling.
 </p>
 
@@ -982,7 +1046,9 @@ has no name and has ContinueOnError error handling.
 
 			
 				
-				<h3 id="NewFlagSet">func <a href="http://localhost:9090/src/flag/flag.go?s=31247:31313#L933">NewFlagSet</a></h3>
+				<h3 id="NewFlagSet">func <a href="http://localhost:9090/src/flag/flag.go?s=31687:31753#L948">NewFlagSet</a>
+					<a class="permalink" href="index.html#NewFlagSet">&#xb6;</a>
+				</h3>
 				<pre>func NewFlagSet(name <a href="../builtin/index.html#string">string</a>, errorHandling <a href="index.html#ErrorHandling">ErrorHandling</a>) *<a href="index.html#FlagSet">FlagSet</a></pre>
 				<p>
 NewFlagSet returns a new, empty flag set with the specified name and
@@ -995,10 +1061,12 @@ error handling property.
 
 			
 				
-				<h3 id="FlagSet.Arg">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=14978:15013#L510">Arg</a></h3>
+				<h3 id="FlagSet.Arg">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=15420:15455#L525">Arg</a>
+					<a class="permalink" href="index.html#FlagSet.Arg">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Arg(i <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#string">string</a></pre>
 				<p>
-Arg returns the i&#39;th argument.  Arg(0) is the first remaining argument
+Arg returns the i&#39;th argument. Arg(0) is the first remaining argument
 after flags have been processed. Arg returns an empty string if the
 requested element does not exist.
 </p>
@@ -1008,7 +1076,9 @@ requested element does not exist.
 				
 			
 				
-				<h3 id="FlagSet.Args">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=15633:15666#L531">Args</a></h3>
+				<h3 id="FlagSet.Args">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=16074:16107#L546">Args</a>
+					<a class="permalink" href="index.html#FlagSet.Args">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Args() []<a href="../builtin/index.html#string">string</a></pre>
 				<p>
 Args returns the non-flag arguments.
@@ -1019,7 +1089,9 @@ Args returns the non-flag arguments.
 				
 			
 				
-				<h3 id="FlagSet.Bool">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=16543:16610#L550">Bool</a></h3>
+				<h3 id="FlagSet.Bool">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=16984:17051#L565">Bool</a>
+					<a class="permalink" href="index.html#FlagSet.Bool">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Bool(name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#bool">bool</a>, usage <a href="../builtin/index.html#string">string</a>) *<a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Bool defines a bool flag with specified name, default value, and usage string.
@@ -1031,7 +1103,9 @@ The return value is the address of a bool variable that stores the value of the 
 				
 			
 				
-				<h3 id="FlagSet.BoolVar">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=15959:16032#L538">BoolVar</a></h3>
+				<h3 id="FlagSet.BoolVar">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=16400:16473#L553">BoolVar</a>
+					<a class="permalink" href="index.html#FlagSet.BoolVar">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) BoolVar(p *<a href="../builtin/index.html#bool">bool</a>, name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#bool">bool</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 				<p>
 BoolVar defines a bool flag with specified name, default value, and usage string.
@@ -1043,7 +1117,9 @@ The argument p points to a bool variable in which to store the value of the flag
 				
 			
 				
-				<h3 id="FlagSet.Duration">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=25210:25299#L735">Duration</a></h3>
+				<h3 id="FlagSet.Duration">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=25651:25740#L750">Duration</a>
+					<a class="permalink" href="index.html#FlagSet.Duration">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Duration(name <a href="../builtin/index.html#string">string</a>, value <a href="../time/index.html">time</a>.<a href="../time/index.html#Duration">Duration</a>, usage <a href="../builtin/index.html#string">string</a>) *<a href="../time/index.html">time</a>.<a href="../time/index.html#Duration">Duration</a></pre>
 				<p>
 Duration defines a time.Duration flag with specified name, default value, and usage string.
@@ -1056,7 +1132,9 @@ The flag accepts a value acceptable to time.ParseDuration.
 				
 			
 				
-				<h3 id="FlagSet.DurationVar">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=24406:24501#L721">DurationVar</a></h3>
+				<h3 id="FlagSet.DurationVar">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=24847:24942#L736">DurationVar</a>
+					<a class="permalink" href="index.html#FlagSet.DurationVar">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) DurationVar(p *<a href="../time/index.html">time</a>.<a href="../time/index.html#Duration">Duration</a>, name <a href="../builtin/index.html#string">string</a>, value <a href="../time/index.html">time</a>.<a href="../time/index.html#Duration">Duration</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 				<p>
 DurationVar defines a time.Duration flag with specified name, default value, and usage string.
@@ -1069,7 +1147,9 @@ The flag accepts a value acceptable to time.ParseDuration.
 				
 			
 				
-				<h3 id="FlagSet.Float64">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=23707:23783#L706">Float64</a></h3>
+				<h3 id="FlagSet.Float64">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=24148:24224#L721">Float64</a>
+					<a class="permalink" href="index.html#FlagSet.Float64">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Float64(name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#float64">float64</a>, usage <a href="../builtin/index.html#string">string</a>) *<a href="../builtin/index.html#float64">float64</a></pre>
 				<p>
 Float64 defines a float64 flag with specified name, default value, and usage string.
@@ -1081,7 +1161,9 @@ The return value is the address of a float64 variable that stores the value of t
 				
 			
 				
-				<h3 id="FlagSet.Float64Var">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=23081:23163#L694">Float64Var</a></h3>
+				<h3 id="FlagSet.Float64Var">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=23522:23604#L709">Float64Var</a>
+					<a class="permalink" href="index.html#FlagSet.Float64Var">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Float64Var(p *<a href="../builtin/index.html#float64">float64</a>, name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#float64">float64</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 				<p>
 Float64Var defines a float64 flag with specified name, default value, and usage string.
@@ -1093,7 +1175,9 @@ The argument p points to a float64 variable in which to store the value of the f
 				
 			
 				
-				<h3 id="FlagSet.Init">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=31570:31634#L944">Init</a></h3>
+				<h3 id="FlagSet.Init">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=32010:32074#L959">Init</a>
+					<a class="permalink" href="index.html#FlagSet.Init">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Init(name <a href="../builtin/index.html#string">string</a>, errorHandling <a href="index.html#ErrorHandling">ErrorHandling</a>)</pre>
 				<p>
 Init sets the name and error handling property for a flag set.
@@ -1106,7 +1190,9 @@ ContinueOnError error handling policy.
 				
 			
 				
-				<h3 id="FlagSet.Int">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=17695:17759#L576">Int</a></h3>
+				<h3 id="FlagSet.Int">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=18136:18200#L591">Int</a>
+					<a class="permalink" href="index.html#FlagSet.Int">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Int(name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#int">int</a>, usage <a href="../builtin/index.html#string">string</a>) *<a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Int defines an int flag with specified name, default value, and usage string.
@@ -1118,7 +1204,9 @@ The return value is the address of an int variable that stores the value of the 
 				
 			
 				
-				<h3 id="FlagSet.Int64">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=18871:18941#L602">Int64</a></h3>
+				<h3 id="FlagSet.Int64">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=19312:19382#L617">Int64</a>
+					<a class="permalink" href="index.html#FlagSet.Int64">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Int64(name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#int64">int64</a>, usage <a href="../builtin/index.html#string">string</a>) *<a href="../builtin/index.html#int64">int64</a></pre>
 				<p>
 Int64 defines an int64 flag with specified name, default value, and usage string.
@@ -1130,7 +1218,9 @@ The return value is the address of an int64 variable that stores the value of th
 				
 			
 				
-				<h3 id="FlagSet.Int64Var">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=18269:18345#L590">Int64Var</a></h3>
+				<h3 id="FlagSet.Int64Var">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=18710:18786#L605">Int64Var</a>
+					<a class="permalink" href="index.html#FlagSet.Int64Var">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Int64Var(p *<a href="../builtin/index.html#int64">int64</a>, name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#int64">int64</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 				<p>
 Int64Var defines an int64 flag with specified name, default value, and usage string.
@@ -1142,7 +1232,9 @@ The argument p points to an int64 variable in which to store the value of the fl
 				
 			
 				
-				<h3 id="FlagSet.IntVar">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=17121:17191#L564">IntVar</a></h3>
+				<h3 id="FlagSet.IntVar">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=17562:17632#L579">IntVar</a>
+					<a class="permalink" href="index.html#FlagSet.IntVar">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) IntVar(p *<a href="../builtin/index.html#int">int</a>, name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#int">int</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 				<p>
 IntVar defines an int flag with specified name, default value, and usage string.
@@ -1154,7 +1246,9 @@ The argument p points to an int variable in which to store the value of the flag
 				
 			
 				
-				<h3 id="FlagSet.Lookup">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=9463:9506#L337">Lookup</a></h3>
+				<h3 id="FlagSet.Lookup">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=9471:9514#L338">Lookup</a>
+					<a class="permalink" href="index.html#FlagSet.Lookup">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Lookup(name <a href="../builtin/index.html#string">string</a>) *<a href="index.html#Flag">Flag</a></pre>
 				<p>
 Lookup returns the Flag structure of the named flag, returning nil if none exists.
@@ -1165,7 +1259,9 @@ Lookup returns the Flag structure of the named flag, returning nil if none exist
 				
 			
 				
-				<h3 id="FlagSet.NArg">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=15412:15440#L525">NArg</a></h3>
+				<h3 id="FlagSet.NArg">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=15853:15881#L540">NArg</a>
+					<a class="permalink" href="index.html#FlagSet.NArg">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) NArg() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 NArg is the number of arguments remaining after flags have been processed.
@@ -1176,7 +1272,9 @@ NArg is the number of arguments remaining after flags have been processed.
 				
 			
 				
-				<h3 id="FlagSet.NFlag">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=14617:14646#L502">NFlag</a></h3>
+				<h3 id="FlagSet.NFlag">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=15060:15089#L517">NFlag</a>
+					<a class="permalink" href="index.html#FlagSet.NFlag">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) NFlag() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 NFlag returns the number of flags that have been set.
@@ -1187,11 +1285,13 @@ NFlag returns the number of flags that have been set.
 				
 			
 				
-				<h3 id="FlagSet.Parse">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=30088:30137#L886">Parse</a></h3>
+				<h3 id="FlagSet.Parse">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=30528:30577#L901">Parse</a>
+					<a class="permalink" href="index.html#FlagSet.Parse">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Parse(arguments []<a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Parse parses flag definitions from the argument list, which should not
-include the command name.  Must be called after all flags in the FlagSet
+include the command name. Must be called after all flags in the FlagSet
 are defined and before flags are accessed by the program.
 The return value will be ErrHelp if -help or -h were set but not defined.
 </p>
@@ -1201,7 +1301,9 @@ The return value will be ErrHelp if -help or -h were set but not defined.
 				
 			
 				
-				<h3 id="FlagSet.Parsed">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=30478:30509#L910">Parsed</a></h3>
+				<h3 id="FlagSet.Parsed">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=30918:30949#L925">Parsed</a>
+					<a class="permalink" href="index.html#FlagSet.Parsed">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Parsed() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Parsed reports whether f.Parse has been called.
@@ -1212,7 +1314,9 @@ Parsed reports whether f.Parse has been called.
 				
 			
 				
-				<h3 id="FlagSet.PrintDefaults">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=11761:11794#L425">PrintDefaults</a></h3>
+				<h3 id="FlagSet.PrintDefaults">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=12198:12231#L440">PrintDefaults</a>
+					<a class="permalink" href="index.html#FlagSet.PrintDefaults">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) PrintDefaults()</pre>
 				<p>
 PrintDefaults prints to standard error the default values of all
@@ -1225,7 +1329,9 @@ the global function PrintDefaults for more information.
 				
 			
 				
-				<h3 id="FlagSet.Set">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=9747:9794#L348">Set</a></h3>
+				<h3 id="FlagSet.Set">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=9755:9802#L349">Set</a>
+					<a class="permalink" href="index.html#FlagSet.Set">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Set(name, value <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Set sets the value of the named flag.
@@ -1236,7 +1342,9 @@ Set sets the value of the named flag.
 				
 			
 				
-				<h3 id="FlagSet.SetOutput">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=8468:8513#L304">SetOutput</a></h3>
+				<h3 id="FlagSet.SetOutput">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=8478:8523#L305">SetOutput</a>
+					<a class="permalink" href="index.html#FlagSet.SetOutput">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) SetOutput(output <a href="../io/index.html">io</a>.<a href="../io/index.html#Writer">Writer</a>)</pre>
 				<p>
 SetOutput sets the destination for usage and error messages.
@@ -1248,7 +1356,9 @@ If output is nil, os.Stderr is used.
 				
 			
 				
-				<h3 id="FlagSet.String">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=22469:22542#L680">String</a></h3>
+				<h3 id="FlagSet.String">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=22910:22983#L695">String</a>
+					<a class="permalink" href="index.html#FlagSet.String">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) String(name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#string">string</a>, usage <a href="../builtin/index.html#string">string</a>) *<a href="../builtin/index.html#string">string</a></pre>
 				<p>
 String defines a string flag with specified name, default value, and usage string.
@@ -1260,7 +1370,9 @@ The return value is the address of a string variable that stores the value of th
 				
 			
 				
-				<h3 id="FlagSet.StringVar">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=21857:21936#L668">StringVar</a></h3>
+				<h3 id="FlagSet.StringVar">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=22298:22377#L683">StringVar</a>
+					<a class="permalink" href="index.html#FlagSet.StringVar">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) StringVar(p *<a href="../builtin/index.html#string">string</a>, name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#string">string</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 				<p>
 StringVar defines a string flag with specified name, default value, and usage string.
@@ -1272,7 +1384,9 @@ The argument p points to a string variable in which to store the value of the fl
 				
 			
 				
-				<h3 id="FlagSet.Uint">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=20050:20117#L628">Uint</a></h3>
+				<h3 id="FlagSet.Uint">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=20491:20558#L643">Uint</a>
+					<a class="permalink" href="index.html#FlagSet.Uint">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Uint(name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#uint">uint</a>, usage <a href="../builtin/index.html#string">string</a>) *<a href="../builtin/index.html#uint">uint</a></pre>
 				<p>
 Uint defines a uint flag with specified name, default value, and usage string.
@@ -1284,7 +1398,9 @@ The return value is the address of a uint  variable that stores the value of the
 				
 			
 				
-				<h3 id="FlagSet.Uint64">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=21248:21321#L654">Uint64</a></h3>
+				<h3 id="FlagSet.Uint64">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=21689:21762#L669">Uint64</a>
+					<a class="permalink" href="index.html#FlagSet.Uint64">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Uint64(name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#uint64">uint64</a>, usage <a href="../builtin/index.html#string">string</a>) *<a href="../builtin/index.html#uint64">uint64</a></pre>
 				<p>
 Uint64 defines a uint64 flag with specified name, default value, and usage string.
@@ -1296,7 +1412,9 @@ The return value is the address of a uint64 variable that stores the value of th
 				
 			
 				
-				<h3 id="FlagSet.Uint64Var">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=20636:20715#L642">Uint64Var</a></h3>
+				<h3 id="FlagSet.Uint64Var">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=21077:21156#L657">Uint64Var</a>
+					<a class="permalink" href="index.html#FlagSet.Uint64Var">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Uint64Var(p *<a href="../builtin/index.html#uint64">uint64</a>, name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#uint64">uint64</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 				<p>
 Uint64Var defines a uint64 flag with specified name, default value, and usage string.
@@ -1308,7 +1426,9 @@ The argument p points to a uint64 variable in which to store the value of the fl
 				
 			
 				
-				<h3 id="FlagSet.UintVar">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=19464:19537#L616">UintVar</a></h3>
+				<h3 id="FlagSet.UintVar">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=19905:19978#L631">UintVar</a>
+					<a class="permalink" href="index.html#FlagSet.UintVar">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) UintVar(p *<a href="../builtin/index.html#uint">uint</a>, name <a href="../builtin/index.html#string">string</a>, value <a href="../builtin/index.html#uint">uint</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 				<p>
 UintVar defines a uint flag with specified name, default value, and usage string.
@@ -1320,7 +1440,9 @@ The argument p points to a uint variable in which to store the value of the flag
 				
 			
 				
-				<h3 id="FlagSet.Var">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=26215:26276#L754">Var</a></h3>
+				<h3 id="FlagSet.Var">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=26656:26717#L769">Var</a>
+					<a class="permalink" href="index.html#FlagSet.Var">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Var(value <a href="index.html#Value">Value</a>, name <a href="../builtin/index.html#string">string</a>, usage <a href="../builtin/index.html#string">string</a>)</pre>
 				<p>
 Var defines a flag with the specified name and usage string. The type and
@@ -1336,7 +1458,9 @@ decompose the comma-separated string into the slice.
 				
 			
 				
-				<h3 id="FlagSet.Visit">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=9082:9121#L324">Visit</a></h3>
+				<h3 id="FlagSet.Visit">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=9091:9130#L325">Visit</a>
+					<a class="permalink" href="index.html#FlagSet.Visit">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) Visit(fn func(*<a href="index.html#Flag">Flag</a>))</pre>
 				<p>
 Visit visits the flags in lexicographical order, calling fn for each.
@@ -1348,7 +1472,9 @@ It visits only those flags that have been set.
 				
 			
 				
-				<h3 id="FlagSet.VisitAll">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=8658:8700#L310">VisitAll</a></h3>
+				<h3 id="FlagSet.VisitAll">func (*FlagSet) <a href="http://localhost:9090/src/flag/flag.go?s=8668:8710#L311">VisitAll</a>
+					<a class="permalink" href="index.html#FlagSet.VisitAll">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FlagSet">FlagSet</a>) VisitAll(fn func(*<a href="index.html#Flag">Flag</a>))</pre>
 				<p>
 VisitAll visits the flags in lexicographical order, calling fn for each.
@@ -1362,7 +1488,9 @@ It visits all flags, even those not set.
 		
 			
 			
-			<h2 id="Getter">type <a href="http://localhost:9090/src/flag/flag.go?s=6615:6666#L239">Getter</a></h2>
+			<h2 id="Getter">type <a href="http://localhost:9090/src/flag/flag.go?s=6626:6677#L240">Getter</a>
+				<a class="permalink" href="index.html#Getter">&#xb6;</a>
+			</h2>
 			<pre>type Getter interface {
     <a href="index.html#Value">Value</a>
     Get() interface{}
@@ -1389,7 +1517,9 @@ by this package satisfy the Getter interface.
 		
 			
 			
-			<h2 id="Value">type <a href="http://localhost:9090/src/flag/flag.go?s=6274:6334#L230">Value</a></h2>
+			<h2 id="Value">type <a href="http://localhost:9090/src/flag/flag.go?s=6285:6345#L231">Value</a>
+				<a class="permalink" href="index.html#Value">&#xb6;</a>
+			</h2>
 			<pre>type Value interface {
     String() <a href="../builtin/index.html#string">string</a>
     Set(<a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a>
@@ -1431,7 +1561,7 @@ Set is called once, in command line order, for each flag present.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1449,6 +1579,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

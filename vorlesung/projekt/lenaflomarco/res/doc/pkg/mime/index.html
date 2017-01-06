@@ -227,7 +227,9 @@ Package mime implements parts of the MIME spec.
 		
 			
 			
-			<h2 id="AddExtensionType">func <a href="http://localhost:9090/src/mime/type.go?s=4150:4194#L147">AddExtensionType</a></h2>
+			<h2 id="AddExtensionType">func <a href="http://localhost:9090/src/mime/type.go?s=4150:4194#L147">AddExtensionType</a>
+				<a class="permalink" href="index.html#AddExtensionType">&#xb6;</a>
+			</h2>
 			<pre>func AddExtensionType(ext, typ <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 AddExtensionType sets the MIME type associated with
@@ -241,7 +243,9 @@ a leading dot, as in &#34;.html&#34;.
 		
 			
 			
-			<h2 id="ExtensionsByType">func <a href="http://localhost:9090/src/mime/type.go?s=3701:3752#L128">ExtensionsByType</a></h2>
+			<h2 id="ExtensionsByType">func <a href="http://localhost:9090/src/mime/type.go?s=3701:3752#L128">ExtensionsByType</a>
+				<a class="permalink" href="index.html#ExtensionsByType">&#xb6;</a>
+			</h2>
 			<pre>func ExtensionsByType(typ <a href="../builtin/index.html#string">string</a>) ([]<a href="../builtin/index.html#string">string</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 ExtensionsByType returns the extensions known to be associated with the MIME
@@ -256,7 +260,9 @@ nil slice.
 		
 			
 			
-			<h2 id="FormatMediaType">func <a href="http://localhost:9090/src/mime/mediatype.go?s=534:596#L11">FormatMediaType</a></h2>
+			<h2 id="FormatMediaType">func <a href="http://localhost:9090/src/mime/mediatype.go?s=534:596#L11">FormatMediaType</a>
+				<a class="permalink" href="index.html#FormatMediaType">&#xb6;</a>
+			</h2>
 			<pre>func FormatMediaType(t <a href="../builtin/index.html#string">string</a>, param map[<a href="../builtin/index.html#string">string</a>]<a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 FormatMediaType serializes mediatype t and the parameters
@@ -272,7 +278,9 @@ FormatMediaType returns the empty string.
 		
 			
 			
-			<h2 id="ParseMediaType">func <a href="http://localhost:9090/src/mime/mediatype.go?s=2584:2669#L94">ParseMediaType</a></h2>
+			<h2 id="ParseMediaType">func <a href="http://localhost:9090/src/mime/mediatype.go?s=2584:2669#L94">ParseMediaType</a>
+				<a class="permalink" href="index.html#ParseMediaType">&#xb6;</a>
+			</h2>
 			<pre>func ParseMediaType(v <a href="../builtin/index.html#string">string</a>) (mediatype <a href="../builtin/index.html#string">string</a>, params map[<a href="../builtin/index.html#string">string</a>]<a href="../builtin/index.html#string">string</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 ParseMediaType parses a media type value and any optional
@@ -290,7 +298,9 @@ attribute to the attribute value with its case preserved.
 		
 			
 			
-			<h2 id="TypeByExtension">func <a href="http://localhost:9090/src/mime/type.go?s=2667:2706#L91">TypeByExtension</a></h2>
+			<h2 id="TypeByExtension">func <a href="http://localhost:9090/src/mime/type.go?s=2667:2706#L91">TypeByExtension</a>
+				<a class="permalink" href="index.html#TypeByExtension">&#xb6;</a>
+			</h2>
 			<pre>func TypeByExtension(ext <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 TypeByExtension returns the MIME type associated with the file extension ext.
@@ -323,7 +333,9 @@ Text types have the charset parameter set to &#34;utf-8&#34; by default.
 		
 			
 			
-			<h2 id="WordDecoder">type <a href="http://localhost:9090/src/mime/encodedword.go?s=4642:5058#L175">WordDecoder</a></h2>
+			<h2 id="WordDecoder">type <a href="http://localhost:9090/src/mime/encodedword.go?s=4643:5059#L175">WordDecoder</a>
+				<a class="permalink" href="index.html#WordDecoder">&#xb6;</a>
+			</h2>
 			<pre>type WordDecoder struct {
     <span class="comment">// CharsetReader, if non-nil, defines a function to generate</span>
     <span class="comment">// charset-conversion readers, converting from the provided</span>
@@ -350,7 +362,9 @@ A WordDecoder decodes MIME headers containing RFC 2047 encoded-words.
 
 			
 				
-				<h3 id="WordDecoder.Decode">func (*WordDecoder) <a href="http://localhost:9090/src/mime/encodedword.go?s=5104:5161#L186">Decode</a></h3>
+				<h3 id="WordDecoder.Decode">func (*WordDecoder) <a href="http://localhost:9090/src/mime/encodedword.go?s=5105:5162#L186">Decode</a>
+					<a class="permalink" href="index.html#WordDecoder.Decode">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#WordDecoder">WordDecoder</a>) Decode(word <a href="../builtin/index.html#string">string</a>) (<a href="../builtin/index.html#string">string</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Decode decodes an RFC 2047 encoded-word.
@@ -361,7 +375,9 @@ Decode decodes an RFC 2047 encoded-word.
 				
 			
 				
-				<h3 id="WordDecoder.DecodeHeader">func (*WordDecoder) <a href="http://localhost:9090/src/mime/encodedword.go?s=6020:6085#L221">DecodeHeader</a></h3>
+				<h3 id="WordDecoder.DecodeHeader">func (*WordDecoder) <a href="http://localhost:9090/src/mime/encodedword.go?s=6021:6086#L221">DecodeHeader</a>
+					<a class="permalink" href="index.html#WordDecoder.DecodeHeader">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#WordDecoder">WordDecoder</a>) DecodeHeader(header <a href="../builtin/index.html#string">string</a>) (<a href="../builtin/index.html#string">string</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 DecodeHeader decodes all encoded-words of the given string. It returns an
@@ -375,10 +391,12 @@ error if and only if CharsetReader of d returns an error.
 		
 			
 			
-			<h2 id="WordEncoder">type <a href="http://localhost:9090/src/mime/encodedword.go?s=336:357#L10">WordEncoder</a></h2>
+			<h2 id="WordEncoder">type <a href="http://localhost:9090/src/mime/encodedword.go?s=337:358#L10">WordEncoder</a>
+				<a class="permalink" href="index.html#WordEncoder">&#xb6;</a>
+			</h2>
 			<pre>type WordEncoder <a href="../builtin/index.html#byte">byte</a></pre>
 			<p>
-A WordEncoder is a RFC 2047 encoded-word encoder.
+A WordEncoder is an RFC 2047 encoded-word encoder.
 </p>
 
 
@@ -394,7 +412,9 @@ A WordEncoder is a RFC 2047 encoded-word encoder.
 
 			
 				
-				<h3 id="WordEncoder.Encode">func (WordEncoder) <a href="http://localhost:9090/src/mime/encodedword.go?s=846:899#L26">Encode</a></h3>
+				<h3 id="WordEncoder.Encode">func (WordEncoder) <a href="http://localhost:9090/src/mime/encodedword.go?s=847:900#L26">Encode</a>
+					<a class="permalink" href="index.html#WordEncoder.Encode">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#WordEncoder">WordEncoder</a>) Encode(charset, s <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 Encode returns the encoded-word form of s. If s is ASCII without special
@@ -467,7 +487,7 @@ charset name of s. It is case insensitive.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -485,6 +505,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

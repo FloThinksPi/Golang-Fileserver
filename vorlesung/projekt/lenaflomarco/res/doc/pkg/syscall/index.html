@@ -89,10 +89,10 @@
 				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
 				<p>
 Package syscall contains an interface to the low-level operating system
-primitives.  The details vary depending on the underlying system, and
+primitives. The details vary depending on the underlying system, and
 by default, godoc will display the syscall documentation for the current
-system.  If you want godoc to display syscall documentation for another
-system, set $GOOS and $GOARCH to the desired system.  For example, if
+system. If you want godoc to display syscall documentation for another
+system, set $GOOS and $GOARCH to the desired system. For example, if
 you want to view documentation for freebsd/arm on linux/amd64, set $GOOS
 to freebsd and $GOARCH to arm.
 The primary use of syscall is inside other packages that provide a more
@@ -3267,7 +3267,9 @@ creation of IPv6 sockets to return EAFNOSUPPORT.
 		
 			
 			
-			<h2 id="Accept">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=10740:10793#L425">Accept</a></h2>
+			<h2 id="Accept">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=10737:10790#L425">Accept</a>
+				<a class="permalink" href="index.html#Accept">&#xb6;</a>
+			</h2>
 			<pre>func Accept(fd <a href="../builtin/index.html#int">int</a>) (nfd <a href="../builtin/index.html#int">int</a>, sa <a href="index.html#Sockaddr">Sockaddr</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3276,7 +3278,9 @@ creation of IPv6 sockets to return EAFNOSUPPORT.
 		
 			
 			
-			<h2 id="Accept4">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=11007:11072#L440">Accept4</a></h2>
+			<h2 id="Accept4">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=11004:11069#L440">Accept4</a>
+				<a class="permalink" href="index.html#Accept4">&#xb6;</a>
+			</h2>
 			<pre>func Accept4(fd <a href="../builtin/index.html#int">int</a>, flags <a href="../builtin/index.html#int">int</a>) (nfd <a href="../builtin/index.html#int">int</a>, sa <a href="index.html#Sockaddr">Sockaddr</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3285,7 +3289,9 @@ creation of IPv6 sockets to return EAFNOSUPPORT.
 		
 			
 			
-			<h2 id="Access">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=487:536#L10">Access</a></h2>
+			<h2 id="Access">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=487:536#L10">Access</a>
+				<a class="permalink" href="index.html#Access">&#xb6;</a>
+			</h2>
 			<pre>func Access(path <a href="../builtin/index.html#string">string</a>, mode <a href="../builtin/index.html#uint32">uint32</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3294,7 +3300,9 @@ creation of IPv6 sockets to return EAFNOSUPPORT.
 		
 			
 			
-			<h2 id="Acct">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=5926:5960#L226">Acct</a></h2>
+			<h2 id="Acct">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=5926:5960#L226">Acct</a>
+				<a class="permalink" href="index.html#Acct">&#xb6;</a>
+			</h2>
 			<pre>func Acct(path <a href="../builtin/index.html#string">string</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3303,7 +3311,9 @@ creation of IPv6 sockets to return EAFNOSUPPORT.
 		
 			
 			
-			<h2 id="Adjtimex">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=6251:6299#L242">Adjtimex</a></h2>
+			<h2 id="Adjtimex">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=6251:6299#L242">Adjtimex</a>
+				<a class="permalink" href="index.html#Adjtimex">&#xb6;</a>
+			</h2>
 			<pre>func Adjtimex(buf *<a href="index.html#Timex">Timex</a>) (state <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3312,16 +3322,23 @@ creation of IPv6 sockets to return EAFNOSUPPORT.
 		
 			
 			
-			<h2 id="AttachLsf">func <a href="http://localhost:9090/src/syscall/lsf_linux.go?s=1411:1455#L58">AttachLsf</a></h2>
+			<h2 id="AttachLsf">func <a href="http://localhost:9090/src/syscall/lsf_linux.go?s=1655:1699#L63">AttachLsf</a>
+				<a class="permalink" href="index.html#AttachLsf">&#xb6;</a>
+			</h2>
 			<pre>func AttachLsf(fd <a href="../builtin/index.html#int">int</a>, i []<a href="index.html#SockFilter">SockFilter</a>) <a href="../builtin/index.html#error">error</a></pre>
-			
+			<p>
+Deprecated: Use golang.org/x/net/bpf instead.
+</p>
+
 			
 			
 
 		
 			
 			
-			<h2 id="Bind">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=4692:4734#L206">Bind</a></h2>
+			<h2 id="Bind">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=4691:4733#L206">Bind</a>
+				<a class="permalink" href="index.html#Bind">&#xb6;</a>
+			</h2>
 			<pre>func Bind(fd <a href="../builtin/index.html#int">int</a>, sa <a href="index.html#Sockaddr">Sockaddr</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3330,7 +3347,9 @@ creation of IPv6 sockets to return EAFNOSUPPORT.
 		
 			
 			
-			<h2 id="BindToDevice">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=15024:15076#L598">BindToDevice</a></h2>
+			<h2 id="BindToDevice">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=15021:15073#L598">BindToDevice</a>
+				<a class="permalink" href="index.html#BindToDevice">&#xb6;</a>
+			</h2>
 			<pre>func BindToDevice(fd <a href="../builtin/index.html#int">int</a>, device <a href="../builtin/index.html#string">string</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 BindToDevice binds the socket associated with fd to device.
@@ -3342,7 +3361,9 @@ BindToDevice binds the socket associated with fd to device.
 		
 			
 			
-			<h2 id="BytePtrFromString">func <a href="http://localhost:9090/src/syscall/syscall.go?s=2673:2720#L58">BytePtrFromString</a></h2>
+			<h2 id="BytePtrFromString">func <a href="http://localhost:9090/src/syscall/syscall.go?s=2670:2717#L58">BytePtrFromString</a>
+				<a class="permalink" href="index.html#BytePtrFromString">&#xb6;</a>
+			</h2>
 			<pre>func BytePtrFromString(s <a href="../builtin/index.html#string">string</a>) (*<a href="../builtin/index.html#byte">byte</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 BytePtrFromString returns a pointer to a NUL-terminated array of
@@ -3356,7 +3377,9 @@ location, it returns (nil, EINVAL).
 		
 			
 			
-			<h2 id="ByteSliceFromString">func <a href="http://localhost:9090/src/syscall/syscall.go?s=2037:2087#L37">ByteSliceFromString</a></h2>
+			<h2 id="ByteSliceFromString">func <a href="http://localhost:9090/src/syscall/syscall.go?s=2034:2084#L37">ByteSliceFromString</a>
+				<a class="permalink" href="index.html#ByteSliceFromString">&#xb6;</a>
+			</h2>
 			<pre>func ByteSliceFromString(s <a href="../builtin/index.html#string">string</a>) ([]<a href="../builtin/index.html#byte">byte</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 ByteSliceFromString returns a NUL-terminated slice of bytes
@@ -3370,7 +3393,9 @@ location, it returns (nil, EINVAL).
 		
 			
 			
-			<h2 id="Chdir">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=6506:6541#L253">Chdir</a></h2>
+			<h2 id="Chdir">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=6506:6541#L253">Chdir</a>
+				<a class="permalink" href="index.html#Chdir">&#xb6;</a>
+			</h2>
 			<pre>func Chdir(path <a href="../builtin/index.html#string">string</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3379,7 +3404,9 @@ location, it returns (nil, EINVAL).
 		
 			
 			
-			<h2 id="Chmod">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=586:634#L14">Chmod</a></h2>
+			<h2 id="Chmod">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=586:634#L14">Chmod</a>
+				<a class="permalink" href="index.html#Chmod">&#xb6;</a>
+			</h2>
 			<pre>func Chmod(path <a href="../builtin/index.html#string">string</a>, mode <a href="../builtin/index.html#uint32">uint32</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3388,7 +3415,9 @@ location, it returns (nil, EINVAL).
 		
 			
 			
-			<h2 id="Chown">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=683:736#L18">Chown</a></h2>
+			<h2 id="Chown">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=683:736#L18">Chown</a>
+				<a class="permalink" href="index.html#Chown">&#xb6;</a>
+			</h2>
 			<pre>func Chown(path <a href="../builtin/index.html#string">string</a>, uid <a href="../builtin/index.html#int">int</a>, gid <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3397,7 +3426,9 @@ location, it returns (nil, EINVAL).
 		
 			
 			
-			<h2 id="Chroot">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=6833:6869#L269">Chroot</a></h2>
+			<h2 id="Chroot">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=6833:6869#L269">Chroot</a>
+				<a class="permalink" href="index.html#Chroot">&#xb6;</a>
+			</h2>
 			<pre>func Chroot(path <a href="../builtin/index.html#string">string</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3406,7 +3437,9 @@ location, it returns (nil, EINVAL).
 		
 			
 			
-			<h2 id="Clearenv">func <a href="http://localhost:9090/src/syscall/env_unix.go?s=2416:2431#L115">Clearenv</a></h2>
+			<h2 id="Clearenv">func <a href="http://localhost:9090/src/syscall/env_unix.go?s=2415:2430#L115">Clearenv</a>
+				<a class="permalink" href="index.html#Clearenv">&#xb6;</a>
+			</h2>
 			<pre>func Clearenv()</pre>
 			
 			
@@ -3415,7 +3448,9 @@ location, it returns (nil, EINVAL).
 		
 			
 			
-			<h2 id="Close">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=7162:7192#L285">Close</a></h2>
+			<h2 id="Close">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=7162:7192#L285">Close</a>
+				<a class="permalink" href="index.html#Close">&#xb6;</a>
+			</h2>
 			<pre>func Close(fd <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3424,7 +3459,9 @@ location, it returns (nil, EINVAL).
 		
 			
 			
-			<h2 id="CloseOnExec">func <a href="http://localhost:9090/src/syscall/exec_unix.go?s=3566:3590#L86">CloseOnExec</a></h2>
+			<h2 id="CloseOnExec">func <a href="http://localhost:9090/src/syscall/exec_unix.go?s=3544:3568#L86">CloseOnExec</a>
+				<a class="permalink" href="index.html#CloseOnExec">&#xb6;</a>
+			</h2>
 			<pre>func CloseOnExec(fd <a href="../builtin/index.html#int">int</a>)</pre>
 			
 			
@@ -3433,7 +3470,9 @@ location, it returns (nil, EINVAL).
 		
 			
 			
-			<h2 id="CmsgLen">func <a href="http://localhost:9090/src/syscall/sockcmsg_unix.go?s=761:790#L16">CmsgLen</a></h2>
+			<h2 id="CmsgLen">func <a href="http://localhost:9090/src/syscall/sockcmsg_unix.go?s=760:789#L16">CmsgLen</a>
+				<a class="permalink" href="index.html#CmsgLen">&#xb6;</a>
+			</h2>
 			<pre>func CmsgLen(datalen <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 CmsgLen returns the value to store in the Len field of the Cmsghdr
@@ -3446,7 +3485,9 @@ structure, taking into account any necessary alignment.
 		
 			
 			
-			<h2 id="CmsgSpace">func <a href="http://localhost:9090/src/syscall/sockcmsg_unix.go?s=955:986#L22">CmsgSpace</a></h2>
+			<h2 id="CmsgSpace">func <a href="http://localhost:9090/src/syscall/sockcmsg_unix.go?s=954:985#L22">CmsgSpace</a>
+				<a class="permalink" href="index.html#CmsgSpace">&#xb6;</a>
+			</h2>
 			<pre>func CmsgSpace(datalen <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 CmsgSpace returns the number of bytes an ancillary element with
@@ -3459,7 +3500,9 @@ payload of the passed data length occupies.
 		
 			
 			
-			<h2 id="Connect">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=4828:4873#L214">Connect</a></h2>
+			<h2 id="Connect">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=4827:4872#L214">Connect</a>
+				<a class="permalink" href="index.html#Connect">&#xb6;</a>
+			</h2>
 			<pre>func Connect(fd <a href="../builtin/index.html#int">int</a>, sa <a href="index.html#Sockaddr">Sockaddr</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3468,7 +3511,9 @@ payload of the passed data length occupies.
 		
 			
 			
-			<h2 id="Creat">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=789:845#L22">Creat</a></h2>
+			<h2 id="Creat">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=789:845#L22">Creat</a>
+				<a class="permalink" href="index.html#Creat">&#xb6;</a>
+			</h2>
 			<pre>func Creat(path <a href="../builtin/index.html#string">string</a>, mode <a href="../builtin/index.html#uint32">uint32</a>) (fd <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3477,16 +3522,23 @@ payload of the passed data length occupies.
 		
 			
 			
-			<h2 id="DetachLsf">func <a href="http://localhost:9090/src/syscall/lsf_linux.go?s=1642:1670#L65">DetachLsf</a></h2>
+			<h2 id="DetachLsf">func <a href="http://localhost:9090/src/syscall/lsf_linux.go?s=1935:1963#L71">DetachLsf</a>
+				<a class="permalink" href="index.html#DetachLsf">&#xb6;</a>
+			</h2>
 			<pre>func DetachLsf(fd <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#error">error</a></pre>
-			
+			<p>
+Deprecated: Use golang.org/x/net/bpf instead.
+</p>
+
 			
 			
 
 		
 			
 			
-			<h2 id="Dup">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=7361:7400#L295">Dup</a></h2>
+			<h2 id="Dup">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=7361:7400#L295">Dup</a>
+				<a class="permalink" href="index.html#Dup">&#xb6;</a>
+			</h2>
 			<pre>func Dup(oldfd <a href="../builtin/index.html#int">int</a>) (fd <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3495,7 +3547,9 @@ payload of the passed data length occupies.
 		
 			
 			
-			<h2 id="Dup2">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=28205:28248#L1190">Dup2</a></h2>
+			<h2 id="Dup2">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=28205:28248#L1190">Dup2</a>
+				<a class="permalink" href="index.html#Dup2">&#xb6;</a>
+			</h2>
 			<pre>func Dup2(oldfd <a href="../builtin/index.html#int">int</a>, newfd <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3504,7 +3558,9 @@ payload of the passed data length occupies.
 		
 			
 			
-			<h2 id="Dup3">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=7585:7639#L306">Dup3</a></h2>
+			<h2 id="Dup3">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=7585:7639#L306">Dup3</a>
+				<a class="permalink" href="index.html#Dup3">&#xb6;</a>
+			</h2>
 			<pre>func Dup3(oldfd <a href="../builtin/index.html#int">int</a>, newfd <a href="../builtin/index.html#int">int</a>, flags <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3513,7 +3569,9 @@ payload of the passed data length occupies.
 		
 			
 			
-			<h2 id="Environ">func <a href="http://localhost:9090/src/syscall/env_unix.go?s=2624:2647#L128">Environ</a></h2>
+			<h2 id="Environ">func <a href="http://localhost:9090/src/syscall/env_unix.go?s=2623:2646#L128">Environ</a>
+				<a class="permalink" href="index.html#Environ">&#xb6;</a>
+			</h2>
 			<pre>func Environ() []<a href="../builtin/index.html#string">string</a></pre>
 			
 			
@@ -3522,7 +3580,9 @@ payload of the passed data length occupies.
 		
 			
 			
-			<h2 id="EpollCreate">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=7836:7882#L316">EpollCreate</a></h2>
+			<h2 id="EpollCreate">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=7836:7882#L316">EpollCreate</a>
+				<a class="permalink" href="index.html#EpollCreate">&#xb6;</a>
+			</h2>
 			<pre>func EpollCreate(size <a href="../builtin/index.html#int">int</a>) (fd <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3531,7 +3591,9 @@ payload of the passed data length occupies.
 		
 			
 			
-			<h2 id="EpollCreate1">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=8078:8125#L327">EpollCreate1</a></h2>
+			<h2 id="EpollCreate1">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=8078:8125#L327">EpollCreate1</a>
+				<a class="permalink" href="index.html#EpollCreate1">&#xb6;</a>
+			</h2>
 			<pre>func EpollCreate1(flag <a href="../builtin/index.html#int">int</a>) (fd <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3540,7 +3602,9 @@ payload of the passed data length occupies.
 		
 			
 			
-			<h2 id="EpollCtl">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=8322:8392#L338">EpollCtl</a></h2>
+			<h2 id="EpollCtl">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=8322:8392#L338">EpollCtl</a>
+				<a class="permalink" href="index.html#EpollCtl">&#xb6;</a>
+			</h2>
 			<pre>func EpollCtl(epfd <a href="../builtin/index.html#int">int</a>, op <a href="../builtin/index.html#int">int</a>, fd <a href="../builtin/index.html#int">int</a>, event *<a href="index.html#EpollEvent">EpollEvent</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3549,7 +3613,9 @@ payload of the passed data length occupies.
 		
 			
 			
-			<h2 id="EpollWait">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=8629:8703#L348">EpollWait</a></h2>
+			<h2 id="EpollWait">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=8629:8703#L348">EpollWait</a>
+				<a class="permalink" href="index.html#EpollWait">&#xb6;</a>
+			</h2>
 			<pre>func EpollWait(epfd <a href="../builtin/index.html#int">int</a>, events []<a href="index.html#EpollEvent">EpollEvent</a>, msec <a href="../builtin/index.html#int">int</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3558,7 +3624,9 @@ payload of the passed data length occupies.
 		
 			
 			
-			<h2 id="Exec">func <a href="http://localhost:9090/src/syscall/exec_unix.go?s=6837:6902#L235">Exec</a></h2>
+			<h2 id="Exec">func <a href="http://localhost:9090/src/syscall/exec_unix.go?s=6815:6880#L235">Exec</a>
+				<a class="permalink" href="index.html#Exec">&#xb6;</a>
+			</h2>
 			<pre>func Exec(argv0 <a href="../builtin/index.html#string">string</a>, argv []<a href="../builtin/index.html#string">string</a>, envv []<a href="../builtin/index.html#string">string</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Ordinary exec.
@@ -3570,7 +3638,9 @@ Ordinary exec.
 		
 			
 			
-			<h2 id="Exit">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=9070:9089#L365">Exit</a></h2>
+			<h2 id="Exit">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=9070:9089#L365">Exit</a>
+				<a class="permalink" href="index.html#Exit">&#xb6;</a>
+			</h2>
 			<pre>func Exit(code <a href="../builtin/index.html#int">int</a>)</pre>
 			
 			
@@ -3579,7 +3649,9 @@ Ordinary exec.
 		
 			
 			
-			<h2 id="Faccessat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=9215:9289#L372">Faccessat</a></h2>
+			<h2 id="Faccessat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=9215:9289#L372">Faccessat</a>
+				<a class="permalink" href="index.html#Faccessat">&#xb6;</a>
+			</h2>
 			<pre>func Faccessat(dirfd <a href="../builtin/index.html#int">int</a>, path <a href="../builtin/index.html#string">string</a>, mode <a href="../builtin/index.html#uint32">uint32</a>, flags <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3588,7 +3660,9 @@ Ordinary exec.
 		
 			
 			
-			<h2 id="Fallocate">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=9633:9702#L388">Fallocate</a></h2>
+			<h2 id="Fallocate">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=9633:9702#L388">Fallocate</a>
+				<a class="permalink" href="index.html#Fallocate">&#xb6;</a>
+			</h2>
 			<pre>func Fallocate(fd <a href="../builtin/index.html#int">int</a>, mode <a href="../builtin/index.html#uint32">uint32</a>, off <a href="../builtin/index.html#int64">int64</a>, len <a href="../builtin/index.html#int64">int64</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3597,7 +3671,9 @@ Ordinary exec.
 		
 			
 			
-			<h2 id="Fchdir">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=9919:9950#L398">Fchdir</a></h2>
+			<h2 id="Fchdir">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=9919:9950#L398">Fchdir</a>
+				<a class="permalink" href="index.html#Fchdir">&#xb6;</a>
+			</h2>
 			<pre>func Fchdir(fd <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3606,7 +3682,9 @@ Ordinary exec.
 		
 			
 			
-			<h2 id="Fchmod">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=10120:10164#L408">Fchmod</a></h2>
+			<h2 id="Fchmod">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=10120:10164#L408">Fchmod</a>
+				<a class="permalink" href="index.html#Fchmod">&#xb6;</a>
+			</h2>
 			<pre>func Fchmod(fd <a href="../builtin/index.html#int">int</a>, mode <a href="../builtin/index.html#uint32">uint32</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3615,7 +3693,9 @@ Ordinary exec.
 		
 			
 			
-			<h2 id="Fchmodat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=10346:10419#L418">Fchmodat</a></h2>
+			<h2 id="Fchmodat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=10346:10419#L418">Fchmodat</a>
+				<a class="permalink" href="index.html#Fchmodat">&#xb6;</a>
+			</h2>
 			<pre>func Fchmodat(dirfd <a href="../builtin/index.html#int">int</a>, path <a href="../builtin/index.html#string">string</a>, mode <a href="../builtin/index.html#uint32">uint32</a>, flags <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3624,7 +3704,9 @@ Ordinary exec.
 		
 			
 			
-			<h2 id="Fchown">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=28432:28481#L1200">Fchown</a></h2>
+			<h2 id="Fchown">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=28432:28481#L1200">Fchown</a>
+				<a class="permalink" href="index.html#Fchown">&#xb6;</a>
+			</h2>
 			<pre>func Fchown(fd <a href="../builtin/index.html#int">int</a>, uid <a href="../builtin/index.html#int">int</a>, gid <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3633,7 +3715,9 @@ Ordinary exec.
 		
 			
 			
-			<h2 id="Fchownat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=10762:10840#L434">Fchownat</a></h2>
+			<h2 id="Fchownat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=10762:10840#L434">Fchownat</a>
+				<a class="permalink" href="index.html#Fchownat">&#xb6;</a>
+			</h2>
 			<pre>func Fchownat(dirfd <a href="../builtin/index.html#int">int</a>, path <a href="../builtin/index.html#string">string</a>, uid <a href="../builtin/index.html#int">int</a>, gid <a href="../builtin/index.html#int">int</a>, flags <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3642,7 +3726,9 @@ Ordinary exec.
 		
 			
 			
-			<h2 id="FcntlFlock">func <a href="http://localhost:9090/src/syscall/flock.go?s=504:559#L6">FcntlFlock</a></h2>
+			<h2 id="FcntlFlock">func <a href="http://localhost:9090/src/syscall/flock.go?s=504:559#L6">FcntlFlock</a>
+				<a class="permalink" href="index.html#FcntlFlock">&#xb6;</a>
+			</h2>
 			<pre>func FcntlFlock(fd <a href="../builtin/index.html#uintptr">uintptr</a>, cmd <a href="../builtin/index.html#int">int</a>, lk *<a href="index.html#Flock_t">Flock_t</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 FcntlFlock performs a fcntl syscall for the F_GETLK, F_SETLK or F_SETLKW command.
@@ -3654,7 +3740,9 @@ FcntlFlock performs a fcntl syscall for the F_GETLK, F_SETLK or F_SETLKW command
 		
 			
 			
-			<h2 id="Fdatasync">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=11457:11491#L461">Fdatasync</a></h2>
+			<h2 id="Fdatasync">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=11457:11491#L461">Fdatasync</a>
+				<a class="permalink" href="index.html#Fdatasync">&#xb6;</a>
+			</h2>
 			<pre>func Fdatasync(fd <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3663,7 +3751,9 @@ FcntlFlock performs a fcntl syscall for the F_GETLK, F_SETLK or F_SETLKW command
 		
 			
 			
-			<h2 id="Flock">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=11664:11703#L471">Flock</a></h2>
+			<h2 id="Flock">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=11664:11703#L471">Flock</a>
+				<a class="permalink" href="index.html#Flock">&#xb6;</a>
+			</h2>
 			<pre>func Flock(fd <a href="../builtin/index.html#int">int</a>, how <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3672,7 +3762,9 @@ FcntlFlock performs a fcntl syscall for the F_GETLK, F_SETLK or F_SETLKW command
 		
 			
 			
-			<h2 id="ForkExec">func <a href="http://localhost:9090/src/syscall/exec_unix.go?s=6486:6565#L224">ForkExec</a></h2>
+			<h2 id="ForkExec">func <a href="http://localhost:9090/src/syscall/exec_unix.go?s=6464:6543#L224">ForkExec</a>
+				<a class="permalink" href="index.html#ForkExec">&#xb6;</a>
+			</h2>
 			<pre>func ForkExec(argv0 <a href="../builtin/index.html#string">string</a>, argv []<a href="../builtin/index.html#string">string</a>, attr *<a href="index.html#ProcAttr">ProcAttr</a>) (pid <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Combination of fork and exec, careful to be thread safe.
@@ -3684,7 +3776,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Fstat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=28673:28717#L1210">Fstat</a></h2>
+			<h2 id="Fstat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=28673:28717#L1210">Fstat</a>
+				<a class="permalink" href="index.html#Fstat">&#xb6;</a>
+			</h2>
 			<pre>func Fstat(fd <a href="../builtin/index.html#int">int</a>, stat *<a href="index.html#Stat_t">Stat_t</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3693,7 +3787,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Fstatfs">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=28914:28961#L1220">Fstatfs</a></h2>
+			<h2 id="Fstatfs">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=28914:28961#L1220">Fstatfs</a>
+				<a class="permalink" href="index.html#Fstatfs">&#xb6;</a>
+			</h2>
 			<pre>func Fstatfs(fd <a href="../builtin/index.html#int">int</a>, buf *<a href="index.html#Statfs_t">Statfs_t</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3702,7 +3798,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Fsync">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=11883:11913#L481">Fsync</a></h2>
+			<h2 id="Fsync">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=11883:11913#L481">Fsync</a>
+				<a class="permalink" href="index.html#Fsync">&#xb6;</a>
+			</h2>
 			<pre>func Fsync(fd <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3711,7 +3809,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Ftruncate">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=29159:29207#L1230">Ftruncate</a></h2>
+			<h2 id="Ftruncate">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=29159:29207#L1230">Ftruncate</a>
+				<a class="permalink" href="index.html#Ftruncate">&#xb6;</a>
+			</h2>
 			<pre>func Ftruncate(fd <a href="../builtin/index.html#int">int</a>, length <a href="../builtin/index.html#int64">int64</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3720,7 +3820,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Futimes">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=3602:3648#L124">Futimes</a></h2>
+			<h2 id="Futimes">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=3602:3648#L124">Futimes</a>
+				<a class="permalink" href="index.html#Futimes">&#xb6;</a>
+			</h2>
 			<pre>func Futimes(fd <a href="../builtin/index.html#int">int</a>, tv []<a href="index.html#Timeval">Timeval</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3729,7 +3831,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Futimesat">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=3312:3376#L111">Futimesat</a></h2>
+			<h2 id="Futimesat">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=3312:3376#L111">Futimesat</a>
+				<a class="permalink" href="index.html#Futimesat">&#xb6;</a>
+			</h2>
 			<pre>func Futimesat(dirfd <a href="../builtin/index.html#int">int</a>, path <a href="../builtin/index.html#string">string</a>, tv []<a href="index.html#Timeval">Timeval</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3738,7 +3842,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getcwd">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=3791:3833#L144">Getcwd</a></h2>
+			<h2 id="Getcwd">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=3791:3833#L144">Getcwd</a>
+				<a class="permalink" href="index.html#Getcwd">&#xb6;</a>
+			</h2>
 			<pre>func Getcwd(buf []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3747,7 +3853,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getdents">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=12082:12134#L491">Getdents</a></h2>
+			<h2 id="Getdents">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=12082:12134#L491">Getdents</a>
+				<a class="permalink" href="index.html#Getdents">&#xb6;</a>
+			</h2>
 			<pre>func Getdents(fd <a href="../builtin/index.html#int">int</a>, buf []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3756,7 +3864,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getegid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=29394:29419#L1240">Getegid</a></h2>
+			<h2 id="Getegid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=29394:29419#L1240">Getegid</a>
+				<a class="permalink" href="index.html#Getegid">&#xb6;</a>
+			</h2>
 			<pre>func Getegid() (egid <a href="../builtin/index.html#int">int</a>)</pre>
 			
 			
@@ -3765,7 +3875,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getenv">func <a href="http://localhost:9090/src/syscall/env_unix.go?s=1601:1651#L61">Getenv</a></h2>
+			<h2 id="Getenv">func <a href="http://localhost:9090/src/syscall/env_unix.go?s=1600:1650#L61">Getenv</a>
+				<a class="permalink" href="index.html#Getenv">&#xb6;</a>
+			</h2>
 			<pre>func Getenv(key <a href="../builtin/index.html#string">string</a>) (value <a href="../builtin/index.html#string">string</a>, found <a href="../builtin/index.html#bool">bool</a>)</pre>
 			
 			
@@ -3774,7 +3886,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Geteuid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=29561:29586#L1248">Geteuid</a></h2>
+			<h2 id="Geteuid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=29561:29586#L1248">Geteuid</a>
+				<a class="permalink" href="index.html#Geteuid">&#xb6;</a>
+			</h2>
 			<pre>func Geteuid() (euid <a href="../builtin/index.html#int">int</a>)</pre>
 			
 			
@@ -3783,7 +3897,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getgid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=29728:29751#L1256">Getgid</a></h2>
+			<h2 id="Getgid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=29728:29751#L1256">Getgid</a>
+				<a class="permalink" href="index.html#Getgid">&#xb6;</a>
+			</h2>
 			<pre>func Getgid() (gid <a href="../builtin/index.html#int">int</a>)</pre>
 			
 			
@@ -3792,7 +3908,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getgroups">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=4168:4208#L147">Getgroups</a></h2>
+			<h2 id="Getgroups">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=4168:4208#L147">Getgroups</a>
+				<a class="permalink" href="index.html#Getgroups">&#xb6;</a>
+			</h2>
 			<pre>func Getgroups() (gids []<a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3801,7 +3919,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getpagesize">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=3592:3614#L65">Getpagesize</a></h2>
+			<h2 id="Getpagesize">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=3592:3614#L65">Getpagesize</a>
+				<a class="permalink" href="index.html#Getpagesize">&#xb6;</a>
+			</h2>
 			<pre>func Getpagesize() <a href="../builtin/index.html#int">int</a></pre>
 			
 			
@@ -3810,7 +3930,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getpgid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=12467:12510#L508">Getpgid</a></h2>
+			<h2 id="Getpgid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=12467:12510#L508">Getpgid</a>
+				<a class="permalink" href="index.html#Getpgid">&#xb6;</a>
+			</h2>
 			<pre>func Getpgid(pid <a href="../builtin/index.html#int">int</a>) (pgid <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3819,7 +3941,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getpgrp">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=22048:22072#L833">Getpgrp</a></h2>
+			<h2 id="Getpgrp">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=22044:22068#L833">Getpgrp</a>
+				<a class="permalink" href="index.html#Getpgrp">&#xb6;</a>
+			</h2>
 			<pre>func Getpgrp() (pid <a href="../builtin/index.html#int">int</a>)</pre>
 			
 			
@@ -3828,7 +3952,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getpid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=12702:12725#L519">Getpid</a></h2>
+			<h2 id="Getpid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=12702:12725#L519">Getpid</a>
+				<a class="permalink" href="index.html#Getpid">&#xb6;</a>
+			</h2>
 			<pre>func Getpid() (pid <a href="../builtin/index.html#int">int</a>)</pre>
 			
 			
@@ -3837,7 +3963,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getppid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=12865:12890#L527">Getppid</a></h2>
+			<h2 id="Getppid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=12865:12890#L527">Getppid</a>
+				<a class="permalink" href="index.html#Getppid">&#xb6;</a>
+			</h2>
 			<pre>func Getppid() (ppid <a href="../builtin/index.html#int">int</a>)</pre>
 			
 			
@@ -3846,7 +3974,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getpriority">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=13032:13090#L535">Getpriority</a></h2>
+			<h2 id="Getpriority">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=13032:13090#L535">Getpriority</a>
+				<a class="permalink" href="index.html#Getpriority">&#xb6;</a>
+			</h2>
 			<pre>func Getpriority(which <a href="../builtin/index.html#int">int</a>, who <a href="../builtin/index.html#int">int</a>) (prio <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3855,7 +3985,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getrlimit">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=29891:29945#L1264">Getrlimit</a></h2>
+			<h2 id="Getrlimit">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=29891:29945#L1264">Getrlimit</a>
+				<a class="permalink" href="index.html#Getrlimit">&#xb6;</a>
+			</h2>
 			<pre>func Getrlimit(resource <a href="../builtin/index.html#int">int</a>, rlim *<a href="index.html#Rlimit">Rlimit</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3864,7 +3996,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getrusage">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=13296:13347#L546">Getrusage</a></h2>
+			<h2 id="Getrusage">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=13296:13347#L546">Getrusage</a>
+				<a class="permalink" href="index.html#Getrusage">&#xb6;</a>
+			</h2>
 			<pre>func Getrusage(who <a href="../builtin/index.html#int">int</a>, rusage *<a href="index.html#Rusage">Rusage</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3873,7 +4007,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="GetsockoptInet4Addr">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=11572:11643#L467">GetsockoptInet4Addr</a></h2>
+			<h2 id="GetsockoptInet4Addr">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=11569:11640#L467">GetsockoptInet4Addr</a>
+				<a class="permalink" href="index.html#GetsockoptInet4Addr">&#xb6;</a>
+			</h2>
 			<pre>func GetsockoptInet4Addr(fd, level, opt <a href="../builtin/index.html#int">int</a>) (value [4]<a href="../builtin/index.html#byte">byte</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3882,7 +4018,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="GetsockoptInt">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=5179:5240#L231">GetsockoptInt</a></h2>
+			<h2 id="GetsockoptInt">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=5178:5239#L231">GetsockoptInt</a>
+				<a class="permalink" href="index.html#GetsockoptInt">&#xb6;</a>
+			</h2>
 			<pre>func GetsockoptInt(fd, level, opt <a href="../builtin/index.html#int">int</a>) (value <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3891,7 +4029,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Gettid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=13554:13577#L556">Gettid</a></h2>
+			<h2 id="Gettid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=13554:13577#L556">Gettid</a>
+				<a class="permalink" href="index.html#Gettid">&#xb6;</a>
+			</h2>
 			<pre>func Gettid() (tid <a href="../builtin/index.html#int">int</a>)</pre>
 			
 			
@@ -3900,7 +4040,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Gettimeofday">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=3470:3512#L57">Gettimeofday</a></h2>
+			<h2 id="Gettimeofday">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=3470:3512#L57">Gettimeofday</a>
+				<a class="permalink" href="index.html#Gettimeofday">&#xb6;</a>
+			</h2>
 			<pre>func Gettimeofday(tv *<a href="index.html#Timeval">Timeval</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3909,7 +4051,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getuid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=30155:30178#L1274">Getuid</a></h2>
+			<h2 id="Getuid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=30155:30178#L1274">Getuid</a>
+				<a class="permalink" href="index.html#Getuid">&#xb6;</a>
+			</h2>
 			<pre>func Getuid() (uid <a href="../builtin/index.html#int">int</a>)</pre>
 			
 			
@@ -3918,7 +4062,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getwd">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=3864:3899#L134">Getwd</a></h2>
+			<h2 id="Getwd">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=3864:3899#L134">Getwd</a>
+				<a class="permalink" href="index.html#Getwd">&#xb6;</a>
+			</h2>
 			<pre>func Getwd() (wd <a href="../builtin/index.html#string">string</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3927,7 +4073,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Getxattr">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=13717:13789#L564">Getxattr</a></h2>
+			<h2 id="Getxattr">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=13717:13789#L564">Getxattr</a>
+				<a class="permalink" href="index.html#Getxattr">&#xb6;</a>
+			</h2>
 			<pre>func Getxattr(path <a href="../builtin/index.html#string">string</a>, attr <a href="../builtin/index.html#string">string</a>, dest []<a href="../builtin/index.html#byte">byte</a>) (sz <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3936,7 +4084,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="InotifyAddWatch">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=14391:14476#L593">InotifyAddWatch</a></h2>
+			<h2 id="InotifyAddWatch">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=14391:14476#L593">InotifyAddWatch</a>
+				<a class="permalink" href="index.html#InotifyAddWatch">&#xb6;</a>
+			</h2>
 			<pre>func InotifyAddWatch(fd <a href="../builtin/index.html#int">int</a>, pathname <a href="../builtin/index.html#string">string</a>, mask <a href="../builtin/index.html#uint32">uint32</a>) (watchdesc <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3945,7 +4095,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="InotifyInit">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=30318:30356#L1282">InotifyInit</a></h2>
+			<h2 id="InotifyInit">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=30318:30356#L1282">InotifyInit</a>
+				<a class="permalink" href="index.html#InotifyInit">&#xb6;</a>
+			</h2>
 			<pre>func InotifyInit() (fd <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3954,7 +4106,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="InotifyInit1">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=14828:14876#L610">InotifyInit1</a></h2>
+			<h2 id="InotifyInit1">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=14828:14876#L610">InotifyInit1</a>
+				<a class="permalink" href="index.html#InotifyInit1">&#xb6;</a>
+			</h2>
 			<pre>func InotifyInit1(flags <a href="../builtin/index.html#int">int</a>) (fd <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3963,7 +4117,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="InotifyRmWatch">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=15074:15144#L621">InotifyRmWatch</a></h2>
+			<h2 id="InotifyRmWatch">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=15074:15144#L621">InotifyRmWatch</a>
+				<a class="permalink" href="index.html#InotifyRmWatch">&#xb6;</a>
+			</h2>
 			<pre>func InotifyRmWatch(fd <a href="../builtin/index.html#int">int</a>, watchdesc <a href="../builtin/index.html#uint32">uint32</a>) (success <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3972,7 +4128,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Ioperm">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=30540:30590#L1293">Ioperm</a></h2>
+			<h2 id="Ioperm">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=30540:30590#L1293">Ioperm</a>
+				<a class="permalink" href="index.html#Ioperm">&#xb6;</a>
+			</h2>
 			<pre>func Ioperm(from <a href="../builtin/index.html#int">int</a>, num <a href="../builtin/index.html#int">int</a>, on <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3981,7 +4139,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Iopl">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=30783:30815#L1303">Iopl</a></h2>
+			<h2 id="Iopl">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=30783:30815#L1303">Iopl</a>
+				<a class="permalink" href="index.html#Iopl">&#xb6;</a>
+			</h2>
 			<pre>func Iopl(level <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3990,7 +4150,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Kill">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=15364:15406#L632">Kill</a></h2>
+			<h2 id="Kill">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=15364:15406#L632">Kill</a>
+				<a class="permalink" href="index.html#Kill">&#xb6;</a>
+			</h2>
 			<pre>func Kill(pid <a href="../builtin/index.html#int">int</a>, sig <a href="index.html#Signal">Signal</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -3999,7 +4161,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Klogctl">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=15589:15641#L642">Klogctl</a></h2>
+			<h2 id="Klogctl">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=15589:15641#L642">Klogctl</a>
+				<a class="permalink" href="index.html#Klogctl">&#xb6;</a>
+			</h2>
 			<pre>func Klogctl(typ <a href="../builtin/index.html#int">int</a>, buf []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4008,7 +4172,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Lchown">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=30986:31040#L1313">Lchown</a></h2>
+			<h2 id="Lchown">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=30986:31040#L1313">Lchown</a>
+				<a class="permalink" href="index.html#Lchown">&#xb6;</a>
+			</h2>
 			<pre>func Lchown(path <a href="../builtin/index.html#string">string</a>, uid <a href="../builtin/index.html#int">int</a>, gid <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4017,7 +4183,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Link">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=999:1052#L28">Link</a></h2>
+			<h2 id="Link">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=999:1052#L28">Link</a>
+				<a class="permalink" href="index.html#Link">&#xb6;</a>
+			</h2>
 			<pre>func Link(oldpath <a href="../builtin/index.html#string">string</a>, newpath <a href="../builtin/index.html#string">string</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4026,7 +4194,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Listen">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=31355:31392#L1329">Listen</a></h2>
+			<h2 id="Listen">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=31355:31392#L1329">Listen</a>
+				<a class="permalink" href="index.html#Listen">&#xb6;</a>
+			</h2>
 			<pre>func Listen(s <a href="../builtin/index.html#int">int</a>, n <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4035,7 +4205,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Listxattr">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=15972:16032#L659">Listxattr</a></h2>
+			<h2 id="Listxattr">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=15972:16032#L659">Listxattr</a>
+				<a class="permalink" href="index.html#Listxattr">&#xb6;</a>
+			</h2>
 			<pre>func Listxattr(path <a href="../builtin/index.html#string">string</a>, dest []<a href="../builtin/index.html#byte">byte</a>) (sz <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4044,16 +4216,23 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="LsfSocket">func <a href="http://localhost:9090/src/syscall/lsf_linux.go?s=456:503#L11">LsfSocket</a></h2>
+			<h2 id="LsfSocket">func <a href="http://localhost:9090/src/syscall/lsf_linux.go?s=602:649#L14">LsfSocket</a>
+				<a class="permalink" href="index.html#LsfSocket">&#xb6;</a>
+			</h2>
 			<pre>func LsfSocket(ifindex, proto <a href="../builtin/index.html#int">int</a>) (<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
-			
+			<p>
+Deprecated: Use golang.org/x/net/bpf instead.
+</p>
+
 			
 			
 
 		
 			
 			
-			<h2 id="Lstat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=31570:31619#L1339">Lstat</a></h2>
+			<h2 id="Lstat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=31570:31619#L1339">Lstat</a>
+				<a class="permalink" href="index.html#Lstat">&#xb6;</a>
+			</h2>
 			<pre>func Lstat(path <a href="../builtin/index.html#string">string</a>, stat *<a href="index.html#Stat_t">Stat_t</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4062,7 +4241,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Madvise">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=26415:26461#L1106">Madvise</a></h2>
+			<h2 id="Madvise">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=26415:26461#L1106">Madvise</a>
+				<a class="permalink" href="index.html#Madvise">&#xb6;</a>
+			</h2>
 			<pre>func Madvise(b []<a href="../builtin/index.html#byte">byte</a>, advice <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4071,7 +4252,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Mkdir">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=1116:1164#L32">Mkdir</a></h2>
+			<h2 id="Mkdir">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=1116:1164#L32">Mkdir</a>
+				<a class="permalink" href="index.html#Mkdir">&#xb6;</a>
+			</h2>
 			<pre>func Mkdir(path <a href="../builtin/index.html#string">string</a>, mode <a href="../builtin/index.html#uint32">uint32</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4080,7 +4263,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Mkdirat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=16492:16553#L682">Mkdirat</a></h2>
+			<h2 id="Mkdirat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=16492:16553#L682">Mkdirat</a>
+				<a class="permalink" href="index.html#Mkdirat">&#xb6;</a>
+			</h2>
 			<pre>func Mkdirat(dirfd <a href="../builtin/index.html#int">int</a>, path <a href="../builtin/index.html#string">string</a>, mode <a href="../builtin/index.html#uint32">uint32</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4089,7 +4274,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Mkfifo">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=6435:6484#L253">Mkfifo</a></h2>
+			<h2 id="Mkfifo">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=6432:6481#L253">Mkfifo</a>
+				<a class="permalink" href="index.html#Mkfifo">&#xb6;</a>
+			</h2>
 			<pre>func Mkfifo(path <a href="../builtin/index.html#string">string</a>, mode <a href="../builtin/index.html#uint32">uint32</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4098,7 +4285,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Mknod">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=1209:1266#L36">Mknod</a></h2>
+			<h2 id="Mknod">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=1209:1266#L36">Mknod</a>
+				<a class="permalink" href="index.html#Mknod">&#xb6;</a>
+			</h2>
 			<pre>func Mknod(path <a href="../builtin/index.html#string">string</a>, mode <a href="../builtin/index.html#uint32">uint32</a>, dev <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4107,7 +4296,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Mknodat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=16872:16942#L698">Mknodat</a></h2>
+			<h2 id="Mknodat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=16872:16942#L698">Mknodat</a>
+				<a class="permalink" href="index.html#Mknodat">&#xb6;</a>
+			</h2>
 			<pre>func Mknodat(dirfd <a href="../builtin/index.html#int">int</a>, path <a href="../builtin/index.html#string">string</a>, mode <a href="../builtin/index.html#uint32">uint32</a>, dev <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4116,7 +4307,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Mlock">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=27135:27167#L1138">Mlock</a></h2>
+			<h2 id="Mlock">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=27135:27167#L1138">Mlock</a>
+				<a class="permalink" href="index.html#Mlock">&#xb6;</a>
+			</h2>
 			<pre>func Mlock(b []<a href="../builtin/index.html#byte">byte</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4125,7 +4318,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Mlockall">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=27801:27837#L1170">Mlockall</a></h2>
+			<h2 id="Mlockall">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=27801:27837#L1170">Mlockall</a>
+				<a class="permalink" href="index.html#Mlockall">&#xb6;</a>
+			</h2>
 			<pre>func Mlockall(flags <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4134,7 +4329,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Mmap">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=25022:25111#L905">Mmap</a></h2>
+			<h2 id="Mmap">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=25018:25107#L905">Mmap</a>
+				<a class="permalink" href="index.html#Mmap">&#xb6;</a>
+			</h2>
 			<pre>func Mmap(fd <a href="../builtin/index.html#int">int</a>, offset <a href="../builtin/index.html#int64">int64</a>, length <a href="../builtin/index.html#int">int</a>, prot <a href="../builtin/index.html#int">int</a>, flags <a href="../builtin/index.html#int">int</a>) (data []<a href="../builtin/index.html#byte">byte</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4143,7 +4340,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Mount">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=20289:20384#L786">Mount</a></h2>
+			<h2 id="Mount">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=20285:20380#L786">Mount</a>
+				<a class="permalink" href="index.html#Mount">&#xb6;</a>
+			</h2>
 			<pre>func Mount(source <a href="../builtin/index.html#string">string</a>, target <a href="../builtin/index.html#string">string</a>, fstype <a href="../builtin/index.html#string">string</a>, flags <a href="../builtin/index.html#uintptr">uintptr</a>, data <a href="../builtin/index.html#string">string</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4152,7 +4351,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Mprotect">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=26776:26821#L1122">Mprotect</a></h2>
+			<h2 id="Mprotect">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=26776:26821#L1122">Mprotect</a>
+				<a class="permalink" href="index.html#Mprotect">&#xb6;</a>
+			</h2>
 			<pre>func Mprotect(b []<a href="../builtin/index.html#byte">byte</a>, prot <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4161,7 +4362,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Munlock">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=27466:27500#L1154">Munlock</a></h2>
+			<h2 id="Munlock">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=27466:27500#L1154">Munlock</a>
+				<a class="permalink" href="index.html#Munlock">&#xb6;</a>
+			</h2>
 			<pre>func Munlock(b []<a href="../builtin/index.html#byte">byte</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4170,7 +4373,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Munlockall">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=28012:28041#L1180">Munlockall</a></h2>
+			<h2 id="Munlockall">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=28012:28041#L1180">Munlockall</a>
+				<a class="permalink" href="index.html#Munlockall">&#xb6;</a>
+			</h2>
 			<pre>func Munlockall() (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4179,7 +4384,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Munmap">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=25170:25203#L909">Munmap</a></h2>
+			<h2 id="Munmap">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=25166:25199#L909">Munmap</a>
+				<a class="permalink" href="index.html#Munmap">&#xb6;</a>
+			</h2>
 			<pre>func Munmap(b []<a href="../builtin/index.html#byte">byte</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4188,7 +4395,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="Nanosleep">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=17282:17344#L714">Nanosleep</a></h2>
+			<h2 id="Nanosleep">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=17282:17344#L714">Nanosleep</a>
+				<a class="permalink" href="index.html#Nanosleep">&#xb6;</a>
+			</h2>
 			<pre>func Nanosleep(time *<a href="index.html#Timespec">Timespec</a>, leftover *<a href="index.html#Timespec">Timespec</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4197,7 +4406,9 @@ Combination of fork and exec, careful to be thread safe.
 		
 			
 			
-			<h2 id="NetlinkRIB">func <a href="http://localhost:9090/src/syscall/netlink_linux.go?s=1612:1662#L42">NetlinkRIB</a></h2>
+			<h2 id="NetlinkRIB">func <a href="http://localhost:9090/src/syscall/netlink_linux.go?s=1611:1661#L42">NetlinkRIB</a>
+				<a class="permalink" href="index.html#NetlinkRIB">&#xb6;</a>
+			</h2>
 			<pre>func NetlinkRIB(proto, family <a href="../builtin/index.html#int">int</a>) ([]<a href="../builtin/index.html#byte">byte</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 NetlinkRIB returns routing information base, as known as RIB, which
@@ -4210,7 +4421,9 @@ consists of network facility information, states and parameters.
 		
 			
 			
-			<h2 id="Open">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=1316:1381#L40">Open</a></h2>
+			<h2 id="Open">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=1316:1381#L40">Open</a>
+				<a class="permalink" href="index.html#Open">&#xb6;</a>
+			</h2>
 			<pre>func Open(path <a href="../builtin/index.html#string">string</a>, mode <a href="../builtin/index.html#int">int</a>, perm <a href="../builtin/index.html#uint32">uint32</a>) (fd <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4219,7 +4432,9 @@ consists of network facility information, states and parameters.
 		
 			
 			
-			<h2 id="Openat">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=1525:1604#L46">Openat</a></h2>
+			<h2 id="Openat">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=1525:1604#L46">Openat</a>
+				<a class="permalink" href="index.html#Openat">&#xb6;</a>
+			</h2>
 			<pre>func Openat(dirfd <a href="../builtin/index.html#int">int</a>, path <a href="../builtin/index.html#string">string</a>, flags <a href="../builtin/index.html#int">int</a>, mode <a href="../builtin/index.html#uint32">uint32</a>) (fd <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4228,7 +4443,9 @@ consists of network facility information, states and parameters.
 		
 			
 			
-			<h2 id="ParseDirent">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=19617:19715#L763">ParseDirent</a></h2>
+			<h2 id="ParseDirent">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=19613:19711#L763">ParseDirent</a>
+				<a class="permalink" href="index.html#ParseDirent">&#xb6;</a>
+			</h2>
 			<pre>func ParseDirent(buf []<a href="../builtin/index.html#byte">byte</a>, max <a href="../builtin/index.html#int">int</a>, names []<a href="../builtin/index.html#string">string</a>) (consumed <a href="../builtin/index.html#int">int</a>, count <a href="../builtin/index.html#int">int</a>, newnames []<a href="../builtin/index.html#string">string</a>)</pre>
 			
 			
@@ -4237,7 +4454,9 @@ consists of network facility information, states and parameters.
 		
 			
 			
-			<h2 id="ParseNetlinkMessage">func <a href="http://localhost:9090/src/syscall/netlink_linux.go?s=2992:3052#L106">ParseNetlinkMessage</a></h2>
+			<h2 id="ParseNetlinkMessage">func <a href="http://localhost:9090/src/syscall/netlink_linux.go?s=2991:3051#L106">ParseNetlinkMessage</a>
+				<a class="permalink" href="index.html#ParseNetlinkMessage">&#xb6;</a>
+			</h2>
 			<pre>func ParseNetlinkMessage(b []<a href="../builtin/index.html#byte">byte</a>) ([]<a href="index.html#NetlinkMessage">NetlinkMessage</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 ParseNetlinkMessage parses b as an array of netlink messages and
@@ -4250,7 +4469,9 @@ returns the slice containing the NetlinkMessage structures.
 		
 			
 			
-			<h2 id="ParseNetlinkRouteAttr">func <a href="http://localhost:9090/src/syscall/netlink_linux.go?s=3885:3958#L137">ParseNetlinkRouteAttr</a></h2>
+			<h2 id="ParseNetlinkRouteAttr">func <a href="http://localhost:9090/src/syscall/netlink_linux.go?s=3884:3957#L137">ParseNetlinkRouteAttr</a>
+				<a class="permalink" href="index.html#ParseNetlinkRouteAttr">&#xb6;</a>
+			</h2>
 			<pre>func ParseNetlinkRouteAttr(m *<a href="index.html#NetlinkMessage">NetlinkMessage</a>) ([]<a href="index.html#NetlinkRouteAttr">NetlinkRouteAttr</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 ParseNetlinkRouteAttr parses m&#39;s payload as an array of netlink
@@ -4264,7 +4485,9 @@ NetlinkRouteAttr structures.
 		
 			
 			
-			<h2 id="ParseSocketControlMessage">func <a href="http://localhost:9090/src/syscall/sockcmsg_unix.go?s=1396:1468#L38">ParseSocketControlMessage</a></h2>
+			<h2 id="ParseSocketControlMessage">func <a href="http://localhost:9090/src/syscall/sockcmsg_unix.go?s=1395:1467#L38">ParseSocketControlMessage</a>
+				<a class="permalink" href="index.html#ParseSocketControlMessage">&#xb6;</a>
+			</h2>
 			<pre>func ParseSocketControlMessage(b []<a href="../builtin/index.html#byte">byte</a>) ([]<a href="index.html#SocketControlMessage">SocketControlMessage</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 ParseSocketControlMessage parses b as an array of socket control
@@ -4277,7 +4500,9 @@ messages.
 		
 			
 			
-			<h2 id="ParseUnixRights">func <a href="http://localhost:9090/src/syscall/sockcmsg_unix.go?s=2625:2685#L80">ParseUnixRights</a></h2>
+			<h2 id="ParseUnixRights">func <a href="http://localhost:9090/src/syscall/sockcmsg_unix.go?s=2635:2695#L80">ParseUnixRights</a>
+				<a class="permalink" href="index.html#ParseUnixRights">&#xb6;</a>
+			</h2>
 			<pre>func ParseUnixRights(m *<a href="index.html#SocketControlMessage">SocketControlMessage</a>) ([]<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 ParseUnixRights decodes a socket control message that contains an
@@ -4290,7 +4515,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Pause">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=17567:17591#L724">Pause</a></h2>
+			<h2 id="Pause">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=17567:17591#L724">Pause</a>
+				<a class="permalink" href="index.html#Pause">&#xb6;</a>
+			</h2>
 			<pre>func Pause() (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4299,7 +4526,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Pipe">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4293:4323#L98">Pipe</a></h2>
+			<h2 id="Pipe">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4293:4323#L98">Pipe</a>
+				<a class="permalink" href="index.html#Pipe">&#xb6;</a>
+			</h2>
 			<pre>func Pipe(p []<a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4308,7 +4537,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Pipe2">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4499:4541#L111">Pipe2</a></h2>
+			<h2 id="Pipe2">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4499:4541#L111">Pipe2</a>
+				<a class="permalink" href="index.html#Pipe2">&#xb6;</a>
+			</h2>
 			<pre>func Pipe2(p []<a href="../builtin/index.html#int">int</a>, flags <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4317,7 +4548,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="PivotRoot">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=17750:17807#L734">PivotRoot</a></h2>
+			<h2 id="PivotRoot">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=17750:17807#L734">PivotRoot</a>
+				<a class="permalink" href="index.html#PivotRoot">&#xb6;</a>
+			</h2>
 			<pre>func PivotRoot(newroot <a href="../builtin/index.html#string">string</a>, putold <a href="../builtin/index.html#string">string</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4326,7 +4559,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Pread">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=31939:32000#L1355">Pread</a></h2>
+			<h2 id="Pread">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=31939:32000#L1355">Pread</a>
+				<a class="permalink" href="index.html#Pread">&#xb6;</a>
+			</h2>
 			<pre>func Pread(fd <a href="../builtin/index.html#int">int</a>, p []<a href="../builtin/index.html#byte">byte</a>, offset <a href="../builtin/index.html#int64">int64</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4335,7 +4570,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="PtraceAttach">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=19075:19113#L740">PtraceAttach</a></h2>
+			<h2 id="PtraceAttach">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=19071:19109#L740">PtraceAttach</a>
+				<a class="permalink" href="index.html#PtraceAttach">&#xb6;</a>
+			</h2>
 			<pre>func PtraceAttach(pid <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4344,7 +4581,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="PtraceCont">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=18763:18811#L730">PtraceCont</a></h2>
+			<h2 id="PtraceCont">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=18759:18807#L730">PtraceCont</a>
+				<a class="permalink" href="index.html#PtraceCont">&#xb6;</a>
+			</h2>
 			<pre>func PtraceCont(pid <a href="../builtin/index.html#int">int</a>, signal <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4353,7 +4592,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="PtraceDetach">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=19159:19197#L742">PtraceDetach</a></h2>
+			<h2 id="PtraceDetach">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=19155:19193#L742">PtraceDetach</a>
+				<a class="permalink" href="index.html#PtraceDetach">&#xb6;</a>
+			</h2>
 			<pre>func PtraceDetach(pid <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4362,7 +4603,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="PtraceGetEventMsg">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=18586:18639#L723">PtraceGetEventMsg</a></h2>
+			<h2 id="PtraceGetEventMsg">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=18582:18635#L723">PtraceGetEventMsg</a>
+				<a class="permalink" href="index.html#PtraceGetEventMsg">&#xb6;</a>
+			</h2>
 			<pre>func PtraceGetEventMsg(pid <a href="../builtin/index.html#int">int</a>) (msg <a href="../builtin/index.html#uint">uint</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4371,7 +4614,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="PtraceGetRegs">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=18193:18253#L711">PtraceGetRegs</a></h2>
+			<h2 id="PtraceGetRegs">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=18189:18249#L711">PtraceGetRegs</a>
+				<a class="permalink" href="index.html#PtraceGetRegs">&#xb6;</a>
+			</h2>
 			<pre>func PtraceGetRegs(pid <a href="../builtin/index.html#int">int</a>, regsout *<a href="index.html#PtraceRegs">PtraceRegs</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4380,7 +4625,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="PtracePeekData">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=16506:16583#L648">PtracePeekData</a></h2>
+			<h2 id="PtracePeekData">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=16502:16579#L648">PtracePeekData</a>
+				<a class="permalink" href="index.html#PtracePeekData">&#xb6;</a>
+			</h2>
 			<pre>func PtracePeekData(pid <a href="../builtin/index.html#int">int</a>, addr <a href="../builtin/index.html#uintptr">uintptr</a>, out []<a href="../builtin/index.html#byte">byte</a>) (count <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4389,7 +4636,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="PtracePeekText">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=16371:16448#L644">PtracePeekText</a></h2>
+			<h2 id="PtracePeekText">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=16367:16444#L644">PtracePeekText</a>
+				<a class="permalink" href="index.html#PtracePeekText">&#xb6;</a>
+			</h2>
 			<pre>func PtracePeekText(pid <a href="../builtin/index.html#int">int</a>, addr <a href="../builtin/index.html#uintptr">uintptr</a>, out []<a href="../builtin/index.html#byte">byte</a>) (count <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4398,7 +4647,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="PtracePokeData">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=18039:18117#L707">PtracePokeData</a></h2>
+			<h2 id="PtracePokeData">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=18035:18113#L707">PtracePokeData</a>
+				<a class="permalink" href="index.html#PtracePokeData">&#xb6;</a>
+			</h2>
 			<pre>func PtracePokeData(pid <a href="../builtin/index.html#int">int</a>, addr <a href="../builtin/index.html#uintptr">uintptr</a>, data []<a href="../builtin/index.html#byte">byte</a>) (count <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4407,7 +4658,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="PtracePokeText">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=17885:17963#L703">PtracePokeText</a></h2>
+			<h2 id="PtracePokeText">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=17881:17959#L703">PtracePokeText</a>
+				<a class="permalink" href="index.html#PtracePokeText">&#xb6;</a>
+			</h2>
 			<pre>func PtracePokeText(pid <a href="../builtin/index.html#int">int</a>, addr <a href="../builtin/index.html#uintptr">uintptr</a>, data []<a href="../builtin/index.html#byte">byte</a>) (count <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4416,7 +4669,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="PtraceSetOptions">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=18465:18520#L719">PtraceSetOptions</a></h2>
+			<h2 id="PtraceSetOptions">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=18461:18516#L719">PtraceSetOptions</a>
+				<a class="permalink" href="index.html#PtraceSetOptions">&#xb6;</a>
+			</h2>
 			<pre>func PtraceSetOptions(pid <a href="../builtin/index.html#int">int</a>, options <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4425,7 +4680,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="PtraceSetRegs">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=18332:18389#L715">PtraceSetRegs</a></h2>
+			<h2 id="PtraceSetRegs">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=18328:18385#L715">PtraceSetRegs</a>
+				<a class="permalink" href="index.html#PtraceSetRegs">&#xb6;</a>
+			</h2>
 			<pre>func PtraceSetRegs(pid <a href="../builtin/index.html#int">int</a>, regs *<a href="index.html#PtraceRegs">PtraceRegs</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4434,7 +4691,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="PtraceSingleStep">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=18983:19025#L738">PtraceSingleStep</a></h2>
+			<h2 id="PtraceSingleStep">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=18979:19021#L738">PtraceSingleStep</a>
+				<a class="permalink" href="index.html#PtraceSingleStep">&#xb6;</a>
+			</h2>
 			<pre>func PtraceSingleStep(pid <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4443,7 +4702,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="PtraceSyscall">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=18870:18921#L734">PtraceSyscall</a></h2>
+			<h2 id="PtraceSyscall">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=18866:18917#L734">PtraceSyscall</a>
+				<a class="permalink" href="index.html#PtraceSyscall">&#xb6;</a>
+			</h2>
 			<pre>func PtraceSyscall(pid <a href="../builtin/index.html#int">int</a>, signal <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4452,7 +4713,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Pwrite">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=32349:32411#L1372">Pwrite</a></h2>
+			<h2 id="Pwrite">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=32349:32411#L1372">Pwrite</a>
+				<a class="permalink" href="index.html#Pwrite">&#xb6;</a>
+			</h2>
 			<pre>func Pwrite(fd <a href="../builtin/index.html#int">int</a>, p []<a href="../builtin/index.html#byte">byte</a>, offset <a href="../builtin/index.html#int64">int64</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4461,7 +4724,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="RawSyscall">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=689:758#L20">RawSyscall</a></h2>
+			<h2 id="RawSyscall">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=689:758#L20">RawSyscall</a>
+				<a class="permalink" href="index.html#RawSyscall">&#xb6;</a>
+			</h2>
 			<pre>func RawSyscall(trap, a1, a2, a3 <a href="../builtin/index.html#uintptr">uintptr</a>) (r1, r2 <a href="../builtin/index.html#uintptr">uintptr</a>, err <a href="index.html#Errno">Errno</a>)</pre>
 			
 			
@@ -4470,7 +4735,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="RawSyscall6">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=759:841#L21">RawSyscall6</a></h2>
+			<h2 id="RawSyscall6">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=759:841#L21">RawSyscall6</a>
+				<a class="permalink" href="index.html#RawSyscall6">&#xb6;</a>
+			</h2>
 			<pre>func RawSyscall6(trap, a1, a2, a3, a4, a5, a6 <a href="../builtin/index.html#uintptr">uintptr</a>) (r1, r2 <a href="../builtin/index.html#uintptr">uintptr</a>, err <a href="index.html#Errno">Errno</a>)</pre>
 			
 			
@@ -4479,7 +4746,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Read">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=3599:3645#L150">Read</a></h2>
+			<h2 id="Read">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=3598:3644#L150">Read</a>
+				<a class="permalink" href="index.html#Read">&#xb6;</a>
+			</h2>
 			<pre>func Read(fd <a href="../builtin/index.html#int">int</a>, p []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4488,7 +4757,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="ReadDirent">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=19531:19585#L759">ReadDirent</a></h2>
+			<h2 id="ReadDirent">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=19527:19581#L759">ReadDirent</a>
+				<a class="permalink" href="index.html#ReadDirent">&#xb6;</a>
+			</h2>
 			<pre>func ReadDirent(fd <a href="../builtin/index.html#int">int</a>, buf []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4497,7 +4768,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Readlink">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=1736:1793#L52">Readlink</a></h2>
+			<h2 id="Readlink">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=1736:1793#L52">Readlink</a>
+				<a class="permalink" href="index.html#Readlink">&#xb6;</a>
+			</h2>
 			<pre>func Readlink(path <a href="../builtin/index.html#string">string</a>, buf []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4506,7 +4779,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Reboot">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=19316:19348#L746">Reboot</a></h2>
+			<h2 id="Reboot">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=19312:19344#L746">Reboot</a>
+				<a class="permalink" href="index.html#Reboot">&#xb6;</a>
+			</h2>
 			<pre>func Reboot(cmd <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4515,7 +4790,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Recvfrom">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=5365:5441#L238">Recvfrom</a></h2>
+			<h2 id="Recvfrom">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=5364:5440#L238">Recvfrom</a>
+				<a class="permalink" href="index.html#Recvfrom">&#xb6;</a>
+			</h2>
 			<pre>func Recvfrom(fd <a href="../builtin/index.html#int">int</a>, p []<a href="../builtin/index.html#byte">byte</a>, flags <a href="../builtin/index.html#int">int</a>) (n <a href="../builtin/index.html#int">int</a>, from <a href="index.html#Sockaddr">Sockaddr</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4524,7 +4801,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Recvmsg">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=13191:13292#L519">Recvmsg</a></h2>
+			<h2 id="Recvmsg">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=13188:13289#L519">Recvmsg</a>
+				<a class="permalink" href="index.html#Recvmsg">&#xb6;</a>
+			</h2>
 			<pre>func Recvmsg(fd <a href="../builtin/index.html#int">int</a>, p, oob []<a href="../builtin/index.html#byte">byte</a>, flags <a href="../builtin/index.html#int">int</a>) (n, oobn <a href="../builtin/index.html#int">int</a>, recvflags <a href="../builtin/index.html#int">int</a>, from <a href="index.html#Sockaddr">Sockaddr</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4533,7 +4812,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Removexattr">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=18950:19004#L783">Removexattr</a></h2>
+			<h2 id="Removexattr">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=18950:19004#L783">Removexattr</a>
+				<a class="permalink" href="index.html#Removexattr">&#xb6;</a>
+			</h2>
 			<pre>func Removexattr(path <a href="../builtin/index.html#string">string</a>, attr <a href="../builtin/index.html#string">string</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4542,7 +4823,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Rename">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=1840:1895#L56">Rename</a></h2>
+			<h2 id="Rename">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=1840:1895#L56">Rename</a>
+				<a class="permalink" href="index.html#Rename">&#xb6;</a>
+			</h2>
 			<pre>func Rename(oldpath <a href="../builtin/index.html#string">string</a>, newpath <a href="../builtin/index.html#string">string</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4551,7 +4834,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Renameat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=19435:19520#L805">Renameat</a></h2>
+			<h2 id="Renameat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=19435:19520#L805">Renameat</a>
+				<a class="permalink" href="index.html#Renameat">&#xb6;</a>
+			</h2>
 			<pre>func Renameat(olddirfd <a href="../builtin/index.html#int">int</a>, oldpath <a href="../builtin/index.html#string">string</a>, newdirfd <a href="../builtin/index.html#int">int</a>, newpath <a href="../builtin/index.html#string">string</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4560,7 +4845,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Rmdir">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=1958:1987#L60">Rmdir</a></h2>
+			<h2 id="Rmdir">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=1958:1987#L60">Rmdir</a>
+				<a class="permalink" href="index.html#Rmdir">&#xb6;</a>
+			</h2>
 			<pre>func Rmdir(path <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 			
 			
@@ -4569,7 +4856,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Seek">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=32761:32827#L1389">Seek</a></h2>
+			<h2 id="Seek">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=32761:32827#L1389">Seek</a>
+				<a class="permalink" href="index.html#Seek">&#xb6;</a>
+			</h2>
 			<pre>func Seek(fd <a href="../builtin/index.html#int">int</a>, offset <a href="../builtin/index.html#int64">int64</a>, whence <a href="../builtin/index.html#int">int</a>) (off <a href="../builtin/index.html#int64">int64</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4578,7 +4867,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Select">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=33042:33129#L1400">Select</a></h2>
+			<h2 id="Select">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=33042:33129#L1400">Select</a>
+				<a class="permalink" href="index.html#Select">&#xb6;</a>
+			</h2>
 			<pre>func Select(nfd <a href="../builtin/index.html#int">int</a>, r *<a href="index.html#FdSet">FdSet</a>, w *<a href="index.html#FdSet">FdSet</a>, e *<a href="index.html#FdSet">FdSet</a>, timeout *<a href="index.html#Timeval">Timeval</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4587,7 +4878,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Sendfile">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=7530:7615#L313">Sendfile</a></h2>
+			<h2 id="Sendfile">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=7529:7614#L313">Sendfile</a>
+				<a class="permalink" href="index.html#Sendfile">&#xb6;</a>
+			</h2>
 			<pre>func Sendfile(outfd <a href="../builtin/index.html#int">int</a>, infd <a href="../builtin/index.html#int">int</a>, offset *<a href="../builtin/index.html#int64">int64</a>, count <a href="../builtin/index.html#int">int</a>) (written <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4596,7 +4889,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Sendmsg">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=14035:14106#L553">Sendmsg</a></h2>
+			<h2 id="Sendmsg">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=14032:14103#L553">Sendmsg</a>
+				<a class="permalink" href="index.html#Sendmsg">&#xb6;</a>
+			</h2>
 			<pre>func Sendmsg(fd <a href="../builtin/index.html#int">int</a>, p, oob []<a href="../builtin/index.html#byte">byte</a>, to <a href="index.html#Sockaddr">Sockaddr</a>, flags <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4605,7 +4900,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="SendmsgN">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=14162:14241#L558">SendmsgN</a></h2>
+			<h2 id="SendmsgN">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=14159:14238#L558">SendmsgN</a>
+				<a class="permalink" href="index.html#SendmsgN">&#xb6;</a>
+			</h2>
 			<pre>func SendmsgN(fd <a href="../builtin/index.html#int">int</a>, p, oob []<a href="../builtin/index.html#byte">byte</a>, to <a href="index.html#Sockaddr">Sockaddr</a>, flags <a href="../builtin/index.html#int">int</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4614,7 +4911,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Sendto">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=5663:5728#L250">Sendto</a></h2>
+			<h2 id="Sendto">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=5662:5727#L250">Sendto</a>
+				<a class="permalink" href="index.html#Sendto">&#xb6;</a>
+			</h2>
 			<pre>func Sendto(fd <a href="../builtin/index.html#int">int</a>, p []<a href="../builtin/index.html#byte">byte</a>, flags <a href="../builtin/index.html#int">int</a>, to <a href="index.html#Sockaddr">Sockaddr</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4623,16 +4922,23 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="SetLsfPromisc">func <a href="http://localhost:9090/src/syscall/lsf_linux.go?s=873:918#L34">SetLsfPromisc</a></h2>
+			<h2 id="SetLsfPromisc">func <a href="http://localhost:9090/src/syscall/lsf_linux.go?s=1068:1113#L38">SetLsfPromisc</a>
+				<a class="permalink" href="index.html#SetLsfPromisc">&#xb6;</a>
+			</h2>
 			<pre>func SetLsfPromisc(name <a href="../builtin/index.html#string">string</a>, m <a href="../builtin/index.html#bool">bool</a>) <a href="../builtin/index.html#error">error</a></pre>
-			
+			<p>
+Deprecated: Use golang.org/x/net/bpf instead.
+</p>
+
 			
 			
 
 		
 			
 			
-			<h2 id="SetNonblock">func <a href="http://localhost:9090/src/syscall/exec_unix.go?s=3627:3681#L88">SetNonblock</a></h2>
+			<h2 id="SetNonblock">func <a href="http://localhost:9090/src/syscall/exec_unix.go?s=3605:3659#L88">SetNonblock</a>
+				<a class="permalink" href="index.html#SetNonblock">&#xb6;</a>
+			</h2>
 			<pre>func SetNonblock(fd <a href="../builtin/index.html#int">int</a>, nonblocking <a href="../builtin/index.html#bool">bool</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4641,7 +4947,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Setdomainname">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=19996:20036#L827">Setdomainname</a></h2>
+			<h2 id="Setdomainname">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=19996:20036#L827">Setdomainname</a>
+				<a class="permalink" href="index.html#Setdomainname">&#xb6;</a>
+			</h2>
 			<pre>func Setdomainname(p []<a href="../builtin/index.html#byte">byte</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4650,7 +4958,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Setenv">func <a href="http://localhost:9090/src/syscall/env_unix.go?s=1928:1964#L83">Setenv</a></h2>
+			<h2 id="Setenv">func <a href="http://localhost:9090/src/syscall/env_unix.go?s=1927:1963#L83">Setenv</a>
+				<a class="permalink" href="index.html#Setenv">&#xb6;</a>
+			</h2>
 			<pre>func Setenv(key, value <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 			
 			
@@ -4659,7 +4969,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Setfsgid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=33775:33809#L1422">Setfsgid</a></h2>
+			<h2 id="Setfsgid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=33775:33809#L1422">Setfsgid</a>
+				<a class="permalink" href="index.html#Setfsgid">&#xb6;</a>
+			</h2>
 			<pre>func Setfsgid(gid <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4668,7 +4980,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Setfsuid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=33982:34016#L1432">Setfsuid</a></h2>
+			<h2 id="Setfsuid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=33982:34016#L1432">Setfsuid</a>
+				<a class="permalink" href="index.html#Setfsuid">&#xb6;</a>
+			</h2>
 			<pre>func Setfsuid(uid <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4677,7 +4991,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Setgid">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=23869:23901#L874">Setgid</a></h2>
+			<h2 id="Setgid">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=23865:23897#L874">Setgid</a>
+				<a class="permalink" href="index.html#Setgid">&#xb6;</a>
+			</h2>
 			<pre>func Setgid(gid <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4686,7 +5002,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Setgroups">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=4593:4631#L173">Setgroups</a></h2>
+			<h2 id="Setgroups">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=4592:4630#L173">Setgroups</a>
+				<a class="permalink" href="index.html#Setgroups">&#xb6;</a>
+			</h2>
 			<pre>func Setgroups(gids []<a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4695,7 +5013,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Sethostname">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=20343:20381#L843">Sethostname</a></h2>
+			<h2 id="Sethostname">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=20343:20381#L843">Sethostname</a>
+				<a class="permalink" href="index.html#Sethostname">&#xb6;</a>
+			</h2>
 			<pre>func Sethostname(p []<a href="../builtin/index.html#byte">byte</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4704,7 +5024,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Setpgid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=20686:20729#L859">Setpgid</a></h2>
+			<h2 id="Setpgid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=20686:20729#L859">Setpgid</a>
+				<a class="permalink" href="index.html#Setpgid">&#xb6;</a>
+			</h2>
 			<pre>func Setpgid(pid <a href="../builtin/index.html#int">int</a>, pgid <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4713,7 +5035,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Setpriority">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=21366:21424#L890">Setpriority</a></h2>
+			<h2 id="Setpriority">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=21366:21424#L890">Setpriority</a>
+				<a class="permalink" href="index.html#Setpriority">&#xb6;</a>
+			</h2>
 			<pre>func Setpriority(which <a href="../builtin/index.html#int">int</a>, who <a href="../builtin/index.html#int">int</a>, prio <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4722,7 +5046,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Setregid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=34189:34234#L1442">Setregid</a></h2>
+			<h2 id="Setregid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=34189:34234#L1442">Setregid</a>
+				<a class="permalink" href="index.html#Setregid">&#xb6;</a>
+			</h2>
 			<pre>func Setregid(rgid <a href="../builtin/index.html#int">int</a>, egid <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4731,7 +5057,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Setresgid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=34423:34479#L1452">Setresgid</a></h2>
+			<h2 id="Setresgid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=34423:34479#L1452">Setresgid</a>
+				<a class="permalink" href="index.html#Setresgid">&#xb6;</a>
+			</h2>
 			<pre>func Setresgid(rgid <a href="../builtin/index.html#int">int</a>, egid <a href="../builtin/index.html#int">int</a>, sgid <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4740,7 +5068,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Setresuid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=34681:34737#L1462">Setresuid</a></h2>
+			<h2 id="Setresuid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=34681:34737#L1462">Setresuid</a>
+				<a class="permalink" href="index.html#Setresuid">&#xb6;</a>
+			</h2>
 			<pre>func Setresuid(ruid <a href="../builtin/index.html#int">int</a>, euid <a href="../builtin/index.html#int">int</a>, suid <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4749,7 +5079,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Setreuid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=35203:35248#L1482">Setreuid</a></h2>
+			<h2 id="Setreuid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=35203:35248#L1482">Setreuid</a>
+				<a class="permalink" href="index.html#Setreuid">&#xb6;</a>
+			</h2>
 			<pre>func Setreuid(ruid <a href="../builtin/index.html#int">int</a>, euid <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4758,7 +5090,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Setrlimit">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=34939:34993#L1472">Setrlimit</a></h2>
+			<h2 id="Setrlimit">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=34939:34993#L1472">Setrlimit</a>
+				<a class="permalink" href="index.html#Setrlimit">&#xb6;</a>
+			</h2>
 			<pre>func Setrlimit(resource <a href="../builtin/index.html#int">int</a>, rlim *<a href="index.html#Rlimit">Rlimit</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4767,7 +5101,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Setsid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=20916:20950#L869">Setsid</a></h2>
+			<h2 id="Setsid">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=20916:20950#L869">Setsid</a>
+				<a class="permalink" href="index.html#Setsid">&#xb6;</a>
+			</h2>
 			<pre>func Setsid() (pid <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4776,7 +5112,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="SetsockoptByte">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=5834:5897#L258">SetsockoptByte</a></h2>
+			<h2 id="SetsockoptByte">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=5833:5896#L258">SetsockoptByte</a>
+				<a class="permalink" href="index.html#SetsockoptByte">&#xb6;</a>
+			</h2>
 			<pre>func SetsockoptByte(fd, level, opt <a href="../builtin/index.html#int">int</a>, value <a href="../builtin/index.html#byte">byte</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4785,7 +5123,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="SetsockoptICMPv6Filter">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=6548:6623#L279">SetsockoptICMPv6Filter</a></h2>
+			<h2 id="SetsockoptICMPv6Filter">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=6547:6622#L279">SetsockoptICMPv6Filter</a>
+				<a class="permalink" href="index.html#SetsockoptICMPv6Filter">&#xb6;</a>
+			</h2>
 			<pre>func SetsockoptICMPv6Filter(fd, level, opt <a href="../builtin/index.html#int">int</a>, filter *<a href="index.html#ICMPv6Filter">ICMPv6Filter</a>) <a href="../builtin/index.html#error">error</a></pre>
 			
 			
@@ -4794,7 +5134,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="SetsockoptIPMreq">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=6254:6321#L271">SetsockoptIPMreq</a></h2>
+			<h2 id="SetsockoptIPMreq">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=6253:6320#L271">SetsockoptIPMreq</a>
+				<a class="permalink" href="index.html#SetsockoptIPMreq">&#xb6;</a>
+			</h2>
 			<pre>func SetsockoptIPMreq(fd, level, opt <a href="../builtin/index.html#int">int</a>, mreq *<a href="index.html#IPMreq">IPMreq</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4803,7 +5145,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="SetsockoptIPMreqn">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=13037:13106#L515">SetsockoptIPMreqn</a></h2>
+			<h2 id="SetsockoptIPMreqn">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=13034:13103#L515">SetsockoptIPMreqn</a>
+				<a class="permalink" href="index.html#SetsockoptIPMreqn">&#xb6;</a>
+			</h2>
 			<pre>func SetsockoptIPMreqn(fd, level, opt <a href="../builtin/index.html#int">int</a>, mreq *<a href="index.html#IPMreqn">IPMreqn</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4812,7 +5156,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="SetsockoptIPv6Mreq">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=6398:6469#L275">SetsockoptIPv6Mreq</a></h2>
+			<h2 id="SetsockoptIPv6Mreq">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=6397:6468#L275">SetsockoptIPv6Mreq</a>
+				<a class="permalink" href="index.html#SetsockoptIPv6Mreq">&#xb6;</a>
+			</h2>
 			<pre>func SetsockoptIPv6Mreq(fd, level, opt <a href="../builtin/index.html#int">int</a>, mreq *<a href="index.html#IPv6Mreq">IPv6Mreq</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4821,7 +5167,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="SetsockoptInet4Addr">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=6112:6183#L267">SetsockoptInet4Addr</a></h2>
+			<h2 id="SetsockoptInet4Addr">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=6111:6182#L267">SetsockoptInet4Addr</a>
+				<a class="permalink" href="index.html#SetsockoptInet4Addr">&#xb6;</a>
+			</h2>
 			<pre>func SetsockoptInet4Addr(fd, level, opt <a href="../builtin/index.html#int">int</a>, value [4]<a href="../builtin/index.html#byte">byte</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4830,7 +5178,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="SetsockoptInt">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=5965:6026#L262">SetsockoptInt</a></h2>
+			<h2 id="SetsockoptInt">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=5964:6025#L262">SetsockoptInt</a>
+				<a class="permalink" href="index.html#SetsockoptInt">&#xb6;</a>
+			</h2>
 			<pre>func SetsockoptInt(fd, level, opt <a href="../builtin/index.html#int">int</a>, value <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4839,7 +5189,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="SetsockoptLinger">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=6708:6772#L283">SetsockoptLinger</a></h2>
+			<h2 id="SetsockoptLinger">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=6707:6771#L283">SetsockoptLinger</a>
+				<a class="permalink" href="index.html#SetsockoptLinger">&#xb6;</a>
+			</h2>
 			<pre>func SetsockoptLinger(fd, level, opt <a href="../builtin/index.html#int">int</a>, l *<a href="index.html#Linger">Linger</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4848,7 +5200,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="SetsockoptString">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=6846:6909#L287">SetsockoptString</a></h2>
+			<h2 id="SetsockoptString">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=6845:6908#L287">SetsockoptString</a>
+				<a class="permalink" href="index.html#SetsockoptString">&#xb6;</a>
+			</h2>
 			<pre>func SetsockoptString(fd, level, opt <a href="../builtin/index.html#int">int</a>, s <a href="../builtin/index.html#string">string</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4857,7 +5211,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="SetsockoptTimeval">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=6998:7065#L291">SetsockoptTimeval</a></h2>
+			<h2 id="SetsockoptTimeval">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=6997:7064#L291">SetsockoptTimeval</a>
+				<a class="permalink" href="index.html#SetsockoptTimeval">&#xb6;</a>
+			</h2>
 			<pre>func SetsockoptTimeval(fd, level, opt <a href="../builtin/index.html#int">int</a>, tv *<a href="index.html#Timeval">Timeval</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4866,7 +5222,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Settimeofday">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=21129:21171#L880">Settimeofday</a></h2>
+			<h2 id="Settimeofday">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=21129:21171#L880">Settimeofday</a>
+				<a class="permalink" href="index.html#Settimeofday">&#xb6;</a>
+			</h2>
 			<pre>func Settimeofday(tv *<a href="index.html#Timeval">Timeval</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4875,7 +5233,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Setuid">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=23812:23844#L870">Setuid</a></h2>
+			<h2 id="Setuid">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=23808:23840#L870">Setuid</a>
+				<a class="permalink" href="index.html#Setuid">&#xb6;</a>
+			</h2>
 			<pre>func Setuid(uid <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4884,7 +5244,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Setxattr">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=21625:21700#L900">Setxattr</a></h2>
+			<h2 id="Setxattr">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=21625:21700#L900">Setxattr</a>
+				<a class="permalink" href="index.html#Setxattr">&#xb6;</a>
+			</h2>
 			<pre>func Setxattr(path <a href="../builtin/index.html#string">string</a>, attr <a href="../builtin/index.html#string">string</a>, data []<a href="../builtin/index.html#byte">byte</a>, flags <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4893,7 +5255,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="Shutdown">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=35437:35479#L1492">Shutdown</a></h2>
+			<h2 id="Shutdown">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=35437:35479#L1492">Shutdown</a>
+				<a class="permalink" href="index.html#Shutdown">&#xb6;</a>
+			</h2>
 			<pre>func Shutdown(fd <a href="../builtin/index.html#int">int</a>, how <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4902,7 +5266,9 @@ integer array of open file descriptors from another process.
 		
 			
 			
-			<h2 id="SlicePtrFromStrings">func <a href="http://localhost:9090/src/syscall/exec_unix.go?s=3308:3362#L73">SlicePtrFromStrings</a></h2>
+			<h2 id="SlicePtrFromStrings">func <a href="http://localhost:9090/src/syscall/exec_unix.go?s=3286:3340#L73">SlicePtrFromStrings</a>
+				<a class="permalink" href="index.html#SlicePtrFromStrings">&#xb6;</a>
+			</h2>
 			<pre>func SlicePtrFromStrings(ss []<a href="../builtin/index.html#string">string</a>) ([]*<a href="../builtin/index.html#byte">byte</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 SlicePtrFromStrings converts a slice of strings to a slice of
@@ -4916,7 +5282,9 @@ a NUL byte, it returns (nil, EINVAL).
 		
 			
 			
-			<h2 id="Socket">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=7146:7201#L295">Socket</a></h2>
+			<h2 id="Socket">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=7145:7200#L295">Socket</a>
+				<a class="permalink" href="index.html#Socket">&#xb6;</a>
+			</h2>
 			<pre>func Socket(domain, typ, proto <a href="../builtin/index.html#int">int</a>) (fd <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4925,7 +5293,9 @@ a NUL byte, it returns (nil, EINVAL).
 		
 			
 			
-			<h2 id="Socketpair">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=7328:7390#L303">Socketpair</a></h2>
+			<h2 id="Socketpair">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=7327:7389#L303">Socketpair</a>
+				<a class="permalink" href="index.html#Socketpair">&#xb6;</a>
+			</h2>
 			<pre>func Socketpair(domain, typ, proto <a href="../builtin/index.html#int">int</a>) (fd [2]<a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4934,7 +5304,9 @@ a NUL byte, it returns (nil, EINVAL).
 		
 			
 			
-			<h2 id="Splice">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=35662:35758#L1502">Splice</a></h2>
+			<h2 id="Splice">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=35662:35758#L1502">Splice</a>
+				<a class="permalink" href="index.html#Splice">&#xb6;</a>
+			</h2>
 			<pre>func Splice(rfd <a href="../builtin/index.html#int">int</a>, roff *<a href="../builtin/index.html#int64">int64</a>, wfd <a href="../builtin/index.html#int">int</a>, woff *<a href="../builtin/index.html#int64">int64</a>, len <a href="../builtin/index.html#int">int</a>, flags <a href="../builtin/index.html#int">int</a>) (n <a href="../builtin/index.html#int64">int64</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4943,7 +5315,9 @@ a NUL byte, it returns (nil, EINVAL).
 		
 			
 			
-			<h2 id="StartProcess">func <a href="http://localhost:9090/src/syscall/exec_unix.go?s=6654:6753#L229">StartProcess</a></h2>
+			<h2 id="StartProcess">func <a href="http://localhost:9090/src/syscall/exec_unix.go?s=6632:6731#L229">StartProcess</a>
+				<a class="permalink" href="index.html#StartProcess">&#xb6;</a>
+			</h2>
 			<pre>func StartProcess(argv0 <a href="../builtin/index.html#string">string</a>, argv []<a href="../builtin/index.html#string">string</a>, attr *<a href="index.html#ProcAttr">ProcAttr</a>) (pid <a href="../builtin/index.html#int">int</a>, handle <a href="../builtin/index.html#uintptr">uintptr</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 StartProcess wraps ForkExec for package os.
@@ -4955,7 +5329,9 @@ StartProcess wraps ForkExec for package os.
 		
 			
 			
-			<h2 id="Stat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=36046:36094#L1513">Stat</a></h2>
+			<h2 id="Stat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=36046:36094#L1513">Stat</a>
+				<a class="permalink" href="index.html#Stat">&#xb6;</a>
+			</h2>
 			<pre>func Stat(path <a href="../builtin/index.html#string">string</a>, stat *<a href="index.html#Stat_t">Stat_t</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4964,7 +5340,9 @@ StartProcess wraps ForkExec for package os.
 		
 			
 			
-			<h2 id="Statfs">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=36413:36464#L1529">Statfs</a></h2>
+			<h2 id="Statfs">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=36413:36464#L1529">Statfs</a>
+				<a class="permalink" href="index.html#Statfs">&#xb6;</a>
+			</h2>
 			<pre>func Statfs(path <a href="../builtin/index.html#string">string</a>, buf *<a href="index.html#Statfs_t">Statfs_t</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -4973,7 +5351,9 @@ StartProcess wraps ForkExec for package os.
 		
 			
 			
-			<h2 id="StringBytePtr">func <a href="http://localhost:9090/src/syscall/syscall.go?s=2429:2463#L53">StringBytePtr</a></h2>
+			<h2 id="StringBytePtr">func <a href="http://localhost:9090/src/syscall/syscall.go?s=2426:2460#L53">StringBytePtr</a>
+				<a class="permalink" href="index.html#StringBytePtr">&#xb6;</a>
+			</h2>
 			<pre>func StringBytePtr(s <a href="../builtin/index.html#string">string</a>) *<a href="../builtin/index.html#byte">byte</a></pre>
 			<p>
 StringBytePtr returns a pointer to a NUL-terminated array of bytes.
@@ -4990,7 +5370,9 @@ Deprecated: Use BytePtrFromString instead.
 		
 			
 			
-			<h2 id="StringByteSlice">func <a href="http://localhost:9090/src/syscall/syscall.go?s=1705:1742#L26">StringByteSlice</a></h2>
+			<h2 id="StringByteSlice">func <a href="http://localhost:9090/src/syscall/syscall.go?s=1702:1739#L26">StringByteSlice</a>
+				<a class="permalink" href="index.html#StringByteSlice">&#xb6;</a>
+			</h2>
 			<pre>func StringByteSlice(s <a href="../builtin/index.html#string">string</a>) []<a href="../builtin/index.html#byte">byte</a></pre>
 			<p>
 StringByteSlice converts a string to a NUL-terminated []byte,
@@ -5007,7 +5389,9 @@ Deprecated: Use ByteSliceFromString instead.
 		
 			
 			
-			<h2 id="StringSlicePtr">func <a href="http://localhost:9090/src/syscall/exec_unix.go?s=2962:3002#L61">StringSlicePtr</a></h2>
+			<h2 id="StringSlicePtr">func <a href="http://localhost:9090/src/syscall/exec_unix.go?s=2940:2980#L61">StringSlicePtr</a>
+				<a class="permalink" href="index.html#StringSlicePtr">&#xb6;</a>
+			</h2>
 			<pre>func StringSlicePtr(ss []<a href="../builtin/index.html#string">string</a>) []*<a href="../builtin/index.html#byte">byte</a></pre>
 			<p>
 StringSlicePtr converts a slice of strings to a slice of pointers
@@ -5024,7 +5408,9 @@ Deprecated: Use SlicePtrFromStrings instead.
 		
 			
 			
-			<h2 id="Symlink">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=2117:2173#L66">Symlink</a></h2>
+			<h2 id="Symlink">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=2117:2173#L66">Symlink</a>
+				<a class="permalink" href="index.html#Symlink">&#xb6;</a>
+			</h2>
 			<pre>func Symlink(oldpath <a href="../builtin/index.html#string">string</a>, newpath <a href="../builtin/index.html#string">string</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -5033,7 +5419,9 @@ Deprecated: Use SlicePtrFromStrings instead.
 		
 			
 			
-			<h2 id="Sync">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=22300:22311#L928">Sync</a></h2>
+			<h2 id="Sync">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=22300:22311#L928">Sync</a>
+				<a class="permalink" href="index.html#Sync">&#xb6;</a>
+			</h2>
 			<pre>func Sync()</pre>
 			
 			
@@ -5042,7 +5430,9 @@ Deprecated: Use SlicePtrFromStrings instead.
 		
 			
 			
-			<h2 id="SyncFileRange">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=36784:36853#L1545">SyncFileRange</a></h2>
+			<h2 id="SyncFileRange">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=36784:36853#L1545">SyncFileRange</a>
+				<a class="permalink" href="index.html#SyncFileRange">&#xb6;</a>
+			</h2>
 			<pre>func SyncFileRange(fd <a href="../builtin/index.html#int">int</a>, off <a href="../builtin/index.html#int64">int64</a>, n <a href="../builtin/index.html#int64">int64</a>, flags <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -5051,7 +5441,9 @@ Deprecated: Use SlicePtrFromStrings instead.
 		
 			
 			
-			<h2 id="Syscall">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=542:608#L18">Syscall</a></h2>
+			<h2 id="Syscall">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=542:608#L18">Syscall</a>
+				<a class="permalink" href="index.html#Syscall">&#xb6;</a>
+			</h2>
 			<pre>func Syscall(trap, a1, a2, a3 <a href="../builtin/index.html#uintptr">uintptr</a>) (r1, r2 <a href="../builtin/index.html#uintptr">uintptr</a>, err <a href="index.html#Errno">Errno</a>)</pre>
 			
 			
@@ -5060,7 +5452,9 @@ Deprecated: Use SlicePtrFromStrings instead.
 		
 			
 			
-			<h2 id="Syscall6">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=609:688#L19">Syscall6</a></h2>
+			<h2 id="Syscall6">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=609:688#L19">Syscall6</a>
+				<a class="permalink" href="index.html#Syscall6">&#xb6;</a>
+			</h2>
 			<pre>func Syscall6(trap, a1, a2, a3, a4, a5, a6 <a href="../builtin/index.html#uintptr">uintptr</a>) (r1, r2 <a href="../builtin/index.html#uintptr">uintptr</a>, err <a href="index.html#Errno">Errno</a>)</pre>
 			
 			
@@ -5069,7 +5463,9 @@ Deprecated: Use SlicePtrFromStrings instead.
 		
 			
 			
-			<h2 id="Sysinfo">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=22419:22460#L935">Sysinfo</a></h2>
+			<h2 id="Sysinfo">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=22419:22460#L935">Sysinfo</a>
+				<a class="permalink" href="index.html#Sysinfo">&#xb6;</a>
+			</h2>
 			<pre>func Sysinfo(info *<a href="index.html#Sysinfo_t">Sysinfo_t</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -5078,7 +5474,9 @@ Deprecated: Use SlicePtrFromStrings instead.
 		
 			
 			
-			<h2 id="Tee">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=22652:22719#L945">Tee</a></h2>
+			<h2 id="Tee">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=22652:22719#L945">Tee</a>
+				<a class="permalink" href="index.html#Tee">&#xb6;</a>
+			</h2>
 			<pre>func Tee(rfd <a href="../builtin/index.html#int">int</a>, wfd <a href="../builtin/index.html#int">int</a>, len <a href="../builtin/index.html#int">int</a>, flags <a href="../builtin/index.html#int">int</a>) (n <a href="../builtin/index.html#int64">int64</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -5087,7 +5485,9 @@ Deprecated: Use SlicePtrFromStrings instead.
 		
 			
 			
-			<h2 id="Tgkill">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=22948:23002#L956">Tgkill</a></h2>
+			<h2 id="Tgkill">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=22948:23002#L956">Tgkill</a>
+				<a class="permalink" href="index.html#Tgkill">&#xb6;</a>
+			</h2>
 			<pre>func Tgkill(tgid <a href="../builtin/index.html#int">int</a>, tid <a href="../builtin/index.html#int">int</a>, sig <a href="index.html#Signal">Signal</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -5096,7 +5496,9 @@ Deprecated: Use SlicePtrFromStrings instead.
 		
 			
 			
-			<h2 id="Times">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=23199:23246#L966">Times</a></h2>
+			<h2 id="Times">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=23199:23246#L966">Times</a>
+				<a class="permalink" href="index.html#Times">&#xb6;</a>
+			</h2>
 			<pre>func Times(tms *<a href="index.html#Tms">Tms</a>) (ticks <a href="../builtin/index.html#uintptr">uintptr</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -5105,7 +5507,9 @@ Deprecated: Use SlicePtrFromStrings instead.
 		
 			
 			
-			<h2 id="TimespecToNsec">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=3831:3869#L79">TimespecToNsec</a></h2>
+			<h2 id="TimespecToNsec">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=3831:3869#L79">TimespecToNsec</a>
+				<a class="permalink" href="index.html#TimespecToNsec">&#xb6;</a>
+			</h2>
 			<pre>func TimespecToNsec(ts <a href="index.html#Timespec">Timespec</a>) <a href="../builtin/index.html#int64">int64</a></pre>
 			
 			
@@ -5114,7 +5518,9 @@ Deprecated: Use SlicePtrFromStrings instead.
 		
 			
 			
-			<h2 id="TimevalToNsec">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4019:4055#L87">TimevalToNsec</a></h2>
+			<h2 id="TimevalToNsec">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4019:4055#L87">TimevalToNsec</a>
+				<a class="permalink" href="index.html#TimevalToNsec">&#xb6;</a>
+			</h2>
 			<pre>func TimevalToNsec(tv <a href="index.html#Timeval">Timeval</a>) <a href="../builtin/index.html#int64">int64</a></pre>
 			
 			
@@ -5123,7 +5529,9 @@ Deprecated: Use SlicePtrFromStrings instead.
 		
 			
 			
-			<h2 id="Truncate">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=37075:37127#L1555">Truncate</a></h2>
+			<h2 id="Truncate">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=37075:37127#L1555">Truncate</a>
+				<a class="permalink" href="index.html#Truncate">&#xb6;</a>
+			</h2>
 			<pre>func Truncate(path <a href="../builtin/index.html#string">string</a>, length <a href="../builtin/index.html#int64">int64</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -5132,7 +5540,9 @@ Deprecated: Use SlicePtrFromStrings instead.
 		
 			
 			
-			<h2 id="Umask">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=23457:23491#L977">Umask</a></h2>
+			<h2 id="Umask">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=23457:23491#L977">Umask</a>
+				<a class="permalink" href="index.html#Umask">&#xb6;</a>
+			</h2>
 			<pre>func Umask(mask <a href="../builtin/index.html#int">int</a>) (oldmask <a href="../builtin/index.html#int">int</a>)</pre>
 			
 			
@@ -5141,7 +5551,9 @@ Deprecated: Use SlicePtrFromStrings instead.
 		
 			
 			
-			<h2 id="Uname">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=23646:23682#L985">Uname</a></h2>
+			<h2 id="Uname">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=23646:23682#L985">Uname</a>
+				<a class="permalink" href="index.html#Uname">&#xb6;</a>
+			</h2>
 			<pre>func Uname(buf *<a href="index.html#Utsname">Utsname</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -5150,7 +5562,9 @@ Deprecated: Use SlicePtrFromStrings instead.
 		
 			
 			
-			<h2 id="UnixCredentials">func <a href="http://localhost:9090/src/syscall/sockcmsg_linux.go?s=367:408#L4">UnixCredentials</a></h2>
+			<h2 id="UnixCredentials">func <a href="http://localhost:9090/src/syscall/sockcmsg_linux.go?s=366:407#L4">UnixCredentials</a>
+				<a class="permalink" href="index.html#UnixCredentials">&#xb6;</a>
+			</h2>
 			<pre>func UnixCredentials(ucred *<a href="index.html#Ucred">Ucred</a>) []<a href="../builtin/index.html#byte">byte</a></pre>
 			<p>
 UnixCredentials encodes credentials into a socket control message
@@ -5164,7 +5578,9 @@ authentication.
 		
 			
 			
-			<h2 id="UnixRights">func <a href="http://localhost:9090/src/syscall/sockcmsg_unix.go?s=2144:2178#L63">UnixRights</a></h2>
+			<h2 id="UnixRights">func <a href="http://localhost:9090/src/syscall/sockcmsg_unix.go?s=2154:2188#L63">UnixRights</a>
+				<a class="permalink" href="index.html#UnixRights">&#xb6;</a>
+			</h2>
 			<pre>func UnixRights(fds ...<a href="../builtin/index.html#int">int</a>) []<a href="../builtin/index.html#byte">byte</a></pre>
 			<p>
 UnixRights encodes a set of open file descriptors into a socket
@@ -5177,7 +5593,9 @@ control message for sending to another process.
 		
 			
 			
-			<h2 id="Unlink">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=2226:2256#L70">Unlink</a></h2>
+			<h2 id="Unlink">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=2226:2256#L70">Unlink</a>
+				<a class="permalink" href="index.html#Unlink">&#xb6;</a>
+			</h2>
 			<pre>func Unlink(path <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 			
 			
@@ -5186,7 +5604,9 @@ control message for sending to another process.
 		
 			
 			
-			<h2 id="Unlinkat">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=2362:2405#L76">Unlinkat</a></h2>
+			<h2 id="Unlinkat">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=2362:2405#L76">Unlinkat</a>
+				<a class="permalink" href="index.html#Unlinkat">&#xb6;</a>
+			</h2>
 			<pre>func Unlinkat(dirfd <a href="../builtin/index.html#int">int</a>, path <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 			
 			
@@ -5195,7 +5615,9 @@ control message for sending to another process.
 		
 			
 			
-			<h2 id="Unmount">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=23871:23921#L995">Unmount</a></h2>
+			<h2 id="Unmount">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=23871:23921#L995">Unmount</a>
+				<a class="permalink" href="index.html#Unmount">&#xb6;</a>
+			</h2>
 			<pre>func Unmount(target <a href="../builtin/index.html#string">string</a>, flags <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -5204,7 +5626,9 @@ control message for sending to another process.
 		
 			
 			
-			<h2 id="Unsetenv">func <a href="http://localhost:9090/src/syscall/env_unix.go?s=1407:1438#L47">Unsetenv</a></h2>
+			<h2 id="Unsetenv">func <a href="http://localhost:9090/src/syscall/env_unix.go?s=1406:1437#L47">Unsetenv</a>
+				<a class="permalink" href="index.html#Unsetenv">&#xb6;</a>
+			</h2>
 			<pre>func Unsetenv(key <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 			
 			
@@ -5213,7 +5637,9 @@ control message for sending to another process.
 		
 			
 			
-			<h2 id="Unshare">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=24230:24265#L1011">Unshare</a></h2>
+			<h2 id="Unshare">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=24230:24265#L1011">Unshare</a>
+				<a class="permalink" href="index.html#Unshare">&#xb6;</a>
+			</h2>
 			<pre>func Unshare(flags <a href="../builtin/index.html#int">int</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -5222,7 +5648,9 @@ control message for sending to another process.
 		
 			
 			
-			<h2 id="Ustat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=24439:24485#L1021">Ustat</a></h2>
+			<h2 id="Ustat">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=24439:24485#L1021">Ustat</a>
+				<a class="permalink" href="index.html#Ustat">&#xb6;</a>
+			</h2>
 			<pre>func Ustat(dev <a href="../builtin/index.html#int">int</a>, ubuf *<a href="index.html#Ustat_t">Ustat_t</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -5231,7 +5659,9 @@ control message for sending to another process.
 		
 			
 			
-			<h2 id="Utime">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=24683:24732#L1031">Utime</a></h2>
+			<h2 id="Utime">func <a href="http://localhost:9090/src/syscall/zsyscall_linux_amd64.go?s=24683:24732#L1031">Utime</a>
+				<a class="permalink" href="index.html#Utime">&#xb6;</a>
+			</h2>
 			<pre>func Utime(path <a href="../builtin/index.html#string">string</a>, buf *<a href="index.html#Utimbuf">Utimbuf</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -5240,7 +5670,9 @@ control message for sending to another process.
 		
 			
 			
-			<h2 id="Utimes">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=2502:2552#L82">Utimes</a></h2>
+			<h2 id="Utimes">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=2502:2552#L82">Utimes</a>
+				<a class="permalink" href="index.html#Utimes">&#xb6;</a>
+			</h2>
 			<pre>func Utimes(path <a href="../builtin/index.html#string">string</a>, tv []<a href="index.html#Timeval">Timeval</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -5249,7 +5681,9 @@ control message for sending to another process.
 		
 			
 			
-			<h2 id="UtimesNano">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=2729:2784#L91">UtimesNano</a></h2>
+			<h2 id="UtimesNano">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=2729:2784#L91">UtimesNano</a>
+				<a class="permalink" href="index.html#UtimesNano">&#xb6;</a>
+			</h2>
 			<pre>func UtimesNano(path <a href="../builtin/index.html#string">string</a>, ts []<a href="index.html#Timespec">Timespec</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -5258,7 +5692,9 @@ control message for sending to another process.
 		
 			
 			
-			<h2 id="Wait4">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=6205:6296#L244">Wait4</a></h2>
+			<h2 id="Wait4">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=6202:6293#L244">Wait4</a>
+				<a class="permalink" href="index.html#Wait4">&#xb6;</a>
+			</h2>
 			<pre>func Wait4(pid <a href="../builtin/index.html#int">int</a>, wstatus *<a href="index.html#WaitStatus">WaitStatus</a>, options <a href="../builtin/index.html#int">int</a>, rusage *<a href="index.html#Rusage">Rusage</a>) (wpid <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -5267,7 +5703,9 @@ control message for sending to another process.
 		
 			
 			
-			<h2 id="Write">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=3896:3943#L166">Write</a></h2>
+			<h2 id="Write">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=3895:3942#L166">Write</a>
+				<a class="permalink" href="index.html#Write">&#xb6;</a>
+			</h2>
 			<pre>func Write(fd <a href="../builtin/index.html#int">int</a>, p []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			
 			
@@ -5277,7 +5715,9 @@ control message for sending to another process.
 		
 			
 			
-			<h2 id="Cmsghdr">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3508:3615#L234">Cmsghdr</a></h2>
+			<h2 id="Cmsghdr">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3508:3615#L234">Cmsghdr</a>
+				<a class="permalink" href="index.html#Cmsghdr">&#xb6;</a>
+			</h2>
 			<pre>type Cmsghdr struct {
     Len          <a href="../builtin/index.html#uint64">uint64</a>
     Level        <a href="../builtin/index.html#int32">int32</a>
@@ -5298,7 +5738,9 @@ control message for sending to another process.
 
 			
 				
-				<h3 id="Cmsghdr.SetLen">func (*Cmsghdr) <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4935:4974#L134">SetLen</a></h3>
+				<h3 id="Cmsghdr.SetLen">func (*Cmsghdr) <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4935:4974#L134">SetLen</a>
+					<a class="permalink" href="index.html#Cmsghdr.SetLen">&#xb6;</a>
+				</h3>
 				<pre>func (cmsg *<a href="index.html#Cmsghdr">Cmsghdr</a>) SetLen(length <a href="../builtin/index.html#int">int</a>)</pre>
 				
 				
@@ -5308,7 +5750,9 @@ control message for sending to another process.
 		
 			
 			
-			<h2 id="Credential">type <a href="http://localhost:9090/src/syscall/exec_unix.go?s=3984:4114#L104">Credential</a></h2>
+			<h2 id="Credential">type <a href="http://localhost:9090/src/syscall/exec_unix.go?s=3962:4092#L104">Credential</a>
+				<a class="permalink" href="index.html#Credential">&#xb6;</a>
+			</h2>
 			<pre>type Credential struct {
     Uid    <a href="../builtin/index.html#uint32">uint32</a>   <span class="comment">// User ID.</span>
     Gid    <a href="../builtin/index.html#uint32">uint32</a>   <span class="comment">// Group ID.</span>
@@ -5334,7 +5778,9 @@ by a child process started by StartProcess.
 		
 			
 			
-			<h2 id="Dirent">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=1903:2035#L124">Dirent</a></h2>
+			<h2 id="Dirent">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=1903:2035#L124">Dirent</a>
+				<a class="permalink" href="index.html#Dirent">&#xb6;</a>
+			</h2>
 			<pre>type Dirent struct {
     Ino       <a href="../builtin/index.html#uint64">uint64</a>
     Off       <a href="../builtin/index.html#int64">int64</a>
@@ -5359,7 +5805,9 @@ by a child process started by StartProcess.
 		
 			
 			
-			<h2 id="EpollEvent">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=10079:10148#L578">EpollEvent</a></h2>
+			<h2 id="EpollEvent">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=10079:10148#L578">EpollEvent</a>
+				<a class="permalink" href="index.html#EpollEvent">&#xb6;</a>
+			</h2>
 			<pre>type EpollEvent struct {
     Events <a href="../builtin/index.html#uint32">uint32</a>
     Fd     <a href="../builtin/index.html#int32">int32</a>
@@ -5381,11 +5829,13 @@ by a child process started by StartProcess.
 		
 			
 			
-			<h2 id="Errno">type <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=2471:2489#L90">Errno</a></h2>
+			<h2 id="Errno">type <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=2470:2488#L90">Errno</a>
+				<a class="permalink" href="index.html#Errno">&#xb6;</a>
+			</h2>
 			<pre>type Errno <a href="../builtin/index.html#uintptr">uintptr</a></pre>
 			<p>
 An Errno is an unsigned number describing an error condition.
-It implements the error interface.  The zero Errno is by convention
+It implements the error interface. The zero Errno is by convention
 a non-error, so code to convert from Errno to error should use:
 </p>
 <pre>err = nil
@@ -5407,7 +5857,9 @@ if errno != 0 {
 
 			
 				
-				<h3 id="Errno.Error">func (Errno) <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=2491:2520#L92">Error</a></h3>
+				<h3 id="Errno.Error">func (Errno) <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=2490:2519#L92">Error</a>
+					<a class="permalink" href="index.html#Errno.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#Errno">Errno</a>) Error() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -5415,7 +5867,9 @@ if errno != 0 {
 				
 			
 				
-				<h3 id="Errno.Temporary">func (Errno) <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=2651:2682#L102">Temporary</a></h3>
+				<h3 id="Errno.Temporary">func (Errno) <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=2650:2681#L102">Temporary</a>
+					<a class="permalink" href="index.html#Errno.Temporary">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#Errno">Errno</a>) Temporary() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -5423,7 +5877,9 @@ if errno != 0 {
 				
 			
 				
-				<h3 id="Errno.Timeout">func (Errno) <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=2777:2806#L106">Timeout</a></h3>
+				<h3 id="Errno.Timeout">func (Errno) <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=2776:2805#L106">Timeout</a>
+					<a class="permalink" href="index.html#Errno.Timeout">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#Errno">Errno</a>) Timeout() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -5433,7 +5889,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="FdSet">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=9433:9470#L537">FdSet</a></h2>
+			<h2 id="FdSet">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=9433:9470#L537">FdSet</a>
+				<a class="permalink" href="index.html#FdSet">&#xb6;</a>
+			</h2>
 			<pre>type FdSet struct {
     Bits [16]<a href="../builtin/index.html#int64">int64</a>
 }</pre>
@@ -5453,7 +5911,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="Flock_t">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2076:2222#L137">Flock_t</a></h2>
+			<h2 id="Flock_t">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2076:2222#L137">Flock_t</a>
+				<a class="permalink" href="index.html#Flock_t">&#xb6;</a>
+			</h2>
 			<pre>type Flock_t struct {
     Type      <a href="../builtin/index.html#int16">int16</a>
     Whence    <a href="../builtin/index.html#int16">int16</a>
@@ -5479,7 +5939,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="Fsid">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2037:2074#L133">Fsid</a></h2>
+			<h2 id="Fsid">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2037:2074#L133">Fsid</a>
+				<a class="permalink" href="index.html#Fsid">&#xb6;</a>
+			</h2>
 			<pre>type Fsid struct {
     X__val [2]<a href="../builtin/index.html#int32">int32</a>
 }</pre>
@@ -5499,7 +5961,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="ICMPv6Filter">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3871:3915#L257">ICMPv6Filter</a></h2>
+			<h2 id="ICMPv6Filter">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3871:3915#L257">ICMPv6Filter</a>
+				<a class="permalink" href="index.html#ICMPv6Filter">&#xb6;</a>
+			</h2>
 			<pre>type ICMPv6Filter struct {
     Data [8]<a href="../builtin/index.html#uint32">uint32</a>
 }</pre>
@@ -5515,7 +5979,9 @@ if errno != 0 {
 
 			
 				
-				<h3 id="GetsockoptICMPv6Filter">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=12609:12679#L501">GetsockoptICMPv6Filter</a></h3>
+				<h3 id="GetsockoptICMPv6Filter">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=12606:12676#L501">GetsockoptICMPv6Filter</a>
+					<a class="permalink" href="index.html#GetsockoptICMPv6Filter">&#xb6;</a>
+				</h3>
 				<pre>func GetsockoptICMPv6Filter(fd, level, opt <a href="../builtin/index.html#int">int</a>) (*<a href="index.html#ICMPv6Filter">ICMPv6Filter</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -5526,7 +5992,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="IPMreq">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3037:3125#L206">IPMreq</a></h2>
+			<h2 id="IPMreq">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3037:3125#L206">IPMreq</a>
+				<a class="permalink" href="index.html#IPMreq">&#xb6;</a>
+			</h2>
 			<pre>type IPMreq struct {
     Multiaddr [4]<a href="../builtin/index.html#byte">byte</a> <span class="comment">/* in_addr */</span>
     Interface [4]<a href="../builtin/index.html#byte">byte</a> <span class="comment">/* in_addr */</span>
@@ -5543,7 +6011,9 @@ if errno != 0 {
 
 			
 				
-				<h3 id="GetsockoptIPMreq">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=11761:11819#L473">GetsockoptIPMreq</a></h3>
+				<h3 id="GetsockoptIPMreq">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=11758:11816#L473">GetsockoptIPMreq</a>
+					<a class="permalink" href="index.html#GetsockoptIPMreq">&#xb6;</a>
+				</h3>
 				<pre>func GetsockoptIPMreq(fd, level, opt <a href="../builtin/index.html#int">int</a>) (*<a href="index.html#IPMreq">IPMreq</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -5554,7 +6024,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="IPMreqn">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3127:3233#L211">IPMreqn</a></h2>
+			<h2 id="IPMreqn">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3127:3233#L211">IPMreqn</a>
+				<a class="permalink" href="index.html#IPMreqn">&#xb6;</a>
+			</h2>
 			<pre>type IPMreqn struct {
     Multiaddr [4]<a href="../builtin/index.html#byte">byte</a> <span class="comment">/* in_addr */</span>
     Address   [4]<a href="../builtin/index.html#byte">byte</a> <span class="comment">/* in_addr */</span>
@@ -5572,7 +6044,9 @@ if errno != 0 {
 
 			
 				
-				<h3 id="GetsockoptIPMreqn">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=11965:12025#L480">GetsockoptIPMreqn</a></h3>
+				<h3 id="GetsockoptIPMreqn">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=11962:12022#L480">GetsockoptIPMreqn</a>
+					<a class="permalink" href="index.html#GetsockoptIPMreqn">&#xb6;</a>
+				</h3>
 				<pre>func GetsockoptIPMreqn(fd, level, opt <a href="../builtin/index.html#int">int</a>) (*<a href="index.html#IPMreqn">IPMreqn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -5583,7 +6057,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="IPv6MTUInfo">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3806:3869#L252">IPv6MTUInfo</a></h2>
+			<h2 id="IPv6MTUInfo">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3806:3869#L252">IPv6MTUInfo</a>
+				<a class="permalink" href="index.html#IPv6MTUInfo">&#xb6;</a>
+			</h2>
 			<pre>type IPv6MTUInfo struct {
     Addr <a href="index.html#RawSockaddrInet6">RawSockaddrInet6</a>
     Mtu  <a href="../builtin/index.html#uint32">uint32</a>
@@ -5600,7 +6076,9 @@ if errno != 0 {
 
 			
 				
-				<h3 id="GetsockoptIPv6MTUInfo">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=12385:12453#L494">GetsockoptIPv6MTUInfo</a></h3>
+				<h3 id="GetsockoptIPv6MTUInfo">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=12382:12450#L494">GetsockoptIPv6MTUInfo</a>
+					<a class="permalink" href="index.html#GetsockoptIPv6MTUInfo">&#xb6;</a>
+				</h3>
 				<pre>func GetsockoptIPv6MTUInfo(fd, level, opt <a href="../builtin/index.html#int">int</a>) (*<a href="index.html#IPv6MTUInfo">IPv6MTUInfo</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -5611,7 +6089,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="IPv6Mreq">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3235:3312#L217">IPv6Mreq</a></h2>
+			<h2 id="IPv6Mreq">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3235:3312#L217">IPv6Mreq</a>
+				<a class="permalink" href="index.html#IPv6Mreq">&#xb6;</a>
+			</h2>
 			<pre>type IPv6Mreq struct {
     Multiaddr [16]<a href="../builtin/index.html#byte">byte</a> <span class="comment">/* in6_addr */</span>
     Interface <a href="../builtin/index.html#uint32">uint32</a>
@@ -5628,7 +6108,9 @@ if errno != 0 {
 
 			
 				
-				<h3 id="GetsockoptIPv6Mreq">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=12173:12235#L487">GetsockoptIPv6Mreq</a></h3>
+				<h3 id="GetsockoptIPv6Mreq">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=12170:12232#L487">GetsockoptIPv6Mreq</a>
+					<a class="permalink" href="index.html#GetsockoptIPv6Mreq">&#xb6;</a>
+				</h3>
 				<pre>func GetsockoptIPv6Mreq(fd, level, opt <a href="../builtin/index.html#int">int</a>) (*<a href="index.html#IPv6Mreq">IPv6Mreq</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -5639,7 +6121,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="IfAddrmsg">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8213:8324#L452">IfAddrmsg</a></h2>
+			<h2 id="IfAddrmsg">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8213:8324#L452">IfAddrmsg</a>
+				<a class="permalink" href="index.html#IfAddrmsg">&#xb6;</a>
+			</h2>
 			<pre>type IfAddrmsg struct {
     Family    <a href="../builtin/index.html#uint8">uint8</a>
     Prefixlen <a href="../builtin/index.html#uint8">uint8</a>
@@ -5663,7 +6147,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="IfInfomsg">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8075:8211#L443">IfInfomsg</a></h2>
+			<h2 id="IfInfomsg">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8075:8211#L443">IfInfomsg</a>
+				<a class="permalink" href="index.html#IfInfomsg">&#xb6;</a>
+			</h2>
 			<pre>type IfInfomsg struct {
     Family     <a href="../builtin/index.html#uint8">uint8</a>
     X__ifi_pad <a href="../builtin/index.html#uint8">uint8</a>
@@ -5688,7 +6174,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="Inet4Pktinfo">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3617:3725#L241">Inet4Pktinfo</a></h2>
+			<h2 id="Inet4Pktinfo">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3617:3725#L241">Inet4Pktinfo</a>
+				<a class="permalink" href="index.html#Inet4Pktinfo">&#xb6;</a>
+			</h2>
 			<pre>type Inet4Pktinfo struct {
     Ifindex  <a href="../builtin/index.html#int32">int32</a>
     Spec_dst [4]<a href="../builtin/index.html#byte">byte</a> <span class="comment">/* in_addr */</span>
@@ -5710,7 +6198,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="Inet6Pktinfo">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3727:3804#L247">Inet6Pktinfo</a></h2>
+			<h2 id="Inet6Pktinfo">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3727:3804#L247">Inet6Pktinfo</a>
+				<a class="permalink" href="index.html#Inet6Pktinfo">&#xb6;</a>
+			</h2>
 			<pre>type Inet6Pktinfo struct {
     Addr    [16]<a href="../builtin/index.html#byte">byte</a> <span class="comment">/* in6_addr */</span>
     Ifindex <a href="../builtin/index.html#uint32">uint32</a>
@@ -5731,7 +6221,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="InotifyEvent">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8807:8911#L497">InotifyEvent</a></h2>
+			<h2 id="InotifyEvent">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8807:8911#L497">InotifyEvent</a>
+				<a class="permalink" href="index.html#InotifyEvent">&#xb6;</a>
+			</h2>
 			<pre>type InotifyEvent struct {
     Wd     <a href="../builtin/index.html#int32">int32</a>
     Mask   <a href="../builtin/index.html#uint32">uint32</a>
@@ -5755,7 +6247,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="Iovec">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2989:3035#L201">Iovec</a></h2>
+			<h2 id="Iovec">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2989:3035#L201">Iovec</a>
+				<a class="permalink" href="index.html#Iovec">&#xb6;</a>
+			</h2>
 			<pre>type Iovec struct {
     Base *<a href="../builtin/index.html#byte">byte</a>
     Len  <a href="../builtin/index.html#uint64">uint64</a>
@@ -5774,7 +6268,9 @@ if errno != 0 {
 
 			
 				
-				<h3 id="Iovec.SetLen">func (*Iovec) <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4778:4814#L126">SetLen</a></h3>
+				<h3 id="Iovec.SetLen">func (*Iovec) <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4778:4814#L126">SetLen</a>
+					<a class="permalink" href="index.html#Iovec.SetLen">&#xb6;</a>
+				</h3>
 				<pre>func (iov *<a href="index.html#Iovec">Iovec</a>) SetLen(length <a href="../builtin/index.html#int">int</a>)</pre>
 				
 				
@@ -5784,7 +6280,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="Linger">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2937:2987#L196">Linger</a></h2>
+			<h2 id="Linger">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2937:2987#L196">Linger</a>
+				<a class="permalink" href="index.html#Linger">&#xb6;</a>
+			</h2>
 			<pre>type Linger struct {
     Onoff  <a href="../builtin/index.html#int32">int32</a>
     Linger <a href="../builtin/index.html#int32">int32</a>
@@ -5805,7 +6303,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="Msghdr">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3314:3506#L222">Msghdr</a></h2>
+			<h2 id="Msghdr">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3314:3506#L222">Msghdr</a>
+				<a class="permalink" href="index.html#Msghdr">&#xb6;</a>
+			</h2>
 			<pre>type Msghdr struct {
     Name       *<a href="../builtin/index.html#byte">byte</a>
     Namelen    <a href="../builtin/index.html#uint32">uint32</a>
@@ -5831,7 +6331,9 @@ if errno != 0 {
 
 			
 				
-				<h3 id="Msghdr.SetControllen">func (*Msghdr) <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4846:4893#L130">SetControllen</a></h3>
+				<h3 id="Msghdr.SetControllen">func (*Msghdr) <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4846:4893#L130">SetControllen</a>
+					<a class="permalink" href="index.html#Msghdr.SetControllen">&#xb6;</a>
+				</h3>
 				<pre>func (msghdr *<a href="index.html#Msghdr">Msghdr</a>) SetControllen(length <a href="../builtin/index.html#int">int</a>)</pre>
 				
 				
@@ -5841,7 +6343,9 @@ if errno != 0 {
 		
 			
 			
-			<h2 id="NetlinkMessage">type <a href="http://localhost:9090/src/syscall/netlink_linux.go?s=2797:2859#L99">NetlinkMessage</a></h2>
+			<h2 id="NetlinkMessage">type <a href="http://localhost:9090/src/syscall/netlink_linux.go?s=2796:2858#L99">NetlinkMessage</a>
+				<a class="permalink" href="index.html#NetlinkMessage">&#xb6;</a>
+			</h2>
 			<pre>type NetlinkMessage struct {
     Header <a href="index.html#NlMsghdr">NlMsghdr</a>
     Data   []<a href="../builtin/index.html#byte">byte</a>
@@ -5865,7 +6369,9 @@ NetlinkMessage represents a netlink message.
 		
 			
 			
-			<h2 id="NetlinkRouteAttr">type <a href="http://localhost:9090/src/syscall/netlink_linux.go?s=3667:3727#L129">NetlinkRouteAttr</a></h2>
+			<h2 id="NetlinkRouteAttr">type <a href="http://localhost:9090/src/syscall/netlink_linux.go?s=3666:3726#L129">NetlinkRouteAttr</a>
+				<a class="permalink" href="index.html#NetlinkRouteAttr">&#xb6;</a>
+			</h2>
 			<pre>type NetlinkRouteAttr struct {
     Attr  <a href="index.html#RtAttr">RtAttr</a>
     Value []<a href="../builtin/index.html#byte">byte</a>
@@ -5889,7 +6395,9 @@ NetlinkRouteAttr represents a netlink route attribute.
 		
 			
 			
-			<h2 id="NetlinkRouteRequest">type <a href="http://localhost:9090/src/syscall/netlink_linux.go?s=670:739#L14">NetlinkRouteRequest</a></h2>
+			<h2 id="NetlinkRouteRequest">type <a href="http://localhost:9090/src/syscall/netlink_linux.go?s=669:738#L14">NetlinkRouteRequest</a>
+				<a class="permalink" href="index.html#NetlinkRouteRequest">&#xb6;</a>
+			</h2>
 			<pre>type NetlinkRouteRequest struct {
     Header <a href="index.html#NlMsghdr">NlMsghdr</a>
     Data   <a href="index.html#RtGenmsg">RtGenmsg</a>
@@ -5914,7 +6422,9 @@ and link states from the kernel.
 		
 			
 			
-			<h2 id="NlAttr">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=7975:8023#L433">NlAttr</a></h2>
+			<h2 id="NlAttr">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=7975:8023#L433">NlAttr</a>
+				<a class="permalink" href="index.html#NlAttr">&#xb6;</a>
+			</h2>
 			<pre>type NlAttr struct {
     Len  <a href="../builtin/index.html#uint16">uint16</a>
     Type <a href="../builtin/index.html#uint16">uint16</a>
@@ -5935,7 +6445,9 @@ and link states from the kernel.
 		
 			
 			
-			<h2 id="NlMsgerr">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=7880:7933#L424">NlMsgerr</a></h2>
+			<h2 id="NlMsgerr">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=7880:7933#L424">NlMsgerr</a>
+				<a class="permalink" href="index.html#NlMsgerr">&#xb6;</a>
+			</h2>
 			<pre>type NlMsgerr struct {
     Error <a href="../builtin/index.html#int32">int32</a>
     Msg   <a href="index.html#NlMsghdr">NlMsghdr</a>
@@ -5956,7 +6468,9 @@ and link states from the kernel.
 		
 			
 			
-			<h2 id="NlMsghdr">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=7784:7878#L416">NlMsghdr</a></h2>
+			<h2 id="NlMsghdr">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=7784:7878#L416">NlMsghdr</a>
+				<a class="permalink" href="index.html#NlMsghdr">&#xb6;</a>
+			</h2>
 			<pre>type NlMsghdr struct {
     Len   <a href="../builtin/index.html#uint32">uint32</a>
     Type  <a href="../builtin/index.html#uint16">uint16</a>
@@ -5980,7 +6494,9 @@ and link states from the kernel.
 		
 			
 			
-			<h2 id="ProcAttr">type <a href="http://localhost:9090/src/syscall/exec_unix.go?s=4211:4373#L112">ProcAttr</a></h2>
+			<h2 id="ProcAttr">type <a href="http://localhost:9090/src/syscall/exec_unix.go?s=4189:4351#L112">ProcAttr</a>
+				<a class="permalink" href="index.html#ProcAttr">&#xb6;</a>
+			</h2>
 			<pre>type ProcAttr struct {
     Dir   <a href="../builtin/index.html#string">string</a>    <span class="comment">// Current working directory.</span>
     Env   []<a href="../builtin/index.html#string">string</a>  <span class="comment">// Environment.</span>
@@ -6007,7 +6523,9 @@ by StartProcess.
 		
 			
 			
-			<h2 id="PtraceRegs">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8946:9431#L507">PtraceRegs</a></h2>
+			<h2 id="PtraceRegs">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8946:9431#L507">PtraceRegs</a>
+				<a class="permalink" href="index.html#PtraceRegs">&#xb6;</a>
+			</h2>
 			<pre>type PtraceRegs struct {
     R15      <a href="../builtin/index.html#uint64">uint64</a>
     R14      <a href="../builtin/index.html#uint64">uint64</a>
@@ -6051,7 +6569,9 @@ by StartProcess.
 
 			
 				
-				<h3 id="PtraceRegs.PC">func (*PtraceRegs) <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4673:4705#L122">PC</a></h3>
+				<h3 id="PtraceRegs.PC">func (*PtraceRegs) <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4673:4705#L122">PC</a>
+					<a class="permalink" href="index.html#PtraceRegs.PC">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#PtraceRegs">PtraceRegs</a>) PC() <a href="../builtin/index.html#uint64">uint64</a></pre>
 				
 				
@@ -6059,7 +6579,9 @@ by StartProcess.
 				
 			
 				
-				<h3 id="PtraceRegs.SetPC">func (*PtraceRegs) <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4724:4761#L124">SetPC</a></h3>
+				<h3 id="PtraceRegs.SetPC">func (*PtraceRegs) <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4724:4761#L124">SetPC</a>
+					<a class="permalink" href="index.html#PtraceRegs.SetPC">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#PtraceRegs">PtraceRegs</a>) SetPC(pc <a href="../builtin/index.html#uint64">uint64</a>)</pre>
 				
 				
@@ -6069,7 +6591,9 @@ by StartProcess.
 		
 			
 			
-			<h2 id="RawSockaddr">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2789:2848#L184">RawSockaddr</a></h2>
+			<h2 id="RawSockaddr">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2789:2848#L184">RawSockaddr</a>
+				<a class="permalink" href="index.html#RawSockaddr">&#xb6;</a>
+			</h2>
 			<pre>type RawSockaddr struct {
     Family <a href="../builtin/index.html#uint16">uint16</a>
     Data   [14]<a href="../builtin/index.html#int8">int8</a>
@@ -6090,7 +6614,9 @@ by StartProcess.
 		
 			
 			
-			<h2 id="RawSockaddrAny">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2850:2913#L189">RawSockaddrAny</a></h2>
+			<h2 id="RawSockaddrAny">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2850:2913#L189">RawSockaddrAny</a>
+				<a class="permalink" href="index.html#RawSockaddrAny">&#xb6;</a>
+			</h2>
 			<pre>type RawSockaddrAny struct {
     Addr <a href="index.html#RawSockaddr">RawSockaddr</a>
     Pad  [96]<a href="../builtin/index.html#int8">int8</a>
@@ -6111,7 +6637,9 @@ by StartProcess.
 		
 			
 			
-			<h2 id="RawSockaddrInet4">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2224:2333#L147">RawSockaddrInet4</a></h2>
+			<h2 id="RawSockaddrInet4">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2224:2333#L147">RawSockaddrInet4</a>
+				<a class="permalink" href="index.html#RawSockaddrInet4">&#xb6;</a>
+			</h2>
 			<pre>type RawSockaddrInet4 struct {
     Family <a href="../builtin/index.html#uint16">uint16</a>
     Port   <a href="../builtin/index.html#uint16">uint16</a>
@@ -6134,7 +6662,9 @@ by StartProcess.
 		
 			
 			
-			<h2 id="RawSockaddrInet6">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2335:2469#L154">RawSockaddrInet6</a></h2>
+			<h2 id="RawSockaddrInet6">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2335:2469#L154">RawSockaddrInet6</a>
+				<a class="permalink" href="index.html#RawSockaddrInet6">&#xb6;</a>
+			</h2>
 			<pre>type RawSockaddrInet6 struct {
     Family   <a href="../builtin/index.html#uint16">uint16</a>
     Port     <a href="../builtin/index.html#uint16">uint16</a>
@@ -6158,7 +6688,9 @@ by StartProcess.
 		
 			
 			
-			<h2 id="RawSockaddrLinklayer">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2537:2691#L167">RawSockaddrLinklayer</a></h2>
+			<h2 id="RawSockaddrLinklayer">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2537:2691#L167">RawSockaddrLinklayer</a>
+				<a class="permalink" href="index.html#RawSockaddrLinklayer">&#xb6;</a>
+			</h2>
 			<pre>type RawSockaddrLinklayer struct {
     Family   <a href="../builtin/index.html#uint16">uint16</a>
     Protocol <a href="../builtin/index.html#uint16">uint16</a>
@@ -6184,7 +6716,9 @@ by StartProcess.
 		
 			
 			
-			<h2 id="RawSockaddrNetlink">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2693:2787#L177">RawSockaddrNetlink</a></h2>
+			<h2 id="RawSockaddrNetlink">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2693:2787#L177">RawSockaddrNetlink</a>
+				<a class="permalink" href="index.html#RawSockaddrNetlink">&#xb6;</a>
+			</h2>
 			<pre>type RawSockaddrNetlink struct {
     Family <a href="../builtin/index.html#uint16">uint16</a>
     Pad    <a href="../builtin/index.html#uint16">uint16</a>
@@ -6207,7 +6741,9 @@ by StartProcess.
 		
 			
 			
-			<h2 id="RawSockaddrUnix">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2471:2535#L162">RawSockaddrUnix</a></h2>
+			<h2 id="RawSockaddrUnix">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=2471:2535#L162">RawSockaddrUnix</a>
+				<a class="permalink" href="index.html#RawSockaddrUnix">&#xb6;</a>
+			</h2>
 			<pre>type RawSockaddrUnix struct {
     Family <a href="../builtin/index.html#uint16">uint16</a>
     Path   [108]<a href="../builtin/index.html#int8">int8</a>
@@ -6228,7 +6764,9 @@ by StartProcess.
 		
 			
 			
-			<h2 id="Rlimit">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=1324:1370#L84">Rlimit</a></h2>
+			<h2 id="Rlimit">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=1324:1370#L84">Rlimit</a>
+				<a class="permalink" href="index.html#Rlimit">&#xb6;</a>
+			</h2>
 			<pre>type Rlimit struct {
     Cur <a href="../builtin/index.html#uint64">uint64</a>
     Max <a href="../builtin/index.html#uint64">uint64</a>
@@ -6249,7 +6787,9 @@ by StartProcess.
 		
 			
 			
-			<h2 id="RtAttr">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8025:8073#L438">RtAttr</a></h2>
+			<h2 id="RtAttr">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8025:8073#L438">RtAttr</a>
+				<a class="permalink" href="index.html#RtAttr">&#xb6;</a>
+			</h2>
 			<pre>type RtAttr struct {
     Len  <a href="../builtin/index.html#uint16">uint16</a>
     Type <a href="../builtin/index.html#uint16">uint16</a>
@@ -6270,7 +6810,9 @@ by StartProcess.
 		
 			
 			
-			<h2 id="RtGenmsg">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=7935:7973#L429">RtGenmsg</a></h2>
+			<h2 id="RtGenmsg">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=7935:7973#L429">RtGenmsg</a>
+				<a class="permalink" href="index.html#RtGenmsg">&#xb6;</a>
+			</h2>
 			<pre>type RtGenmsg struct {
     Family <a href="../builtin/index.html#uint8">uint8</a>
 }</pre>
@@ -6290,7 +6832,9 @@ by StartProcess.
 		
 			
 			
-			<h2 id="RtMsg">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8326:8492#L460">RtMsg</a></h2>
+			<h2 id="RtMsg">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8326:8492#L460">RtMsg</a>
+				<a class="permalink" href="index.html#RtMsg">&#xb6;</a>
+			</h2>
 			<pre>type RtMsg struct {
     Family   <a href="../builtin/index.html#uint8">uint8</a>
     Dst_len  <a href="../builtin/index.html#uint8">uint8</a>
@@ -6318,7 +6862,9 @@ by StartProcess.
 		
 			
 			
-			<h2 id="RtNexthop">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8494:8580#L472">RtNexthop</a></h2>
+			<h2 id="RtNexthop">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8494:8580#L472">RtNexthop</a>
+				<a class="permalink" href="index.html#RtNexthop">&#xb6;</a>
+			</h2>
 			<pre>type RtNexthop struct {
     Len     <a href="../builtin/index.html#uint16">uint16</a>
     Flags   <a href="../builtin/index.html#uint8">uint8</a>
@@ -6341,7 +6887,9 @@ by StartProcess.
 		
 			
 			
-			<h2 id="Rusage">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=1040:1322#L65">Rusage</a></h2>
+			<h2 id="Rusage">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=1040:1322#L65">Rusage</a>
+				<a class="permalink" href="index.html#Rusage">&#xb6;</a>
+			</h2>
 			<pre>type Rusage struct {
     Utime    <a href="index.html#Timeval">Timeval</a>
     Stime    <a href="index.html#Timeval">Timeval</a>
@@ -6376,7 +6924,9 @@ by StartProcess.
 		
 			
 			
-			<h2 id="Signal">type <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=3387:3402#L136">Signal</a></h2>
+			<h2 id="Signal">type <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=3386:3401#L136">Signal</a>
+				<a class="permalink" href="index.html#Signal">&#xb6;</a>
+			</h2>
 			<pre>type Signal <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 A Signal is a number describing a process signal.
@@ -6396,7 +6946,9 @@ It implements the os.Signal interface.
 
 			
 				
-				<h3 id="Signal.Signal">func (Signal) <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=3404:3428#L138">Signal</a></h3>
+				<h3 id="Signal.Signal">func (Signal) <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=3403:3427#L138">Signal</a>
+					<a class="permalink" href="index.html#Signal.Signal">&#xb6;</a>
+				</h3>
 				<pre>func (s <a href="index.html#Signal">Signal</a>) Signal()</pre>
 				
 				
@@ -6404,7 +6956,9 @@ It implements the os.Signal interface.
 				
 			
 				
-				<h3 id="Signal.String">func (Signal) <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=3433:3464#L140">String</a></h3>
+				<h3 id="Signal.String">func (Signal) <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=3432:3463#L140">String</a>
+					<a class="permalink" href="index.html#Signal.String">&#xb6;</a>
+				</h3>
 				<pre>func (s <a href="index.html#Signal">Signal</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -6414,7 +6968,9 @@ It implements the os.Signal interface.
 		
 			
 			
-			<h2 id="SockFilter">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8642:8718#L484">SockFilter</a></h2>
+			<h2 id="SockFilter">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8642:8718#L484">SockFilter</a>
+				<a class="permalink" href="index.html#SockFilter">&#xb6;</a>
+			</h2>
 			<pre>type SockFilter struct {
     Code <a href="../builtin/index.html#uint16">uint16</a>
     Jt   <a href="../builtin/index.html#uint8">uint8</a>
@@ -6433,16 +6989,26 @@ It implements the os.Signal interface.
 
 			
 				
-				<h3 id="LsfJump">func <a href="http://localhost:9090/src/syscall/lsf_linux.go?s=321:366#L7">LsfJump</a></h3>
+				<h3 id="LsfJump">func <a href="http://localhost:9090/src/syscall/lsf_linux.go?s=418:463#L9">LsfJump</a>
+					<a class="permalink" href="index.html#LsfJump">&#xb6;</a>
+				</h3>
 				<pre>func LsfJump(code, k, jt, jf <a href="../builtin/index.html#int">int</a>) *<a href="index.html#SockFilter">SockFilter</a></pre>
-				
+				<p>
+Deprecated: Use golang.org/x/net/bpf instead.
+</p>
+
 				
 				
 			
 				
-				<h3 id="LsfStmt">func <a href="http://localhost:9090/src/syscall/lsf_linux.go?s=224:261#L3">LsfStmt</a></h3>
+				<h3 id="LsfStmt">func <a href="http://localhost:9090/src/syscall/lsf_linux.go?s=272:309#L4">LsfStmt</a>
+					<a class="permalink" href="index.html#LsfStmt">&#xb6;</a>
+				</h3>
 				<pre>func LsfStmt(code, k <a href="../builtin/index.html#int">int</a>) *<a href="index.html#SockFilter">SockFilter</a></pre>
-				
+				<p>
+Deprecated: Use golang.org/x/net/bpf instead.
+</p>
+
 				
 				
 			
@@ -6451,7 +7017,9 @@ It implements the os.Signal interface.
 		
 			
 			
-			<h2 id="SockFprog">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8720:8805#L491">SockFprog</a></h2>
+			<h2 id="SockFprog">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=8720:8805#L491">SockFprog</a>
+				<a class="permalink" href="index.html#SockFprog">&#xb6;</a>
+			</h2>
 			<pre>type SockFprog struct {
     Len       <a href="../builtin/index.html#uint16">uint16</a>
     Pad_cgo_0 [6]<a href="../builtin/index.html#byte">byte</a>
@@ -6473,7 +7041,9 @@ It implements the os.Signal interface.
 		
 			
 			
-			<h2 id="Sockaddr">type <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=4319:4447#L184">Sockaddr</a></h2>
+			<h2 id="Sockaddr">type <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=4318:4446#L184">Sockaddr</a>
+				<a class="permalink" href="index.html#Sockaddr">&#xb6;</a>
+			</h2>
 			<pre>type Sockaddr interface {
     <span class="comment">// contains filtered or unexported methods</span>
 }</pre>
@@ -6489,14 +7059,18 @@ It implements the os.Signal interface.
 
 			
 				
-				<h3 id="Getpeername">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=4970:5019#L222">Getpeername</a></h3>
+				<h3 id="Getpeername">func <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=4969:5018#L222">Getpeername</a>
+					<a class="permalink" href="index.html#Getpeername">&#xb6;</a>
+				</h3>
 				<pre>func Getpeername(fd <a href="../builtin/index.html#int">int</a>) (sa <a href="index.html#Sockaddr">Sockaddr</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				
 				
 				
 			
 				
-				<h3 id="Getsockname">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=11363:11412#L458">Getsockname</a></h3>
+				<h3 id="Getsockname">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=11360:11409#L458">Getsockname</a>
+					<a class="permalink" href="index.html#Getsockname">&#xb6;</a>
+				</h3>
 				<pre>func Getsockname(fd <a href="../builtin/index.html#int">int</a>) (sa <a href="index.html#Sockaddr">Sockaddr</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -6507,7 +7081,9 @@ It implements the os.Signal interface.
 		
 			
 			
-			<h2 id="SockaddrInet4">type <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=4449:4525#L188">SockaddrInet4</a></h2>
+			<h2 id="SockaddrInet4">type <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=4448:4524#L188">SockaddrInet4</a>
+				<a class="permalink" href="index.html#SockaddrInet4">&#xb6;</a>
+			</h2>
 			<pre>type SockaddrInet4 struct {
     Port <a href="../builtin/index.html#int">int</a>
     Addr [4]<a href="../builtin/index.html#byte">byte</a>
@@ -6529,7 +7105,9 @@ It implements the os.Signal interface.
 		
 			
 			
-			<h2 id="SockaddrInet6">type <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=4527:4625#L194">SockaddrInet6</a></h2>
+			<h2 id="SockaddrInet6">type <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=4526:4624#L194">SockaddrInet6</a>
+				<a class="permalink" href="index.html#SockaddrInet6">&#xb6;</a>
+			</h2>
 			<pre>type SockaddrInet6 struct {
     Port   <a href="../builtin/index.html#int">int</a>
     ZoneId <a href="../builtin/index.html#uint32">uint32</a>
@@ -6552,7 +7130,9 @@ It implements the os.Signal interface.
 		
 			
 			
-			<h2 id="SockaddrLinklayer">type <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=7837:7999#L310">SockaddrLinklayer</a></h2>
+			<h2 id="SockaddrLinklayer">type <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=7834:7996#L310">SockaddrLinklayer</a>
+				<a class="permalink" href="index.html#SockaddrLinklayer">&#xb6;</a>
+			</h2>
 			<pre>type SockaddrLinklayer struct {
     Protocol <a href="../builtin/index.html#uint16">uint16</a>
     Ifindex  <a href="../builtin/index.html#int">int</a>
@@ -6578,7 +7158,9 @@ It implements the os.Signal interface.
 		
 			
 			
-			<h2 id="SockaddrNetlink">type <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=8462:8580#L336">SockaddrNetlink</a></h2>
+			<h2 id="SockaddrNetlink">type <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=8459:8577#L336">SockaddrNetlink</a>
+				<a class="permalink" href="index.html#SockaddrNetlink">&#xb6;</a>
+			</h2>
 			<pre>type SockaddrNetlink struct {
     Family <a href="../builtin/index.html#uint16">uint16</a>
     Pad    <a href="../builtin/index.html#uint16">uint16</a>
@@ -6602,7 +7184,9 @@ It implements the os.Signal interface.
 		
 			
 			
-			<h2 id="SockaddrUnix">type <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=4627:4690#L201">SockaddrUnix</a></h2>
+			<h2 id="SockaddrUnix">type <a href="http://localhost:9090/src/syscall/syscall_unix.go?s=4626:4689#L201">SockaddrUnix</a>
+				<a class="permalink" href="index.html#SockaddrUnix">&#xb6;</a>
+			</h2>
 			<pre>type SockaddrUnix struct {
     Name <a href="../builtin/index.html#string">string</a>
     <span class="comment">// contains filtered or unexported fields</span>
@@ -6623,7 +7207,9 @@ It implements the os.Signal interface.
 		
 			
 			
-			<h2 id="SocketControlMessage">type <a href="http://localhost:9090/src/syscall/sockcmsg_unix.go?s=1246:1313#L31">SocketControlMessage</a></h2>
+			<h2 id="SocketControlMessage">type <a href="http://localhost:9090/src/syscall/sockcmsg_unix.go?s=1245:1312#L31">SocketControlMessage</a>
+				<a class="permalink" href="index.html#SocketControlMessage">&#xb6;</a>
+			</h2>
 			<pre>type SocketControlMessage struct {
     Header <a href="index.html#Cmsghdr">Cmsghdr</a>
     Data   []<a href="../builtin/index.html#byte">byte</a>
@@ -6647,7 +7233,9 @@ SocketControlMessage represents a socket control message.
 		
 			
 			
-			<h2 id="Stat_t">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=1392:1688#L91">Stat_t</a></h2>
+			<h2 id="Stat_t">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=1392:1688#L91">Stat_t</a>
+				<a class="permalink" href="index.html#Stat_t">&#xb6;</a>
+			</h2>
 			<pre>type Stat_t struct {
     Dev       <a href="../builtin/index.html#uint64">uint64</a>
     Ino       <a href="../builtin/index.html#uint64">uint64</a>
@@ -6681,7 +7269,9 @@ SocketControlMessage represents a socket control message.
 		
 			
 			
-			<h2 id="Statfs_t">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=1690:1901#L109">Statfs_t</a></h2>
+			<h2 id="Statfs_t">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=1690:1901#L109">Statfs_t</a>
+				<a class="permalink" href="index.html#Statfs_t">&#xb6;</a>
+			</h2>
 			<pre>type Statfs_t struct {
     Type    <a href="../builtin/index.html#int64">int64</a>
     Bsize   <a href="../builtin/index.html#int64">int64</a>
@@ -6712,22 +7302,25 @@ SocketControlMessage represents a socket control message.
 		
 			
 			
-			<h2 id="SysProcAttr">type <a href="http://localhost:9090/src/syscall/exec_linux.go?s=452:1770#L11">SysProcAttr</a></h2>
+			<h2 id="SysProcAttr">type <a href="http://localhost:9090/src/syscall/exec_linux.go?s=463:1864#L12">SysProcAttr</a>
+				<a class="permalink" href="index.html#SysProcAttr">&#xb6;</a>
+			</h2>
 			<pre>type SysProcAttr struct {
-    Chroot      <a href="../builtin/index.html#string">string</a>         <span class="comment">// Chroot.</span>
-    Credential  *<a href="index.html#Credential">Credential</a>    <span class="comment">// Credential.</span>
-    Ptrace      <a href="../builtin/index.html#bool">bool</a>           <span class="comment">// Enable tracing.</span>
-    Setsid      <a href="../builtin/index.html#bool">bool</a>           <span class="comment">// Create session.</span>
-    Setpgid     <a href="../builtin/index.html#bool">bool</a>           <span class="comment">// Set process group ID to Pgid, or, if Pgid == 0, to new pid.</span>
-    Setctty     <a href="../builtin/index.html#bool">bool</a>           <span class="comment">// Set controlling terminal to fd Ctty (only meaningful if Setsid is set)</span>
-    Noctty      <a href="../builtin/index.html#bool">bool</a>           <span class="comment">// Detach fd 0 from controlling terminal</span>
-    Ctty        <a href="../builtin/index.html#int">int</a>            <span class="comment">// Controlling TTY fd</span>
-    Foreground  <a href="../builtin/index.html#bool">bool</a>           <span class="comment">// Place child&#39;s process group in foreground. (Implies Setpgid. Uses Ctty as fd of controlling TTY)</span>
-    Pgid        <a href="../builtin/index.html#int">int</a>            <span class="comment">// Child&#39;s process group ID if Setpgid.</span>
-    Pdeathsig   <a href="index.html#Signal">Signal</a>         <span class="comment">// Signal that the process will get when its parent dies (Linux only)</span>
-    Cloneflags  <a href="../builtin/index.html#uintptr">uintptr</a>        <span class="comment">// Flags for clone calls (Linux only)</span>
-    UidMappings []<a href="index.html#SysProcIDMap">SysProcIDMap</a> <span class="comment">// User ID mappings for user namespaces.</span>
-    GidMappings []<a href="index.html#SysProcIDMap">SysProcIDMap</a> <span class="comment">// Group ID mappings for user namespaces.</span>
+    Chroot       <a href="../builtin/index.html#string">string</a>         <span class="comment">// Chroot.</span>
+    Credential   *<a href="index.html#Credential">Credential</a>    <span class="comment">// Credential.</span>
+    Ptrace       <a href="../builtin/index.html#bool">bool</a>           <span class="comment">// Enable tracing.</span>
+    Setsid       <a href="../builtin/index.html#bool">bool</a>           <span class="comment">// Create session.</span>
+    Setpgid      <a href="../builtin/index.html#bool">bool</a>           <span class="comment">// Set process group ID to Pgid, or, if Pgid == 0, to new pid.</span>
+    Setctty      <a href="../builtin/index.html#bool">bool</a>           <span class="comment">// Set controlling terminal to fd Ctty (only meaningful if Setsid is set)</span>
+    Noctty       <a href="../builtin/index.html#bool">bool</a>           <span class="comment">// Detach fd 0 from controlling terminal</span>
+    Ctty         <a href="../builtin/index.html#int">int</a>            <span class="comment">// Controlling TTY fd</span>
+    Foreground   <a href="../builtin/index.html#bool">bool</a>           <span class="comment">// Place child&#39;s process group in foreground. (Implies Setpgid. Uses Ctty as fd of controlling TTY)</span>
+    Pgid         <a href="../builtin/index.html#int">int</a>            <span class="comment">// Child&#39;s process group ID if Setpgid.</span>
+    Pdeathsig    <a href="index.html#Signal">Signal</a>         <span class="comment">// Signal that the process will get when its parent dies (Linux only)</span>
+    Cloneflags   <a href="../builtin/index.html#uintptr">uintptr</a>        <span class="comment">// Flags for clone calls (Linux only)</span>
+    Unshareflags <a href="../builtin/index.html#uintptr">uintptr</a>        <span class="comment">// Flags for unshare calls (Linux only)</span>
+    UidMappings  []<a href="index.html#SysProcIDMap">SysProcIDMap</a> <span class="comment">// User ID mappings for user namespaces.</span>
+    GidMappings  []<a href="index.html#SysProcIDMap">SysProcIDMap</a> <span class="comment">// Group ID mappings for user namespaces.</span>
     <span class="comment">// GidMappingsEnableSetgroups enabling setgroups syscall.</span>
     <span class="comment">// If false, then setgroups syscall will be disabled for the child process.</span>
     <span class="comment">// This parameter is no-op if GidMappings == nil. Otherwise for unprivileged</span>
@@ -6750,7 +7343,9 @@ SocketControlMessage represents a socket control message.
 		
 			
 			
-			<h2 id="SysProcIDMap">type <a href="http://localhost:9090/src/syscall/exec_linux.go?s=333:450#L5">SysProcIDMap</a></h2>
+			<h2 id="SysProcIDMap">type <a href="http://localhost:9090/src/syscall/exec_linux.go?s=344:461#L6">SysProcIDMap</a>
+				<a class="permalink" href="index.html#SysProcIDMap">&#xb6;</a>
+			</h2>
 			<pre>type SysProcIDMap struct {
     ContainerID <a href="../builtin/index.html#int">int</a> <span class="comment">// Container ID.</span>
     HostID      <a href="../builtin/index.html#int">int</a> <span class="comment">// Host ID.</span>
@@ -6776,7 +7371,9 @@ See user_namespaces(7).
 		
 			
 			
-			<h2 id="Sysinfo_t">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=9472:9790#L541">Sysinfo_t</a></h2>
+			<h2 id="Sysinfo_t">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=9472:9790#L541">Sysinfo_t</a>
+				<a class="permalink" href="index.html#Sysinfo_t">&#xb6;</a>
+			</h2>
 			<pre>type Sysinfo_t struct {
     Uptime    <a href="../builtin/index.html#int64">int64</a>
     Loads     [3]<a href="../builtin/index.html#uint64">uint64</a>
@@ -6811,7 +7408,9 @@ See user_namespaces(7).
 		
 			
 			
-			<h2 id="TCPInfo">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3975:4706#L267">TCPInfo</a></h2>
+			<h2 id="TCPInfo">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3975:4706#L267">TCPInfo</a>
+				<a class="permalink" href="index.html#TCPInfo">&#xb6;</a>
+			</h2>
 			<pre>type TCPInfo struct {
     State          <a href="../builtin/index.html#uint8">uint8</a>
     Ca_state       <a href="../builtin/index.html#uint8">uint8</a>
@@ -6861,7 +7460,9 @@ See user_namespaces(7).
 		
 			
 			
-			<h2 id="Termios">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=10251:10439#L590">Termios</a></h2>
+			<h2 id="Termios">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=10251:10439#L590">Termios</a>
+				<a class="permalink" href="index.html#Termios">&#xb6;</a>
+			</h2>
 			<pre>type Termios struct {
     Iflag     <a href="../builtin/index.html#uint32">uint32</a>
     Oflag     <a href="../builtin/index.html#uint32">uint32</a>
@@ -6889,7 +7490,9 @@ See user_namespaces(7).
 		
 			
 			
-			<h2 id="Time_t">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=889:906#L51">Time_t</a></h2>
+			<h2 id="Time_t">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=889:906#L51">Time_t</a>
+				<a class="permalink" href="index.html#Time_t">&#xb6;</a>
+			</h2>
 			<pre>type Time_t <a href="../builtin/index.html#int64">int64</a></pre>
 			
 
@@ -6903,7 +7506,9 @@ See user_namespaces(7).
 
 			
 				
-				<h3 id="Time">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=3632:3675#L67">Time</a></h3>
+				<h3 id="Time">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=3632:3675#L67">Time</a>
+					<a class="permalink" href="index.html#Time">&#xb6;</a>
+				</h3>
 				<pre>func Time(t *<a href="index.html#Time_t">Time_t</a>) (tt <a href="index.html#Time_t">Time_t</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -6914,7 +7519,9 @@ See user_namespaces(7).
 		
 			
 			
-			<h2 id="Timespec">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=347:395#L14">Timespec</a></h2>
+			<h2 id="Timespec">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=347:395#L14">Timespec</a>
+				<a class="permalink" href="index.html#Timespec">&#xb6;</a>
+			</h2>
 			<pre>type Timespec struct {
     Sec  <a href="../builtin/index.html#int64">int64</a>
     Nsec <a href="../builtin/index.html#int64">int64</a>
@@ -6931,7 +7538,9 @@ See user_namespaces(7).
 
 			
 				
-				<h3 id="NsecToTimespec">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=3917:3962#L81">NsecToTimespec</a></h3>
+				<h3 id="NsecToTimespec">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=3917:3962#L81">NsecToTimespec</a>
+					<a class="permalink" href="index.html#NsecToTimespec">&#xb6;</a>
+				</h3>
 				<pre>func NsecToTimespec(nsec <a href="../builtin/index.html#int64">int64</a>) (ts <a href="index.html#Timespec">Timespec</a>)</pre>
 				
 				
@@ -6940,7 +7549,9 @@ See user_namespaces(7).
 
 			
 				
-				<h3 id="Timespec.Nano">func (*Timespec) <a href="http://localhost:9090/src/syscall/syscall.go?s=3120:3152#L78">Nano</a></h3>
+				<h3 id="Timespec.Nano">func (*Timespec) <a href="http://localhost:9090/src/syscall/syscall.go?s=3117:3149#L78">Nano</a>
+					<a class="permalink" href="index.html#Timespec.Nano">&#xb6;</a>
+				</h3>
 				<pre>func (ts *<a href="index.html#Timespec">Timespec</a>) Nano() <a href="../builtin/index.html#int64">int64</a></pre>
 				
 				
@@ -6948,7 +7559,9 @@ See user_namespaces(7).
 				
 			
 				
-				<h3 id="Timespec.Unix">func (*Timespec) <a href="http://localhost:9090/src/syscall/syscall.go?s=2926:2976#L70">Unix</a></h3>
+				<h3 id="Timespec.Unix">func (*Timespec) <a href="http://localhost:9090/src/syscall/syscall.go?s=2923:2973#L70">Unix</a>
+					<a class="permalink" href="index.html#Timespec.Unix">&#xb6;</a>
+				</h3>
 				<pre>func (ts *<a href="index.html#Timespec">Timespec</a>) Unix() (sec <a href="../builtin/index.html#int64">int64</a>, nsec <a href="../builtin/index.html#int64">int64</a>)</pre>
 				
 				
@@ -6958,7 +7571,9 @@ See user_namespaces(7).
 		
 			
 			
-			<h2 id="Timeval">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=397:444#L19">Timeval</a></h2>
+			<h2 id="Timeval">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=397:444#L19">Timeval</a>
+				<a class="permalink" href="index.html#Timeval">&#xb6;</a>
+			</h2>
 			<pre>type Timeval struct {
     Sec  <a href="../builtin/index.html#int64">int64</a>
     Usec <a href="../builtin/index.html#int64">int64</a>
@@ -6975,7 +7590,9 @@ See user_namespaces(7).
 
 			
 				
-				<h3 id="NsecToTimeval">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4107:4150#L89">NsecToTimeval</a></h3>
+				<h3 id="NsecToTimeval">func <a href="http://localhost:9090/src/syscall/syscall_linux_amd64.go?s=4107:4150#L89">NsecToTimeval</a>
+					<a class="permalink" href="index.html#NsecToTimeval">&#xb6;</a>
+				</h3>
 				<pre>func NsecToTimeval(nsec <a href="../builtin/index.html#int64">int64</a>) (tv <a href="index.html#Timeval">Timeval</a>)</pre>
 				
 				
@@ -6984,7 +7601,9 @@ See user_namespaces(7).
 
 			
 				
-				<h3 id="Timeval.Nano">func (*Timeval) <a href="http://localhost:9090/src/syscall/syscall.go?s=3201:3232#L82">Nano</a></h3>
+				<h3 id="Timeval.Nano">func (*Timeval) <a href="http://localhost:9090/src/syscall/syscall.go?s=3198:3229#L82">Nano</a>
+					<a class="permalink" href="index.html#Timeval.Nano">&#xb6;</a>
+				</h3>
 				<pre>func (tv *<a href="index.html#Timeval">Timeval</a>) Nano() <a href="../builtin/index.html#int64">int64</a></pre>
 				
 				
@@ -6992,7 +7611,9 @@ See user_namespaces(7).
 				
 			
 				
-				<h3 id="Timeval.Unix">func (*Timeval) <a href="http://localhost:9090/src/syscall/syscall.go?s=3020:3069#L74">Unix</a></h3>
+				<h3 id="Timeval.Unix">func (*Timeval) <a href="http://localhost:9090/src/syscall/syscall.go?s=3017:3066#L74">Unix</a>
+					<a class="permalink" href="index.html#Timeval.Unix">&#xb6;</a>
+				</h3>
 				<pre>func (tv *<a href="index.html#Timeval">Timeval</a>) Unix() (sec <a href="../builtin/index.html#int64">int64</a>, nsec <a href="../builtin/index.html#int64">int64</a>)</pre>
 				
 				
@@ -7002,7 +7623,9 @@ See user_namespaces(7).
 		
 			
 			
-			<h2 id="Timex">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=446:887#L24">Timex</a></h2>
+			<h2 id="Timex">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=446:887#L24">Timex</a>
+				<a class="permalink" href="index.html#Timex">&#xb6;</a>
+			</h2>
 			<pre>type Timex struct {
     Modes     <a href="../builtin/index.html#uint32">uint32</a>
     Pad_cgo_0 [4]<a href="../builtin/index.html#byte">byte</a>
@@ -7045,7 +7668,9 @@ See user_namespaces(7).
 		
 			
 			
-			<h2 id="Tms">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=908:983#L53">Tms</a></h2>
+			<h2 id="Tms">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=908:983#L53">Tms</a>
+				<a class="permalink" href="index.html#Tms">&#xb6;</a>
+			</h2>
 			<pre>type Tms struct {
     Utime  <a href="../builtin/index.html#int64">int64</a>
     Stime  <a href="../builtin/index.html#int64">int64</a>
@@ -7068,7 +7693,9 @@ See user_namespaces(7).
 		
 			
 			
-			<h2 id="Ucred">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3917:3973#L261">Ucred</a></h2>
+			<h2 id="Ucred">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=3917:3973#L261">Ucred</a>
+				<a class="permalink" href="index.html#Ucred">&#xb6;</a>
+			</h2>
 			<pre>type Ucred struct {
     Pid <a href="../builtin/index.html#int32">int32</a>
     Uid <a href="../builtin/index.html#uint32">uint32</a>
@@ -7086,14 +7713,18 @@ See user_namespaces(7).
 
 			
 				
-				<h3 id="GetsockoptUcred">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=12837:12893#L508">GetsockoptUcred</a></h3>
+				<h3 id="GetsockoptUcred">func <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=12834:12890#L508">GetsockoptUcred</a>
+					<a class="permalink" href="index.html#GetsockoptUcred">&#xb6;</a>
+				</h3>
 				<pre>func GetsockoptUcred(fd, level, opt <a href="../builtin/index.html#int">int</a>) (*<a href="index.html#Ucred">Ucred</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				
 				
 				
 			
 				
-				<h3 id="ParseUnixCredentials">func <a href="http://localhost:9090/src/syscall/sockcmsg_linux.go?s=814:880#L17">ParseUnixCredentials</a></h3>
+				<h3 id="ParseUnixCredentials">func <a href="http://localhost:9090/src/syscall/sockcmsg_linux.go?s=813:879#L17">ParseUnixCredentials</a>
+					<a class="permalink" href="index.html#ParseUnixCredentials">&#xb6;</a>
+				</h3>
 				<pre>func ParseUnixCredentials(m *<a href="index.html#SocketControlMessage">SocketControlMessage</a>) (*<a href="index.html#Ucred">Ucred</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ParseUnixCredentials decodes a socket control message that contains
@@ -7109,7 +7740,9 @@ SO_PASSCRED option must be enabled on the socket.
 		
 			
 			
-			<h2 id="Ustat_t">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=9943:10077#L569">Ustat_t</a></h2>
+			<h2 id="Ustat_t">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=9943:10077#L569">Ustat_t</a>
+				<a class="permalink" href="index.html#Ustat_t">&#xb6;</a>
+			</h2>
 			<pre>type Ustat_t struct {
     Tfree     <a href="../builtin/index.html#int32">int32</a>
     Pad_cgo_0 [4]<a href="../builtin/index.html#byte">byte</a>
@@ -7134,7 +7767,9 @@ SO_PASSCRED option must be enabled on the socket.
 		
 			
 			
-			<h2 id="Utimbuf">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=985:1038#L60">Utimbuf</a></h2>
+			<h2 id="Utimbuf">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=985:1038#L60">Utimbuf</a>
+				<a class="permalink" href="index.html#Utimbuf">&#xb6;</a>
+			</h2>
 			<pre>type Utimbuf struct {
     Actime  <a href="../builtin/index.html#int64">int64</a>
     Modtime <a href="../builtin/index.html#int64">int64</a>
@@ -7155,7 +7790,9 @@ SO_PASSCRED option must be enabled on the socket.
 		
 			
 			
-			<h2 id="Utsname">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=9792:9941#L560">Utsname</a></h2>
+			<h2 id="Utsname">type <a href="http://localhost:9090/src/syscall/ztypes_linux_amd64.go?s=9792:9941#L560">Utsname</a>
+				<a class="permalink" href="index.html#Utsname">&#xb6;</a>
+			</h2>
 			<pre>type Utsname struct {
     Sysname    [65]<a href="../builtin/index.html#int8">int8</a>
     Nodename   [65]<a href="../builtin/index.html#int8">int8</a>
@@ -7180,7 +7817,9 @@ SO_PASSCRED option must be enabled on the socket.
 		
 			
 			
-			<h2 id="WaitStatus">type <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=4802:4824#L185">WaitStatus</a></h2>
+			<h2 id="WaitStatus">type <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=4801:4823#L185">WaitStatus</a>
+				<a class="permalink" href="index.html#WaitStatus">&#xb6;</a>
+			</h2>
 			<pre>type WaitStatus <a href="../builtin/index.html#uint32">uint32</a></pre>
 			
 
@@ -7196,7 +7835,9 @@ SO_PASSCRED option must be enabled on the socket.
 
 			
 				
-				<h3 id="WaitStatus.Continued">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5547:5583#L210">Continued</a></h3>
+				<h3 id="WaitStatus.Continued">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5544:5580#L210">Continued</a>
+					<a class="permalink" href="index.html#WaitStatus.Continued">&#xb6;</a>
+				</h3>
 				<pre>func (w <a href="index.html#WaitStatus">WaitStatus</a>) Continued() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -7204,7 +7845,9 @@ SO_PASSCRED option must be enabled on the socket.
 				
 			
 				
-				<h3 id="WaitStatus.CoreDump">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5608:5643#L212">CoreDump</a></h3>
+				<h3 id="WaitStatus.CoreDump">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5605:5640#L212">CoreDump</a>
+					<a class="permalink" href="index.html#WaitStatus.CoreDump">&#xb6;</a>
+				</h3>
 				<pre>func (w <a href="index.html#WaitStatus">WaitStatus</a>) CoreDump() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -7212,7 +7855,9 @@ SO_PASSCRED option must be enabled on the socket.
 				
 			
 				
-				<h3 id="WaitStatus.ExitStatus">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5684:5720#L214">ExitStatus</a></h3>
+				<h3 id="WaitStatus.ExitStatus">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5681:5717#L214">ExitStatus</a>
+					<a class="permalink" href="index.html#WaitStatus.ExitStatus">&#xb6;</a>
+				</h3>
 				<pre>func (w <a href="index.html#WaitStatus">WaitStatus</a>) ExitStatus() <a href="../builtin/index.html#int">int</a></pre>
 				
 				
@@ -7220,7 +7865,9 @@ SO_PASSCRED option must be enabled on the socket.
 				
 			
 				
-				<h3 id="WaitStatus.Exited">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5333:5366#L204">Exited</a></h3>
+				<h3 id="WaitStatus.Exited">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5330:5363#L204">Exited</a>
+					<a class="permalink" href="index.html#WaitStatus.Exited">&#xb6;</a>
+				</h3>
 				<pre>func (w <a href="index.html#WaitStatus">WaitStatus</a>) Exited() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -7228,7 +7875,9 @@ SO_PASSCRED option must be enabled on the socket.
 				
 			
 				
-				<h3 id="WaitStatus.Signal">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5788:5823#L221">Signal</a></h3>
+				<h3 id="WaitStatus.Signal">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5785:5820#L221">Signal</a>
+					<a class="permalink" href="index.html#WaitStatus.Signal">&#xb6;</a>
+				</h3>
 				<pre>func (w <a href="index.html#WaitStatus">WaitStatus</a>) Signal() <a href="index.html#Signal">Signal</a></pre>
 				
 				
@@ -7236,7 +7885,9 @@ SO_PASSCRED option must be enabled on the socket.
 				
 			
 				
-				<h3 id="WaitStatus.Signaled">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5396:5431#L206">Signaled</a></h3>
+				<h3 id="WaitStatus.Signaled">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5393:5428#L206">Signaled</a>
+					<a class="permalink" href="index.html#WaitStatus.Signaled">&#xb6;</a>
+				</h3>
 				<pre>func (w <a href="index.html#WaitStatus">WaitStatus</a>) Signaled() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -7244,7 +7895,9 @@ SO_PASSCRED option must be enabled on the socket.
 				
 			
 				
-				<h3 id="WaitStatus.StopSignal">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5889:5928#L228">StopSignal</a></h3>
+				<h3 id="WaitStatus.StopSignal">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5886:5925#L228">StopSignal</a>
+					<a class="permalink" href="index.html#WaitStatus.StopSignal">&#xb6;</a>
+				</h3>
 				<pre>func (w <a href="index.html#WaitStatus">WaitStatus</a>) StopSignal() <a href="index.html#Signal">Signal</a></pre>
 				
 				
@@ -7252,7 +7905,9 @@ SO_PASSCRED option must be enabled on the socket.
 				
 			
 				
-				<h3 id="WaitStatus.Stopped">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5482:5516#L208">Stopped</a></h3>
+				<h3 id="WaitStatus.Stopped">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5479:5513#L208">Stopped</a>
+					<a class="permalink" href="index.html#WaitStatus.Stopped">&#xb6;</a>
+				</h3>
 				<pre>func (w <a href="index.html#WaitStatus">WaitStatus</a>) Stopped() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -7260,7 +7915,9 @@ SO_PASSCRED option must be enabled on the socket.
 				
 			
 				
-				<h3 id="WaitStatus.TrapCause">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=6000:6035#L235">TrapCause</a></h3>
+				<h3 id="WaitStatus.TrapCause">func (WaitStatus) <a href="http://localhost:9090/src/syscall/syscall_linux.go?s=5997:6032#L235">TrapCause</a>
+					<a class="permalink" href="index.html#WaitStatus.TrapCause">&#xb6;</a>
+				</h3>
 				<pre>func (w <a href="index.html#WaitStatus">WaitStatus</a>) TrapCause() <a href="../builtin/index.html#int">int</a></pre>
 				
 				
@@ -7279,7 +7936,7 @@ SO_PASSCRED option must be enabled on the socket.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -7297,6 +7954,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

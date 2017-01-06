@@ -204,7 +204,9 @@
 		
 			
 			
-			<h2 id="RPCCallback">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=1030:1145#L34">RPCCallback</a></h2>
+			<h2 id="RPCCallback">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=1030:1145#L34">RPCCallback</a>
+				<a class="permalink" href="index.html#RPCCallback">&#xb6;</a>
+			</h2>
 			<pre>type RPCCallback struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -222,7 +224,9 @@
 
 			
 				
-				<h3 id="RPCCallback.Return">func (*RPCCallback) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=8705:8762#L314">Return</a></h3>
+				<h3 id="RPCCallback.Return">func (*RPCCallback) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=8741:8798#L315">Return</a>
+					<a class="permalink" href="index.html#RPCCallback.Return">&#xb6;</a>
+				</h3>
 				<pre>func (cb *<a href="index.html#RPCCallback">RPCCallback</a>) Return(out interface{}, err <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -232,7 +236,9 @@
 		
 			
 			
-			<h2 id="RPCServer">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=1227:1267#L42">RPCServer</a></h2>
+			<h2 id="RPCServer">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=1227:1267#L42">RPCServer</a>
+				<a class="permalink" href="index.html#RPCServer">&#xb6;</a>
+			</h2>
 			<pre>type RPCServer struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -253,7 +259,9 @@ RPCServer implements the RPC method calls common to all versions of the API.
 
 			
 				
-				<h3 id="RPCServer.GetVersion">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=9009:9092#L325">GetVersion</a></h3>
+				<h3 id="RPCServer.GetVersion">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=9045:9128#L326">GetVersion</a>
+					<a class="permalink" href="index.html#RPCServer.GetVersion">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) GetVersion(args <a href="../api/index.html">api</a>.<a href="../api/index.html#GetVersionIn">GetVersionIn</a>, out *<a href="../api/index.html">api</a>.<a href="../api/index.html#GetVersionOut">GetVersionOut</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				<p>
 GetVersion returns the version of delve as well as the API version
@@ -265,7 +273,9 @@ currently served.
 				
 			
 				
-				<h3 id="RPCServer.SetApiVersion">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=9244:9336#L332">SetApiVersion</a></h3>
+				<h3 id="RPCServer.SetApiVersion">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=9280:9372#L333">SetApiVersion</a>
+					<a class="permalink" href="index.html#RPCServer.SetApiVersion">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) SetApiVersion(args <a href="../api/index.html">api</a>.<a href="../api/index.html#SetAPIVersionIn">SetAPIVersionIn</a>, out *<a href="../api/index.html">api</a>.<a href="../api/index.html#SetAPIVersionOut">SetAPIVersionOut</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				<p>
 Changes version of the API being served.
@@ -278,7 +288,9 @@ Changes version of the API being served.
 		
 			
 			
-			<h2 id="ServerImpl">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=516:1028#L17">ServerImpl</a></h2>
+			<h2 id="ServerImpl">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=516:1028#L17">ServerImpl</a>
+				<a class="permalink" href="index.html#ServerImpl">&#xb6;</a>
+			</h2>
 			<pre>type ServerImpl struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -298,7 +310,9 @@ versions of the API.
 
 			
 				
-				<h3 id="NewServer">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=1460:1527#L55">NewServer</a></h3>
+				<h3 id="NewServer">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=1460:1527#L55">NewServer</a>
+					<a class="permalink" href="index.html#NewServer">&#xb6;</a>
+				</h3>
 				<pre>func NewServer(config *<a href="../index.html">service</a>.<a href="../index.html#Config">Config</a>, logEnabled <a href="../../../../../builtin/index.html#bool">bool</a>) *<a href="index.html#ServerImpl">ServerImpl</a></pre>
 				<p>
 NewServer creates a new RPCServer.
@@ -310,7 +324,9 @@ NewServer creates a new RPCServer.
 
 			
 				
-				<h3 id="ServerImpl.Restart">func (*ServerImpl) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=2026:2062#L80">Restart</a></h3>
+				<h3 id="ServerImpl.Restart">func (*ServerImpl) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=2026:2062#L80">Restart</a>
+					<a class="permalink" href="index.html#ServerImpl.Restart">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#ServerImpl">ServerImpl</a>) Restart() <a href="../../../../../builtin/index.html#error">error</a></pre>
 				<p>
 Restart restarts the debugger.
@@ -321,7 +337,9 @@ Restart restarts the debugger.
 				
 			
 				
-				<h3 id="ServerImpl.Run">func (*ServerImpl) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=2377:2409#L90">Run</a></h3>
+				<h3 id="ServerImpl.Run">func (*ServerImpl) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=2377:2409#L90">Run</a>
+					<a class="permalink" href="index.html#ServerImpl.Run">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#ServerImpl">ServerImpl</a>) Run() <a href="../../../../../builtin/index.html#error">error</a></pre>
 				<p>
 Run starts a debugger and exposes it with an HTTP server. The debugger
@@ -334,7 +352,9 @@ server stops.
 				
 			
 				
-				<h3 id="ServerImpl.Stop">func (*ServerImpl) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=1841:1883#L71">Stop</a></h3>
+				<h3 id="ServerImpl.Stop">func (*ServerImpl) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpccommon/server.go?s=1841:1883#L71">Stop</a>
+					<a class="permalink" href="index.html#ServerImpl.Stop">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#ServerImpl">ServerImpl</a>) Stop(kill <a href="../../../../../builtin/index.html#bool">bool</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				<p>
 Stop stops the JSON-RPC server.
@@ -356,7 +376,7 @@ Stop stops the JSON-RPC server.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -374,6 +394,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../../../../lib/godoc/godocs.js"></script>
 
 </body>

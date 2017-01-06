@@ -316,7 +316,9 @@ indexing, and other operator and delimiter tokens.
 		
 			
 			
-			<h2 id="File">type <a href="http://localhost:9090/src/go/token/position.go?s=2906:3282#L81">File</a></h2>
+			<h2 id="File">type <a href="http://localhost:9090/src/go/token/position.go?s=2906:3282#L81">File</a>
+				<a class="permalink" href="index.html#File">&#xb6;</a>
+			</h2>
 			<pre>type File struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -338,7 +340,9 @@ A File has a name, size, and line offset table.
 
 			
 				
-				<h3 id="File.AddLine">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=3983:4017#L119">AddLine</a></h3>
+				<h3 id="File.AddLine">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=3983:4017#L119">AddLine</a>
+					<a class="permalink" href="index.html#File.AddLine">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) AddLine(offset <a href="../../builtin/index.html#int">int</a>)</pre>
 				<p>
 AddLine adds the line offset for a new line.
@@ -351,7 +355,9 @@ and smaller than the file size; otherwise the line offset is ignored.
 				
 			
 				
-				<h3 id="File.AddLineInfo">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=6946:7011#L213">AddLineInfo</a></h3>
+				<h3 id="File.AddLineInfo">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=7016:7081#L214">AddLineInfo</a>
+					<a class="permalink" href="index.html#File.AddLineInfo">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) AddLineInfo(offset <a href="../../builtin/index.html#int">int</a>, filename <a href="../../builtin/index.html#string">string</a>, line <a href="../../builtin/index.html#int">int</a>)</pre>
 				<p>
 AddLineInfo adds alternative file and line number information for
@@ -369,7 +375,9 @@ information for //line filename:line comments in source files.
 				
 			
 				
-				<h3 id="File.Base">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=3471:3496#L98">Base</a></h3>
+				<h3 id="File.Base">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=3471:3496#L98">Base</a>
+					<a class="permalink" href="index.html#File.Base">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Base() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 Base returns the base offset of file f as registered with AddFile.
@@ -380,7 +388,9 @@ Base returns the base offset of file f as registered with AddFile.
 				
 			
 				
-				<h3 id="File.Line">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=7856:7886#L246">Line</a></h3>
+				<h3 id="File.Line">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=7926:7956#L247">Line</a>
+					<a class="permalink" href="index.html#File.Line">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Line(p <a href="index.html#Pos">Pos</a>) <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 Line returns the line number for the given file position p;
@@ -392,7 +402,9 @@ p must be a Pos value in that file or NoPos.
 				
 			
 				
-				<h3 id="File.LineCount">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=3678:3708#L108">LineCount</a></h3>
+				<h3 id="File.LineCount">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=3678:3708#L108">LineCount</a>
+					<a class="permalink" href="index.html#File.LineCount">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) LineCount() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 LineCount returns the number of lines in file f.
@@ -403,7 +415,9 @@ LineCount returns the number of lines in file f.
 				
 			
 				
-				<h3 id="File.MergeLine">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=4476:4510#L132">MergeLine</a></h3>
+				<h3 id="File.MergeLine">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=4476:4510#L132">MergeLine</a>
+					<a class="permalink" href="index.html#File.MergeLine">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) MergeLine(line <a href="../../builtin/index.html#int">int</a>)</pre>
 				<p>
 MergeLine merges a line with the following line. It is akin to replacing
@@ -417,7 +431,9 @@ MergeLine will panic if given an invalid line number.
 				
 			
 				
-				<h3 id="File.Name">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=3352:3380#L93">Name</a></h3>
+				<h3 id="File.Name">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=3352:3380#L93">Name</a>
+					<a class="permalink" href="index.html#File.Name">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Name() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 Name returns the file name of file f as registered with AddFile.
@@ -428,7 +444,9 @@ Name returns the file name of file f as registered with AddFile.
 				
 			
 				
-				<h3 id="File.Offset">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=7600:7632#L236">Offset</a></h3>
+				<h3 id="File.Offset">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=7670:7702#L237">Offset</a>
+					<a class="permalink" href="index.html#File.Offset">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Offset(p <a href="index.html#Pos">Pos</a>) <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 Offset returns the offset for the given file position p;
@@ -441,7 +459,9 @@ f.Offset(f.Pos(offset)) == offset.
 				
 			
 				
-				<h3 id="File.Pos">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=7329:7363#L225">Pos</a></h3>
+				<h3 id="File.Pos">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=7399:7433#L226">Pos</a>
+					<a class="permalink" href="index.html#File.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Pos(offset <a href="../../builtin/index.html#int">int</a>) <a href="index.html#Pos">Pos</a></pre>
 				<p>
 Pos returns the Pos value for the given file offset;
@@ -454,7 +474,9 @@ f.Pos(f.Offset(p)) == p.
 				
 			
 				
-				<h3 id="File.Position">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=9558:9603#L301">Position</a></h3>
+				<h3 id="File.Position">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=9628:9673#L302">Position</a>
+					<a class="permalink" href="index.html#File.Position">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Position(p <a href="index.html#Pos">Pos</a>) (pos <a href="index.html#Position">Position</a>)</pre>
 				<p>
 Position returns the Position value for the given file position p.
@@ -466,7 +488,9 @@ Calling f.Position(p) is equivalent to calling f.PositionFor(p, true).
 				
 			
 				
-				<h3 id="File.PositionFor">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=9199:9262#L288">PositionFor</a></h3>
+				<h3 id="File.PositionFor">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=9269:9332#L289">PositionFor</a>
+					<a class="permalink" href="index.html#File.PositionFor">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) PositionFor(p <a href="index.html#Pos">Pos</a>, adjusted <a href="../../builtin/index.html#bool">bool</a>) (pos <a href="index.html#Position">Position</a>)</pre>
 				<p>
 PositionFor returns the Position value for the given file position p.
@@ -480,7 +504,9 @@ p must be a Pos value in f or NoPos.
 				
 			
 				
-				<h3 id="File.SetLines">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=5535:5576#L158">SetLines</a></h3>
+				<h3 id="File.SetLines">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=5605:5646#L159">SetLines</a>
+					<a class="permalink" href="index.html#File.SetLines">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) SetLines(lines []<a href="../../builtin/index.html#int">int</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 SetLines sets the line offsets for a file and reports whether it succeeded.
@@ -490,6 +516,7 @@ An empty file has an empty line offset table.
 Each line offset must be larger than the offset for the previous line
 and smaller than the file size; otherwise SetLines fails and returns
 false.
+Callers must not mutate the provided slice after SetLines returns.
 </p>
 
 				
@@ -497,7 +524,9 @@ false.
 				
 			
 				
-				<h3 id="File.SetLinesForContent">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=5957:6006#L176">SetLinesForContent</a></h3>
+				<h3 id="File.SetLinesForContent">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=6027:6076#L177">SetLinesForContent</a>
+					<a class="permalink" href="index.html#File.SetLinesForContent">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) SetLinesForContent(content []<a href="../../builtin/index.html#byte">byte</a>)</pre>
 				<p>
 SetLinesForContent sets the line offsets for the given file content.
@@ -509,7 +538,9 @@ It ignores position-altering //line comments.
 				
 			
 				
-				<h3 id="File.Size">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=3580:3605#L103">Size</a></h3>
+				<h3 id="File.Size">func (*File) <a href="http://localhost:9090/src/go/token/position.go?s=3580:3605#L103">Size</a>
+					<a class="permalink" href="index.html#File.Size">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Size() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 Size returns the size of file f as registered with AddFile.
@@ -522,7 +553,9 @@ Size returns the size of file f as registered with AddFile.
 		
 			
 			
-			<h2 id="FileSet">type <a href="http://localhost:9090/src/go/token/position.go?s=9878:10118#L312">FileSet</a></h2>
+			<h2 id="FileSet">type <a href="http://localhost:9090/src/go/token/position.go?s=9948:10188#L313">FileSet</a>
+				<a class="permalink" href="index.html#FileSet">&#xb6;</a>
+			</h2>
 			<pre>type FileSet struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -543,7 +576,9 @@ may invoke them concurrently.
 
 			
 				
-				<h3 id="NewFileSet">func <a href="http://localhost:9090/src/go/token/position.go?s=10158:10184#L320">NewFileSet</a></h3>
+				<h3 id="NewFileSet">func <a href="http://localhost:9090/src/go/token/position.go?s=10228:10254#L321">NewFileSet</a>
+					<a class="permalink" href="index.html#NewFileSet">&#xb6;</a>
+				</h3>
 				<pre>func NewFileSet() *<a href="index.html#FileSet">FileSet</a></pre>
 				<p>
 NewFileSet creates a new file set.
@@ -555,7 +590,9 @@ NewFileSet creates a new file set.
 
 			
 				
-				<h3 id="FileSet.AddFile">func (*FileSet) <a href="http://localhost:9090/src/go/token/position.go?s=11239:11303#L353">AddFile</a></h3>
+				<h3 id="FileSet.AddFile">func (*FileSet) <a href="http://localhost:9090/src/go/token/position.go?s=11309:11373#L354">AddFile</a>
+					<a class="permalink" href="index.html#FileSet.AddFile">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#FileSet">FileSet</a>) AddFile(filename <a href="../../builtin/index.html#string">string</a>, base, size <a href="../../builtin/index.html#int">int</a>) *<a href="index.html#File">File</a></pre>
 				<p>
 AddFile adds a new file with a given filename, base offset, and file size
@@ -582,7 +619,9 @@ values from a file offset.
 				
 			
 				
-				<h3 id="FileSet.Base">func (*FileSet) <a href="http://localhost:9090/src/go/token/position.go?s=10342:10370#L329">Base</a></h3>
+				<h3 id="FileSet.Base">func (*FileSet) <a href="http://localhost:9090/src/go/token/position.go?s=10412:10440#L330">Base</a>
+					<a class="permalink" href="index.html#FileSet.Base">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#FileSet">FileSet</a>) Base() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 Base returns the minimum base offset that must be provided to
@@ -594,7 +633,9 @@ AddFile when adding the next file.
 				
 			
 				
-				<h3 id="FileSet.File">func (*FileSet) <a href="http://localhost:9090/src/go/token/position.go?s=12924:12963#L423">File</a></h3>
+				<h3 id="FileSet.File">func (*FileSet) <a href="http://localhost:9090/src/go/token/position.go?s=12994:13033#L424">File</a>
+					<a class="permalink" href="index.html#FileSet.File">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#FileSet">FileSet</a>) File(p <a href="index.html#Pos">Pos</a>) (f *<a href="index.html#File">File</a>)</pre>
 				<p>
 File returns the file that contains the position p.
@@ -607,7 +648,9 @@ the result is nil.
 				
 			
 				
-				<h3 id="FileSet.Iterate">func (*FileSet) <a href="http://localhost:9090/src/go/token/position.go?s=11886:11931#L378">Iterate</a></h3>
+				<h3 id="FileSet.Iterate">func (*FileSet) <a href="http://localhost:9090/src/go/token/position.go?s=11956:12001#L379">Iterate</a>
+					<a class="permalink" href="index.html#FileSet.Iterate">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#FileSet">FileSet</a>) Iterate(f func(*<a href="index.html#File">File</a>) <a href="../../builtin/index.html#bool">bool</a>)</pre>
 				<p>
 Iterate calls f for the files in the file set in the order they were added
@@ -619,7 +662,9 @@ until f returns false.
 				
 			
 				
-				<h3 id="FileSet.Position">func (*FileSet) <a href="http://localhost:9090/src/go/token/position.go?s=13570:13618#L447">Position</a></h3>
+				<h3 id="FileSet.Position">func (*FileSet) <a href="http://localhost:9090/src/go/token/position.go?s=13640:13688#L448">Position</a>
+					<a class="permalink" href="index.html#FileSet.Position">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#FileSet">FileSet</a>) Position(p <a href="index.html#Pos">Pos</a>) (pos <a href="index.html#Position">Position</a>)</pre>
 				<p>
 Position converts a Pos p in the fileset into a Position value.
@@ -631,7 +676,9 @@ Calling s.Position(p) is equivalent to calling s.PositionFor(p, true).
 				
 			
 				
-				<h3 id="FileSet.PositionFor">func (*FileSet) <a href="http://localhost:9090/src/go/token/position.go?s=13257:13323#L435">PositionFor</a></h3>
+				<h3 id="FileSet.PositionFor">func (*FileSet) <a href="http://localhost:9090/src/go/token/position.go?s=13327:13393#L436">PositionFor</a>
+					<a class="permalink" href="index.html#FileSet.PositionFor">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#FileSet">FileSet</a>) PositionFor(p <a href="index.html#Pos">Pos</a>, adjusted <a href="../../builtin/index.html#bool">bool</a>) (pos <a href="index.html#Position">Position</a>)</pre>
 				<p>
 PositionFor converts a Pos p in the fileset into a Position value.
@@ -645,7 +692,9 @@ p must be a Pos value in s or NoPos.
 				
 			
 				
-				<h3 id="FileSet.Read">func (*FileSet) <a href="http://localhost:9090/src/go/token/serialize.go?s=490:550#L12">Read</a></h3>
+				<h3 id="FileSet.Read">func (*FileSet) <a href="http://localhost:9090/src/go/token/serialize.go?s=490:550#L12">Read</a>
+					<a class="permalink" href="index.html#FileSet.Read">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#FileSet">FileSet</a>) Read(decode func(interface{}) <a href="../../builtin/index.html#error">error</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Read calls decode to deserialize a file set into s; s must not be nil.
@@ -656,7 +705,9 @@ Read calls decode to deserialize a file set into s; s must not be nil.
 				
 			
 				
-				<h3 id="FileSet.Write">func (*FileSet) <a href="http://localhost:9090/src/go/token/serialize.go?s=947:1008#L33">Write</a></h3>
+				<h3 id="FileSet.Write">func (*FileSet) <a href="http://localhost:9090/src/go/token/serialize.go?s=947:1008#L33">Write</a>
+					<a class="permalink" href="index.html#FileSet.Write">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#FileSet">FileSet</a>) Write(encode func(interface{}) <a href="../../builtin/index.html#error">error</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Write calls encode to serialize the file set s.
@@ -669,7 +720,9 @@ Write calls encode to serialize the file set s.
 		
 			
 			
-			<h2 id="Pos">type <a href="http://localhost:9090/src/go/token/position.go?s=2305:2317#L61">Pos</a></h2>
+			<h2 id="Pos">type <a href="http://localhost:9090/src/go/token/position.go?s=2305:2317#L61">Pos</a>
+				<a class="permalink" href="index.html#Pos">&#xb6;</a>
+			</h2>
 			<pre>type Pos <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 Pos is a compact encoding of a source position within a file set.
@@ -718,7 +771,9 @@ for NoPos is the zero value for Position.
 
 			
 				
-				<h3 id="Pos.IsValid">func (Pos) <a href="http://localhost:9090/src/go/token/position.go?s=2653:2680#L71">IsValid</a></h3>
+				<h3 id="Pos.IsValid">func (Pos) <a href="http://localhost:9090/src/go/token/position.go?s=2653:2680#L71">IsValid</a>
+					<a class="permalink" href="index.html#Pos.IsValid">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#Pos">Pos</a>) IsValid() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsValid reports whether the position is valid.
@@ -731,7 +786,9 @@ IsValid reports whether the position is valid.
 		
 			
 			
-			<h2 id="Position">type <a href="http://localhost:9090/src/go/token/position.go?s=459:671#L10">Position</a></h2>
+			<h2 id="Position">type <a href="http://localhost:9090/src/go/token/position.go?s=459:671#L10">Position</a>
+				<a class="permalink" href="index.html#Position">&#xb6;</a>
+			</h2>
 			<pre>type Position struct {
     Filename <a href="../../builtin/index.html#string">string</a> <span class="comment">// filename, if any</span>
     Offset   <a href="../../builtin/index.html#int">int</a>    <span class="comment">// offset, starting at 0</span>
@@ -757,7 +814,9 @@ A Position is valid if the line number is &gt; 0.
 
 			
 				
-				<h3 id="Position.IsValid">func (*Position) <a href="http://localhost:9090/src/go/token/position.go?s=723:758#L18">IsValid</a></h3>
+				<h3 id="Position.IsValid">func (*Position) <a href="http://localhost:9090/src/go/token/position.go?s=723:758#L18">IsValid</a>
+					<a class="permalink" href="index.html#Position.IsValid">&#xb6;</a>
+				</h3>
 				<pre>func (pos *<a href="index.html#Position">Position</a>) IsValid() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsValid reports whether the position is valid.
@@ -768,7 +827,9 @@ IsValid reports whether the position is valid.
 				
 			
 				
-				<h3 id="Position.String">func (Position) <a href="http://localhost:9090/src/go/token/position.go?s=1064:1099#L27">String</a></h3>
+				<h3 id="Position.String">func (Position) <a href="http://localhost:9090/src/go/token/position.go?s=1064:1099#L27">String</a>
+					<a class="permalink" href="index.html#Position.String">&#xb6;</a>
+				</h3>
 				<pre>func (pos <a href="index.html#Position">Position</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 String returns a string in one of several forms:
@@ -786,7 +847,9 @@ file                invalid position with file name
 		
 			
 			
-			<h2 id="Token">type <a href="http://localhost:9090/src/go/token/token.go?s=422:436#L3">Token</a></h2>
+			<h2 id="Token">type <a href="http://localhost:9090/src/go/token/token.go?s=422:436#L3">Token</a>
+				<a class="permalink" href="index.html#Token">&#xb6;</a>
+			</h2>
 			<pre>type Token <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 Token is the set of lexical tokens of the Go programming language.
@@ -911,7 +974,9 @@ The list of tokens.
 
 			
 				
-				<h3 id="Lookup">func <a href="http://localhost:9090/src/go/token/token.go?s=4785:4816#L276">Lookup</a></h3>
+				<h3 id="Lookup">func <a href="http://localhost:9090/src/go/token/token.go?s=4785:4816#L276">Lookup</a>
+					<a class="permalink" href="index.html#Lookup">&#xb6;</a>
+				</h3>
 				<pre>func Lookup(ident <a href="../../builtin/index.html#string">string</a>) <a href="index.html#Token">Token</a></pre>
 				<p>
 Lookup maps an identifier to its keyword token or IDENT (if not a keyword).
@@ -923,7 +988,9 @@ Lookup maps an identifier to its keyword token or IDENT (if not a keyword).
 
 			
 				
-				<h3 id="Token.IsKeyword">func (Token) <a href="http://localhost:9090/src/go/token/token.go?s=5431:5464#L298">IsKeyword</a></h3>
+				<h3 id="Token.IsKeyword">func (Token) <a href="http://localhost:9090/src/go/token/token.go?s=5431:5464#L298">IsKeyword</a>
+					<a class="permalink" href="index.html#Token.IsKeyword">&#xb6;</a>
+				</h3>
 				<pre>func (tok <a href="index.html#Token">Token</a>) IsKeyword() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsKeyword returns true for tokens corresponding to keywords;
@@ -935,7 +1002,9 @@ it returns false otherwise.
 				
 			
 				
-				<h3 id="Token.IsLiteral">func (Token) <a href="http://localhost:9090/src/go/token/token.go?s=5045:5078#L288">IsLiteral</a></h3>
+				<h3 id="Token.IsLiteral">func (Token) <a href="http://localhost:9090/src/go/token/token.go?s=5045:5078#L288">IsLiteral</a>
+					<a class="permalink" href="index.html#Token.IsLiteral">&#xb6;</a>
+				</h3>
 				<pre>func (tok <a href="index.html#Token">Token</a>) IsLiteral() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsLiteral returns true for tokens corresponding to identifiers
@@ -947,7 +1016,9 @@ and basic type literals; it returns false otherwise.
 				
 			
 				
-				<h3 id="Token.IsOperator">func (Token) <a href="http://localhost:9090/src/go/token/token.go?s=5245:5279#L293">IsOperator</a></h3>
+				<h3 id="Token.IsOperator">func (Token) <a href="http://localhost:9090/src/go/token/token.go?s=5245:5279#L293">IsOperator</a>
+					<a class="permalink" href="index.html#Token.IsOperator">&#xb6;</a>
+				</h3>
 				<pre>func (tok <a href="index.html#Token">Token</a>) IsOperator() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsOperator returns true for tokens corresponding to operators and
@@ -959,7 +1030,9 @@ delimiters; it returns false otherwise.
 				
 			
 				
-				<h3 id="Token.Precedence">func (Token) <a href="http://localhost:9090/src/go/token/token.go?s=4284:4316#L249">Precedence</a></h3>
+				<h3 id="Token.Precedence">func (Token) <a href="http://localhost:9090/src/go/token/token.go?s=4284:4316#L249">Precedence</a>
+					<a class="permalink" href="index.html#Token.Precedence">&#xb6;</a>
+				</h3>
 				<pre>func (op <a href="index.html#Token">Token</a>) Precedence() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 Precedence returns the operator precedence of the binary
@@ -972,7 +1045,9 @@ is LowestPrecedence.
 				
 			
 				
-				<h3 id="Token.String">func (Token) <a href="http://localhost:9090/src/go/token/token.go?s=3566:3598#L222">String</a></h3>
+				<h3 id="Token.String">func (Token) <a href="http://localhost:9090/src/go/token/token.go?s=3566:3598#L222">String</a>
+					<a class="permalink" href="index.html#Token.String">&#xb6;</a>
+				</h3>
 				<pre>func (tok <a href="index.html#Token">Token</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 String returns the string corresponding to the token tok.
@@ -998,7 +1073,7 @@ constant name (e.g. for the token IDENT, the string is &#34;IDENT&#34;).
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1016,6 +1091,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

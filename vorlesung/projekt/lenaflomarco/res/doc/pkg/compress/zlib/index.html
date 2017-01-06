@@ -259,12 +259,15 @@ These constants are copied from the flate package, so that code that imports
 		
 			
 			
-			<h2 id="NewReader">func <a href="http://localhost:9090/src/compress/zlib/reader.go?s=1987:2037#L59">NewReader</a></h2>
+			<h2 id="NewReader">func <a href="http://localhost:9090/src/compress/zlib/reader.go?s=2009:2059#L60">NewReader</a>
+				<a class="permalink" href="index.html#NewReader">&#xb6;</a>
+			</h2>
 			<pre>func NewReader(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) (<a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReadCloser">ReadCloser</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 NewReader creates a new ReadCloser.
 Reads from the returned ReadCloser read and decompress data from r.
-The implementation buffers input and may read more data than necessary from r.
+If r does not implement io.ByteReader, the decompressor may read more
+data than necessary from r.
 It is the caller&#39;s responsibility to call Close on the ReadCloser when done.
 </p>
 <p>
@@ -277,7 +280,9 @@ The ReadCloser returned by NewReader also implements Resetter.
 		
 			
 			
-			<h2 id="NewReaderDict">func <a href="http://localhost:9090/src/compress/zlib/reader.go?s=2393:2460#L68">NewReaderDict</a></h2>
+			<h2 id="NewReaderDict">func <a href="http://localhost:9090/src/compress/zlib/reader.go?s=2415:2482#L69">NewReaderDict</a>
+				<a class="permalink" href="index.html#NewReaderDict">&#xb6;</a>
+			</h2>
 			<pre>func NewReaderDict(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, dict []<a href="../../builtin/index.html#byte">byte</a>) (<a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReadCloser">ReadCloser</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 NewReaderDict is like NewReader but uses a preset dictionary.
@@ -295,7 +300,9 @@ The ReadCloser returned by NewReaderDict also implements Resetter.
 		
 			
 			
-			<h2 id="Resetter">type <a href="http://localhost:9090/src/compress/zlib/reader.go?s=1459:1644#L47">Resetter</a></h2>
+			<h2 id="Resetter">type <a href="http://localhost:9090/src/compress/zlib/reader.go?s=1459:1644#L47">Resetter</a>
+				<a class="permalink" href="index.html#Resetter">&#xb6;</a>
+			</h2>
 			<pre>type Resetter interface {
     <span class="comment">// Reset discards any buffered data and resets the Resetter as if it was</span>
     <span class="comment">// newly initialized with the given reader.</span>
@@ -322,7 +329,9 @@ instead of allocating a new one.
 		
 			
 			
-			<h2 id="Writer">type <a href="http://localhost:9090/src/compress/zlib/writer.go?s=694:886#L16">Writer</a></h2>
+			<h2 id="Writer">type <a href="http://localhost:9090/src/compress/zlib/writer.go?s=694:886#L16">Writer</a>
+				<a class="permalink" href="index.html#Writer">&#xb6;</a>
+			</h2>
 			<pre>type Writer struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -342,7 +351,9 @@ form of that data to an underlying writer (see NewWriter).
 
 			
 				
-				<h3 id="NewWriter">func <a href="http://localhost:9090/src/compress/zlib/writer.go?s=1128:1163#L32">NewWriter</a></h3>
+				<h3 id="NewWriter">func <a href="http://localhost:9090/src/compress/zlib/writer.go?s=1128:1163#L32">NewWriter</a>
+					<a class="permalink" href="index.html#NewWriter">&#xb6;</a>
+				</h3>
 				<pre>func NewWriter(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>) *<a href="index.html#Writer">Writer</a></pre>
 				<p>
 NewWriter creates a new Writer.
@@ -357,7 +368,9 @@ Writes may be buffered and not flushed until Close.
 				
 			
 				
-				<h3 id="NewWriterLevel">func <a href="http://localhost:9090/src/compress/zlib/writer.go?s=1550:1610#L43">NewWriterLevel</a></h3>
+				<h3 id="NewWriterLevel">func <a href="http://localhost:9090/src/compress/zlib/writer.go?s=1550:1610#L43">NewWriterLevel</a>
+					<a class="permalink" href="index.html#NewWriterLevel">&#xb6;</a>
+				</h3>
 				<pre>func NewWriterLevel(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, level <a href="../../builtin/index.html#int">int</a>) (*<a href="index.html#Writer">Writer</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 NewWriterLevel is like NewWriter but specifies the compression level instead
@@ -373,7 +386,9 @@ returned will be nil if the level is valid.
 				
 			
 				
-				<h3 id="NewWriterLevelDict">func <a href="http://localhost:9090/src/compress/zlib/writer.go?s=1859:1936#L52">NewWriterLevelDict</a></h3>
+				<h3 id="NewWriterLevelDict">func <a href="http://localhost:9090/src/compress/zlib/writer.go?s=1859:1936#L52">NewWriterLevelDict</a>
+					<a class="permalink" href="index.html#NewWriterLevelDict">&#xb6;</a>
+				</h3>
 				<pre>func NewWriterLevelDict(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, level <a href="../../builtin/index.html#int">int</a>, dict []<a href="../../builtin/index.html#byte">byte</a>) (*<a href="index.html#Writer">Writer</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 NewWriterLevelDict is like NewWriterLevel but specifies a dictionary to
@@ -390,7 +405,9 @@ the Writer is closed.
 
 			
 				
-				<h3 id="Writer.Close">func (*Writer) <a href="http://localhost:9090/src/compress/zlib/writer.go?s=4991:5021#L169">Close</a></h3>
+				<h3 id="Writer.Close">func (*Writer) <a href="http://localhost:9090/src/compress/zlib/writer.go?s=4991:5021#L169">Close</a>
+					<a class="permalink" href="index.html#Writer.Close">&#xb6;</a>
+				</h3>
 				<pre>func (z *<a href="index.html#Writer">Writer</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the Writer, flushing any unwritten data to the underlying
@@ -402,7 +419,9 @@ io.Writer, but does not close the underlying io.Writer.
 				
 			
 				
-				<h3 id="Writer.Flush">func (*Writer) <a href="http://localhost:9090/src/compress/zlib/writer.go?s=4691:4721#L156">Flush</a></h3>
+				<h3 id="Writer.Flush">func (*Writer) <a href="http://localhost:9090/src/compress/zlib/writer.go?s=4691:4721#L156">Flush</a>
+					<a class="permalink" href="index.html#Writer.Flush">&#xb6;</a>
+				</h3>
 				<pre>func (z *<a href="index.html#Writer">Writer</a>) Flush() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Flush flushes the Writer to its underlying io.Writer.
@@ -413,7 +432,9 @@ Flush flushes the Writer to its underlying io.Writer.
 				
 			
 				
-				<h3 id="Writer.Reset">func (*Writer) <a href="http://localhost:9090/src/compress/zlib/writer.go?s=2309:2344#L66">Reset</a></h3>
+				<h3 id="Writer.Reset">func (*Writer) <a href="http://localhost:9090/src/compress/zlib/writer.go?s=2309:2344#L66">Reset</a>
+					<a class="permalink" href="index.html#Writer.Reset">&#xb6;</a>
+				</h3>
 				<pre>func (z *<a href="index.html#Writer">Writer</a>) Reset(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>)</pre>
 				<p>
 Reset clears the state of the Writer z such that it is equivalent to its
@@ -426,7 +447,9 @@ to w.
 				
 			
 				
-				<h3 id="Writer.Write">func (*Writer) <a href="http://localhost:9090/src/compress/zlib/writer.go?s=4348:4399#L136">Write</a></h3>
+				<h3 id="Writer.Write">func (*Writer) <a href="http://localhost:9090/src/compress/zlib/writer.go?s=4348:4399#L136">Write</a>
+					<a class="permalink" href="index.html#Writer.Write">&#xb6;</a>
+				</h3>
 				<pre>func (z *<a href="index.html#Writer">Writer</a>) Write(p []<a href="../../builtin/index.html#byte">byte</a>) (n <a href="../../builtin/index.html#int">int</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Write writes a compressed form of p to the underlying io.Writer. The
@@ -450,7 +473,7 @@ explicitly flushed.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -468,6 +491,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

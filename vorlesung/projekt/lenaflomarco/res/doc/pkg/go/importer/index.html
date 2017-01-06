@@ -185,7 +185,9 @@ Package importer provides access to export data importers.
 		
 			
 			
-			<h2 id="Default">func <a href="http://localhost:9090/src/go/importer/importer.go?s=1555:1584#L44">Default</a></h2>
+			<h2 id="Default">func <a href="http://localhost:9090/src/go/importer/importer.go?s=1555:1584#L44">Default</a>
+				<a class="permalink" href="index.html#Default">&#xb6;</a>
+			</h2>
 			<pre>func Default() <a href="../types/index.html">types</a>.<a href="../types/index.html#Importer">Importer</a></pre>
 			<p>
 Default returns an Importer for the compiler that built the running binary.
@@ -198,7 +200,9 @@ If available, the result implements types.ImporterFrom.
 		
 			
 			
-			<h2 id="For">func <a href="http://localhost:9090/src/go/importer/importer.go?s=807:862#L14">For</a></h2>
+			<h2 id="For">func <a href="http://localhost:9090/src/go/importer/importer.go?s=807:862#L14">For</a>
+				<a class="permalink" href="index.html#For">&#xb6;</a>
+			</h2>
 			<pre>func For(compiler <a href="../../builtin/index.html#string">string</a>, lookup <a href="index.html#Lookup">Lookup</a>) <a href="../types/index.html">types</a>.<a href="../types/index.html#Importer">Importer</a></pre>
 			<p>
 For returns an Importer for the given compiler and lookup interface,
@@ -214,7 +218,9 @@ BUG(issue13847): For does not support non-nil lookup functions.
 		
 			
 			
-			<h2 id="Lookup">type <a href="http://localhost:9090/src/go/importer/importer.go?s=470:522#L8">Lookup</a></h2>
+			<h2 id="Lookup">type <a href="http://localhost:9090/src/go/importer/importer.go?s=470:522#L8">Lookup</a>
+				<a class="permalink" href="index.html#Lookup">&#xb6;</a>
+			</h2>
 			<pre>type Lookup func(path <a href="../../builtin/index.html#string">string</a>) (<a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReadCloser">ReadCloser</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 A Lookup function returns a reader to access package data for
@@ -241,7 +247,9 @@ a given import path, or an error if no matching package is found.
 			<h2 id="pkg-note-BUG">Bugs</h2>
 			<ul style="list-style: none; padding: 0;">
 			
-			<li><a href="http://localhost:9090/src/go/importer/importer.go?s=740:806#L13">&#x261e;</a> For does not support non-nil lookup functions.
+			<li><a href="http://localhost:9090/src/go/importer/importer.go?s=740:806#L13" style="float: left;">&#x261e;</a> <p>
+For does not support non-nil lookup functions.
+</p>
 </li>
 			
 			</ul>
@@ -255,7 +263,7 @@ a given import path, or an error if no matching package is found.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -273,6 +281,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

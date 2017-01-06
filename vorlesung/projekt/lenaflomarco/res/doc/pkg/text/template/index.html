@@ -169,8 +169,9 @@ data, defined in detail in the corresponding sections that follow.
 	delimiters, as shown here.
 
 {{pipeline}}
-	The default textual representation of the value of the pipeline
-	is copied to the output.
+	The default textual representation (the same as would be
+	printed by fmt.Print) of the value of the pipeline is copied
+	to the output.
 
 {{if pipeline}} T1 {{end}}
 	If the value of the pipeline is empty, no output is generated;
@@ -317,7 +318,7 @@ functionName [Argument...]
 </pre>
 <p>
 A pipeline may be &#34;chained&#34; by separating a sequence of commands with pipeline
-characters &#39;|&#39;. In a chained pipeline, the result of the each command is
+characters &#39;|&#39;. In a chained pipeline, the result of each command is
 passed as the last argument of the following command. The output of the final
 command in the pipeline is the value of the pipeline.
 </p>
@@ -637,7 +638,7 @@ if err != nil {
 					<dd>&nbsp; &nbsp; <a href="index.html#Template.Delims">func (t *Template) Delims(left, right string) *Template</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Template.Execute">func (t *Template) Execute(wr io.Writer, data interface{}) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Template.Execute">func (t *Template) Execute(wr io.Writer, data interface{}) error</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#Template.ExecuteTemplate">func (t *Template) ExecuteTemplate(wr io.Writer, name string, data interface{}) error</a></dd>
@@ -741,7 +742,9 @@ if err != nil {
 		
 			
 			
-			<h2 id="HTMLEscape">func <a href="http://localhost:9090/src/text/template/funcs.go?s=12574:12612#L480">HTMLEscape</a></h2>
+			<h2 id="HTMLEscape">func <a href="http://localhost:9090/src/text/template/funcs.go?s=12560:12598#L479">HTMLEscape</a>
+				<a class="permalink" href="index.html#HTMLEscape">&#xb6;</a>
+			</h2>
 			<pre>func HTMLEscape(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, b []<a href="../../builtin/index.html#byte">byte</a>)</pre>
 			<p>
 HTMLEscape writes to w the escaped HTML equivalent of the plain text data b.
@@ -753,7 +756,9 @@ HTMLEscape writes to w the escaped HTML equivalent of the plain text data b.
 		
 			
 			
-			<h2 id="HTMLEscapeString">func <a href="http://localhost:9090/src/text/template/funcs.go?s=13017:13055#L506">HTMLEscapeString</a></h2>
+			<h2 id="HTMLEscapeString">func <a href="http://localhost:9090/src/text/template/funcs.go?s=13003:13041#L505">HTMLEscapeString</a>
+				<a class="permalink" href="index.html#HTMLEscapeString">&#xb6;</a>
+			</h2>
 			<pre>func HTMLEscapeString(s <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 HTMLEscapeString returns the escaped HTML equivalent of the plain text data s.
@@ -765,7 +770,9 @@ HTMLEscapeString returns the escaped HTML equivalent of the plain text data s.
 		
 			
 			
-			<h2 id="HTMLEscaper">func <a href="http://localhost:9090/src/text/template/funcs.go?s=13314:13358#L518">HTMLEscaper</a></h2>
+			<h2 id="HTMLEscaper">func <a href="http://localhost:9090/src/text/template/funcs.go?s=13300:13344#L517">HTMLEscaper</a>
+				<a class="permalink" href="index.html#HTMLEscaper">&#xb6;</a>
+			</h2>
 			<pre>func HTMLEscaper(args ...interface{}) <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 HTMLEscaper returns the escaped HTML equivalent of the textual
@@ -778,7 +785,9 @@ representation of its arguments.
 		
 			
 			
-			<h2 id="IsTrue">func <a href="http://localhost:9090/src/text/template/exec.go?s=7388:7433#L253">IsTrue</a></h2>
+			<h2 id="IsTrue">func <a href="http://localhost:9090/src/text/template/exec.go?s=7845:7890#L264">IsTrue</a>
+				<a class="permalink" href="index.html#IsTrue">&#xb6;</a>
+			</h2>
 			<pre>func IsTrue(val interface{}) (truth, ok <a href="../../builtin/index.html#bool">bool</a>)</pre>
 			<p>
 IsTrue reports whether the value is &#39;true&#39;, in the sense of not the zero of its type,
@@ -792,7 +801,9 @@ truth used by if and other such actions.
 		
 			
 			
-			<h2 id="JSEscape">func <a href="http://localhost:9090/src/text/template/funcs.go?s=13734:13770#L536">JSEscape</a></h2>
+			<h2 id="JSEscape">func <a href="http://localhost:9090/src/text/template/funcs.go?s=13720:13756#L535">JSEscape</a>
+				<a class="permalink" href="index.html#JSEscape">&#xb6;</a>
+			</h2>
 			<pre>func JSEscape(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, b []<a href="../../builtin/index.html#byte">byte</a>)</pre>
 			<p>
 JSEscape writes to w the escaped JavaScript equivalent of the plain text data b.
@@ -804,7 +815,9 @@ JSEscape writes to w the escaped JavaScript equivalent of the plain text data b.
 		
 			
 			
-			<h2 id="JSEscapeString">func <a href="http://localhost:9090/src/text/template/funcs.go?s=14669:14705#L583">JSEscapeString</a></h2>
+			<h2 id="JSEscapeString">func <a href="http://localhost:9090/src/text/template/funcs.go?s=14655:14691#L582">JSEscapeString</a>
+				<a class="permalink" href="index.html#JSEscapeString">&#xb6;</a>
+			</h2>
 			<pre>func JSEscapeString(s <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 JSEscapeString returns the escaped JavaScript equivalent of the plain text data s.
@@ -816,7 +829,9 @@ JSEscapeString returns the escaped JavaScript equivalent of the plain text data 
 		
 			
 			
-			<h2 id="JSEscaper">func <a href="http://localhost:9090/src/text/template/funcs.go?s=15106:15148#L603">JSEscaper</a></h2>
+			<h2 id="JSEscaper">func <a href="http://localhost:9090/src/text/template/funcs.go?s=15092:15134#L602">JSEscaper</a>
+				<a class="permalink" href="index.html#JSEscaper">&#xb6;</a>
+			</h2>
 			<pre>func JSEscaper(args ...interface{}) <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 JSEscaper returns the escaped JavaScript equivalent of the textual
@@ -829,7 +844,9 @@ representation of its arguments.
 		
 			
 			
-			<h2 id="URLQueryEscaper">func <a href="http://localhost:9090/src/text/template/funcs.go?s=15337:15385#L609">URLQueryEscaper</a></h2>
+			<h2 id="URLQueryEscaper">func <a href="http://localhost:9090/src/text/template/funcs.go?s=15323:15371#L608">URLQueryEscaper</a>
+				<a class="permalink" href="index.html#URLQueryEscaper">&#xb6;</a>
+			</h2>
 			<pre>func URLQueryEscaper(args ...interface{}) <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 URLQueryEscaper returns the escaped value of the textual representation of
@@ -843,7 +860,9 @@ its arguments in a form suitable for embedding in a URL query.
 		
 			
 			
-			<h2 id="ExecError">type <a href="http://localhost:9090/src/text/template/exec.go?s=2276:2372#L78">ExecError</a></h2>
+			<h2 id="ExecError">type <a href="http://localhost:9090/src/text/template/exec.go?s=2635:2731#L85">ExecError</a>
+				<a class="permalink" href="index.html#ExecError">&#xb6;</a>
+			</h2>
 			<pre>type ExecError struct {
     Name <a href="../../builtin/index.html#string">string</a> <span class="comment">// Name of template.</span>
     Err  <a href="../../builtin/index.html#error">error</a>  <span class="comment">// Pre-formatted error.</span>
@@ -867,7 +886,9 @@ error is returned; it will not be of type ExecError.)
 
 			
 				
-				<h3 id="ExecError.Error">func (ExecError) <a href="http://localhost:9090/src/text/template/exec.go?s=2374:2407#L83">Error</a></h3>
+				<h3 id="ExecError.Error">func (ExecError) <a href="http://localhost:9090/src/text/template/exec.go?s=2733:2766#L90">Error</a>
+					<a class="permalink" href="index.html#ExecError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#ExecError">ExecError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -877,7 +898,9 @@ error is returned; it will not be of type ExecError.)
 		
 			
 			
-			<h2 id="FuncMap">type <a href="http://localhost:9090/src/text/template/funcs.go?s=626:661#L14">FuncMap</a></h2>
+			<h2 id="FuncMap">type <a href="http://localhost:9090/src/text/template/funcs.go?s=626:661#L14">FuncMap</a>
+				<a class="permalink" href="index.html#FuncMap">&#xb6;</a>
+			</h2>
 			<pre>type FuncMap map[<a href="../../builtin/index.html#string">string</a>]interface{}</pre>
 			<p>
 FuncMap is the type of the map defining the mapping from names to functions.
@@ -902,7 +925,9 @@ Execute returns that error.
 		
 			
 			
-			<h2 id="Template">type <a href="http://localhost:9090/src/text/template/template.go?s=859:956#L18">Template</a></h2>
+			<h2 id="Template">type <a href="http://localhost:9090/src/text/template/template.go?s=859:956#L18">Template</a>
+				<a class="permalink" href="index.html#Template">&#xb6;</a>
+			</h2>
 			<pre>type Template struct {
     *<a href="parse/index.html">parse</a>.<a href="parse/index.html#Tree">Tree</a>
     <span class="comment">// contains filtered or unexported fields</span>
@@ -924,7 +949,9 @@ as unexported by all other clients.
 
 			
 				
-				<h3 id="Must">func <a href="http://localhost:9090/src/text/template/helper.go?s=576:619#L11">Must</a></h3>
+				<h3 id="Must">func <a href="http://localhost:9090/src/text/template/helper.go?s=576:619#L11">Must</a>
+					<a class="permalink" href="index.html#Must">&#xb6;</a>
+				</h3>
 				<pre>func Must(t *<a href="index.html#Template">Template</a>, err <a href="../../builtin/index.html#error">error</a>) *<a href="index.html#Template">Template</a></pre>
 				<p>
 Must is a helper that wraps a call to a function returning (*Template, error)
@@ -938,7 +965,9 @@ initializations such as
 				
 			
 				
-				<h3 id="New">func <a href="http://localhost:9090/src/text/template/template.go?s=1022:1053#L27">New</a></h3>
+				<h3 id="New">func <a href="http://localhost:9090/src/text/template/template.go?s=1022:1053#L27">New</a>
+					<a class="permalink" href="index.html#New">&#xb6;</a>
+				</h3>
 				<pre>func New(name <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Template">Template</a></pre>
 				<p>
 New allocates a new, undefined template with the given name.
@@ -948,7 +977,9 @@ New allocates a new, undefined template with the given name.
 				
 			
 				
-				<h3 id="ParseFiles">func <a href="http://localhost:9090/src/text/template/helper.go?s=966:1021#L22">ParseFiles</a></h3>
+				<h3 id="ParseFiles">func <a href="http://localhost:9090/src/text/template/helper.go?s=1224:1279#L27">ParseFiles</a>
+					<a class="permalink" href="index.html#ParseFiles">&#xb6;</a>
+				</h3>
 				<pre>func ParseFiles(filenames ...<a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#Template">Template</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 ParseFiles creates a new Template and parses the template definitions from
@@ -956,12 +987,20 @@ the named files. The returned template&#39;s name will have the base name and
 parsed contents of the first file. There must be at least one file.
 If an error occurs, parsing stops and the returned *Template is nil.
 </p>
+<p>
+When parsing multiple files with the same name in different directories,
+the last one mentioned will be the one that results.
+For instance, ParseFiles(&#34;a/foo&#34;, &#34;b/foo&#34;) stores &#34;b/foo&#34; as the template
+named &#34;foo&#34;, while &#34;a/foo&#34; is unavailable.
+</p>
 
 				
 				
 			
 				
-				<h3 id="ParseGlob">func <a href="http://localhost:9090/src/text/template/helper.go?s=3200:3249#L81">ParseGlob</a></h3>
+				<h3 id="ParseGlob">func <a href="http://localhost:9090/src/text/template/helper.go?s=3728:3777#L92">ParseGlob</a>
+					<a class="permalink" href="index.html#ParseGlob">&#xb6;</a>
+				</h3>
 				<pre>func ParseGlob(pattern <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#Template">Template</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 ParseGlob creates a new Template and parses the template definitions from the
@@ -970,6 +1009,10 @@ returned template will have the (base) name and (parsed) contents of the
 first file matched by the pattern. ParseGlob is equivalent to calling
 ParseFiles with the list of files matched by the pattern.
 </p>
+<p>
+When parsing multiple files with the same name in different directories,
+the last one mentioned will be the one that results.
+</p>
 
 				
 				
@@ -977,7 +1020,9 @@ ParseFiles with the list of files matched by the pattern.
 
 			
 				
-				<h3 id="Template.AddParseTree">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=3255:3336#L110">AddParseTree</a></h3>
+				<h3 id="Template.AddParseTree">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=3255:3336#L110">AddParseTree</a>
+					<a class="permalink" href="index.html#Template.AddParseTree">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Template">Template</a>) AddParseTree(name <a href="../../builtin/index.html#string">string</a>, tree *<a href="parse/index.html">parse</a>.<a href="parse/index.html#Tree">Tree</a>) (*<a href="index.html#Template">Template</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 AddParseTree adds parse tree for template with given name and associates it with t.
@@ -990,7 +1035,9 @@ If the template does exist, it will be replaced.
 				
 			
 				
-				<h3 id="Template.Clone">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=2306:2351#L71">Clone</a></h3>
+				<h3 id="Template.Clone">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=2306:2351#L71">Clone</a>
+					<a class="permalink" href="index.html#Template.Clone">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Template">Template</a>) Clone() (*<a href="index.html#Template">Template</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Clone returns a duplicate of the template, including all associated
@@ -1006,7 +1053,9 @@ by adding the variants after the clone is made.
 				
 			
 				
-				<h3 id="Template.DefinedTemplates">func (*Template) <a href="http://localhost:9090/src/text/template/exec.go?s=5258:5302#L176">DefinedTemplates</a></h3>
+				<h3 id="Template.DefinedTemplates">func (*Template) <a href="http://localhost:9090/src/text/template/exec.go?s=5715:5759#L187">DefinedTemplates</a>
+					<a class="permalink" href="index.html#Template.DefinedTemplates">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Template">Template</a>) DefinedTemplates() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 DefinedTemplates returns a string listing the defined templates,
@@ -1020,7 +1069,9 @@ and in html/template.
 				
 			
 				
-				<h3 id="Template.Delims">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=4298:4353#L144">Delims</a></h3>
+				<h3 id="Template.Delims">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=4298:4353#L144">Delims</a>
+					<a class="permalink" href="index.html#Template.Delims">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Template">Template</a>) Delims(left, right <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Template">Template</a></pre>
 				<p>
 Delims sets the action delimiters to the specified strings, to be used in
@@ -1035,8 +1086,10 @@ The return value is the template, so calls can be chained.
 				
 			
 				
-				<h3 id="Template.Execute">func (*Template) <a href="http://localhost:9090/src/text/template/exec.go?s=4647:4717#L157">Execute</a></h3>
-				<pre>func (t *<a href="index.html#Template">Template</a>) Execute(wr <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, data interface{}) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Template.Execute">func (*Template) <a href="http://localhost:9090/src/text/template/exec.go?s=5006:5070#L164">Execute</a>
+					<a class="permalink" href="index.html#Template.Execute">&#xb6;</a>
+				</h3>
+				<pre>func (t *<a href="index.html#Template">Template</a>) Execute(wr <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, data interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Execute applies a parsed template to the specified data object,
 and writes the output to wr.
@@ -1051,7 +1104,9 @@ A template may be executed safely in parallel.
 				
 			
 				
-				<h3 id="Template.ExecuteTemplate">func (*Template) <a href="http://localhost:9090/src/text/template/exec.go?s=4035:4120#L140">ExecuteTemplate</a></h3>
+				<h3 id="Template.ExecuteTemplate">func (*Template) <a href="http://localhost:9090/src/text/template/exec.go?s=4394:4479#L147">ExecuteTemplate</a>
+					<a class="permalink" href="index.html#Template.ExecuteTemplate">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Template">Template</a>) ExecuteTemplate(wr <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, name <a href="../../builtin/index.html#string">string</a>, data interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 ExecuteTemplate applies the template associated with t that has the given name
@@ -1067,7 +1122,9 @@ A template may be executed safely in parallel.
 				
 			
 				
-				<h3 id="Template.Funcs">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=4769:4820#L156">Funcs</a></h3>
+				<h3 id="Template.Funcs">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=4769:4820#L156">Funcs</a>
+					<a class="permalink" href="index.html#Template.Funcs">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Template">Template</a>) Funcs(funcMap <a href="index.html#FuncMap">FuncMap</a>) *<a href="index.html#Template">Template</a></pre>
 				<p>
 Funcs adds the elements of the argument map to the template&#39;s function map.
@@ -1082,7 +1139,9 @@ so calls can be chained.
 				
 			
 				
-				<h3 id="Template.Lookup">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=5120:5168#L167">Lookup</a></h3>
+				<h3 id="Template.Lookup">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=5120:5168#L167">Lookup</a>
+					<a class="permalink" href="index.html#Template.Lookup">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Template">Template</a>) Lookup(name <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Template">Template</a></pre>
 				<p>
 Lookup returns the template with the given name that is associated with t.
@@ -1094,7 +1153,9 @@ It returns nil if there is no such template or the template has no definition.
 				
 			
 				
-				<h3 id="Template.Name">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=1155:1187#L36">Name</a></h3>
+				<h3 id="Template.Name">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=1155:1187#L36">Name</a>
+					<a class="permalink" href="index.html#Template.Name">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Template">Template</a>) Name() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 Name returns the name of the template.
@@ -1105,7 +1166,9 @@ Name returns the name of the template.
 				
 			
 				
-				<h3 id="Template.New">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=1421:1466#L43">New</a></h3>
+				<h3 id="Template.New">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=1421:1466#L43">New</a>
+					<a class="permalink" href="index.html#Template.New">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Template">Template</a>) New(name <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Template">Template</a></pre>
 				<p>
 New allocates a new, undefined template associated with the given one and with the same
@@ -1118,7 +1181,9 @@ invoke another with a {{template}} action.
 				
 			
 				
-				<h3 id="Template.Option">func (*Template) <a href="http://localhost:9090/src/text/template/option.go?s=1400:1450#L32">Option</a></h3>
+				<h3 id="Template.Option">func (*Template) <a href="http://localhost:9090/src/text/template/option.go?s=1400:1450#L32">Option</a>
+					<a class="permalink" href="index.html#Template.Option">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Template">Template</a>) Option(opt ...<a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Template">Template</a></pre>
 				<p>
 Option sets options for the template. Options are described by
@@ -1148,7 +1213,9 @@ indexed with a key that is not present in the map.
 				
 			
 				
-				<h3 id="Template.Parse">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=5458:5514#L177">Parse</a></h3>
+				<h3 id="Template.Parse">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=5458:5514#L177">Parse</a>
+					<a class="permalink" href="index.html#Template.Parse">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Template">Template</a>) Parse(text <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#Template">Template</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Parse defines the template by parsing the text. Nested template definitions will be
@@ -1161,7 +1228,9 @@ to parse definitions of templates to associate with t.
 				
 			
 				
-				<h3 id="Template.ParseFiles">func (*Template) <a href="http://localhost:9090/src/text/template/helper.go?s=1608:1677#L34">ParseFiles</a></h3>
+				<h3 id="Template.ParseFiles">func (*Template) <a href="http://localhost:9090/src/text/template/helper.go?s=2001:2070#L42">ParseFiles</a>
+					<a class="permalink" href="index.html#Template.ParseFiles">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Template">Template</a>) ParseFiles(filenames ...<a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#Template">Template</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 ParseFiles parses the named files and associates the resulting templates with
@@ -1173,13 +1242,19 @@ of the (base) names of the files. If it does not, depending on t&#39;s
 contents before calling ParseFiles, t.Execute may fail. In that
 case use t.ExecuteTemplate to execute a valid template.
 </p>
+<p>
+When parsing multiple files with the same name in different directories,
+the last one mentioned will be the one that results.
+</p>
 
 				
 				
 				
 			
 				
-				<h3 id="Template.ParseGlob">func (*Template) <a href="http://localhost:9090/src/text/template/helper.go?s=3601:3664#L90">ParseGlob</a></h3>
+				<h3 id="Template.ParseGlob">func (*Template) <a href="http://localhost:9090/src/text/template/helper.go?s=4264:4327#L104">ParseGlob</a>
+					<a class="permalink" href="index.html#Template.ParseGlob">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Template">Template</a>) ParseGlob(pattern <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#Template">Template</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 ParseGlob parses the template definitions in the files identified by the
@@ -1188,13 +1263,19 @@ processed by filepath.Glob and must match at least one file. ParseGlob is
 equivalent to calling t.ParseFiles with the list of files matched by the
 pattern.
 </p>
+<p>
+When parsing multiple files with the same name in different directories,
+the last one mentioned will be the one that results.
+</p>
 
 				
 				
 				
 			
 				
-				<h3 id="Template.Templates">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=3742:3784#L127">Templates</a></h3>
+				<h3 id="Template.Templates">func (*Template) <a href="http://localhost:9090/src/text/template/template.go?s=3742:3784#L127">Templates</a>
+					<a class="permalink" href="index.html#Template.Templates">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Template">Template</a>) Templates() []*<a href="index.html#Template">Template</a></pre>
 				<p>
 Templates returns a slice of defined templates associated with t.
@@ -1254,7 +1335,7 @@ Templates returns a slice of defined templates associated with t.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1272,6 +1353,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

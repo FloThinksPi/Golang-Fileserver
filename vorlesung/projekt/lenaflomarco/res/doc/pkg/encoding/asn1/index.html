@@ -284,7 +284,9 @@ ASN.1 class types represent the namespace of the tag.
 		
 			
 			
-			<h2 id="Marshal">func <a href="http://localhost:9090/src/encoding/asn1/marshal.go?s=13656:13701#L635">Marshal</a></h2>
+			<h2 id="Marshal">func <a href="http://localhost:9090/src/encoding/asn1/marshal.go?s=13638:13683#L635">Marshal</a>
+				<a class="permalink" href="index.html#Marshal">&#xb6;</a>
+			</h2>
 			<pre>func Marshal(val interface{}) ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 Marshal returns the ASN.1 encoding of val.
@@ -305,7 +307,9 @@ utf8:		causes strings to be marshaled as ASN.1, UTF8 strings
 		
 			
 			
-			<h2 id="Unmarshal">func <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=27223:27289#L972">Unmarshal</a></h2>
+			<h2 id="Unmarshal">func <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=27353:27419#L977">Unmarshal</a>
+				<a class="permalink" href="index.html#Unmarshal">&#xb6;</a>
+			</h2>
 			<pre>func Unmarshal(b []<a href="../../builtin/index.html#byte">byte</a>, val interface{}) (rest []<a href="../../builtin/index.html#byte">byte</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 Unmarshal parses the DER-encoded ASN.1 data structure b
@@ -382,7 +386,9 @@ Unmarshal returns a parse error.
 		
 			
 			
-			<h2 id="UnmarshalWithParams">func <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=27482:27573#L978">UnmarshalWithParams</a></h2>
+			<h2 id="UnmarshalWithParams">func <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=27612:27703#L983">UnmarshalWithParams</a>
+				<a class="permalink" href="index.html#UnmarshalWithParams">&#xb6;</a>
+			</h2>
 			<pre>func UnmarshalWithParams(b []<a href="../../builtin/index.html#byte">byte</a>, val interface{}, params <a href="../../builtin/index.html#string">string</a>) (rest []<a href="../../builtin/index.html#byte">byte</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 UnmarshalWithParams allows field parameters to be specified for the
@@ -396,7 +402,9 @@ top-level element. The form of the params is the same as the field tags.
 		
 			
 			
-			<h2 id="BitString">type <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=4186:4293#L147">BitString</a></h2>
+			<h2 id="BitString">type <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=4186:4293#L147">BitString</a>
+				<a class="permalink" href="index.html#BitString">&#xb6;</a>
+			</h2>
 			<pre>type BitString struct {
     Bytes     []<a href="../../builtin/index.html#byte">byte</a> <span class="comment">// bits packed into bytes.</span>
     BitLength <a href="../../builtin/index.html#int">int</a>    <span class="comment">// length in bits.</span>
@@ -420,7 +428,9 @@ valid bits is recorded. Padding bits will be zero.
 
 			
 				
-				<h3 id="BitString.At">func (BitString) <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=4387:4419#L154">At</a></h3>
+				<h3 id="BitString.At">func (BitString) <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=4387:4419#L154">At</a>
+					<a class="permalink" href="index.html#BitString.At">&#xb6;</a>
+				</h3>
 				<pre>func (b <a href="index.html#BitString">BitString</a>) At(i <a href="../../builtin/index.html#int">int</a>) <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 At returns the bit at the given index. If the index is out of range it
@@ -432,7 +442,9 @@ returns false.
 				
 			
 				
-				<h3 id="BitString.RightAlign">func (BitString) <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=4659:4697#L165">RightAlign</a></h3>
+				<h3 id="BitString.RightAlign">func (BitString) <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=4659:4697#L165">RightAlign</a>
+					<a class="permalink" href="index.html#BitString.RightAlign">&#xb6;</a>
+				</h3>
 				<pre>func (b <a href="index.html#BitString">BitString</a>) RightAlign() []<a href="../../builtin/index.html#byte">byte</a></pre>
 				<p>
 RightAlign returns a slice where the padding bits are at the beginning. The
@@ -446,7 +458,9 @@ slice may share memory with the BitString.
 		
 			
 			
-			<h2 id="Enumerated">type <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=7186:7205#L275">Enumerated</a></h2>
+			<h2 id="Enumerated">type <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=7186:7205#L275">Enumerated</a>
+				<a class="permalink" href="index.html#Enumerated">&#xb6;</a>
+			</h2>
 			<pre>type Enumerated <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 An Enumerated is represented as a plain int.
@@ -467,7 +481,9 @@ An Enumerated is represented as a plain int.
 		
 			
 			
-			<h2 id="Flag">type <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=7274:7288#L280">Flag</a></h2>
+			<h2 id="Flag">type <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=7274:7288#L280">Flag</a>
+				<a class="permalink" href="index.html#Flag">&#xb6;</a>
+			</h2>
 			<pre>type Flag <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 A Flag accepts any data and is set to true if present.
@@ -488,7 +504,9 @@ A Flag accepts any data and is set to true if present.
 		
 			
 			
-			<h2 id="ObjectIdentifier">type <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=5585:5612#L202">ObjectIdentifier</a></h2>
+			<h2 id="ObjectIdentifier">type <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=5585:5612#L202">ObjectIdentifier</a>
+				<a class="permalink" href="index.html#ObjectIdentifier">&#xb6;</a>
+			</h2>
 			<pre>type ObjectIdentifier []<a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 An ObjectIdentifier represents an ASN.1 OBJECT IDENTIFIER.
@@ -507,7 +525,9 @@ An ObjectIdentifier represents an ASN.1 OBJECT IDENTIFIER.
 
 			
 				
-				<h3 id="ObjectIdentifier.Equal">func (ObjectIdentifier) <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=5683:5744#L205">Equal</a></h3>
+				<h3 id="ObjectIdentifier.Equal">func (ObjectIdentifier) <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=5683:5744#L205">Equal</a>
+					<a class="permalink" href="index.html#ObjectIdentifier.Equal">&#xb6;</a>
+				</h3>
 				<pre>func (oi <a href="index.html#ObjectIdentifier">ObjectIdentifier</a>) Equal(other <a href="index.html#ObjectIdentifier">ObjectIdentifier</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 Equal reports whether oi and other represent the same identifier.
@@ -518,7 +538,9 @@ Equal reports whether oi and other represent the same identifier.
 				
 			
 				
-				<h3 id="ObjectIdentifier.String">func (ObjectIdentifier) <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=5890:5932#L218">String</a></h3>
+				<h3 id="ObjectIdentifier.String">func (ObjectIdentifier) <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=5890:5932#L218">String</a>
+					<a class="permalink" href="index.html#ObjectIdentifier.String">&#xb6;</a>
+				</h3>
 				<pre>func (oi <a href="index.html#ObjectIdentifier">ObjectIdentifier</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -528,7 +550,9 @@ Equal reports whether oi and other represent the same identifier.
 		
 			
 			
-			<h2 id="RawContent">type <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=11130:11152#L425">RawContent</a></h2>
+			<h2 id="RawContent">type <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=11139:11161#L425">RawContent</a>
+				<a class="permalink" href="index.html#RawContent">&#xb6;</a>
+			</h2>
 			<pre>type RawContent []<a href="../../builtin/index.html#byte">byte</a></pre>
 			<p>
 RawContent is used to signal that the undecoded, DER data needs to be
@@ -551,7 +575,9 @@ this type. It&#39;s an error for any of the other fields to have this type.
 		
 			
 			
-			<h2 id="RawValue">type <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=10776:10902#L415">RawValue</a></h2>
+			<h2 id="RawValue">type <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=10785:10911#L415">RawValue</a>
+				<a class="permalink" href="index.html#RawValue">&#xb6;</a>
+			</h2>
 			<pre>type RawValue struct {
     Class, Tag <a href="../../builtin/index.html#int">int</a>
     IsCompound <a href="../../builtin/index.html#bool">bool</a>
@@ -577,7 +603,9 @@ A RawValue represents an undecoded ASN.1 object.
 		
 			
 			
-			<h2 id="StructuralError">type <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=1169:1212#L24">StructuralError</a></h2>
+			<h2 id="StructuralError">type <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=1169:1212#L24">StructuralError</a>
+				<a class="permalink" href="index.html#StructuralError">&#xb6;</a>
+			</h2>
 			<pre>type StructuralError struct {
     Msg <a href="../../builtin/index.html#string">string</a>
 }</pre>
@@ -599,7 +627,9 @@ which is receiving it doesn&#39;t match.
 
 			
 				
-				<h3 id="StructuralError.Error">func (StructuralError) <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=1214:1253#L28">Error</a></h3>
+				<h3 id="StructuralError.Error">func (StructuralError) <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=1214:1253#L28">Error</a>
+					<a class="permalink" href="index.html#StructuralError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#StructuralError">StructuralError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -609,7 +639,9 @@ which is receiving it doesn&#39;t match.
 		
 			
 			
-			<h2 id="SyntaxError">type <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=1358:1397#L31">SyntaxError</a></h2>
+			<h2 id="SyntaxError">type <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=1358:1397#L31">SyntaxError</a>
+				<a class="permalink" href="index.html#SyntaxError">&#xb6;</a>
+			</h2>
 			<pre>type SyntaxError struct {
     Msg <a href="../../builtin/index.html#string">string</a>
 }</pre>
@@ -630,7 +662,9 @@ A SyntaxError suggests that the ASN.1 data is invalid.
 
 			
 				
-				<h3 id="SyntaxError.Error">func (SyntaxError) <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=1399:1434#L35">Error</a></h3>
+				<h3 id="SyntaxError.Error">func (SyntaxError) <a href="http://localhost:9090/src/encoding/asn1/asn1.go?s=1399:1434#L35">Error</a>
+					<a class="permalink" href="index.html#SyntaxError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#SyntaxError">SyntaxError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -649,7 +683,7 @@ A SyntaxError suggests that the ASN.1 data is invalid.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -667,6 +701,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

@@ -94,7 +94,7 @@ in RFC 3875.
 <p>
 Note that using CGI means starting a new process to handle each
 request, which is typically less efficient than using a
-long-running server.  This package is intended primarily for
+long-running server. This package is intended primarily for
 compatibility with existing systems.
 </p>
 
@@ -196,7 +196,9 @@ compatibility with existing systems.
 		
 			
 			
-			<h2 id="Request">func <a href="http://localhost:9090/src/net/http/cgi/child.go?s=604:641#L19">Request</a></h2>
+			<h2 id="Request">func <a href="http://localhost:9090/src/net/http/cgi/child.go?s=604:641#L19">Request</a>
+				<a class="permalink" href="index.html#Request">&#xb6;</a>
+			</h2>
 			<pre>func Request() (*<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>, <a href="../../../builtin/index.html#error">error</a>)</pre>
 			<p>
 Request returns the HTTP request as represented in the current
@@ -211,7 +213,9 @@ The returned Request&#39;s Body is populated, if applicable.
 		
 			
 			
-			<h2 id="RequestFromMap">func <a href="http://localhost:9090/src/net/http/cgi/child.go?s=1163:1231#L42">RequestFromMap</a></h2>
+			<h2 id="RequestFromMap">func <a href="http://localhost:9090/src/net/http/cgi/child.go?s=1163:1231#L42">RequestFromMap</a>
+				<a class="permalink" href="index.html#RequestFromMap">&#xb6;</a>
+			</h2>
 			<pre>func RequestFromMap(params map[<a href="../../../builtin/index.html#string">string</a>]<a href="../../../builtin/index.html#string">string</a>) (*<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>, <a href="../../../builtin/index.html#error">error</a>)</pre>
 			<p>
 RequestFromMap creates an http.Request from CGI variables.
@@ -224,7 +228,9 @@ The returned Request&#39;s Body field is not populated.
 		
 			
 			
-			<h2 id="Serve">func <a href="http://localhost:9090/src/net/http/cgi/child.go?s=3875:3913#L136">Serve</a></h2>
+			<h2 id="Serve">func <a href="http://localhost:9090/src/net/http/cgi/child.go?s=3875:3913#L136">Serve</a>
+				<a class="permalink" href="index.html#Serve">&#xb6;</a>
+			</h2>
 			<pre>func Serve(handler <a href="../index.html">http</a>.<a href="../index.html#Handler">Handler</a>) <a href="../../../builtin/index.html#error">error</a></pre>
 			<p>
 Serve executes the provided Handler on the currently active CGI
@@ -240,7 +246,9 @@ http.DefaultServeMux.
 		
 			
 			
-			<h2 id="Handler">type <a href="http://localhost:9090/src/net/http/cgi/host.go?s=1283:2347#L37">Handler</a></h2>
+			<h2 id="Handler">type <a href="http://localhost:9090/src/net/http/cgi/host.go?s=1282:2432#L37">Handler</a>
+				<a class="permalink" href="index.html#Handler">&#xb6;</a>
+			</h2>
 			<pre>type Handler struct {
     Path <a href="../../../builtin/index.html#string">string</a> <span class="comment">// path to the CGI executable</span>
     Root <a href="../../../builtin/index.html#string">string</a> <span class="comment">// root URI prefix of handler or empty for &#34;/&#34;</span>
@@ -255,6 +263,7 @@ http.DefaultServeMux.
     InheritEnv []<a href="../../../builtin/index.html#string">string</a>    <span class="comment">// environment variables to inherit from host, as &#34;key&#34;</span>
     Logger     *<a href="../../../log/index.html">log</a>.<a href="../../../log/index.html#Logger">Logger</a> <span class="comment">// optional log for errors or nil to use log.Print</span>
     Args       []<a href="../../../builtin/index.html#string">string</a>    <span class="comment">// optional arguments to pass to child process</span>
+    Stderr     <a href="../../../io/index.html">io</a>.<a href="../../../io/index.html#Writer">Writer</a>   <span class="comment">// optional stderr for the child process; nil means os.Stderr</span>
 
     <span class="comment">// PathLocationHandler specifies the root http Handler that</span>
     <span class="comment">// should handle internal redirects when the CGI process</span>
@@ -283,7 +292,9 @@ Handler runs an executable in a subprocess with a CGI environment.
 
 			
 				
-				<h3 id="Handler.ServeHTTP">func (*Handler) <a href="http://localhost:9090/src/net/http/cgi/host.go?s=2914:2984#L88">ServeHTTP</a></h3>
+				<h3 id="Handler.ServeHTTP">func (*Handler) <a href="http://localhost:9090/src/net/http/cgi/host.go?s=3102:3172#L96">ServeHTTP</a>
+					<a class="permalink" href="index.html#Handler.ServeHTTP">&#xb6;</a>
+				</h3>
 				<pre>func (h *<a href="index.html#Handler">Handler</a>) ServeHTTP(rw <a href="../index.html">http</a>.<a href="../index.html#ResponseWriter">ResponseWriter</a>, req *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>)</pre>
 				
 				
@@ -302,7 +313,7 @@ Handler runs an executable in a subprocess with a CGI environment.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -320,6 +331,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../../lib/godoc/godocs.js"></script>
 
 </body>

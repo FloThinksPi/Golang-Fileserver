@@ -207,7 +207,9 @@ offsets2 := index.Lookup(s, 3)  // the list of at most 3 indices where s occurs 
 		
 			
 			
-			<h2 id="Index">type <a href="http://localhost:9090/src/index/suffixarray/suffixarray.go?s=711:804#L18">Index</a></h2>
+			<h2 id="Index">type <a href="http://localhost:9090/src/index/suffixarray/suffixarray.go?s=711:804#L18">Index</a>
+				<a class="permalink" href="index.html#Index">&#xb6;</a>
+			</h2>
 			<pre>type Index struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -226,7 +228,9 @@ Index implements a suffix array for fast substring search.
 
 			
 				
-				<h3 id="New">func <a href="http://localhost:9090/src/index/suffixarray/suffixarray.go?s=900:928#L25">New</a></h3>
+				<h3 id="New">func <a href="http://localhost:9090/src/index/suffixarray/suffixarray.go?s=900:928#L25">New</a>
+					<a class="permalink" href="index.html#New">&#xb6;</a>
+				</h3>
 				<pre>func New(data []<a href="../../builtin/index.html#byte">byte</a>) *<a href="index.html#Index">Index</a></pre>
 				<p>
 New creates a new Index for data.
@@ -239,7 +243,9 @@ Index creation time is O(N*log(N)) for N = len(data).
 
 			
 				
-				<h3 id="Index.Bytes">func (*Index) <a href="http://localhost:9090/src/index/suffixarray/suffixarray.go?s=3824:3854#L155">Bytes</a></h3>
+				<h3 id="Index.Bytes">func (*Index) <a href="http://localhost:9090/src/index/suffixarray/suffixarray.go?s=3824:3854#L155">Bytes</a>
+					<a class="permalink" href="index.html#Index.Bytes">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#Index">Index</a>) Bytes() []<a href="../../builtin/index.html#byte">byte</a></pre>
 				<p>
 Bytes returns the data over which the index was created.
@@ -251,7 +257,9 @@ It must not be modified.
 				
 			
 				
-				<h3 id="Index.FindAllIndex">func (*Index) <a href="http://localhost:9090/src/index/suffixarray/suffixarray.go?s=5421:5491#L202">FindAllIndex</a></h3>
+				<h3 id="Index.FindAllIndex">func (*Index) <a href="http://localhost:9090/src/index/suffixarray/suffixarray.go?s=5421:5491#L202">FindAllIndex</a>
+					<a class="permalink" href="index.html#Index.FindAllIndex">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#Index">Index</a>) FindAllIndex(r *<a href="../../regexp/index.html">regexp</a>.<a href="../../regexp/index.html#Regexp">Regexp</a>, n <a href="../../builtin/index.html#int">int</a>) (result [][]<a href="../../builtin/index.html#int">int</a>)</pre>
 				<p>
 FindAllIndex returns a sorted list of non-overlapping matches of the
@@ -267,7 +275,9 @@ or if n == 0.
 				
 			
 				
-				<h3 id="Index.Lookup">func (*Index) <a href="http://localhost:9090/src/index/suffixarray/suffixarray.go?s=4764:4818#L180">Lookup</a></h3>
+				<h3 id="Index.Lookup">func (*Index) <a href="http://localhost:9090/src/index/suffixarray/suffixarray.go?s=4764:4818#L180">Lookup</a>
+					<a class="permalink" href="index.html#Index.Lookup">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#Index">Index</a>) Lookup(s []<a href="../../builtin/index.html#byte">byte</a>, n <a href="../../builtin/index.html#int">int</a>) (result []<a href="../../builtin/index.html#int">int</a>)</pre>
 				<p>
 Lookup returns an unsorted list of at most n indices where the byte string s
@@ -282,7 +292,9 @@ size of the indexed data.
 				
 			
 				
-				<h3 id="Index.Read">func (*Index) <a href="http://localhost:9090/src/index/suffixarray/suffixarray.go?s=2583:2622#L88">Read</a></h3>
+				<h3 id="Index.Read">func (*Index) <a href="http://localhost:9090/src/index/suffixarray/suffixarray.go?s=2583:2622#L88">Read</a>
+					<a class="permalink" href="index.html#Index.Read">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#Index">Index</a>) Read(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Read reads the index from r into x; x must not be nil.
@@ -293,7 +305,9 @@ Read reads the index from r into x; x must not be nil.
 				
 			
 				
-				<h3 id="Index.Write">func (*Index) <a href="http://localhost:9090/src/index/suffixarray/suffixarray.go?s=3317:3357#L127">Write</a></h3>
+				<h3 id="Index.Write">func (*Index) <a href="http://localhost:9090/src/index/suffixarray/suffixarray.go?s=3317:3357#L127">Write</a>
+					<a class="permalink" href="index.html#Index.Write">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#Index">Index</a>) Write(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Write writes the index x to w.
@@ -315,7 +329,7 @@ Write writes the index x to w.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -333,6 +347,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

@@ -782,7 +782,9 @@ ErrFormat indicates that decoding encountered an unknown format.
 		
 			
 			
-			<h2 id="RegisterFormat">func <a href="http://localhost:9090/src/image/format.go?s=1005:1129#L22">RegisterFormat</a></h2>
+			<h2 id="RegisterFormat">func <a href="http://localhost:9090/src/image/format.go?s=1005:1129#L22">RegisterFormat</a>
+				<a class="permalink" href="index.html#RegisterFormat">&#xb6;</a>
+			</h2>
 			<pre>func RegisterFormat(name, magic <a href="../builtin/index.html#string">string</a>, decode func(<a href="../io/index.html">io</a>.<a href="../io/index.html#Reader">Reader</a>) (<a href="index.html#Image">Image</a>, <a href="../builtin/index.html#error">error</a>), decodeConfig func(<a href="../io/index.html">io</a>.<a href="../io/index.html#Reader">Reader</a>) (<a href="index.html#Config">Config</a>, <a href="../builtin/index.html#error">error</a>))</pre>
 			<p>
 RegisterFormat registers an image format for use by Decode.
@@ -800,7 +802,9 @@ DecodeConfig is the function that decodes just its configuration.
 		
 			
 			
-			<h2 id="Alpha">type <a href="http://localhost:9090/src/image/image.go?s=13478:13780#L472">Alpha</a></h2>
+			<h2 id="Alpha">type <a href="http://localhost:9090/src/image/image.go?s=13478:13780#L472">Alpha</a>
+				<a class="permalink" href="index.html#Alpha">&#xb6;</a>
+			</h2>
 			<pre>type Alpha struct {
     <span class="comment">// Pix holds the image&#39;s pixels, as alpha values. The pixel at</span>
     <span class="comment">// (x, y) starts at Pix[(y-Rect.Min.Y)*Stride + (x-Rect.Min.X)*1].</span>
@@ -825,7 +829,9 @@ Alpha is an in-memory image whose At method returns color.Alpha values.
 
 			
 				
-				<h3 id="NewAlpha">func <a href="http://localhost:9090/src/image/image.go?s=15648:15681#L557">NewAlpha</a></h3>
+				<h3 id="NewAlpha">func <a href="http://localhost:9090/src/image/image.go?s=15648:15681#L557">NewAlpha</a>
+					<a class="permalink" href="index.html#NewAlpha">&#xb6;</a>
+				</h3>
 				<pre>func NewAlpha(r <a href="index.html#Rectangle">Rectangle</a>) *<a href="index.html#Alpha">Alpha</a></pre>
 				<p>
 NewAlpha returns a new Alpha image with the given bounds.
@@ -837,7 +843,9 @@ NewAlpha returns a new Alpha image with the given bounds.
 
 			
 				
-				<h3 id="Alpha.AlphaAt">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=13976:14021#L490">AlphaAt</a></h3>
+				<h3 id="Alpha.AlphaAt">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=13976:14021#L490">AlphaAt</a>
+					<a class="permalink" href="index.html#Alpha.AlphaAt">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha">Alpha</a>) AlphaAt(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Alpha">Alpha</a></pre>
 				
 				
@@ -845,7 +853,9 @@ NewAlpha returns a new Alpha image with the given bounds.
 				
 			
 				
-				<h3 id="Alpha.At">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=13906:13946#L486">At</a></h3>
+				<h3 id="Alpha.At">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=13906:13946#L486">At</a>
+					<a class="permalink" href="index.html#Alpha.At">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha">Alpha</a>) At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a></pre>
 				
 				
@@ -853,7 +863,9 @@ NewAlpha returns a new Alpha image with the given bounds.
 				
 			
 				
-				<h3 id="Alpha.Bounds">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=13852:13886#L484">Bounds</a></h3>
+				<h3 id="Alpha.Bounds">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=13852:13886#L484">Bounds</a>
+					<a class="permalink" href="index.html#Alpha.Bounds">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha">Alpha</a>) Bounds() <a href="index.html#Rectangle">Rectangle</a></pre>
 				
 				
@@ -861,7 +873,9 @@ NewAlpha returns a new Alpha image with the given bounds.
 				
 			
 				
-				<h3 id="Alpha.ColorModel">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=13782:13822#L482">ColorModel</a></h3>
+				<h3 id="Alpha.ColorModel">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=13782:13822#L482">ColorModel</a>
+					<a class="permalink" href="index.html#Alpha.ColorModel">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha">Alpha</a>) ColorModel() <a href="color/index.html">color</a>.<a href="color/index.html#Model">Model</a></pre>
 				
 				
@@ -869,7 +883,9 @@ NewAlpha returns a new Alpha image with the given bounds.
 				
 			
 				
-				<h3 id="Alpha.Opaque">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=15310:15339#L539">Opaque</a></h3>
+				<h3 id="Alpha.Opaque">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=15310:15339#L539">Opaque</a>
+					<a class="permalink" href="index.html#Alpha.Opaque">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha">Alpha</a>) Opaque() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Opaque scans the entire image and reports whether it is fully opaque.
@@ -880,7 +896,9 @@ Opaque scans the entire image and reports whether it is fully opaque.
 				
 			
 				
-				<h3 id="Alpha.PixOffset">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=14242:14281#L500">PixOffset</a></h3>
+				<h3 id="Alpha.PixOffset">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=14242:14281#L500">PixOffset</a>
+					<a class="permalink" href="index.html#Alpha.PixOffset">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha">Alpha</a>) PixOffset(x, y <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 PixOffset returns the index of the first element of Pix that corresponds to
@@ -892,7 +910,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="Alpha.Set">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=14342:14386#L504">Set</a></h3>
+				<h3 id="Alpha.Set">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=14342:14386#L504">Set</a>
+					<a class="permalink" href="index.html#Alpha.Set">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha">Alpha</a>) Set(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a>)</pre>
 				
 				
@@ -900,7 +920,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="Alpha.SetAlpha">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=14516:14565#L512">SetAlpha</a></h3>
+				<h3 id="Alpha.SetAlpha">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=14516:14565#L512">SetAlpha</a>
+					<a class="permalink" href="index.html#Alpha.SetAlpha">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha">Alpha</a>) SetAlpha(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#Alpha">Alpha</a>)</pre>
 				
 				
@@ -908,7 +930,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="Alpha.SubImage">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=14804:14847#L522">SubImage</a></h3>
+				<h3 id="Alpha.SubImage">func (*Alpha) <a href="http://localhost:9090/src/image/image.go?s=14804:14847#L522">SubImage</a>
+					<a class="permalink" href="index.html#Alpha.SubImage">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha">Alpha</a>) SubImage(r <a href="index.html#Rectangle">Rectangle</a>) <a href="index.html#Image">Image</a></pre>
 				<p>
 SubImage returns an image representing the portion of the image p visible
@@ -922,7 +946,9 @@ through r. The returned value shares pixels with the original image.
 		
 			
 			
-			<h2 id="Alpha16">type <a href="http://localhost:9090/src/image/image.go?s=15849:16174#L564">Alpha16</a></h2>
+			<h2 id="Alpha16">type <a href="http://localhost:9090/src/image/image.go?s=15849:16174#L564">Alpha16</a>
+				<a class="permalink" href="index.html#Alpha16">&#xb6;</a>
+			</h2>
 			<pre>type Alpha16 struct {
     <span class="comment">// Pix holds the image&#39;s pixels, as alpha values in big-endian format. The pixel at</span>
     <span class="comment">// (x, y) starts at Pix[(y-Rect.Min.Y)*Stride + (x-Rect.Min.X)*2].</span>
@@ -947,7 +973,9 @@ Alpha16 is an in-memory image whose At method returns color.Alpha16 values.
 
 			
 				
-				<h3 id="NewAlpha16">func <a href="http://localhost:9090/src/image/image.go?s=18240:18277#L652">NewAlpha16</a></h3>
+				<h3 id="NewAlpha16">func <a href="http://localhost:9090/src/image/image.go?s=18240:18277#L652">NewAlpha16</a>
+					<a class="permalink" href="index.html#NewAlpha16">&#xb6;</a>
+				</h3>
 				<pre>func NewAlpha16(r <a href="index.html#Rectangle">Rectangle</a>) *<a href="index.html#Alpha16">Alpha16</a></pre>
 				<p>
 NewAlpha16 returns a new Alpha16 image with the given bounds.
@@ -959,7 +987,9 @@ NewAlpha16 returns a new Alpha16 image with the given bounds.
 
 			
 				
-				<h3 id="Alpha16.Alpha16At">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=16380:16431#L582">Alpha16At</a></h3>
+				<h3 id="Alpha16.Alpha16At">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=16380:16431#L582">Alpha16At</a>
+					<a class="permalink" href="index.html#Alpha16.Alpha16At">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha16">Alpha16</a>) Alpha16At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Alpha16">Alpha16</a></pre>
 				
 				
@@ -967,7 +997,9 @@ NewAlpha16 returns a new Alpha16 image with the given bounds.
 				
 			
 				
-				<h3 id="Alpha16.At">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=16306:16348#L578">At</a></h3>
+				<h3 id="Alpha16.At">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=16306:16348#L578">At</a>
+					<a class="permalink" href="index.html#Alpha16.At">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha16">Alpha16</a>) At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a></pre>
 				
 				
@@ -975,7 +1007,9 @@ NewAlpha16 returns a new Alpha16 image with the given bounds.
 				
 			
 				
-				<h3 id="Alpha16.Bounds">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=16250:16286#L576">Bounds</a></h3>
+				<h3 id="Alpha16.Bounds">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=16250:16286#L576">Bounds</a>
+					<a class="permalink" href="index.html#Alpha16.Bounds">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha16">Alpha16</a>) Bounds() <a href="index.html#Rectangle">Rectangle</a></pre>
 				
 				
@@ -983,7 +1017,9 @@ NewAlpha16 returns a new Alpha16 image with the given bounds.
 				
 			
 				
-				<h3 id="Alpha16.ColorModel">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=16176:16218#L574">ColorModel</a></h3>
+				<h3 id="Alpha16.ColorModel">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=16176:16218#L574">ColorModel</a>
+					<a class="permalink" href="index.html#Alpha16.ColorModel">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha16">Alpha16</a>) ColorModel() <a href="color/index.html">color</a>.<a href="color/index.html#Model">Model</a></pre>
 				
 				
@@ -991,7 +1027,9 @@ NewAlpha16 returns a new Alpha16 image with the given bounds.
 				
 			
 				
-				<h3 id="Alpha16.Opaque">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=17867:17898#L634">Opaque</a></h3>
+				<h3 id="Alpha16.Opaque">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=17867:17898#L634">Opaque</a>
+					<a class="permalink" href="index.html#Alpha16.Opaque">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha16">Alpha16</a>) Opaque() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Opaque scans the entire image and reports whether it is fully opaque.
@@ -1002,7 +1040,9 @@ Opaque scans the entire image and reports whether it is fully opaque.
 				
 			
 				
-				<h3 id="Alpha16.PixOffset">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=16690:16731#L592">PixOffset</a></h3>
+				<h3 id="Alpha16.PixOffset">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=16690:16731#L592">PixOffset</a>
+					<a class="permalink" href="index.html#Alpha16.PixOffset">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha16">Alpha16</a>) PixOffset(x, y <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 PixOffset returns the index of the first element of Pix that corresponds to
@@ -1014,7 +1054,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="Alpha16.Set">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=16792:16838#L596">Set</a></h3>
+				<h3 id="Alpha16.Set">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=16792:16838#L596">Set</a>
+					<a class="permalink" href="index.html#Alpha16.Set">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha16">Alpha16</a>) Set(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a>)</pre>
 				
 				
@@ -1022,7 +1064,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="Alpha16.SetAlpha16">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=17022:17077#L606">SetAlpha16</a></h3>
+				<h3 id="Alpha16.SetAlpha16">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=17022:17077#L606">SetAlpha16</a>
+					<a class="permalink" href="index.html#Alpha16.SetAlpha16">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha16">Alpha16</a>) SetAlpha16(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#Alpha16">Alpha16</a>)</pre>
 				
 				
@@ -1030,7 +1074,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="Alpha16.SubImage">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=17355:17400#L617">SubImage</a></h3>
+				<h3 id="Alpha16.SubImage">func (*Alpha16) <a href="http://localhost:9090/src/image/image.go?s=17355:17400#L617">SubImage</a>
+					<a class="permalink" href="index.html#Alpha16.SubImage">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Alpha16">Alpha16</a>) SubImage(r <a href="index.html#Rectangle">Rectangle</a>) <a href="index.html#Image">Image</a></pre>
 				<p>
 SubImage returns an image representing the portion of the image p visible
@@ -1044,7 +1090,9 @@ through r. The returned value shares pixels with the original image.
 		
 			
 			
-			<h2 id="CMYK">type <a href="http://localhost:9090/src/image/image.go?s=22859:23164#L820">CMYK</a></h2>
+			<h2 id="CMYK">type <a href="http://localhost:9090/src/image/image.go?s=22859:23164#L820">CMYK</a>
+				<a class="permalink" href="index.html#CMYK">&#xb6;</a>
+			</h2>
 			<pre>type CMYK struct {
     <span class="comment">// Pix holds the image&#39;s pixels, in C, M, Y, K order. The pixel at</span>
     <span class="comment">// (x, y) starts at Pix[(y-Rect.Min.Y)*Stride + (x-Rect.Min.X)*4].</span>
@@ -1069,7 +1117,9 @@ CMYK is an in-memory image whose At method returns color.CMYK values.
 
 			
 				
-				<h3 id="NewCMYK">func <a href="http://localhost:9090/src/image/image.go?s=24943:24974#L899">NewCMYK</a></h3>
+				<h3 id="NewCMYK">func <a href="http://localhost:9090/src/image/image.go?s=24943:24974#L899">NewCMYK</a>
+					<a class="permalink" href="index.html#NewCMYK">&#xb6;</a>
+				</h3>
 				<pre>func NewCMYK(r <a href="index.html#Rectangle">Rectangle</a>) *<a href="index.html#CMYK">CMYK</a></pre>
 				<p>
 NewCMYK returns a new CMYK image with the given bounds.
@@ -1081,7 +1131,9 @@ NewCMYK returns a new CMYK image with the given bounds.
 
 			
 				
-				<h3 id="CMYK.At">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=23287:23326#L834">At</a></h3>
+				<h3 id="CMYK.At">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=23287:23326#L834">At</a>
+					<a class="permalink" href="index.html#CMYK.At">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#CMYK">CMYK</a>) At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a></pre>
 				
 				
@@ -1089,7 +1141,9 @@ NewCMYK returns a new CMYK image with the given bounds.
 				
 			
 				
-				<h3 id="CMYK.Bounds">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=23234:23267#L832">Bounds</a></h3>
+				<h3 id="CMYK.Bounds">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=23234:23267#L832">Bounds</a>
+					<a class="permalink" href="index.html#CMYK.Bounds">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#CMYK">CMYK</a>) Bounds() <a href="index.html#Rectangle">Rectangle</a></pre>
 				
 				
@@ -1097,7 +1151,9 @@ NewCMYK returns a new CMYK image with the given bounds.
 				
 			
 				
-				<h3 id="CMYK.CMYKAt">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=23355:23397#L838">CMYKAt</a></h3>
+				<h3 id="CMYK.CMYKAt">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=23355:23397#L838">CMYKAt</a>
+					<a class="permalink" href="index.html#CMYK.CMYKAt">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#CMYK">CMYK</a>) CMYKAt(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#CMYK">CMYK</a></pre>
 				
 				
@@ -1105,7 +1161,9 @@ NewCMYK returns a new CMYK image with the given bounds.
 				
 			
 				
-				<h3 id="CMYK.ColorModel">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=23166:23205#L830">ColorModel</a></h3>
+				<h3 id="CMYK.ColorModel">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=23166:23205#L830">ColorModel</a>
+					<a class="permalink" href="index.html#CMYK.ColorModel">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#CMYK">CMYK</a>) ColorModel() <a href="color/index.html">color</a>.<a href="color/index.html#Model">Model</a></pre>
 				
 				
@@ -1113,7 +1171,9 @@ NewCMYK returns a new CMYK image with the given bounds.
 				
 			
 				
-				<h3 id="CMYK.Opaque">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=24837:24865#L894">Opaque</a></h3>
+				<h3 id="CMYK.Opaque">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=24837:24865#L894">Opaque</a>
+					<a class="permalink" href="index.html#CMYK.Opaque">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#CMYK">CMYK</a>) Opaque() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Opaque scans the entire image and reports whether it is fully opaque.
@@ -1124,7 +1184,9 @@ Opaque scans the entire image and reports whether it is fully opaque.
 				
 			
 				
-				<h3 id="CMYK.PixOffset">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=23654:23692#L848">PixOffset</a></h3>
+				<h3 id="CMYK.PixOffset">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=23654:23692#L848">PixOffset</a>
+					<a class="permalink" href="index.html#CMYK.PixOffset">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#CMYK">CMYK</a>) PixOffset(x, y <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 PixOffset returns the index of the first element of Pix that corresponds to
@@ -1136,7 +1198,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="CMYK.Set">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=23753:23796#L852">Set</a></h3>
+				<h3 id="CMYK.Set">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=23753:23796#L852">Set</a>
+					<a class="permalink" href="index.html#CMYK.Set">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#CMYK">CMYK</a>) Set(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a>)</pre>
 				
 				
@@ -1144,7 +1208,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="CMYK.SetCMYK">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=23993:24039#L864">SetCMYK</a></h3>
+				<h3 id="CMYK.SetCMYK">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=23993:24039#L864">SetCMYK</a>
+					<a class="permalink" href="index.html#CMYK.SetCMYK">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#CMYK">CMYK</a>) SetCMYK(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#CMYK">CMYK</a>)</pre>
 				
 				
@@ -1152,7 +1218,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="CMYK.SubImage">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=24334:24376#L877">SubImage</a></h3>
+				<h3 id="CMYK.SubImage">func (*CMYK) <a href="http://localhost:9090/src/image/image.go?s=24334:24376#L877">SubImage</a>
+					<a class="permalink" href="index.html#CMYK.SubImage">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#CMYK">CMYK</a>) SubImage(r <a href="index.html#Rectangle">Rectangle</a>) <a href="index.html#Image">Image</a></pre>
 				<p>
 SubImage returns an image representing the portion of the image p visible
@@ -1166,7 +1234,9 @@ through r. The returned value shares pixels with the original image.
 		
 			
 			
-			<h2 id="Config">type <a href="http://localhost:9090/src/image/image.go?s=1134:1202#L19">Config</a></h2>
+			<h2 id="Config">type <a href="http://localhost:9090/src/image/image.go?s=1134:1202#L19">Config</a>
+				<a class="permalink" href="index.html#Config">&#xb6;</a>
+			</h2>
 			<pre>type Config struct {
     ColorModel    <a href="color/index.html">color</a>.<a href="color/index.html#Model">Model</a>
     Width, Height <a href="../builtin/index.html#int">int</a>
@@ -1186,7 +1256,9 @@ Config holds an image&#39;s color model and dimensions.
 
 			
 				
-				<h3 id="DecodeConfig">func <a href="http://localhost:9090/src/image/format.go?s=2676:2730#L82">DecodeConfig</a></h3>
+				<h3 id="DecodeConfig">func <a href="http://localhost:9090/src/image/format.go?s=2676:2730#L82">DecodeConfig</a>
+					<a class="permalink" href="index.html#DecodeConfig">&#xb6;</a>
+				</h3>
 				<pre>func DecodeConfig(r <a href="../io/index.html">io</a>.<a href="../io/index.html#Reader">Reader</a>) (<a href="index.html#Config">Config</a>, <a href="../builtin/index.html#string">string</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 DecodeConfig decodes the color model and dimensions of an image that has
@@ -1203,7 +1275,9 @@ an init function in the codec-specific package.
 		
 			
 			
-			<h2 id="Gray">type <a href="http://localhost:9090/src/image/image.go?s=18441:18741#L659">Gray</a></h2>
+			<h2 id="Gray">type <a href="http://localhost:9090/src/image/image.go?s=18441:18741#L659">Gray</a>
+				<a class="permalink" href="index.html#Gray">&#xb6;</a>
+			</h2>
 			<pre>type Gray struct {
     <span class="comment">// Pix holds the image&#39;s pixels, as gray values. The pixel at</span>
     <span class="comment">// (x, y) starts at Pix[(y-Rect.Min.Y)*Stride + (x-Rect.Min.X)*1].</span>
@@ -1228,7 +1302,9 @@ Gray is an in-memory image whose At method returns color.Gray values.
 
 			
 				
-				<h3 id="NewGray">func <a href="http://localhost:9090/src/image/image.go?s=20357:20388#L731">NewGray</a></h3>
+				<h3 id="NewGray">func <a href="http://localhost:9090/src/image/image.go?s=20357:20388#L731">NewGray</a>
+					<a class="permalink" href="index.html#NewGray">&#xb6;</a>
+				</h3>
 				<pre>func NewGray(r <a href="index.html#Rectangle">Rectangle</a>) *<a href="index.html#Gray">Gray</a></pre>
 				<p>
 NewGray returns a new Gray image with the given bounds.
@@ -1240,7 +1316,9 @@ NewGray returns a new Gray image with the given bounds.
 
 			
 				
-				<h3 id="Gray.At">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=18864:18903#L673">At</a></h3>
+				<h3 id="Gray.At">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=18864:18903#L673">At</a>
+					<a class="permalink" href="index.html#Gray.At">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray">Gray</a>) At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a></pre>
 				
 				
@@ -1248,7 +1326,9 @@ NewGray returns a new Gray image with the given bounds.
 				
 			
 				
-				<h3 id="Gray.Bounds">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=18811:18844#L671">Bounds</a></h3>
+				<h3 id="Gray.Bounds">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=18811:18844#L671">Bounds</a>
+					<a class="permalink" href="index.html#Gray.Bounds">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray">Gray</a>) Bounds() <a href="index.html#Rectangle">Rectangle</a></pre>
 				
 				
@@ -1256,7 +1336,9 @@ NewGray returns a new Gray image with the given bounds.
 				
 			
 				
-				<h3 id="Gray.ColorModel">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=18743:18782#L669">ColorModel</a></h3>
+				<h3 id="Gray.ColorModel">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=18743:18782#L669">ColorModel</a>
+					<a class="permalink" href="index.html#Gray.ColorModel">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray">Gray</a>) ColorModel() <a href="color/index.html">color</a>.<a href="color/index.html#Model">Model</a></pre>
 				
 				
@@ -1264,7 +1346,9 @@ NewGray returns a new Gray image with the given bounds.
 				
 			
 				
-				<h3 id="Gray.GrayAt">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=18932:18974#L677">GrayAt</a></h3>
+				<h3 id="Gray.GrayAt">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=18932:18974#L677">GrayAt</a>
+					<a class="permalink" href="index.html#Gray.GrayAt">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray">Gray</a>) GrayAt(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Gray">Gray</a></pre>
 				
 				
@@ -1272,7 +1356,9 @@ NewGray returns a new Gray image with the given bounds.
 				
 			
 				
-				<h3 id="Gray.Opaque">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=20251:20279#L726">Opaque</a></h3>
+				<h3 id="Gray.Opaque">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=20251:20279#L726">Opaque</a>
+					<a class="permalink" href="index.html#Gray.Opaque">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray">Gray</a>) Opaque() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Opaque scans the entire image and reports whether it is fully opaque.
@@ -1283,7 +1369,9 @@ Opaque scans the entire image and reports whether it is fully opaque.
 				
 			
 				
-				<h3 id="Gray.PixOffset">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=19193:19231#L687">PixOffset</a></h3>
+				<h3 id="Gray.PixOffset">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=19193:19231#L687">PixOffset</a>
+					<a class="permalink" href="index.html#Gray.PixOffset">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray">Gray</a>) PixOffset(x, y <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 PixOffset returns the index of the first element of Pix that corresponds to
@@ -1295,7 +1383,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="Gray.Set">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=19292:19335#L691">Set</a></h3>
+				<h3 id="Gray.Set">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=19292:19335#L691">Set</a>
+					<a class="permalink" href="index.html#Gray.Set">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray">Gray</a>) Set(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a>)</pre>
 				
 				
@@ -1303,7 +1393,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="Gray.SetGray">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=19463:19509#L699">SetGray</a></h3>
+				<h3 id="Gray.SetGray">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=19463:19509#L699">SetGray</a>
+					<a class="permalink" href="index.html#Gray.SetGray">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray">Gray</a>) SetGray(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#Gray">Gray</a>)</pre>
 				
 				
@@ -1311,7 +1403,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="Gray.SubImage">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=19748:19790#L709">SubImage</a></h3>
+				<h3 id="Gray.SubImage">func (*Gray) <a href="http://localhost:9090/src/image/image.go?s=19748:19790#L709">SubImage</a>
+					<a class="permalink" href="index.html#Gray.SubImage">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray">Gray</a>) SubImage(r <a href="index.html#Rectangle">Rectangle</a>) <a href="index.html#Image">Image</a></pre>
 				<p>
 SubImage returns an image representing the portion of the image p visible
@@ -1325,7 +1419,9 @@ through r. The returned value shares pixels with the original image.
 		
 			
 			
-			<h2 id="Gray16">type <a href="http://localhost:9090/src/image/image.go?s=20553:20876#L738">Gray16</a></h2>
+			<h2 id="Gray16">type <a href="http://localhost:9090/src/image/image.go?s=20553:20876#L738">Gray16</a>
+				<a class="permalink" href="index.html#Gray16">&#xb6;</a>
+			</h2>
 			<pre>type Gray16 struct {
     <span class="comment">// Pix holds the image&#39;s pixels, as gray values in big-endian format. The pixel at</span>
     <span class="comment">// (x, y) starts at Pix[(y-Rect.Min.Y)*Stride + (x-Rect.Min.X)*2].</span>
@@ -1350,7 +1446,9 @@ Gray16 is an in-memory image whose At method returns color.Gray16 values.
 
 			
 				
-				<h3 id="NewGray16">func <a href="http://localhost:9090/src/image/image.go?s=22661:22696#L813">NewGray16</a></h3>
+				<h3 id="NewGray16">func <a href="http://localhost:9090/src/image/image.go?s=22661:22696#L813">NewGray16</a>
+					<a class="permalink" href="index.html#NewGray16">&#xb6;</a>
+				</h3>
 				<pre>func NewGray16(r <a href="index.html#Rectangle">Rectangle</a>) *<a href="index.html#Gray16">Gray16</a></pre>
 				<p>
 NewGray16 returns a new Gray16 image with the given bounds.
@@ -1362,7 +1460,9 @@ NewGray16 returns a new Gray16 image with the given bounds.
 
 			
 				
-				<h3 id="Gray16.At">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=21005:21046#L752">At</a></h3>
+				<h3 id="Gray16.At">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=21005:21046#L752">At</a>
+					<a class="permalink" href="index.html#Gray16.At">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray16">Gray16</a>) At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a></pre>
 				
 				
@@ -1370,7 +1470,9 @@ NewGray16 returns a new Gray16 image with the given bounds.
 				
 			
 				
-				<h3 id="Gray16.Bounds">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=20950:20985#L750">Bounds</a></h3>
+				<h3 id="Gray16.Bounds">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=20950:20985#L750">Bounds</a>
+					<a class="permalink" href="index.html#Gray16.Bounds">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray16">Gray16</a>) Bounds() <a href="index.html#Rectangle">Rectangle</a></pre>
 				
 				
@@ -1378,7 +1480,9 @@ NewGray16 returns a new Gray16 image with the given bounds.
 				
 			
 				
-				<h3 id="Gray16.ColorModel">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=20878:20919#L748">ColorModel</a></h3>
+				<h3 id="Gray16.ColorModel">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=20878:20919#L748">ColorModel</a>
+					<a class="permalink" href="index.html#Gray16.ColorModel">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray16">Gray16</a>) ColorModel() <a href="color/index.html">color</a>.<a href="color/index.html#Model">Model</a></pre>
 				
 				
@@ -1386,7 +1490,9 @@ NewGray16 returns a new Gray16 image with the given bounds.
 				
 			
 				
-				<h3 id="Gray16.Gray16At">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=21077:21125#L756">Gray16At</a></h3>
+				<h3 id="Gray16.Gray16At">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=21077:21125#L756">Gray16At</a>
+					<a class="permalink" href="index.html#Gray16.Gray16At">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray16">Gray16</a>) Gray16At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Gray16">Gray16</a></pre>
 				
 				
@@ -1394,7 +1500,9 @@ NewGray16 returns a new Gray16 image with the given bounds.
 				
 			
 				
-				<h3 id="Gray16.Opaque">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=22549:22579#L808">Opaque</a></h3>
+				<h3 id="Gray16.Opaque">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=22549:22579#L808">Opaque</a>
+					<a class="permalink" href="index.html#Gray16.Opaque">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray16">Gray16</a>) Opaque() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Opaque scans the entire image and reports whether it is fully opaque.
@@ -1405,7 +1513,9 @@ Opaque scans the entire image and reports whether it is fully opaque.
 				
 			
 				
-				<h3 id="Gray16.PixOffset">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=21382:21422#L766">PixOffset</a></h3>
+				<h3 id="Gray16.PixOffset">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=21382:21422#L766">PixOffset</a>
+					<a class="permalink" href="index.html#Gray16.PixOffset">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray16">Gray16</a>) PixOffset(x, y <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 PixOffset returns the index of the first element of Pix that corresponds to
@@ -1417,7 +1527,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="Gray16.Set">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=21483:21528#L770">Set</a></h3>
+				<h3 id="Gray16.Set">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=21483:21528#L770">Set</a>
+					<a class="permalink" href="index.html#Gray16.Set">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray16">Gray16</a>) Set(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a>)</pre>
 				
 				
@@ -1425,7 +1537,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="Gray16.SetGray16">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=21710:21762#L780">SetGray16</a></h3>
+				<h3 id="Gray16.SetGray16">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=21710:21762#L780">SetGray16</a>
+					<a class="permalink" href="index.html#Gray16.SetGray16">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray16">Gray16</a>) SetGray16(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#Gray16">Gray16</a>)</pre>
 				
 				
@@ -1433,7 +1547,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="Gray16.SubImage">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=22040:22084#L791">SubImage</a></h3>
+				<h3 id="Gray16.SubImage">func (*Gray16) <a href="http://localhost:9090/src/image/image.go?s=22040:22084#L791">SubImage</a>
+					<a class="permalink" href="index.html#Gray16.SubImage">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Gray16">Gray16</a>) SubImage(r <a href="index.html#Rectangle">Rectangle</a>) <a href="index.html#Image">Image</a></pre>
 				<p>
 SubImage returns an image representing the portion of the image p visible
@@ -1447,7 +1563,9 @@ through r. The returned value shares pixels with the original image.
 		
 			
 			
-			<h2 id="Image">type <a href="http://localhost:9090/src/image/image.go?s=1293:1769#L26">Image</a></h2>
+			<h2 id="Image">type <a href="http://localhost:9090/src/image/image.go?s=1293:1769#L26">Image</a>
+				<a class="permalink" href="index.html#Image">&#xb6;</a>
+			</h2>
 			<pre>type Image interface {
     <span class="comment">// ColorModel returns the Image&#39;s color model.</span>
     ColorModel() <a href="color/index.html">color</a>.<a href="color/index.html#Model">Model</a>
@@ -1475,7 +1593,9 @@ model.
 
 			
 				
-				<h3 id="Decode">func <a href="http://localhost:9090/src/image/format.go?s=2205:2252#L68">Decode</a></h3>
+				<h3 id="Decode">func <a href="http://localhost:9090/src/image/format.go?s=2205:2252#L68">Decode</a>
+					<a class="permalink" href="index.html#Decode">&#xb6;</a>
+				</h3>
 				<pre>func Decode(r <a href="../io/index.html">io</a>.<a href="../io/index.html#Reader">Reader</a>) (<a href="index.html#Image">Image</a>, <a href="../builtin/index.html#string">string</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Decode decodes an image that has been encoded in a registered format.
@@ -1492,7 +1612,9 @@ specific package.
 		
 			
 			
-			<h2 id="NRGBA">type <a href="http://localhost:9090/src/image/image.go?s=7856:8162#L261">NRGBA</a></h2>
+			<h2 id="NRGBA">type <a href="http://localhost:9090/src/image/image.go?s=7856:8162#L261">NRGBA</a>
+				<a class="permalink" href="index.html#NRGBA">&#xb6;</a>
+			</h2>
 			<pre>type NRGBA struct {
     <span class="comment">// Pix holds the image&#39;s pixels, in R, G, B, A order. The pixel at</span>
     <span class="comment">// (x, y) starts at Pix[(y-Rect.Min.Y)*Stride + (x-Rect.Min.X)*4].</span>
@@ -1517,7 +1639,9 @@ NRGBA is an in-memory image whose At method returns color.NRGBA values.
 
 			
 				
-				<h3 id="NewNRGBA">func <a href="http://localhost:9090/src/image/image.go?s=10198:10231#L353">NewNRGBA</a></h3>
+				<h3 id="NewNRGBA">func <a href="http://localhost:9090/src/image/image.go?s=10198:10231#L353">NewNRGBA</a>
+					<a class="permalink" href="index.html#NewNRGBA">&#xb6;</a>
+				</h3>
 				<pre>func NewNRGBA(r <a href="index.html#Rectangle">Rectangle</a>) *<a href="index.html#NRGBA">NRGBA</a></pre>
 				<p>
 NewNRGBA returns a new NRGBA image with the given bounds.
@@ -1529,7 +1653,9 @@ NewNRGBA returns a new NRGBA image with the given bounds.
 
 			
 				
-				<h3 id="NRGBA.At">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=8288:8328#L275">At</a></h3>
+				<h3 id="NRGBA.At">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=8288:8328#L275">At</a>
+					<a class="permalink" href="index.html#NRGBA.At">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA">NRGBA</a>) At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a></pre>
 				
 				
@@ -1537,7 +1663,9 @@ NewNRGBA returns a new NRGBA image with the given bounds.
 				
 			
 				
-				<h3 id="NRGBA.Bounds">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=8234:8268#L273">Bounds</a></h3>
+				<h3 id="NRGBA.Bounds">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=8234:8268#L273">Bounds</a>
+					<a class="permalink" href="index.html#NRGBA.Bounds">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA">NRGBA</a>) Bounds() <a href="index.html#Rectangle">Rectangle</a></pre>
 				
 				
@@ -1545,7 +1673,9 @@ NewNRGBA returns a new NRGBA image with the given bounds.
 				
 			
 				
-				<h3 id="NRGBA.ColorModel">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=8164:8204#L271">ColorModel</a></h3>
+				<h3 id="NRGBA.ColorModel">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=8164:8204#L271">ColorModel</a>
+					<a class="permalink" href="index.html#NRGBA.ColorModel">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA">NRGBA</a>) ColorModel() <a href="color/index.html">color</a>.<a href="color/index.html#Model">Model</a></pre>
 				
 				
@@ -1553,7 +1683,9 @@ NewNRGBA returns a new NRGBA image with the given bounds.
 				
 			
 				
-				<h3 id="NRGBA.NRGBAAt">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=8358:8403#L279">NRGBAAt</a></h3>
+				<h3 id="NRGBA.NRGBAAt">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=8358:8403#L279">NRGBAAt</a>
+					<a class="permalink" href="index.html#NRGBA.NRGBAAt">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA">NRGBA</a>) NRGBAAt(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#NRGBA">NRGBA</a></pre>
 				
 				
@@ -1561,7 +1693,9 @@ NewNRGBA returns a new NRGBA image with the given bounds.
 				
 			
 				
-				<h3 id="NRGBA.Opaque">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=9855:9884#L335">Opaque</a></h3>
+				<h3 id="NRGBA.Opaque">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=9855:9884#L335">Opaque</a>
+					<a class="permalink" href="index.html#NRGBA.Opaque">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA">NRGBA</a>) Opaque() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Opaque scans the entire image and reports whether it is fully opaque.
@@ -1572,7 +1706,9 @@ Opaque scans the entire image and reports whether it is fully opaque.
 				
 			
 				
-				<h3 id="NRGBA.PixOffset">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=8662:8701#L289">PixOffset</a></h3>
+				<h3 id="NRGBA.PixOffset">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=8662:8701#L289">PixOffset</a>
+					<a class="permalink" href="index.html#NRGBA.PixOffset">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA">NRGBA</a>) PixOffset(x, y <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 PixOffset returns the index of the first element of Pix that corresponds to
@@ -1584,7 +1720,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="NRGBA.Set">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=8762:8806#L293">Set</a></h3>
+				<h3 id="NRGBA.Set">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=8762:8806#L293">Set</a>
+					<a class="permalink" href="index.html#NRGBA.Set">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA">NRGBA</a>) Set(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a>)</pre>
 				
 				
@@ -1592,7 +1730,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="NRGBA.SetNRGBA">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=9005:9054#L305">SetNRGBA</a></h3>
+				<h3 id="NRGBA.SetNRGBA">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=9005:9054#L305">SetNRGBA</a>
+					<a class="permalink" href="index.html#NRGBA.SetNRGBA">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA">NRGBA</a>) SetNRGBA(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#NRGBA">NRGBA</a>)</pre>
 				
 				
@@ -1600,7 +1740,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="NRGBA.SubImage">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=9349:9392#L318">SubImage</a></h3>
+				<h3 id="NRGBA.SubImage">func (*NRGBA) <a href="http://localhost:9090/src/image/image.go?s=9349:9392#L318">SubImage</a>
+					<a class="permalink" href="index.html#NRGBA.SubImage">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA">NRGBA</a>) SubImage(r <a href="index.html#Rectangle">Rectangle</a>) <a href="index.html#Image">Image</a></pre>
 				<p>
 SubImage returns an image representing the portion of the image p visible
@@ -1614,7 +1756,9 @@ through r. The returned value shares pixels with the original image.
 		
 			
 			
-			<h2 id="NRGBA64">type <a href="http://localhost:9090/src/image/image.go?s=10399:10729#L360">NRGBA64</a></h2>
+			<h2 id="NRGBA64">type <a href="http://localhost:9090/src/image/image.go?s=10399:10729#L360">NRGBA64</a>
+				<a class="permalink" href="index.html#NRGBA64">&#xb6;</a>
+			</h2>
 			<pre>type NRGBA64 struct {
     <span class="comment">// Pix holds the image&#39;s pixels, in R, G, B, A order and big-endian format. The pixel at</span>
     <span class="comment">// (x, y) starts at Pix[(y-Rect.Min.Y)*Stride + (x-Rect.Min.X)*8].</span>
@@ -1639,7 +1783,9 @@ NRGBA64 is an in-memory image whose At method returns color.NRGBA64 values.
 
 			
 				
-				<h3 id="NewNRGBA64">func <a href="http://localhost:9090/src/image/image.go?s=13275:13312#L465">NewNRGBA64</a></h3>
+				<h3 id="NewNRGBA64">func <a href="http://localhost:9090/src/image/image.go?s=13275:13312#L465">NewNRGBA64</a>
+					<a class="permalink" href="index.html#NewNRGBA64">&#xb6;</a>
+				</h3>
 				<pre>func NewNRGBA64(r <a href="index.html#Rectangle">Rectangle</a>) *<a href="index.html#NRGBA64">NRGBA64</a></pre>
 				<p>
 NewNRGBA64 returns a new NRGBA64 image with the given bounds.
@@ -1651,7 +1797,9 @@ NewNRGBA64 returns a new NRGBA64 image with the given bounds.
 
 			
 				
-				<h3 id="NRGBA64.At">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=10861:10903#L374">At</a></h3>
+				<h3 id="NRGBA64.At">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=10861:10903#L374">At</a>
+					<a class="permalink" href="index.html#NRGBA64.At">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA64">NRGBA64</a>) At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a></pre>
 				
 				
@@ -1659,7 +1807,9 @@ NewNRGBA64 returns a new NRGBA64 image with the given bounds.
 				
 			
 				
-				<h3 id="NRGBA64.Bounds">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=10805:10841#L372">Bounds</a></h3>
+				<h3 id="NRGBA64.Bounds">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=10805:10841#L372">Bounds</a>
+					<a class="permalink" href="index.html#NRGBA64.Bounds">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA64">NRGBA64</a>) Bounds() <a href="index.html#Rectangle">Rectangle</a></pre>
 				
 				
@@ -1667,7 +1817,9 @@ NewNRGBA64 returns a new NRGBA64 image with the given bounds.
 				
 			
 				
-				<h3 id="NRGBA64.ColorModel">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=10731:10773#L370">ColorModel</a></h3>
+				<h3 id="NRGBA64.ColorModel">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=10731:10773#L370">ColorModel</a>
+					<a class="permalink" href="index.html#NRGBA64.ColorModel">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA64">NRGBA64</a>) ColorModel() <a href="color/index.html">color</a>.<a href="color/index.html#Model">Model</a></pre>
 				
 				
@@ -1675,7 +1827,9 @@ NewNRGBA64 returns a new NRGBA64 image with the given bounds.
 				
 			
 				
-				<h3 id="NRGBA64.NRGBA64At">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=10935:10986#L378">NRGBA64At</a></h3>
+				<h3 id="NRGBA64.NRGBA64At">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=10935:10986#L378">NRGBA64At</a>
+					<a class="permalink" href="index.html#NRGBA64.NRGBA64At">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA64">NRGBA64</a>) NRGBA64At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#NRGBA64">NRGBA64</a></pre>
 				
 				
@@ -1683,7 +1837,9 @@ NewNRGBA64 returns a new NRGBA64 image with the given bounds.
 				
 			
 				
-				<h3 id="NRGBA64.Opaque">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=12902:12933#L447">Opaque</a></h3>
+				<h3 id="NRGBA64.Opaque">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=12902:12933#L447">Opaque</a>
+					<a class="permalink" href="index.html#NRGBA64.Opaque">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA64">NRGBA64</a>) Opaque() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Opaque scans the entire image and reports whether it is fully opaque.
@@ -1694,7 +1850,9 @@ Opaque scans the entire image and reports whether it is fully opaque.
 				
 			
 				
-				<h3 id="NRGBA64.PixOffset">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=11389:11430#L393">PixOffset</a></h3>
+				<h3 id="NRGBA64.PixOffset">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=11389:11430#L393">PixOffset</a>
+					<a class="permalink" href="index.html#NRGBA64.PixOffset">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA64">NRGBA64</a>) PixOffset(x, y <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 PixOffset returns the index of the first element of Pix that corresponds to
@@ -1706,7 +1864,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="NRGBA64.Set">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=11491:11537#L397">Set</a></h3>
+				<h3 id="NRGBA64.Set">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=11491:11537#L397">Set</a>
+					<a class="permalink" href="index.html#NRGBA64.Set">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA64">NRGBA64</a>) Set(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a>)</pre>
 				
 				
@@ -1714,7 +1874,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="NRGBA64.SetNRGBA64">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=11892:11947#L413">SetNRGBA64</a></h3>
+				<h3 id="NRGBA64.SetNRGBA64">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=11892:11947#L413">SetNRGBA64</a>
+					<a class="permalink" href="index.html#NRGBA64.SetNRGBA64">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA64">NRGBA64</a>) SetNRGBA64(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#NRGBA64">NRGBA64</a>)</pre>
 				
 				
@@ -1722,7 +1884,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="NRGBA64.SubImage">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=12390:12435#L430">SubImage</a></h3>
+				<h3 id="NRGBA64.SubImage">func (*NRGBA64) <a href="http://localhost:9090/src/image/image.go?s=12390:12435#L430">SubImage</a>
+					<a class="permalink" href="index.html#NRGBA64.SubImage">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NRGBA64">NRGBA64</a>) SubImage(r <a href="index.html#Rectangle">Rectangle</a>) <a href="index.html#Image">Image</a></pre>
 				<p>
 SubImage returns an image representing the portion of the image p visible
@@ -1736,7 +1900,9 @@ through r. The returned value shares pixels with the original image.
 		
 			
 			
-			<h2 id="NYCbCrA">type <a href="http://localhost:9090/src/image/ycbcr.go?s=5458:5518#L179">NYCbCrA</a></h2>
+			<h2 id="NYCbCrA">type <a href="http://localhost:9090/src/image/ycbcr.go?s=5458:5518#L179">NYCbCrA</a>
+				<a class="permalink" href="index.html#NYCbCrA">&#xb6;</a>
+			</h2>
 			<pre>type NYCbCrA struct {
     <a href="index.html#YCbCr">YCbCr</a>
     A       []<a href="../builtin/index.html#uint8">uint8</a>
@@ -1759,7 +1925,9 @@ embedded YCbCr.
 
 			
 				
-				<h3 id="NewNYCbCrA">func <a href="http://localhost:9090/src/image/ycbcr.go?s=7546:7619#L268">NewNYCbCrA</a></h3>
+				<h3 id="NewNYCbCrA">func <a href="http://localhost:9090/src/image/ycbcr.go?s=7546:7619#L268">NewNYCbCrA</a>
+					<a class="permalink" href="index.html#NewNYCbCrA">&#xb6;</a>
+				</h3>
 				<pre>func NewNYCbCrA(r <a href="index.html#Rectangle">Rectangle</a>, subsampleRatio <a href="index.html#YCbCrSubsampleRatio">YCbCrSubsampleRatio</a>) *<a href="index.html#NYCbCrA">NYCbCrA</a></pre>
 				<p>
 NewNYCbCrA returns a new NYCbCrA image with the given bounds and subsample
@@ -1772,7 +1940,9 @@ ratio.
 
 			
 				
-				<h3 id="NYCbCrA.AOffset">func (*NYCbCrA) <a href="http://localhost:9090/src/image/ycbcr.go?s=6067:6106#L212">AOffset</a></h3>
+				<h3 id="NYCbCrA.AOffset">func (*NYCbCrA) <a href="http://localhost:9090/src/image/ycbcr.go?s=6067:6106#L212">AOffset</a>
+					<a class="permalink" href="index.html#NYCbCrA.AOffset">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NYCbCrA">NYCbCrA</a>) AOffset(x, y <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 AOffset returns the index of the first element of A that corresponds to the
@@ -1784,7 +1954,9 @@ pixel at (x, y).
 				
 			
 				
-				<h3 id="NYCbCrA.At">func (*NYCbCrA) <a href="http://localhost:9090/src/image/ycbcr.go?s=5595:5637#L189">At</a></h3>
+				<h3 id="NYCbCrA.At">func (*NYCbCrA) <a href="http://localhost:9090/src/image/ycbcr.go?s=5595:5637#L189">At</a>
+					<a class="permalink" href="index.html#NYCbCrA.At">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NYCbCrA">NYCbCrA</a>) At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a></pre>
 				
 				
@@ -1792,7 +1964,9 @@ pixel at (x, y).
 				
 			
 				
-				<h3 id="NYCbCrA.ColorModel">func (*NYCbCrA) <a href="http://localhost:9090/src/image/ycbcr.go?s=5520:5562#L185">ColorModel</a></h3>
+				<h3 id="NYCbCrA.ColorModel">func (*NYCbCrA) <a href="http://localhost:9090/src/image/ycbcr.go?s=5520:5562#L185">ColorModel</a>
+					<a class="permalink" href="index.html#NYCbCrA.ColorModel">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NYCbCrA">NYCbCrA</a>) ColorModel() <a href="color/index.html">color</a>.<a href="color/index.html#Model">Model</a></pre>
 				
 				
@@ -1800,7 +1974,9 @@ pixel at (x, y).
 				
 			
 				
-				<h3 id="NYCbCrA.NYCbCrAAt">func (*NYCbCrA) <a href="http://localhost:9090/src/image/ycbcr.go?s=5669:5720#L193">NYCbCrAAt</a></h3>
+				<h3 id="NYCbCrA.NYCbCrAAt">func (*NYCbCrA) <a href="http://localhost:9090/src/image/ycbcr.go?s=5669:5720#L193">NYCbCrAAt</a>
+					<a class="permalink" href="index.html#NYCbCrA.NYCbCrAAt">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NYCbCrA">NYCbCrA</a>) NYCbCrAAt(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#NYCbCrA">NYCbCrA</a></pre>
 				
 				
@@ -1808,7 +1984,9 @@ pixel at (x, y).
 				
 			
 				
-				<h3 id="NYCbCrA.Opaque">func (*NYCbCrA) <a href="http://localhost:9090/src/image/ycbcr.go?s=7180:7211#L249">Opaque</a></h3>
+				<h3 id="NYCbCrA.Opaque">func (*NYCbCrA) <a href="http://localhost:9090/src/image/ycbcr.go?s=7180:7211#L249">Opaque</a>
+					<a class="permalink" href="index.html#NYCbCrA.Opaque">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NYCbCrA">NYCbCrA</a>) Opaque() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Opaque scans the entire image and reports whether it is fully opaque.
@@ -1819,7 +1997,9 @@ Opaque scans the entire image and reports whether it is fully opaque.
 				
 			
 				
-				<h3 id="NYCbCrA.SubImage">func (*NYCbCrA) <a href="http://localhost:9090/src/image/ycbcr.go?s=6317:6362#L218">SubImage</a></h3>
+				<h3 id="NYCbCrA.SubImage">func (*NYCbCrA) <a href="http://localhost:9090/src/image/ycbcr.go?s=6317:6362#L218">SubImage</a>
+					<a class="permalink" href="index.html#NYCbCrA.SubImage">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#NYCbCrA">NYCbCrA</a>) SubImage(r <a href="index.html#Rectangle">Rectangle</a>) <a href="index.html#Image">Image</a></pre>
 				<p>
 SubImage returns an image representing the portion of the image p visible
@@ -1833,7 +2013,9 @@ through r. The returned value shares pixels with the original image.
 		
 			
 			
-			<h2 id="Paletted">type <a href="http://localhost:9090/src/image/image.go?s=25135:25502#L906">Paletted</a></h2>
+			<h2 id="Paletted">type <a href="http://localhost:9090/src/image/image.go?s=25135:25502#L906">Paletted</a>
+				<a class="permalink" href="index.html#Paletted">&#xb6;</a>
+			</h2>
 			<pre>type Paletted struct {
     <span class="comment">// Pix holds the image&#39;s pixels, as palette indices. The pixel at</span>
     <span class="comment">// (x, y) starts at Pix[(y-Rect.Min.Y)*Stride + (x-Rect.Min.X)*1].</span>
@@ -1860,7 +2042,9 @@ Paletted is an in-memory image of uint8 indices into a given palette.
 
 			
 				
-				<h3 id="NewPaletted">func <a href="http://localhost:9090/src/image/image.go?s=27679:27735#L1009">NewPaletted</a></h3>
+				<h3 id="NewPaletted">func <a href="http://localhost:9090/src/image/image.go?s=27679:27735#L1009">NewPaletted</a>
+					<a class="permalink" href="index.html#NewPaletted">&#xb6;</a>
+				</h3>
 				<pre>func NewPaletted(r <a href="index.html#Rectangle">Rectangle</a>, p <a href="color/index.html">color</a>.<a href="color/index.html#Palette">Palette</a>) *<a href="index.html#Paletted">Paletted</a></pre>
 				<p>
 NewPaletted returns a new Paletted image with the given width, height and
@@ -1873,7 +2057,9 @@ palette.
 
 			
 				
-				<h3 id="Paletted.At">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=25627:25670#L922">At</a></h3>
+				<h3 id="Paletted.At">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=25627:25670#L922">At</a>
+					<a class="permalink" href="index.html#Paletted.At">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Paletted">Paletted</a>) At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a></pre>
 				
 				
@@ -1881,7 +2067,9 @@ palette.
 				
 			
 				
-				<h3 id="Paletted.Bounds">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=25570:25607#L920">Bounds</a></h3>
+				<h3 id="Paletted.Bounds">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=25570:25607#L920">Bounds</a>
+					<a class="permalink" href="index.html#Paletted.Bounds">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Paletted">Paletted</a>) Bounds() <a href="index.html#Rectangle">Rectangle</a></pre>
 				
 				
@@ -1889,7 +2077,9 @@ palette.
 				
 			
 				
-				<h3 id="Paletted.ColorIndexAt">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=26192:26239#L947">ColorIndexAt</a></h3>
+				<h3 id="Paletted.ColorIndexAt">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=26192:26239#L947">ColorIndexAt</a>
+					<a class="permalink" href="index.html#Paletted.ColorIndexAt">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Paletted">Paletted</a>) ColorIndexAt(x, y <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#uint8">uint8</a></pre>
 				
 				
@@ -1897,7 +2087,9 @@ palette.
 				
 			
 				
-				<h3 id="Paletted.ColorModel">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=25504:25547#L918">ColorModel</a></h3>
+				<h3 id="Paletted.ColorModel">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=25504:25547#L918">ColorModel</a>
+					<a class="permalink" href="index.html#Paletted.ColorModel">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Paletted">Paletted</a>) ColorModel() <a href="color/index.html">color</a>.<a href="color/index.html#Model">Model</a></pre>
 				
 				
@@ -1905,7 +2097,9 @@ palette.
 				
 			
 				
-				<h3 id="Paletted.Opaque">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=27212:27244#L985">Opaque</a></h3>
+				<h3 id="Paletted.Opaque">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=27212:27244#L985">Opaque</a>
+					<a class="permalink" href="index.html#Paletted.Opaque">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Paletted">Paletted</a>) Opaque() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Opaque scans the entire image and reports whether it is fully opaque.
@@ -1916,7 +2110,9 @@ Opaque scans the entire image and reports whether it is fully opaque.
 				
 			
 				
-				<h3 id="Paletted.PixOffset">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=25930:25972#L935">PixOffset</a></h3>
+				<h3 id="Paletted.PixOffset">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=25930:25972#L935">PixOffset</a>
+					<a class="permalink" href="index.html#Paletted.PixOffset">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Paletted">Paletted</a>) PixOffset(x, y <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 PixOffset returns the index of the first element of Pix that corresponds to
@@ -1928,7 +2124,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="Paletted.Set">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=26033:26080#L939">Set</a></h3>
+				<h3 id="Paletted.Set">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=26033:26080#L939">Set</a>
+					<a class="permalink" href="index.html#Paletted.Set">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Paletted">Paletted</a>) Set(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a>)</pre>
 				
 				
@@ -1936,7 +2134,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="Paletted.SetColorIndex">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=26332:26387#L955">SetColorIndex</a></h3>
+				<h3 id="Paletted.SetColorIndex">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=26332:26387#L955">SetColorIndex</a>
+					<a class="permalink" href="index.html#Paletted.SetColorIndex">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Paletted">Paletted</a>) SetColorIndex(x, y <a href="../builtin/index.html#int">int</a>, index <a href="../builtin/index.html#uint8">uint8</a>)</pre>
 				
 				
@@ -1944,7 +2144,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="Paletted.SubImage">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=26628:26674#L965">SubImage</a></h3>
+				<h3 id="Paletted.SubImage">func (*Paletted) <a href="http://localhost:9090/src/image/image.go?s=26628:26674#L965">SubImage</a>
+					<a class="permalink" href="index.html#Paletted.SubImage">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Paletted">Paletted</a>) SubImage(r <a href="index.html#Rectangle">Rectangle</a>) <a href="index.html#Image">Image</a></pre>
 				<p>
 SubImage returns an image representing the portion of the image p visible
@@ -1958,7 +2160,9 @@ through r. The returned value shares pixels with the original image.
 		
 			
 			
-			<h2 id="PalettedImage">type <a href="http://localhost:9090/src/image/image.go?s=2079:2215#L43">PalettedImage</a></h2>
+			<h2 id="PalettedImage">type <a href="http://localhost:9090/src/image/image.go?s=2079:2215#L43">PalettedImage</a>
+				<a class="permalink" href="index.html#PalettedImage">&#xb6;</a>
+			</h2>
 			<pre>type PalettedImage interface {
     <span class="comment">// ColorIndexAt returns the palette index of the pixel at (x, y).</span>
     ColorIndexAt(x, y <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#uint8">uint8</a>
@@ -1987,7 +2191,9 @@ undefined.
 		
 			
 			
-			<h2 id="Point">type <a href="http://localhost:9090/src/image/geom.go?s=286:317#L3">Point</a></h2>
+			<h2 id="Point">type <a href="http://localhost:9090/src/image/geom.go?s=286:317#L3">Point</a>
+				<a class="permalink" href="index.html#Point">&#xb6;</a>
+			</h2>
 			<pre>type Point struct {
     X, Y <a href="../builtin/index.html#int">int</a>
 }</pre>
@@ -2012,7 +2218,9 @@ ZP is the zero Point.
 
 			
 				
-				<h3 id="Pt">func <a href="http://localhost:9090/src/image/geom.go?s=1524:1547#L63">Pt</a></h3>
+				<h3 id="Pt">func <a href="http://localhost:9090/src/image/geom.go?s=1524:1547#L63">Pt</a>
+					<a class="permalink" href="index.html#Pt">&#xb6;</a>
+				</h3>
 				<pre>func Pt(X, Y <a href="../builtin/index.html#int">int</a>) <a href="index.html#Point">Point</a></pre>
 				<p>
 Pt is shorthand for Point{X, Y}.
@@ -2024,7 +2232,9 @@ Pt is shorthand for Point{X, Y}.
 
 			
 				
-				<h3 id="Point.Add">func (Point) <a href="http://localhost:9090/src/image/geom.go?s=511:544#L13">Add</a></h3>
+				<h3 id="Point.Add">func (Point) <a href="http://localhost:9090/src/image/geom.go?s=511:544#L13">Add</a>
+					<a class="permalink" href="index.html#Point.Add">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#Point">Point</a>) Add(q <a href="index.html#Point">Point</a>) <a href="index.html#Point">Point</a></pre>
 				<p>
 Add returns the vector p+q.
@@ -2035,7 +2245,9 @@ Add returns the vector p+q.
 				
 			
 				
-				<h3 id="Point.Div">func (Point) <a href="http://localhost:9090/src/image/geom.go?s=823:854#L28">Div</a></h3>
+				<h3 id="Point.Div">func (Point) <a href="http://localhost:9090/src/image/geom.go?s=823:854#L28">Div</a>
+					<a class="permalink" href="index.html#Point.Div">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#Point">Point</a>) Div(k <a href="../builtin/index.html#int">int</a>) <a href="index.html#Point">Point</a></pre>
 				<p>
 Div returns the vector p/k.
@@ -2046,7 +2258,9 @@ Div returns the vector p/k.
 				
 			
 				
-				<h3 id="Point.Eq">func (Point) <a href="http://localhost:9090/src/image/geom.go?s=1397:1428#L55">Eq</a></h3>
+				<h3 id="Point.Eq">func (Point) <a href="http://localhost:9090/src/image/geom.go?s=1397:1428#L55">Eq</a>
+					<a class="permalink" href="index.html#Point.Eq">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#Point">Point</a>) Eq(q <a href="index.html#Point">Point</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Eq reports whether p and q are equal.
@@ -2057,7 +2271,9 @@ Eq reports whether p and q are equal.
 				
 			
 				
-				<h3 id="Point.In">func (Point) <a href="http://localhost:9090/src/image/geom.go?s=925:960#L33">In</a></h3>
+				<h3 id="Point.In">func (Point) <a href="http://localhost:9090/src/image/geom.go?s=925:960#L33">In</a>
+					<a class="permalink" href="index.html#Point.In">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#Point">Point</a>) In(r <a href="index.html#Rectangle">Rectangle</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 In reports whether p is in r.
@@ -2068,7 +2284,9 @@ In reports whether p is in r.
 				
 			
 				
-				<h3 id="Point.Mod">func (Point) <a href="http://localhost:9090/src/image/geom.go?s=1164:1201#L40">Mod</a></h3>
+				<h3 id="Point.Mod">func (Point) <a href="http://localhost:9090/src/image/geom.go?s=1164:1201#L40">Mod</a>
+					<a class="permalink" href="index.html#Point.Mod">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#Point">Point</a>) Mod(r <a href="index.html#Rectangle">Rectangle</a>) <a href="index.html#Point">Point</a></pre>
 				<p>
 Mod returns the point q in r such that p.X-q.X is a multiple of r&#39;s width
@@ -2080,7 +2298,9 @@ and p.Y-q.Y is a multiple of r&#39;s height.
 				
 			
 				
-				<h3 id="Point.Mul">func (Point) <a href="http://localhost:9090/src/image/geom.go?s=723:754#L23">Mul</a></h3>
+				<h3 id="Point.Mul">func (Point) <a href="http://localhost:9090/src/image/geom.go?s=723:754#L23">Mul</a>
+					<a class="permalink" href="index.html#Point.Mul">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#Point">Point</a>) Mul(k <a href="../builtin/index.html#int">int</a>) <a href="index.html#Point">Point</a></pre>
 				<p>
 Mul returns the vector p*k.
@@ -2091,7 +2311,9 @@ Mul returns the vector p*k.
 				
 			
 				
-				<h3 id="Point.String">func (Point) <a href="http://localhost:9090/src/image/geom.go?s=380:410#L8">String</a></h3>
+				<h3 id="Point.String">func (Point) <a href="http://localhost:9090/src/image/geom.go?s=380:410#L8">String</a>
+					<a class="permalink" href="index.html#Point.String">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#Point">Point</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 String returns a string representation of p like &#34;(3,4)&#34;.
@@ -2102,7 +2324,9 @@ String returns a string representation of p like &#34;(3,4)&#34;.
 				
 			
 				
-				<h3 id="Point.Sub">func (Point) <a href="http://localhost:9090/src/image/geom.go?s=617:650#L18">Sub</a></h3>
+				<h3 id="Point.Sub">func (Point) <a href="http://localhost:9090/src/image/geom.go?s=617:650#L18">Sub</a>
+					<a class="permalink" href="index.html#Point.Sub">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#Point">Point</a>) Sub(q <a href="index.html#Point">Point</a>) <a href="index.html#Point">Point</a></pre>
 				<p>
 Sub returns the vector p-q.
@@ -2115,7 +2339,9 @@ Sub returns the vector p-q.
 		
 			
 			
-			<h2 id="RGBA">type <a href="http://localhost:9090/src/image/image.go?s=2290:2595#L50">RGBA</a></h2>
+			<h2 id="RGBA">type <a href="http://localhost:9090/src/image/image.go?s=2290:2595#L50">RGBA</a>
+				<a class="permalink" href="index.html#RGBA">&#xb6;</a>
+			</h2>
 			<pre>type RGBA struct {
     <span class="comment">// Pix holds the image&#39;s pixels, in R, G, B, A order. The pixel at</span>
     <span class="comment">// (x, y) starts at Pix[(y-Rect.Min.Y)*Stride + (x-Rect.Min.X)*4].</span>
@@ -2140,7 +2366,9 @@ RGBA is an in-memory image whose At method returns color.RGBA values.
 
 			
 				
-				<h3 id="NewRGBA">func <a href="http://localhost:9090/src/image/image.go?s=4608:4639#L142">NewRGBA</a></h3>
+				<h3 id="NewRGBA">func <a href="http://localhost:9090/src/image/image.go?s=4608:4639#L142">NewRGBA</a>
+					<a class="permalink" href="index.html#NewRGBA">&#xb6;</a>
+				</h3>
 				<pre>func NewRGBA(r <a href="index.html#Rectangle">Rectangle</a>) *<a href="index.html#RGBA">RGBA</a></pre>
 				<p>
 NewRGBA returns a new RGBA image with the given bounds.
@@ -2152,7 +2380,9 @@ NewRGBA returns a new RGBA image with the given bounds.
 
 			
 				
-				<h3 id="RGBA.At">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=2718:2757#L64">At</a></h3>
+				<h3 id="RGBA.At">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=2718:2757#L64">At</a>
+					<a class="permalink" href="index.html#RGBA.At">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA">RGBA</a>) At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a></pre>
 				
 				
@@ -2160,7 +2390,9 @@ NewRGBA returns a new RGBA image with the given bounds.
 				
 			
 				
-				<h3 id="RGBA.Bounds">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=2665:2698#L62">Bounds</a></h3>
+				<h3 id="RGBA.Bounds">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=2665:2698#L62">Bounds</a>
+					<a class="permalink" href="index.html#RGBA.Bounds">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA">RGBA</a>) Bounds() <a href="index.html#Rectangle">Rectangle</a></pre>
 				
 				
@@ -2168,7 +2400,9 @@ NewRGBA returns a new RGBA image with the given bounds.
 				
 			
 				
-				<h3 id="RGBA.ColorModel">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=2597:2636#L60">ColorModel</a></h3>
+				<h3 id="RGBA.ColorModel">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=2597:2636#L60">ColorModel</a>
+					<a class="permalink" href="index.html#RGBA.ColorModel">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA">RGBA</a>) ColorModel() <a href="color/index.html">color</a>.<a href="color/index.html#Model">Model</a></pre>
 				
 				
@@ -2176,7 +2410,9 @@ NewRGBA returns a new RGBA image with the given bounds.
 				
 			
 				
-				<h3 id="RGBA.Opaque">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=4268:4296#L124">Opaque</a></h3>
+				<h3 id="RGBA.Opaque">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=4268:4296#L124">Opaque</a>
+					<a class="permalink" href="index.html#RGBA.Opaque">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA">RGBA</a>) Opaque() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Opaque scans the entire image and reports whether it is fully opaque.
@@ -2187,7 +2423,9 @@ Opaque scans the entire image and reports whether it is fully opaque.
 				
 			
 				
-				<h3 id="RGBA.PixOffset">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=3085:3123#L78">PixOffset</a></h3>
+				<h3 id="RGBA.PixOffset">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=3085:3123#L78">PixOffset</a>
+					<a class="permalink" href="index.html#RGBA.PixOffset">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA">RGBA</a>) PixOffset(x, y <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 PixOffset returns the index of the first element of Pix that corresponds to
@@ -2199,7 +2437,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="RGBA.RGBAAt">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=2786:2828#L68">RGBAAt</a></h3>
+				<h3 id="RGBA.RGBAAt">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=2786:2828#L68">RGBAAt</a>
+					<a class="permalink" href="index.html#RGBA.RGBAAt">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA">RGBA</a>) RGBAAt(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#RGBA">RGBA</a></pre>
 				
 				
@@ -2207,7 +2447,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="RGBA.Set">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=3184:3227#L82">Set</a></h3>
+				<h3 id="RGBA.Set">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=3184:3227#L82">Set</a>
+					<a class="permalink" href="index.html#RGBA.Set">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA">RGBA</a>) Set(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a>)</pre>
 				
 				
@@ -2215,7 +2457,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="RGBA.SetRGBA">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=3424:3470#L94">SetRGBA</a></h3>
+				<h3 id="RGBA.SetRGBA">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=3424:3470#L94">SetRGBA</a>
+					<a class="permalink" href="index.html#RGBA.SetRGBA">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA">RGBA</a>) SetRGBA(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#RGBA">RGBA</a>)</pre>
 				
 				
@@ -2223,7 +2467,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="RGBA.SubImage">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=3765:3807#L107">SubImage</a></h3>
+				<h3 id="RGBA.SubImage">func (*RGBA) <a href="http://localhost:9090/src/image/image.go?s=3765:3807#L107">SubImage</a>
+					<a class="permalink" href="index.html#RGBA.SubImage">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA">RGBA</a>) SubImage(r <a href="index.html#Rectangle">Rectangle</a>) <a href="index.html#Image">Image</a></pre>
 				<p>
 SubImage returns an image representing the portion of the image p visible
@@ -2237,7 +2483,9 @@ through r. The returned value shares pixels with the original image.
 		
 			
 			
-			<h2 id="RGBA64">type <a href="http://localhost:9090/src/image/image.go?s=4804:5133#L149">RGBA64</a></h2>
+			<h2 id="RGBA64">type <a href="http://localhost:9090/src/image/image.go?s=4804:5133#L149">RGBA64</a>
+				<a class="permalink" href="index.html#RGBA64">&#xb6;</a>
+			</h2>
 			<pre>type RGBA64 struct {
     <span class="comment">// Pix holds the image&#39;s pixels, in R, G, B, A order and big-endian format. The pixel at</span>
     <span class="comment">// (x, y) starts at Pix[(y-Rect.Min.Y)*Stride + (x-Rect.Min.X)*8].</span>
@@ -2262,7 +2510,9 @@ RGBA64 is an in-memory image whose At method returns color.RGBA64 values.
 
 			
 				
-				<h3 id="NewRGBA64">func <a href="http://localhost:9090/src/image/image.go?s=7656:7691#L254">NewRGBA64</a></h3>
+				<h3 id="NewRGBA64">func <a href="http://localhost:9090/src/image/image.go?s=7656:7691#L254">NewRGBA64</a>
+					<a class="permalink" href="index.html#NewRGBA64">&#xb6;</a>
+				</h3>
 				<pre>func NewRGBA64(r <a href="index.html#Rectangle">Rectangle</a>) *<a href="index.html#RGBA64">RGBA64</a></pre>
 				<p>
 NewRGBA64 returns a new RGBA64 image with the given bounds.
@@ -2274,7 +2524,9 @@ NewRGBA64 returns a new RGBA64 image with the given bounds.
 
 			
 				
-				<h3 id="RGBA64.At">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=5262:5303#L163">At</a></h3>
+				<h3 id="RGBA64.At">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=5262:5303#L163">At</a>
+					<a class="permalink" href="index.html#RGBA64.At">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA64">RGBA64</a>) At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a></pre>
 				
 				
@@ -2282,7 +2534,9 @@ NewRGBA64 returns a new RGBA64 image with the given bounds.
 				
 			
 				
-				<h3 id="RGBA64.Bounds">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=5207:5242#L161">Bounds</a></h3>
+				<h3 id="RGBA64.Bounds">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=5207:5242#L161">Bounds</a>
+					<a class="permalink" href="index.html#RGBA64.Bounds">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA64">RGBA64</a>) Bounds() <a href="index.html#Rectangle">Rectangle</a></pre>
 				
 				
@@ -2290,7 +2544,9 @@ NewRGBA64 returns a new RGBA64 image with the given bounds.
 				
 			
 				
-				<h3 id="RGBA64.ColorModel">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=5135:5176#L159">ColorModel</a></h3>
+				<h3 id="RGBA64.ColorModel">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=5135:5176#L159">ColorModel</a>
+					<a class="permalink" href="index.html#RGBA64.ColorModel">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA64">RGBA64</a>) ColorModel() <a href="color/index.html">color</a>.<a href="color/index.html#Model">Model</a></pre>
 				
 				
@@ -2298,7 +2554,9 @@ NewRGBA64 returns a new RGBA64 image with the given bounds.
 				
 			
 				
-				<h3 id="RGBA64.Opaque">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=7286:7316#L236">Opaque</a></h3>
+				<h3 id="RGBA64.Opaque">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=7286:7316#L236">Opaque</a>
+					<a class="permalink" href="index.html#RGBA64.Opaque">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA64">RGBA64</a>) Opaque() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Opaque scans the entire image and reports whether it is fully opaque.
@@ -2309,7 +2567,9 @@ Opaque scans the entire image and reports whether it is fully opaque.
 				
 			
 				
-				<h3 id="RGBA64.PixOffset">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=5783:5823#L182">PixOffset</a></h3>
+				<h3 id="RGBA64.PixOffset">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=5783:5823#L182">PixOffset</a>
+					<a class="permalink" href="index.html#RGBA64.PixOffset">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA64">RGBA64</a>) PixOffset(x, y <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 PixOffset returns the index of the first element of Pix that corresponds to
@@ -2321,7 +2581,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="RGBA64.RGBA64At">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=5334:5382#L167">RGBA64At</a></h3>
+				<h3 id="RGBA64.RGBA64At">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=5334:5382#L167">RGBA64At</a>
+					<a class="permalink" href="index.html#RGBA64.RGBA64At">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA64">RGBA64</a>) RGBA64At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#RGBA64">RGBA64</a></pre>
 				
 				
@@ -2329,7 +2591,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="RGBA64.Set">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=5884:5929#L186">Set</a></h3>
+				<h3 id="RGBA64.Set">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=5884:5929#L186">Set</a>
+					<a class="permalink" href="index.html#RGBA64.Set">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA64">RGBA64</a>) Set(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a>)</pre>
 				
 				
@@ -2337,7 +2601,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="RGBA64.SetRGBA64">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=6282:6334#L202">SetRGBA64</a></h3>
+				<h3 id="RGBA64.SetRGBA64">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=6282:6334#L202">SetRGBA64</a>
+					<a class="permalink" href="index.html#RGBA64.SetRGBA64">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA64">RGBA64</a>) SetRGBA64(x, y <a href="../builtin/index.html#int">int</a>, c <a href="color/index.html">color</a>.<a href="color/index.html#RGBA64">RGBA64</a>)</pre>
 				
 				
@@ -2345,7 +2611,9 @@ the pixel at (x, y).
 				
 			
 				
-				<h3 id="RGBA64.SubImage">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=6777:6821#L219">SubImage</a></h3>
+				<h3 id="RGBA64.SubImage">func (*RGBA64) <a href="http://localhost:9090/src/image/image.go?s=6777:6821#L219">SubImage</a>
+					<a class="permalink" href="index.html#RGBA64.SubImage">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#RGBA64">RGBA64</a>) SubImage(r <a href="index.html#Rectangle">Rectangle</a>) <a href="index.html#Image">Image</a></pre>
 				<p>
 SubImage returns an image representing the portion of the image p visible
@@ -2359,7 +2627,9 @@ through r. The returned value shares pixels with the original image.
 		
 			
 			
-			<h2 id="Rectangle">type <a href="http://localhost:9090/src/image/geom.go?s=1994:2035#L75">Rectangle</a></h2>
+			<h2 id="Rectangle">type <a href="http://localhost:9090/src/image/geom.go?s=1994:2035#L75">Rectangle</a>
+				<a class="permalink" href="index.html#Rectangle">&#xb6;</a>
+			</h2>
 			<pre>type Rectangle struct {
     Min, Max <a href="index.html#Point">Point</a>
 }</pre>
@@ -2392,7 +2662,9 @@ ZR is the zero Rectangle.
 
 			
 				
-				<h3 id="Rect">func <a href="http://localhost:9090/src/image/geom.go?s=6047:6086#L248">Rect</a></h3>
+				<h3 id="Rect">func <a href="http://localhost:9090/src/image/geom.go?s=6047:6086#L248">Rect</a>
+					<a class="permalink" href="index.html#Rect">&#xb6;</a>
+				</h3>
 				<pre>func Rect(x0, y0, x1, y1 <a href="../builtin/index.html#int">int</a>) <a href="index.html#Rectangle">Rectangle</a></pre>
 				<p>
 Rect is shorthand for Rectangle{Pt(x0, y0), Pt(x1, y1)}. The returned
@@ -2406,7 +2678,9 @@ it is well-formed.
 
 			
 				
-				<h3 id="Rectangle.Add">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=2542:2583#L103">Add</a></h3>
+				<h3 id="Rectangle.Add">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=2542:2583#L103">Add</a>
+					<a class="permalink" href="index.html#Rectangle.Add">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) Add(p <a href="index.html#Point">Point</a>) <a href="index.html#Rectangle">Rectangle</a></pre>
 				<p>
 Add returns the rectangle r translated by p.
@@ -2417,7 +2691,9 @@ Add returns the rectangle r translated by p.
 				
 			
 				
-				<h3 id="Rectangle.At">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=5484:5527#L225">At</a></h3>
+				<h3 id="Rectangle.At">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=5484:5527#L225">At</a>
+					<a class="permalink" href="index.html#Rectangle.At">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a></pre>
 				<p>
 At implements the Image interface.
@@ -2428,7 +2704,9 @@ At implements the Image interface.
 				
 			
 				
-				<h3 id="Rectangle.Bounds">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=5652:5689#L233">Bounds</a></h3>
+				<h3 id="Rectangle.Bounds">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=5652:5689#L233">Bounds</a>
+					<a class="permalink" href="index.html#Rectangle.Bounds">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) Bounds() <a href="index.html#Rectangle">Rectangle</a></pre>
 				<p>
 Bounds implements the Image interface.
@@ -2439,7 +2717,9 @@ Bounds implements the Image interface.
 				
 			
 				
-				<h3 id="Rectangle.Canon">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=5264:5300#L214">Canon</a></h3>
+				<h3 id="Rectangle.Canon">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=5264:5300#L214">Canon</a>
+					<a class="permalink" href="index.html#Rectangle.Canon">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) Canon() <a href="index.html#Rectangle">Rectangle</a></pre>
 				<p>
 Canon returns the canonical version of r. The returned rectangle has minimum
@@ -2451,7 +2731,9 @@ and maximum coordinates swapped if necessary so that it is well-formed.
 				
 			
 				
-				<h3 id="Rectangle.ColorModel">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=5751:5794#L238">ColorModel</a></h3>
+				<h3 id="Rectangle.ColorModel">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=5751:5794#L238">ColorModel</a>
+					<a class="permalink" href="index.html#Rectangle.ColorModel">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) ColorModel() <a href="color/index.html">color</a>.<a href="color/index.html#Model">Model</a></pre>
 				<p>
 ColorModel implements the Image interface.
@@ -2462,7 +2744,9 @@ ColorModel implements the Image interface.
 				
 			
 				
-				<h3 id="Rectangle.Dx">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=2215:2242#L85">Dx</a></h3>
+				<h3 id="Rectangle.Dx">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=2215:2242#L85">Dx</a>
+					<a class="permalink" href="index.html#Rectangle.Dx">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) Dx() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Dx returns r&#39;s width.
@@ -2473,7 +2757,9 @@ Dx returns r&#39;s width.
 				
 			
 				
-				<h3 id="Rectangle.Dy">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=2300:2327#L90">Dy</a></h3>
+				<h3 id="Rectangle.Dy">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=2300:2327#L90">Dy</a>
+					<a class="permalink" href="index.html#Rectangle.Dy">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) Dy() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Dy returns r&#39;s height.
@@ -2484,7 +2770,9 @@ Dy returns r&#39;s height.
 				
 			
 				
-				<h3 id="Rectangle.Empty">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=4265:4296#L184">Empty</a></h3>
+				<h3 id="Rectangle.Empty">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=4265:4296#L184">Empty</a>
+					<a class="permalink" href="index.html#Rectangle.Empty">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) Empty() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Empty reports whether the rectangle contains no points.
@@ -2495,7 +2783,9 @@ Empty reports whether the rectangle contains no points.
 				
 			
 				
-				<h3 id="Rectangle.Eq">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=4459:4498#L190">Eq</a></h3>
+				<h3 id="Rectangle.Eq">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=4459:4498#L190">Eq</a>
+					<a class="permalink" href="index.html#Rectangle.Eq">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) Eq(s <a href="index.html#Rectangle">Rectangle</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Eq reports whether r and s contain the same set of points. All empty
@@ -2507,7 +2797,9 @@ rectangles are considered equal.
 				
 			
 				
-				<h3 id="Rectangle.In">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=4832:4871#L202">In</a></h3>
+				<h3 id="Rectangle.In">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=4832:4871#L202">In</a>
+					<a class="permalink" href="index.html#Rectangle.In">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) In(s <a href="index.html#Rectangle">Rectangle</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 In reports whether every point in r is in s.
@@ -2518,7 +2810,9 @@ In reports whether every point in r is in s.
 				
 			
 				
-				<h3 id="Rectangle.Inset">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=3067:3108#L121">Inset</a></h3>
+				<h3 id="Rectangle.Inset">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=3067:3108#L121">Inset</a>
+					<a class="permalink" href="index.html#Rectangle.Inset">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) Inset(n <a href="../builtin/index.html#int">int</a>) <a href="index.html#Rectangle">Rectangle</a></pre>
 				<p>
 Inset returns the rectangle r inset by n, which may be negative. If either
@@ -2531,7 +2825,9 @@ of r will be returned.
 				
 			
 				
-				<h3 id="Rectangle.Intersect">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=3512:3563#L141">Intersect</a></h3>
+				<h3 id="Rectangle.Intersect">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=3512:3563#L141">Intersect</a>
+					<a class="permalink" href="index.html#Rectangle.Intersect">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) Intersect(s <a href="index.html#Rectangle">Rectangle</a>) <a href="index.html#Rectangle">Rectangle</a></pre>
 				<p>
 Intersect returns the largest rectangle contained by both r and s. If the
@@ -2543,7 +2839,9 @@ two rectangles do not overlap then the zero rectangle will be returned.
 				
 			
 				
-				<h3 id="Rectangle.Overlaps">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=4612:4657#L195">Overlaps</a></h3>
+				<h3 id="Rectangle.Overlaps">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=4612:4657#L195">Overlaps</a>
+					<a class="permalink" href="index.html#Rectangle.Overlaps">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) Overlaps(s <a href="index.html#Rectangle">Rectangle</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Overlaps reports whether r and s have a non-empty intersection.
@@ -2554,7 +2852,9 @@ Overlaps reports whether r and s have a non-empty intersection.
 				
 			
 				
-				<h3 id="Rectangle.Size">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=2397:2428#L95">Size</a></h3>
+				<h3 id="Rectangle.Size">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=2397:2428#L95">Size</a>
+					<a class="permalink" href="index.html#Rectangle.Size">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) Size() <a href="index.html#Point">Point</a></pre>
 				<p>
 Size returns r&#39;s width and height.
@@ -2565,7 +2865,9 @@ Size returns r&#39;s width and height.
 				
 			
 				
-				<h3 id="Rectangle.String">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=2104:2138#L80">String</a></h3>
+				<h3 id="Rectangle.String">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=2104:2138#L80">String</a>
+					<a class="permalink" href="index.html#Rectangle.String">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 String returns a string representation of r like &#34;(3,4)-(6,5)&#34;.
@@ -2576,7 +2878,9 @@ String returns a string representation of r like &#34;(3,4)-(6,5)&#34;.
 				
 			
 				
-				<h3 id="Rectangle.Sub">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=2738:2779#L111">Sub</a></h3>
+				<h3 id="Rectangle.Sub">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=2738:2779#L111">Sub</a>
+					<a class="permalink" href="index.html#Rectangle.Sub">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) Sub(p <a href="index.html#Point">Point</a>) <a href="index.html#Rectangle">Rectangle</a></pre>
 				<p>
 Sub returns the rectangle r translated by -p.
@@ -2587,7 +2891,9 @@ Sub returns the rectangle r translated by -p.
 				
 			
 				
-				<h3 id="Rectangle.Union">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=3895:3942#L161">Union</a></h3>
+				<h3 id="Rectangle.Union">func (Rectangle) <a href="http://localhost:9090/src/image/geom.go?s=3895:3942#L161">Union</a>
+					<a class="permalink" href="index.html#Rectangle.Union">&#xb6;</a>
+				</h3>
 				<pre>func (r <a href="index.html#Rectangle">Rectangle</a>) Union(s <a href="index.html#Rectangle">Rectangle</a>) <a href="index.html#Rectangle">Rectangle</a></pre>
 				<p>
 Union returns the smallest rectangle that contains both r and s.
@@ -2600,7 +2906,9 @@ Union returns the smallest rectangle that contains both r and s.
 		
 			
 			
-			<h2 id="Uniform">type <a href="http://localhost:9090/src/image/names.go?s=668:706#L14">Uniform</a></h2>
+			<h2 id="Uniform">type <a href="http://localhost:9090/src/image/names.go?s=668:706#L14">Uniform</a>
+				<a class="permalink" href="index.html#Uniform">&#xb6;</a>
+			</h2>
 			<pre>type Uniform struct {
     C <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a>
 }</pre>
@@ -2620,7 +2928,9 @@ It implements the color.Color, color.Model, and Image interfaces.
 
 			
 				
-				<h3 id="NewUniform">func <a href="http://localhost:9090/src/image/names.go?s=1213:1252#L40">NewUniform</a></h3>
+				<h3 id="NewUniform">func <a href="http://localhost:9090/src/image/names.go?s=1213:1252#L40">NewUniform</a>
+					<a class="permalink" href="index.html#NewUniform">&#xb6;</a>
+				</h3>
 				<pre>func NewUniform(c <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a>) *<a href="index.html#Uniform">Uniform</a></pre>
 				
 				
@@ -2629,7 +2939,9 @@ It implements the color.Color, color.Model, and Image interfaces.
 
 			
 				
-				<h3 id="Uniform.At">func (*Uniform) <a href="http://localhost:9090/src/image/names.go?s=998:1040#L32">At</a></h3>
+				<h3 id="Uniform.At">func (*Uniform) <a href="http://localhost:9090/src/image/names.go?s=998:1040#L32">At</a>
+					<a class="permalink" href="index.html#Uniform.At">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Uniform">Uniform</a>) At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a></pre>
 				
 				
@@ -2637,7 +2949,9 @@ It implements the color.Color, color.Model, and Image interfaces.
 				
 			
 				
-				<h3 id="Uniform.Bounds">func (*Uniform) <a href="http://localhost:9090/src/image/names.go?s=903:939#L30">Bounds</a></h3>
+				<h3 id="Uniform.Bounds">func (*Uniform) <a href="http://localhost:9090/src/image/names.go?s=903:939#L30">Bounds</a>
+					<a class="permalink" href="index.html#Uniform.Bounds">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Uniform">Uniform</a>) Bounds() <a href="index.html#Rectangle">Rectangle</a></pre>
 				
 				
@@ -2645,7 +2959,9 @@ It implements the color.Color, color.Model, and Image interfaces.
 				
 			
 				
-				<h3 id="Uniform.ColorModel">func (*Uniform) <a href="http://localhost:9090/src/image/names.go?s=777:819#L22">ColorModel</a></h3>
+				<h3 id="Uniform.ColorModel">func (*Uniform) <a href="http://localhost:9090/src/image/names.go?s=777:819#L22">ColorModel</a>
+					<a class="permalink" href="index.html#Uniform.ColorModel">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Uniform">Uniform</a>) ColorModel() <a href="color/index.html">color</a>.<a href="color/index.html#Model">Model</a></pre>
 				
 				
@@ -2653,7 +2969,9 @@ It implements the color.Color, color.Model, and Image interfaces.
 				
 			
 				
-				<h3 id="Uniform.Convert">func (*Uniform) <a href="http://localhost:9090/src/image/names.go?s=835:885#L26">Convert</a></h3>
+				<h3 id="Uniform.Convert">func (*Uniform) <a href="http://localhost:9090/src/image/names.go?s=835:885#L26">Convert</a>
+					<a class="permalink" href="index.html#Uniform.Convert">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Uniform">Uniform</a>) Convert(<a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a></pre>
 				
 				
@@ -2661,7 +2979,9 @@ It implements the color.Color, color.Model, and Image interfaces.
 				
 			
 				
-				<h3 id="Uniform.Opaque">func (*Uniform) <a href="http://localhost:9090/src/image/names.go?s=1130:1161#L35">Opaque</a></h3>
+				<h3 id="Uniform.Opaque">func (*Uniform) <a href="http://localhost:9090/src/image/names.go?s=1130:1161#L35">Opaque</a>
+					<a class="permalink" href="index.html#Uniform.Opaque">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Uniform">Uniform</a>) Opaque() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Opaque scans the entire image and reports whether it is fully opaque.
@@ -2672,7 +2992,9 @@ Opaque scans the entire image and reports whether it is fully opaque.
 				
 			
 				
-				<h3 id="Uniform.RGBA">func (*Uniform) <a href="http://localhost:9090/src/image/names.go?s=708:752#L18">RGBA</a></h3>
+				<h3 id="Uniform.RGBA">func (*Uniform) <a href="http://localhost:9090/src/image/names.go?s=708:752#L18">RGBA</a>
+					<a class="permalink" href="index.html#Uniform.RGBA">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Uniform">Uniform</a>) RGBA() (r, g, b, a <a href="../builtin/index.html#uint32">uint32</a>)</pre>
 				
 				
@@ -2682,7 +3004,9 @@ Opaque scans the entire image and reports whether it is fully opaque.
 		
 			
 			
-			<h2 id="YCbCr">type <a href="http://localhost:9090/src/image/ycbcr.go?s=1830:1977#L44">YCbCr</a></h2>
+			<h2 id="YCbCr">type <a href="http://localhost:9090/src/image/ycbcr.go?s=1830:1977#L44">YCbCr</a>
+				<a class="permalink" href="index.html#YCbCr">&#xb6;</a>
+			</h2>
 			<pre>type YCbCr struct {
     Y, Cb, Cr      []<a href="../builtin/index.html#uint8">uint8</a>
     YStride        <a href="../builtin/index.html#int">int</a>
@@ -2718,7 +3042,9 @@ For 4:1:0, CStride == YStride/4 &amp;&amp; len(Cb) == len(Cr) == len(Y)/8.
 
 			
 				
-				<h3 id="NewYCbCr">func <a href="http://localhost:9090/src/image/ycbcr.go?s=4872:4941#L159">NewYCbCr</a></h3>
+				<h3 id="NewYCbCr">func <a href="http://localhost:9090/src/image/ycbcr.go?s=4872:4941#L159">NewYCbCr</a>
+					<a class="permalink" href="index.html#NewYCbCr">&#xb6;</a>
+				</h3>
 				<pre>func NewYCbCr(r <a href="index.html#Rectangle">Rectangle</a>, subsampleRatio <a href="index.html#YCbCrSubsampleRatio">YCbCrSubsampleRatio</a>) *<a href="index.html#YCbCr">YCbCr</a></pre>
 				<p>
 NewYCbCr returns a new YCbCr image with the given bounds and subsample
@@ -2731,7 +3057,9 @@ ratio.
 
 			
 				
-				<h3 id="YCbCr.At">func (*YCbCr) <a href="http://localhost:9090/src/image/ycbcr.go?s=2105:2145#L60">At</a></h3>
+				<h3 id="YCbCr.At">func (*YCbCr) <a href="http://localhost:9090/src/image/ycbcr.go?s=2105:2145#L60">At</a>
+					<a class="permalink" href="index.html#YCbCr.At">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#YCbCr">YCbCr</a>) At(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#Color">Color</a></pre>
 				
 				
@@ -2739,7 +3067,9 @@ ratio.
 				
 			
 				
-				<h3 id="YCbCr.Bounds">func (*YCbCr) <a href="http://localhost:9090/src/image/ycbcr.go?s=2050:2084#L56">Bounds</a></h3>
+				<h3 id="YCbCr.Bounds">func (*YCbCr) <a href="http://localhost:9090/src/image/ycbcr.go?s=2050:2084#L56">Bounds</a>
+					<a class="permalink" href="index.html#YCbCr.Bounds">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#YCbCr">YCbCr</a>) Bounds() <a href="index.html#Rectangle">Rectangle</a></pre>
 				
 				
@@ -2747,7 +3077,9 @@ ratio.
 				
 			
 				
-				<h3 id="YCbCr.COffset">func (*YCbCr) <a href="http://localhost:9090/src/image/ycbcr.go?s=2693:2730#L85">COffset</a></h3>
+				<h3 id="YCbCr.COffset">func (*YCbCr) <a href="http://localhost:9090/src/image/ycbcr.go?s=2693:2730#L85">COffset</a>
+					<a class="permalink" href="index.html#YCbCr.COffset">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#YCbCr">YCbCr</a>) COffset(x, y <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 COffset returns the index of the first element of Cb or Cr that corresponds
@@ -2759,7 +3091,9 @@ to the pixel at (x, y).
 				
 			
 				
-				<h3 id="YCbCr.ColorModel">func (*YCbCr) <a href="http://localhost:9090/src/image/ycbcr.go?s=1979:2019#L52">ColorModel</a></h3>
+				<h3 id="YCbCr.ColorModel">func (*YCbCr) <a href="http://localhost:9090/src/image/ycbcr.go?s=1979:2019#L52">ColorModel</a>
+					<a class="permalink" href="index.html#YCbCr.ColorModel">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#YCbCr">YCbCr</a>) ColorModel() <a href="color/index.html">color</a>.<a href="color/index.html#Model">Model</a></pre>
 				
 				
@@ -2767,7 +3101,9 @@ to the pixel at (x, y).
 				
 			
 				
-				<h3 id="YCbCr.Opaque">func (*YCbCr) <a href="http://localhost:9090/src/image/ycbcr.go?s=4122:4151#L127">Opaque</a></h3>
+				<h3 id="YCbCr.Opaque">func (*YCbCr) <a href="http://localhost:9090/src/image/ycbcr.go?s=4122:4151#L127">Opaque</a>
+					<a class="permalink" href="index.html#YCbCr.Opaque">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#YCbCr">YCbCr</a>) Opaque() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -2775,7 +3111,9 @@ to the pixel at (x, y).
 				
 			
 				
-				<h3 id="YCbCr.SubImage">func (*YCbCr) <a href="http://localhost:9090/src/image/ycbcr.go?s=3468:3511#L104">SubImage</a></h3>
+				<h3 id="YCbCr.SubImage">func (*YCbCr) <a href="http://localhost:9090/src/image/ycbcr.go?s=3468:3511#L104">SubImage</a>
+					<a class="permalink" href="index.html#YCbCr.SubImage">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#YCbCr">YCbCr</a>) SubImage(r <a href="index.html#Rectangle">Rectangle</a>) <a href="index.html#Image">Image</a></pre>
 				<p>
 SubImage returns an image representing the portion of the image p visible
@@ -2787,7 +3125,9 @@ through r. The returned value shares pixels with the original image.
 				
 			
 				
-				<h3 id="YCbCr.YCbCrAt">func (*YCbCr) <a href="http://localhost:9090/src/image/ycbcr.go?s=2175:2220#L64">YCbCrAt</a></h3>
+				<h3 id="YCbCr.YCbCrAt">func (*YCbCr) <a href="http://localhost:9090/src/image/ycbcr.go?s=2175:2220#L64">YCbCrAt</a>
+					<a class="permalink" href="index.html#YCbCr.YCbCrAt">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#YCbCr">YCbCr</a>) YCbCrAt(x, y <a href="../builtin/index.html#int">int</a>) <a href="color/index.html">color</a>.<a href="color/index.html#YCbCr">YCbCr</a></pre>
 				
 				
@@ -2795,7 +3135,9 @@ through r. The returned value shares pixels with the original image.
 				
 			
 				
-				<h3 id="YCbCr.YOffset">func (*YCbCr) <a href="http://localhost:9090/src/image/ycbcr.go?s=2488:2525#L79">YOffset</a></h3>
+				<h3 id="YCbCr.YOffset">func (*YCbCr) <a href="http://localhost:9090/src/image/ycbcr.go?s=2488:2525#L79">YOffset</a>
+					<a class="permalink" href="index.html#YCbCr.YOffset">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#YCbCr">YCbCr</a>) YOffset(x, y <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 YOffset returns the index of the first element of Y that corresponds to
@@ -2809,7 +3151,9 @@ the pixel at (x, y).
 		
 			
 			
-			<h2 id="YCbCrSubsampleRatio">type <a href="http://localhost:9090/src/image/ycbcr.go?s=278:306#L2">YCbCrSubsampleRatio</a></h2>
+			<h2 id="YCbCrSubsampleRatio">type <a href="http://localhost:9090/src/image/ycbcr.go?s=278:306#L2">YCbCrSubsampleRatio</a>
+				<a class="permalink" href="index.html#YCbCrSubsampleRatio">&#xb6;</a>
+			</h2>
 			<pre>type YCbCrSubsampleRatio <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 YCbCrSubsampleRatio is the chroma subsample ratio used in a YCbCr image.
@@ -2838,7 +3182,9 @@ YCbCrSubsampleRatio is the chroma subsample ratio used in a YCbCr image.
 
 			
 				
-				<h3 id="YCbCrSubsampleRatio.String">func (YCbCrSubsampleRatio) <a href="http://localhost:9090/src/image/ycbcr.go?s=490:534#L13">String</a></h3>
+				<h3 id="YCbCrSubsampleRatio.String">func (YCbCrSubsampleRatio) <a href="http://localhost:9090/src/image/ycbcr.go?s=490:534#L13">String</a>
+					<a class="permalink" href="index.html#YCbCrSubsampleRatio.String">&#xb6;</a>
+				</h3>
 				<pre>func (s <a href="index.html#YCbCrSubsampleRatio">YCbCrSubsampleRatio</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2950,7 +3296,7 @@ YCbCrSubsampleRatio is the chroma subsample ratio used in a YCbCr image.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -2968,6 +3314,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

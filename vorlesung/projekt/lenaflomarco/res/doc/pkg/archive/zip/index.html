@@ -91,7 +91,7 @@
 Package zip provides support for reading and writing ZIP archives.
 </p>
 <p>
-See: <a href="http://www.pkware.com/documents/casestudies/APPNOTE.TXT">http://www.pkware.com/documents/casestudies/APPNOTE.TXT</a>
+See: <a href="https://www.pkware.com/documents/casestudies/APPNOTE.TXT">https://www.pkware.com/documents/casestudies/APPNOTE.TXT</a>
 </p>
 <p>
 This package does not support disk spanning.
@@ -153,7 +153,7 @@ fields must be used instead.
 					<dd>&nbsp; &nbsp; <a href="index.html#File.DataOffset">func (f *File) DataOffset() (offset int64, err error)</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#File.Open">func (f *File) Open() (rc io.ReadCloser, err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#File.Open">func (f *File) Open() (io.ReadCloser, error)</a></dd>
 				
 			
 				
@@ -316,7 +316,9 @@ Compression methods.
 		
 			
 			
-			<h2 id="RegisterCompressor">func <a href="http://localhost:9090/src/archive/zip/register.go?s=2548:2603#L85">RegisterCompressor</a></h2>
+			<h2 id="RegisterCompressor">func <a href="http://localhost:9090/src/archive/zip/register.go?s=3268:3323#L123">RegisterCompressor</a>
+				<a class="permalink" href="index.html#RegisterCompressor">&#xb6;</a>
+			</h2>
 			<pre>func RegisterCompressor(method <a href="../../builtin/index.html#uint16">uint16</a>, comp <a href="index.html#Compressor">Compressor</a>)</pre>
 			<p>
 RegisterCompressor registers custom compressors for a specified method ID.
@@ -329,7 +331,9 @@ The common methods Store and Deflate are built in.
 		
 			
 			
-			<h2 id="RegisterDecompressor">func <a href="http://localhost:9090/src/archive/zip/register.go?s=2201:2261#L73">RegisterDecompressor</a></h2>
+			<h2 id="RegisterDecompressor">func <a href="http://localhost:9090/src/archive/zip/register.go?s=2921:2981#L111">RegisterDecompressor</a>
+				<a class="permalink" href="index.html#RegisterDecompressor">&#xb6;</a>
+			</h2>
 			<pre>func RegisterDecompressor(method <a href="../../builtin/index.html#uint16">uint16</a>, dcomp <a href="index.html#Decompressor">Decompressor</a>)</pre>
 			<p>
 RegisterDecompressor allows custom decompressors for a specified method ID.
@@ -343,7 +347,9 @@ The common methods Store and Deflate are built in.
 		
 			
 			
-			<h2 id="Compressor">type <a href="http://localhost:9090/src/archive/zip/register.go?s=545:602#L10">Compressor</a></h2>
+			<h2 id="Compressor">type <a href="http://localhost:9090/src/archive/zip/register.go?s=545:602#L10">Compressor</a>
+				<a class="permalink" href="index.html#Compressor">&#xb6;</a>
+			</h2>
 			<pre>type Compressor func(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>) (<a href="../../io/index.html">io</a>.<a href="../../io/index.html#WriteCloser">WriteCloser</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 A Compressor returns a new compressing writer, writing to w.
@@ -368,7 +374,9 @@ one goroutine at a time.
 		
 			
 			
-			<h2 id="Decompressor">type <a href="http://localhost:9090/src/archive/zip/register.go?s=921:970#L17">Decompressor</a></h2>
+			<h2 id="Decompressor">type <a href="http://localhost:9090/src/archive/zip/register.go?s=921:970#L17">Decompressor</a>
+				<a class="permalink" href="index.html#Decompressor">&#xb6;</a>
+			</h2>
 			<pre>type Decompressor func(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) <a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReadCloser">ReadCloser</a></pre>
 			<p>
 A Decompressor returns a new decompressing reader, reading from r.
@@ -393,7 +401,9 @@ one goroutine at a time.
 		
 			
 			
-			<h2 id="File">type <a href="http://localhost:9090/src/archive/zip/reader.go?s=631:751#L26">File</a></h2>
+			<h2 id="File">type <a href="http://localhost:9090/src/archive/zip/reader.go?s=631:751#L26">File</a>
+				<a class="permalink" href="index.html#File">&#xb6;</a>
+			</h2>
 			<pre>type File struct {
     <a href="index.html#FileHeader">FileHeader</a>
     <span class="comment">// contains filtered or unexported fields</span>
@@ -412,7 +422,9 @@ one goroutine at a time.
 
 			
 				
-				<h3 id="File.DataOffset">func (*File) <a href="http://localhost:9090/src/archive/zip/reader.go?s=3637:3690#L136">DataOffset</a></h3>
+				<h3 id="File.DataOffset">func (*File) <a href="http://localhost:9090/src/archive/zip/reader.go?s=3638:3691#L136">DataOffset</a>
+					<a class="permalink" href="index.html#File.DataOffset">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) DataOffset() (offset <a href="../../builtin/index.html#int64">int64</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 DataOffset returns the offset of the file&#39;s possibly-compressed
@@ -428,8 +440,10 @@ decompresses data and verifies checksums.
 				
 			
 				
-				<h3 id="File.Open">func (*File) <a href="http://localhost:9090/src/archive/zip/reader.go?s=3923:3974#L146">Open</a></h3>
-				<pre>func (f *<a href="index.html#File">File</a>) Open() (rc <a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReadCloser">ReadCloser</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="File.Open">func (*File) <a href="http://localhost:9090/src/archive/zip/reader.go?s=3924:3968#L146">Open</a>
+					<a class="permalink" href="index.html#File.Open">&#xb6;</a>
+				</h3>
+				<pre>func (f *<a href="index.html#File">File</a>) Open() (<a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReadCloser">ReadCloser</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Open returns a ReadCloser that provides access to the File&#39;s contents.
 Multiple files may be read concurrently.
@@ -442,7 +456,9 @@ Multiple files may be read concurrently.
 		
 			
 			
-			<h2 id="FileHeader">type <a href="http://localhost:9090/src/archive/zip/struct.go?s=2049:2804#L60">FileHeader</a></h2>
+			<h2 id="FileHeader">type <a href="http://localhost:9090/src/archive/zip/struct.go?s=2050:2805#L60">FileHeader</a>
+				<a class="permalink" href="index.html#FileHeader">&#xb6;</a>
+			</h2>
 			<pre>type FileHeader struct {
     <span class="comment">// Name is the name of the file.</span>
     <span class="comment">// It must be a relative path: it must not start with a drive</span>
@@ -481,7 +497,9 @@ See the zip spec for details.
 
 			
 				
-				<h3 id="FileInfoHeader">func <a href="http://localhost:9090/src/archive/zip/struct.go?s=3825:3881#L110">FileInfoHeader</a></h3>
+				<h3 id="FileInfoHeader">func <a href="http://localhost:9090/src/archive/zip/struct.go?s=3826:3882#L110">FileInfoHeader</a>
+					<a class="permalink" href="index.html#FileInfoHeader">&#xb6;</a>
+				</h3>
 				<pre>func FileInfoHeader(fi <a href="../../os/index.html">os</a>.<a href="../../os/index.html#FileInfo">FileInfo</a>) (*<a href="index.html#FileHeader">FileHeader</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 FileInfoHeader creates a partially-populated FileHeader from an
@@ -497,7 +515,9 @@ of the returned header to provide the full path name of the file.
 
 			
 				
-				<h3 id="FileHeader.FileInfo">func (*FileHeader) <a href="http://localhost:9090/src/archive/zip/struct.go?s=2861:2904#L84">FileInfo</a></h3>
+				<h3 id="FileHeader.FileInfo">func (*FileHeader) <a href="http://localhost:9090/src/archive/zip/struct.go?s=2862:2905#L84">FileInfo</a>
+					<a class="permalink" href="index.html#FileHeader.FileInfo">&#xb6;</a>
+				</h3>
 				<pre>func (h *<a href="index.html#FileHeader">FileHeader</a>) FileInfo() <a href="../../os/index.html">os</a>.<a href="../../os/index.html#FileInfo">FileInfo</a></pre>
 				<p>
 FileInfo returns an os.FileInfo for the FileHeader.
@@ -508,7 +528,9 @@ FileInfo returns an os.FileInfo for the FileHeader.
 				
 			
 				
-				<h3 id="FileHeader.ModTime">func (*FileHeader) <a href="http://localhost:9090/src/archive/zip/struct.go?s=5514:5554#L169">ModTime</a></h3>
+				<h3 id="FileHeader.ModTime">func (*FileHeader) <a href="http://localhost:9090/src/archive/zip/struct.go?s=5515:5555#L169">ModTime</a>
+					<a class="permalink" href="index.html#FileHeader.ModTime">&#xb6;</a>
+				</h3>
 				<pre>func (h *<a href="index.html#FileHeader">FileHeader</a>) ModTime() <a href="../../time/index.html">time</a>.<a href="../../time/index.html#Time">Time</a></pre>
 				<p>
 ModTime returns the modification time in UTC.
@@ -520,7 +542,9 @@ The resolution is 2s.
 				
 			
 				
-				<h3 id="FileHeader.Mode">func (*FileHeader) <a href="http://localhost:9090/src/archive/zip/struct.go?s=6273:6319#L199">Mode</a></h3>
+				<h3 id="FileHeader.Mode">func (*FileHeader) <a href="http://localhost:9090/src/archive/zip/struct.go?s=6274:6320#L199">Mode</a>
+					<a class="permalink" href="index.html#FileHeader.Mode">&#xb6;</a>
+				</h3>
 				<pre>func (h *<a href="index.html#FileHeader">FileHeader</a>) Mode() (mode <a href="../../os/index.html">os</a>.<a href="../../os/index.html#FileMode">FileMode</a>)</pre>
 				<p>
 Mode returns the permission and mode bits for the FileHeader.
@@ -531,7 +555,9 @@ Mode returns the permission and mode bits for the FileHeader.
 				
 			
 				
-				<h3 id="FileHeader.SetModTime">func (*FileHeader) <a href="http://localhost:9090/src/archive/zip/struct.go?s=5727:5771#L175">SetModTime</a></h3>
+				<h3 id="FileHeader.SetModTime">func (*FileHeader) <a href="http://localhost:9090/src/archive/zip/struct.go?s=5728:5772#L175">SetModTime</a>
+					<a class="permalink" href="index.html#FileHeader.SetModTime">&#xb6;</a>
+				</h3>
 				<pre>func (h *<a href="index.html#FileHeader">FileHeader</a>) SetModTime(t <a href="../../time/index.html">time</a>.<a href="../../time/index.html#Time">Time</a>)</pre>
 				<p>
 SetModTime sets the ModifiedTime and ModifiedDate fields to the given time in UTC.
@@ -543,7 +569,9 @@ The resolution is 2s.
 				
 			
 				
-				<h3 id="FileHeader.SetMode">func (*FileHeader) <a href="http://localhost:9090/src/archive/zip/struct.go?s=6694:6740#L213">SetMode</a></h3>
+				<h3 id="FileHeader.SetMode">func (*FileHeader) <a href="http://localhost:9090/src/archive/zip/struct.go?s=6695:6741#L213">SetMode</a>
+					<a class="permalink" href="index.html#FileHeader.SetMode">&#xb6;</a>
+				</h3>
 				<pre>func (h *<a href="index.html#FileHeader">FileHeader</a>) SetMode(mode <a href="../../os/index.html">os</a>.<a href="../../os/index.html#FileMode">FileMode</a>)</pre>
 				<p>
 SetMode changes the permission and mode bits for the FileHeader.
@@ -556,7 +584,9 @@ SetMode changes the permission and mode bits for the FileHeader.
 		
 			
 			
-			<h2 id="ReadCloser">type <a href="http://localhost:9090/src/archive/zip/reader.go?s=583:629#L21">ReadCloser</a></h2>
+			<h2 id="ReadCloser">type <a href="http://localhost:9090/src/archive/zip/reader.go?s=583:629#L21">ReadCloser</a>
+				<a class="permalink" href="index.html#ReadCloser">&#xb6;</a>
+			</h2>
 			<pre>type ReadCloser struct {
     <a href="index.html#Reader">Reader</a>
     <span class="comment">// contains filtered or unexported fields</span>
@@ -573,7 +603,9 @@ SetMode changes the permission and mode bits for the FileHeader.
 
 			
 				
-				<h3 id="OpenReader">func <a href="http://localhost:9090/src/archive/zip/reader.go?s=903:952#L39">OpenReader</a></h3>
+				<h3 id="OpenReader">func <a href="http://localhost:9090/src/archive/zip/reader.go?s=903:952#L39">OpenReader</a>
+					<a class="permalink" href="index.html#OpenReader">&#xb6;</a>
+				</h3>
 				<pre>func OpenReader(name <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#ReadCloser">ReadCloser</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 OpenReader will open the Zip file specified by name and return a ReadCloser.
@@ -585,7 +617,9 @@ OpenReader will open the Zip file specified by name and return a ReadCloser.
 
 			
 				
-				<h3 id="ReadCloser.Close">func (*ReadCloser) <a href="http://localhost:9090/src/archive/zip/reader.go?s=3347:3382#L127">Close</a></h3>
+				<h3 id="ReadCloser.Close">func (*ReadCloser) <a href="http://localhost:9090/src/archive/zip/reader.go?s=3348:3383#L127">Close</a>
+					<a class="permalink" href="index.html#ReadCloser.Close">&#xb6;</a>
+				</h3>
 				<pre>func (rc *<a href="index.html#ReadCloser">ReadCloser</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the Zip file, rendering it unusable for I/O.
@@ -598,7 +632,9 @@ Close closes the Zip file, rendering it unusable for I/O.
 		
 			
 			
-			<h2 id="Reader">type <a href="http://localhost:9090/src/archive/zip/reader.go?s=448:581#L14">Reader</a></h2>
+			<h2 id="Reader">type <a href="http://localhost:9090/src/archive/zip/reader.go?s=448:581#L14">Reader</a>
+				<a class="permalink" href="index.html#Reader">&#xb6;</a>
+			</h2>
 			<pre>type Reader struct {
     File    []*<a href="index.html#File">File</a>
     Comment <a href="../../builtin/index.html#string">string</a>
@@ -616,7 +652,9 @@ Close closes the Zip file, rendering it unusable for I/O.
 
 			
 				
-				<h3 id="NewReader">func <a href="http://localhost:9090/src/archive/zip/reader.go?s=1320:1378#L60">NewReader</a></h3>
+				<h3 id="NewReader">func <a href="http://localhost:9090/src/archive/zip/reader.go?s=1320:1378#L60">NewReader</a>
+					<a class="permalink" href="index.html#NewReader">&#xb6;</a>
+				</h3>
 				<pre>func NewReader(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReaderAt">ReaderAt</a>, size <a href="../../builtin/index.html#int64">int64</a>) (*<a href="index.html#Reader">Reader</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 NewReader returns a new Reader reading from r, which is assumed to
@@ -629,7 +667,9 @@ have the given size in bytes.
 
 			
 				
-				<h3 id="Reader.RegisterDecompressor">func (*Reader) <a href="http://localhost:9090/src/archive/zip/reader.go?s=2929:3001#L111">RegisterDecompressor</a></h3>
+				<h3 id="Reader.RegisterDecompressor">func (*Reader) <a href="http://localhost:9090/src/archive/zip/reader.go?s=2930:3002#L111">RegisterDecompressor</a>
+					<a class="permalink" href="index.html#Reader.RegisterDecompressor">&#xb6;</a>
+				</h3>
 				<pre>func (z *<a href="index.html#Reader">Reader</a>) RegisterDecompressor(method <a href="../../builtin/index.html#uint16">uint16</a>, dcomp <a href="index.html#Decompressor">Decompressor</a>)</pre>
 				<p>
 RegisterDecompressor registers or overrides a custom decompressor for a
@@ -644,7 +684,9 @@ Reader will default to looking up the decompressor at the package level.
 		
 			
 			
-			<h2 id="Writer">type <a href="http://localhost:9090/src/archive/zip/writer.go?s=332:481#L9">Writer</a></h2>
+			<h2 id="Writer">type <a href="http://localhost:9090/src/archive/zip/writer.go?s=332:481#L9">Writer</a>
+				<a class="permalink" href="index.html#Writer">&#xb6;</a>
+			</h2>
 			<pre>type Writer struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -663,7 +705,9 @@ Writer implements a zip file writer.
 
 			
 				
-				<h3 id="NewWriter">func <a href="http://localhost:9090/src/archive/zip/writer.go?s=594:629#L23">NewWriter</a></h3>
+				<h3 id="NewWriter">func <a href="http://localhost:9090/src/archive/zip/writer.go?s=594:629#L23">NewWriter</a>
+					<a class="permalink" href="index.html#NewWriter">&#xb6;</a>
+				</h3>
 				<pre>func NewWriter(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>) *<a href="index.html#Writer">Writer</a></pre>
 				<p>
 NewWriter returns a new Writer writing a zip file to w.
@@ -675,11 +719,13 @@ NewWriter returns a new Writer writing a zip file to w.
 
 			
 				
-				<h3 id="Writer.Close">func (*Writer) <a href="http://localhost:9090/src/archive/zip/writer.go?s=1415:1445#L46">Close</a></h3>
+				<h3 id="Writer.Close">func (*Writer) <a href="http://localhost:9090/src/archive/zip/writer.go?s=1414:1444#L46">Close</a>
+					<a class="permalink" href="index.html#Writer.Close">&#xb6;</a>
+				</h3>
 				<pre>func (w *<a href="index.html#Writer">Writer</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Close finishes writing the zip file by writing the central directory.
-It does not (and can not) close the underlying writer.
+It does not (and cannot) close the underlying writer.
 </p>
 
 				
@@ -687,7 +733,9 @@ It does not (and can not) close the underlying writer.
 				
 			
 				
-				<h3 id="Writer.Create">func (*Writer) <a href="http://localhost:9090/src/archive/zip/writer.go?s=5855:5910#L177">Create</a></h3>
+				<h3 id="Writer.Create">func (*Writer) <a href="http://localhost:9090/src/archive/zip/writer.go?s=5854:5909#L177">Create</a>
+					<a class="permalink" href="index.html#Writer.Create">&#xb6;</a>
+				</h3>
 				<pre>func (w *<a href="index.html#Writer">Writer</a>) Create(name <a href="../../builtin/index.html#string">string</a>) (<a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Create adds a file to the zip file using the provided name.
@@ -704,7 +752,9 @@ call to Create, CreateHeader, or Close.
 				
 			
 				
-				<h3 id="Writer.CreateHeader">func (*Writer) <a href="http://localhost:9090/src/archive/zip/writer.go?s=6377:6441#L192">CreateHeader</a></h3>
+				<h3 id="Writer.CreateHeader">func (*Writer) <a href="http://localhost:9090/src/archive/zip/writer.go?s=6376:6440#L192">CreateHeader</a>
+					<a class="permalink" href="index.html#Writer.CreateHeader">&#xb6;</a>
+				</h3>
 				<pre>func (w *<a href="index.html#Writer">Writer</a>) CreateHeader(fh *<a href="index.html#FileHeader">FileHeader</a>) (<a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 CreateHeader adds a file to the zip file using the provided FileHeader
@@ -722,7 +772,9 @@ must not be modified after a call to CreateHeader.
 				
 			
 				
-				<h3 id="Writer.Flush">func (*Writer) <a href="http://localhost:9090/src/archive/zip/writer.go?s=1209:1239#L40">Flush</a></h3>
+				<h3 id="Writer.Flush">func (*Writer) <a href="http://localhost:9090/src/archive/zip/writer.go?s=1209:1239#L40">Flush</a>
+					<a class="permalink" href="index.html#Writer.Flush">&#xb6;</a>
+				</h3>
 				<pre>func (w *<a href="index.html#Writer">Writer</a>) Flush() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Flush flushes any buffered data to the underlying writer.
@@ -734,7 +786,9 @@ Calling Flush is not normally necessary; calling Close is sufficient.
 				
 			
 				
-				<h3 id="Writer.RegisterCompressor">func (*Writer) <a href="http://localhost:9090/src/archive/zip/writer.go?s=8308:8375#L266">RegisterCompressor</a></h3>
+				<h3 id="Writer.RegisterCompressor">func (*Writer) <a href="http://localhost:9090/src/archive/zip/writer.go?s=8307:8374#L266">RegisterCompressor</a>
+					<a class="permalink" href="index.html#Writer.RegisterCompressor">&#xb6;</a>
+				</h3>
 				<pre>func (w *<a href="index.html#Writer">Writer</a>) RegisterCompressor(method <a href="../../builtin/index.html#uint16">uint16</a>, comp <a href="index.html#Compressor">Compressor</a>)</pre>
 				<p>
 RegisterCompressor registers or overrides a custom compressor for a specific
@@ -747,7 +801,9 @@ default to looking up the compressor at the package level.
 				
 			
 				
-				<h3 id="Writer.SetOffset">func (*Writer) <a href="http://localhost:9090/src/archive/zip/writer.go?s=937:972#L31">SetOffset</a></h3>
+				<h3 id="Writer.SetOffset">func (*Writer) <a href="http://localhost:9090/src/archive/zip/writer.go?s=937:972#L31">SetOffset</a>
+					<a class="permalink" href="index.html#Writer.SetOffset">&#xb6;</a>
+				</h3>
 				<pre>func (w *<a href="index.html#Writer">Writer</a>) SetOffset(n <a href="../../builtin/index.html#int64">int64</a>)</pre>
 				<p>
 SetOffset sets the offset of the beginning of the zip data within the
@@ -772,7 +828,7 @@ It must be called before any data is written.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -790,6 +846,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

@@ -161,7 +161,7 @@ Package macho implements access to Mach-O object files.
 					<dd>&nbsp; &nbsp; <a href="index.html#NewFatFile">func NewFatFile(r io.ReaderAt) (*FatFile, error)</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#OpenFat">func OpenFat(name string) (ff *FatFile, err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#OpenFat">func OpenFat(name string) (*FatFile, error)</a></dd>
 				
 				
 					
@@ -417,7 +417,9 @@ universal binary but may be a thin binary, based on its magic number.
 		
 			
 			
-			<h2 id="Cpu">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=921:936#L35">Cpu</a></h2>
+			<h2 id="Cpu">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=920:935#L35">Cpu</a>
+				<a class="permalink" href="index.html#Cpu">&#xb6;</a>
+			</h2>
 			<pre>type Cpu <a href="../../builtin/index.html#uint32">uint32</a></pre>
 			<p>
 A Cpu is a Mach-O cpu type.
@@ -445,7 +447,9 @@ A Cpu is a Mach-O cpu type.
 
 			
 				
-				<h3 id="Cpu.GoString">func (Cpu) <a href="http://localhost:9090/src/debug/macho/macho.go?s=1372:1402#L56">GoString</a></h3>
+				<h3 id="Cpu.GoString">func (Cpu) <a href="http://localhost:9090/src/debug/macho/macho.go?s=1371:1401#L56">GoString</a>
+					<a class="permalink" href="index.html#Cpu.GoString">&#xb6;</a>
+				</h3>
 				<pre>func (i <a href="index.html#Cpu">Cpu</a>) GoString() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -453,7 +457,9 @@ A Cpu is a Mach-O cpu type.
 				
 			
 				
-				<h3 id="Cpu.String">func (Cpu) <a href="http://localhost:9090/src/debug/macho/macho.go?s=1289:1317#L55">String</a></h3>
+				<h3 id="Cpu.String">func (Cpu) <a href="http://localhost:9090/src/debug/macho/macho.go?s=1288:1316#L55">String</a>
+					<a class="permalink" href="index.html#Cpu.String">&#xb6;</a>
+				</h3>
 				<pre>func (i <a href="index.html#Cpu">Cpu</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -463,7 +469,9 @@ A Cpu is a Mach-O cpu type.
 		
 			
 			
-			<h2 id="Dylib">type <a href="http://localhost:9090/src/debug/macho/file.go?s=2756:2880#L114">Dylib</a></h2>
+			<h2 id="Dylib">type <a href="http://localhost:9090/src/debug/macho/file.go?s=2755:2879#L114">Dylib</a>
+				<a class="permalink" href="index.html#Dylib">&#xb6;</a>
+			</h2>
 			<pre>type Dylib struct {
     <a href="index.html#LoadBytes">LoadBytes</a>
     Name           <a href="../../builtin/index.html#string">string</a>
@@ -490,7 +498,9 @@ A Dylib represents a Mach-O load dynamic library command.
 		
 			
 			
-			<h2 id="DylibCmd">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=2808:2971#L114">DylibCmd</a></h2>
+			<h2 id="DylibCmd">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=2807:2970#L114">DylibCmd</a>
+				<a class="permalink" href="index.html#DylibCmd">&#xb6;</a>
+			</h2>
 			<pre>type DylibCmd struct {
     Cmd            <a href="index.html#LoadCmd">LoadCmd</a>
     Len            <a href="../../builtin/index.html#uint32">uint32</a>
@@ -518,7 +528,9 @@ A DylibCmd is a Mach-O load dynamic library command.
 		
 			
 			
-			<h2 id="Dysymtab">type <a href="http://localhost:9090/src/debug/macho/file.go?s=3061:3160#L130">Dysymtab</a></h2>
+			<h2 id="Dysymtab">type <a href="http://localhost:9090/src/debug/macho/file.go?s=3060:3159#L130">Dysymtab</a>
+				<a class="permalink" href="index.html#Dysymtab">&#xb6;</a>
+			</h2>
 			<pre>type Dysymtab struct {
     <a href="index.html#LoadBytes">LoadBytes</a>
     <a href="index.html#DysymtabCmd">DysymtabCmd</a>
@@ -543,7 +555,9 @@ A Dysymtab represents a Mach-O dynamic symbol table command.
 		
 			
 			
-			<h2 id="DysymtabCmd">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=3758:4246#L165">DysymtabCmd</a></h2>
+			<h2 id="DysymtabCmd">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=3757:4245#L165">DysymtabCmd</a>
+				<a class="permalink" href="index.html#DysymtabCmd">&#xb6;</a>
+			</h2>
 			<pre>type DysymtabCmd struct {
     Cmd            <a href="index.html#LoadCmd">LoadCmd</a>
     Len            <a href="../../builtin/index.html#uint32">uint32</a>
@@ -585,7 +599,9 @@ A DysymtabCmd is a Mach-O dynamic symbol table command.
 		
 			
 			
-			<h2 id="FatArch">type <a href="http://localhost:9090/src/debug/macho/fat.go?s=647:692#L23">FatArch</a></h2>
+			<h2 id="FatArch">type <a href="http://localhost:9090/src/debug/macho/fat.go?s=646:691#L23">FatArch</a>
+				<a class="permalink" href="index.html#FatArch">&#xb6;</a>
+			</h2>
 			<pre>type FatArch struct {
     <a href="index.html#FatArchHeader">FatArchHeader</a>
     *<a href="index.html#File">File</a>
@@ -609,7 +625,9 @@ A FatArch is a Mach-O File inside a FatFile.
 		
 			
 			
-			<h2 id="FatArchHeader">type <a href="http://localhost:9090/src/debug/macho/fat.go?s=463:564#L12">FatArchHeader</a></h2>
+			<h2 id="FatArchHeader">type <a href="http://localhost:9090/src/debug/macho/fat.go?s=462:563#L12">FatArchHeader</a>
+				<a class="permalink" href="index.html#FatArchHeader">&#xb6;</a>
+			</h2>
 			<pre>type FatArchHeader struct {
     Cpu    <a href="index.html#Cpu">Cpu</a>
     SubCpu <a href="../../builtin/index.html#uint32">uint32</a>
@@ -636,7 +654,9 @@ A FatArchHeader represents a fat header for a specific image architecture.
 		
 			
 			
-			<h2 id="FatFile">type <a href="http://localhost:9090/src/debug/macho/fat.go?s=309:383#L5">FatFile</a></h2>
+			<h2 id="FatFile">type <a href="http://localhost:9090/src/debug/macho/fat.go?s=308:382#L5">FatFile</a>
+				<a class="permalink" href="index.html#FatFile">&#xb6;</a>
+			</h2>
 			<pre>type FatFile struct {
     Magic  <a href="../../builtin/index.html#uint32">uint32</a>
     Arches []<a href="index.html#FatArch">FatArch</a>
@@ -657,7 +677,9 @@ A FatFile is a Mach-O universal binary that contains at least one architecture.
 
 			
 				
-				<h3 id="NewFatFile">func <a href="http://localhost:9090/src/debug/macho/fat.go?s=1076:1124#L35">NewFatFile</a></h3>
+				<h3 id="NewFatFile">func <a href="http://localhost:9090/src/debug/macho/fat.go?s=1075:1123#L35">NewFatFile</a>
+					<a class="permalink" href="index.html#NewFatFile">&#xb6;</a>
+				</h3>
 				<pre>func NewFatFile(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReaderAt">ReaderAt</a>) (*<a href="index.html#FatFile">FatFile</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 NewFatFile creates a new FatFile for accessing all the Mach-O images in a
@@ -669,8 +691,10 @@ the ReaderAt.
 				
 			
 				
-				<h3 id="OpenFat">func <a href="http://localhost:9090/src/debug/macho/fat.go?s=3688:3738#L115">OpenFat</a></h3>
-				<pre>func OpenFat(name <a href="../../builtin/index.html#string">string</a>) (ff *<a href="index.html#FatFile">FatFile</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="OpenFat">func <a href="http://localhost:9090/src/debug/macho/fat.go?s=3687:3730#L115">OpenFat</a>
+					<a class="permalink" href="index.html#OpenFat">&#xb6;</a>
+				</h3>
+				<pre>func OpenFat(name <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#FatFile">FatFile</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 OpenFat opens the named file using os.Open and prepares it for use as a Mach-O
 universal binary.
@@ -682,7 +706,9 @@ universal binary.
 
 			
 				
-				<h3 id="FatFile.Close">func (*FatFile) <a href="http://localhost:9090/src/debug/macho/fat.go?s=3905:3937#L129">Close</a></h3>
+				<h3 id="FatFile.Close">func (*FatFile) <a href="http://localhost:9090/src/debug/macho/fat.go?s=3906:3938#L129">Close</a>
+					<a class="permalink" href="index.html#FatFile.Close">&#xb6;</a>
+				</h3>
 				<pre>func (ff *<a href="index.html#FatFile">FatFile</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -692,7 +718,9 @@ universal binary.
 		
 			
 			
-			<h2 id="File">type <a href="http://localhost:9090/src/debug/macho/file.go?s=403:561#L10">File</a></h2>
+			<h2 id="File">type <a href="http://localhost:9090/src/debug/macho/file.go?s=402:560#L10">File</a>
+				<a class="permalink" href="index.html#File">&#xb6;</a>
+			</h2>
 			<pre>type File struct {
     <a href="index.html#FileHeader">FileHeader</a>
     ByteOrder <a href="../../encoding/binary/index.html">binary</a>.<a href="../../encoding/binary/index.html#ByteOrder">ByteOrder</a>
@@ -718,7 +746,9 @@ A File represents an open Mach-O file.
 
 			
 				
-				<h3 id="NewFile">func <a href="http://localhost:9090/src/debug/macho/file.go?s=4250:4292#L186">NewFile</a></h3>
+				<h3 id="NewFile">func <a href="http://localhost:9090/src/debug/macho/file.go?s=4249:4291#L186">NewFile</a>
+					<a class="permalink" href="index.html#NewFile">&#xb6;</a>
+				</h3>
 				<pre>func NewFile(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReaderAt">ReaderAt</a>) (*<a href="index.html#File">File</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 NewFile creates a new File for accessing a Mach-O binary in an underlying reader.
@@ -729,7 +759,9 @@ The Mach-O binary is expected to start at position 0 in the ReaderAt.
 				
 			
 				
-				<h3 id="Open">func <a href="http://localhost:9090/src/debug/macho/file.go?s=3637:3674#L158">Open</a></h3>
+				<h3 id="Open">func <a href="http://localhost:9090/src/debug/macho/file.go?s=3636:3673#L158">Open</a>
+					<a class="permalink" href="index.html#Open">&#xb6;</a>
+				</h3>
 				<pre>func Open(name <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#File">File</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Open opens the named file using os.Open and prepares it for use as a Mach-O binary.
@@ -741,7 +773,9 @@ Open opens the named file using os.Open and prepares it for use as a Mach-O bina
 
 			
 				
-				<h3 id="File.Close">func (*File) <a href="http://localhost:9090/src/debug/macho/file.go?s=3964:3992#L175">Close</a></h3>
+				<h3 id="File.Close">func (*File) <a href="http://localhost:9090/src/debug/macho/file.go?s=3963:3991#L175">Close</a>
+					<a class="permalink" href="index.html#File.Close">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the File.
@@ -754,7 +788,9 @@ Close has no effect.
 				
 			
 				
-				<h3 id="File.DWARF">func (*File) <a href="http://localhost:9090/src/debug/macho/file.go?s=11334:11377#L463">DWARF</a></h3>
+				<h3 id="File.DWARF">func (*File) <a href="http://localhost:9090/src/debug/macho/file.go?s=11333:11376#L463">DWARF</a>
+					<a class="permalink" href="index.html#File.DWARF">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) DWARF() (*<a href="../dwarf/index.html">dwarf</a>.<a href="../dwarf/index.html#Data">Data</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 DWARF returns the DWARF debug information for the Mach-O file.
@@ -765,7 +801,9 @@ DWARF returns the DWARF debug information for the Mach-O file.
 				
 			
 				
-				<h3 id="File.ImportedLibraries">func (*File) <a href="http://localhost:9090/src/debug/macho/file.go?s=12593:12645#L506">ImportedLibraries</a></h3>
+				<h3 id="File.ImportedLibraries">func (*File) <a href="http://localhost:9090/src/debug/macho/file.go?s=12621:12673#L506">ImportedLibraries</a>
+					<a class="permalink" href="index.html#File.ImportedLibraries">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) ImportedLibraries() ([]<a href="../../builtin/index.html#string">string</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 ImportedLibraries returns the paths of all libraries
@@ -778,7 +816,9 @@ linked with the binary at dynamic link time.
 				
 			
 				
-				<h3 id="File.ImportedSymbols">func (*File) <a href="http://localhost:9090/src/debug/macho/file.go?s=12101:12151#L489">ImportedSymbols</a></h3>
+				<h3 id="File.ImportedSymbols">func (*File) <a href="http://localhost:9090/src/debug/macho/file.go?s=12129:12179#L489">ImportedSymbols</a>
+					<a class="permalink" href="index.html#File.ImportedSymbols">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) ImportedSymbols() ([]<a href="../../builtin/index.html#string">string</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 ImportedSymbols returns the names of all symbols
@@ -791,7 +831,9 @@ satisfied by other libraries at dynamic load time.
 				
 			
 				
-				<h3 id="File.Section">func (*File) <a href="http://localhost:9090/src/debug/macho/file.go?s=11133:11177#L453">Section</a></h3>
+				<h3 id="File.Section">func (*File) <a href="http://localhost:9090/src/debug/macho/file.go?s=11132:11176#L453">Section</a>
+					<a class="permalink" href="index.html#File.Section">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Section(name <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Section">Section</a></pre>
 				<p>
 Section returns the first section with the given name, or nil if no such
@@ -803,7 +845,9 @@ section exists.
 				
 			
 				
-				<h3 id="File.Segment">func (*File) <a href="http://localhost:9090/src/debug/macho/file.go?s=10877:10921#L442">Segment</a></h3>
+				<h3 id="File.Segment">func (*File) <a href="http://localhost:9090/src/debug/macho/file.go?s=10876:10920#L442">Segment</a>
+					<a class="permalink" href="index.html#File.Segment">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Segment(name <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Segment">Segment</a></pre>
 				<p>
 Segment returns the first Segment with the given name, or nil if no such segment exists.
@@ -816,7 +860,9 @@ Segment returns the first Segment with the given name, or nil if no such segment
 		
 			
 			
-			<h2 id="FileHeader">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=397:523#L3">FileHeader</a></h2>
+			<h2 id="FileHeader">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=396:522#L3">FileHeader</a>
+				<a class="permalink" href="index.html#FileHeader">&#xb6;</a>
+			</h2>
 			<pre>type FileHeader struct {
     Magic  <a href="../../builtin/index.html#uint32">uint32</a>
     Cpu    <a href="index.html#Cpu">Cpu</a>
@@ -845,7 +891,9 @@ A FileHeader represents a Mach-O file header.
 		
 			
 			
-			<h2 id="FormatError">type <a href="http://localhost:9090/src/debug/macho/file.go?s=3301:3368#L142">FormatError</a></h2>
+			<h2 id="FormatError">type <a href="http://localhost:9090/src/debug/macho/file.go?s=3300:3367#L142">FormatError</a>
+				<a class="permalink" href="index.html#FormatError">&#xb6;</a>
+			</h2>
 			<pre>type FormatError struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -867,7 +915,9 @@ not have the correct format for an object file.
 
 			
 				
-				<h3 id="FormatError.Error">func (*FormatError) <a href="http://localhost:9090/src/debug/macho/file.go?s=3370:3406#L148">Error</a></h3>
+				<h3 id="FormatError.Error">func (*FormatError) <a href="http://localhost:9090/src/debug/macho/file.go?s=3369:3405#L148">Error</a>
+					<a class="permalink" href="index.html#FormatError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#FormatError">FormatError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -877,7 +927,9 @@ not have the correct format for an object file.
 		
 			
 			
-			<h2 id="Load">type <a href="http://localhost:9090/src/debug/macho/file.go?s=609:646#L23">Load</a></h2>
+			<h2 id="Load">type <a href="http://localhost:9090/src/debug/macho/file.go?s=608:645#L23">Load</a>
+				<a class="permalink" href="index.html#Load">&#xb6;</a>
+			</h2>
 			<pre>type Load interface {
     Raw() []<a href="../../builtin/index.html#byte">byte</a>
 }</pre>
@@ -900,7 +952,9 @@ A Load represents any Mach-O load command.
 		
 			
 			
-			<h2 id="LoadBytes">type <a href="http://localhost:9090/src/debug/macho/file.go?s=716:737#L28">LoadBytes</a></h2>
+			<h2 id="LoadBytes">type <a href="http://localhost:9090/src/debug/macho/file.go?s=715:736#L28">LoadBytes</a>
+				<a class="permalink" href="index.html#LoadBytes">&#xb6;</a>
+			</h2>
 			<pre>type LoadBytes []<a href="../../builtin/index.html#byte">byte</a></pre>
 			<p>
 A LoadBytes is the uninterpreted bytes of a Mach-O load command.
@@ -919,7 +973,9 @@ A LoadBytes is the uninterpreted bytes of a Mach-O load command.
 
 			
 				
-				<h3 id="LoadBytes.Raw">func (LoadBytes) <a href="http://localhost:9090/src/debug/macho/file.go?s=739:770#L30">Raw</a></h3>
+				<h3 id="LoadBytes.Raw">func (LoadBytes) <a href="http://localhost:9090/src/debug/macho/file.go?s=738:769#L30">Raw</a>
+					<a class="permalink" href="index.html#LoadBytes.Raw">&#xb6;</a>
+				</h3>
 				<pre>func (b <a href="index.html#LoadBytes">LoadBytes</a>) Raw() []<a href="../../builtin/index.html#byte">byte</a></pre>
 				
 				
@@ -929,7 +985,9 @@ A LoadBytes is the uninterpreted bytes of a Mach-O load command.
 		
 			
 			
-			<h2 id="LoadCmd">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=1494:1513#L59">LoadCmd</a></h2>
+			<h2 id="LoadCmd">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=1493:1512#L59">LoadCmd</a>
+				<a class="permalink" href="index.html#LoadCmd">&#xb6;</a>
+			</h2>
 			<pre>type LoadCmd <a href="../../builtin/index.html#uint32">uint32</a></pre>
 			<p>
 A LoadCmd is a Mach-O load command.
@@ -960,7 +1018,9 @@ A LoadCmd is a Mach-O load command.
 
 			
 				
-				<h3 id="LoadCmd.GoString">func (LoadCmd) <a href="http://localhost:9090/src/debug/macho/macho.go?s=2141:2175#L81">GoString</a></h3>
+				<h3 id="LoadCmd.GoString">func (LoadCmd) <a href="http://localhost:9090/src/debug/macho/macho.go?s=2140:2174#L81">GoString</a>
+					<a class="permalink" href="index.html#LoadCmd.GoString">&#xb6;</a>
+				</h3>
 				<pre>func (i <a href="index.html#LoadCmd">LoadCmd</a>) GoString() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -968,7 +1028,9 @@ A LoadCmd is a Mach-O load command.
 				
 			
 				
-				<h3 id="LoadCmd.String">func (LoadCmd) <a href="http://localhost:9090/src/debug/macho/macho.go?s=2054:2086#L80">String</a></h3>
+				<h3 id="LoadCmd.String">func (LoadCmd) <a href="http://localhost:9090/src/debug/macho/macho.go?s=2053:2085#L80">String</a>
+					<a class="permalink" href="index.html#LoadCmd.String">&#xb6;</a>
+				</h3>
 				<pre>func (i <a href="index.html#LoadCmd">LoadCmd</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -978,7 +1040,9 @@ A LoadCmd is a Mach-O load command.
 		
 			
 			
-			<h2 id="Nlist32">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=4301:4392#L189">Nlist32</a></h2>
+			<h2 id="Nlist32">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=4300:4391#L189">Nlist32</a>
+				<a class="permalink" href="index.html#Nlist32">&#xb6;</a>
+			</h2>
 			<pre>type Nlist32 struct {
     Name  <a href="../../builtin/index.html#uint32">uint32</a>
     Type  <a href="../../builtin/index.html#uint8">uint8</a>
@@ -1005,7 +1069,9 @@ An Nlist32 is a Mach-O 32-bit symbol table entry.
 		
 			
 			
-			<h2 id="Nlist64">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=4447:4538#L198">Nlist64</a></h2>
+			<h2 id="Nlist64">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=4446:4537#L198">Nlist64</a>
+				<a class="permalink" href="index.html#Nlist64">&#xb6;</a>
+			</h2>
 			<pre>type Nlist64 struct {
     Name  <a href="../../builtin/index.html#uint32">uint32</a>
     Type  <a href="../../builtin/index.html#uint8">uint8</a>
@@ -1032,7 +1098,9 @@ An Nlist64 is a Mach-O 64-bit symbol table entry.
 		
 			
 			
-			<h2 id="Regs386">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=4867:5114#L224">Regs386</a></h2>
+			<h2 id="Regs386">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=4866:5113#L224">Regs386</a>
+				<a class="permalink" href="index.html#Regs386">&#xb6;</a>
+			</h2>
 			<pre>type Regs386 struct {
     AX    <a href="../../builtin/index.html#uint32">uint32</a>
     BX    <a href="../../builtin/index.html#uint32">uint32</a>
@@ -1070,7 +1138,9 @@ Regs386 is the Mach-O 386 register structure.
 		
 			
 			
-			<h2 id="RegsAMD64">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=5169:5488#L244">RegsAMD64</a></h2>
+			<h2 id="RegsAMD64">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=5168:5487#L244">RegsAMD64</a>
+				<a class="permalink" href="index.html#RegsAMD64">&#xb6;</a>
+			</h2>
 			<pre>type RegsAMD64 struct {
     AX    <a href="../../builtin/index.html#uint64">uint64</a>
     BX    <a href="../../builtin/index.html#uint64">uint64</a>
@@ -1113,7 +1183,9 @@ RegsAMD64 is the Mach-O AMD64 register structure.
 		
 			
 			
-			<h2 id="Section">type <a href="http://localhost:9090/src/debug/macho/file.go?s=2004:2313#L87">Section</a></h2>
+			<h2 id="Section">type <a href="http://localhost:9090/src/debug/macho/file.go?s=2003:2312#L87">Section</a>
+				<a class="permalink" href="index.html#Section">&#xb6;</a>
+			</h2>
 			<pre>type Section struct {
     <a href="index.html#SectionHeader">SectionHeader</a>
 
@@ -1140,7 +1212,9 @@ RegsAMD64 is the Mach-O AMD64 register structure.
 
 			
 				
-				<h3 id="Section.Data">func (*Section) <a href="http://localhost:9090/src/debug/macho/file.go?s=2377:2417#L101">Data</a></h3>
+				<h3 id="Section.Data">func (*Section) <a href="http://localhost:9090/src/debug/macho/file.go?s=2376:2416#L101">Data</a>
+					<a class="permalink" href="index.html#Section.Data">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Section">Section</a>) Data() ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Data reads and returns the contents of the Mach-O section.
@@ -1151,7 +1225,9 @@ Data reads and returns the contents of the Mach-O section.
 				
 			
 				
-				<h3 id="Section.Open">func (*Section) <a href="http://localhost:9090/src/debug/macho/file.go?s=2606:2644#L111">Open</a></h3>
+				<h3 id="Section.Open">func (*Section) <a href="http://localhost:9090/src/debug/macho/file.go?s=2605:2643#L111">Open</a>
+					<a class="permalink" href="index.html#Section.Open">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Section">Section</a>) Open() <a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReadSeeker">ReadSeeker</a></pre>
 				<p>
 Open returns a new ReadSeeker reading the Mach-O section.
@@ -1164,7 +1240,9 @@ Open returns a new ReadSeeker reading the Mach-O section.
 		
 			
 			
-			<h2 id="Section32">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=3023:3239#L124">Section32</a></h2>
+			<h2 id="Section32">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=3022:3238#L124">Section32</a>
+				<a class="permalink" href="index.html#Section32">&#xb6;</a>
+			</h2>
 			<pre>type Section32 struct {
     Name     [16]<a href="../../builtin/index.html#byte">byte</a>
     Seg      [16]<a href="../../builtin/index.html#byte">byte</a>
@@ -1197,7 +1275,9 @@ A Section32 is a 32-bit Mach-O section header.
 		
 			
 			
-			<h2 id="Section64">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=3291:3524#L139">Section64</a></h2>
+			<h2 id="Section64">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=3290:3523#L139">Section64</a>
+				<a class="permalink" href="index.html#Section64">&#xb6;</a>
+			</h2>
 			<pre>type Section64 struct {
     Name     [16]<a href="../../builtin/index.html#byte">byte</a>
     Seg      [16]<a href="../../builtin/index.html#byte">byte</a>
@@ -1231,7 +1311,9 @@ A Section32 is a 64-bit Mach-O section header.
 		
 			
 			
-			<h2 id="SectionHeader">type <a href="http://localhost:9090/src/debug/macho/file.go?s=1838:2002#L75">SectionHeader</a></h2>
+			<h2 id="SectionHeader">type <a href="http://localhost:9090/src/debug/macho/file.go?s=1837:2001#L75">SectionHeader</a>
+				<a class="permalink" href="index.html#SectionHeader">&#xb6;</a>
+			</h2>
 			<pre>type SectionHeader struct {
     Name   <a href="../../builtin/index.html#string">string</a>
     Seg    <a href="../../builtin/index.html#string">string</a>
@@ -1259,7 +1341,9 @@ A Section32 is a 64-bit Mach-O section header.
 		
 			
 			
-			<h2 id="Segment">type <a href="http://localhost:9090/src/debug/macho/file.go?s=1150:1470#L48">Segment</a></h2>
+			<h2 id="Segment">type <a href="http://localhost:9090/src/debug/macho/file.go?s=1149:1469#L48">Segment</a>
+				<a class="permalink" href="index.html#Segment">&#xb6;</a>
+			</h2>
 			<pre>type Segment struct {
     <a href="index.html#LoadBytes">LoadBytes</a>
     <a href="index.html#SegmentHeader">SegmentHeader</a>
@@ -1290,7 +1374,9 @@ A Segment represents a Mach-O 32-bit or 64-bit load segment command.
 
 			
 				
-				<h3 id="Segment.Data">func (*Segment) <a href="http://localhost:9090/src/debug/macho/file.go?s=1527:1567#L63">Data</a></h3>
+				<h3 id="Segment.Data">func (*Segment) <a href="http://localhost:9090/src/debug/macho/file.go?s=1526:1566#L63">Data</a>
+					<a class="permalink" href="index.html#Segment.Data">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Segment">Segment</a>) Data() ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Data reads and returns the contents of the segment.
@@ -1301,7 +1387,9 @@ Data reads and returns the contents of the segment.
 				
 			
 				
-				<h3 id="Segment.Open">func (*Segment) <a href="http://localhost:9090/src/debug/macho/file.go?s=1749:1787#L73">Open</a></h3>
+				<h3 id="Segment.Open">func (*Segment) <a href="http://localhost:9090/src/debug/macho/file.go?s=1748:1786#L73">Open</a>
+					<a class="permalink" href="index.html#Segment.Open">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Segment">Segment</a>) Open() <a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReadSeeker">ReadSeeker</a></pre>
 				<p>
 Open returns a new ReadSeeker reading the segment.
@@ -1314,7 +1402,9 @@ Open returns a new ReadSeeker reading the segment.
 		
 			
 			
-			<h2 id="Segment32">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=2546:2750#L99">Segment32</a></h2>
+			<h2 id="Segment32">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=2545:2749#L99">Segment32</a>
+				<a class="permalink" href="index.html#Segment32">&#xb6;</a>
+			</h2>
 			<pre>type Segment32 struct {
     Cmd     <a href="index.html#LoadCmd">LoadCmd</a>
     Len     <a href="../../builtin/index.html#uint32">uint32</a>
@@ -1347,7 +1437,9 @@ A Segment32 is a 32-bit Mach-O segment load command.
 		
 			
 			
-			<h2 id="Segment64">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=2284:2488#L84">Segment64</a></h2>
+			<h2 id="Segment64">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=2283:2487#L84">Segment64</a>
+				<a class="permalink" href="index.html#Segment64">&#xb6;</a>
+			</h2>
 			<pre>type Segment64 struct {
     Cmd     <a href="index.html#LoadCmd">LoadCmd</a>
     Len     <a href="../../builtin/index.html#uint32">uint32</a>
@@ -1380,7 +1472,9 @@ A Segment64 is a 64-bit Mach-O segment load command.
 		
 			
 			
-			<h2 id="SegmentHeader">type <a href="http://localhost:9090/src/debug/macho/file.go?s=870:1076#L33">SegmentHeader</a></h2>
+			<h2 id="SegmentHeader">type <a href="http://localhost:9090/src/debug/macho/file.go?s=869:1075#L33">SegmentHeader</a>
+				<a class="permalink" href="index.html#SegmentHeader">&#xb6;</a>
+			</h2>
 			<pre>type SegmentHeader struct {
     Cmd     <a href="index.html#LoadCmd">LoadCmd</a>
     Len     <a href="../../builtin/index.html#uint32">uint32</a>
@@ -1413,7 +1507,9 @@ A SegmentHeader is the header for a Mach-O 32-bit or 64-bit load segment command
 		
 			
 			
-			<h2 id="Symbol">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=4601:4691#L207">Symbol</a></h2>
+			<h2 id="Symbol">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=4600:4690#L207">Symbol</a>
+				<a class="permalink" href="index.html#Symbol">&#xb6;</a>
+			</h2>
 			<pre>type Symbol struct {
     Name  <a href="../../builtin/index.html#string">string</a>
     Type  <a href="../../builtin/index.html#uint8">uint8</a>
@@ -1440,7 +1536,9 @@ A Symbol is a Mach-O 32-bit or 64-bit symbol table entry.
 		
 			
 			
-			<h2 id="Symtab">type <a href="http://localhost:9090/src/debug/macho/file.go?s=2936:2995#L123">Symtab</a></h2>
+			<h2 id="Symtab">type <a href="http://localhost:9090/src/debug/macho/file.go?s=2935:2994#L123">Symtab</a>
+				<a class="permalink" href="index.html#Symtab">&#xb6;</a>
+			</h2>
 			<pre>type Symtab struct {
     <a href="index.html#LoadBytes">LoadBytes</a>
     <a href="index.html#SymtabCmd">SymtabCmd</a>
@@ -1465,7 +1563,9 @@ A Symtab represents a Mach-O symbol table command.
 		
 			
 			
-			<h2 id="SymtabCmd">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=3575:3697#L155">SymtabCmd</a></h2>
+			<h2 id="SymtabCmd">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=3574:3696#L155">SymtabCmd</a>
+				<a class="permalink" href="index.html#SymtabCmd">&#xb6;</a>
+			</h2>
 			<pre>type SymtabCmd struct {
     Cmd     <a href="index.html#LoadCmd">LoadCmd</a>
     Len     <a href="../../builtin/index.html#uint32">uint32</a>
@@ -1493,7 +1593,9 @@ A SymtabCmd is a Mach-O symbol table command.
 		
 			
 			
-			<h2 id="Thread">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=4739:4816#L216">Thread</a></h2>
+			<h2 id="Thread">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=4738:4815#L216">Thread</a>
+				<a class="permalink" href="index.html#Thread">&#xb6;</a>
+			</h2>
 			<pre>type Thread struct {
     Cmd  <a href="index.html#LoadCmd">LoadCmd</a>
     Len  <a href="../../builtin/index.html#uint32">uint32</a>
@@ -1519,7 +1621,9 @@ A Thread is a Mach-O thread state command.
 		
 			
 			
-			<h2 id="Type">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=777:793#L25">Type</a></h2>
+			<h2 id="Type">type <a href="http://localhost:9090/src/debug/macho/macho.go?s=776:792#L25">Type</a>
+				<a class="permalink" href="index.html#Type">&#xb6;</a>
+			</h2>
 			<pre>type Type <a href="../../builtin/index.html#uint32">uint32</a></pre>
 			<p>
 A Type is the Mach-O file type, e.g. an object file, executable, or dynamic library.
@@ -1557,7 +1661,7 @@ A Type is the Mach-O file type, e.g. an object file, executable, or dynamic libr
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1575,6 +1679,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

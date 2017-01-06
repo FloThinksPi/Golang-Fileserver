@@ -252,7 +252,9 @@ These constants are copied from the flate package, so that code that imports
 		
 			
 			
-			<h2 id="Header">type <a href="http://localhost:9090/src/compress/gzip/gunzip.go?s=1236:1439#L39">Header</a></h2>
+			<h2 id="Header">type <a href="http://localhost:9090/src/compress/gzip/gunzip.go?s=1297:1500#L42">Header</a>
+				<a class="permalink" href="index.html#Header">&#xb6;</a>
+			</h2>
 			<pre>type Header struct {
     Comment <a href="../../builtin/index.html#string">string</a>    <span class="comment">// comment</span>
     Extra   []<a href="../../builtin/index.html#byte">byte</a>    <span class="comment">// &#34;extra data&#34;</span>
@@ -284,7 +286,9 @@ U+0001 through U+00FF, due to limitations of the GZIP file format.
 		
 			
 			
-			<h2 id="Reader">type <a href="http://localhost:9090/src/compress/gzip/gunzip.go?s=2139:2400#L61">Reader</a></h2>
+			<h2 id="Reader">type <a href="http://localhost:9090/src/compress/gzip/gunzip.go?s=2198:2511#L64">Reader</a>
+				<a class="permalink" href="index.html#Reader">&#xb6;</a>
+			</h2>
 			<pre>type Reader struct {
     <a href="index.html#Header">Header</a> <span class="comment">// valid after NewReader or Reader.Reset</span>
     <span class="comment">// contains filtered or unexported fields</span>
@@ -295,7 +299,7 @@ uncompressed data from a gzip-format compressed file.
 </p>
 <p>
 In general, a gzip file can be a concatenation of gzip files,
-each with its own header.  Reads from the Reader
+each with its own header. Reads from the Reader
 return the concatenation of the uncompressed data of each.
 Only the first header is recorded in the Reader fields.
 </p>
@@ -303,7 +307,7 @@ Only the first header is recorded in the Reader fields.
 Gzip files store a length and checksum of the uncompressed data.
 The Reader will return a ErrChecksum when Read
 reaches the end of the uncompressed data if it does not
-have the expected length or checksum.  Clients should treat data
+have the expected length or checksum. Clients should treat data
 returned by Read as tentative until they receive the io.EOF
 marking the end of the data.
 </p>
@@ -319,7 +323,9 @@ marking the end of the data.
 
 			
 				
-				<h3 id="NewReader">func <a href="http://localhost:9090/src/compress/gzip/gunzip.go?s=2719:2763#L80">NewReader</a></h3>
+				<h3 id="NewReader">func <a href="http://localhost:9090/src/compress/gzip/gunzip.go?s=2830:2874#L82">NewReader</a>
+					<a class="permalink" href="index.html#NewReader">&#xb6;</a>
+				</h3>
 				<pre>func NewReader(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) (*<a href="index.html#Reader">Reader</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 NewReader creates a new Reader reading the given reader.
@@ -339,10 +345,14 @@ The Reader.Header fields will be valid in the Reader returned.
 
 			
 				
-				<h3 id="Reader.Close">func (*Reader) <a href="http://localhost:9090/src/compress/gzip/gunzip.go?s=7969:7999#L299">Close</a></h3>
+				<h3 id="Reader.Close">func (*Reader) <a href="http://localhost:9090/src/compress/gzip/gunzip.go?s=8349:8379#L277">Close</a>
+					<a class="permalink" href="index.html#Reader.Close">&#xb6;</a>
+				</h3>
 				<pre>func (z *<a href="index.html#Reader">Reader</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the Reader. It does not close the underlying io.Reader.
+In order for the GZIP checksum to be verified, the reader must be
+fully consumed until the io.EOF.
 </p>
 
 				
@@ -350,7 +360,9 @@ Close closes the Reader. It does not close the underlying io.Reader.
 				
 			
 				
-				<h3 id="Reader.Multistream">func (*Reader) <a href="http://localhost:9090/src/compress/gzip/gunzip.go?s=4380:4417#L123">Multistream</a></h3>
+				<h3 id="Reader.Multistream">func (*Reader) <a href="http://localhost:9090/src/compress/gzip/gunzip.go?s=4441:4478#L123">Multistream</a>
+					<a class="permalink" href="index.html#Reader.Multistream">&#xb6;</a>
+				</h3>
 				<pre>func (z *<a href="index.html#Reader">Reader</a>) Multistream(ok <a href="../../builtin/index.html#bool">bool</a>)</pre>
 				<p>
 Multistream controls whether the reader supports multistream files.
@@ -378,7 +390,9 @@ If there is no next stream, z.Reset(r) will return io.EOF.
 				
 			
 				
-				<h3 id="Reader.Read">func (*Reader) <a href="http://localhost:9090/src/compress/gzip/gunzip.go?s=7052:7102#L251">Read</a></h3>
+				<h3 id="Reader.Read">func (*Reader) <a href="http://localhost:9090/src/compress/gzip/gunzip.go?s=7286:7336#L231">Read</a>
+					<a class="permalink" href="index.html#Reader.Read">&#xb6;</a>
+				</h3>
 				<pre>func (z *<a href="index.html#Reader">Reader</a>) Read(p []<a href="../../builtin/index.html#byte">byte</a>) (n <a href="../../builtin/index.html#int">int</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -386,7 +400,9 @@ If there is no next stream, z.Reset(r) will return io.EOF.
 				
 			
 				
-				<h3 id="Reader.Reset">func (*Reader) <a href="http://localhost:9090/src/compress/gzip/gunzip.go?s=3151:3192#L94">Reset</a></h3>
+				<h3 id="Reader.Reset">func (*Reader) <a href="http://localhost:9090/src/compress/gzip/gunzip.go?s=3183:3224#L93">Reset</a>
+					<a class="permalink" href="index.html#Reader.Reset">&#xb6;</a>
+				</h3>
 				<pre>func (z *<a href="index.html#Reader">Reader</a>) Reset(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Reset discards the Reader z&#39;s state and makes it equivalent to the
@@ -401,7 +417,9 @@ This permits reusing a Reader rather than allocating a new one.
 		
 			
 			
-			<h2 id="Writer">type <a href="http://localhost:9090/src/compress/gzip/gzip.go?s=666:941#L17">Writer</a></h2>
+			<h2 id="Writer">type <a href="http://localhost:9090/src/compress/gzip/gzip.go?s=658:1004#L16">Writer</a>
+				<a class="permalink" href="index.html#Writer">&#xb6;</a>
+			</h2>
 			<pre>type Writer struct {
     <a href="index.html#Header">Header</a> <span class="comment">// written at first call to Write, Flush, or Close</span>
     <span class="comment">// contains filtered or unexported fields</span>
@@ -422,7 +440,9 @@ Writes to a Writer are compressed and written to w.
 
 			
 				
-				<h3 id="NewWriter">func <a href="http://localhost:9090/src/compress/gzip/gzip.go?s=1305:1340#L38">NewWriter</a></h3>
+				<h3 id="NewWriter">func <a href="http://localhost:9090/src/compress/gzip/gzip.go?s=1368:1403#L37">NewWriter</a>
+					<a class="permalink" href="index.html#NewWriter">&#xb6;</a>
+				</h3>
 				<pre>func NewWriter(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>) *<a href="index.html#Writer">Writer</a></pre>
 				<p>
 NewWriter returns a new Writer.
@@ -441,7 +461,9 @@ the first call to Write, Flush, or Close.
 				
 			
 				
-				<h3 id="NewWriterLevel">func <a href="http://localhost:9090/src/compress/gzip/gzip.go?s=1718:1778#L49">NewWriterLevel</a></h3>
+				<h3 id="NewWriterLevel">func <a href="http://localhost:9090/src/compress/gzip/gzip.go?s=1781:1841#L48">NewWriterLevel</a>
+					<a class="permalink" href="index.html#NewWriterLevel">&#xb6;</a>
+				</h3>
 				<pre>func NewWriterLevel(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, level <a href="../../builtin/index.html#int">int</a>) (*<a href="index.html#Writer">Writer</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 NewWriterLevel is like NewWriter but specifies the compression level instead
@@ -459,7 +481,9 @@ returned will be nil if the level is valid.
 
 			
 				
-				<h3 id="Writer.Close">func (*Writer) <a href="http://localhost:9090/src/compress/gzip/gzip.go?s=6079:6109#L237">Close</a></h3>
+				<h3 id="Writer.Close">func (*Writer) <a href="http://localhost:9090/src/compress/gzip/gzip.go?s=5806:5836#L216">Close</a>
+					<a class="permalink" href="index.html#Writer.Close">&#xb6;</a>
+				</h3>
 				<pre>func (z *<a href="index.html#Writer">Writer</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the Writer, flushing any unwritten data to the underlying
@@ -471,7 +495,9 @@ io.Writer, but does not close the underlying io.Writer.
 				
 			
 				
-				<h3 id="Writer.Flush">func (*Writer) <a href="http://localhost:9090/src/compress/gzip/gzip.go?s=5719:5749#L218">Flush</a></h3>
+				<h3 id="Writer.Flush">func (*Writer) <a href="http://localhost:9090/src/compress/gzip/gzip.go?s=5446:5476#L197">Flush</a>
+					<a class="permalink" href="index.html#Writer.Flush">&#xb6;</a>
+				</h3>
 				<pre>func (z *<a href="index.html#Writer">Writer</a>) Flush() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Flush flushes any pending compressed data to the underlying writer.
@@ -491,7 +517,9 @@ In the terminology of the zlib library, Flush is equivalent to Z_SYNC_FLUSH.
 				
 			
 				
-				<h3 id="Writer.Reset">func (*Writer) <a href="http://localhost:9090/src/compress/gzip/gzip.go?s=2575:2610#L84">Reset</a></h3>
+				<h3 id="Writer.Reset">func (*Writer) <a href="http://localhost:9090/src/compress/gzip/gzip.go?s=2519:2554#L76">Reset</a>
+					<a class="permalink" href="index.html#Writer.Reset">&#xb6;</a>
+				</h3>
 				<pre>func (z *<a href="index.html#Writer">Writer</a>) Reset(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>)</pre>
 				<p>
 Reset discards the Writer z&#39;s state and makes it equivalent to the
@@ -505,7 +533,9 @@ allocating a new one.
 				
 			
 				
-				<h3 id="Writer.Write">func (*Writer) <a href="http://localhost:9090/src/compress/gzip/gzip.go?s=4130:4175#L148">Write</a></h3>
+				<h3 id="Writer.Write">func (*Writer) <a href="http://localhost:9090/src/compress/gzip/gzip.go?s=3814:3859#L127">Write</a>
+					<a class="permalink" href="index.html#Writer.Write">&#xb6;</a>
+				</h3>
 				<pre>func (z *<a href="index.html#Writer">Writer</a>) Write(p []<a href="../../builtin/index.html#byte">byte</a>) (<a href="../../builtin/index.html#int">int</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Write writes a compressed form of p to the underlying io.Writer. The
@@ -528,7 +558,7 @@ compressed bytes are not necessarily flushed until the Writer is closed.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -546,6 +576,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

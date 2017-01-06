@@ -203,7 +203,9 @@ Package iotest implements Readers and Writers useful mainly for testing.
 		
 			
 			
-			<h2 id="DataErrReader">func <a href="http://localhost:9090/src/testing/iotest/reader.go?s=1273:1314#L35">DataErrReader</a></h2>
+			<h2 id="DataErrReader">func <a href="http://localhost:9090/src/testing/iotest/reader.go?s=1273:1314#L35">DataErrReader</a>
+				<a class="permalink" href="index.html#DataErrReader">&#xb6;</a>
+			</h2>
 			<pre>func DataErrReader(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a></pre>
 			<p>
 DataErrReader changes the way errors are handled by a Reader. Normally, a
@@ -219,7 +221,9 @@ of in the first call after the final data.
 		
 			
 			
-			<h2 id="HalfReader">func <a href="http://localhost:9090/src/testing/iotest/reader.go?s=719:757#L20">HalfReader</a></h2>
+			<h2 id="HalfReader">func <a href="http://localhost:9090/src/testing/iotest/reader.go?s=719:757#L20">HalfReader</a>
+				<a class="permalink" href="index.html#HalfReader">&#xb6;</a>
+			</h2>
 			<pre>func HalfReader(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a></pre>
 			<p>
 HalfReader returns a Reader that implements Read
@@ -232,7 +236,9 @@ by reading half as many requested bytes from r.
 		
 			
 			
-			<h2 id="NewReadLogger">func <a href="http://localhost:9090/src/testing/iotest/logger.go?s=1202:1258#L42">NewReadLogger</a></h2>
+			<h2 id="NewReadLogger">func <a href="http://localhost:9090/src/testing/iotest/logger.go?s=1202:1258#L42">NewReadLogger</a>
+				<a class="permalink" href="index.html#NewReadLogger">&#xb6;</a>
+			</h2>
 			<pre>func NewReadLogger(prefix <a href="../../builtin/index.html#string">string</a>, r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a></pre>
 			<p>
 NewReadLogger returns a reader that behaves like r except
@@ -246,7 +252,9 @@ printing the prefix and the hexadecimal data read.
 		
 			
 			
-			<h2 id="NewWriteLogger">func <a href="http://localhost:9090/src/testing/iotest/logger.go?s=659:716#L20">NewWriteLogger</a></h2>
+			<h2 id="NewWriteLogger">func <a href="http://localhost:9090/src/testing/iotest/logger.go?s=659:716#L20">NewWriteLogger</a>
+				<a class="permalink" href="index.html#NewWriteLogger">&#xb6;</a>
+			</h2>
 			<pre>func NewWriteLogger(prefix <a href="../../builtin/index.html#string">string</a>, w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>) <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a></pre>
 			<p>
 NewWriteLogger returns a writer that behaves like w except
@@ -260,7 +268,9 @@ printing the prefix and the hexadecimal data written.
 		
 			
 			
-			<h2 id="OneByteReader">func <a href="http://localhost:9090/src/testing/iotest/reader.go?s=381:422#L5">OneByteReader</a></h2>
+			<h2 id="OneByteReader">func <a href="http://localhost:9090/src/testing/iotest/reader.go?s=381:422#L5">OneByteReader</a>
+				<a class="permalink" href="index.html#OneByteReader">&#xb6;</a>
+			</h2>
 			<pre>func OneByteReader(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a></pre>
 			<p>
 OneByteReader returns a Reader that implements
@@ -273,11 +283,13 @@ each non-empty Read by reading one byte from r.
 		
 			
 			
-			<h2 id="TimeoutReader">func <a href="http://localhost:9090/src/testing/iotest/reader.go?s=1970:2011#L65">TimeoutReader</a></h2>
+			<h2 id="TimeoutReader">func <a href="http://localhost:9090/src/testing/iotest/reader.go?s=1969:2010#L65">TimeoutReader</a>
+				<a class="permalink" href="index.html#TimeoutReader">&#xb6;</a>
+			</h2>
 			<pre>func TimeoutReader(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a></pre>
 			<p>
 TimeoutReader returns ErrTimeout on the second read
-with no data.  Subsequent calls to read succeed.
+with no data. Subsequent calls to read succeed.
 </p>
 
 			
@@ -286,7 +298,9 @@ with no data.  Subsequent calls to read succeed.
 		
 			
 			
-			<h2 id="TruncateWriter">func <a href="http://localhost:9090/src/testing/iotest/writer.go?s=278:329#L1">TruncateWriter</a></h2>
+			<h2 id="TruncateWriter">func <a href="http://localhost:9090/src/testing/iotest/writer.go?s=278:329#L1">TruncateWriter</a>
+				<a class="permalink" href="index.html#TruncateWriter">&#xb6;</a>
+			</h2>
 			<pre>func TruncateWriter(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, n <a href="../../builtin/index.html#int64">int64</a>) <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a></pre>
 			<p>
 TruncateWriter returns a Writer that writes to w
@@ -309,7 +323,7 @@ but stops silently after n bytes.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -327,6 +341,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

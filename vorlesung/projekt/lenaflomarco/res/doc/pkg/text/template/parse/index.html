@@ -115,7 +115,7 @@ intended for general use.
 				<dd><a href="index.html#IsEmptyTree">func IsEmptyTree(n Node) bool</a></dd>
 			
 				
-				<dd><a href="index.html#Parse">func Parse(name, text, leftDelim, rightDelim string, funcs ...map[string]interface{}) (treeSet map[string]*Tree, err error)</a></dd>
+				<dd><a href="index.html#Parse">func Parse(name, text, leftDelim, rightDelim string, funcs ...map[string]interface{}) (map[string]*Tree, error)</a></dd>
 			
 			
 				
@@ -445,7 +445,9 @@ intended for general use.
 		
 			
 			
-			<h2 id="IsEmptyTree">func <a href="http://localhost:9090/src/text/template/parse/parse.go?s=6769:6798#L243">IsEmptyTree</a></h2>
+			<h2 id="IsEmptyTree">func <a href="http://localhost:9090/src/text/template/parse/parse.go?s=6772:6801#L243">IsEmptyTree</a>
+				<a class="permalink" href="index.html#IsEmptyTree">&#xb6;</a>
+			</h2>
 			<pre>func IsEmptyTree(n <a href="index.html#Node">Node</a>) <a href="../../../builtin/index.html#bool">bool</a></pre>
 			<p>
 IsEmptyTree reports whether this tree (node) is empty of everything but space.
@@ -457,8 +459,10 @@ IsEmptyTree reports whether this tree (node) is empty of everything but space.
 		
 			
 			
-			<h2 id="Parse">func <a href="http://localhost:9090/src/text/template/parse/parse.go?s=1642:1765#L41">Parse</a></h2>
-			<pre>func Parse(name, text, leftDelim, rightDelim <a href="../../../builtin/index.html#string">string</a>, funcs ...map[<a href="../../../builtin/index.html#string">string</a>]interface{}) (treeSet map[<a href="../../../builtin/index.html#string">string</a>]*<a href="index.html#Tree">Tree</a>, err <a href="../../../builtin/index.html#error">error</a>)</pre>
+			<h2 id="Parse">func <a href="http://localhost:9090/src/text/template/parse/parse.go?s=1642:1753#L41">Parse</a>
+				<a class="permalink" href="index.html#Parse">&#xb6;</a>
+			</h2>
+			<pre>func Parse(name, text, leftDelim, rightDelim <a href="../../../builtin/index.html#string">string</a>, funcs ...map[<a href="../../../builtin/index.html#string">string</a>]interface{}) (map[<a href="../../../builtin/index.html#string">string</a>]*<a href="index.html#Tree">Tree</a>, <a href="../../../builtin/index.html#error">error</a>)</pre>
 			<p>
 Parse returns a map from template name to parse.Tree, created by parsing the
 templates described in the argument string. The top-level template will be
@@ -473,7 +477,9 @@ empty map is returned with the error.
 		
 			
 			
-			<h2 id="ActionNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=5246:5431#L197">ActionNode</a></h2>
+			<h2 id="ActionNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=5246:5431#L197">ActionNode</a>
+				<a class="permalink" href="index.html#ActionNode">&#xb6;</a>
+			</h2>
 			<pre>type ActionNode struct {
     <a href="index.html#NodeType">NodeType</a>
     <a href="index.html#Pos">Pos</a>
@@ -501,7 +507,9 @@ ones such as field evaluations and parenthesized pipelines.
 
 			
 				
-				<h3 id="ActionNode.Copy">func (*ActionNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=5726:5758#L218">Copy</a></h3>
+				<h3 id="ActionNode.Copy">func (*ActionNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=5726:5758#L218">Copy</a>
+					<a class="permalink" href="index.html#ActionNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#ActionNode">ActionNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -509,7 +517,9 @@ ones such as field evaluations and parenthesized pipelines.
 				
 			
 				
-				<h3 id="ActionNode.String">func (*ActionNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=5593:5629#L209">String</a></h3>
+				<h3 id="ActionNode.String">func (*ActionNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=5593:5629#L209">String</a>
+					<a class="permalink" href="index.html#ActionNode.String">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#ActionNode">ActionNode</a>) String() <a href="../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -519,7 +529,9 @@ ones such as field evaluations and parenthesized pipelines.
 		
 			
 			
-			<h2 id="BoolNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=11531:11631#L479">BoolNode</a></h2>
+			<h2 id="BoolNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=11531:11631#L479">BoolNode</a>
+				<a class="permalink" href="index.html#BoolNode">&#xb6;</a>
+			</h2>
 			<pre>type BoolNode struct {
     <a href="index.html#NodeType">NodeType</a>
     <a href="index.html#Pos">Pos</a>
@@ -544,7 +556,9 @@ BoolNode holds a boolean constant.
 
 			
 				
-				<h3 id="BoolNode.Copy">func (*BoolNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=11896:11926#L501">Copy</a></h3>
+				<h3 id="BoolNode.Copy">func (*BoolNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=11896:11926#L501">Copy</a>
+					<a class="permalink" href="index.html#BoolNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#BoolNode">BoolNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -552,7 +566,9 @@ BoolNode holds a boolean constant.
 				
 			
 				
-				<h3 id="BoolNode.String">func (*BoolNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=11758:11792#L490">String</a></h3>
+				<h3 id="BoolNode.String">func (*BoolNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=11758:11792#L490">String</a>
+					<a class="permalink" href="index.html#BoolNode.String">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#BoolNode">BoolNode</a>) String() <a href="../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -562,7 +578,9 @@ BoolNode holds a boolean constant.
 		
 			
 			
-			<h2 id="BranchNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=17454:17797#L718">BranchNode</a></h2>
+			<h2 id="BranchNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=17454:17797#L718">BranchNode</a>
+				<a class="permalink" href="index.html#BranchNode">&#xb6;</a>
+			</h2>
 			<pre>type BranchNode struct {
     <a href="index.html#NodeType">NodeType</a>
     <a href="index.html#Pos">Pos</a>
@@ -590,7 +608,9 @@ BranchNode is the common representation of if, range, and with.
 
 			
 				
-				<h3 id="BranchNode.Copy">func (*BranchNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=18242:18274#L750">Copy</a></h3>
+				<h3 id="BranchNode.Copy">func (*BranchNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=18242:18274#L750">Copy</a>
+					<a class="permalink" href="index.html#BranchNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#BranchNode">BranchNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -598,7 +618,9 @@ BranchNode is the common representation of if, range, and with.
 				
 			
 				
-				<h3 id="BranchNode.String">func (*BranchNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=17799:17835#L728">String</a></h3>
+				<h3 id="BranchNode.String">func (*BranchNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=17799:17835#L728">String</a>
+					<a class="permalink" href="index.html#BranchNode.String">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#BranchNode">BranchNode</a>) String() <a href="../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -608,7 +630,9 @@ BranchNode is the common representation of if, range, and with.
 		
 			
 			
-			<h2 id="ChainNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=10530:10648#L435">ChainNode</a></h2>
+			<h2 id="ChainNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=10530:10648#L435">ChainNode</a>
+				<a class="permalink" href="index.html#ChainNode">&#xb6;</a>
+			</h2>
 			<pre>type ChainNode struct {
     <a href="index.html#NodeType">NodeType</a>
     <a href="index.html#Pos">Pos</a>
@@ -636,7 +660,9 @@ The periods are dropped from each ident.
 
 			
 				
-				<h3 id="ChainNode.Add">func (*ChainNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=10867:10904#L448">Add</a></h3>
+				<h3 id="ChainNode.Add">func (*ChainNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=10867:10904#L448">Add</a>
+					<a class="permalink" href="index.html#ChainNode.Add">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#ChainNode">ChainNode</a>) Add(field <a href="../../../builtin/index.html#string">string</a>)</pre>
 				<p>
 Add adds the named field (which should start with a period) to the end of the chain.
@@ -647,7 +673,9 @@ Add adds the named field (which should start with a period) to the end of the ch
 				
 			
 				
-				<h3 id="ChainNode.Copy">func (*ChainNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=11341:11372#L474">Copy</a></h3>
+				<h3 id="ChainNode.Copy">func (*ChainNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=11341:11372#L474">Copy</a>
+					<a class="permalink" href="index.html#ChainNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#ChainNode">ChainNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -655,7 +683,9 @@ Add adds the named field (which should start with a period) to the end of the ch
 				
 			
 				
-				<h3 id="ChainNode.String">func (*ChainNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=11101:11136#L459">String</a></h3>
+				<h3 id="ChainNode.String">func (*ChainNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=11101:11136#L459">String</a>
+					<a class="permalink" href="index.html#ChainNode.String">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#ChainNode">ChainNode</a>) String() <a href="../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -665,7 +695,9 @@ Add adds the named field (which should start with a period) to the end of the ch
 		
 			
 			
-			<h2 id="CommandNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=5895:6025#L224">CommandNode</a></h2>
+			<h2 id="CommandNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=5895:6025#L224">CommandNode</a>
+				<a class="permalink" href="index.html#CommandNode">&#xb6;</a>
+			</h2>
 			<pre>type CommandNode struct {
     <a href="index.html#NodeType">NodeType</a>
     <a href="index.html#Pos">Pos</a>
@@ -690,7 +722,9 @@ CommandNode holds a command (a pipeline inside an evaluating action).
 
 			
 				
-				<h3 id="CommandNode.Copy">func (*CommandNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=6499:6532#L258">Copy</a></h3>
+				<h3 id="CommandNode.Copy">func (*CommandNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=6499:6532#L258">Copy</a>
+					<a class="permalink" href="index.html#CommandNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#CommandNode">CommandNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -698,7 +732,9 @@ CommandNode holds a command (a pipeline inside an evaluating action).
 				
 			
 				
-				<h3 id="CommandNode.String">func (*CommandNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=6215:6252#L239">String</a></h3>
+				<h3 id="CommandNode.String">func (*CommandNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=6215:6252#L239">String</a>
+					<a class="permalink" href="index.html#CommandNode.String">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#CommandNode">CommandNode</a>) String() <a href="../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -708,7 +744,9 @@ CommandNode holds a command (a pipeline inside an evaluating action).
 		
 			
 			
-			<h2 id="DotNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=8490:8538#L343">DotNode</a></h2>
+			<h2 id="DotNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=8490:8538#L343">DotNode</a>
+				<a class="permalink" href="index.html#DotNode">&#xb6;</a>
+			</h2>
 			<pre>type DotNode struct {
     <a href="index.html#NodeType">NodeType</a>
     <a href="index.html#Pos">Pos</a>
@@ -731,7 +769,9 @@ DotNode holds the special identifier &#39;.&#39;.
 
 			
 				
-				<h3 id="DotNode.Copy">func (*DotNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=8949:8978#L368">Copy</a></h3>
+				<h3 id="DotNode.Copy">func (*DotNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=8949:8978#L368">Copy</a>
+					<a class="permalink" href="index.html#DotNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#DotNode">DotNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -739,7 +779,9 @@ DotNode holds the special identifier &#39;.&#39;.
 				
 			
 				
-				<h3 id="DotNode.String">func (*DotNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=8849:8882#L360">String</a></h3>
+				<h3 id="DotNode.String">func (*DotNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=8849:8882#L360">String</a>
+					<a class="permalink" href="index.html#DotNode.String">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#DotNode">DotNode</a>) String() <a href="../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -747,7 +789,9 @@ DotNode holds the special identifier &#39;.&#39;.
 				
 			
 				
-				<h3 id="DotNode.Type">func (*DotNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=8638:8671#L353">Type</a></h3>
+				<h3 id="DotNode.Type">func (*DotNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=8638:8671#L353">Type</a>
+					<a class="permalink" href="index.html#DotNode.Type">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#DotNode">DotNode</a>) Type() <a href="index.html#NodeType">NodeType</a></pre>
 				
 				
@@ -757,7 +801,9 @@ DotNode holds the special identifier &#39;.&#39;.
 		
 			
 			
-			<h2 id="FieldNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=9757:9863#L405">FieldNode</a></h2>
+			<h2 id="FieldNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=9757:9863#L405">FieldNode</a>
+				<a class="permalink" href="index.html#FieldNode">&#xb6;</a>
+			</h2>
 			<pre>type FieldNode struct {
     <a href="index.html#NodeType">NodeType</a>
     <a href="index.html#Pos">Pos</a>
@@ -784,7 +830,9 @@ The period is dropped from each ident.
 
 			
 				
-				<h3 id="FieldNode.Copy">func (*FieldNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=10214:10245#L428">Copy</a></h3>
+				<h3 id="FieldNode.Copy">func (*FieldNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=10214:10245#L428">Copy</a>
+					<a class="permalink" href="index.html#FieldNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FieldNode">FieldNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -792,7 +840,9 @@ The period is dropped from each ident.
 				
 			
 				
-				<h3 id="FieldNode.String">func (*FieldNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=10054:10089#L416">String</a></h3>
+				<h3 id="FieldNode.String">func (*FieldNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=10054:10089#L416">String</a>
+					<a class="permalink" href="index.html#FieldNode.String">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FieldNode">FieldNode</a>) String() <a href="../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -802,7 +852,9 @@ The period is dropped from each ident.
 		
 			
 			
-			<h2 id="IdentifierNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=6697:6795#L270">IdentifierNode</a></h2>
+			<h2 id="IdentifierNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=6697:6795#L270">IdentifierNode</a>
+				<a class="permalink" href="index.html#IdentifierNode">&#xb6;</a>
+			</h2>
 			<pre>type IdentifierNode struct {
     <a href="index.html#NodeType">NodeType</a>
     <a href="index.html#Pos">Pos</a>
@@ -825,7 +877,9 @@ IdentifierNode holds an identifier.
 
 			
 				
-				<h3 id="NewIdentifier">func <a href="http://localhost:9090/src/text/template/parse/node.go?s=6875:6923#L278">NewIdentifier</a></h3>
+				<h3 id="NewIdentifier">func <a href="http://localhost:9090/src/text/template/parse/node.go?s=6875:6923#L278">NewIdentifier</a>
+					<a class="permalink" href="index.html#NewIdentifier">&#xb6;</a>
+				</h3>
 				<pre>func NewIdentifier(ident <a href="../../../builtin/index.html#string">string</a>) *<a href="index.html#IdentifierNode">IdentifierNode</a></pre>
 				<p>
 NewIdentifier returns a new IdentifierNode with the given identifier name.
@@ -837,7 +891,9 @@ NewIdentifier returns a new IdentifierNode with the given identifier name.
 
 			
 				
-				<h3 id="IdentifierNode.Copy">func (*IdentifierNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=7588:7624#L306">Copy</a></h3>
+				<h3 id="IdentifierNode.Copy">func (*IdentifierNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=7588:7624#L306">Copy</a>
+					<a class="permalink" href="index.html#IdentifierNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (i *<a href="index.html#IdentifierNode">IdentifierNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -845,7 +901,9 @@ NewIdentifier returns a new IdentifierNode with the given identifier name.
 				
 			
 				
-				<h3 id="IdentifierNode.SetPos">func (*IdentifierNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=7139:7195#L285">SetPos</a></h3>
+				<h3 id="IdentifierNode.SetPos">func (*IdentifierNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=7139:7195#L285">SetPos</a>
+					<a class="permalink" href="index.html#IdentifierNode.SetPos">&#xb6;</a>
+				</h3>
 				<pre>func (i *<a href="index.html#IdentifierNode">IdentifierNode</a>) SetPos(pos <a href="index.html#Pos">Pos</a>) *<a href="index.html#IdentifierNode">IdentifierNode</a></pre>
 				<p>
 SetPos sets the position. NewIdentifier is a public method so we can&#39;t modify its signature.
@@ -858,7 +916,9 @@ TODO: fix one day?
 				
 			
 				
-				<h3 id="IdentifierNode.SetTree">func (*IdentifierNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=7387:7444#L293">SetTree</a></h3>
+				<h3 id="IdentifierNode.SetTree">func (*IdentifierNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=7387:7444#L293">SetTree</a>
+					<a class="permalink" href="index.html#IdentifierNode.SetTree">&#xb6;</a>
+				</h3>
 				<pre>func (i *<a href="index.html#IdentifierNode">IdentifierNode</a>) SetTree(t *<a href="index.html#Tree">Tree</a>) *<a href="index.html#IdentifierNode">IdentifierNode</a></pre>
 				<p>
 SetTree sets the parent tree for the node. NewIdentifier is a public method so we can&#39;t modify its signature.
@@ -871,7 +931,9 @@ TODO: fix one day?
 				
 			
 				
-				<h3 id="IdentifierNode.String">func (*IdentifierNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=7470:7510#L298">String</a></h3>
+				<h3 id="IdentifierNode.String">func (*IdentifierNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=7470:7510#L298">String</a>
+					<a class="permalink" href="index.html#IdentifierNode.String">&#xb6;</a>
+				</h3>
 				<pre>func (i *<a href="index.html#IdentifierNode">IdentifierNode</a>) String() <a href="../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -881,7 +943,9 @@ TODO: fix one day?
 		
 			
 			
-			<h2 id="IfNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=18642:18676#L764">IfNode</a></h2>
+			<h2 id="IfNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=18642:18676#L764">IfNode</a>
+				<a class="permalink" href="index.html#IfNode">&#xb6;</a>
+			</h2>
 			<pre>type IfNode struct {
     <a href="index.html#BranchNode">BranchNode</a>
 }</pre>
@@ -902,7 +966,9 @@ IfNode represents an {{if}} action and its commands.
 
 			
 				
-				<h3 id="IfNode.Copy">func (*IfNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=18892:18920#L772">Copy</a></h3>
+				<h3 id="IfNode.Copy">func (*IfNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=18892:18920#L772">Copy</a>
+					<a class="permalink" href="index.html#IfNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (i *<a href="index.html#IfNode">IfNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -912,7 +978,9 @@ IfNode represents an {{if}} action and its commands.
 		
 			
 			
-			<h2 id="ListNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=2597:2702#L67">ListNode</a></h2>
+			<h2 id="ListNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=2597:2702#L67">ListNode</a>
+				<a class="permalink" href="index.html#ListNode">&#xb6;</a>
+			</h2>
 			<pre>type ListNode struct {
     <a href="index.html#NodeType">NodeType</a>
     <a href="index.html#Pos">Pos</a>
@@ -937,7 +1005,9 @@ ListNode holds a sequence of nodes.
 
 			
 				
-				<h3 id="ListNode.Copy">func (*ListNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=3228:3258#L105">Copy</a></h3>
+				<h3 id="ListNode.Copy">func (*ListNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=3228:3258#L105">Copy</a>
+					<a class="permalink" href="index.html#ListNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (l *<a href="index.html#ListNode">ListNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -945,7 +1015,9 @@ ListNode holds a sequence of nodes.
 				
 			
 				
-				<h3 id="ListNode.CopyList">func (*ListNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=3059:3098#L94">CopyList</a></h3>
+				<h3 id="ListNode.CopyList">func (*ListNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=3059:3098#L94">CopyList</a>
+					<a class="permalink" href="index.html#ListNode.CopyList">&#xb6;</a>
+				</h3>
 				<pre>func (l *<a href="index.html#ListNode">ListNode</a>) CopyList() *<a href="index.html#ListNode">ListNode</a></pre>
 				
 				
@@ -953,7 +1025,9 @@ ListNode holds a sequence of nodes.
 				
 			
 				
-				<h3 id="ListNode.String">func (*ListNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=2925:2959#L86">String</a></h3>
+				<h3 id="ListNode.String">func (*ListNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=2925:2959#L86">String</a>
+					<a class="permalink" href="index.html#ListNode.String">&#xb6;</a>
+				</h3>
 				<pre>func (l *<a href="index.html#ListNode">ListNode</a>) String() <a href="../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -963,7 +1037,9 @@ ListNode holds a sequence of nodes.
 		
 			
 			
-			<h2 id="NilNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=9095:9143#L373">NilNode</a></h2>
+			<h2 id="NilNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=9095:9143#L373">NilNode</a>
+				<a class="permalink" href="index.html#NilNode">&#xb6;</a>
+			</h2>
 			<pre>type NilNode struct {
     <a href="index.html#NodeType">NodeType</a>
     <a href="index.html#Pos">Pos</a>
@@ -986,7 +1062,9 @@ NilNode holds the special identifier &#39;nil&#39; representing an untyped nil c
 
 			
 				
-				<h3 id="NilNode.Copy">func (*NilNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=9556:9585#L398">Copy</a></h3>
+				<h3 id="NilNode.Copy">func (*NilNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=9556:9585#L398">Copy</a>
+					<a class="permalink" href="index.html#NilNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (n *<a href="index.html#NilNode">NilNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -994,7 +1072,9 @@ NilNode holds the special identifier &#39;nil&#39; representing an untyped nil c
 				
 			
 				
-				<h3 id="NilNode.String">func (*NilNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=9454:9487#L390">String</a></h3>
+				<h3 id="NilNode.String">func (*NilNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=9454:9487#L390">String</a>
+					<a class="permalink" href="index.html#NilNode.String">&#xb6;</a>
+				</h3>
 				<pre>func (n *<a href="index.html#NilNode">NilNode</a>) String() <a href="../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1002,7 +1082,9 @@ NilNode holds the special identifier &#39;nil&#39; representing an untyped nil c
 				
 			
 				
-				<h3 id="NilNode.Type">func (*NilNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=9243:9276#L383">Type</a></h3>
+				<h3 id="NilNode.Type">func (*NilNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=9243:9276#L383">Type</a>
+					<a class="permalink" href="index.html#NilNode.Type">&#xb6;</a>
+				</h3>
 				<pre>func (n *<a href="index.html#NilNode">NilNode</a>) Type() <a href="index.html#NodeType">NodeType</a></pre>
 				
 				
@@ -1012,7 +1094,9 @@ NilNode holds the special identifier &#39;nil&#39; representing an untyped nil c
 		
 			
 			
-			<h2 id="Node">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=496:942#L11">Node</a></h2>
+			<h2 id="Node">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=496:942#L11">Node</a>
+				<a class="permalink" href="index.html#Node">&#xb6;</a>
+			</h2>
 			<pre>type Node interface {
     Type() <a href="index.html#NodeType">NodeType</a>
     String() <a href="../../../builtin/index.html#string">string</a>
@@ -1044,7 +1128,9 @@ types local to this package can satisfy it.
 		
 			
 			
-			<h2 id="NodeType">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=998:1015#L25">NodeType</a></h2>
+			<h2 id="NodeType">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=998:1015#L25">NodeType</a>
+				<a class="permalink" href="index.html#NodeType">&#xb6;</a>
+			</h2>
 			<pre>type NodeType <a href="../../../builtin/index.html#int">int</a></pre>
 			<p>
 NodeType identifies the type of a parse tree node.
@@ -1086,7 +1172,9 @@ NodeType identifies the type of a parse tree node.
 
 			
 				
-				<h3 id="NodeType.Type">func (NodeType) <a href="http://localhost:9090/src/text/template/parse/node.go?s=1305:1338#L37">Type</a></h3>
+				<h3 id="NodeType.Type">func (NodeType) <a href="http://localhost:9090/src/text/template/parse/node.go?s=1305:1338#L37">Type</a>
+					<a class="permalink" href="index.html#NodeType.Type">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#NodeType">NodeType</a>) Type() <a href="index.html#NodeType">NodeType</a></pre>
 				<p>
 Type returns itself and provides an easy default implementation
@@ -1100,7 +1188,9 @@ for embedding in a Node. Embedded in all non-trivial Nodes.
 		
 			
 			
-			<h2 id="NumberNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=12211:12778#L508">NumberNode</a></h2>
+			<h2 id="NumberNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=12211:12778#L508">NumberNode</a>
+				<a class="permalink" href="index.html#NumberNode">&#xb6;</a>
+			</h2>
 			<pre>type NumberNode struct {
     <a href="index.html#NodeType">NodeType</a>
     <a href="index.html#Pos">Pos</a>
@@ -1135,7 +1225,9 @@ This simulates in a small amount of code the behavior of Go&#39;s ideal constant
 
 			
 				
-				<h3 id="NumberNode.Copy">func (*NumberNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=15708:15740#L634">Copy</a></h3>
+				<h3 id="NumberNode.Copy">func (*NumberNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=15708:15740#L634">Copy</a>
+					<a class="permalink" href="index.html#NumberNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (n *<a href="index.html#NumberNode">NumberNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -1143,7 +1235,9 @@ This simulates in a small amount of code the behavior of Go&#39;s ideal constant
 				
 			
 				
-				<h3 id="NumberNode.String">func (*NumberNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=15599:15635#L626">String</a></h3>
+				<h3 id="NumberNode.String">func (*NumberNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=15599:15635#L626">String</a>
+					<a class="permalink" href="index.html#NumberNode.String">&#xb6;</a>
+				</h3>
 				<pre>func (n *<a href="index.html#NumberNode">NumberNode</a>) String() <a href="../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1153,7 +1247,9 @@ This simulates in a small amount of code the behavior of Go&#39;s ideal constant
 		
 			
 			
-			<h2 id="PipeNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=3864:4127#L134">PipeNode</a></h2>
+			<h2 id="PipeNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=3864:4127#L134">PipeNode</a>
+				<a class="permalink" href="index.html#PipeNode">&#xb6;</a>
+			</h2>
 			<pre>type PipeNode struct {
     <a href="index.html#NodeType">NodeType</a>
     <a href="index.html#Pos">Pos</a>
@@ -1180,7 +1276,9 @@ PipeNode holds a pipeline with optional declaration
 
 			
 				
-				<h3 id="PipeNode.Copy">func (*PipeNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=4991:5021#L190">Copy</a></h3>
+				<h3 id="PipeNode.Copy">func (*PipeNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=4991:5021#L190">Copy</a>
+					<a class="permalink" href="index.html#PipeNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#PipeNode">PipeNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -1188,7 +1286,9 @@ PipeNode holds a pipeline with optional declaration
 				
 			
 				
-				<h3 id="PipeNode.CopyPipe">func (*PipeNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=4691:4730#L175">CopyPipe</a></h3>
+				<h3 id="PipeNode.CopyPipe">func (*PipeNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=4691:4730#L175">CopyPipe</a>
+					<a class="permalink" href="index.html#PipeNode.CopyPipe">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#PipeNode">PipeNode</a>) CopyPipe() *<a href="index.html#PipeNode">PipeNode</a></pre>
 				
 				
@@ -1196,7 +1296,9 @@ PipeNode holds a pipeline with optional declaration
 				
 			
 				
-				<h3 id="PipeNode.String">func (*PipeNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=4378:4412#L151">String</a></h3>
+				<h3 id="PipeNode.String">func (*PipeNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=4378:4412#L151">String</a>
+					<a class="permalink" href="index.html#PipeNode.String">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#PipeNode">PipeNode</a>) String() <a href="../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1206,7 +1308,9 @@ PipeNode holds a pipeline with optional declaration
 		
 			
 			
-			<h2 id="Pos">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=1118:1130#L29">Pos</a></h2>
+			<h2 id="Pos">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=1118:1130#L29">Pos</a>
+				<a class="permalink" href="index.html#Pos">&#xb6;</a>
+			</h2>
 			<pre>type Pos <a href="../../../builtin/index.html#int">int</a></pre>
 			<p>
 Pos represents a byte position in the original input text from which
@@ -1226,7 +1330,9 @@ this template was parsed.
 
 			
 				
-				<h3 id="Pos.Position">func (Pos) <a href="http://localhost:9090/src/text/template/parse/node.go?s=1132:1159#L31">Position</a></h3>
+				<h3 id="Pos.Position">func (Pos) <a href="http://localhost:9090/src/text/template/parse/node.go?s=1132:1159#L31">Position</a>
+					<a class="permalink" href="index.html#Pos.Position">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#Pos">Pos</a>) Position() <a href="index.html#Pos">Pos</a></pre>
 				
 				
@@ -1236,7 +1342,9 @@ this template was parsed.
 		
 			
 			
-			<h2 id="RangeNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=19082:19119#L777">RangeNode</a></h2>
+			<h2 id="RangeNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=19082:19119#L777">RangeNode</a>
+				<a class="permalink" href="index.html#RangeNode">&#xb6;</a>
+			</h2>
 			<pre>type RangeNode struct {
     <a href="index.html#BranchNode">BranchNode</a>
 }</pre>
@@ -1257,7 +1365,9 @@ RangeNode represents a {{range}} action and its commands.
 
 			
 				
-				<h3 id="RangeNode.Copy">func (*RangeNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=19347:19378#L785">Copy</a></h3>
+				<h3 id="RangeNode.Copy">func (*RangeNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=19347:19378#L785">Copy</a>
+					<a class="permalink" href="index.html#RangeNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#RangeNode">RangeNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -1267,7 +1377,9 @@ RangeNode represents a {{range}} action and its commands.
 		
 			
 			
-			<h2 id="StringNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=15884:16057#L641">StringNode</a></h2>
+			<h2 id="StringNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=15884:16057#L641">StringNode</a>
+				<a class="permalink" href="index.html#StringNode">&#xb6;</a>
+			</h2>
 			<pre>type StringNode struct {
     <a href="index.html#NodeType">NodeType</a>
     <a href="index.html#Pos">Pos</a>
@@ -1293,7 +1405,9 @@ StringNode holds a string constant. The value has been &#34;unquoted&#34;.
 
 			
 				
-				<h3 id="StringNode.Copy">func (*StringNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=16325:16357#L661">Copy</a></h3>
+				<h3 id="StringNode.Copy">func (*StringNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=16325:16357#L661">Copy</a>
+					<a class="permalink" href="index.html#StringNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#StringNode">StringNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -1301,7 +1415,9 @@ StringNode holds a string constant. The value has been &#34;unquoted&#34;.
 				
 			
 				
-				<h3 id="StringNode.String">func (*StringNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=16214:16250#L653">String</a></h3>
+				<h3 id="StringNode.String">func (*StringNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=16214:16250#L653">String</a>
+					<a class="permalink" href="index.html#StringNode.String">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#StringNode">StringNode</a>) String() <a href="../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1311,7 +1427,9 @@ StringNode holds a string constant. The value has been &#34;unquoted&#34;.
 		
 			
 			
-			<h2 id="TemplateNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=19984:20248#L803">TemplateNode</a></h2>
+			<h2 id="TemplateNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=19984:20248#L803">TemplateNode</a>
+				<a class="permalink" href="index.html#TemplateNode">&#xb6;</a>
+			</h2>
 			<pre>type TemplateNode struct {
     <a href="index.html#NodeType">NodeType</a>
     <a href="index.html#Pos">Pos</a>
@@ -1338,7 +1456,9 @@ TemplateNode represents a {{template}} action.
 
 			
 				
-				<h3 id="TemplateNode.Copy">func (*TemplateNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=20670:20704#L827">Copy</a></h3>
+				<h3 id="TemplateNode.Copy">func (*TemplateNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=20670:20704#L827">Copy</a>
+					<a class="permalink" href="index.html#TemplateNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#TemplateNode">TemplateNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -1346,7 +1466,9 @@ TemplateNode represents a {{template}} action.
 				
 			
 				
-				<h3 id="TemplateNode.String">func (*TemplateNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=20443:20481#L816">String</a></h3>
+				<h3 id="TemplateNode.String">func (*TemplateNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=20443:20481#L816">String</a>
+					<a class="permalink" href="index.html#TemplateNode.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#TemplateNode">TemplateNode</a>) String() <a href="../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1356,7 +1478,9 @@ TemplateNode represents a {{template}} action.
 		
 			
 			
-			<h2 id="TextNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=3315:3411#L110">TextNode</a></h2>
+			<h2 id="TextNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=3315:3411#L110">TextNode</a>
+				<a class="permalink" href="index.html#TextNode">&#xb6;</a>
+			</h2>
 			<pre>type TextNode struct {
     <a href="index.html#NodeType">NodeType</a>
     <a href="index.html#Pos">Pos</a>
@@ -1381,7 +1505,9 @@ TextNode holds plain text.
 
 			
 				
-				<h3 id="TextNode.Copy">func (*TextNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=3678:3708#L129">Copy</a></h3>
+				<h3 id="TextNode.Copy">func (*TextNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=3678:3708#L129">Copy</a>
+					<a class="permalink" href="index.html#TextNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#TextNode">TextNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -1389,7 +1515,9 @@ TextNode holds plain text.
 				
 			
 				
-				<h3 id="TextNode.String">func (*TextNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=3548:3582#L121">String</a></h3>
+				<h3 id="TextNode.String">func (*TextNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=3548:3582#L121">String</a>
+					<a class="permalink" href="index.html#TextNode.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#TextNode">TextNode</a>) String() <a href="../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1399,7 +1527,9 @@ TextNode holds plain text.
 		
 			
 			
-			<h2 id="Tree">type <a href="http://localhost:9090/src/text/template/parse/parse.go?s=557:1113#L10">Tree</a></h2>
+			<h2 id="Tree">type <a href="http://localhost:9090/src/text/template/parse/parse.go?s=557:1113#L10">Tree</a>
+				<a class="permalink" href="index.html#Tree">&#xb6;</a>
+			</h2>
 			<pre>type Tree struct {
     Name      <a href="../../../builtin/index.html#string">string</a>    <span class="comment">// name of the template represented by the tree.</span>
     ParseName <a href="../../../builtin/index.html#string">string</a>    <span class="comment">// name of the top-level template during parsing, for error messages.</span>
@@ -1421,7 +1551,9 @@ Tree is the representation of a single parsed template.
 
 			
 				
-				<h3 id="New">func <a href="http://localhost:9090/src/text/template/parse/parse.go?s=3231:3291#L115">New</a></h3>
+				<h3 id="New">func <a href="http://localhost:9090/src/text/template/parse/parse.go?s=3234:3294#L115">New</a>
+					<a class="permalink" href="index.html#New">&#xb6;</a>
+				</h3>
 				<pre>func New(name <a href="../../../builtin/index.html#string">string</a>, funcs ...map[<a href="../../../builtin/index.html#string">string</a>]interface{}) *<a href="index.html#Tree">Tree</a></pre>
 				<p>
 New allocates a new parse tree with the given name.
@@ -1433,7 +1565,9 @@ New allocates a new parse tree with the given name.
 
 			
 				
-				<h3 id="Tree.Copy">func (*Tree) <a href="http://localhost:9090/src/text/template/parse/parse.go?s=1183:1210#L25">Copy</a></h3>
+				<h3 id="Tree.Copy">func (*Tree) <a href="http://localhost:9090/src/text/template/parse/parse.go?s=1183:1210#L25">Copy</a>
+					<a class="permalink" href="index.html#Tree.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Tree">Tree</a>) Copy() *<a href="index.html#Tree">Tree</a></pre>
 				<p>
 Copy returns a copy of the Tree. Any parsing state is discarded.
@@ -1444,7 +1578,9 @@ Copy returns a copy of the Tree. Any parsing state is discarded.
 				
 			
 				
-				<h3 id="Tree.ErrorContext">func (*Tree) <a href="http://localhost:9090/src/text/template/parse/parse.go?s=3561:3623#L125">ErrorContext</a></h3>
+				<h3 id="Tree.ErrorContext">func (*Tree) <a href="http://localhost:9090/src/text/template/parse/parse.go?s=3564:3626#L125">ErrorContext</a>
+					<a class="permalink" href="index.html#Tree.ErrorContext">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Tree">Tree</a>) ErrorContext(n <a href="index.html#Node">Node</a>) (location, context <a href="../../../builtin/index.html#string">string</a>)</pre>
 				<p>
 ErrorContext returns a textual representation of the location of the node in the input text.
@@ -1457,7 +1593,9 @@ which can occur in old code.
 				
 			
 				
-				<h3 id="Tree.Parse">func (*Tree) <a href="http://localhost:9090/src/text/template/parse/parse.go?s=6099:6238#L219">Parse</a></h3>
+				<h3 id="Tree.Parse">func (*Tree) <a href="http://localhost:9090/src/text/template/parse/parse.go?s=6102:6241#L219">Parse</a>
+					<a class="permalink" href="index.html#Tree.Parse">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Tree">Tree</a>) Parse(text, leftDelim, rightDelim <a href="../../../builtin/index.html#string">string</a>, treeSet map[<a href="../../../builtin/index.html#string">string</a>]*<a href="index.html#Tree">Tree</a>, funcs ...map[<a href="../../../builtin/index.html#string">string</a>]interface{}) (tree *<a href="index.html#Tree">Tree</a>, err <a href="../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Parse parses the template definition string to construct a representation of
@@ -1473,7 +1611,9 @@ the treeSet map.
 		
 			
 			
-			<h2 id="VariableNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=7823:7941#L312">VariableNode</a></h2>
+			<h2 id="VariableNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=7823:7941#L312">VariableNode</a>
+				<a class="permalink" href="index.html#VariableNode">&#xb6;</a>
+			</h2>
 			<pre>type VariableNode struct {
     <a href="index.html#NodeType">NodeType</a>
     <a href="index.html#Pos">Pos</a>
@@ -1499,7 +1639,9 @@ accesses. The dollar sign is part of the (first) name.
 
 			
 				
-				<h3 id="VariableNode.Copy">func (*VariableNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=8298:8332#L338">Copy</a></h3>
+				<h3 id="VariableNode.Copy">func (*VariableNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=8298:8332#L338">Copy</a>
+					<a class="permalink" href="index.html#VariableNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#VariableNode">VariableNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -1507,7 +1649,9 @@ accesses. The dollar sign is part of the (first) name.
 				
 			
 				
-				<h3 id="VariableNode.String">func (*VariableNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=8109:8147#L323">String</a></h3>
+				<h3 id="VariableNode.String">func (*VariableNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=8109:8147#L323">String</a>
+					<a class="permalink" href="index.html#VariableNode.String">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#VariableNode">VariableNode</a>) String() <a href="../../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1517,7 +1661,9 @@ accesses. The dollar sign is part of the (first) name.
 		
 			
 			
-			<h2 id="WithNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=19541:19577#L790">WithNode</a></h2>
+			<h2 id="WithNode">type <a href="http://localhost:9090/src/text/template/parse/node.go?s=19541:19577#L790">WithNode</a>
+				<a class="permalink" href="index.html#WithNode">&#xb6;</a>
+			</h2>
 			<pre>type WithNode struct {
     <a href="index.html#BranchNode">BranchNode</a>
 }</pre>
@@ -1538,7 +1684,9 @@ WithNode represents a {{with}} action and its commands.
 
 			
 				
-				<h3 id="WithNode.Copy">func (*WithNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=19801:19831#L798">Copy</a></h3>
+				<h3 id="WithNode.Copy">func (*WithNode) <a href="http://localhost:9090/src/text/template/parse/node.go?s=19801:19831#L798">Copy</a>
+					<a class="permalink" href="index.html#WithNode.Copy">&#xb6;</a>
+				</h3>
 				<pre>func (w *<a href="index.html#WithNode">WithNode</a>) Copy() <a href="index.html#Node">Node</a></pre>
 				
 				
@@ -1557,7 +1705,7 @@ WithNode represents a {{with}} action and its commands.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1575,6 +1723,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../../lib/godoc/godocs.js"></script>
 
 </body>

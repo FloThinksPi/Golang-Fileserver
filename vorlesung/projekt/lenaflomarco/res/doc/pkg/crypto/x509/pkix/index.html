@@ -231,7 +231,9 @@ and serialization of X.509 certificates, CRL and OCSP.
 		
 			
 			
-			<h2 id="AlgorithmIdentifier">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=464:577#L7">AlgorithmIdentifier</a></h2>
+			<h2 id="AlgorithmIdentifier">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=464:577#L7">AlgorithmIdentifier</a>
+				<a class="permalink" href="index.html#AlgorithmIdentifier">&#xb6;</a>
+			</h2>
 			<pre>type AlgorithmIdentifier struct {
     Algorithm  <a href="../../../encoding/asn1/index.html">asn1</a>.<a href="../../../encoding/asn1/index.html#ObjectIdentifier">ObjectIdentifier</a>
     Parameters <a href="../../../encoding/asn1/index.html">asn1</a>.<a href="../../../encoding/asn1/index.html#RawValue">RawValue</a> `asn1:&#34;optional&#34;`
@@ -256,7 +258,9 @@ AlgorithmIdentifier represents the ASN.1 structure of the same name. See RFC
 		
 			
 			
-			<h2 id="AttributeTypeAndValue">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=814:899#L18">AttributeTypeAndValue</a></h2>
+			<h2 id="AttributeTypeAndValue">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=814:899#L18">AttributeTypeAndValue</a>
+				<a class="permalink" href="index.html#AttributeTypeAndValue">&#xb6;</a>
+			</h2>
 			<pre>type AttributeTypeAndValue struct {
     Type  <a href="../../../encoding/asn1/index.html">asn1</a>.<a href="../../../encoding/asn1/index.html#ObjectIdentifier">ObjectIdentifier</a>
     Value interface{}
@@ -281,7 +285,9 @@ AttributeTypeAndValue mirrors the ASN.1 structure of the same name in
 		
 			
 			
-			<h2 id="AttributeTypeAndValueSET">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=1029:1144#L25">AttributeTypeAndValueSET</a></h2>
+			<h2 id="AttributeTypeAndValueSET">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=1029:1144#L25">AttributeTypeAndValueSET</a>
+				<a class="permalink" href="index.html#AttributeTypeAndValueSET">&#xb6;</a>
+			</h2>
 			<pre>type AttributeTypeAndValueSET struct {
     Type  <a href="../../../encoding/asn1/index.html">asn1</a>.<a href="../../../encoding/asn1/index.html#ObjectIdentifier">ObjectIdentifier</a>
     Value [][]<a href="index.html#AttributeTypeAndValue">AttributeTypeAndValue</a> `asn1:&#34;set&#34;`
@@ -306,7 +312,9 @@ AttributeTypeAndValue sequences from RFC 2986 (PKCS #10).
 		
 			
 			
-			<h2 id="CertificateList">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=4967:5112#L155">CertificateList</a></h2>
+			<h2 id="CertificateList">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=4967:5112#L155">CertificateList</a>
+				<a class="permalink" href="index.html#CertificateList">&#xb6;</a>
+			</h2>
 			<pre>type CertificateList struct {
     TBSCertList        <a href="index.html#TBSCertificateList">TBSCertificateList</a>
     SignatureAlgorithm <a href="index.html#AlgorithmIdentifier">AlgorithmIdentifier</a>
@@ -331,7 +339,9 @@ signature.
 
 			
 				
-				<h3 id="CertificateList.HasExpired">func (*CertificateList) <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=5185:5248#L162">HasExpired</a></h3>
+				<h3 id="CertificateList.HasExpired">func (*CertificateList) <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=5185:5248#L162">HasExpired</a>
+					<a class="permalink" href="index.html#CertificateList.HasExpired">&#xb6;</a>
+				</h3>
 				<pre>func (certList *<a href="index.html#CertificateList">CertificateList</a>) HasExpired(now <a href="../../../time/index.html">time</a>.<a href="../../../time/index.html#Time">Time</a>) <a href="../../../builtin/index.html#bool">bool</a></pre>
 				<p>
 HasExpired reports whether now is past the expiry time of certList.
@@ -344,7 +354,9 @@ HasExpired reports whether now is past the expiry time of certList.
 		
 			
 			
-			<h2 id="Extension">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=1238:1345#L32">Extension</a></h2>
+			<h2 id="Extension">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=1238:1345#L32">Extension</a>
+				<a class="permalink" href="index.html#Extension">&#xb6;</a>
+			</h2>
 			<pre>type Extension struct {
     Id       <a href="../../../encoding/asn1/index.html">asn1</a>.<a href="../../../encoding/asn1/index.html#ObjectIdentifier">ObjectIdentifier</a>
     Critical <a href="../../../builtin/index.html#bool">bool</a> `asn1:&#34;optional&#34;`
@@ -370,7 +382,9 @@ Extension represents the ASN.1 structure of the same name. See RFC
 		
 			
 			
-			<h2 id="Name">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=1652:1951#L42">Name</a></h2>
+			<h2 id="Name">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=1652:1951#L42">Name</a>
+				<a class="permalink" href="index.html#Name">&#xb6;</a>
+			</h2>
 			<pre>type Name struct {
     Country, Organization, OrganizationalUnit []<a href="../../../builtin/index.html#string">string</a>
     Locality, Province                        []<a href="../../../builtin/index.html#string">string</a>
@@ -400,7 +414,9 @@ in ExtraNames are appended and override other values with the same OID.
 
 			
 				
-				<h3 id="Name.FillFromRDNSequence">func (*Name) <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=1953:2006#L52">FillFromRDNSequence</a></h3>
+				<h3 id="Name.FillFromRDNSequence">func (*Name) <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=1953:2006#L52">FillFromRDNSequence</a>
+					<a class="permalink" href="index.html#Name.FillFromRDNSequence">&#xb6;</a>
+				</h3>
 				<pre>func (n *<a href="index.html#Name">Name</a>) FillFromRDNSequence(rdns *<a href="index.html#RDNSequence">RDNSequence</a>)</pre>
 				
 				
@@ -408,7 +424,9 @@ in ExtraNames are appended and override other values with the same OID.
 				
 			
 				
-				<h3 id="Name.ToRDNSequence">func (Name) <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=3790:3837#L120">ToRDNSequence</a></h3>
+				<h3 id="Name.ToRDNSequence">func (Name) <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=3790:3837#L120">ToRDNSequence</a>
+					<a class="permalink" href="index.html#Name.ToRDNSequence">&#xb6;</a>
+				</h3>
 				<pre>func (n <a href="index.html#Name">Name</a>) ToRDNSequence() (ret <a href="index.html#RDNSequence">RDNSequence</a>)</pre>
 				
 				
@@ -418,7 +436,9 @@ in ExtraNames are appended and override other values with the same OID.
 		
 			
 			
-			<h2 id="RDNSequence">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=579:626#L12">RDNSequence</a></h2>
+			<h2 id="RDNSequence">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=579:626#L12">RDNSequence</a>
+				<a class="permalink" href="index.html#RDNSequence">&#xb6;</a>
+			</h2>
 			<pre>type RDNSequence []<a href="index.html#RelativeDistinguishedNameSET">RelativeDistinguishedNameSET</a></pre>
 			
 
@@ -436,7 +456,9 @@ in ExtraNames are appended and override other values with the same OID.
 		
 			
 			
-			<h2 id="RelativeDistinguishedNameSET">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=628:685#L14">RelativeDistinguishedNameSET</a></h2>
+			<h2 id="RelativeDistinguishedNameSET">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=628:685#L14">RelativeDistinguishedNameSET</a>
+				<a class="permalink" href="index.html#RelativeDistinguishedNameSET">&#xb6;</a>
+			</h2>
 			<pre>type RelativeDistinguishedNameSET []<a href="index.html#AttributeTypeAndValue">AttributeTypeAndValue</a></pre>
 			
 
@@ -454,7 +476,9 @@ in ExtraNames are appended and override other values with the same OID.
 		
 			
 			
-			<h2 id="RevokedCertificate">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=5933:6064#L181">RevokedCertificate</a></h2>
+			<h2 id="RevokedCertificate">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=5933:6064#L181">RevokedCertificate</a>
+				<a class="permalink" href="index.html#RevokedCertificate">&#xb6;</a>
+			</h2>
 			<pre>type RevokedCertificate struct {
     SerialNumber   *<a href="../../../math/big/index.html">big</a>.<a href="../../../math/big/index.html#Int">Int</a>
     RevocationTime <a href="../../../time/index.html">time</a>.<a href="../../../time/index.html#Time">Time</a>
@@ -480,10 +504,12 @@ RevokedCertificate represents the ASN.1 structure of the same name. See RFC
 		
 			
 			
-			<h2 id="TBSCertificateList">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=5406:5830#L168">TBSCertificateList</a></h2>
+			<h2 id="TBSCertificateList">type <a href="http://localhost:9090/src/crypto/x509/pkix/pkix.go?s=5406:5830#L168">TBSCertificateList</a>
+				<a class="permalink" href="index.html#TBSCertificateList">&#xb6;</a>
+			</h2>
 			<pre>type TBSCertificateList struct {
     Raw                 <a href="../../../encoding/asn1/index.html">asn1</a>.<a href="../../../encoding/asn1/index.html#RawContent">RawContent</a>
-    Version             <a href="../../../builtin/index.html#int">int</a> `asn1:&#34;optional,default:1&#34;`
+    Version             <a href="../../../builtin/index.html#int">int</a> `asn1:&#34;optional,default:0&#34;`
     Signature           <a href="index.html#AlgorithmIdentifier">AlgorithmIdentifier</a>
     Issuer              <a href="index.html#RDNSequence">RDNSequence</a>
     ThisUpdate          <a href="../../../time/index.html">time</a>.<a href="../../../time/index.html#Time">Time</a>
@@ -520,7 +546,7 @@ TBSCertificateList represents the ASN.1 structure of the same name. See RFC
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -538,6 +564,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../../lib/godoc/godocs.js"></script>
 
 </body>

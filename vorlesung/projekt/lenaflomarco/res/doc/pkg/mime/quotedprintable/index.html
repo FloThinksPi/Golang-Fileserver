@@ -199,7 +199,9 @@ RFC 2045.
 		
 			
 			
-			<h2 id="Reader">type <a href="http://localhost:9090/src/mime/quotedprintable/reader.go?s=362:485#L7">Reader</a></h2>
+			<h2 id="Reader">type <a href="http://localhost:9090/src/mime/quotedprintable/reader.go?s=362:485#L7">Reader</a>
+				<a class="permalink" href="index.html#Reader">&#xb6;</a>
+			</h2>
 			<pre>type Reader struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -218,7 +220,9 @@ Reader is a quoted-printable decoder.
 
 			
 				
-				<h3 id="NewReader">func <a href="http://localhost:9090/src/mime/quotedprintable/reader.go?s=552:587#L14">NewReader</a></h3>
+				<h3 id="NewReader">func <a href="http://localhost:9090/src/mime/quotedprintable/reader.go?s=552:587#L14">NewReader</a>
+					<a class="permalink" href="index.html#NewReader">&#xb6;</a>
+				</h3>
 				<pre>func NewReader(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) *<a href="index.html#Reader">Reader</a></pre>
 				<p>
 NewReader returns a quoted-printable reader, decoding from r.
@@ -230,7 +234,9 @@ NewReader returns a quoted-printable reader, decoding from r.
 
 			
 				
-				<h3 id="Reader.Read">func (*Reader) <a href="http://localhost:9090/src/mime/quotedprintable/reader.go?s=1504:1554#L62">Read</a></h3>
+				<h3 id="Reader.Read">func (*Reader) <a href="http://localhost:9090/src/mime/quotedprintable/reader.go?s=1504:1554#L62">Read</a>
+					<a class="permalink" href="index.html#Reader.Read">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#Reader">Reader</a>) Read(p []<a href="../../builtin/index.html#byte">byte</a>) (n <a href="../../builtin/index.html#int">int</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Read reads and decodes quoted-printable data from the underlying reader.
@@ -243,7 +249,9 @@ Read reads and decodes quoted-printable data from the underlying reader.
 		
 			
 			
-			<h2 id="Writer">type <a href="http://localhost:9090/src/mime/quotedprintable/writer.go?s=294:491#L2">Writer</a></h2>
+			<h2 id="Writer">type <a href="http://localhost:9090/src/mime/quotedprintable/writer.go?s=294:491#L2">Writer</a>
+				<a class="permalink" href="index.html#Writer">&#xb6;</a>
+			</h2>
 			<pre>type Writer struct {
     <span class="comment">// Binary mode treats the writer&#39;s input as pure binary and processes end of</span>
     <span class="comment">// line bytes as binary data.</span>
@@ -265,7 +273,9 @@ A Writer is a quoted-printable writer that implements io.WriteCloser.
 
 			
 				
-				<h3 id="NewWriter">func <a href="http://localhost:9090/src/mime/quotedprintable/writer.go?s=545:580#L14">NewWriter</a></h3>
+				<h3 id="NewWriter">func <a href="http://localhost:9090/src/mime/quotedprintable/writer.go?s=545:580#L14">NewWriter</a>
+					<a class="permalink" href="index.html#NewWriter">&#xb6;</a>
+				</h3>
 				<pre>func NewWriter(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>) *<a href="index.html#Writer">Writer</a></pre>
 				<p>
 NewWriter returns a new Writer that writes to w.
@@ -277,7 +287,9 @@ NewWriter returns a new Writer that writes to w.
 
 			
 				
-				<h3 id="Writer.Close">func (*Writer) <a href="http://localhost:9090/src/mime/quotedprintable/writer.go?s=1499:1529#L57">Close</a></h3>
+				<h3 id="Writer.Close">func (*Writer) <a href="http://localhost:9090/src/mime/quotedprintable/writer.go?s=1499:1529#L57">Close</a>
+					<a class="permalink" href="index.html#Writer.Close">&#xb6;</a>
+				</h3>
 				<pre>func (w *<a href="index.html#Writer">Writer</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the Writer, flushing any unwritten data to the underlying
@@ -289,7 +301,9 @@ io.Writer, but does not close the underlying io.Writer.
 				
 			
 				
-				<h3 id="Writer.Write">func (*Writer) <a href="http://localhost:9090/src/mime/quotedprintable/writer.go?s=822:873#L21">Write</a></h3>
+				<h3 id="Writer.Write">func (*Writer) <a href="http://localhost:9090/src/mime/quotedprintable/writer.go?s=822:873#L21">Write</a>
+					<a class="permalink" href="index.html#Writer.Write">&#xb6;</a>
+				</h3>
 				<pre>func (w *<a href="index.html#Writer">Writer</a>) Write(p []<a href="../../builtin/index.html#byte">byte</a>) (n <a href="../../builtin/index.html#int">int</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Write encodes p using quoted-printable encoding and writes it to the
@@ -313,7 +327,7 @@ bytes are not necessarily flushed until the Writer is closed.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -331,6 +345,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

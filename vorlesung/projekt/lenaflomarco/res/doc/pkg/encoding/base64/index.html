@@ -259,7 +259,9 @@ It is typically used in URLs and file names.
 		
 			
 			
-			<h2 id="NewDecoder">func <a href="http://localhost:9090/src/encoding/base64/base64.go?s=11110:11163#L443">NewDecoder</a></h2>
+			<h2 id="NewDecoder">func <a href="http://localhost:9090/src/encoding/base64/base64.go?s=11105:11158#L443">NewDecoder</a>
+				<a class="permalink" href="index.html#NewDecoder">&#xb6;</a>
+			</h2>
 			<pre>func NewDecoder(enc *<a href="index.html#Encoding">Encoding</a>, r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a></pre>
 			<p>
 NewDecoder constructs a new base64 stream decoder.
@@ -271,10 +273,12 @@ NewDecoder constructs a new base64 stream decoder.
 		
 			
 			
-			<h2 id="NewEncoder">func <a href="http://localhost:9090/src/encoding/base64/base64.go?s=5631:5689#L211">NewEncoder</a></h2>
+			<h2 id="NewEncoder">func <a href="http://localhost:9090/src/encoding/base64/base64.go?s=5628:5686#L211">NewEncoder</a>
+				<a class="permalink" href="index.html#NewEncoder">&#xb6;</a>
+			</h2>
 			<pre>func NewEncoder(enc *<a href="index.html#Encoding">Encoding</a>, w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>) <a href="../../io/index.html">io</a>.<a href="../../io/index.html#WriteCloser">WriteCloser</a></pre>
 			<p>
-NewEncoder returns a new base64 stream encoder.  Data written to
+NewEncoder returns a new base64 stream encoder. Data written to
 the returned writer will be encoded using enc and then written to w.
 Base64 encodings operate in 4-byte blocks; when finished
 writing, the caller must Close the returned encoder to flush any
@@ -288,7 +292,9 @@ partially written blocks.
 		
 			
 			
-			<h2 id="CorruptInputError">type <a href="http://localhost:9090/src/encoding/base64/base64.go?s=6055:6083#L228">CorruptInputError</a></h2>
+			<h2 id="CorruptInputError">type <a href="http://localhost:9090/src/encoding/base64/base64.go?s=6052:6080#L228">CorruptInputError</a>
+				<a class="permalink" href="index.html#CorruptInputError">&#xb6;</a>
+			</h2>
 			<pre>type CorruptInputError <a href="../../builtin/index.html#int64">int64</a></pre>
 			
 
@@ -304,7 +310,9 @@ partially written blocks.
 
 			
 				
-				<h3 id="CorruptInputError.Error">func (CorruptInputError) <a href="http://localhost:9090/src/encoding/base64/base64.go?s=6085:6126#L230">Error</a></h3>
+				<h3 id="CorruptInputError.Error">func (CorruptInputError) <a href="http://localhost:9090/src/encoding/base64/base64.go?s=6082:6123#L230">Error</a>
+					<a class="permalink" href="index.html#CorruptInputError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#CorruptInputError">CorruptInputError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -314,13 +322,15 @@ partially written blocks.
 		
 			
 			
-			<h2 id="Encoding">type <a href="http://localhost:9090/src/encoding/base64/base64.go?s=634:715#L12">Encoding</a></h2>
+			<h2 id="Encoding">type <a href="http://localhost:9090/src/encoding/base64/base64.go?s=633:714#L12">Encoding</a>
+				<a class="permalink" href="index.html#Encoding">&#xb6;</a>
+			</h2>
 			<pre>type Encoding struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
 An Encoding is a radix 64 encoding/decoding scheme, defined by a
-64-character alphabet.  The most common encoding is the &#34;base64&#34;
+64-character alphabet. The most common encoding is the &#34;base64&#34;
 encoding defined in RFC 4648 and used in MIME (RFC 2045) and PEM
 (RFC 1421).  RFC 4648 also defines an alternate encoding, which is
 the standard encoding with - and _ substituted for + and /.
@@ -337,7 +347,9 @@ the standard encoding with - and _ substituted for + and /.
 
 			
 				
-				<h3 id="NewEncoding">func <a href="http://localhost:9090/src/encoding/base64/base64.go?s=1221:1263#L30">NewEncoding</a></h3>
+				<h3 id="NewEncoding">func <a href="http://localhost:9090/src/encoding/base64/base64.go?s=1220:1262#L30">NewEncoding</a>
+					<a class="permalink" href="index.html#NewEncoding">&#xb6;</a>
+				</h3>
 				<pre>func NewEncoding(encoder <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Encoding">Encoding</a></pre>
 				<p>
 NewEncoding returns a new padded Encoding defined by the given alphabet,
@@ -352,12 +364,14 @@ which may be changed or disabled via WithPadding.
 
 			
 				
-				<h3 id="Encoding.Decode">func (*Encoding) <a href="http://localhost:9090/src/encoding/base64/base64.go?s=8554:8617#L326">Decode</a></h3>
+				<h3 id="Encoding.Decode">func (*Encoding) <a href="http://localhost:9090/src/encoding/base64/base64.go?s=8549:8612#L326">Decode</a>
+					<a class="permalink" href="index.html#Encoding.Decode">&#xb6;</a>
+				</h3>
 				<pre>func (enc *<a href="index.html#Encoding">Encoding</a>) Decode(dst, src []<a href="../../builtin/index.html#byte">byte</a>) (n <a href="../../builtin/index.html#int">int</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
-Decode decodes src using the encoding enc.  It writes at most
+Decode decodes src using the encoding enc. It writes at most
 DecodedLen(len(src)) bytes to dst and returns the number of bytes
-written.  If src contains invalid base64 data, it will return the
+written. If src contains invalid base64 data, it will return the
 number of bytes successfully written and CorruptInputError.
 New line characters (\r and \n) are ignored.
 </p>
@@ -367,7 +381,9 @@ New line characters (\r and \n) are ignored.
 				
 			
 				
-				<h3 id="Encoding.DecodeString">func (*Encoding) <a href="http://localhost:9090/src/encoding/base64/base64.go?s=8735:8794#L332">DecodeString</a></h3>
+				<h3 id="Encoding.DecodeString">func (*Encoding) <a href="http://localhost:9090/src/encoding/base64/base64.go?s=8730:8789#L332">DecodeString</a>
+					<a class="permalink" href="index.html#Encoding.DecodeString">&#xb6;</a>
+				</h3>
 				<pre>func (enc *<a href="index.html#Encoding">Encoding</a>) DecodeString(s <a href="../../builtin/index.html#string">string</a>) ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 DecodeString returns the bytes represented by the base64 string s.
@@ -378,7 +394,9 @@ DecodeString returns the bytes represented by the base64 string s.
 				
 			
 				
-				<h3 id="Encoding.DecodedLen">func (*Encoding) <a href="http://localhost:9090/src/encoding/base64/base64.go?s=11349:11391#L449">DecodedLen</a></h3>
+				<h3 id="Encoding.DecodedLen">func (*Encoding) <a href="http://localhost:9090/src/encoding/base64/base64.go?s=11344:11386#L449">DecodedLen</a>
+					<a class="permalink" href="index.html#Encoding.DecodedLen">&#xb6;</a>
+				</h3>
 				<pre>func (enc *<a href="index.html#Encoding">Encoding</a>) DecodedLen(n <a href="../../builtin/index.html#int">int</a>) <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 DecodedLen returns the maximum length in bytes of the decoded data
@@ -390,7 +408,9 @@ corresponding to n bytes of base64-encoded data.
 				
 			
 				
-				<h3 id="Encoding.Encode">func (*Encoding) <a href="http://localhost:9090/src/encoding/base64/base64.go?s=2846:2890#L83">Encode</a></h3>
+				<h3 id="Encoding.Encode">func (*Encoding) <a href="http://localhost:9090/src/encoding/base64/base64.go?s=2844:2888#L83">Encode</a>
+					<a class="permalink" href="index.html#Encoding.Encode">&#xb6;</a>
+				</h3>
 				<pre>func (enc *<a href="index.html#Encoding">Encoding</a>) Encode(dst, src []<a href="../../builtin/index.html#byte">byte</a>)</pre>
 				<p>
 Encode encodes src using the encoding enc, writing
@@ -399,7 +419,7 @@ EncodedLen(len(src)) bytes to dst.
 <p>
 The encoding pads the output to a multiple of 4 bytes,
 so Encode is not appropriate for use on individual blocks
-of a large data stream.  Use NewEncoder() instead.
+of a large data stream. Use NewEncoder() instead.
 </p>
 
 				
@@ -407,7 +427,9 @@ of a large data stream.  Use NewEncoder() instead.
 				
 			
 				
-				<h3 id="Encoding.EncodeToString">func (*Encoding) <a href="http://localhost:9090/src/encoding/base64/base64.go?s=3825:3879#L131">EncodeToString</a></h3>
+				<h3 id="Encoding.EncodeToString">func (*Encoding) <a href="http://localhost:9090/src/encoding/base64/base64.go?s=3823:3877#L131">EncodeToString</a>
+					<a class="permalink" href="index.html#Encoding.EncodeToString">&#xb6;</a>
+				</h3>
 				<pre>func (enc *<a href="index.html#Encoding">Encoding</a>) EncodeToString(src []<a href="../../builtin/index.html#byte">byte</a>) <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 EncodeToString returns the base64 encoding of src.
@@ -418,7 +440,9 @@ EncodeToString returns the base64 encoding of src.
 				
 			
 				
-				<h3 id="Encoding.EncodedLen">func (*Encoding) <a href="http://localhost:9090/src/encoding/base64/base64.go?s=5828:5870#L217">EncodedLen</a></h3>
+				<h3 id="Encoding.EncodedLen">func (*Encoding) <a href="http://localhost:9090/src/encoding/base64/base64.go?s=5825:5867#L217">EncodedLen</a>
+					<a class="permalink" href="index.html#Encoding.EncodedLen">&#xb6;</a>
+				</h3>
 				<pre>func (enc *<a href="index.html#Encoding">Encoding</a>) EncodedLen(n <a href="../../builtin/index.html#int">int</a>) <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 EncodedLen returns the length in bytes of the base64 encoding
@@ -430,7 +454,9 @@ of an input buffer of length n.
 				
 			
 				
-				<h3 id="Encoding.WithPadding">func (Encoding) <a href="http://localhost:9090/src/encoding/base64/base64.go?s=1709:1764#L50">WithPadding</a></h3>
+				<h3 id="Encoding.WithPadding">func (Encoding) <a href="http://localhost:9090/src/encoding/base64/base64.go?s=1708:1763#L50">WithPadding</a>
+					<a class="permalink" href="index.html#Encoding.WithPadding">&#xb6;</a>
+				</h3>
 				<pre>func (enc <a href="index.html#Encoding">Encoding</a>) WithPadding(padding <a href="../../builtin/index.html#rune">rune</a>) *<a href="index.html#Encoding">Encoding</a></pre>
 				<p>
 WithPadding creates a new encoding identical to enc except
@@ -453,7 +479,7 @@ with a specified padding character, or NoPadding to disable padding.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -471,6 +497,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

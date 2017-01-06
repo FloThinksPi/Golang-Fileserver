@@ -195,8 +195,9 @@ Reader is a global, shared instance of a cryptographically
 strong pseudo-random generator.
 </p>
 <p>
-On Unix-like systems, Reader reads from /dev/urandom.
 On Linux, Reader uses getrandom(2) if available, /dev/urandom otherwise.
+On OpenBSD, Reader uses getentropy(2).
+On other Unix-like systems, Reader reads from /dev/urandom.
 On Windows systems, Reader uses the CryptGenRandom API.
 </p>
 
@@ -205,7 +206,9 @@ On Windows systems, Reader uses the CryptGenRandom API.
 		
 			
 			
-			<h2 id="Int">func <a href="http://localhost:9090/src/crypto/rand/util.go?s=3072:3134#L96">Int</a></h2>
+			<h2 id="Int">func <a href="http://localhost:9090/src/crypto/rand/util.go?s=3070:3132#L96">Int</a>
+				<a class="permalink" href="index.html#Int">&#xb6;</a>
+			</h2>
 			<pre>func Int(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, max *<a href="../../math/big/index.html">big</a>.<a href="../../math/big/index.html#Int">Int</a>) (n *<a href="../../math/big/index.html">big</a>.<a href="../../math/big/index.html#Int">Int</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 Int returns a uniform random value in [0, max). It panics if max &lt;= 0.
@@ -217,7 +220,9 @@ Int returns a uniform random value in [0, max). It panics if max &lt;= 0.
 		
 			
 			
-			<h2 id="Prime">func <a href="http://localhost:9090/src/crypto/rand/util.go?s=1126:1186#L21">Prime</a></h2>
+			<h2 id="Prime">func <a href="http://localhost:9090/src/crypto/rand/util.go?s=1125:1185#L21">Prime</a>
+				<a class="permalink" href="index.html#Prime">&#xb6;</a>
+			</h2>
 			<pre>func Prime(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, bits <a href="../../builtin/index.html#int">int</a>) (p *<a href="../../math/big/index.html">big</a>.<a href="../../math/big/index.html#Int">Int</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 Prime returns a number, p, of the given size, such that p is prime
@@ -231,7 +236,9 @@ Prime will return error for any error returned by rand.Read or if bits &lt; 2.
 		
 			
 			
-			<h2 id="Read">func <a href="http://localhost:9090/src/crypto/rand/rand.go?s=714:752#L11">Read</a></h2>
+			<h2 id="Read">func <a href="http://localhost:9090/src/crypto/rand/rand.go?s=761:799#L12">Read</a>
+				<a class="permalink" href="index.html#Read">&#xb6;</a>
+			</h2>
 			<pre>func Read(b []<a href="../../builtin/index.html#byte">byte</a>) (n <a href="../../builtin/index.html#int">int</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 Read is a helper function that calls Reader.Read using io.ReadFull.
@@ -254,7 +261,7 @@ On return, n == len(b) if and only if err == nil.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -272,6 +279,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

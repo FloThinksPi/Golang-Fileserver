@@ -103,7 +103,7 @@ the same interfaces and similar Dial and Listen functions.
 <p>
 The Dial function connects to a server:
 </p>
-<pre>conn, err := net.Dial(&#34;tcp&#34;, &#34;google.com:80&#34;)
+<pre>conn, err := net.Dial(&#34;tcp&#34;, &#34;golang.org:80&#34;)
 if err != nil {
 	// handle error
 }
@@ -304,6 +304,9 @@ On Windows, the resolver always uses C library functions, such as GetAddrInfo an
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#Dialer.Dial">func (d *Dialer) Dial(network, address string) (Conn, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Dialer.DialContext">func (d *Dialer) DialContext(ctx context.Context, network, address string) (Conn, error)</a></dd>
 				
 			
 				
@@ -843,7 +846,7 @@ On Windows, the resolver always uses C library functions, such as GetAddrInfo an
 					<dd>&nbsp; &nbsp; <a href="index.html#UnixConn.WriteMsgUnix">func (c *UnixConn) WriteMsgUnix(b, oob []byte, addr *UnixAddr) (n, oobn int, err error)</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#UnixConn.WriteTo">func (c *UnixConn) WriteTo(b []byte, addr Addr) (n int, err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#UnixConn.WriteTo">func (c *UnixConn) WriteTo(b []byte, addr Addr) (int, error)</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#UnixConn.WriteToUnix">func (c *UnixConn) WriteToUnix(b []byte, addr *UnixAddr) (int, error)</a></dd>
@@ -857,7 +860,7 @@ On Windows, the resolver always uses C library functions, such as GetAddrInfo an
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#UnixListener.Accept">func (l *UnixListener) Accept() (c Conn, err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#UnixListener.Accept">func (l *UnixListener) Accept() (Conn, error)</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#UnixListener.AcceptUnix">func (l *UnixListener) AcceptUnix() (*UnixConn, error)</a></dd>
@@ -973,6 +976,8 @@ On Windows, the resolver always uses C library functions, such as GetAddrInfo an
 				<a href="http://localhost:9090/src/net/parse.go">parse.go</a>
 			
 				<a href="http://localhost:9090/src/net/pipe.go">pipe.go</a>
+			
+				<a href="http://localhost:9090/src/net/port.go">port.go</a>
 			
 				<a href="http://localhost:9090/src/net/port_unix.go">port_unix.go</a>
 			
@@ -1103,7 +1108,9 @@ Various errors contained in OpError.
 		
 			
 			
-			<h2 id="InterfaceAddrs">func <a href="http://localhost:9090/src/net/interface.go?s=2948:2985#L88">InterfaceAddrs</a></h2>
+			<h2 id="InterfaceAddrs">func <a href="http://localhost:9090/src/net/interface.go?s=3020:3057#L95">InterfaceAddrs</a>
+				<a class="permalink" href="index.html#InterfaceAddrs">&#xb6;</a>
+			</h2>
 			<pre>func InterfaceAddrs() ([]<a href="index.html#Addr">Addr</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 InterfaceAddrs returns a list of the system&#39;s network interface
@@ -1116,7 +1123,9 @@ addresses.
 		
 			
 			
-			<h2 id="Interfaces">func <a href="http://localhost:9090/src/net/interface.go?s=2676:2714#L78">Interfaces</a></h2>
+			<h2 id="Interfaces">func <a href="http://localhost:9090/src/net/interface.go?s=2695:2733#L82">Interfaces</a>
+				<a class="permalink" href="index.html#Interfaces">&#xb6;</a>
+			</h2>
 			<pre>func Interfaces() ([]<a href="index.html#Interface">Interface</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Interfaces returns a list of the system&#39;s network interfaces.
@@ -1128,7 +1137,9 @@ Interfaces returns a list of the system&#39;s network interfaces.
 		
 			
 			
-			<h2 id="JoinHostPort">func <a href="http://localhost:9090/src/net/ipsock.go?s=5302:5345#L182">JoinHostPort</a></h2>
+			<h2 id="JoinHostPort">func <a href="http://localhost:9090/src/net/ipsock.go?s=5260:5303#L171">JoinHostPort</a>
+				<a class="permalink" href="index.html#JoinHostPort">&#xb6;</a>
+			</h2>
 			<pre>func JoinHostPort(host, port <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 JoinHostPort combines host and port into a network address of the
@@ -1142,7 +1153,9 @@ form &#34;host:port&#34; or, if host contains a colon or a percent sign,
 		
 			
 			
-			<h2 id="LookupAddr">func <a href="http://localhost:9090/src/net/lookup.go?s=5485:5541#L172">LookupAddr</a></h2>
+			<h2 id="LookupAddr">func <a href="http://localhost:9090/src/net/lookup.go?s=6429:6485#L186">LookupAddr</a>
+				<a class="permalink" href="index.html#LookupAddr">&#xb6;</a>
+			</h2>
 			<pre>func LookupAddr(addr <a href="../builtin/index.html#string">string</a>) (names []<a href="../builtin/index.html#string">string</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 LookupAddr performs a reverse lookup for the given address, returning a list
@@ -1155,7 +1168,9 @@ of names mapping to that address.
 		
 			
 			
-			<h2 id="LookupCNAME">func <a href="http://localhost:9090/src/net/lookup.go?s=4196:4251#L138">LookupCNAME</a></h2>
+			<h2 id="LookupCNAME">func <a href="http://localhost:9090/src/net/lookup.go?s=5032:5087#L152">LookupCNAME</a>
+				<a class="permalink" href="index.html#LookupCNAME">&#xb6;</a>
+			</h2>
 			<pre>func LookupCNAME(name <a href="../builtin/index.html#string">string</a>) (cname <a href="../builtin/index.html#string">string</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 LookupCNAME returns the canonical DNS host for the given name.
@@ -1170,7 +1185,9 @@ the canonical name as part of the lookup.
 		
 			
 			
-			<h2 id="LookupHost">func <a href="http://localhost:9090/src/net/lookup.go?s=724:780#L17">LookupHost</a></h2>
+			<h2 id="LookupHost">func <a href="http://localhost:9090/src/net/lookup.go?s=747:803#L18">LookupHost</a>
+				<a class="permalink" href="index.html#LookupHost">&#xb6;</a>
+			</h2>
 			<pre>func LookupHost(host <a href="../builtin/index.html#string">string</a>) (addrs []<a href="../builtin/index.html#string">string</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 LookupHost looks up the given host using the local resolver.
@@ -1183,7 +1200,9 @@ It returns an array of that host&#39;s addresses.
 		
 			
 			
-			<h2 id="LookupIP">func <a href="http://localhost:9090/src/net/lookup.go?s=1201:1249#L31">LookupIP</a></h2>
+			<h2 id="LookupIP">func <a href="http://localhost:9090/src/net/lookup.go?s=1246:1294#L32">LookupIP</a>
+				<a class="permalink" href="index.html#LookupIP">&#xb6;</a>
+			</h2>
 			<pre>func LookupIP(host <a href="../builtin/index.html#string">string</a>) (ips []<a href="index.html#IP">IP</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 LookupIP looks up host using the local resolver.
@@ -1196,7 +1215,9 @@ It returns an array of that host&#39;s IPv4 and IPv6 addresses.
 		
 			
 			
-			<h2 id="LookupMX">func <a href="http://localhost:9090/src/net/lookup.go?s=4994:5043#L156">LookupMX</a></h2>
+			<h2 id="LookupMX">func <a href="http://localhost:9090/src/net/lookup.go?s=5872:5921#L170">LookupMX</a>
+				<a class="permalink" href="index.html#LookupMX">&#xb6;</a>
+			</h2>
 			<pre>func LookupMX(name <a href="../builtin/index.html#string">string</a>) (mxs []*<a href="index.html#MX">MX</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 LookupMX returns the DNS MX records for the given domain name sorted by preference.
@@ -1208,7 +1229,9 @@ LookupMX returns the DNS MX records for the given domain name sorted by preferen
 		
 			
 			
-			<h2 id="LookupNS">func <a href="http://localhost:9090/src/net/lookup.go?s=5138:5187#L161">LookupNS</a></h2>
+			<h2 id="LookupNS">func <a href="http://localhost:9090/src/net/lookup.go?s=6038:6087#L175">LookupNS</a>
+				<a class="permalink" href="index.html#LookupNS">&#xb6;</a>
+			</h2>
 			<pre>func LookupNS(name <a href="../builtin/index.html#string">string</a>) (nss []*<a href="index.html#NS">NS</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 LookupNS returns the DNS NS records for the given domain name.
@@ -1220,7 +1243,9 @@ LookupNS returns the DNS NS records for the given domain name.
 		
 			
 			
-			<h2 id="LookupPort">func <a href="http://localhost:9090/src/net/lookup.go?s=3492:3554#L115">LookupPort</a></h2>
+			<h2 id="LookupPort">func <a href="http://localhost:9090/src/net/lookup.go?s=4450:4512#L134">LookupPort</a>
+				<a class="permalink" href="index.html#LookupPort">&#xb6;</a>
+			</h2>
 			<pre>func LookupPort(network, service <a href="../builtin/index.html#string">string</a>) (port <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 LookupPort looks up the port for the given network and service.
@@ -1232,17 +1257,19 @@ LookupPort looks up the port for the given network and service.
 		
 			
 			
-			<h2 id="LookupSRV">func <a href="http://localhost:9090/src/net/lookup.go?s=4778:4861#L151">LookupSRV</a></h2>
+			<h2 id="LookupSRV">func <a href="http://localhost:9090/src/net/lookup.go?s=5634:5717#L165">LookupSRV</a>
+				<a class="permalink" href="index.html#LookupSRV">&#xb6;</a>
+			</h2>
 			<pre>func LookupSRV(service, proto, name <a href="../builtin/index.html#string">string</a>) (cname <a href="../builtin/index.html#string">string</a>, addrs []*<a href="index.html#SRV">SRV</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 LookupSRV tries to resolve an SRV query of the given service,
-protocol, and domain name.  The proto is &#34;tcp&#34; or &#34;udp&#34;.
+protocol, and domain name. The proto is &#34;tcp&#34; or &#34;udp&#34;.
 The returned records are sorted by priority and randomized
 by weight within a priority.
 </p>
 <p>
 LookupSRV constructs the DNS name to look up following RFC 2782.
-That is, it looks up _service._proto.name.  To accommodate services
+That is, it looks up _service._proto.name. To accommodate services
 publishing SRV records under non-standard names, if both service
 and proto are empty strings, LookupSRV looks up name directly.
 </p>
@@ -1253,7 +1280,9 @@ and proto are empty strings, LookupSRV looks up name directly.
 		
 			
 			
-			<h2 id="LookupTXT">func <a href="http://localhost:9090/src/net/lookup.go?s=5284:5338#L166">LookupTXT</a></h2>
+			<h2 id="LookupTXT">func <a href="http://localhost:9090/src/net/lookup.go?s=6206:6260#L180">LookupTXT</a>
+				<a class="permalink" href="index.html#LookupTXT">&#xb6;</a>
+			</h2>
 			<pre>func LookupTXT(name <a href="../builtin/index.html#string">string</a>) (txts []<a href="../builtin/index.html#string">string</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 LookupTXT returns the DNS TXT records for the given domain name.
@@ -1265,12 +1294,14 @@ LookupTXT returns the DNS TXT records for the given domain name.
 		
 			
 			
-			<h2 id="SplitHostPort">func <a href="http://localhost:9090/src/net/ipsock.go?s=3366:3432#L102">SplitHostPort</a></h2>
+			<h2 id="SplitHostPort">func <a href="http://localhost:9090/src/net/ipsock.go?s=3288:3354#L99">SplitHostPort</a>
+				<a class="permalink" href="index.html#SplitHostPort">&#xb6;</a>
+			</h2>
 			<pre>func SplitHostPort(hostport <a href="../builtin/index.html#string">string</a>) (host, port <a href="../builtin/index.html#string">string</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 SplitHostPort splits a network address of the form &#34;host:port&#34;,
 &#34;[host]:port&#34; or &#34;[ipv6-host%zone]:port&#34; into host or
-ipv6-host%zone and port.  A literal address or host name for IPv6
+ipv6-host%zone and port. A literal address or host name for IPv6
 must be enclosed in square brackets, as in &#34;[::1]:80&#34;,
 &#34;[ipv6-host]:http&#34; or &#34;[ipv6-host%zone]:80&#34;.
 </p>
@@ -1282,7 +1313,9 @@ must be enclosed in square brackets, as in &#34;[::1]:80&#34;,
 		
 			
 			
-			<h2 id="Addr">type <a href="http://localhost:9090/src/net/net.go?s=3567:3675#L94">Addr</a></h2>
+			<h2 id="Addr">type <a href="http://localhost:9090/src/net/net.go?s=3578:3686#L95">Addr</a>
+				<a class="permalink" href="index.html#Addr">&#xb6;</a>
+			</h2>
 			<pre>type Addr interface {
     Network() <a href="../builtin/index.html#string">string</a> <span class="comment">// name of the network</span>
     String() <a href="../builtin/index.html#string">string</a>  <span class="comment">// string form of address</span>
@@ -1306,7 +1339,9 @@ Addr represents a network end point address.
 		
 			
 			
-			<h2 id="AddrError">type <a href="http://localhost:9090/src/net/net.go?s=14757:14808#L474">AddrError</a></h2>
+			<h2 id="AddrError">type <a href="http://localhost:9090/src/net/net.go?s=15247:15298#L494">AddrError</a>
+				<a class="permalink" href="index.html#AddrError">&#xb6;</a>
+			</h2>
 			<pre>type AddrError struct {
     Err  <a href="../builtin/index.html#string">string</a>
     Addr <a href="../builtin/index.html#string">string</a>
@@ -1325,7 +1360,9 @@ Addr represents a network end point address.
 
 			
 				
-				<h3 id="AddrError.Error">func (*AddrError) <a href="http://localhost:9090/src/net/net.go?s=14810:14844#L479">Error</a></h3>
+				<h3 id="AddrError.Error">func (*AddrError) <a href="http://localhost:9090/src/net/net.go?s=15300:15334#L499">Error</a>
+					<a class="permalink" href="index.html#AddrError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#AddrError">AddrError</a>) Error() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1333,7 +1370,9 @@ Addr represents a network end point address.
 				
 			
 				
-				<h3 id="AddrError.Temporary">func (*AddrError) <a href="http://localhost:9090/src/net/net.go?s=15003:15039#L491">Temporary</a></h3>
+				<h3 id="AddrError.Temporary">func (*AddrError) <a href="http://localhost:9090/src/net/net.go?s=15493:15529#L511">Temporary</a>
+					<a class="permalink" href="index.html#AddrError.Temporary">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#AddrError">AddrError</a>) Temporary() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -1341,7 +1380,9 @@ Addr represents a network end point address.
 				
 			
 				
-				<h3 id="AddrError.Timeout">func (*AddrError) <a href="http://localhost:9090/src/net/net.go?s=14949:14983#L490">Timeout</a></h3>
+				<h3 id="AddrError.Timeout">func (*AddrError) <a href="http://localhost:9090/src/net/net.go?s=15439:15473#L510">Timeout</a>
+					<a class="permalink" href="index.html#AddrError.Timeout">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#AddrError">AddrError</a>) Timeout() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -1351,7 +1392,9 @@ Addr represents a network end point address.
 		
 			
 			
-			<h2 id="Conn">type <a href="http://localhost:9090/src/net/net.go?s=3805:5570#L102">Conn</a></h2>
+			<h2 id="Conn">type <a href="http://localhost:9090/src/net/net.go?s=3816:5581#L103">Conn</a>
+				<a class="permalink" href="index.html#Conn">&#xb6;</a>
+			</h2>
 			<pre>type Conn interface {
     <span class="comment">// Read reads data from the connection.</span>
     <span class="comment">// Read can be made to time out and return a Error with Timeout() == true</span>
@@ -1416,7 +1459,9 @@ Multiple goroutines may invoke methods on a Conn simultaneously.
 
 			
 				
-				<h3 id="Dial">func <a href="http://localhost:9090/src/net/dial.go?s=5682:5730#L181">Dial</a></h3>
+				<h3 id="Dial">func <a href="http://localhost:9090/src/net/dial.go?s=7517:7565#L249">Dial</a>
+					<a class="permalink" href="index.html#Dial">&#xb6;</a>
+				</h3>
 				<pre>func Dial(network, address <a href="../builtin/index.html#string">string</a>) (<a href="index.html#Conn">Conn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Dial connects to the address on the named network.
@@ -1438,8 +1483,8 @@ If the host is empty, as in &#34;:80&#34;, the local system is assumed.
 <p>
 Examples:
 </p>
-<pre>Dial(&#34;tcp&#34;, &#34;12.34.56.78:80&#34;)
-Dial(&#34;tcp&#34;, &#34;google.com:http&#34;)
+<pre>Dial(&#34;tcp&#34;, &#34;192.0.2.1:80&#34;)
+Dial(&#34;tcp&#34;, &#34;golang.org:http&#34;)
 Dial(&#34;tcp&#34;, &#34;[2001:db8::1]:http&#34;)
 Dial(&#34;tcp&#34;, &#34;[fe80::1%lo0]:80&#34;)
 Dial(&#34;tcp&#34;, &#34;:80&#34;)
@@ -1452,8 +1497,8 @@ literal IP address.
 <p>
 Examples:
 </p>
-<pre>Dial(&#34;ip4:1&#34;, &#34;127.0.0.1&#34;)
-Dial(&#34;ip6:ospf&#34;, &#34;::1&#34;)
+<pre>Dial(&#34;ip4:1&#34;, &#34;192.0.2.1&#34;)
+Dial(&#34;ip6:ipv6-icmp&#34;, &#34;2001:db8::1&#34;)
 </pre>
 <p>
 For Unix networks, the address must be a file system path.
@@ -1463,7 +1508,9 @@ For Unix networks, the address must be a file system path.
 				
 			
 				
-				<h3 id="DialTimeout">func <a href="http://localhost:9090/src/net/dial.go?s=5888:5966#L188">DialTimeout</a></h3>
+				<h3 id="DialTimeout">func <a href="http://localhost:9090/src/net/dial.go?s=7723:7801#L256">DialTimeout</a>
+					<a class="permalink" href="index.html#DialTimeout">&#xb6;</a>
+				</h3>
 				<pre>func DialTimeout(network, address <a href="../builtin/index.html#string">string</a>, timeout <a href="../time/index.html">time</a>.<a href="../time/index.html#Duration">Duration</a>) (<a href="index.html#Conn">Conn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 DialTimeout acts like Dial but takes a timeout.
@@ -1474,7 +1521,9 @@ The timeout includes name resolution, if required.
 				
 			
 				
-				<h3 id="FileConn">func <a href="http://localhost:9090/src/net/file.go?s=538:583#L8">FileConn</a></h3>
+				<h3 id="FileConn">func <a href="http://localhost:9090/src/net/file.go?s=538:583#L8">FileConn</a>
+					<a class="permalink" href="index.html#FileConn">&#xb6;</a>
+				</h3>
 				<pre>func FileConn(f *<a href="../os/index.html">os</a>.<a href="../os/index.html#File">File</a>) (c <a href="index.html#Conn">Conn</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 FileConn returns a copy of the network connection corresponding to
@@ -1487,7 +1536,9 @@ Closing c does not affect f, and closing f does not affect c.
 				
 			
 				
-				<h3 id="Pipe">func <a href="http://localhost:9090/src/net/pipe.go?s=462:486#L8">Pipe</a></h3>
+				<h3 id="Pipe">func <a href="http://localhost:9090/src/net/pipe.go?s=461:485#L8">Pipe</a>
+					<a class="permalink" href="index.html#Pipe">&#xb6;</a>
+				</h3>
 				<pre>func Pipe() (<a href="index.html#Conn">Conn</a>, <a href="index.html#Conn">Conn</a>)</pre>
 				<p>
 Pipe creates a synchronous, in-memory, full duplex
@@ -1505,7 +1556,9 @@ buffering.
 		
 			
 			
-			<h2 id="DNSConfigError">type <a href="http://localhost:9090/src/net/net.go?s=15645:15686#L507">DNSConfigError</a></h2>
+			<h2 id="DNSConfigError">type <a href="http://localhost:9090/src/net/net.go?s=16135:16176#L527">DNSConfigError</a>
+				<a class="permalink" href="index.html#DNSConfigError">&#xb6;</a>
+			</h2>
 			<pre>type DNSConfigError struct {
     Err <a href="../builtin/index.html#error">error</a>
 }</pre>
@@ -1527,7 +1580,9 @@ DNSConfigError represents an error reading the machine&#39;s DNS configuration.
 
 			
 				
-				<h3 id="DNSConfigError.Error">func (*DNSConfigError) <a href="http://localhost:9090/src/net/net.go?s=15688:15727#L511">Error</a></h3>
+				<h3 id="DNSConfigError.Error">func (*DNSConfigError) <a href="http://localhost:9090/src/net/net.go?s=16178:16217#L531">Error</a>
+					<a class="permalink" href="index.html#DNSConfigError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#DNSConfigError">DNSConfigError</a>) Error() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1535,7 +1590,9 @@ DNSConfigError represents an error reading the machine&#39;s DNS configuration.
 				
 			
 				
-				<h3 id="DNSConfigError.Temporary">func (*DNSConfigError) <a href="http://localhost:9090/src/net/net.go?s=15845:15886#L513">Temporary</a></h3>
+				<h3 id="DNSConfigError.Temporary">func (*DNSConfigError) <a href="http://localhost:9090/src/net/net.go?s=16335:16376#L533">Temporary</a>
+					<a class="permalink" href="index.html#DNSConfigError.Temporary">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#DNSConfigError">DNSConfigError</a>) Temporary() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -1543,7 +1600,9 @@ DNSConfigError represents an error reading the machine&#39;s DNS configuration.
 				
 			
 				
-				<h3 id="DNSConfigError.Timeout">func (*DNSConfigError) <a href="http://localhost:9090/src/net/net.go?s=15786:15825#L512">Timeout</a></h3>
+				<h3 id="DNSConfigError.Timeout">func (*DNSConfigError) <a href="http://localhost:9090/src/net/net.go?s=16276:16315#L532">Timeout</a>
+					<a class="permalink" href="index.html#DNSConfigError.Timeout">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#DNSConfigError">DNSConfigError</a>) Timeout() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -1553,7 +1612,9 @@ DNSConfigError represents an error reading the machine&#39;s DNS configuration.
 		
 			
 			
-			<h2 id="DNSError">type <a href="http://localhost:9090/src/net/net.go?s=16042:16333#L521">DNSError</a></h2>
+			<h2 id="DNSError">type <a href="http://localhost:9090/src/net/net.go?s=16532:16823#L541">DNSError</a>
+				<a class="permalink" href="index.html#DNSError">&#xb6;</a>
+			</h2>
 			<pre>type DNSError struct {
     Err         <a href="../builtin/index.html#string">string</a> <span class="comment">// description of the error</span>
     Name        <a href="../builtin/index.html#string">string</a> <span class="comment">// name looked for</span>
@@ -1578,7 +1639,9 @@ DNSError represents a DNS lookup error.
 
 			
 				
-				<h3 id="DNSError.Error">func (*DNSError) <a href="http://localhost:9090/src/net/net.go?s=16335:16368#L529">Error</a></h3>
+				<h3 id="DNSError.Error">func (*DNSError) <a href="http://localhost:9090/src/net/net.go?s=16825:16858#L549">Error</a>
+					<a class="permalink" href="index.html#DNSError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#DNSError">DNSError</a>) Error() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1586,7 +1649,9 @@ DNSError represents a DNS lookup error.
 				
 			
 				
-				<h3 id="DNSError.Temporary">func (*DNSError) <a href="http://localhost:9090/src/net/net.go?s=16971:17006#L549">Temporary</a></h3>
+				<h3 id="DNSError.Temporary">func (*DNSError) <a href="http://localhost:9090/src/net/net.go?s=17461:17496#L569">Temporary</a>
+					<a class="permalink" href="index.html#DNSError.Temporary">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#DNSError">DNSError</a>) Temporary() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Temporary reports whether the DNS error is known to be temporary.
@@ -1599,7 +1664,9 @@ error and return a DNSError for which Temporary returns false.
 				
 			
 				
-				<h3 id="DNSError.Timeout">func (*DNSError) <a href="http://localhost:9090/src/net/net.go?s=16708:16741#L544">Timeout</a></h3>
+				<h3 id="DNSError.Timeout">func (*DNSError) <a href="http://localhost:9090/src/net/net.go?s=17198:17231#L564">Timeout</a>
+					<a class="permalink" href="index.html#DNSError.Timeout">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#DNSError">DNSError</a>) Timeout() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Timeout reports whether the DNS lookup is known to have timed out.
@@ -1614,7 +1681,9 @@ and return a DNSError for which Timeout returns false.
 		
 			
 			
-			<h2 id="Dialer">type <a href="http://localhost:9090/src/net/dial.go?s=448:2248#L7">Dialer</a></h2>
+			<h2 id="Dialer">type <a href="http://localhost:9090/src/net/dial.go?s=469:2314#L8">Dialer</a>
+				<a class="permalink" href="index.html#Dialer">&#xb6;</a>
+			</h2>
 			<pre>type Dialer struct {
     <span class="comment">// Timeout is the maximum amount of time a dial will wait for</span>
     <span class="comment">// a connect to complete. If Deadline is also set, it may fail</span>
@@ -1662,6 +1731,8 @@ and return a DNSError for which Timeout returns false.
     <span class="comment">// Cancel is an optional channel whose closure indicates that</span>
     <span class="comment">// the dial should be canceled. Not all types of dials support</span>
     <span class="comment">// cancelation.</span>
+    <span class="comment">//</span>
+    <span class="comment">// Deprecated: Use DialContext instead.</span>
     Cancel &lt;-chan struct{}
 }</pre>
 			<p>
@@ -1686,7 +1757,9 @@ is therefore equivalent to just calling the Dial function.
 
 			
 				
-				<h3 id="Dialer.Dial">func (*Dialer) <a href="http://localhost:9090/src/net/dial.go?s=6319:6379#L204">Dial</a></h3>
+				<h3 id="Dialer.Dial">func (*Dialer) <a href="http://localhost:9090/src/net/dial.go?s=8126:8186#L271">Dial</a>
+					<a class="permalink" href="index.html#Dialer.Dial">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#Dialer">Dialer</a>) Dial(network, address <a href="../builtin/index.html#string">string</a>) (<a href="index.html#Conn">Conn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Dial connects to the address on the named network.
@@ -1700,10 +1773,36 @@ parameters.
 				
 				
 			
+				
+				<h3 id="Dialer.DialContext">func (*Dialer) <a href="http://localhost:9090/src/net/dial.go?s=8649:8737#L285">DialContext</a>
+					<a class="permalink" href="index.html#Dialer.DialContext">&#xb6;</a>
+				</h3>
+				<pre>func (d *<a href="index.html#Dialer">Dialer</a>) DialContext(ctx <a href="../context/index.html">context</a>.<a href="../context/index.html#Context">Context</a>, network, address <a href="../builtin/index.html#string">string</a>) (<a href="index.html#Conn">Conn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
+				<p>
+DialContext connects to the address on the named network using
+the provided context.
+</p>
+<p>
+The provided Context must be non-nil. If the context expires before
+the connection is complete, an error is returned. Once successfully
+connected, any expiration of the context will not affect the
+connection.
+</p>
+<p>
+See func Dial for a description of the network and address
+parameters.
+</p>
+
+				
+				
+				
+			
 		
 			
 			
-			<h2 id="Error">type <a href="http://localhost:9090/src/net/net.go?s=11560:11681#L349">Error</a></h2>
+			<h2 id="Error">type <a href="http://localhost:9090/src/net/net.go?s=11570:11691#L350">Error</a>
+				<a class="permalink" href="index.html#Error">&#xb6;</a>
+			</h2>
 			<pre>type Error interface {
     <a href="../builtin/index.html#error">error</a>
     Timeout() <a href="../builtin/index.html#bool">bool</a>   <span class="comment">// Is the error a timeout?</span>
@@ -1728,7 +1827,9 @@ An Error represents a network error.
 		
 			
 			
-			<h2 id="Flags">type <a href="http://localhost:9090/src/net/interface.go?s=1086:1101#L18">Flags</a></h2>
+			<h2 id="Flags">type <a href="http://localhost:9090/src/net/interface.go?s=1105:1120#L22">Flags</a>
+				<a class="permalink" href="index.html#Flags">&#xb6;</a>
+			</h2>
 			<pre>type Flags <a href="../builtin/index.html#uint">uint</a></pre>
 			
 
@@ -1753,7 +1854,9 @@ An Error represents a network error.
 
 			
 				
-				<h3 id="Flags.String">func (Flags) <a href="http://localhost:9090/src/net/interface.go?s=1590:1620#L36">String</a></h3>
+				<h3 id="Flags.String">func (Flags) <a href="http://localhost:9090/src/net/interface.go?s=1609:1639#L40">String</a>
+					<a class="permalink" href="index.html#Flags.String">&#xb6;</a>
+				</h3>
 				<pre>func (f <a href="index.html#Flags">Flags</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1763,7 +1866,9 @@ An Error represents a network error.
 		
 			
 			
-			<h2 id="HardwareAddr">type <a href="http://localhost:9090/src/net/mac.go?s=269:293#L1">HardwareAddr</a></h2>
+			<h2 id="HardwareAddr">type <a href="http://localhost:9090/src/net/mac.go?s=268:292#L1">HardwareAddr</a>
+				<a class="permalink" href="index.html#HardwareAddr">&#xb6;</a>
+			</h2>
 			<pre>type HardwareAddr []<a href="../builtin/index.html#byte">byte</a></pre>
 			<p>
 A HardwareAddr represents a physical hardware address.
@@ -1780,7 +1885,9 @@ A HardwareAddr represents a physical hardware address.
 
 			
 				
-				<h3 id="ParseMAC">func <a href="http://localhost:9090/src/net/mac.go?s=1054:1106#L28">ParseMAC</a></h3>
+				<h3 id="ParseMAC">func <a href="http://localhost:9090/src/net/mac.go?s=1053:1105#L28">ParseMAC</a>
+					<a class="permalink" href="index.html#ParseMAC">&#xb6;</a>
+				</h3>
 				<pre>func ParseMAC(s <a href="../builtin/index.html#string">string</a>) (hw <a href="index.html#HardwareAddr">HardwareAddr</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ParseMAC parses s as an IEEE 802 MAC-48, EUI-48, EUI-64, or a 20-octet
@@ -1803,7 +1910,9 @@ IP over InfiniBand link-layer address using one of the following formats:
 
 			
 				
-				<h3 id="HardwareAddr.String">func (HardwareAddr) <a href="http://localhost:9090/src/net/mac.go?s=295:332#L2">String</a></h3>
+				<h3 id="HardwareAddr.String">func (HardwareAddr) <a href="http://localhost:9090/src/net/mac.go?s=294:331#L2">String</a>
+					<a class="permalink" href="index.html#HardwareAddr.String">&#xb6;</a>
+				</h3>
 				<pre>func (a <a href="index.html#HardwareAddr">HardwareAddr</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1813,7 +1922,9 @@ IP over InfiniBand link-layer address using one of the following formats:
 		
 			
 			
-			<h2 id="IP">type <a href="http://localhost:9090/src/net/ip.go?s=919:933#L20">IP</a></h2>
+			<h2 id="IP">type <a href="http://localhost:9090/src/net/ip.go?s=919:933#L20">IP</a>
+				<a class="permalink" href="index.html#IP">&#xb6;</a>
+			</h2>
 			<pre>type IP []<a href="../builtin/index.html#byte">byte</a></pre>
 			<p>
 An IP is a single IP address, a slice of bytes.
@@ -1839,7 +1950,9 @@ be an IPv4 address.
 
 			
 				
-				<h3 id="IPv4">func <a href="http://localhost:9090/src/net/ip.go?s=1189:1218#L33">IPv4</a></h3>
+				<h3 id="IPv4">func <a href="http://localhost:9090/src/net/ip.go?s=1189:1218#L33">IPv4</a>
+					<a class="permalink" href="index.html#IPv4">&#xb6;</a>
+				</h3>
 				<pre>func IPv4(a, b, c, d <a href="../builtin/index.html#byte">byte</a>) <a href="index.html#IP">IP</a></pre>
 				<p>
 IPv4 returns the IP address (in 16-byte form) of the
@@ -1850,29 +1963,33 @@ IPv4 address a.b.c.d.
 				
 			
 				
-				<h3 id="ParseCIDR">func <a href="http://localhost:9090/src/net/ip.go?s=14922:14966#L648">ParseCIDR</a></h3>
+				<h3 id="ParseCIDR">func <a href="http://localhost:9090/src/net/ip.go?s=15249:15293#L658">ParseCIDR</a>
+					<a class="permalink" href="index.html#ParseCIDR">&#xb6;</a>
+				</h3>
 				<pre>func ParseCIDR(s <a href="../builtin/index.html#string">string</a>) (<a href="index.html#IP">IP</a>, *<a href="index.html#IPNet">IPNet</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ParseCIDR parses s as a CIDR notation IP address and mask,
-like &#34;192.168.100.1/24&#34; or &#34;2001:DB8::/48&#34;, as defined in
+like &#34;192.0.2.0/24&#34; or &#34;2001:db8::/32&#34;, as defined in
 RFC 4632 and RFC 4291.
 </p>
 <p>
 It returns the IP address and the network implied by the IP
-and mask.  For example, ParseCIDR(&#34;192.168.100.1/16&#34;) returns
-the IP address 192.168.100.1 and the network 192.168.0.0/16.
+and mask. For example, ParseCIDR(&#34;198.51.100.1/24&#34;) returns
+the IP address 198.51.100.1 and the network 198.51.100.0/24.
 </p>
 
 				
 				
 			
 				
-				<h3 id="ParseIP">func <a href="http://localhost:9090/src/net/ip.go?s=14389:14414#L628">ParseIP</a></h3>
+				<h3 id="ParseIP">func <a href="http://localhost:9090/src/net/ip.go?s=14722:14747#L638">ParseIP</a>
+					<a class="permalink" href="index.html#ParseIP">&#xb6;</a>
+				</h3>
 				<pre>func ParseIP(s <a href="../builtin/index.html#string">string</a>) <a href="index.html#IP">IP</a></pre>
 				<p>
 ParseIP parses s as an IP address, returning the result.
-The string s can be in dotted decimal (&#34;74.125.19.99&#34;)
-or IPv6 (&#34;2001:4860:0:2001::68&#34;) form.
+The string s can be in dotted decimal (&#34;192.0.2.1&#34;)
+or IPv6 (&#34;2001:db8::68&#34;) form.
 If s is not a valid textual representation of an IP address,
 ParseIP returns nil.
 </p>
@@ -1883,7 +2000,9 @@ ParseIP returns nil.
 
 			
 				
-				<h3 id="IP.DefaultMask">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=5567:5600#L202">DefaultMask</a></h3>
+				<h3 id="IP.DefaultMask">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=5567:5600#L202">DefaultMask</a>
+					<a class="permalink" href="index.html#IP.DefaultMask">&#xb6;</a>
+				</h3>
 				<pre>func (ip <a href="index.html#IP">IP</a>) DefaultMask() <a href="index.html#IPMask">IPMask</a></pre>
 				<p>
 DefaultMask returns the default IP mask for the IP address ip.
@@ -1896,7 +2015,9 @@ nil if ip is not a valid IPv4 address.
 				
 			
 				
-				<h3 id="IP.Equal">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=8648:8677#L345">Equal</a></h3>
+				<h3 id="IP.Equal">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=8947:8976#L355">Equal</a>
+					<a class="permalink" href="index.html#IP.Equal">&#xb6;</a>
+				</h3>
 				<pre>func (ip <a href="index.html#IP">IP</a>) Equal(x <a href="index.html#IP">IP</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Equal reports whether ip and x are the same IP address.
@@ -1909,7 +2030,9 @@ considered to be equal.
 				
 			
 				
-				<h3 id="IP.IsGlobalUnicast">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=4290:4325#L146">IsGlobalUnicast</a></h3>
+				<h3 id="IP.IsGlobalUnicast">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=4290:4325#L146">IsGlobalUnicast</a>
+					<a class="permalink" href="index.html#IP.IsGlobalUnicast">&#xb6;</a>
+				</h3>
 				<pre>func (ip <a href="index.html#IP">IP</a>) IsGlobalUnicast() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsGlobalUnicast reports whether ip is a global unicast
@@ -1921,7 +2044,9 @@ address.
 				
 			
 				
-				<h3 id="IP.IsInterfaceLocalMulticast">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=3556:3601#L122">IsInterfaceLocalMulticast</a></h3>
+				<h3 id="IP.IsInterfaceLocalMulticast">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=3556:3601#L122">IsInterfaceLocalMulticast</a>
+					<a class="permalink" href="index.html#IP.IsInterfaceLocalMulticast">&#xb6;</a>
+				</h3>
 				<pre>func (ip <a href="index.html#IP">IP</a>) IsInterfaceLocalMulticast() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsInterfaceLocalMulticast reports whether ip is
@@ -1933,7 +2058,9 @@ an interface-local multicast address.
 				
 			
 				
-				<h3 id="IP.IsLinkLocalMulticast">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=3754:3794#L128">IsLinkLocalMulticast</a></h3>
+				<h3 id="IP.IsLinkLocalMulticast">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=3754:3794#L128">IsLinkLocalMulticast</a>
+					<a class="permalink" href="index.html#IP.IsLinkLocalMulticast">&#xb6;</a>
+				</h3>
 				<pre>func (ip <a href="index.html#IP">IP</a>) IsLinkLocalMulticast() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsLinkLocalMulticast reports whether ip is a link-local
@@ -1945,7 +2072,9 @@ multicast address.
 				
 			
 				
-				<h3 id="IP.IsLinkLocalUnicast">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=4033:4071#L137">IsLinkLocalUnicast</a></h3>
+				<h3 id="IP.IsLinkLocalUnicast">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=4033:4071#L137">IsLinkLocalUnicast</a>
+					<a class="permalink" href="index.html#IP.IsLinkLocalUnicast">&#xb6;</a>
+				</h3>
 				<pre>func (ip <a href="index.html#IP">IP</a>) IsLinkLocalUnicast() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsLinkLocalUnicast reports whether ip is a link-local
@@ -1957,7 +2086,9 @@ unicast address.
 				
 			
 				
-				<h3 id="IP.IsLoopback">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=3132:3162#L105">IsLoopback</a></h3>
+				<h3 id="IP.IsLoopback">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=3132:3162#L105">IsLoopback</a>
+					<a class="permalink" href="index.html#IP.IsLoopback">&#xb6;</a>
+				</h3>
 				<pre>func (ip <a href="index.html#IP">IP</a>) IsLoopback() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsLoopback reports whether ip is a loopback address.
@@ -1968,7 +2099,9 @@ IsLoopback reports whether ip is a loopback address.
 				
 			
 				
-				<h3 id="IP.IsMulticast">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=3317:3348#L113">IsMulticast</a></h3>
+				<h3 id="IP.IsMulticast">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=3317:3348#L113">IsMulticast</a>
+					<a class="permalink" href="index.html#IP.IsMulticast">&#xb6;</a>
+				</h3>
 				<pre>func (ip <a href="index.html#IP">IP</a>) IsMulticast() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsMulticast reports whether ip is a multicast address.
@@ -1979,7 +2112,9 @@ IsMulticast reports whether ip is a multicast address.
 				
 			
 				
-				<h3 id="IP.IsUnspecified">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=2981:3014#L100">IsUnspecified</a></h3>
+				<h3 id="IP.IsUnspecified">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=2981:3014#L100">IsUnspecified</a>
+					<a class="permalink" href="index.html#IP.IsUnspecified">&#xb6;</a>
+				</h3>
 				<pre>func (ip <a href="index.html#IP">IP</a>) IsUnspecified() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsUnspecified reports whether ip is an unspecified address.
@@ -1990,7 +2125,9 @@ IsUnspecified reports whether ip is an unspecified address.
 				
 			
 				
-				<h3 id="IP.MarshalText">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=7900:7942#L316">MarshalText</a></h3>
+				<h3 id="IP.MarshalText">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=8197:8239#L326">MarshalText</a>
+					<a class="permalink" href="index.html#IP.MarshalText">&#xb6;</a>
+				</h3>
 				<pre>func (ip <a href="index.html#IP">IP</a>) MarshalText() ([]<a href="../builtin/index.html#byte">byte</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 MarshalText implements the encoding.TextMarshaler interface.
@@ -2002,7 +2139,9 @@ The encoding is the same as returned by String.
 				
 			
 				
-				<h3 id="IP.Mask">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=5955:5988#L226">Mask</a></h3>
+				<h3 id="IP.Mask">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=5955:5988#L226">Mask</a>
+					<a class="permalink" href="index.html#IP.Mask">&#xb6;</a>
+				</h3>
 				<pre>func (ip <a href="index.html#IP">IP</a>) Mask(mask <a href="index.html#IPMask">IPMask</a>) <a href="index.html#IP">IP</a></pre>
 				<p>
 Mask returns the result of masking the IP address ip with mask.
@@ -2013,21 +2152,28 @@ Mask returns the result of masking the IP address ip with mask.
 				
 			
 				
-				<h3 id="IP.String">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=6554:6582#L248">String</a></h3>
+				<h3 id="IP.String">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=6669:6697#L250">String</a>
+					<a class="permalink" href="index.html#IP.String">&#xb6;</a>
+				</h3>
 				<pre>func (ip <a href="index.html#IP">IP</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 String returns the string form of the IP address ip.
-If the address is an IPv4 address, the string representation
-is dotted decimal (&#34;74.125.19.99&#34;).  Otherwise the representation
-is IPv6 (&#34;2001:4860:0:2001::68&#34;).
+It returns one of 4 forms:
 </p>
+<pre>- &#34;&lt;nil&gt;&#34;, if ip has length 0
+- dotted decimal (&#34;192.0.2.1&#34;), if ip is an IPv4 or IP4-mapped IPv6 address
+- IPv6 (&#34;2001:db8::1&#34;), if ip is a valid IPv6 address
+- the hexadecimal form of ip, without punctuation, if no other cases apply
+</pre>
 
 				
 				
 				
 			
 				
-				<h3 id="IP.To16">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=5081:5103#L182">To16</a></h3>
+				<h3 id="IP.To16">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=5081:5103#L182">To16</a>
+					<a class="permalink" href="index.html#IP.To16">&#xb6;</a>
+				</h3>
 				<pre>func (ip <a href="index.html#IP">IP</a>) To16() <a href="index.html#IP">IP</a></pre>
 				<p>
 To16 converts the IP address ip to a 16-byte representation.
@@ -2039,7 +2185,9 @@ If ip is not an IP address (it is the wrong length), To16 returns nil.
 				
 			
 				
-				<h3 id="IP.To4">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=4754:4775#L167">To4</a></h3>
+				<h3 id="IP.To4">func (IP) <a href="http://localhost:9090/src/net/ip.go?s=4754:4775#L167">To4</a>
+					<a class="permalink" href="index.html#IP.To4">&#xb6;</a>
+				</h3>
 				<pre>func (ip <a href="index.html#IP">IP</a>) To4() <a href="index.html#IP">IP</a></pre>
 				<p>
 To4 converts the IPv4 address ip to a 4-byte representation.
@@ -2051,7 +2199,9 @@ If ip is not an IPv4 address, To4 returns nil.
 				
 			
 				
-				<h3 id="IP.UnmarshalText">func (*IP) <a href="http://localhost:9090/src/net/ip.go?s=8278:8324#L328">UnmarshalText</a></h3>
+				<h3 id="IP.UnmarshalText">func (*IP) <a href="http://localhost:9090/src/net/ip.go?s=8577:8623#L338">UnmarshalText</a>
+					<a class="permalink" href="index.html#IP.UnmarshalText">&#xb6;</a>
+				</h3>
 				<pre>func (ip *<a href="index.html#IP">IP</a>) UnmarshalText(text []<a href="../builtin/index.html#byte">byte</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 UnmarshalText implements the encoding.TextUnmarshaler interface.
@@ -2065,7 +2215,9 @@ The IP address is expected in a form accepted by ParseIP.
 		
 			
 			
-			<h2 id="IPAddr">type <a href="http://localhost:9090/src/net/iprawsock.go?s=227:302#L1">IPAddr</a></h2>
+			<h2 id="IPAddr">type <a href="http://localhost:9090/src/net/iprawsock.go?s=260:335#L3">IPAddr</a>
+				<a class="permalink" href="index.html#IPAddr">&#xb6;</a>
+			</h2>
 			<pre>type IPAddr struct {
     IP   <a href="index.html#IP">IP</a>
     Zone <a href="../builtin/index.html#string">string</a> <span class="comment">// IPv6 scoped addressing zone</span>
@@ -2085,7 +2237,9 @@ IPAddr represents the address of an IP end point.
 
 			
 				
-				<h3 id="ResolveIPAddr">func <a href="http://localhost:9090/src/net/iprawsock.go?s=937:990#L34">ResolveIPAddr</a></h3>
+				<h3 id="ResolveIPAddr">func <a href="http://localhost:9090/src/net/iprawsock.go?s=970:1023#L39">ResolveIPAddr</a>
+					<a class="permalink" href="index.html#ResolveIPAddr">&#xb6;</a>
+				</h3>
 				<pre>func ResolveIPAddr(net, addr <a href="../builtin/index.html#string">string</a>) (*<a href="index.html#IPAddr">IPAddr</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ResolveIPAddr parses addr as an IP address of the form &#34;host&#34; or
@@ -2099,7 +2253,9 @@ which must be &#34;ip&#34;, &#34;ip4&#34; or &#34;ip6&#34;.
 
 			
 				
-				<h3 id="IPAddr.Network">func (*IPAddr) <a href="http://localhost:9090/src/net/iprawsock.go?s=357:390#L4">Network</a></h3>
+				<h3 id="IPAddr.Network">func (*IPAddr) <a href="http://localhost:9090/src/net/iprawsock.go?s=390:423#L9">Network</a>
+					<a class="permalink" href="index.html#IPAddr.Network">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#IPAddr">IPAddr</a>) Network() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 Network returns the address&#39;s network name, &#34;ip&#34;.
@@ -2110,7 +2266,9 @@ Network returns the address&#39;s network name, &#34;ip&#34;.
 				
 			
 				
-				<h3 id="IPAddr.String">func (*IPAddr) <a href="http://localhost:9090/src/net/iprawsock.go?s=408:440#L6">String</a></h3>
+				<h3 id="IPAddr.String">func (*IPAddr) <a href="http://localhost:9090/src/net/iprawsock.go?s=441:473#L11">String</a>
+					<a class="permalink" href="index.html#IPAddr.String">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#IPAddr">IPAddr</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2120,7 +2278,9 @@ Network returns the address&#39;s network name, &#34;ip&#34;.
 		
 			
 			
-			<h2 id="IPConn">type <a href="http://localhost:9090/src/net/iprawsock_posix.go?s=1537:1565#L45">IPConn</a></h2>
+			<h2 id="IPConn">type <a href="http://localhost:9090/src/net/iprawsock.go?s=1552:1580#L61">IPConn</a>
+				<a class="permalink" href="index.html#IPConn">&#xb6;</a>
+			</h2>
 			<pre>type IPConn struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -2140,7 +2300,9 @@ for IP network connections.
 
 			
 				
-				<h3 id="DialIP">func <a href="http://localhost:9090/src/net/iprawsock_posix.go?s=6293:6360#L196">DialIP</a></h3>
+				<h3 id="DialIP">func <a href="http://localhost:9090/src/net/iprawsock.go?s=4889:4956#L166">DialIP</a>
+					<a class="permalink" href="index.html#DialIP">&#xb6;</a>
+				</h3>
 				<pre>func DialIP(netProto <a href="../builtin/index.html#string">string</a>, laddr, raddr *<a href="index.html#IPAddr">IPAddr</a>) (*<a href="index.html#IPConn">IPConn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 DialIP connects to the remote address raddr on the network protocol
@@ -2152,11 +2314,13 @@ and a protocol number or name.
 				
 			
 				
-				<h3 id="ListenIP">func <a href="http://localhost:9090/src/net/iprawsock_posix.go?s=7465:7527#L224">ListenIP</a></h3>
+				<h3 id="ListenIP">func <a href="http://localhost:9090/src/net/iprawsock.go?s=5384:5446#L178">ListenIP</a>
+					<a class="permalink" href="index.html#ListenIP">&#xb6;</a>
+				</h3>
 				<pre>func ListenIP(netProto <a href="../builtin/index.html#string">string</a>, laddr *<a href="index.html#IPAddr">IPAddr</a>) (*<a href="index.html#IPConn">IPConn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ListenIP listens for incoming IP packets addressed to the local
-address laddr.  The returned connection&#39;s ReadFrom and WriteTo
+address laddr. The returned connection&#39;s ReadFrom and WriteTo
 methods can be used to receive and send IP packets with per-packet
 addressing.
 </p>
@@ -2167,7 +2331,9 @@ addressing.
 
 			
 				
-				<h3 id="IPConn.Close">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=6330:6358#L182">Close</a></h3>
+				<h3 id="IPConn.Close">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=6341:6369#L183">Close</a>
+					<a class="permalink" href="index.html#IPConn.Close">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) Close() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the connection.
@@ -2178,7 +2344,9 @@ Close closes the connection.
 				
 			
 				
-				<h3 id="IPConn.File">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=9014:9059#L277">File</a></h3>
+				<h3 id="IPConn.File">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=9025:9070#L278">File</a>
+					<a class="permalink" href="index.html#IPConn.File">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) File() (f *<a href="../os/index.html">os</a>.<a href="../os/index.html#File">File</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 File sets the underlying os.File to blocking mode and returns a copy.
@@ -2196,7 +2364,9 @@ may or may not have the desired effect.
 				
 			
 				
-				<h3 id="IPConn.LocalAddr">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=6687:6718#L196">LocalAddr</a></h3>
+				<h3 id="IPConn.LocalAddr">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=6698:6729#L197">LocalAddr</a>
+					<a class="permalink" href="index.html#IPConn.LocalAddr">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) LocalAddr() <a href="index.html#Addr">Addr</a></pre>
 				<p>
 LocalAddr returns the local network address.
@@ -2209,7 +2379,9 @@ do not modify it.
 				
 			
 				
-				<h3 id="IPConn.Read">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=5749:5791#L158">Read</a></h3>
+				<h3 id="IPConn.Read">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=5760:5802#L159">Read</a>
+					<a class="permalink" href="index.html#IPConn.Read">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) Read(b []<a href="../builtin/index.html#byte">byte</a>) (<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Read implements the Conn Read method.
@@ -2220,7 +2392,9 @@ Read implements the Conn Read method.
 				
 			
 				
-				<h3 id="IPConn.ReadFrom">func (*IPConn) <a href="http://localhost:9090/src/net/iprawsock_posix.go?s=2833:2887#L95">ReadFrom</a></h3>
+				<h3 id="IPConn.ReadFrom">func (*IPConn) <a href="http://localhost:9090/src/net/iprawsock.go?s=2235:2289#L84">ReadFrom</a>
+					<a class="permalink" href="index.html#IPConn.ReadFrom">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) ReadFrom(b []<a href="../builtin/index.html#byte">byte</a>) (<a href="../builtin/index.html#int">int</a>, <a href="index.html#Addr">Addr</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadFrom implements the PacketConn ReadFrom method.
@@ -2231,7 +2405,9 @@ ReadFrom implements the PacketConn ReadFrom method.
 				
 			
 				
-				<h3 id="IPConn.ReadFromIP">func (*IPConn) <a href="http://localhost:9090/src/net/iprawsock_posix.go?s=1951:2010#L58">ReadFromIP</a></h3>
+				<h3 id="IPConn.ReadFromIP">func (*IPConn) <a href="http://localhost:9090/src/net/iprawsock.go?s=1902:1961#L72">ReadFromIP</a>
+					<a class="permalink" href="index.html#IPConn.ReadFromIP">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) ReadFromIP(b []<a href="../builtin/index.html#byte">byte</a>) (<a href="../builtin/index.html#int">int</a>, *<a href="index.html#IPAddr">IPAddr</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadFromIP reads an IP packet from c, copying the payload into b.
@@ -2249,11 +2425,13 @@ SetReadDeadline.
 				
 			
 				
-				<h3 id="IPConn.ReadMsgIP">func (*IPConn) <a href="http://localhost:9090/src/net/iprawsock_posix.go?s=3316:3403#L110">ReadMsgIP</a></h3>
+				<h3 id="IPConn.ReadMsgIP">func (*IPConn) <a href="http://localhost:9090/src/net/iprawsock.go?s=2827:2914#L102">ReadMsgIP</a>
+					<a class="permalink" href="index.html#IPConn.ReadMsgIP">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) ReadMsgIP(b, oob []<a href="../builtin/index.html#byte">byte</a>) (n, oobn, flags <a href="../builtin/index.html#int">int</a>, addr *<a href="index.html#IPAddr">IPAddr</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadMsgIP reads a packet from c, copying the payload into b and the
-associated out-of-band data into oob.  It returns the number of
+associated out-of-band data into oob. It returns the number of
 bytes copied into b, the number of bytes copied into oob, the flags
 that were set on the packet and the source address of the packet.
 </p>
@@ -2263,7 +2441,9 @@ that were set on the packet and the source address of the packet.
 				
 			
 				
-				<h3 id="IPConn.RemoteAddr">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=6912:6944#L206">RemoteAddr</a></h3>
+				<h3 id="IPConn.RemoteAddr">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=6923:6955#L207">RemoteAddr</a>
+					<a class="permalink" href="index.html#IPConn.RemoteAddr">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) RemoteAddr() <a href="index.html#Addr">Addr</a></pre>
 				<p>
 RemoteAddr returns the remote network address.
@@ -2276,7 +2456,9 @@ do not modify it.
 				
 			
 				
-				<h3 id="IPConn.SetDeadline">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=7054:7099#L214">SetDeadline</a></h3>
+				<h3 id="IPConn.SetDeadline">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=7065:7110#L215">SetDeadline</a>
+					<a class="permalink" href="index.html#IPConn.SetDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) SetDeadline(t <a href="../time/index.html">time</a>.<a href="../time/index.html#Time">Time</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetDeadline implements the Conn SetDeadline method.
@@ -2287,7 +2469,9 @@ SetDeadline implements the Conn SetDeadline method.
 				
 			
 				
-				<h3 id="IPConn.SetReadBuffer">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=8018:8063#L248">SetReadBuffer</a></h3>
+				<h3 id="IPConn.SetReadBuffer">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=8029:8074#L249">SetReadBuffer</a>
+					<a class="permalink" href="index.html#IPConn.SetReadBuffer">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) SetReadBuffer(bytes <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetReadBuffer sets the size of the operating system&#39;s
@@ -2299,7 +2483,9 @@ receive buffer associated with the connection.
 				
 			
 				
-				<h3 id="IPConn.SetReadDeadline">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=7354:7403#L225">SetReadDeadline</a></h3>
+				<h3 id="IPConn.SetReadDeadline">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=7365:7414#L226">SetReadDeadline</a>
+					<a class="permalink" href="index.html#IPConn.SetReadDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) SetReadDeadline(t <a href="../time/index.html">time</a>.<a href="../time/index.html#Time">Time</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetReadDeadline implements the Conn SetReadDeadline method.
@@ -2310,7 +2496,9 @@ SetReadDeadline implements the Conn SetReadDeadline method.
 				
 			
 				
-				<h3 id="IPConn.SetWriteBuffer">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=8371:8417#L260">SetWriteBuffer</a></h3>
+				<h3 id="IPConn.SetWriteBuffer">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=8382:8428#L261">SetWriteBuffer</a>
+					<a class="permalink" href="index.html#IPConn.SetWriteBuffer">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) SetWriteBuffer(bytes <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetWriteBuffer sets the size of the operating system&#39;s
@@ -2322,7 +2510,9 @@ transmit buffer associated with the connection.
 				
 			
 				
-				<h3 id="IPConn.SetWriteDeadline">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=7664:7714#L236">SetWriteDeadline</a></h3>
+				<h3 id="IPConn.SetWriteDeadline">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=7675:7725#L237">SetWriteDeadline</a>
+					<a class="permalink" href="index.html#IPConn.SetWriteDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) SetWriteDeadline(t <a href="../time/index.html">time</a>.<a href="../time/index.html#Time">Time</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetWriteDeadline implements the Conn SetWriteDeadline method.
@@ -2333,7 +2523,9 @@ SetWriteDeadline implements the Conn SetWriteDeadline method.
 				
 			
 				
-				<h3 id="IPConn.Write">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=6052:6095#L170">Write</a></h3>
+				<h3 id="IPConn.Write">func (*IPConn) <a href="http://localhost:9090/src/net/net.go?s=6063:6106#L171">Write</a>
+					<a class="permalink" href="index.html#IPConn.Write">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) Write(b []<a href="../builtin/index.html#byte">byte</a>) (<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Write implements the Conn Write method.
@@ -2344,11 +2536,13 @@ Write implements the Conn Write method.
 				
 			
 				
-				<h3 id="IPConn.WriteMsgIP">func (*IPConn) <a href="http://localhost:9090/src/net/iprawsock_posix.go?s=5360:5441#L171">WriteMsgIP</a></h3>
+				<h3 id="IPConn.WriteMsgIP">func (*IPConn) <a href="http://localhost:9090/src/net/iprawsock.go?s=4352:4433#L150">WriteMsgIP</a>
+					<a class="permalink" href="index.html#IPConn.WriteMsgIP">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) WriteMsgIP(b, oob []<a href="../builtin/index.html#byte">byte</a>, addr *<a href="index.html#IPAddr">IPAddr</a>) (n, oobn <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 WriteMsgIP writes a packet to addr via c, copying the payload from
-b and the associated out-of-band data from oob.  It returns the
+b and the associated out-of-band data from oob. It returns the
 number of payload and out-of-band bytes written.
 </p>
 
@@ -2357,7 +2551,9 @@ number of payload and out-of-band bytes written.
 				
 			
 				
-				<h3 id="IPConn.WriteTo">func (*IPConn) <a href="http://localhost:9090/src/net/iprawsock_posix.go?s=4897:4955#L157">WriteTo</a></h3>
+				<h3 id="IPConn.WriteTo">func (*IPConn) <a href="http://localhost:9090/src/net/iprawsock.go?s=3761:3819#L132">WriteTo</a>
+					<a class="permalink" href="index.html#IPConn.WriteTo">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) WriteTo(b []<a href="../builtin/index.html#byte">byte</a>, addr <a href="index.html#Addr">Addr</a>) (<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 WriteTo implements the PacketConn WriteTo method.
@@ -2368,7 +2564,9 @@ WriteTo implements the PacketConn WriteTo method.
 				
 			
 				
-				<h3 id="IPConn.WriteToIP">func (*IPConn) <a href="http://localhost:9090/src/net/iprawsock_posix.go?s=4143:4206#L135">WriteToIP</a></h3>
+				<h3 id="IPConn.WriteToIP">func (*IPConn) <a href="http://localhost:9090/src/net/iprawsock.go?s=3434:3497#L120">WriteToIP</a>
+					<a class="permalink" href="index.html#IPConn.WriteToIP">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#IPConn">IPConn</a>) WriteToIP(b []<a href="../builtin/index.html#byte">byte</a>, addr *<a href="index.html#IPAddr">IPAddr</a>) (<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 WriteToIP writes an IP packet to addr via c, copying the payload
@@ -2377,7 +2575,7 @@ from b.
 <p>
 WriteToIP can be made to time out and return an error with
 Timeout() == true after a fixed time limit; see SetDeadline and
-SetWriteDeadline.  On packet-oriented connections, write timeouts
+SetWriteDeadline. On packet-oriented connections, write timeouts
 are rare.
 </p>
 
@@ -2388,7 +2586,9 @@ are rare.
 		
 			
 			
-			<h2 id="IPMask">type <a href="http://localhost:9090/src/net/ip.go?s=967:985#L23">IPMask</a></h2>
+			<h2 id="IPMask">type <a href="http://localhost:9090/src/net/ip.go?s=967:985#L23">IPMask</a>
+				<a class="permalink" href="index.html#IPMask">&#xb6;</a>
+			</h2>
 			<pre>type IPMask []<a href="../builtin/index.html#byte">byte</a></pre>
 			<p>
 An IP mask is an IP address.
@@ -2405,7 +2605,9 @@ An IP mask is an IP address.
 
 			
 				
-				<h3 id="CIDRMask">func <a href="http://localhost:9090/src/net/ip.go?s=1774:1810#L59">CIDRMask</a></h3>
+				<h3 id="CIDRMask">func <a href="http://localhost:9090/src/net/ip.go?s=1774:1810#L59">CIDRMask</a>
+					<a class="permalink" href="index.html#CIDRMask">&#xb6;</a>
+				</h3>
 				<pre>func CIDRMask(ones, bits <a href="../builtin/index.html#int">int</a>) <a href="index.html#IPMask">IPMask</a></pre>
 				<p>
 CIDRMask returns an IPMask consisting of `ones&#39; 1 bits
@@ -2417,7 +2619,9 @@ For a mask of this form, CIDRMask is the inverse of IPMask.Size.
 				
 			
 				
-				<h3 id="IPv4Mask">func <a href="http://localhost:9090/src/net/ip.go?s=1472:1509#L47">IPv4Mask</a></h3>
+				<h3 id="IPv4Mask">func <a href="http://localhost:9090/src/net/ip.go?s=1472:1509#L47">IPv4Mask</a>
+					<a class="permalink" href="index.html#IPv4Mask">&#xb6;</a>
+				</h3>
 				<pre>func IPv4Mask(a, b, c, d <a href="../builtin/index.html#byte">byte</a>) <a href="index.html#IPMask">IPMask</a></pre>
 				<p>
 IPv4Mask returns the IP mask (in 4-byte form) of the
@@ -2430,7 +2634,9 @@ IPv4 mask a.b.c.d.
 
 			
 				
-				<h3 id="IPMask.Size">func (IPMask) <a href="http://localhost:9090/src/net/ip.go?s=9758:9797#L402">Size</a></h3>
+				<h3 id="IPMask.Size">func (IPMask) <a href="http://localhost:9090/src/net/ip.go?s=10220:10259#L416">Size</a>
+					<a class="permalink" href="index.html#IPMask.Size">&#xb6;</a>
+				</h3>
 				<pre>func (m <a href="index.html#IPMask">IPMask</a>) Size() (ones, bits <a href="../builtin/index.html#int">int</a>)</pre>
 				<p>
 Size returns the number of leading ones and total bits in the mask.
@@ -2443,7 +2649,9 @@ Size returns 0, 0.
 				
 			
 				
-				<h3 id="IPMask.String">func (IPMask) <a href="http://localhost:9090/src/net/ip.go?s=9955:9986#L411">String</a></h3>
+				<h3 id="IPMask.String">func (IPMask) <a href="http://localhost:9090/src/net/ip.go?s=10417:10448#L425">String</a>
+					<a class="permalink" href="index.html#IPMask.String">&#xb6;</a>
+				</h3>
 				<pre>func (m <a href="index.html#IPMask">IPMask</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 String returns the hexadecimal form of m, with no punctuation.
@@ -2456,7 +2664,9 @@ String returns the hexadecimal form of m, with no punctuation.
 		
 			
 			
-			<h2 id="IPNet">type <a href="http://localhost:9090/src/net/ip.go?s=1025:1106#L26">IPNet</a></h2>
+			<h2 id="IPNet">type <a href="http://localhost:9090/src/net/ip.go?s=1025:1106#L26">IPNet</a>
+				<a class="permalink" href="index.html#IPNet">&#xb6;</a>
+			</h2>
 			<pre>type IPNet struct {
     IP   <a href="index.html#IP">IP</a>     <span class="comment">// network number</span>
     Mask <a href="index.html#IPMask">IPMask</a> <span class="comment">// network mask</span>
@@ -2478,7 +2688,9 @@ An IPNet represents an IP network.
 
 			
 				
-				<h3 id="IPNet.Contains">func (*IPNet) <a href="http://localhost:9090/src/net/ip.go?s=10564:10600#L446">Contains</a></h3>
+				<h3 id="IPNet.Contains">func (*IPNet) <a href="http://localhost:9090/src/net/ip.go?s=10913:10949#L456">Contains</a>
+					<a class="permalink" href="index.html#IPNet.Contains">&#xb6;</a>
+				</h3>
 				<pre>func (n *<a href="index.html#IPNet">IPNet</a>) Contains(ip <a href="index.html#IP">IP</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Contains reports whether the network includes ip.
@@ -2489,7 +2701,9 @@ Contains reports whether the network includes ip.
 				
 			
 				
-				<h3 id="IPNet.Network">func (*IPNet) <a href="http://localhost:9090/src/net/ip.go?s=10884:10916#L464">Network</a></h3>
+				<h3 id="IPNet.Network">func (*IPNet) <a href="http://localhost:9090/src/net/ip.go?s=11233:11265#L474">Network</a>
+					<a class="permalink" href="index.html#IPNet.Network">&#xb6;</a>
+				</h3>
 				<pre>func (n *<a href="index.html#IPNet">IPNet</a>) Network() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 Network returns the address&#39;s network name, &#34;ip+net&#34;.
@@ -2500,15 +2714,17 @@ Network returns the address&#39;s network name, &#34;ip+net&#34;.
 				
 			
 				
-				<h3 id="IPNet.String">func (*IPNet) <a href="http://localhost:9090/src/net/ip.go?s=11293:11324#L472">String</a></h3>
+				<h3 id="IPNet.String">func (*IPNet) <a href="http://localhost:9090/src/net/ip.go?s=11637:11668#L482">String</a>
+					<a class="permalink" href="index.html#IPNet.String">&#xb6;</a>
+				</h3>
 				<pre>func (n *<a href="index.html#IPNet">IPNet</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
-String returns the CIDR notation of n like &#34;192.168.100.1/24&#34;
-or &#34;2001:DB8::/48&#34; as defined in RFC 4632 and RFC 4291.
+String returns the CIDR notation of n like &#34;192.0.2.1/24&#34;
+or &#34;2001:db8::/48&#34; as defined in RFC 4632 and RFC 4291.
 If the mask is not in the canonical form, it returns the
 string which consists of an IP address, followed by a slash
 character and a mask expressed as hexadecimal form with no
-punctuation like &#34;192.168.100.1/c000ff00&#34;.
+punctuation like &#34;198.51.100.1/c000ff00&#34;.
 </p>
 
 				
@@ -2518,7 +2734,9 @@ punctuation like &#34;192.168.100.1/c000ff00&#34;.
 		
 			
 			
-			<h2 id="Interface">type <a href="http://localhost:9090/src/net/interface.go?s=718:1084#L10">Interface</a></h2>
+			<h2 id="Interface">type <a href="http://localhost:9090/src/net/interface.go?s=737:1103#L14">Interface</a>
+				<a class="permalink" href="index.html#Interface">&#xb6;</a>
+			</h2>
 			<pre>type Interface struct {
     Index        <a href="../builtin/index.html#int">int</a>          <span class="comment">// positive integer that starts at one, zero is never used</span>
     MTU          <a href="../builtin/index.html#int">int</a>          <span class="comment">// maximum transmission unit</span>
@@ -2528,7 +2746,7 @@ punctuation like &#34;192.168.100.1/c000ff00&#34;.
 }</pre>
 			<p>
 Interface represents a mapping between network interface name
-and index.  It also represents network interface facility
+and index. It also represents network interface facility
 information.
 </p>
 
@@ -2543,7 +2761,9 @@ information.
 
 			
 				
-				<h3 id="InterfaceByIndex">func <a href="http://localhost:9090/src/net/interface.go?s=3208:3260#L97">InterfaceByIndex</a></h3>
+				<h3 id="InterfaceByIndex">func <a href="http://localhost:9090/src/net/interface.go?s=3280:3332#L104">InterfaceByIndex</a>
+					<a class="permalink" href="index.html#InterfaceByIndex">&#xb6;</a>
+				</h3>
 				<pre>func InterfaceByIndex(index <a href="../builtin/index.html#int">int</a>) (*<a href="index.html#Interface">Interface</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 InterfaceByIndex returns the interface specified by index.
@@ -2553,7 +2773,9 @@ InterfaceByIndex returns the interface specified by index.
 				
 			
 				
-				<h3 id="InterfaceByName">func <a href="http://localhost:9090/src/net/interface.go?s=3937:3990#L122">InterfaceByName</a></h3>
+				<h3 id="InterfaceByName">func <a href="http://localhost:9090/src/net/interface.go?s=4009:4062#L129">InterfaceByName</a>
+					<a class="permalink" href="index.html#InterfaceByName">&#xb6;</a>
+				</h3>
 				<pre>func InterfaceByName(name <a href="../builtin/index.html#string">string</a>) (*<a href="index.html#Interface">Interface</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 InterfaceByName returns the interface specified by name.
@@ -2565,7 +2787,9 @@ InterfaceByName returns the interface specified by name.
 
 			
 				
-				<h3 id="Interface.Addrs">func (*Interface) <a href="http://localhost:9090/src/net/interface.go?s=1850:1895#L53">Addrs</a></h3>
+				<h3 id="Interface.Addrs">func (*Interface) <a href="http://localhost:9090/src/net/interface.go?s=1869:1914#L57">Addrs</a>
+					<a class="permalink" href="index.html#Interface.Addrs">&#xb6;</a>
+				</h3>
 				<pre>func (ifi *<a href="index.html#Interface">Interface</a>) Addrs() ([]<a href="index.html#Addr">Addr</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Addrs returns interface addresses for a specific interface.
@@ -2576,7 +2800,9 @@ Addrs returns interface addresses for a specific interface.
 				
 			
 				
-				<h3 id="Interface.MulticastAddrs">func (*Interface) <a href="http://localhost:9090/src/net/interface.go?s=2266:2320#L66">MulticastAddrs</a></h3>
+				<h3 id="Interface.MulticastAddrs">func (*Interface) <a href="http://localhost:9090/src/net/interface.go?s=2285:2339#L70">MulticastAddrs</a>
+					<a class="permalink" href="index.html#Interface.MulticastAddrs">&#xb6;</a>
+				</h3>
 				<pre>func (ifi *<a href="index.html#Interface">Interface</a>) MulticastAddrs() ([]<a href="index.html#Addr">Addr</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 MulticastAddrs returns multicast, joined group addresses for
@@ -2590,7 +2816,9 @@ a specific interface.
 		
 			
 			
-			<h2 id="InvalidAddrError">type <a href="http://localhost:9090/src/net/net.go?s=15306:15334#L499">InvalidAddrError</a></h2>
+			<h2 id="InvalidAddrError">type <a href="http://localhost:9090/src/net/net.go?s=15796:15824#L519">InvalidAddrError</a>
+				<a class="permalink" href="index.html#InvalidAddrError">&#xb6;</a>
+			</h2>
 			<pre>type InvalidAddrError <a href="../builtin/index.html#string">string</a></pre>
 			
 
@@ -2606,7 +2834,9 @@ a specific interface.
 
 			
 				
-				<h3 id="InvalidAddrError.Error">func (InvalidAddrError) <a href="http://localhost:9090/src/net/net.go?s=15336:15376#L501">Error</a></h3>
+				<h3 id="InvalidAddrError.Error">func (InvalidAddrError) <a href="http://localhost:9090/src/net/net.go?s=15826:15866#L521">Error</a>
+					<a class="permalink" href="index.html#InvalidAddrError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#InvalidAddrError">InvalidAddrError</a>) Error() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2614,7 +2844,9 @@ a specific interface.
 				
 			
 				
-				<h3 id="InvalidAddrError.Temporary">func (InvalidAddrError) <a href="http://localhost:9090/src/net/net.go?s=15460:15502#L503">Temporary</a></h3>
+				<h3 id="InvalidAddrError.Temporary">func (InvalidAddrError) <a href="http://localhost:9090/src/net/net.go?s=15950:15992#L523">Temporary</a>
+					<a class="permalink" href="index.html#InvalidAddrError.Temporary">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#InvalidAddrError">InvalidAddrError</a>) Temporary() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -2622,7 +2854,9 @@ a specific interface.
 				
 			
 				
-				<h3 id="InvalidAddrError.Timeout">func (InvalidAddrError) <a href="http://localhost:9090/src/net/net.go?s=15400:15440#L502">Timeout</a></h3>
+				<h3 id="InvalidAddrError.Timeout">func (InvalidAddrError) <a href="http://localhost:9090/src/net/net.go?s=15890:15930#L522">Timeout</a>
+					<a class="permalink" href="index.html#InvalidAddrError.Timeout">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#InvalidAddrError">InvalidAddrError</a>) Timeout() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -2632,7 +2866,9 @@ a specific interface.
 		
 			
 			
-			<h2 id="Listener">type <a href="http://localhost:9090/src/net/net.go?s=11216:11518#L336">Listener</a></h2>
+			<h2 id="Listener">type <a href="http://localhost:9090/src/net/net.go?s=11226:11528#L337">Listener</a>
+				<a class="permalink" href="index.html#Listener">&#xb6;</a>
+			</h2>
 			<pre>type Listener interface {
     <span class="comment">// Accept waits for and returns the next connection to the listener.</span>
     Accept() (<a href="index.html#Conn">Conn</a>, <a href="../builtin/index.html#error">error</a>)
@@ -2662,7 +2898,9 @@ Multiple goroutines may invoke methods on a Listener simultaneously.
 
 			
 				
-				<h3 id="FileListener">func <a href="http://localhost:9090/src/net/file.go?s=957:1011#L20">FileListener</a></h3>
+				<h3 id="FileListener">func <a href="http://localhost:9090/src/net/file.go?s=957:1011#L20">FileListener</a>
+					<a class="permalink" href="index.html#FileListener">&#xb6;</a>
+				</h3>
 				<pre>func FileListener(f *<a href="../os/index.html">os</a>.<a href="../os/index.html#File">File</a>) (ln <a href="index.html#Listener">Listener</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 FileListener returns a copy of the network listener corresponding
@@ -2675,7 +2913,9 @@ Closing ln does not affect f, and closing f does not affect ln.
 				
 			
 				
-				<h3 id="Listen">func <a href="http://localhost:9090/src/net/dial.go?s=12150:12198#L387">Listen</a></h3>
+				<h3 id="Listen">func <a href="http://localhost:9090/src/net/dial.go?s=15045:15093#L517">Listen</a>
+					<a class="permalink" href="index.html#Listen">&#xb6;</a>
+				</h3>
 				<pre>func Listen(net, laddr <a href="../builtin/index.html#string">string</a>) (<a href="index.html#Listener">Listener</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Listen announces on the local network address laddr.
@@ -2695,7 +2935,9 @@ See Dial for more details about address syntax.
 		
 			
 			
-			<h2 id="MX">type <a href="http://localhost:9090/src/net/dnsclient.go?s=6004:6048#L231">MX</a></h2>
+			<h2 id="MX">type <a href="http://localhost:9090/src/net/dnsclient.go?s=6003:6047#L231">MX</a>
+				<a class="permalink" href="index.html#MX">&#xb6;</a>
+			</h2>
 			<pre>type MX struct {
     Host <a href="../builtin/index.html#string">string</a>
     Pref <a href="../builtin/index.html#uint16">uint16</a>
@@ -2719,7 +2961,9 @@ An MX represents a single DNS MX record.
 		
 			
 			
-			<h2 id="NS">type <a href="http://localhost:9090/src/net/dnsclient.go?s=6539:6570#L253">NS</a></h2>
+			<h2 id="NS">type <a href="http://localhost:9090/src/net/dnsclient.go?s=6538:6569#L253">NS</a>
+				<a class="permalink" href="index.html#NS">&#xb6;</a>
+			</h2>
 			<pre>type NS struct {
     Host <a href="../builtin/index.html#string">string</a>
 }</pre>
@@ -2742,7 +2986,9 @@ An NS represents a single DNS NS record.
 		
 			
 			
-			<h2 id="OpError">type <a href="http://localhost:9090/src/net/net.go?s=12298:13072#L370">OpError</a></h2>
+			<h2 id="OpError">type <a href="http://localhost:9090/src/net/net.go?s=12788:13562#L390">OpError</a>
+				<a class="permalink" href="index.html#OpError">&#xb6;</a>
+			</h2>
 			<pre>type OpError struct {
     <span class="comment">// Op is the operation which caused the error, such as</span>
     <span class="comment">// &#34;read&#34; or &#34;write&#34;.</span>
@@ -2787,7 +3033,9 @@ an error.
 
 			
 				
-				<h3 id="OpError.Error">func (*OpError) <a href="http://localhost:9090/src/net/net.go?s=13074:13106#L396">Error</a></h3>
+				<h3 id="OpError.Error">func (*OpError) <a href="http://localhost:9090/src/net/net.go?s=13564:13596#L416">Error</a>
+					<a class="permalink" href="index.html#OpError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#OpError">OpError</a>) Error() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2795,7 +3043,9 @@ an error.
 				
 			
 				
-				<h3 id="OpError.Temporary">func (*OpError) <a href="http://localhost:9090/src/net/net.go?s=14008:14042#L447">Temporary</a></h3>
+				<h3 id="OpError.Temporary">func (*OpError) <a href="http://localhost:9090/src/net/net.go?s=14498:14532#L467">Temporary</a>
+					<a class="permalink" href="index.html#OpError.Temporary">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#OpError">OpError</a>) Temporary() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -2803,7 +3053,9 @@ an error.
 				
 			
 				
-				<h3 id="OpError.Timeout">func (*OpError) <a href="http://localhost:9090/src/net/net.go?s=13767:13799#L434">Timeout</a></h3>
+				<h3 id="OpError.Timeout">func (*OpError) <a href="http://localhost:9090/src/net/net.go?s=14257:14289#L454">Timeout</a>
+					<a class="permalink" href="index.html#OpError.Timeout">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#OpError">OpError</a>) Timeout() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -2813,10 +3065,12 @@ an error.
 		
 			
 			
-			<h2 id="PacketConn">type <a href="http://localhost:9090/src/net/net.go?s=9346:11020#L288">PacketConn</a></h2>
+			<h2 id="PacketConn">type <a href="http://localhost:9090/src/net/net.go?s=9357:11030#L289">PacketConn</a>
+				<a class="permalink" href="index.html#PacketConn">&#xb6;</a>
+			</h2>
 			<pre>type PacketConn interface {
     <span class="comment">// ReadFrom reads a packet from the connection,</span>
-    <span class="comment">// copying the payload into b.  It returns the number of</span>
+    <span class="comment">// copying the payload into b. It returns the number of</span>
     <span class="comment">// bytes copied into b and the return address that</span>
     <span class="comment">// was on the packet.</span>
     <span class="comment">// ReadFrom can be made to time out and return</span>
@@ -2874,7 +3128,9 @@ Multiple goroutines may invoke methods on a PacketConn simultaneously.
 
 			
 				
-				<h3 id="FilePacketConn">func <a href="http://localhost:9090/src/net/file.go?s=1398:1455#L32">FilePacketConn</a></h3>
+				<h3 id="FilePacketConn">func <a href="http://localhost:9090/src/net/file.go?s=1398:1455#L32">FilePacketConn</a>
+					<a class="permalink" href="index.html#FilePacketConn">&#xb6;</a>
+				</h3>
 				<pre>func FilePacketConn(f *<a href="../os/index.html">os</a>.<a href="../os/index.html#File">File</a>) (c <a href="index.html#PacketConn">PacketConn</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 FilePacketConn returns a copy of the packet network connection
@@ -2887,7 +3143,9 @@ Closing c does not affect f, and closing f does not affect c.
 				
 			
 				
-				<h3 id="ListenPacket">func <a href="http://localhost:9090/src/net/dial.go?s=13211:13267#L414">ListenPacket</a></h3>
+				<h3 id="ListenPacket">func <a href="http://localhost:9090/src/net/dial.go?s=16121:16177#L544">ListenPacket</a>
+					<a class="permalink" href="index.html#ListenPacket">&#xb6;</a>
+				</h3>
 				<pre>func ListenPacket(net, laddr <a href="../builtin/index.html#string">string</a>) (<a href="index.html#PacketConn">PacketConn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ListenPacket announces on the local network address laddr.
@@ -2907,7 +3165,9 @@ See Dial for the syntax of laddr.
 		
 			
 			
-			<h2 id="ParseError">type <a href="http://localhost:9090/src/net/net.go?s=14487:14671#L463">ParseError</a></h2>
+			<h2 id="ParseError">type <a href="http://localhost:9090/src/net/net.go?s=14977:15161#L483">ParseError</a>
+				<a class="permalink" href="index.html#ParseError">&#xb6;</a>
+			</h2>
 			<pre>type ParseError struct {
     <span class="comment">// Type is the type of string that was expected, such as</span>
     <span class="comment">// &#34;IP address&#34;, &#34;CIDR address&#34;.</span>
@@ -2933,7 +3193,9 @@ A ParseError is the error type of literal network address parsers.
 
 			
 				
-				<h3 id="ParseError.Error">func (*ParseError) <a href="http://localhost:9090/src/net/net.go?s=14673:14708#L472">Error</a></h3>
+				<h3 id="ParseError.Error">func (*ParseError) <a href="http://localhost:9090/src/net/net.go?s=15163:15198#L492">Error</a>
+					<a class="permalink" href="index.html#ParseError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#ParseError">ParseError</a>) Error() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2943,7 +3205,9 @@ A ParseError is the error type of literal network address parsers.
 		
 			
 			
-			<h2 id="SRV">type <a href="http://localhost:9090/src/net/dnsclient.go?s=4723:4810#L177">SRV</a></h2>
+			<h2 id="SRV">type <a href="http://localhost:9090/src/net/dnsclient.go?s=4722:4809#L177">SRV</a>
+				<a class="permalink" href="index.html#SRV">&#xb6;</a>
+			</h2>
 			<pre>type SRV struct {
     Target   <a href="../builtin/index.html#string">string</a>
     Port     <a href="../builtin/index.html#uint16">uint16</a>
@@ -2969,7 +3233,9 @@ An SRV represents a single DNS SRV record.
 		
 			
 			
-			<h2 id="TCPAddr">type <a href="http://localhost:9090/src/net/tcpsock.go?s=228:314#L1">TCPAddr</a></h2>
+			<h2 id="TCPAddr">type <a href="http://localhost:9090/src/net/tcpsock.go?s=281:367#L6">TCPAddr</a>
+				<a class="permalink" href="index.html#TCPAddr">&#xb6;</a>
+			</h2>
 			<pre>type TCPAddr struct {
     IP   <a href="index.html#IP">IP</a>
     Port <a href="../builtin/index.html#int">int</a>
@@ -2990,7 +3256,9 @@ TCPAddr represents the address of a TCP end point.
 
 			
 				
-				<h3 id="ResolveTCPAddr">func <a href="http://localhost:9090/src/net/tcpsock.go?s=1193:1248#L38">ResolveTCPAddr</a></h3>
+				<h3 id="ResolveTCPAddr">func <a href="http://localhost:9090/src/net/tcpsock.go?s=1246:1301#L46">ResolveTCPAddr</a>
+					<a class="permalink" href="index.html#ResolveTCPAddr">&#xb6;</a>
+				</h3>
 				<pre>func ResolveTCPAddr(net, addr <a href="../builtin/index.html#string">string</a>) (*<a href="index.html#TCPAddr">TCPAddr</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ResolveTCPAddr parses addr as a TCP address of the form &#34;host:port&#34;
@@ -3007,7 +3275,9 @@ in square brackets, as in &#34;[::1]:80&#34;, &#34;[ipv6-host]:http&#34; or
 
 			
 				
-				<h3 id="TCPAddr.Network">func (*TCPAddr) <a href="http://localhost:9090/src/net/tcpsock.go?s=370:404#L5">Network</a></h3>
+				<h3 id="TCPAddr.Network">func (*TCPAddr) <a href="http://localhost:9090/src/net/tcpsock.go?s=423:457#L13">Network</a>
+					<a class="permalink" href="index.html#TCPAddr.Network">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#TCPAddr">TCPAddr</a>) Network() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 Network returns the address&#39;s network name, &#34;tcp&#34;.
@@ -3018,7 +3288,9 @@ Network returns the address&#39;s network name, &#34;tcp&#34;.
 				
 			
 				
-				<h3 id="TCPAddr.String">func (*TCPAddr) <a href="http://localhost:9090/src/net/tcpsock.go?s=423:456#L7">String</a></h3>
+				<h3 id="TCPAddr.String">func (*TCPAddr) <a href="http://localhost:9090/src/net/tcpsock.go?s=476:509#L15">String</a>
+					<a class="permalink" href="index.html#TCPAddr.String">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#TCPAddr">TCPAddr</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -3028,7 +3300,9 @@ Network returns the address&#39;s network name, &#34;tcp&#34;.
 		
 			
 			
-			<h2 id="TCPConn">type <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=1005:1034#L35">TCPConn</a></h2>
+			<h2 id="TCPConn">type <a href="http://localhost:9090/src/net/tcpsock.go?s=1711:1740#L63">TCPConn</a>
+				<a class="permalink" href="index.html#TCPConn">&#xb6;</a>
+			</h2>
 			<pre>type TCPConn struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -3048,7 +3322,9 @@ connections.
 
 			
 				
-				<h3 id="DialTCP">func <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=4405:4470#L148">DialTCP</a></h3>
+				<h3 id="DialTCP">func <a href="http://localhost:9090/src/net/tcpsock.go?s=4946:5011#L171">DialTCP</a>
+					<a class="permalink" href="index.html#DialTCP">&#xb6;</a>
+				</h3>
 				<pre>func DialTCP(net <a href="../builtin/index.html#string">string</a>, laddr, raddr *<a href="index.html#TCPAddr">TCPAddr</a>) (*<a href="index.html#TCPConn">TCPConn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 DialTCP connects to the remote address raddr on the network net,
@@ -3062,7 +3338,9 @@ used as the local address for the connection.
 
 			
 				
-				<h3 id="TCPConn.Close">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=6330:6358#L182">Close</a></h3>
+				<h3 id="TCPConn.Close">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=6341:6369#L183">Close</a>
+					<a class="permalink" href="index.html#TCPConn.Close">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) Close() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the connection.
@@ -3073,7 +3351,9 @@ Close closes the connection.
 				
 			
 				
-				<h3 id="TCPConn.CloseRead">func (*TCPConn) <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=1737:1772#L62">CloseRead</a></h3>
+				<h3 id="TCPConn.CloseRead">func (*TCPConn) <a href="http://localhost:9090/src/net/tcpsock.go?s=2176:2211#L81">CloseRead</a>
+					<a class="permalink" href="index.html#TCPConn.CloseRead">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) CloseRead() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 CloseRead shuts down the reading side of the TCP connection.
@@ -3085,7 +3365,9 @@ Most callers should just use Close.
 				
 			
 				
-				<h3 id="TCPConn.CloseWrite">func (*TCPConn) <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=2073:2109#L75">CloseWrite</a></h3>
+				<h3 id="TCPConn.CloseWrite">func (*TCPConn) <a href="http://localhost:9090/src/net/tcpsock.go?s=2513:2549#L93">CloseWrite</a>
+					<a class="permalink" href="index.html#TCPConn.CloseWrite">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) CloseWrite() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 CloseWrite shuts down the writing side of the TCP connection.
@@ -3097,7 +3379,9 @@ Most callers should just use Close.
 				
 			
 				
-				<h3 id="TCPConn.File">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=9014:9059#L277">File</a></h3>
+				<h3 id="TCPConn.File">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=9025:9070#L278">File</a>
+					<a class="permalink" href="index.html#TCPConn.File">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) File() (f *<a href="../os/index.html">os</a>.<a href="../os/index.html#File">File</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 File sets the underlying os.File to blocking mode and returns a copy.
@@ -3115,7 +3399,9 @@ may or may not have the desired effect.
 				
 			
 				
-				<h3 id="TCPConn.LocalAddr">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=6687:6718#L196">LocalAddr</a></h3>
+				<h3 id="TCPConn.LocalAddr">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=6698:6729#L197">LocalAddr</a>
+					<a class="permalink" href="index.html#TCPConn.LocalAddr">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) LocalAddr() <a href="index.html#Addr">Addr</a></pre>
 				<p>
 LocalAddr returns the local network address.
@@ -3128,7 +3414,9 @@ do not modify it.
 				
 			
 				
-				<h3 id="TCPConn.Read">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=5749:5791#L158">Read</a></h3>
+				<h3 id="TCPConn.Read">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=5760:5802#L159">Read</a>
+					<a class="permalink" href="index.html#TCPConn.Read">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) Read(b []<a href="../builtin/index.html#byte">byte</a>) (<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Read implements the Conn Read method.
@@ -3139,7 +3427,9 @@ Read implements the Conn Read method.
 				
 			
 				
-				<h3 id="TCPConn.ReadFrom">func (*TCPConn) <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=1194:1248#L46">ReadFrom</a></h3>
+				<h3 id="TCPConn.ReadFrom">func (*TCPConn) <a href="http://localhost:9090/src/net/tcpsock.go?s=1800:1854#L68">ReadFrom</a>
+					<a class="permalink" href="index.html#TCPConn.ReadFrom">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) ReadFrom(r <a href="../io/index.html">io</a>.<a href="../io/index.html#Reader">Reader</a>) (<a href="../builtin/index.html#int64">int64</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadFrom implements the io.ReaderFrom ReadFrom method.
@@ -3150,7 +3440,9 @@ ReadFrom implements the io.ReaderFrom ReadFrom method.
 				
 			
 				
-				<h3 id="TCPConn.RemoteAddr">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=6912:6944#L206">RemoteAddr</a></h3>
+				<h3 id="TCPConn.RemoteAddr">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=6923:6955#L207">RemoteAddr</a>
+					<a class="permalink" href="index.html#TCPConn.RemoteAddr">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) RemoteAddr() <a href="index.html#Addr">Addr</a></pre>
 				<p>
 RemoteAddr returns the remote network address.
@@ -3163,7 +3455,9 @@ do not modify it.
 				
 			
 				
-				<h3 id="TCPConn.SetDeadline">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=7054:7099#L214">SetDeadline</a></h3>
+				<h3 id="TCPConn.SetDeadline">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=7065:7110#L215">SetDeadline</a>
+					<a class="permalink" href="index.html#TCPConn.SetDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) SetDeadline(t <a href="../time/index.html">time</a>.<a href="../time/index.html#Time">Time</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetDeadline implements the Conn SetDeadline method.
@@ -3174,7 +3468,9 @@ SetDeadline implements the Conn SetDeadline method.
 				
 			
 				
-				<h3 id="TCPConn.SetKeepAlive">func (*TCPConn) <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=3139:3191#L110">SetKeepAlive</a></h3>
+				<h3 id="TCPConn.SetKeepAlive">func (*TCPConn) <a href="http://localhost:9090/src/net/tcpsock.go?s=3580:3632#L127">SetKeepAlive</a>
+					<a class="permalink" href="index.html#TCPConn.SetKeepAlive">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) SetKeepAlive(keepalive <a href="../builtin/index.html#bool">bool</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetKeepAlive sets whether the operating system should send
@@ -3186,7 +3482,9 @@ keepalive messages on the connection.
 				
 			
 				
-				<h3 id="TCPConn.SetKeepAlivePeriod">func (*TCPConn) <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=3455:3514#L121">SetKeepAlivePeriod</a></h3>
+				<h3 id="TCPConn.SetKeepAlivePeriod">func (*TCPConn) <a href="http://localhost:9090/src/net/tcpsock.go?s=3896:3955#L138">SetKeepAlivePeriod</a>
+					<a class="permalink" href="index.html#TCPConn.SetKeepAlivePeriod">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) SetKeepAlivePeriod(d <a href="../time/index.html">time</a>.<a href="../time/index.html#Duration">Duration</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetKeepAlivePeriod sets period between keep alives.
@@ -3197,7 +3495,9 @@ SetKeepAlivePeriod sets period between keep alives.
 				
 			
 				
-				<h3 id="TCPConn.SetLinger">func (*TCPConn) <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=2794:2836#L98">SetLinger</a></h3>
+				<h3 id="TCPConn.SetLinger">func (*TCPConn) <a href="http://localhost:9090/src/net/tcpsock.go?s=3235:3277#L115">SetLinger</a>
+					<a class="permalink" href="index.html#TCPConn.SetLinger">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) SetLinger(sec <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetLinger sets the behavior of Close on a connection which still
@@ -3222,7 +3522,9 @@ unsent data may be discarded.
 				
 			
 				
-				<h3 id="TCPConn.SetNoDelay">func (*TCPConn) <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=3964:4012#L135">SetNoDelay</a></h3>
+				<h3 id="TCPConn.SetNoDelay">func (*TCPConn) <a href="http://localhost:9090/src/net/tcpsock.go?s=4405:4453#L152">SetNoDelay</a>
+					<a class="permalink" href="index.html#TCPConn.SetNoDelay">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) SetNoDelay(noDelay <a href="../builtin/index.html#bool">bool</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetNoDelay controls whether the operating system should delay
@@ -3236,7 +3538,9 @@ sent as soon as possible after a Write.
 				
 			
 				
-				<h3 id="TCPConn.SetReadBuffer">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=8018:8063#L248">SetReadBuffer</a></h3>
+				<h3 id="TCPConn.SetReadBuffer">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=8029:8074#L249">SetReadBuffer</a>
+					<a class="permalink" href="index.html#TCPConn.SetReadBuffer">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) SetReadBuffer(bytes <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetReadBuffer sets the size of the operating system&#39;s
@@ -3248,7 +3552,9 @@ receive buffer associated with the connection.
 				
 			
 				
-				<h3 id="TCPConn.SetReadDeadline">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=7354:7403#L225">SetReadDeadline</a></h3>
+				<h3 id="TCPConn.SetReadDeadline">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=7365:7414#L226">SetReadDeadline</a>
+					<a class="permalink" href="index.html#TCPConn.SetReadDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) SetReadDeadline(t <a href="../time/index.html">time</a>.<a href="../time/index.html#Time">Time</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetReadDeadline implements the Conn SetReadDeadline method.
@@ -3259,7 +3565,9 @@ SetReadDeadline implements the Conn SetReadDeadline method.
 				
 			
 				
-				<h3 id="TCPConn.SetWriteBuffer">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=8371:8417#L260">SetWriteBuffer</a></h3>
+				<h3 id="TCPConn.SetWriteBuffer">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=8382:8428#L261">SetWriteBuffer</a>
+					<a class="permalink" href="index.html#TCPConn.SetWriteBuffer">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) SetWriteBuffer(bytes <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetWriteBuffer sets the size of the operating system&#39;s
@@ -3271,7 +3579,9 @@ transmit buffer associated with the connection.
 				
 			
 				
-				<h3 id="TCPConn.SetWriteDeadline">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=7664:7714#L236">SetWriteDeadline</a></h3>
+				<h3 id="TCPConn.SetWriteDeadline">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=7675:7725#L237">SetWriteDeadline</a>
+					<a class="permalink" href="index.html#TCPConn.SetWriteDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) SetWriteDeadline(t <a href="../time/index.html">time</a>.<a href="../time/index.html#Time">Time</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetWriteDeadline implements the Conn SetWriteDeadline method.
@@ -3282,7 +3592,9 @@ SetWriteDeadline implements the Conn SetWriteDeadline method.
 				
 			
 				
-				<h3 id="TCPConn.Write">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=6052:6095#L170">Write</a></h3>
+				<h3 id="TCPConn.Write">func (*TCPConn) <a href="http://localhost:9090/src/net/net.go?s=6063:6106#L171">Write</a>
+					<a class="permalink" href="index.html#TCPConn.Write">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#TCPConn">TCPConn</a>) Write(b []<a href="../builtin/index.html#byte">byte</a>) (<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Write implements the Conn Write method.
@@ -3295,12 +3607,14 @@ Write implements the Conn Write method.
 		
 			
 			
-			<h2 id="TCPListener">type <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=8063:8101#L234">TCPListener</a></h2>
+			<h2 id="TCPListener">type <a href="http://localhost:9090/src/net/tcpsock.go?s=5643:5681#L189">TCPListener</a>
+				<a class="permalink" href="index.html#TCPListener">&#xb6;</a>
+			</h2>
 			<pre>type TCPListener struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
-TCPListener is a TCP network listener.  Clients should typically
+TCPListener is a TCP network listener. Clients should typically
 use variables of type Listener instead of assuming TCP.
 </p>
 
@@ -3315,12 +3629,14 @@ use variables of type Listener instead of assuming TCP.
 
 			
 				
-				<h3 id="ListenTCP">func <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=10482:10546#L310">ListenTCP</a></h3>
+				<h3 id="ListenTCP">func <a href="http://localhost:9090/src/net/tcpsock.go?s=8159:8223#L270">ListenTCP</a>
+					<a class="permalink" href="index.html#ListenTCP">&#xb6;</a>
+				</h3>
 				<pre>func ListenTCP(net <a href="../builtin/index.html#string">string</a>, laddr *<a href="index.html#TCPAddr">TCPAddr</a>) (*<a href="index.html#TCPListener">TCPListener</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ListenTCP announces on the TCP address laddr and returns a TCP
-listener.  Net must be &#34;tcp&#34;, &#34;tcp4&#34;, or &#34;tcp6&#34;.  If laddr has a
-port of 0, ListenTCP will choose an available port.  The caller can
+listener. Net must be &#34;tcp&#34;, &#34;tcp4&#34;, or &#34;tcp6&#34;.  If laddr has a
+port of 0, ListenTCP will choose an available port. The caller can
 use the Addr method of TCPListener to retrieve the chosen address.
 </p>
 
@@ -3330,7 +3646,9 @@ use the Addr method of TCPListener to retrieve the chosen address.
 
 			
 				
-				<h3 id="TCPListener.Accept">func (*TCPListener) <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=8592:8636#L253">Accept</a></h3>
+				<h3 id="TCPListener.Accept">func (*TCPListener) <a href="http://localhost:9090/src/net/tcpsock.go?s=6139:6183#L208">Accept</a>
+					<a class="permalink" href="index.html#TCPListener.Accept">&#xb6;</a>
+				</h3>
 				<pre>func (l *<a href="index.html#TCPListener">TCPListener</a>) Accept() (<a href="index.html#Conn">Conn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Accept implements the Accept method in the Listener interface; it
@@ -3342,7 +3660,9 @@ waits for the next call and returns a generic Conn.
 				
 			
 				
-				<h3 id="TCPListener.AcceptTCP">func (*TCPListener) <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=8182:8233#L240">AcceptTCP</a></h3>
+				<h3 id="TCPListener.AcceptTCP">func (*TCPListener) <a href="http://localhost:9090/src/net/tcpsock.go?s=5762:5813#L195">AcceptTCP</a>
+					<a class="permalink" href="index.html#TCPListener.AcceptTCP">&#xb6;</a>
+				</h3>
 				<pre>func (l *<a href="index.html#TCPListener">TCPListener</a>) AcceptTCP() (*<a href="index.html#TCPConn">TCPConn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 AcceptTCP accepts the next incoming call and returns the new
@@ -3354,7 +3674,9 @@ connection.
 				
 			
 				
-				<h3 id="TCPListener.Addr">func (*TCPListener) <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=9193:9226#L277">Addr</a></h3>
+				<h3 id="TCPListener.Addr">func (*TCPListener) <a href="http://localhost:9090/src/net/tcpsock.go?s=6840:6873#L234">Addr</a>
+					<a class="permalink" href="index.html#TCPListener.Addr">&#xb6;</a>
+				</h3>
 				<pre>func (l *<a href="index.html#TCPListener">TCPListener</a>) Addr() <a href="index.html#Addr">Addr</a></pre>
 				<p>
 Addr returns the listener&#39;s network address, a *TCPAddr.
@@ -3367,7 +3689,9 @@ do not modify it.
 				
 			
 				
-				<h3 id="TCPListener.Close">func (*TCPListener) <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=8813:8848#L263">Close</a></h3>
+				<h3 id="TCPListener.Close">func (*TCPListener) <a href="http://localhost:9090/src/net/tcpsock.go?s=6478:6513#L221">Close</a>
+					<a class="permalink" href="index.html#TCPListener.Close">&#xb6;</a>
+				</h3>
 				<pre>func (l *<a href="index.html#TCPListener">TCPListener</a>) Close() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Close stops listening on the TCP address.
@@ -3379,16 +3703,18 @@ Already Accepted connections are not closed.
 				
 			
 				
-				<h3 id="TCPListener.File">func (*TCPListener) <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=10015:10067#L298">File</a></h3>
+				<h3 id="TCPListener.File">func (*TCPListener) <a href="http://localhost:9090/src/net/tcpsock.go?s=7644:7696#L255">File</a>
+					<a class="permalink" href="index.html#TCPListener.File">&#xb6;</a>
+				</h3>
 				<pre>func (l *<a href="index.html#TCPListener">TCPListener</a>) File() (f *<a href="../os/index.html">os</a>.<a href="../os/index.html#File">File</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 File returns a copy of the underlying os.File, set to blocking
-mode.  It is the caller&#39;s responsibility to close f when finished.
+mode. It is the caller&#39;s responsibility to close f when finished.
 Closing l does not affect f, and closing f does not affect l.
 </p>
 <p>
 The returned os.File&#39;s file descriptor is different from the
-connection&#39;s.  Attempting to change properties of the original
+connection&#39;s. Attempting to change properties of the original
 using this duplicate may or may not have the desired effect.
 </p>
 
@@ -3397,7 +3723,9 @@ using this duplicate may or may not have the desired effect.
 				
 			
 				
-				<h3 id="TCPListener.SetDeadline">func (*TCPListener) <a href="http://localhost:9090/src/net/tcpsock_posix.go?s=9357:9409#L281">SetDeadline</a></h3>
+				<h3 id="TCPListener.SetDeadline">func (*TCPListener) <a href="http://localhost:9090/src/net/tcpsock.go?s=7004:7056#L238">SetDeadline</a>
+					<a class="permalink" href="index.html#TCPListener.SetDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (l *<a href="index.html#TCPListener">TCPListener</a>) SetDeadline(t <a href="../time/index.html">time</a>.<a href="../time/index.html#Time">Time</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetDeadline sets the deadline associated with the listener.
@@ -3411,7 +3739,9 @@ A zero time value disables the deadline.
 		
 			
 			
-			<h2 id="UDPAddr">type <a href="http://localhost:9090/src/net/udpsock.go?s=228:314#L1">UDPAddr</a></h2>
+			<h2 id="UDPAddr">type <a href="http://localhost:9090/src/net/udpsock.go?s=261:347#L3">UDPAddr</a>
+				<a class="permalink" href="index.html#UDPAddr">&#xb6;</a>
+			</h2>
 			<pre>type UDPAddr struct {
     IP   <a href="index.html#IP">IP</a>
     Port <a href="../builtin/index.html#int">int</a>
@@ -3432,7 +3762,9 @@ UDPAddr represents the address of a UDP end point.
 
 			
 				
-				<h3 id="ResolveUDPAddr">func <a href="http://localhost:9090/src/net/udpsock.go?s=1193:1248#L38">ResolveUDPAddr</a></h3>
+				<h3 id="ResolveUDPAddr">func <a href="http://localhost:9090/src/net/udpsock.go?s=1226:1281#L43">ResolveUDPAddr</a>
+					<a class="permalink" href="index.html#ResolveUDPAddr">&#xb6;</a>
+				</h3>
 				<pre>func ResolveUDPAddr(net, addr <a href="../builtin/index.html#string">string</a>) (*<a href="index.html#UDPAddr">UDPAddr</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ResolveUDPAddr parses addr as a UDP address of the form &#34;host:port&#34;
@@ -3449,7 +3781,9 @@ in square brackets, as in &#34;[::1]:80&#34;, &#34;[ipv6-host]:http&#34; or
 
 			
 				
-				<h3 id="UDPAddr.Network">func (*UDPAddr) <a href="http://localhost:9090/src/net/udpsock.go?s=370:404#L5">Network</a></h3>
+				<h3 id="UDPAddr.Network">func (*UDPAddr) <a href="http://localhost:9090/src/net/udpsock.go?s=403:437#L10">Network</a>
+					<a class="permalink" href="index.html#UDPAddr.Network">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#UDPAddr">UDPAddr</a>) Network() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 Network returns the address&#39;s network name, &#34;udp&#34;.
@@ -3460,7 +3794,9 @@ Network returns the address&#39;s network name, &#34;udp&#34;.
 				
 			
 				
-				<h3 id="UDPAddr.String">func (*UDPAddr) <a href="http://localhost:9090/src/net/udpsock.go?s=423:456#L7">String</a></h3>
+				<h3 id="UDPAddr.String">func (*UDPAddr) <a href="http://localhost:9090/src/net/udpsock.go?s=456:489#L12">String</a>
+					<a class="permalink" href="index.html#UDPAddr.String">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#UDPAddr">UDPAddr</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -3470,7 +3806,9 @@ Network returns the address&#39;s network name, &#34;udp&#34;.
 		
 			
 			
-			<h2 id="UDPConn">type <a href="http://localhost:9090/src/net/udpsock_posix.go?s=1010:1039#L33">UDPConn</a></h2>
+			<h2 id="UDPConn">type <a href="http://localhost:9090/src/net/udpsock.go?s=1708:1737#L60">UDPConn</a>
+				<a class="permalink" href="index.html#UDPConn">&#xb6;</a>
+			</h2>
 			<pre>type UDPConn struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -3490,7 +3828,9 @@ for UDP network connections.
 
 			
 				
-				<h3 id="DialUDP">func <a href="http://localhost:9090/src/net/udpsock_posix.go?s=5713:5778#L169">DialUDP</a></h3>
+				<h3 id="DialUDP">func <a href="http://localhost:9090/src/net/udpsock.go?s=5216:5281#L168">DialUDP</a>
+					<a class="permalink" href="index.html#DialUDP">&#xb6;</a>
+				</h3>
 				<pre>func DialUDP(net <a href="../builtin/index.html#string">string</a>, laddr, raddr *<a href="index.html#UDPAddr">UDPAddr</a>) (*<a href="index.html#UDPConn">UDPConn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 DialUDP connects to the remote address raddr on the network net,
@@ -3502,7 +3842,9 @@ used as the local address for the connection.
 				
 			
 				
-				<h3 id="ListenMulticastUDP">func <a href="http://localhost:9090/src/net/udpsock_posix.go?s=7970:8059#L223">ListenMulticastUDP</a></h3>
+				<h3 id="ListenMulticastUDP">func <a href="http://localhost:9090/src/net/udpsock.go?s=7235:7324#L218">ListenMulticastUDP</a>
+					<a class="permalink" href="index.html#ListenMulticastUDP">&#xb6;</a>
+				</h3>
 				<pre>func ListenMulticastUDP(network <a href="../builtin/index.html#string">string</a>, ifi *<a href="index.html#Interface">Interface</a>, gaddr *<a href="index.html#UDPAddr">UDPAddr</a>) (*<a href="index.html#UDPConn">UDPConn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ListenMulticastUDP listens for incoming multicast UDP packets
@@ -3523,14 +3865,16 @@ golang.org/x/net/ipv6 packages for general purpose uses.
 				
 			
 				
-				<h3 id="ListenUDP">func <a href="http://localhost:9090/src/net/udpsock_posix.go?s=6888:6948#L196">ListenUDP</a></h3>
+				<h3 id="ListenUDP">func <a href="http://localhost:9090/src/net/udpsock.go?s=6201:6261#L191">ListenUDP</a>
+					<a class="permalink" href="index.html#ListenUDP">&#xb6;</a>
+				</h3>
 				<pre>func ListenUDP(net <a href="../builtin/index.html#string">string</a>, laddr *<a href="index.html#UDPAddr">UDPAddr</a>) (*<a href="index.html#UDPConn">UDPConn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ListenUDP listens for incoming UDP packets addressed to the local
-address laddr.  Net must be &#34;udp&#34;, &#34;udp4&#34;, or &#34;udp6&#34;.  If laddr has
+address laddr. Net must be &#34;udp&#34;, &#34;udp4&#34;, or &#34;udp6&#34;.  If laddr has
 a port of 0, ListenUDP will choose an available port.
 The LocalAddr method of the returned UDPConn can be used to
-discover the port.  The returned connection&#39;s ReadFrom and WriteTo
+discover the port. The returned connection&#39;s ReadFrom and WriteTo
 methods can be used to receive and send UDP packets with per-packet
 addressing.
 </p>
@@ -3541,7 +3885,9 @@ addressing.
 
 			
 				
-				<h3 id="UDPConn.Close">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=6330:6358#L182">Close</a></h3>
+				<h3 id="UDPConn.Close">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=6341:6369#L183">Close</a>
+					<a class="permalink" href="index.html#UDPConn.Close">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) Close() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the connection.
@@ -3552,7 +3898,9 @@ Close closes the connection.
 				
 			
 				
-				<h3 id="UDPConn.File">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=9014:9059#L277">File</a></h3>
+				<h3 id="UDPConn.File">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=9025:9070#L278">File</a>
+					<a class="permalink" href="index.html#UDPConn.File">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) File() (f *<a href="../os/index.html">os</a>.<a href="../os/index.html#File">File</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 File sets the underlying os.File to blocking mode and returns a copy.
@@ -3570,7 +3918,9 @@ may or may not have the desired effect.
 				
 			
 				
-				<h3 id="UDPConn.LocalAddr">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=6687:6718#L196">LocalAddr</a></h3>
+				<h3 id="UDPConn.LocalAddr">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=6698:6729#L197">LocalAddr</a>
+					<a class="permalink" href="index.html#UDPConn.LocalAddr">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) LocalAddr() <a href="index.html#Addr">Addr</a></pre>
 				<p>
 LocalAddr returns the local network address.
@@ -3583,7 +3933,9 @@ do not modify it.
 				
 			
 				
-				<h3 id="UDPConn.Read">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=5749:5791#L158">Read</a></h3>
+				<h3 id="UDPConn.Read">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=5760:5802#L159">Read</a>
+					<a class="permalink" href="index.html#UDPConn.Read">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) Read(b []<a href="../builtin/index.html#byte">byte</a>) (<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Read implements the Conn Read method.
@@ -3594,7 +3946,9 @@ Read implements the Conn Read method.
 				
 			
 				
-				<h3 id="UDPConn.ReadFrom">func (*UDPConn) <a href="http://localhost:9090/src/net/udpsock_posix.go?s=2011:2066#L65">ReadFrom</a></h3>
+				<h3 id="UDPConn.ReadFrom">func (*UDPConn) <a href="http://localhost:9090/src/net/udpsock.go?s=2397:2452#L83">ReadFrom</a>
+					<a class="permalink" href="index.html#UDPConn.ReadFrom">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) ReadFrom(b []<a href="../builtin/index.html#byte">byte</a>) (<a href="../builtin/index.html#int">int</a>, <a href="index.html#Addr">Addr</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadFrom implements the PacketConn ReadFrom method.
@@ -3605,7 +3959,9 @@ ReadFrom implements the PacketConn ReadFrom method.
 				
 			
 				
-				<h3 id="UDPConn.ReadFromUDP">func (*UDPConn) <a href="http://localhost:9090/src/net/udpsock_posix.go?s=1430:1492#L46">ReadFromUDP</a></h3>
+				<h3 id="UDPConn.ReadFromUDP">func (*UDPConn) <a href="http://localhost:9090/src/net/udpsock.go?s=2061:2123#L71">ReadFromUDP</a>
+					<a class="permalink" href="index.html#UDPConn.ReadFromUDP">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) ReadFromUDP(b []<a href="../builtin/index.html#byte">byte</a>) (<a href="../builtin/index.html#int">int</a>, *<a href="index.html#UDPAddr">UDPAddr</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadFromUDP reads a UDP packet from c, copying the payload into b.
@@ -3623,11 +3979,13 @@ SetReadDeadline.
 				
 			
 				
-				<h3 id="UDPConn.ReadMsgUDP">func (*UDPConn) <a href="http://localhost:9090/src/net/udpsock_posix.go?s=2500:2590#L81">ReadMsgUDP</a></h3>
+				<h3 id="UDPConn.ReadMsgUDP">func (*UDPConn) <a href="http://localhost:9090/src/net/udpsock.go?s=2994:3084#L102">ReadMsgUDP</a>
+					<a class="permalink" href="index.html#UDPConn.ReadMsgUDP">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) ReadMsgUDP(b, oob []<a href="../builtin/index.html#byte">byte</a>) (n, oobn, flags <a href="../builtin/index.html#int">int</a>, addr *<a href="index.html#UDPAddr">UDPAddr</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadMsgUDP reads a packet from c, copying the payload into b and
-the associated out-of-band data into oob.  It returns the number
+the associated out-of-band data into oob. It returns the number
 of bytes copied into b, the number of bytes copied into oob, the
 flags that were set on the packet and the source address of the
 packet.
@@ -3638,7 +3996,9 @@ packet.
 				
 			
 				
-				<h3 id="UDPConn.RemoteAddr">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=6912:6944#L206">RemoteAddr</a></h3>
+				<h3 id="UDPConn.RemoteAddr">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=6923:6955#L207">RemoteAddr</a>
+					<a class="permalink" href="index.html#UDPConn.RemoteAddr">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) RemoteAddr() <a href="index.html#Addr">Addr</a></pre>
 				<p>
 RemoteAddr returns the remote network address.
@@ -3651,7 +4011,9 @@ do not modify it.
 				
 			
 				
-				<h3 id="UDPConn.SetDeadline">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=7054:7099#L214">SetDeadline</a></h3>
+				<h3 id="UDPConn.SetDeadline">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=7065:7110#L215">SetDeadline</a>
+					<a class="permalink" href="index.html#UDPConn.SetDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) SetDeadline(t <a href="../time/index.html">time</a>.<a href="../time/index.html#Time">Time</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetDeadline implements the Conn SetDeadline method.
@@ -3662,7 +4024,9 @@ SetDeadline implements the Conn SetDeadline method.
 				
 			
 				
-				<h3 id="UDPConn.SetReadBuffer">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=8018:8063#L248">SetReadBuffer</a></h3>
+				<h3 id="UDPConn.SetReadBuffer">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=8029:8074#L249">SetReadBuffer</a>
+					<a class="permalink" href="index.html#UDPConn.SetReadBuffer">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) SetReadBuffer(bytes <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetReadBuffer sets the size of the operating system&#39;s
@@ -3674,7 +4038,9 @@ receive buffer associated with the connection.
 				
 			
 				
-				<h3 id="UDPConn.SetReadDeadline">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=7354:7403#L225">SetReadDeadline</a></h3>
+				<h3 id="UDPConn.SetReadDeadline">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=7365:7414#L226">SetReadDeadline</a>
+					<a class="permalink" href="index.html#UDPConn.SetReadDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) SetReadDeadline(t <a href="../time/index.html">time</a>.<a href="../time/index.html#Time">Time</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetReadDeadline implements the Conn SetReadDeadline method.
@@ -3685,7 +4051,9 @@ SetReadDeadline implements the Conn SetReadDeadline method.
 				
 			
 				
-				<h3 id="UDPConn.SetWriteBuffer">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=8371:8417#L260">SetWriteBuffer</a></h3>
+				<h3 id="UDPConn.SetWriteBuffer">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=8382:8428#L261">SetWriteBuffer</a>
+					<a class="permalink" href="index.html#UDPConn.SetWriteBuffer">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) SetWriteBuffer(bytes <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetWriteBuffer sets the size of the operating system&#39;s
@@ -3697,7 +4065,9 @@ transmit buffer associated with the connection.
 				
 			
 				
-				<h3 id="UDPConn.SetWriteDeadline">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=7664:7714#L236">SetWriteDeadline</a></h3>
+				<h3 id="UDPConn.SetWriteDeadline">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=7675:7725#L237">SetWriteDeadline</a>
+					<a class="permalink" href="index.html#UDPConn.SetWriteDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) SetWriteDeadline(t <a href="../time/index.html">time</a>.<a href="../time/index.html#Time">Time</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetWriteDeadline implements the Conn SetWriteDeadline method.
@@ -3708,7 +4078,9 @@ SetWriteDeadline implements the Conn SetWriteDeadline method.
 				
 			
 				
-				<h3 id="UDPConn.Write">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=6052:6095#L170">Write</a></h3>
+				<h3 id="UDPConn.Write">func (*UDPConn) <a href="http://localhost:9090/src/net/net.go?s=6063:6106#L171">Write</a>
+					<a class="permalink" href="index.html#UDPConn.Write">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) Write(b []<a href="../builtin/index.html#byte">byte</a>) (<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Write implements the Conn Write method.
@@ -3719,13 +4091,15 @@ Write implements the Conn Write method.
 				
 			
 				
-				<h3 id="UDPConn.WriteMsgUDP">func (*UDPConn) <a href="http://localhost:9090/src/net/udpsock_posix.go?s=4717:4801#L144">WriteMsgUDP</a></h3>
+				<h3 id="UDPConn.WriteMsgUDP">func (*UDPConn) <a href="http://localhost:9090/src/net/udpsock.go?s=4659:4743#L152">WriteMsgUDP</a>
+					<a class="permalink" href="index.html#UDPConn.WriteMsgUDP">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) WriteMsgUDP(b, oob []<a href="../builtin/index.html#byte">byte</a>, addr *<a href="index.html#UDPAddr">UDPAddr</a>) (n, oobn <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 WriteMsgUDP writes a packet to addr via c if c isn&#39;t connected, or
 to c&#39;s remote destination address if c is connected (in which case
 addr must be nil).  The payload is copied from b and the associated
-out-of-band data is copied from oob.  It returns the number of
+out-of-band data is copied from oob. It returns the number of
 payload and out-of-band bytes written.
 </p>
 
@@ -3734,7 +4108,9 @@ payload and out-of-band bytes written.
 				
 			
 				
-				<h3 id="UDPConn.WriteTo">func (*UDPConn) <a href="http://localhost:9090/src/net/udpsock_posix.go?s=4121:4180#L128">WriteTo</a></h3>
+				<h3 id="UDPConn.WriteTo">func (*UDPConn) <a href="http://localhost:9090/src/net/udpsock.go?s=3936:3995#L132">WriteTo</a>
+					<a class="permalink" href="index.html#UDPConn.WriteTo">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) WriteTo(b []<a href="../builtin/index.html#byte">byte</a>, addr <a href="index.html#Addr">Addr</a>) (<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 WriteTo implements the PacketConn WriteTo method.
@@ -3745,7 +4121,9 @@ WriteTo implements the PacketConn WriteTo method.
 				
 			
 				
-				<h3 id="UDPConn.WriteToUDP">func (*UDPConn) <a href="http://localhost:9090/src/net/udpsock_posix.go?s=3364:3430#L106">WriteToUDP</a></h3>
+				<h3 id="UDPConn.WriteToUDP">func (*UDPConn) <a href="http://localhost:9090/src/net/udpsock.go?s=3606:3672#L120">WriteToUDP</a>
+					<a class="permalink" href="index.html#UDPConn.WriteToUDP">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UDPConn">UDPConn</a>) WriteToUDP(b []<a href="../builtin/index.html#byte">byte</a>, addr *<a href="index.html#UDPAddr">UDPAddr</a>) (<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 WriteToUDP writes a UDP packet to addr via c, copying the payload
@@ -3754,7 +4132,7 @@ from b.
 <p>
 WriteToUDP can be made to time out and return an error with
 Timeout() == true after a fixed time limit; see SetDeadline and
-SetWriteDeadline.  On packet-oriented connections, write timeouts
+SetWriteDeadline. On packet-oriented connections, write timeouts
 are rare.
 </p>
 
@@ -3765,7 +4143,9 @@ are rare.
 		
 			
 			
-			<h2 id="UnixAddr">type <a href="http://localhost:9090/src/net/unixsock.go?s=244:294#L1">UnixAddr</a></h2>
+			<h2 id="UnixAddr">type <a href="http://localhost:9090/src/net/unixsock.go?s=291:341#L5">UnixAddr</a>
+				<a class="permalink" href="index.html#UnixAddr">&#xb6;</a>
+			</h2>
 			<pre>type UnixAddr struct {
     Name <a href="../builtin/index.html#string">string</a>
     Net  <a href="../builtin/index.html#string">string</a>
@@ -3785,7 +4165,9 @@ UnixAddr represents the address of a Unix domain socket end point.
 
 			
 				
-				<h3 id="ResolveUnixAddr">func <a href="http://localhost:9090/src/net/unixsock.go?s=826:883#L30">ResolveUnixAddr</a></h3>
+				<h3 id="ResolveUnixAddr">func <a href="http://localhost:9090/src/net/unixsock.go?s=873:930#L37">ResolveUnixAddr</a>
+					<a class="permalink" href="index.html#ResolveUnixAddr">&#xb6;</a>
+				</h3>
 				<pre>func ResolveUnixAddr(net, addr <a href="../builtin/index.html#string">string</a>) (*<a href="index.html#UnixAddr">UnixAddr</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ResolveUnixAddr parses addr as a Unix domain socket address.
@@ -3799,7 +4181,9 @@ The string net gives the network name, &#34;unix&#34;, &#34;unixgram&#34; or
 
 			
 				
-				<h3 id="UnixAddr.Network">func (*UnixAddr) <a href="http://localhost:9090/src/net/unixsock.go?s=382:417#L5">Network</a></h3>
+				<h3 id="UnixAddr.Network">func (*UnixAddr) <a href="http://localhost:9090/src/net/unixsock.go?s=429:464#L12">Network</a>
+					<a class="permalink" href="index.html#UnixAddr.Network">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#UnixAddr">UnixAddr</a>) Network() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 Network returns the address&#39;s network name, &#34;unix&#34;, &#34;unixgram&#34; or
@@ -3811,7 +4195,9 @@ Network returns the address&#39;s network name, &#34;unix&#34;, &#34;unixgram&#3
 				
 			
 				
-				<h3 id="UnixAddr.String">func (*UnixAddr) <a href="http://localhost:9090/src/net/unixsock.go?s=437:471#L9">String</a></h3>
+				<h3 id="UnixAddr.String">func (*UnixAddr) <a href="http://localhost:9090/src/net/unixsock.go?s=484:518#L16">String</a>
+					<a class="permalink" href="index.html#UnixAddr.String">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#UnixAddr">UnixAddr</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -3821,7 +4207,9 @@ Network returns the address&#39;s network name, &#34;unix&#34;, &#34;unixgram&#3
 		
 			
 			
-			<h2 id="UnixConn">type <a href="http://localhost:9090/src/net/unixsock_posix.go?s=2183:2213#L89">UnixConn</a></h2>
+			<h2 id="UnixConn">type <a href="http://localhost:9090/src/net/unixsock.go?s=1186:1216#L48">UnixConn</a>
+				<a class="permalink" href="index.html#UnixConn">&#xb6;</a>
+			</h2>
 			<pre>type UnixConn struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -3841,7 +4229,9 @@ to Unix domain sockets.
 
 			
 				
-				<h3 id="DialUnix">func <a href="http://localhost:9090/src/net/unixsock_posix.go?s=7284:7352#L245">DialUnix</a></h3>
+				<h3 id="DialUnix">func <a href="http://localhost:9090/src/net/unixsock.go?s=5272:5340#L176">DialUnix</a>
+					<a class="permalink" href="index.html#DialUnix">&#xb6;</a>
+				</h3>
 				<pre>func DialUnix(net <a href="../builtin/index.html#string">string</a>, laddr, raddr *<a href="index.html#UnixAddr">UnixAddr</a>) (*<a href="index.html#UnixConn">UnixConn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 DialUnix connects to the remote address raddr on the network net,
@@ -3853,11 +4243,13 @@ nil, it is used as the local address for the connection.
 				
 			
 				
-				<h3 id="ListenUnixgram">func <a href="http://localhost:9090/src/net/unixsock_posix.go?s=11754:11821#L375">ListenUnixgram</a></h3>
+				<h3 id="ListenUnixgram">func <a href="http://localhost:9090/src/net/unixsock.go?s=9175:9242#L295">ListenUnixgram</a>
+					<a class="permalink" href="index.html#ListenUnixgram">&#xb6;</a>
+				</h3>
 				<pre>func ListenUnixgram(net <a href="../builtin/index.html#string">string</a>, laddr *<a href="index.html#UnixAddr">UnixAddr</a>) (*<a href="index.html#UnixConn">UnixConn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ListenUnixgram listens for incoming Unix datagram packets addressed
-to the local address laddr.  The network net must be &#34;unixgram&#34;.
+to the local address laddr. The network net must be &#34;unixgram&#34;.
 The returned connection&#39;s ReadFrom and WriteTo methods can be used
 to receive and send packets with per-packet addressing.
 </p>
@@ -3868,7 +4260,9 @@ to receive and send packets with per-packet addressing.
 
 			
 				
-				<h3 id="UnixConn.Close">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=6330:6358#L182">Close</a></h3>
+				<h3 id="UnixConn.Close">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=6341:6369#L183">Close</a>
+					<a class="permalink" href="index.html#UnixConn.Close">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) Close() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the connection.
@@ -3879,7 +4273,9 @@ Close closes the connection.
 				
 			
 				
-				<h3 id="UnixConn.CloseRead">func (*UnixConn) <a href="http://localhost:9090/src/net/unixsock_posix.go?s=6505:6541#L218">CloseRead</a></h3>
+				<h3 id="UnixConn.CloseRead">func (*UnixConn) <a href="http://localhost:9090/src/net/unixsock.go?s=1329:1365#L54">CloseRead</a>
+					<a class="permalink" href="index.html#UnixConn.CloseRead">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) CloseRead() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 CloseRead shuts down the reading side of the Unix domain connection.
@@ -3891,7 +4287,9 @@ Most callers should just use Close.
 				
 			
 				
-				<h3 id="UnixConn.CloseWrite">func (*UnixConn) <a href="http://localhost:9090/src/net/unixsock_posix.go?s=6850:6887#L231">CloseWrite</a></h3>
+				<h3 id="UnixConn.CloseWrite">func (*UnixConn) <a href="http://localhost:9090/src/net/unixsock.go?s=1675:1712#L66">CloseWrite</a>
+					<a class="permalink" href="index.html#UnixConn.CloseWrite">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) CloseWrite() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 CloseWrite shuts down the writing side of the Unix domain connection.
@@ -3903,7 +4301,9 @@ Most callers should just use Close.
 				
 			
 				
-				<h3 id="UnixConn.File">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=9014:9059#L277">File</a></h3>
+				<h3 id="UnixConn.File">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=9025:9070#L278">File</a>
+					<a class="permalink" href="index.html#UnixConn.File">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) File() (f *<a href="../os/index.html">os</a>.<a href="../os/index.html#File">File</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 File sets the underlying os.File to blocking mode and returns a copy.
@@ -3921,7 +4321,9 @@ may or may not have the desired effect.
 				
 			
 				
-				<h3 id="UnixConn.LocalAddr">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=6687:6718#L196">LocalAddr</a></h3>
+				<h3 id="UnixConn.LocalAddr">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=6698:6729#L197">LocalAddr</a>
+					<a class="permalink" href="index.html#UnixConn.LocalAddr">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) LocalAddr() <a href="index.html#Addr">Addr</a></pre>
 				<p>
 LocalAddr returns the local network address.
@@ -3934,7 +4336,9 @@ do not modify it.
 				
 			
 				
-				<h3 id="UnixConn.Read">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=5749:5791#L158">Read</a></h3>
+				<h3 id="UnixConn.Read">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=5760:5802#L159">Read</a>
+					<a class="permalink" href="index.html#UnixConn.Read">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) Read(b []<a href="../builtin/index.html#byte">byte</a>) (<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Read implements the Conn Read method.
@@ -3945,7 +4349,9 @@ Read implements the Conn Read method.
 				
 			
 				
-				<h3 id="UnixConn.ReadFrom">func (*UnixConn) <a href="http://localhost:9090/src/net/unixsock_posix.go?s=3106:3162#L121">ReadFrom</a></h3>
+				<h3 id="UnixConn.ReadFrom">func (*UnixConn) <a href="http://localhost:9090/src/net/unixsock.go?s=2561:2617#L95">ReadFrom</a>
+					<a class="permalink" href="index.html#UnixConn.ReadFrom">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) ReadFrom(b []<a href="../builtin/index.html#byte">byte</a>) (<a href="../builtin/index.html#int">int</a>, <a href="index.html#Addr">Addr</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadFrom implements the PacketConn ReadFrom method.
@@ -3956,10 +4362,12 @@ ReadFrom implements the PacketConn ReadFrom method.
 				
 			
 				
-				<h3 id="UnixConn.ReadFromUnix">func (*UnixConn) <a href="http://localhost:9090/src/net/unixsock_posix.go?s=2597:2662#L102">ReadFromUnix</a></h3>
+				<h3 id="UnixConn.ReadFromUnix">func (*UnixConn) <a href="http://localhost:9090/src/net/unixsock.go?s=2222:2287#L83">ReadFromUnix</a>
+					<a class="permalink" href="index.html#UnixConn.ReadFromUnix">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) ReadFromUnix(b []<a href="../builtin/index.html#byte">byte</a>) (<a href="../builtin/index.html#int">int</a>, *<a href="index.html#UnixAddr">UnixAddr</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
-ReadFromUnix reads a packet from c, copying the payload into b.  It
+ReadFromUnix reads a packet from c, copying the payload into b. It
 returns the number of bytes copied into b and the source address of
 the packet.
 </p>
@@ -3974,11 +4382,13 @@ SetReadDeadline.
 				
 			
 				
-				<h3 id="UnixConn.ReadMsgUnix">func (*UnixConn) <a href="http://localhost:9090/src/net/unixsock_posix.go?s=3596:3689#L136">ReadMsgUnix</a></h3>
+				<h3 id="UnixConn.ReadMsgUnix">func (*UnixConn) <a href="http://localhost:9090/src/net/unixsock.go?s=3158:3251#L113">ReadMsgUnix</a>
+					<a class="permalink" href="index.html#UnixConn.ReadMsgUnix">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) ReadMsgUnix(b, oob []<a href="../builtin/index.html#byte">byte</a>) (n, oobn, flags <a href="../builtin/index.html#int">int</a>, addr *<a href="index.html#UnixAddr">UnixAddr</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadMsgUnix reads a packet from c, copying the payload into b and
-the associated out-of-band data into oob.  It returns the number of
+the associated out-of-band data into oob. It returns the number of
 bytes copied into b, the number of bytes copied into oob, the flags
 that were set on the packet, and the source address of the packet.
 </p>
@@ -3988,7 +4398,9 @@ that were set on the packet, and the source address of the packet.
 				
 			
 				
-				<h3 id="UnixConn.RemoteAddr">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=6912:6944#L206">RemoteAddr</a></h3>
+				<h3 id="UnixConn.RemoteAddr">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=6923:6955#L207">RemoteAddr</a>
+					<a class="permalink" href="index.html#UnixConn.RemoteAddr">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) RemoteAddr() <a href="index.html#Addr">Addr</a></pre>
 				<p>
 RemoteAddr returns the remote network address.
@@ -4001,7 +4413,9 @@ do not modify it.
 				
 			
 				
-				<h3 id="UnixConn.SetDeadline">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=7054:7099#L214">SetDeadline</a></h3>
+				<h3 id="UnixConn.SetDeadline">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=7065:7110#L215">SetDeadline</a>
+					<a class="permalink" href="index.html#UnixConn.SetDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) SetDeadline(t <a href="../time/index.html">time</a>.<a href="../time/index.html#Time">Time</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetDeadline implements the Conn SetDeadline method.
@@ -4012,7 +4426,9 @@ SetDeadline implements the Conn SetDeadline method.
 				
 			
 				
-				<h3 id="UnixConn.SetReadBuffer">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=8018:8063#L248">SetReadBuffer</a></h3>
+				<h3 id="UnixConn.SetReadBuffer">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=8029:8074#L249">SetReadBuffer</a>
+					<a class="permalink" href="index.html#UnixConn.SetReadBuffer">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) SetReadBuffer(bytes <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetReadBuffer sets the size of the operating system&#39;s
@@ -4024,7 +4440,9 @@ receive buffer associated with the connection.
 				
 			
 				
-				<h3 id="UnixConn.SetReadDeadline">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=7354:7403#L225">SetReadDeadline</a></h3>
+				<h3 id="UnixConn.SetReadDeadline">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=7365:7414#L226">SetReadDeadline</a>
+					<a class="permalink" href="index.html#UnixConn.SetReadDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) SetReadDeadline(t <a href="../time/index.html">time</a>.<a href="../time/index.html#Time">Time</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetReadDeadline implements the Conn SetReadDeadline method.
@@ -4035,7 +4453,9 @@ SetReadDeadline implements the Conn SetReadDeadline method.
 				
 			
 				
-				<h3 id="UnixConn.SetWriteBuffer">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=8371:8417#L260">SetWriteBuffer</a></h3>
+				<h3 id="UnixConn.SetWriteBuffer">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=8382:8428#L261">SetWriteBuffer</a>
+					<a class="permalink" href="index.html#UnixConn.SetWriteBuffer">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) SetWriteBuffer(bytes <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetWriteBuffer sets the size of the operating system&#39;s
@@ -4047,7 +4467,9 @@ transmit buffer associated with the connection.
 				
 			
 				
-				<h3 id="UnixConn.SetWriteDeadline">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=7664:7714#L236">SetWriteDeadline</a></h3>
+				<h3 id="UnixConn.SetWriteDeadline">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=7675:7725#L237">SetWriteDeadline</a>
+					<a class="permalink" href="index.html#UnixConn.SetWriteDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) SetWriteDeadline(t <a href="../time/index.html">time</a>.<a href="../time/index.html#Time">Time</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetWriteDeadline implements the Conn SetWriteDeadline method.
@@ -4058,7 +4480,9 @@ SetWriteDeadline implements the Conn SetWriteDeadline method.
 				
 			
 				
-				<h3 id="UnixConn.Write">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=6052:6095#L170">Write</a></h3>
+				<h3 id="UnixConn.Write">func (*UnixConn) <a href="http://localhost:9090/src/net/net.go?s=6063:6106#L171">Write</a>
+					<a class="permalink" href="index.html#UnixConn.Write">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) Write(b []<a href="../builtin/index.html#byte">byte</a>) (<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Write implements the Conn Write method.
@@ -4069,11 +4493,13 @@ Write implements the Conn Write method.
 				
 			
 				
-				<h3 id="UnixConn.WriteMsgUnix">func (*UnixConn) <a href="http://localhost:9090/src/net/unixsock_posix.go?s=5645:5732#L195">WriteMsgUnix</a></h3>
+				<h3 id="UnixConn.WriteMsgUnix">func (*UnixConn) <a href="http://localhost:9090/src/net/unixsock.go?s=4698:4785#L160">WriteMsgUnix</a>
+					<a class="permalink" href="index.html#UnixConn.WriteMsgUnix">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) WriteMsgUnix(b, oob []<a href="../builtin/index.html#byte">byte</a>, addr *<a href="index.html#UnixAddr">UnixAddr</a>) (n, oobn <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 WriteMsgUnix writes a packet to addr via c, copying the payload
-from b and the associated out-of-band data from oob.  It returns
+from b and the associated out-of-band data from oob. It returns
 the number of payload and out-of-band bytes written.
 </p>
 
@@ -4082,8 +4508,10 @@ the number of payload and out-of-band bytes written.
 				
 			
 				
-				<h3 id="UnixConn.WriteTo">func (*UnixConn) <a href="http://localhost:9090/src/net/unixsock_posix.go?s=5168:5234#L181">WriteTo</a></h3>
-				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) WriteTo(b []<a href="../builtin/index.html#byte">byte</a>, addr <a href="index.html#Addr">Addr</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
+				<h3 id="UnixConn.WriteTo">func (*UnixConn) <a href="http://localhost:9090/src/net/unixsock.go?s=4101:4161#L142">WriteTo</a>
+					<a class="permalink" href="index.html#UnixConn.WriteTo">&#xb6;</a>
+				</h3>
+				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) WriteTo(b []<a href="../builtin/index.html#byte">byte</a>, addr <a href="index.html#Addr">Addr</a>) (<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 WriteTo implements the PacketConn WriteTo method.
 </p>
@@ -4093,7 +4521,9 @@ WriteTo implements the PacketConn WriteTo method.
 				
 			
 				
-				<h3 id="UnixConn.WriteToUnix">func (*UnixConn) <a href="http://localhost:9090/src/net/unixsock_posix.go?s=4358:4427#L159">WriteToUnix</a></h3>
+				<h3 id="UnixConn.WriteToUnix">func (*UnixConn) <a href="http://localhost:9090/src/net/unixsock.go?s=3768:3837#L130">WriteToUnix</a>
+					<a class="permalink" href="index.html#UnixConn.WriteToUnix">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#UnixConn">UnixConn</a>) WriteToUnix(b []<a href="../builtin/index.html#byte">byte</a>, addr *<a href="index.html#UnixAddr">UnixAddr</a>) (<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 WriteToUnix writes a packet to addr via c, copying the payload from b.
@@ -4101,7 +4531,7 @@ WriteToUnix writes a packet to addr via c, copying the payload from b.
 <p>
 WriteToUnix can be made to time out and return an error with
 Timeout() == true after a fixed time limit; see SetDeadline and
-SetWriteDeadline.  On packet-oriented connections, write timeouts
+SetWriteDeadline. On packet-oriented connections, write timeouts
 are rare.
 </p>
 
@@ -4112,12 +4542,14 @@ are rare.
 		
 			
 			
-			<h2 id="UnixListener">type <a href="http://localhost:9090/src/net/unixsock_posix.go?s=8053:8124#L265">UnixListener</a></h2>
+			<h2 id="UnixListener">type <a href="http://localhost:9090/src/net/unixsock.go?s=5885:5956#L192">UnixListener</a>
+				<a class="permalink" href="index.html#UnixListener">&#xb6;</a>
+			</h2>
 			<pre>type UnixListener struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
-UnixListener is a Unix domain socket listener.  Clients should
+UnixListener is a Unix domain socket listener. Clients should
 typically use variables of type Listener instead of assuming Unix
 domain sockets.
 </p>
@@ -4133,11 +4565,13 @@ domain sockets.
 
 			
 				
-				<h3 id="ListenUnix">func <a href="http://localhost:9090/src/net/unixsock_posix.go?s=8263:8330#L273">ListenUnix</a></h3>
+				<h3 id="ListenUnix">func <a href="http://localhost:9090/src/net/unixsock.go?s=8354:8421#L275">ListenUnix</a>
+					<a class="permalink" href="index.html#ListenUnix">&#xb6;</a>
+				</h3>
 				<pre>func ListenUnix(net <a href="../builtin/index.html#string">string</a>, laddr *<a href="index.html#UnixAddr">UnixAddr</a>) (*<a href="index.html#UnixListener">UnixListener</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ListenUnix announces on the Unix domain socket laddr and returns a
-Unix listener.  The network net must be &#34;unix&#34; or &#34;unixpacket&#34;.
+Unix listener. The network net must be &#34;unix&#34; or &#34;unixpacket&#34;.
 </p>
 
 				
@@ -4146,11 +4580,13 @@ Unix listener.  The network net must be &#34;unix&#34; or &#34;unixpacket&#34;.
 
 			
 				
-				<h3 id="UnixListener.Accept">func (*UnixListener) <a href="http://localhost:9090/src/net/unixsock_posix.go?s=9374:9425#L304">Accept</a></h3>
-				<pre>func (l *<a href="index.html#UnixListener">UnixListener</a>) Accept() (c <a href="index.html#Conn">Conn</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
+				<h3 id="UnixListener.Accept">func (*UnixListener) <a href="http://localhost:9090/src/net/unixsock.go?s=6483:6528#L215">Accept</a>
+					<a class="permalink" href="index.html#UnixListener.Accept">&#xb6;</a>
+				</h3>
+				<pre>func (l *<a href="index.html#UnixListener">UnixListener</a>) Accept() (<a href="index.html#Conn">Conn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
-Accept implements the Accept method in the Listener interface; it
-waits for the next call and returns a generic Conn.
+Accept implements the Accept method in the Listener interface.
+Returned connections will be of type *UnixConn.
 </p>
 
 				
@@ -4158,7 +4594,9 @@ waits for the next call and returns a generic Conn.
 				
 			
 				
-				<h3 id="UnixListener.AcceptUnix">func (*UnixListener) <a href="http://localhost:9090/src/net/unixsock_posix.go?s=8960:9014#L291">AcceptUnix</a></h3>
+				<h3 id="UnixListener.AcceptUnix">func (*UnixListener) <a href="http://localhost:9090/src/net/unixsock.go?s=6110:6164#L202">AcceptUnix</a>
+					<a class="permalink" href="index.html#UnixListener.AcceptUnix">&#xb6;</a>
+				</h3>
 				<pre>func (l *<a href="index.html#UnixListener">UnixListener</a>) AcceptUnix() (*<a href="index.html#UnixConn">UnixConn</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 AcceptUnix accepts the next incoming call and returns the new
@@ -4170,7 +4608,9 @@ connection.
 				
 			
 				
-				<h3 id="UnixListener.Addr">func (*UnixListener) <a href="http://localhost:9090/src/net/unixsock_posix.go?s=10469:10503#L342">Addr</a></h3>
+				<h3 id="UnixListener.Addr">func (*UnixListener) <a href="http://localhost:9090/src/net/unixsock.go?s=7175:7209#L241">Addr</a>
+					<a class="permalink" href="index.html#UnixListener.Addr">&#xb6;</a>
+				</h3>
 				<pre>func (l *<a href="index.html#UnixListener">UnixListener</a>) Addr() <a href="index.html#Addr">Addr</a></pre>
 				<p>
 Addr returns the listener&#39;s network address.
@@ -4183,10 +4623,12 @@ do not modify it.
 				
 			
 				
-				<h3 id="UnixListener.Close">func (*UnixListener) <a href="http://localhost:9090/src/net/unixsock_posix.go?s=9607:9643#L314">Close</a></h3>
+				<h3 id="UnixListener.Close">func (*UnixListener) <a href="http://localhost:9090/src/net/unixsock.go?s=6824:6860#L228">Close</a>
+					<a class="permalink" href="index.html#UnixListener.Close">&#xb6;</a>
+				</h3>
 				<pre>func (l *<a href="index.html#UnixListener">UnixListener</a>) Close() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
-Close stops listening on the Unix address.  Already accepted
+Close stops listening on the Unix address. Already accepted
 connections are not closed.
 </p>
 
@@ -4195,16 +4637,18 @@ connections are not closed.
 				
 			
 				
-				<h3 id="UnixListener.File">func (*UnixListener) <a href="http://localhost:9090/src/net/unixsock_posix.go?s=11293:11346#L363">File</a></h3>
+				<h3 id="UnixListener.File">func (*UnixListener) <a href="http://localhost:9090/src/net/unixsock.go?s=7981:8034#L262">File</a>
+					<a class="permalink" href="index.html#UnixListener.File">&#xb6;</a>
+				</h3>
 				<pre>func (l *<a href="index.html#UnixListener">UnixListener</a>) File() (f *<a href="../os/index.html">os</a>.<a href="../os/index.html#File">File</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 File returns a copy of the underlying os.File, set to blocking
-mode.  It is the caller&#39;s responsibility to close f when finished.
+mode. It is the caller&#39;s responsibility to close f when finished.
 Closing l does not affect f, and closing f does not affect l.
 </p>
 <p>
 The returned os.File&#39;s file descriptor is different from the
-connection&#39;s.  Attempting to change properties of the original
+connection&#39;s. Attempting to change properties of the original
 using this duplicate may or may not have the desired effect.
 </p>
 
@@ -4213,7 +4657,9 @@ using this duplicate may or may not have the desired effect.
 				
 			
 				
-				<h3 id="UnixListener.SetDeadline">func (*UnixListener) <a href="http://localhost:9090/src/net/unixsock_posix.go?s=10634:10687#L346">SetDeadline</a></h3>
+				<h3 id="UnixListener.SetDeadline">func (*UnixListener) <a href="http://localhost:9090/src/net/unixsock.go?s=7340:7393#L245">SetDeadline</a>
+					<a class="permalink" href="index.html#UnixListener.SetDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (l *<a href="index.html#UnixListener">UnixListener</a>) SetDeadline(t <a href="../time/index.html">time</a>.<a href="../time/index.html#Time">Time</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 SetDeadline sets the deadline associated with the listener.
@@ -4227,7 +4673,9 @@ A zero time value disables the deadline.
 		
 			
 			
-			<h2 id="UnknownNetworkError">type <a href="http://localhost:9090/src/net/net.go?s=15058:15089#L493">UnknownNetworkError</a></h2>
+			<h2 id="UnknownNetworkError">type <a href="http://localhost:9090/src/net/net.go?s=15548:15579#L513">UnknownNetworkError</a>
+				<a class="permalink" href="index.html#UnknownNetworkError">&#xb6;</a>
+			</h2>
 			<pre>type UnknownNetworkError <a href="../builtin/index.html#string">string</a></pre>
 			
 
@@ -4243,7 +4691,9 @@ A zero time value disables the deadline.
 
 			
 				
-				<h3 id="UnknownNetworkError.Error">func (UnknownNetworkError) <a href="http://localhost:9090/src/net/net.go?s=15091:15134#L495">Error</a></h3>
+				<h3 id="UnknownNetworkError.Error">func (UnknownNetworkError) <a href="http://localhost:9090/src/net/net.go?s=15581:15624#L515">Error</a>
+					<a class="permalink" href="index.html#UnknownNetworkError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#UnknownNetworkError">UnknownNetworkError</a>) Error() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -4251,7 +4701,9 @@ A zero time value disables the deadline.
 				
 			
 				
-				<h3 id="UnknownNetworkError.Temporary">func (UnknownNetworkError) <a href="http://localhost:9090/src/net/net.go?s=15242:15287#L497">Temporary</a></h3>
+				<h3 id="UnknownNetworkError.Temporary">func (UnknownNetworkError) <a href="http://localhost:9090/src/net/net.go?s=15732:15777#L517">Temporary</a>
+					<a class="permalink" href="index.html#UnknownNetworkError.Temporary">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#UnknownNetworkError">UnknownNetworkError</a>) Temporary() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -4259,7 +4711,9 @@ A zero time value disables the deadline.
 				
 			
 				
-				<h3 id="UnknownNetworkError.Timeout">func (UnknownNetworkError) <a href="http://localhost:9090/src/net/net.go?s=15179:15222#L496">Timeout</a></h3>
+				<h3 id="UnknownNetworkError.Timeout">func (UnknownNetworkError) <a href="http://localhost:9090/src/net/net.go?s=15669:15712#L516">Timeout</a>
+					<a class="permalink" href="index.html#UnknownNetworkError.Timeout">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#UnknownNetworkError">UnknownNetworkError</a>) Timeout() <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -4274,25 +4728,30 @@ A zero time value disables the deadline.
 			<h2 id="pkg-note-BUG">Bugs</h2>
 			<ul style="list-style: none; padding: 0;">
 			
-			<li><a href="http://localhost:9090/src/net/iprawsock_posix.go?s=283:850#L4">&#x261e;</a> On every POSIX platform, reads from the &#34;ip4&#34; network
+			<li><a href="http://localhost:9090/src/net/iprawsock_posix.go?s=285:852#L4" style="float: left;">&#x261e;</a> <p>
+On every POSIX platform, reads from the &#34;ip4&#34; network
 using the ReadFrom or ReadFromIP method might not return a complete
 IPv4 packet, including its header, even if there is space
 available. This can occur even in cases where Read or ReadMsgIP
 could return a complete packet. For this reason, it is recommended
 that you do not uses these methods if it is important to receive a
 full packet.
-
+</p>
+<p>
 The Go 1 compatibility guidelines make it impossible for us to
 change the behavior of these methods; use Read or ReadMsgIP
 instead.
+</p>
 </li>
 			
-			<li><a href="http://localhost:9090/src/net/ipsock_posix.go?s=341:685#L7">&#x261e;</a> On DragonFly BSD and OpenBSD, listening on the
+			<li><a href="http://localhost:9090/src/net/ipsock_posix.go?s=296:640#L5" style="float: left;">&#x261e;</a> <p>
+On DragonFly BSD and OpenBSD, listening on the
 &#34;tcp&#34; and &#34;udp&#34; networks does not listen for both IPv4 and IPv6
 connections. This is due to the fact that IPv4 traffic will not be
 routed to an IPv6 socket - two separate sockets are required if
 both address families are to be supported.
 See inet6(4) for details.
+</p>
 </li>
 			
 			</ul>
@@ -4375,6 +4834,17 @@ See inet6(4) for details.
 						</td>
 						<td class="pkg-synopsis">
 							Package httptest provides utilities for HTTP testing.
+						</td>
+					</tr>
+				
+			
+				
+					<tr>
+						<td class="pkg-name" style="padding-left: 20px;">
+							<a href="http/httptrace/index.html">httptrace</a>
+						</td>
+						<td class="pkg-synopsis">
+							Package httptrace provides mechanisms to trace the events within HTTP client requests.
 						</td>
 					</tr>
 				
@@ -4476,7 +4946,7 @@ See inet6(4) for details.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -4494,6 +4964,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

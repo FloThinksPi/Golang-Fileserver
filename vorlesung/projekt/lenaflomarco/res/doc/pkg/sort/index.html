@@ -280,7 +280,9 @@ collections.
 		
 			
 			
-			<h2 id="Float64s">func <a href="http://localhost:9090/src/sort/sort.go?s=7778:7804#L292">Float64s</a></h2>
+			<h2 id="Float64s">func <a href="http://localhost:9090/src/sort/sort.go?s=7713:7739#L285">Float64s</a>
+				<a class="permalink" href="index.html#Float64s">&#xb6;</a>
+			</h2>
 			<pre>func Float64s(a []<a href="../builtin/index.html#float64">float64</a>)</pre>
 			<p>
 Float64s sorts a slice of float64s in increasing order.
@@ -292,7 +294,9 @@ Float64s sorts a slice of float64s in increasing order.
 		
 			
 			
-			<h2 id="Float64sAreSorted">func <a href="http://localhost:9090/src/sort/sort.go?s=8171:8211#L301">Float64sAreSorted</a></h2>
+			<h2 id="Float64sAreSorted">func <a href="http://localhost:9090/src/sort/sort.go?s=8106:8146#L294">Float64sAreSorted</a>
+				<a class="permalink" href="index.html#Float64sAreSorted">&#xb6;</a>
+			</h2>
 			<pre>func Float64sAreSorted(a []<a href="../builtin/index.html#float64">float64</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 			<p>
 Float64sAreSorted tests whether a slice of float64s is sorted in increasing order.
@@ -304,7 +308,9 @@ Float64sAreSorted tests whether a slice of float64s is sorted in increasing orde
 		
 			
 			
-			<h2 id="Ints">func <a href="http://localhost:9090/src/sort/sort.go?s=7677:7695#L289">Ints</a></h2>
+			<h2 id="Ints">func <a href="http://localhost:9090/src/sort/sort.go?s=7612:7630#L282">Ints</a>
+				<a class="permalink" href="index.html#Ints">&#xb6;</a>
+			</h2>
 			<pre>func Ints(a []<a href="../builtin/index.html#int">int</a>)</pre>
 			<p>
 Ints sorts a slice of ints in increasing order.
@@ -316,7 +322,9 @@ Ints sorts a slice of ints in increasing order.
 		
 			
 			
-			<h2 id="IntsAreSorted">func <a href="http://localhost:9090/src/sort/sort.go?s=8018:8050#L298">IntsAreSorted</a></h2>
+			<h2 id="IntsAreSorted">func <a href="http://localhost:9090/src/sort/sort.go?s=7953:7985#L291">IntsAreSorted</a>
+				<a class="permalink" href="index.html#IntsAreSorted">&#xb6;</a>
+			</h2>
 			<pre>func IntsAreSorted(a []<a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 			<p>
 IntsAreSorted tests whether a slice of ints is sorted in increasing order.
@@ -328,7 +336,9 @@ IntsAreSorted tests whether a slice of ints is sorted in increasing order.
 		
 			
 			
-			<h2 id="IsSorted">func <a href="http://localhost:9090/src/sort/sort.go?s=6104:6138#L239">IsSorted</a></h2>
+			<h2 id="IsSorted">func <a href="http://localhost:9090/src/sort/sort.go?s=6039:6073#L232">IsSorted</a>
+				<a class="permalink" href="index.html#IsSorted">&#xb6;</a>
+			</h2>
 			<pre>func IsSorted(data <a href="index.html#Interface">Interface</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 			<p>
 IsSorted reports whether data is sorted.
@@ -340,15 +350,17 @@ IsSorted reports whether data is sorted.
 		
 			
 			
-			<h2 id="Search">func <a href="http://localhost:9090/src/sort/search.go?s=2249:2289#L49">Search</a></h2>
+			<h2 id="Search">func <a href="http://localhost:9090/src/sort/search.go?s=2247:2287#L49">Search</a>
+				<a class="permalink" href="index.html#Search">&#xb6;</a>
+			</h2>
 			<pre>func Search(n <a href="../builtin/index.html#int">int</a>, f func(<a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#bool">bool</a>) <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 Search uses binary search to find and return the smallest index i
 in [0, n) at which f(i) is true, assuming that on the range [0, n),
-f(i) == true implies f(i+1) == true.  That is, Search requires that
+f(i) == true implies f(i+1) == true. That is, Search requires that
 f is false for some (possibly empty) prefix of the input range [0, n)
 and then true for the (possibly empty) remainder; Search returns
-the first true index.  If there is no such index, Search returns n.
+the first true index. If there is no such index, Search returns n.
 (Note that the &#34;not found&#34; return value is not -1 as in, for instance,
 strings.Index.)
 Search calls f(i) only for i in the range [0, n).
@@ -405,11 +417,13 @@ As a more whimsical example, this program guesses your number:
 		
 			
 			
-			<h2 id="SearchFloat64s">func <a href="http://localhost:9090/src/sort/search.go?s=3313:3360#L82">SearchFloat64s</a></h2>
+			<h2 id="SearchFloat64s">func <a href="http://localhost:9090/src/sort/search.go?s=3310:3357#L82">SearchFloat64s</a>
+				<a class="permalink" href="index.html#SearchFloat64s">&#xb6;</a>
+			</h2>
 			<pre>func SearchFloat64s(a []<a href="../builtin/index.html#float64">float64</a>, x <a href="../builtin/index.html#float64">float64</a>) <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 SearchFloat64s searches for x in a sorted slice of float64s and returns the index
-as specified by Search.  The return value is the index to insert x if x is not
+as specified by Search. The return value is the index to insert x if x is not
 present (it could be len(a)).
 The slice must be sorted in ascending order.
 </p>
@@ -420,7 +434,9 @@ The slice must be sorted in ascending order.
 		
 			
 			
-			<h2 id="SearchInts">func <a href="http://localhost:9090/src/sort/search.go?s=2959:2994#L73">SearchInts</a></h2>
+			<h2 id="SearchInts">func <a href="http://localhost:9090/src/sort/search.go?s=2957:2992#L73">SearchInts</a>
+				<a class="permalink" href="index.html#SearchInts">&#xb6;</a>
+			</h2>
 			<pre>func SearchInts(a []<a href="../builtin/index.html#int">int</a>, x <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 SearchInts searches for x in a sorted slice of ints and returns the index
@@ -435,11 +451,13 @@ The slice must be sorted in ascending order.
 		
 			
 			
-			<h2 id="SearchStrings">func <a href="http://localhost:9090/src/sort/search.go?s=3677:3721#L91">SearchStrings</a></h2>
+			<h2 id="SearchStrings">func <a href="http://localhost:9090/src/sort/search.go?s=3673:3717#L91">SearchStrings</a>
+				<a class="permalink" href="index.html#SearchStrings">&#xb6;</a>
+			</h2>
 			<pre>func SearchStrings(a []<a href="../builtin/index.html#string">string</a>, x <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 SearchStrings searches for x in a sorted slice of strings and returns the index
-as specified by Search.  The return value is the index to insert x if x is not
+as specified by Search. The return value is the index to insert x if x is not
 present (it could be len(a)).
 The slice must be sorted in ascending order.
 </p>
@@ -450,7 +468,9 @@ The slice must be sorted in ascending order.
 		
 			
 			
-			<h2 id="Sort">func <a href="http://localhost:9090/src/sort/sort.go?s=5438:5463#L211">Sort</a></h2>
+			<h2 id="Sort">func <a href="http://localhost:9090/src/sort/sort.go?s=5373:5398#L204">Sort</a>
+				<a class="permalink" href="index.html#Sort">&#xb6;</a>
+			</h2>
 			<pre>func Sort(data <a href="index.html#Interface">Interface</a>)</pre>
 			<p>
 Sort sorts data.
@@ -464,7 +484,9 @@ data.Less and data.Swap. The sort is not guaranteed to be stable.
 		
 			
 			
-			<h2 id="Stable">func <a href="http://localhost:9090/src/sort/sort.go?s=10138:10165#L336">Stable</a></h2>
+			<h2 id="Stable">func <a href="http://localhost:9090/src/sort/sort.go?s=10072:10099#L329">Stable</a>
+				<a class="permalink" href="index.html#Stable">&#xb6;</a>
+			</h2>
 			<pre>func Stable(data <a href="index.html#Interface">Interface</a>)</pre>
 			<p>
 Stable sorts data while keeping the original order of equal elements.
@@ -480,7 +502,9 @@ data.Less and O(n*log(n)*log(n)) calls to data.Swap.
 		
 			
 			
-			<h2 id="Strings">func <a href="http://localhost:9090/src/sort/sort.go?s=7889:7913#L295">Strings</a></h2>
+			<h2 id="Strings">func <a href="http://localhost:9090/src/sort/sort.go?s=7824:7848#L288">Strings</a>
+				<a class="permalink" href="index.html#Strings">&#xb6;</a>
+			</h2>
 			<pre>func Strings(a []<a href="../builtin/index.html#string">string</a>)</pre>
 			<p>
 Strings sorts a slice of strings in increasing order.
@@ -492,7 +516,9 @@ Strings sorts a slice of strings in increasing order.
 		
 			
 			
-			<h2 id="StringsAreSorted">func <a href="http://localhost:9090/src/sort/sort.go?s=8334:8372#L304">StringsAreSorted</a></h2>
+			<h2 id="StringsAreSorted">func <a href="http://localhost:9090/src/sort/sort.go?s=8269:8307#L297">StringsAreSorted</a>
+				<a class="permalink" href="index.html#StringsAreSorted">&#xb6;</a>
+			</h2>
 			<pre>func StringsAreSorted(a []<a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 			<p>
 StringsAreSorted tests whether a slice of strings is sorted in increasing order.
@@ -505,7 +531,9 @@ StringsAreSorted tests whether a slice of strings is sorted in increasing order.
 		
 			
 			
-			<h2 id="Float64Slice">type <a href="http://localhost:9090/src/sort/sort.go?s=6745:6772#L262">Float64Slice</a></h2>
+			<h2 id="Float64Slice">type <a href="http://localhost:9090/src/sort/sort.go?s=6680:6707#L255">Float64Slice</a>
+				<a class="permalink" href="index.html#Float64Slice">&#xb6;</a>
+			</h2>
 			<pre>type Float64Slice []<a href="../builtin/index.html#float64">float64</a></pre>
 			<p>
 Float64Slice attaches the methods of Interface to []float64, sorting in increasing order.
@@ -524,7 +552,9 @@ Float64Slice attaches the methods of Interface to []float64, sorting in increasi
 
 			
 				
-				<h3 id="Float64Slice.Len">func (Float64Slice) <a href="http://localhost:9090/src/sort/sort.go?s=6774:6805#L264">Len</a></h3>
+				<h3 id="Float64Slice.Len">func (Float64Slice) <a href="http://localhost:9090/src/sort/sort.go?s=6709:6740#L257">Len</a>
+					<a class="permalink" href="index.html#Float64Slice.Len">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#Float64Slice">Float64Slice</a>) Len() <a href="../builtin/index.html#int">int</a></pre>
 				
 				
@@ -532,7 +562,9 @@ Float64Slice attaches the methods of Interface to []float64, sorting in increasi
 				
 			
 				
-				<h3 id="Float64Slice.Less">func (Float64Slice) <a href="http://localhost:9090/src/sort/sort.go?s=6834:6875#L265">Less</a></h3>
+				<h3 id="Float64Slice.Less">func (Float64Slice) <a href="http://localhost:9090/src/sort/sort.go?s=6769:6810#L258">Less</a>
+					<a class="permalink" href="index.html#Float64Slice.Less">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#Float64Slice">Float64Slice</a>) Less(i, j <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -540,7 +572,9 @@ Float64Slice attaches the methods of Interface to []float64, sorting in increasi
 				
 			
 				
-				<h3 id="Float64Slice.Search">func (Float64Slice) <a href="http://localhost:9090/src/sort/search.go?s=4008:4051#L99">Search</a></h3>
+				<h3 id="Float64Slice.Search">func (Float64Slice) <a href="http://localhost:9090/src/sort/search.go?s=4004:4047#L99">Search</a>
+					<a class="permalink" href="index.html#Float64Slice.Search">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#Float64Slice">Float64Slice</a>) Search(x <a href="../builtin/index.html#float64">float64</a>) <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Search returns the result of applying SearchFloat64s to the receiver and x.
@@ -551,7 +585,9 @@ Search returns the result of applying SearchFloat64s to the receiver and x.
 				
 			
 				
-				<h3 id="Float64Slice.Sort">func (Float64Slice) <a href="http://localhost:9090/src/sort/sort.go?s=7157:7185#L274">Sort</a></h3>
+				<h3 id="Float64Slice.Sort">func (Float64Slice) <a href="http://localhost:9090/src/sort/sort.go?s=7092:7120#L267">Sort</a>
+					<a class="permalink" href="index.html#Float64Slice.Sort">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#Float64Slice">Float64Slice</a>) Sort()</pre>
 				<p>
 Sort is a convenience method.
@@ -562,7 +598,9 @@ Sort is a convenience method.
 				
 			
 				
-				<h3 id="Float64Slice.Swap">func (Float64Slice) <a href="http://localhost:9090/src/sort/sort.go?s=6930:6966#L266">Swap</a></h3>
+				<h3 id="Float64Slice.Swap">func (Float64Slice) <a href="http://localhost:9090/src/sort/sort.go?s=6865:6901#L259">Swap</a>
+					<a class="permalink" href="index.html#Float64Slice.Swap">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#Float64Slice">Float64Slice</a>) Swap(i, j <a href="../builtin/index.html#int">int</a>)</pre>
 				
 				
@@ -572,7 +610,9 @@ Sort is a convenience method.
 		
 			
 			
-			<h2 id="IntSlice">type <a href="http://localhost:9090/src/sort/sort.go?s=6376:6395#L252">IntSlice</a></h2>
+			<h2 id="IntSlice">type <a href="http://localhost:9090/src/sort/sort.go?s=6311:6330#L245">IntSlice</a>
+				<a class="permalink" href="index.html#IntSlice">&#xb6;</a>
+			</h2>
 			<pre>type IntSlice []<a href="../builtin/index.html#int">int</a></pre>
 			<p>
 IntSlice attaches the methods of Interface to []int, sorting in increasing order.
@@ -591,7 +631,9 @@ IntSlice attaches the methods of Interface to []int, sorting in increasing order
 
 			
 				
-				<h3 id="IntSlice.Len">func (IntSlice) <a href="http://localhost:9090/src/sort/sort.go?s=6397:6424#L254">Len</a></h3>
+				<h3 id="IntSlice.Len">func (IntSlice) <a href="http://localhost:9090/src/sort/sort.go?s=6332:6359#L247">Len</a>
+					<a class="permalink" href="index.html#IntSlice.Len">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#IntSlice">IntSlice</a>) Len() <a href="../builtin/index.html#int">int</a></pre>
 				
 				
@@ -599,7 +641,9 @@ IntSlice attaches the methods of Interface to []int, sorting in increasing order
 				
 			
 				
-				<h3 id="IntSlice.Less">func (IntSlice) <a href="http://localhost:9090/src/sort/sort.go?s=6453:6490#L255">Less</a></h3>
+				<h3 id="IntSlice.Less">func (IntSlice) <a href="http://localhost:9090/src/sort/sort.go?s=6388:6425#L248">Less</a>
+					<a class="permalink" href="index.html#IntSlice.Less">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#IntSlice">IntSlice</a>) Less(i, j <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -607,7 +651,9 @@ IntSlice attaches the methods of Interface to []int, sorting in increasing order
 				
 			
 				
-				<h3 id="IntSlice.Search">func (IntSlice) <a href="http://localhost:9090/src/sort/search.go?s=3864:3899#L96">Search</a></h3>
+				<h3 id="IntSlice.Search">func (IntSlice) <a href="http://localhost:9090/src/sort/search.go?s=3860:3895#L96">Search</a>
+					<a class="permalink" href="index.html#IntSlice.Search">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#IntSlice">IntSlice</a>) Search(x <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Search returns the result of applying SearchInts to the receiver and x.
@@ -618,7 +664,9 @@ Search returns the result of applying SearchInts to the receiver and x.
 				
 			
 				
-				<h3 id="IntSlice.Sort">func (IntSlice) <a href="http://localhost:9090/src/sort/sort.go?s=6614:6638#L259">Sort</a></h3>
+				<h3 id="IntSlice.Sort">func (IntSlice) <a href="http://localhost:9090/src/sort/sort.go?s=6549:6573#L252">Sort</a>
+					<a class="permalink" href="index.html#IntSlice.Sort">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#IntSlice">IntSlice</a>) Sort()</pre>
 				<p>
 Sort is a convenience method.
@@ -629,7 +677,9 @@ Sort is a convenience method.
 				
 			
 				
-				<h3 id="IntSlice.Swap">func (IntSlice) <a href="http://localhost:9090/src/sort/sort.go?s=6514:6546#L256">Swap</a></h3>
+				<h3 id="IntSlice.Swap">func (IntSlice) <a href="http://localhost:9090/src/sort/sort.go?s=6449:6481#L249">Swap</a>
+					<a class="permalink" href="index.html#IntSlice.Swap">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#IntSlice">IntSlice</a>) Swap(i, j <a href="../builtin/index.html#int">int</a>)</pre>
 				
 				
@@ -639,7 +689,9 @@ Sort is a convenience method.
 		
 			
 			
-			<h2 id="Interface">type <a href="http://localhost:9090/src/sort/sort.go?s=472:750#L2">Interface</a></h2>
+			<h2 id="Interface">type <a href="http://localhost:9090/src/sort/sort.go?s=471:749#L2">Interface</a>
+				<a class="permalink" href="index.html#Interface">&#xb6;</a>
+			</h2>
 			<pre>type Interface interface {
     <span class="comment">// Len is the number of elements in the collection.</span>
     Len() <a href="../builtin/index.html#int">int</a>
@@ -651,7 +703,7 @@ Sort is a convenience method.
 }</pre>
 			<p>
 A type, typically a collection, that satisfies sort.Interface can be
-sorted by the routines in this package.  The methods require that the
+sorted by the routines in this package. The methods require that the
 elements of the collection be enumerated by an integer index.
 </p>
 
@@ -666,7 +718,9 @@ elements of the collection be enumerated by an integer index.
 
 			
 				
-				<h3 id="Reverse">func <a href="http://localhost:9090/src/sort/sort.go?s=5993:6031#L234">Reverse</a></h3>
+				<h3 id="Reverse">func <a href="http://localhost:9090/src/sort/sort.go?s=5928:5966#L227">Reverse</a>
+					<a class="permalink" href="index.html#Reverse">&#xb6;</a>
+				</h3>
 				<pre>func Reverse(data <a href="index.html#Interface">Interface</a>) <a href="index.html#Interface">Interface</a></pre>
 				<p>
 Reverse returns the reverse order for data.
@@ -680,7 +734,9 @@ Reverse returns the reverse order for data.
 		
 			
 			
-			<h2 id="StringSlice">type <a href="http://localhost:9090/src/sort/sort.go?s=7290:7315#L277">StringSlice</a></h2>
+			<h2 id="StringSlice">type <a href="http://localhost:9090/src/sort/sort.go?s=7225:7250#L270">StringSlice</a>
+				<a class="permalink" href="index.html#StringSlice">&#xb6;</a>
+			</h2>
 			<pre>type StringSlice []<a href="../builtin/index.html#string">string</a></pre>
 			<p>
 StringSlice attaches the methods of Interface to []string, sorting in increasing order.
@@ -699,7 +755,9 @@ StringSlice attaches the methods of Interface to []string, sorting in increasing
 
 			
 				
-				<h3 id="StringSlice.Len">func (StringSlice) <a href="http://localhost:9090/src/sort/sort.go?s=7317:7347#L279">Len</a></h3>
+				<h3 id="StringSlice.Len">func (StringSlice) <a href="http://localhost:9090/src/sort/sort.go?s=7252:7282#L272">Len</a>
+					<a class="permalink" href="index.html#StringSlice.Len">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#StringSlice">StringSlice</a>) Len() <a href="../builtin/index.html#int">int</a></pre>
 				
 				
@@ -707,7 +765,9 @@ StringSlice attaches the methods of Interface to []string, sorting in increasing
 				
 			
 				
-				<h3 id="StringSlice.Less">func (StringSlice) <a href="http://localhost:9090/src/sort/sort.go?s=7376:7416#L280">Less</a></h3>
+				<h3 id="StringSlice.Less">func (StringSlice) <a href="http://localhost:9090/src/sort/sort.go?s=7311:7351#L273">Less</a>
+					<a class="permalink" href="index.html#StringSlice.Less">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#StringSlice">StringSlice</a>) Less(i, j <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -715,7 +775,9 @@ StringSlice attaches the methods of Interface to []string, sorting in increasing
 				
 			
 				
-				<h3 id="StringSlice.Search">func (StringSlice) <a href="http://localhost:9090/src/sort/search.go?s=4163:4204#L102">Search</a></h3>
+				<h3 id="StringSlice.Search">func (StringSlice) <a href="http://localhost:9090/src/sort/search.go?s=4159:4200#L102">Search</a>
+					<a class="permalink" href="index.html#StringSlice.Search">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#StringSlice">StringSlice</a>) Search(x <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Search returns the result of applying SearchStrings to the receiver and x.
@@ -726,7 +788,9 @@ Search returns the result of applying SearchStrings to the receiver and x.
 				
 			
 				
-				<h3 id="StringSlice.Sort">func (StringSlice) <a href="http://localhost:9090/src/sort/sort.go?s=7543:7570#L284">Sort</a></h3>
+				<h3 id="StringSlice.Sort">func (StringSlice) <a href="http://localhost:9090/src/sort/sort.go?s=7478:7505#L277">Sort</a>
+					<a class="permalink" href="index.html#StringSlice.Sort">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#StringSlice">StringSlice</a>) Sort()</pre>
 				<p>
 Sort is a convenience method.
@@ -737,7 +801,9 @@ Sort is a convenience method.
 				
 			
 				
-				<h3 id="StringSlice.Swap">func (StringSlice) <a href="http://localhost:9090/src/sort/sort.go?s=7440:7475#L281">Swap</a></h3>
+				<h3 id="StringSlice.Swap">func (StringSlice) <a href="http://localhost:9090/src/sort/sort.go?s=7375:7410#L274">Swap</a>
+					<a class="permalink" href="index.html#StringSlice.Swap">&#xb6;</a>
+				</h3>
 				<pre>func (p <a href="index.html#StringSlice">StringSlice</a>) Swap(i, j <a href="../builtin/index.html#int">int</a>)</pre>
 				
 				
@@ -756,7 +822,7 @@ Sort is a convenience method.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -774,6 +840,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

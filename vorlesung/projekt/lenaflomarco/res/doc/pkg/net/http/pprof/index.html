@@ -90,8 +90,6 @@
 				<p>
 Package pprof serves via its HTTP server runtime profiling data
 in the format expected by the pprof visualization tool.
-For more information about pprof, see
-<a href="http://code.google.com/p/google-perftools/">http://code.google.com/p/google-perftools/</a>.
 </p>
 <p>
 The package is typically only imported for the side effect of
@@ -105,7 +103,7 @@ To use pprof, link this package into your program:
 </pre>
 <p>
 If your application is not already running an http server, you
-need to start one.  Add &#34;net/http&#34; and &#34;log&#34; to your imports and
+need to start one. Add &#34;net/http&#34; and &#34;log&#34; to your imports and
 the following code to your main function:
 </p>
 <pre>go func() {
@@ -123,7 +121,8 @@ Or to look at a 30-second CPU profile:
 <pre>go tool pprof <a href="http://localhost:6060/debug/pprof/profile">http://localhost:6060/debug/pprof/profile</a>
 </pre>
 <p>
-Or to look at the goroutine blocking profile:
+Or to look at the goroutine blocking profile, after calling
+runtime.SetBlockProfileRate in your program:
 </p>
 <pre>go tool pprof <a href="http://localhost:6060/debug/pprof/block">http://localhost:6060/debug/pprof/block</a>
 </pre>
@@ -239,7 +238,9 @@ For a study of the facility in action, visit
 		
 			
 			
-			<h2 id="Cmdline">func <a href="http://localhost:9090/src/net/http/pprof/pprof.go?s=2215:2267#L68">Cmdline</a></h2>
+			<h2 id="Cmdline">func <a href="http://localhost:9090/src/net/http/pprof/pprof.go?s=2187:2239#L67">Cmdline</a>
+				<a class="permalink" href="index.html#Cmdline">&#xb6;</a>
+			</h2>
 			<pre>func Cmdline(w <a href="../index.html">http</a>.<a href="../index.html#ResponseWriter">ResponseWriter</a>, r *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>)</pre>
 			<p>
 Cmdline responds with the running program&#39;s
@@ -253,7 +254,9 @@ The package initialization registers it as /debug/pprof/cmdline.
 		
 			
 			
-			<h2 id="Handler">func <a href="http://localhost:9090/src/net/http/pprof/pprof.go?s=5733:5771#L181">Handler</a></h2>
+			<h2 id="Handler">func <a href="http://localhost:9090/src/net/http/pprof/pprof.go?s=5726:5764#L180">Handler</a>
+				<a class="permalink" href="index.html#Handler">&#xb6;</a>
+			</h2>
 			<pre>func Handler(name <a href="../../../builtin/index.html#string">string</a>) <a href="../index.html">http</a>.<a href="../index.html#Handler">Handler</a></pre>
 			<p>
 Handler returns an HTTP handler that serves the named profile.
@@ -265,7 +268,9 @@ Handler returns an HTTP handler that serves the named profile.
 		
 			
 			
-			<h2 id="Index">func <a href="http://localhost:9090/src/net/http/pprof/pprof.go?s=6493:6543#L208">Index</a></h2>
+			<h2 id="Index">func <a href="http://localhost:9090/src/net/http/pprof/pprof.go?s=6486:6536#L207">Index</a>
+				<a class="permalink" href="index.html#Index">&#xb6;</a>
+			</h2>
 			<pre>func Index(w <a href="../index.html">http</a>.<a href="../index.html#ResponseWriter">ResponseWriter</a>, r *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>)</pre>
 			<p>
 Index responds with the pprof-formatted profile named by the request.
@@ -280,7 +285,9 @@ listing the available profiles.
 		
 			
 			
-			<h2 id="Profile">func <a href="http://localhost:9090/src/net/http/pprof/pprof.go?s=2725:2777#L86">Profile</a></h2>
+			<h2 id="Profile">func <a href="http://localhost:9090/src/net/http/pprof/pprof.go?s=2697:2749#L85">Profile</a>
+				<a class="permalink" href="index.html#Profile">&#xb6;</a>
+			</h2>
 			<pre>func Profile(w <a href="../index.html">http</a>.<a href="../index.html#ResponseWriter">ResponseWriter</a>, r *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>)</pre>
 			<p>
 Profile responds with the pprof-formatted cpu profile.
@@ -293,7 +300,9 @@ The package initialization registers it as /debug/pprof/profile.
 		
 			
 			
-			<h2 id="Symbol">func <a href="http://localhost:9090/src/net/http/pprof/pprof.go?s=4557:4608#L135">Symbol</a></h2>
+			<h2 id="Symbol">func <a href="http://localhost:9090/src/net/http/pprof/pprof.go?s=4552:4603#L134">Symbol</a>
+				<a class="permalink" href="index.html#Symbol">&#xb6;</a>
+			</h2>
 			<pre>func Symbol(w <a href="../index.html">http</a>.<a href="../index.html#ResponseWriter">ResponseWriter</a>, r *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>)</pre>
 			<p>
 Symbol looks up the program counters listed in the request,
@@ -307,7 +316,9 @@ The package initialization registers it as /debug/pprof/symbol.
 		
 			
 			
-			<h2 id="Trace">func <a href="http://localhost:9090/src/net/http/pprof/pprof.go?s=3674:3724#L111">Trace</a></h2>
+			<h2 id="Trace">func <a href="http://localhost:9090/src/net/http/pprof/pprof.go?s=3646:3696#L110">Trace</a>
+				<a class="permalink" href="index.html#Trace">&#xb6;</a>
+			</h2>
 			<pre>func Trace(w <a href="../index.html">http</a>.<a href="../index.html#ResponseWriter">ResponseWriter</a>, r *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>)</pre>
 			<p>
 Trace responds with the execution trace in binary form.
@@ -331,7 +342,7 @@ The package initialization registers it as /debug/pprof/trace.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -349,6 +360,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../../lib/godoc/godocs.js"></script>
 
 </body>

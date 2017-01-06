@@ -168,7 +168,7 @@ For compound objects, the elements are printed using these rules, recursively,
 laid out like this:
 </p>
 <pre>struct:             {field0 field1 ...}
-array, slice:       [elem0  elem1 ...]
+array, slice:       [elem0 elem1 ...]
 maps:               map[key1:value1 key2:value2]
 pointer to above:   &amp;{}, &amp;[], &amp;map[]
 </pre>
@@ -207,10 +207,10 @@ it is measured in bytes.
 <p>
 For floating-point values, width sets the minimum width of the field and
 precision sets the number of places after the decimal, if appropriate,
-except that for %g/%G it sets the total number of digits. For example,
-given 123.45 the format %6.2f prints 123.45 while %.4g prints 123.5.
-The default precision for %e and %f is 6; for %g it is the smallest
-number of digits necessary to identify the value uniquely.
+except that for %g/%G precision sets the total number of significant
+digits. For example, given 12.345 the format %6.3f prints 12.345 while
+%.3g prints 12.3. The default precision for %e and %f is 6; for %g it
+is the smallest number of digits necessary to identify the value uniquely.
 </p>
 <p>
 For complex numbers, the width and precision apply to the two
@@ -364,7 +364,7 @@ description of the problem, as in these examples:
 Too many arguments: %!(EXTRA type=value)
 	Printf(&#34;hi&#34;, &#34;guys&#34;):      hi%!(EXTRA string=guys)
 Too few arguments: %!verb(MISSING)
-	Printf(&#34;hi%d&#34;):            hi %!d(MISSING)
+	Printf(&#34;hi%d&#34;):            hi%!d(MISSING)
 Non-int for width or precision: %!(BADWIDTH) or %!(BADPREC)
 	Printf(&#34;%*s&#34;, 4.5, &#34;hi&#34;):  %!(BADWIDTH)hi
 	Printf(&#34;%.*s&#34;, 4.5, &#34;hi&#34;): %!(BADPREC)hi
@@ -660,7 +660,9 @@ bufio.NewReader.
 		
 			
 			
-			<h2 id="Errorf">func <a href="http://localhost:9090/src/fmt/print.go?s=5673:5723#L201">Errorf</a></h2>
+			<h2 id="Errorf">func <a href="http://localhost:9090/src/fmt/print.go?s=5540:5590#L194">Errorf</a>
+				<a class="permalink" href="index.html#Errorf">&#xb6;</a>
+			</h2>
 			<pre>func Errorf(format <a href="../builtin/index.html#string">string</a>, a ...interface{}) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 Errorf formats according to a format specifier and returns the string
@@ -673,7 +675,9 @@ as a value that satisfies error.
 		
 			
 			
-			<h2 id="Fprint">func <a href="http://localhost:9090/src/fmt/print.go?s=6034:6095#L210">Fprint</a></h2>
+			<h2 id="Fprint">func <a href="http://localhost:9090/src/fmt/print.go?s=5901:5962#L203">Fprint</a>
+				<a class="permalink" href="index.html#Fprint">&#xb6;</a>
+			</h2>
 			<pre>func Fprint(w <a href="../io/index.html">io</a>.<a href="../io/index.html#Writer">Writer</a>, a ...interface{}) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Fprint formats using the default formats for its operands and writes to w.
@@ -687,7 +691,9 @@ It returns the number of bytes written and any write error encountered.
 		
 			
 			
-			<h2 id="Fprintf">func <a href="http://localhost:9090/src/fmt/print.go?s=4905:4982#L176">Fprintf</a></h2>
+			<h2 id="Fprintf">func <a href="http://localhost:9090/src/fmt/print.go?s=4772:4849#L169">Fprintf</a>
+				<a class="permalink" href="index.html#Fprintf">&#xb6;</a>
+			</h2>
 			<pre>func Fprintf(w <a href="../io/index.html">io</a>.<a href="../io/index.html#Writer">Writer</a>, format <a href="../builtin/index.html#string">string</a>, a ...interface{}) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Fprintf formats according to a format specifier and writes to w.
@@ -700,7 +706,9 @@ It returns the number of bytes written and any write error encountered.
 		
 			
 			
-			<h2 id="Fprintln">func <a href="http://localhost:9090/src/fmt/print.go?s=7163:7226#L242">Fprintln</a></h2>
+			<h2 id="Fprintln">func <a href="http://localhost:9090/src/fmt/print.go?s=7002:7065#L235">Fprintln</a>
+				<a class="permalink" href="index.html#Fprintln">&#xb6;</a>
+			</h2>
 			<pre>func Fprintln(w <a href="../io/index.html">io</a>.<a href="../io/index.html#Writer">Writer</a>, a ...interface{}) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Fprintln formats using the default formats for its operands and writes to w.
@@ -714,12 +722,14 @@ It returns the number of bytes written and any write error encountered.
 		
 			
 			
-			<h2 id="Fscan">func <a href="http://localhost:9090/src/fmt/scan.go?s=5217:5277#L119">Fscan</a></h2>
+			<h2 id="Fscan">func <a href="http://localhost:9090/src/fmt/scan.go?s=4911:4971#L111">Fscan</a>
+				<a class="permalink" href="index.html#Fscan">&#xb6;</a>
+			</h2>
 			<pre>func Fscan(r <a href="../io/index.html">io</a>.<a href="../io/index.html#Reader">Reader</a>, a ...interface{}) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Fscan scans text read from r, storing successive space-separated
-values into successive arguments.  Newlines count as space.  It
-returns the number of items successfully scanned.  If that is less
+values into successive arguments. Newlines count as space. It
+returns the number of items successfully scanned. If that is less
 than the number of arguments, err will report why.
 </p>
 
@@ -729,11 +739,13 @@ than the number of arguments, err will report why.
 		
 			
 			
-			<h2 id="Fscanf">func <a href="http://localhost:9090/src/fmt/scan.go?s=5891:5967#L139">Fscanf</a></h2>
+			<h2 id="Fscanf">func <a href="http://localhost:9090/src/fmt/scan.go?s=5584:5660#L131">Fscanf</a>
+				<a class="permalink" href="index.html#Fscanf">&#xb6;</a>
+			</h2>
 			<pre>func Fscanf(r <a href="../io/index.html">io</a>.<a href="../io/index.html#Reader">Reader</a>, format <a href="../builtin/index.html#string">string</a>, a ...interface{}) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Fscanf scans text read from r, storing successive space-separated
-values into successive arguments as determined by the format.  It
+values into successive arguments as determined by the format. It
 returns the number of items successfully parsed.
 Newlines in the input must match newlines in the format.
 </p>
@@ -744,7 +756,9 @@ Newlines in the input must match newlines in the format.
 		
 			
 			
-			<h2 id="Fscanln">func <a href="http://localhost:9090/src/fmt/scan.go?s=5490:5552#L128">Fscanln</a></h2>
+			<h2 id="Fscanln">func <a href="http://localhost:9090/src/fmt/scan.go?s=5184:5246#L120">Fscanln</a>
+				<a class="permalink" href="index.html#Fscanln">&#xb6;</a>
+			</h2>
 			<pre>func Fscanln(r <a href="../io/index.html">io</a>.<a href="../io/index.html#Reader">Reader</a>, a ...interface{}) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Fscanln is similar to Fscan, but stops scanning at a newline and
@@ -757,7 +771,9 @@ after the final item there must be a newline or EOF.
 		
 			
 			
-			<h2 id="Print">func <a href="http://localhost:9090/src/fmt/print.go?s=6420:6467#L221">Print</a></h2>
+			<h2 id="Print">func <a href="http://localhost:9090/src/fmt/print.go?s=6273:6320#L214">Print</a>
+				<a class="permalink" href="index.html#Print">&#xb6;</a>
+			</h2>
 			<pre>func Print(a ...interface{}) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Print formats using the default formats for its operands and writes to standard output.
@@ -771,7 +787,9 @@ It returns the number of bytes written and any write error encountered.
 		
 			
 			
-			<h2 id="Printf">func <a href="http://localhost:9090/src/fmt/print.go?s=5229:5292#L186">Printf</a></h2>
+			<h2 id="Printf">func <a href="http://localhost:9090/src/fmt/print.go?s=5096:5159#L179">Printf</a>
+				<a class="permalink" href="index.html#Printf">&#xb6;</a>
+			</h2>
 			<pre>func Printf(format <a href="../builtin/index.html#string">string</a>, a ...interface{}) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Printf formats according to a format specifier and writes to standard output.
@@ -784,7 +802,9 @@ It returns the number of bytes written and any write error encountered.
 		
 			
 			
-			<h2 id="Println">func <a href="http://localhost:9090/src/fmt/print.go?s=7559:7608#L253">Println</a></h2>
+			<h2 id="Println">func <a href="http://localhost:9090/src/fmt/print.go?s=7388:7437#L246">Println</a>
+				<a class="permalink" href="index.html#Println">&#xb6;</a>
+			</h2>
 			<pre>func Println(a ...interface{}) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Println formats using the default formats for its operands and writes to standard output.
@@ -798,12 +818,14 @@ It returns the number of bytes written and any write error encountered.
 		
 			
 			
-			<h2 id="Scan">func <a href="http://localhost:9090/src/fmt/scan.go?s=2951:2997#L61">Scan</a></h2>
+			<h2 id="Scan">func <a href="http://localhost:9090/src/fmt/scan.go?s=2653:2699#L53">Scan</a>
+				<a class="permalink" href="index.html#Scan">&#xb6;</a>
+			</h2>
 			<pre>func Scan(a ...interface{}) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Scan scans text read from standard input, storing successive
-space-separated values into successive arguments.  Newlines count
-as space.  It returns the number of items successfully scanned.
+space-separated values into successive arguments. Newlines count
+as space. It returns the number of items successfully scanned.
 If that is less than the number of arguments, err will report why.
 </p>
 
@@ -813,12 +835,14 @@ If that is less than the number of arguments, err will report why.
 		
 			
 			
-			<h2 id="Scanf">func <a href="http://localhost:9090/src/fmt/scan.go?s=3700:3762#L78">Scanf</a></h2>
+			<h2 id="Scanf">func <a href="http://localhost:9090/src/fmt/scan.go?s=3401:3463#L70">Scanf</a>
+				<a class="permalink" href="index.html#Scanf">&#xb6;</a>
+			</h2>
 			<pre>func Scanf(format <a href="../builtin/index.html#string">string</a>, a ...interface{}) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Scanf scans text read from standard input, storing successive
 space-separated values into successive arguments as determined by
-the format.  It returns the number of items successfully scanned.
+the format. It returns the number of items successfully scanned.
 If that is less than the number of arguments, err will report why.
 Newlines in the input must match newlines in the format.
 The one exception: the verb %c always scans the next rune in the
@@ -831,7 +855,9 @@ input, even if it is a space (or tab etc.) or newline.
 		
 			
 			
-			<h2 id="Scanln">func <a href="http://localhost:9090/src/fmt/scan.go?s=3155:3203#L67">Scanln</a></h2>
+			<h2 id="Scanln">func <a href="http://localhost:9090/src/fmt/scan.go?s=2857:2905#L59">Scanln</a>
+				<a class="permalink" href="index.html#Scanln">&#xb6;</a>
+			</h2>
 			<pre>func Scanln(a ...interface{}) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Scanln is similar to Scan, but stops scanning at a newline and
@@ -844,7 +870,9 @@ after the final item there must be a newline or EOF.
 		
 			
 			
-			<h2 id="Sprint">func <a href="http://localhost:9090/src/fmt/print.go?s=6663:6699#L227">Sprint</a></h2>
+			<h2 id="Sprint">func <a href="http://localhost:9090/src/fmt/print.go?s=6516:6552#L220">Sprint</a>
+				<a class="permalink" href="index.html#Sprint">&#xb6;</a>
+			</h2>
 			<pre>func Sprint(a ...interface{}) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 Sprint formats using the default formats for its operands and returns the resulting string.
@@ -857,7 +885,9 @@ Spaces are added between operands when neither is a string.
 		
 			
 			
-			<h2 id="Sprintf">func <a href="http://localhost:9090/src/fmt/print.go?s=5424:5476#L191">Sprintf</a></h2>
+			<h2 id="Sprintf">func <a href="http://localhost:9090/src/fmt/print.go?s=5291:5343#L184">Sprintf</a>
+				<a class="permalink" href="index.html#Sprintf">&#xb6;</a>
+			</h2>
 			<pre>func Sprintf(format <a href="../builtin/index.html#string">string</a>, a ...interface{}) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 Sprintf formats according to a format specifier and returns the resulting string.
@@ -869,7 +899,9 @@ Sprintf formats according to a format specifier and returns the resulting string
 		
 			
 			
-			<h2 id="Sprintln">func <a href="http://localhost:9090/src/fmt/print.go?s=7816:7854#L259">Sprintln</a></h2>
+			<h2 id="Sprintln">func <a href="http://localhost:9090/src/fmt/print.go?s=7645:7683#L252">Sprintln</a>
+				<a class="permalink" href="index.html#Sprintln">&#xb6;</a>
+			</h2>
 			<pre>func Sprintln(a ...interface{}) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 Sprintln formats using the default formats for its operands and returns the resulting string.
@@ -882,12 +914,14 @@ Spaces are always added between operands and a newline is appended.
 		
 			
 			
-			<h2 id="Sscan">func <a href="http://localhost:9090/src/fmt/scan.go?s=4228:4287#L97">Sscan</a></h2>
+			<h2 id="Sscan">func <a href="http://localhost:9090/src/fmt/scan.go?s=3926:3985#L89">Sscan</a>
+				<a class="permalink" href="index.html#Sscan">&#xb6;</a>
+			</h2>
 			<pre>func Sscan(str <a href="../builtin/index.html#string">string</a>, a ...interface{}) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Sscan scans the argument string, storing successive space-separated
-values into successive arguments.  Newlines count as space.  It
-returns the number of items successfully scanned.  If that is less
+values into successive arguments. Newlines count as space. It
+returns the number of items successfully scanned. If that is less
 than the number of arguments, err will report why.
 </p>
 
@@ -897,11 +931,13 @@ than the number of arguments, err will report why.
 		
 			
 			
-			<h2 id="Sscanf">func <a href="http://localhost:9090/src/fmt/scan.go?s=4825:4900#L111">Sscanf</a></h2>
+			<h2 id="Sscanf">func <a href="http://localhost:9090/src/fmt/scan.go?s=4522:4597#L103">Sscanf</a>
+				<a class="permalink" href="index.html#Sscanf">&#xb6;</a>
+			</h2>
 			<pre>func Sscanf(str <a href="../builtin/index.html#string">string</a>, format <a href="../builtin/index.html#string">string</a>, a ...interface{}) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Sscanf scans the argument string, storing successive space-separated
-values into successive arguments as determined by the format.  It
+values into successive arguments as determined by the format. It
 returns the number of items successfully parsed.
 Newlines in the input must match newlines in the format.
 </p>
@@ -912,7 +948,9 @@ Newlines in the input must match newlines in the format.
 		
 			
 			
-			<h2 id="Sscanln">func <a href="http://localhost:9090/src/fmt/scan.go?s=4460:4521#L103">Sscanln</a></h2>
+			<h2 id="Sscanln">func <a href="http://localhost:9090/src/fmt/scan.go?s=4158:4219#L95">Sscanln</a>
+				<a class="permalink" href="index.html#Sscanln">&#xb6;</a>
+			</h2>
 			<pre>func Sscanln(str <a href="../builtin/index.html#string">string</a>, a ...interface{}) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Sscanln is similar to Sscan, but stops scanning at a newline and
@@ -926,7 +964,9 @@ after the final item there must be a newline or EOF.
 		
 			
 			
-			<h2 id="Formatter">type <a href="http://localhost:9090/src/fmt/print.go?s=1734:1787#L44">Formatter</a></h2>
+			<h2 id="Formatter">type <a href="http://localhost:9090/src/fmt/print.go?s=1627:1680#L43">Formatter</a>
+				<a class="permalink" href="index.html#Formatter">&#xb6;</a>
+			</h2>
 			<pre>type Formatter interface {
     Format(f <a href="index.html#State">State</a>, c <a href="../builtin/index.html#rune">rune</a>)
 }</pre>
@@ -951,7 +991,9 @@ to generate its output.
 		
 			
 			
-			<h2 id="GoStringer">type <a href="http://localhost:9090/src/fmt/print.go?s=2313:2361#L61">GoStringer</a></h2>
+			<h2 id="GoStringer">type <a href="http://localhost:9090/src/fmt/print.go?s=2206:2254#L60">GoStringer</a>
+				<a class="permalink" href="index.html#GoStringer">&#xb6;</a>
+			</h2>
 			<pre>type GoStringer interface {
     GoString() <a href="../builtin/index.html#string">string</a>
 }</pre>
@@ -977,7 +1019,9 @@ to a %#v format.
 		
 			
 			
-			<h2 id="ScanState">type <a href="http://localhost:9090/src/fmt/scan.go?s=735:2316#L19">ScanState</a></h2>
+			<h2 id="ScanState">type <a href="http://localhost:9090/src/fmt/scan.go?s=441:2021#L11">ScanState</a>
+				<a class="permalink" href="index.html#ScanState">&#xb6;</a>
+			</h2>
 			<pre>type ScanState interface {
     <span class="comment">// ReadRune reads the next rune (Unicode code point) from the input.</span>
     <span class="comment">// If invoked during Scanln, Fscanln, or Sscanln, ReadRune() will</span>
@@ -993,7 +1037,7 @@ to a %#v format.
     <span class="comment">// Token skips space in the input if skipSpace is true, then returns the</span>
     <span class="comment">// run of Unicode code points c satisfying f(c).  If f is nil,</span>
     <span class="comment">// !unicode.IsSpace(c) is used; that is, the token will hold non-space</span>
-    <span class="comment">// characters.  Newlines are treated appropriately for the operation being</span>
+    <span class="comment">// characters. Newlines are treated appropriately for the operation being</span>
     <span class="comment">// performed; see the package documentation for more information.</span>
     <span class="comment">// The returned slice points to shared data that may be overwritten</span>
     <span class="comment">// by the next call to Token, a call to a Scan function using the ScanState</span>
@@ -1028,14 +1072,16 @@ to discover the next space-delimited token.
 		
 			
 			
-			<h2 id="Scanner">type <a href="http://localhost:9090/src/fmt/scan.go?s=2613:2679#L53">Scanner</a></h2>
+			<h2 id="Scanner">type <a href="http://localhost:9090/src/fmt/scan.go?s=2317:2383#L45">Scanner</a>
+				<a class="permalink" href="index.html#Scanner">&#xb6;</a>
+			</h2>
 			<pre>type Scanner interface {
     Scan(state <a href="index.html#ScanState">ScanState</a>, verb <a href="../builtin/index.html#rune">rune</a>) <a href="../builtin/index.html#error">error</a>
 }</pre>
 			<p>
 Scanner is implemented by any value that has a Scan method, which scans
 the input for the representation of a value and stores the result in the
-receiver, which must be a pointer to be useful.  The Scan method is called
+receiver, which must be a pointer to be useful. The Scan method is called
 for any argument to Scan, Scanf, or Scanln that implements it.
 </p>
 
@@ -1054,10 +1100,12 @@ for any argument to Scan, Scanf, or Scanln that implements it.
 		
 			
 			
-			<h2 id="State">type <a href="http://localhost:9090/src/fmt/print.go?s=1117:1559#L29">State</a></h2>
+			<h2 id="State">type <a href="http://localhost:9090/src/fmt/print.go?s=1012:1452#L28">State</a>
+				<a class="permalink" href="index.html#State">&#xb6;</a>
+			</h2>
 			<pre>type State interface {
     <span class="comment">// Write is the function to call to emit formatted output to be printed.</span>
-    Write(b []<a href="../builtin/index.html#byte">byte</a>) (ret <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)
+    Write(b []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)
     <span class="comment">// Width returns the value of the width option and whether it has been set.</span>
     Width() (wid <a href="../builtin/index.html#int">int</a>, ok <a href="../builtin/index.html#bool">bool</a>)
     <span class="comment">// Precision returns the value of the precision option and whether it has been set.</span>
@@ -1087,7 +1135,9 @@ the flags and options for the operand&#39;s format specifier.
 		
 			
 			
-			<h2 id="Stringer">type <a href="http://localhost:9090/src/fmt/print.go?s=2062:2106#L53">Stringer</a></h2>
+			<h2 id="Stringer">type <a href="http://localhost:9090/src/fmt/print.go?s=1955:1999#L52">Stringer</a>
+				<a class="permalink" href="index.html#Stringer">&#xb6;</a>
+			</h2>
 			<pre>type Stringer interface {
     String() <a href="../builtin/index.html#string">string</a>
 }</pre>
@@ -1123,7 +1173,7 @@ such as Print.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1141,6 +1191,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

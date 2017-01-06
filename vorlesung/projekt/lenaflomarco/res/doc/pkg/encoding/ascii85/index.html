@@ -194,7 +194,9 @@ as used in the btoa tool and Adobe&#39;s PostScript and PDF document formats.
 		
 			
 			
-			<h2 id="Decode">func <a href="http://localhost:9090/src/encoding/ascii85/ascii85.go?s=4413:4481#L179">Decode</a></h2>
+			<h2 id="Decode">func <a href="http://localhost:9090/src/encoding/ascii85/ascii85.go?s=4411:4479#L179">Decode</a>
+				<a class="permalink" href="index.html#Decode">&#xb6;</a>
+			</h2>
 			<pre>func Decode(dst, src []<a href="../../builtin/index.html#byte">byte</a>, flush <a href="../../builtin/index.html#bool">bool</a>) (ndst, nsrc <a href="../../builtin/index.html#int">int</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 Decode decodes src into dst, returning both the number
@@ -220,7 +222,9 @@ NewDecoder wraps an io.Reader interface around Decode.
 		
 			
 			
-			<h2 id="Encode">func <a href="http://localhost:9090/src/encoding/ascii85/ascii85.go?s=782:814#L17">Encode</a></h2>
+			<h2 id="Encode">func <a href="http://localhost:9090/src/encoding/ascii85/ascii85.go?s=781:813#L17">Encode</a>
+				<a class="permalink" href="index.html#Encode">&#xb6;</a>
+			</h2>
 			<pre>func Encode(dst, src []<a href="../../builtin/index.html#byte">byte</a>) <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 Encode encodes src into at most MaxEncodedLen(len(src))
@@ -229,7 +233,7 @@ bytes of dst, returning the actual number of bytes written.
 <p>
 The encoding handles 4-byte chunks, using a special encoding
 for the last fragment, so Encode is not appropriate for use on
-individual blocks of a large data stream.  Use NewEncoder() instead.
+individual blocks of a large data stream. Use NewEncoder() instead.
 </p>
 <p>
 Often, ascii85-encoded data is wrapped in &lt;~ and ~&gt; symbols.
@@ -242,7 +246,9 @@ Encode does not add these.
 		
 			
 			
-			<h2 id="MaxEncodedLen">func <a href="http://localhost:9090/src/encoding/ascii85/ascii85.go?s=1789:1818#L76">MaxEncodedLen</a></h2>
+			<h2 id="MaxEncodedLen">func <a href="http://localhost:9090/src/encoding/ascii85/ascii85.go?s=1788:1817#L76">MaxEncodedLen</a>
+				<a class="permalink" href="index.html#MaxEncodedLen">&#xb6;</a>
+			</h2>
 			<pre>func MaxEncodedLen(n <a href="../../builtin/index.html#int">int</a>) <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 MaxEncodedLen returns the maximum length of an encoding of n source bytes.
@@ -254,7 +260,9 @@ MaxEncodedLen returns the maximum length of an encoding of n source bytes.
 		
 			
 			
-			<h2 id="NewDecoder">func <a href="http://localhost:9090/src/encoding/ascii85/ascii85.go?s=5664:5702#L236">NewDecoder</a></h2>
+			<h2 id="NewDecoder">func <a href="http://localhost:9090/src/encoding/ascii85/ascii85.go?s=5662:5700#L236">NewDecoder</a>
+				<a class="permalink" href="index.html#NewDecoder">&#xb6;</a>
+			</h2>
 			<pre>func NewDecoder(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a></pre>
 			<p>
 NewDecoder constructs a new ascii85 stream decoder.
@@ -266,10 +274,12 @@ NewDecoder constructs a new ascii85 stream decoder.
 		
 			
 			
-			<h2 id="NewEncoder">func <a href="http://localhost:9090/src/encoding/ascii85/ascii85.go?s=2134:2177#L83">NewEncoder</a></h2>
+			<h2 id="NewEncoder">func <a href="http://localhost:9090/src/encoding/ascii85/ascii85.go?s=2132:2175#L83">NewEncoder</a>
+				<a class="permalink" href="index.html#NewEncoder">&#xb6;</a>
+			</h2>
 			<pre>func NewEncoder(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>) <a href="../../io/index.html">io</a>.<a href="../../io/index.html#WriteCloser">WriteCloser</a></pre>
 			<p>
-NewEncoder returns a new ascii85 stream encoder.  Data written to
+NewEncoder returns a new ascii85 stream encoder. Data written to
 the returned writer will be encoded and then written to w.
 Ascii85 encodings operate in 32-bit blocks; when finished
 writing, the caller must Close the returned encoder to flush any
@@ -283,7 +293,9 @@ trailing partial block.
 		
 			
 			
-			<h2 id="CorruptInputError">type <a href="http://localhost:9090/src/encoding/ascii85/ascii85.go?s=3582:3610#L159">CorruptInputError</a></h2>
+			<h2 id="CorruptInputError">type <a href="http://localhost:9090/src/encoding/ascii85/ascii85.go?s=3580:3608#L159">CorruptInputError</a>
+				<a class="permalink" href="index.html#CorruptInputError">&#xb6;</a>
+			</h2>
 			<pre>type CorruptInputError <a href="../../builtin/index.html#int64">int64</a></pre>
 			
 
@@ -299,7 +311,9 @@ trailing partial block.
 
 			
 				
-				<h3 id="CorruptInputError.Error">func (CorruptInputError) <a href="http://localhost:9090/src/encoding/ascii85/ascii85.go?s=3612:3653#L161">Error</a></h3>
+				<h3 id="CorruptInputError.Error">func (CorruptInputError) <a href="http://localhost:9090/src/encoding/ascii85/ascii85.go?s=3610:3651#L161">Error</a>
+					<a class="permalink" href="index.html#CorruptInputError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#CorruptInputError">CorruptInputError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -318,7 +332,7 @@ trailing partial block.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -336,6 +350,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

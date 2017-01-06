@@ -159,7 +159,7 @@ U              ungreedy: swap meaning of x* and x*?, x+ and x+?, etc (default fa
 Empty strings:
 </p>
 <pre>^              at beginning of text or line (flag m=true)
-$              at end of text (like \z not \Z) or line (flag m=true)
+$              at end of text (like \z not Perl&#39;s \Z) or line (flag m=true)
 \A             at beginning of text
 \b             at ASCII word boundary (\w on one side and \W, \A, or \z on the other)
 \B             not at ASCII word boundary
@@ -424,7 +424,9 @@ ASCII character classes:
 		
 			
 			
-			<h2 id="IsWordChar">func <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=2213:2241#L97">IsWordChar</a></h2>
+			<h2 id="IsWordChar">func <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=2213:2241#L97">IsWordChar</a>
+				<a class="permalink" href="index.html#IsWordChar">&#xb6;</a>
+			</h2>
 			<pre>func IsWordChar(r <a href="../../builtin/index.html#rune">rune</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 IsWordChar reports whether r is consider a &ldquo;word character&rdquo;
@@ -439,7 +441,9 @@ These assertions are ASCII-only: the word characters are [A-Za-z0-9_].
 		
 			
 			
-			<h2 id="EmptyOp">type <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=1078:1096#L52">EmptyOp</a></h2>
+			<h2 id="EmptyOp">type <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=1078:1096#L52">EmptyOp</a>
+				<a class="permalink" href="index.html#EmptyOp">&#xb6;</a>
+			</h2>
 			<pre>type EmptyOp <a href="../../builtin/index.html#uint8">uint8</a></pre>
 			<p>
 An EmptyOp specifies a kind or mixture of zero-width assertions.
@@ -466,7 +470,9 @@ An EmptyOp specifies a kind or mixture of zero-width assertions.
 
 			
 				
-				<h3 id="EmptyOpContext">func <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=1501:1541#L69">EmptyOpContext</a></h3>
+				<h3 id="EmptyOpContext">func <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=1501:1541#L69">EmptyOpContext</a>
+					<a class="permalink" href="index.html#EmptyOpContext">&#xb6;</a>
+				</h3>
 				<pre>func EmptyOpContext(r1, r2 <a href="../../builtin/index.html#rune">rune</a>) <a href="index.html#EmptyOp">EmptyOp</a></pre>
 				<p>
 EmptyOpContext returns the zero-width assertions
@@ -485,7 +491,9 @@ at the end of the text.
 		
 			
 			
-			<h2 id="Error">type <a href="http://localhost:9090/src/regexp/syntax/parse.go?s=336:386#L6">Error</a></h2>
+			<h2 id="Error">type <a href="http://localhost:9090/src/regexp/syntax/parse.go?s=335:385#L6">Error</a>
+				<a class="permalink" href="index.html#Error">&#xb6;</a>
+			</h2>
 			<pre>type Error struct {
     Code <a href="index.html#ErrorCode">ErrorCode</a>
     Expr <a href="../../builtin/index.html#string">string</a>
@@ -508,7 +516,9 @@ and gives the offending expression.
 
 			
 				
-				<h3 id="Error.Error">func (*Error) <a href="http://localhost:9090/src/regexp/syntax/parse.go?s=388:418#L11">Error</a></h3>
+				<h3 id="Error.Error">func (*Error) <a href="http://localhost:9090/src/regexp/syntax/parse.go?s=387:417#L11">Error</a>
+					<a class="permalink" href="index.html#Error.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#Error">Error</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -518,7 +528,9 @@ and gives the offending expression.
 		
 			
 			
-			<h2 id="ErrorCode">type <a href="http://localhost:9090/src/regexp/syntax/parse.go?s=565:586#L16">ErrorCode</a></h2>
+			<h2 id="ErrorCode">type <a href="http://localhost:9090/src/regexp/syntax/parse.go?s=564:585#L16">ErrorCode</a>
+				<a class="permalink" href="index.html#ErrorCode">&#xb6;</a>
+			</h2>
 			<pre>type ErrorCode <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 An ErrorCode describes a failure to parse a regular expression.
@@ -558,7 +570,9 @@ An ErrorCode describes a failure to parse a regular expression.
 
 			
 				
-				<h3 id="ErrorCode.String">func (ErrorCode) <a href="http://localhost:9090/src/regexp/syntax/parse.go?s=1554:1588#L38">String</a></h3>
+				<h3 id="ErrorCode.String">func (ErrorCode) <a href="http://localhost:9090/src/regexp/syntax/parse.go?s=1553:1587#L38">String</a>
+					<a class="permalink" href="index.html#ErrorCode.String">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#ErrorCode">ErrorCode</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -568,7 +582,9 @@ An ErrorCode describes a failure to parse a regular expression.
 		
 			
 			
-			<h2 id="Flags">type <a href="http://localhost:9090/src/regexp/syntax/parse.go?s=1701:1718#L43">Flags</a></h2>
+			<h2 id="Flags">type <a href="http://localhost:9090/src/regexp/syntax/parse.go?s=1700:1717#L43">Flags</a>
+				<a class="permalink" href="index.html#Flags">&#xb6;</a>
+			</h2>
 			<pre>type Flags <a href="../../builtin/index.html#uint16">uint16</a></pre>
 			<p>
 Flags control the behavior of the parser and record information about regexp context.
@@ -608,7 +624,9 @@ Flags control the behavior of the parser and record information about regexp con
 		
 			
 			
-			<h2 id="Inst">type <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=2404:2561#L102">Inst</a></h2>
+			<h2 id="Inst">type <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=2404:2561#L102">Inst</a>
+				<a class="permalink" href="index.html#Inst">&#xb6;</a>
+			</h2>
 			<pre>type Inst struct {
     Op   <a href="index.html#InstOp">InstOp</a>
     Out  <a href="../../builtin/index.html#uint32">uint32</a> <span class="comment">// all but InstMatch, InstFail</span>
@@ -632,7 +650,9 @@ An Inst is a single instruction in a regular expression program.
 
 			
 				
-				<h3 id="Inst.MatchEmptyWidth">func (*Inst) <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=5960:6020#L252">MatchEmptyWidth</a></h3>
+				<h3 id="Inst.MatchEmptyWidth">func (*Inst) <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=5958:6018#L252">MatchEmptyWidth</a>
+					<a class="permalink" href="index.html#Inst.MatchEmptyWidth">&#xb6;</a>
+				</h3>
 				<pre>func (i *<a href="index.html#Inst">Inst</a>) MatchEmptyWidth(before <a href="../../builtin/index.html#rune">rune</a>, after <a href="../../builtin/index.html#rune">rune</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 MatchEmptyWidth reports whether the instruction matches
@@ -645,7 +665,9 @@ It should only be called when i.Op == InstEmptyWidth.
 				
 			
 				
-				<h3 id="Inst.MatchRune">func (*Inst) <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=4334:4371#L184">MatchRune</a></h3>
+				<h3 id="Inst.MatchRune">func (*Inst) <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=4332:4369#L184">MatchRune</a>
+					<a class="permalink" href="index.html#Inst.MatchRune">&#xb6;</a>
+				</h3>
 				<pre>func (i *<a href="index.html#Inst">Inst</a>) MatchRune(r <a href="../../builtin/index.html#rune">rune</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 MatchRune reports whether the instruction matches (and consumes) r.
@@ -657,7 +679,9 @@ It should only be called when i.Op == InstRune.
 				
 			
 				
-				<h3 id="Inst.MatchRunePos">func (*Inst) <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=4699:4738#L193">MatchRunePos</a></h3>
+				<h3 id="Inst.MatchRunePos">func (*Inst) <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=4697:4736#L193">MatchRunePos</a>
+					<a class="permalink" href="index.html#Inst.MatchRunePos">&#xb6;</a>
+				</h3>
 				<pre>func (i *<a href="index.html#Inst">Inst</a>) MatchRunePos(r <a href="../../builtin/index.html#rune">rune</a>) <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 MatchRunePos checks whether the instruction matches (and consumes) r.
@@ -672,7 +696,9 @@ MatchRunePos should only be called when i.Op == InstRune.
 				
 			
 				
-				<h3 id="Inst.String">func (*Inst) <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=6435:6465#L270">String</a></h3>
+				<h3 id="Inst.String">func (*Inst) <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=6433:6463#L270">String</a>
+					<a class="permalink" href="index.html#Inst.String">&#xb6;</a>
+				</h3>
 				<pre>func (i *<a href="index.html#Inst">Inst</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -682,7 +708,9 @@ MatchRunePos should only be called when i.Op == InstRune.
 		
 			
 			
-			<h2 id="InstOp">type <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=519:536#L14">InstOp</a></h2>
+			<h2 id="InstOp">type <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=519:536#L14">InstOp</a>
+				<a class="permalink" href="index.html#InstOp">&#xb6;</a>
+			</h2>
 			<pre>type InstOp <a href="../../builtin/index.html#uint8">uint8</a></pre>
 			<p>
 An InstOp is an instruction opcode.
@@ -716,7 +744,9 @@ An InstOp is an instruction opcode.
 
 			
 				
-				<h3 id="InstOp.String">func (InstOp) <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=895:926#L44">String</a></h3>
+				<h3 id="InstOp.String">func (InstOp) <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=895:926#L44">String</a>
+					<a class="permalink" href="index.html#InstOp.String">&#xb6;</a>
+				</h3>
 				<pre>func (i <a href="index.html#InstOp">InstOp</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -726,7 +756,9 @@ An InstOp is an instruction opcode.
 		
 			
 			
-			<h2 id="Op">type <a href="http://localhost:9090/src/regexp/syntax/regexp.go?s=859:872#L21">Op</a></h2>
+			<h2 id="Op">type <a href="http://localhost:9090/src/regexp/syntax/regexp.go?s=858:871#L21">Op</a>
+				<a class="permalink" href="index.html#Op">&#xb6;</a>
+			</h2>
 			<pre>type Op <a href="../../builtin/index.html#uint8">uint8</a></pre>
 			<p>
 An Op is a single regular expression operator.
@@ -770,7 +802,9 @@ An Op is a single regular expression operator.
 		
 			
 			
-			<h2 id="Prog">type <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=352:478#L7">Prog</a></h2>
+			<h2 id="Prog">type <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=352:478#L7">Prog</a>
+				<a class="permalink" href="index.html#Prog">&#xb6;</a>
+			</h2>
 			<pre>type Prog struct {
     Inst   []<a href="index.html#Inst">Inst</a>
     Start  <a href="../../builtin/index.html#int">int</a> <span class="comment">// index of start instruction</span>
@@ -791,7 +825,9 @@ A Prog is a compiled regular expression program.
 
 			
 				
-				<h3 id="Compile">func <a href="http://localhost:9090/src/regexp/syntax/compile.go?s=1854:1893#L70">Compile</a></h3>
+				<h3 id="Compile">func <a href="http://localhost:9090/src/regexp/syntax/compile.go?s=1852:1891#L70">Compile</a>
+					<a class="permalink" href="index.html#Compile">&#xb6;</a>
+				</h3>
 				<pre>func Compile(re *<a href="index.html#Regexp">Regexp</a>) (*<a href="index.html#Prog">Prog</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Compile compiles the regexp into a program to be executed.
@@ -804,11 +840,13 @@ The regexp should have been simplified already (returned from re.Simplify).
 
 			
 				
-				<h3 id="Prog.Prefix">func (*Prog) <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=3259:3313#L139">Prefix</a></h3>
+				<h3 id="Prog.Prefix">func (*Prog) <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=3258:3312#L139">Prefix</a>
+					<a class="permalink" href="index.html#Prog.Prefix">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Prog">Prog</a>) Prefix() (prefix <a href="../../builtin/index.html#string">string</a>, complete <a href="../../builtin/index.html#bool">bool</a>)</pre>
 				<p>
 Prefix returns a literal string that all matches for the
-regexp must start with.  Complete is true if the prefix
+regexp must start with. Complete is true if the prefix
 is the entire match.
 </p>
 
@@ -817,11 +855,13 @@ is the entire match.
 				
 			
 				
-				<h3 id="Prog.StartCond">func (*Prog) <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=3860:3894#L158">StartCond</a></h3>
+				<h3 id="Prog.StartCond">func (*Prog) <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=3858:3892#L158">StartCond</a>
+					<a class="permalink" href="index.html#Prog.StartCond">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Prog">Prog</a>) StartCond() <a href="index.html#EmptyOp">EmptyOp</a></pre>
 				<p>
 StartCond returns the leading empty-width conditions that must
-be true in any match.  It returns ^EmptyOp(0) if no matches are possible.
+be true in any match. It returns ^EmptyOp(0) if no matches are possible.
 </p>
 
 				
@@ -829,7 +869,9 @@ be true in any match.  It returns ^EmptyOp(0) if no matches are possible.
 				
 			
 				
-				<h3 id="Prog.String">func (*Prog) <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=2563:2593#L109">String</a></h3>
+				<h3 id="Prog.String">func (*Prog) <a href="http://localhost:9090/src/regexp/syntax/prog.go?s=2563:2593#L109">String</a>
+					<a class="permalink" href="index.html#Prog.String">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Prog">Prog</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -839,7 +881,9 @@ be true in any match.  It returns ^EmptyOp(0) if no matches are possible.
 		
 			
 			
-			<h2 id="Regexp">type <a href="http://localhost:9090/src/regexp/syntax/regexp.go?s=383:807#L8">Regexp</a></h2>
+			<h2 id="Regexp">type <a href="http://localhost:9090/src/regexp/syntax/regexp.go?s=382:806#L8">Regexp</a>
+				<a class="permalink" href="index.html#Regexp">&#xb6;</a>
+			</h2>
 			<pre>type Regexp struct {
     Op       <a href="index.html#Op">Op</a> <span class="comment">// operator</span>
     Flags    <a href="index.html#Flags">Flags</a>
@@ -866,7 +910,9 @@ A Regexp is a node in a regular expression syntax tree.
 
 			
 				
-				<h3 id="Parse">func <a href="http://localhost:9090/src/regexp/syntax/parse.go?s=19263:19313#L691">Parse</a></h3>
+				<h3 id="Parse">func <a href="http://localhost:9090/src/regexp/syntax/parse.go?s=19259:19309#L691">Parse</a>
+					<a class="permalink" href="index.html#Parse">&#xb6;</a>
+				</h3>
 				<pre>func Parse(s <a href="../../builtin/index.html#string">string</a>, flags <a href="index.html#Flags">Flags</a>) (*<a href="index.html#Regexp">Regexp</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Parse parses a regular expression string s, controlled by the specified
@@ -880,7 +926,9 @@ described in the top-level comment.
 
 			
 				
-				<h3 id="Regexp.CapNames">func (*Regexp) <a href="http://localhost:9090/src/regexp/syntax/regexp.go?s=7517:7554#L296">CapNames</a></h3>
+				<h3 id="Regexp.CapNames">func (*Regexp) <a href="http://localhost:9090/src/regexp/syntax/regexp.go?s=7513:7550#L296">CapNames</a>
+					<a class="permalink" href="index.html#Regexp.CapNames">&#xb6;</a>
+				</h3>
 				<pre>func (re *<a href="index.html#Regexp">Regexp</a>) CapNames() []<a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 CapNames walks the regexp to find the names of capturing groups.
@@ -891,7 +939,9 @@ CapNames walks the regexp to find the names of capturing groups.
 				
 			
 				
-				<h3 id="Regexp.Equal">func (*Regexp) <a href="http://localhost:9090/src/regexp/syntax/regexp.go?s=2525:2563#L52">Equal</a></h3>
+				<h3 id="Regexp.Equal">func (*Regexp) <a href="http://localhost:9090/src/regexp/syntax/regexp.go?s=2524:2562#L52">Equal</a>
+					<a class="permalink" href="index.html#Regexp.Equal">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#Regexp">Regexp</a>) Equal(y *<a href="index.html#Regexp">Regexp</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 Equal returns true if x and y have identical structure.
@@ -902,7 +952,9 @@ Equal returns true if x and y have identical structure.
 				
 			
 				
-				<h3 id="Regexp.MaxCap">func (*Regexp) <a href="http://localhost:9090/src/regexp/syntax/regexp.go?s=7276:7306#L282">MaxCap</a></h3>
+				<h3 id="Regexp.MaxCap">func (*Regexp) <a href="http://localhost:9090/src/regexp/syntax/regexp.go?s=7272:7302#L282">MaxCap</a>
+					<a class="permalink" href="index.html#Regexp.MaxCap">&#xb6;</a>
+				</h3>
 				<pre>func (re *<a href="index.html#Regexp">Regexp</a>) MaxCap() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 MaxCap walks the regexp to find the maximum capture index.
@@ -913,14 +965,16 @@ MaxCap walks the regexp to find the maximum capture index.
 				
 			
 				
-				<h3 id="Regexp.Simplify">func (*Regexp) <a href="http://localhost:9090/src/regexp/syntax/simplify.go?s=692:728#L4">Simplify</a></h3>
+				<h3 id="Regexp.Simplify">func (*Regexp) <a href="http://localhost:9090/src/regexp/syntax/simplify.go?s=690:726#L4">Simplify</a>
+					<a class="permalink" href="index.html#Regexp.Simplify">&#xb6;</a>
+				</h3>
 				<pre>func (re *<a href="index.html#Regexp">Regexp</a>) Simplify() *<a href="index.html#Regexp">Regexp</a></pre>
 				<p>
 Simplify returns a regexp equivalent to re but without counted repetitions
 and with various other simplifications, such as rewriting /(?:a+)+/ to /a+/.
 The resulting regexp will execute correctly but its string representation
 will not produce the same parse tree, because capturing parentheses
-may have been duplicated or removed.  For example, the simplified form
+may have been duplicated or removed. For example, the simplified form
 for /(x){1,2}/ is /(x)(x)?/ but both parentheses capture as $1.
 The returned regexp may share structure with or be the original.
 </p>
@@ -930,7 +984,9 @@ The returned regexp may share structure with or be the original.
 				
 			
 				
-				<h3 id="Regexp.String">func (*Regexp) <a href="http://localhost:9090/src/regexp/syntax/regexp.go?s=6421:6454#L235">String</a></h3>
+				<h3 id="Regexp.String">func (*Regexp) <a href="http://localhost:9090/src/regexp/syntax/regexp.go?s=6419:6452#L235">String</a>
+					<a class="permalink" href="index.html#Regexp.String">&#xb6;</a>
+				</h3>
 				<pre>func (re *<a href="index.html#Regexp">Regexp</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -949,7 +1005,7 @@ The returned regexp may share structure with or be the original.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -967,6 +1023,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

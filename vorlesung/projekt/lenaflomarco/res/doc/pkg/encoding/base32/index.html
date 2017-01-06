@@ -229,7 +229,9 @@ RFC 4648.
 		
 			
 			
-			<h2 id="NewDecoder">func <a href="http://localhost:9090/src/encoding/base32/base32.go?s=9835:9888#L410">NewDecoder</a></h2>
+			<h2 id="NewDecoder">func <a href="http://localhost:9090/src/encoding/base32/base32.go?s=9830:9883#L410">NewDecoder</a>
+				<a class="permalink" href="index.html#NewDecoder">&#xb6;</a>
+			</h2>
 			<pre>func NewDecoder(enc *<a href="index.html#Encoding">Encoding</a>, r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a></pre>
 			<p>
 NewDecoder constructs a new base32 stream decoder.
@@ -241,10 +243,12 @@ NewDecoder constructs a new base32 stream decoder.
 		
 			
 			
-			<h2 id="NewEncoder">func <a href="http://localhost:9090/src/encoding/base32/base32.go?s=4803:4861#L206">NewEncoder</a></h2>
+			<h2 id="NewEncoder">func <a href="http://localhost:9090/src/encoding/base32/base32.go?s=4800:4858#L206">NewEncoder</a>
+				<a class="permalink" href="index.html#NewEncoder">&#xb6;</a>
+			</h2>
 			<pre>func NewEncoder(enc *<a href="index.html#Encoding">Encoding</a>, w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>) <a href="../../io/index.html">io</a>.<a href="../../io/index.html#WriteCloser">WriteCloser</a></pre>
 			<p>
-NewEncoder returns a new base32 stream encoder.  Data written to
+NewEncoder returns a new base32 stream encoder. Data written to
 the returned writer will be encoded using enc and then written to w.
 Base32 encodings operate in 5-byte blocks; when finished
 writing, the caller must Close the returned encoder to flush any
@@ -258,7 +262,9 @@ partially written blocks.
 		
 			
 			
-			<h2 id="CorruptInputError">type <a href="http://localhost:9090/src/encoding/base32/base32.go?s=5090:5118#L218">CorruptInputError</a></h2>
+			<h2 id="CorruptInputError">type <a href="http://localhost:9090/src/encoding/base32/base32.go?s=5087:5115#L218">CorruptInputError</a>
+				<a class="permalink" href="index.html#CorruptInputError">&#xb6;</a>
+			</h2>
 			<pre>type CorruptInputError <a href="../../builtin/index.html#int64">int64</a></pre>
 			
 
@@ -274,7 +280,9 @@ partially written blocks.
 
 			
 				
-				<h3 id="CorruptInputError.Error">func (CorruptInputError) <a href="http://localhost:9090/src/encoding/base32/base32.go?s=5120:5161#L220">Error</a></h3>
+				<h3 id="CorruptInputError.Error">func (CorruptInputError) <a href="http://localhost:9090/src/encoding/base32/base32.go?s=5117:5158#L220">Error</a>
+					<a class="permalink" href="index.html#CorruptInputError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#CorruptInputError">CorruptInputError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -284,13 +292,15 @@ partially written blocks.
 		
 			
 			
-			<h2 id="Encoding">type <a href="http://localhost:9090/src/encoding/base32/base32.go?s=570:633#L13">Encoding</a></h2>
+			<h2 id="Encoding">type <a href="http://localhost:9090/src/encoding/base32/base32.go?s=569:632#L13">Encoding</a>
+				<a class="permalink" href="index.html#Encoding">&#xb6;</a>
+			</h2>
 			<pre>type Encoding struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
 An Encoding is a radix 32 encoding/decoding scheme, defined by a
-32-character alphabet.  The most common is the &#34;base32&#34; encoding
+32-character alphabet. The most common is the &#34;base32&#34; encoding
 introduced for SASL GSSAPI and standardized in RFC 4648.
 The alternate &#34;base32hex&#34; encoding is used in DNSSEC.
 </p>
@@ -306,7 +316,9 @@ The alternate &#34;base32hex&#34; encoding is used in DNSSEC.
 
 			
 				
-				<h3 id="NewEncoding">func <a href="http://localhost:9090/src/encoding/base32/base32.go?s=846:888#L23">NewEncoding</a></h3>
+				<h3 id="NewEncoding">func <a href="http://localhost:9090/src/encoding/base32/base32.go?s=845:887#L23">NewEncoding</a>
+					<a class="permalink" href="index.html#NewEncoding">&#xb6;</a>
+				</h3>
 				<pre>func NewEncoding(encoder <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Encoding">Encoding</a></pre>
 				<p>
 NewEncoding returns a new Encoding defined by the given alphabet,
@@ -319,12 +331,14 @@ which must be a 32-byte string.
 
 			
 				
-				<h3 id="Encoding.Decode">func (*Encoding) <a href="http://localhost:9090/src/encoding/base32/base32.go?s=7760:7823#L311">Decode</a></h3>
+				<h3 id="Encoding.Decode">func (*Encoding) <a href="http://localhost:9090/src/encoding/base32/base32.go?s=7755:7818#L311">Decode</a>
+					<a class="permalink" href="index.html#Encoding.Decode">&#xb6;</a>
+				</h3>
 				<pre>func (enc *<a href="index.html#Encoding">Encoding</a>) Decode(dst, src []<a href="../../builtin/index.html#byte">byte</a>) (n <a href="../../builtin/index.html#int">int</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
-Decode decodes src using the encoding enc.  It writes at most
+Decode decodes src using the encoding enc. It writes at most
 DecodedLen(len(src)) bytes to dst and returns the number of bytes
-written.  If src contains invalid base32 data, it will return the
+written. If src contains invalid base32 data, it will return the
 number of bytes successfully written and CorruptInputError.
 New line characters (\r and \n) are ignored.
 </p>
@@ -334,7 +348,9 @@ New line characters (\r and \n) are ignored.
 				
 			
 				
-				<h3 id="Encoding.DecodeString">func (*Encoding) <a href="http://localhost:9090/src/encoding/base32/base32.go?s=7985:8044#L318">DecodeString</a></h3>
+				<h3 id="Encoding.DecodeString">func (*Encoding) <a href="http://localhost:9090/src/encoding/base32/base32.go?s=7980:8039#L318">DecodeString</a>
+					<a class="permalink" href="index.html#Encoding.DecodeString">&#xb6;</a>
+				</h3>
 				<pre>func (enc *<a href="index.html#Encoding">Encoding</a>) DecodeString(s <a href="../../builtin/index.html#string">string</a>) ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 DecodeString returns the bytes represented by the base32 string s.
@@ -345,7 +361,9 @@ DecodeString returns the bytes represented by the base32 string s.
 				
 			
 				
-				<h3 id="Encoding.DecodedLen">func (*Encoding) <a href="http://localhost:9090/src/encoding/base32/base32.go?s=10074:10116#L416">DecodedLen</a></h3>
+				<h3 id="Encoding.DecodedLen">func (*Encoding) <a href="http://localhost:9090/src/encoding/base32/base32.go?s=10069:10111#L416">DecodedLen</a>
+					<a class="permalink" href="index.html#Encoding.DecodedLen">&#xb6;</a>
+				</h3>
 				<pre>func (enc *<a href="index.html#Encoding">Encoding</a>) DecodedLen(n <a href="../../builtin/index.html#int">int</a>) <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 DecodedLen returns the maximum length in bytes of the decoded data
@@ -357,7 +375,9 @@ corresponding to n bytes of base32-encoded data.
 				
 			
 				
-				<h3 id="Encoding.Encode">func (*Encoding) <a href="http://localhost:9090/src/encoding/base32/base32.go?s=1739:1783#L60">Encode</a></h3>
+				<h3 id="Encoding.Encode">func (*Encoding) <a href="http://localhost:9090/src/encoding/base32/base32.go?s=1737:1781#L60">Encode</a>
+					<a class="permalink" href="index.html#Encoding.Encode">&#xb6;</a>
+				</h3>
 				<pre>func (enc *<a href="index.html#Encoding">Encoding</a>) Encode(dst, src []<a href="../../builtin/index.html#byte">byte</a>)</pre>
 				<p>
 Encode encodes src using the encoding enc, writing
@@ -366,7 +386,7 @@ EncodedLen(len(src)) bytes to dst.
 <p>
 The encoding pads the output to a multiple of 8 bytes,
 so Encode is not appropriate for use on individual blocks
-of a large data stream.  Use NewEncoder() instead.
+of a large data stream. Use NewEncoder() instead.
 </p>
 
 				
@@ -374,7 +394,9 @@ of a large data stream.  Use NewEncoder() instead.
 				
 			
 				
-				<h3 id="Encoding.EncodeToString">func (*Encoding) <a href="http://localhost:9090/src/encoding/base32/base32.go?s=3012:3066#L126">EncodeToString</a></h3>
+				<h3 id="Encoding.EncodeToString">func (*Encoding) <a href="http://localhost:9090/src/encoding/base32/base32.go?s=3010:3064#L126">EncodeToString</a>
+					<a class="permalink" href="index.html#Encoding.EncodeToString">&#xb6;</a>
+				</h3>
 				<pre>func (enc *<a href="index.html#Encoding">Encoding</a>) EncodeToString(src []<a href="../../builtin/index.html#byte">byte</a>) <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 EncodeToString returns the base32 encoding of src.
@@ -385,7 +407,9 @@ EncodeToString returns the base32 encoding of src.
 				
 			
 				
-				<h3 id="Encoding.EncodedLen">func (*Encoding) <a href="http://localhost:9090/src/encoding/base32/base32.go?s=5000:5042#L212">EncodedLen</a></h3>
+				<h3 id="Encoding.EncodedLen">func (*Encoding) <a href="http://localhost:9090/src/encoding/base32/base32.go?s=4997:5039#L212">EncodedLen</a>
+					<a class="permalink" href="index.html#Encoding.EncodedLen">&#xb6;</a>
+				</h3>
 				<pre>func (enc *<a href="index.html#Encoding">Encoding</a>) EncodedLen(n <a href="../../builtin/index.html#int">int</a>) <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 EncodedLen returns the length in bytes of the base32 encoding
@@ -408,7 +432,7 @@ of an input buffer of length n.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -426,6 +450,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

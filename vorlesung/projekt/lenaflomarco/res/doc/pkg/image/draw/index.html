@@ -203,7 +203,9 @@ See &#34;The Go image/draw package&#34; for an introduction to this package:
 		
 			
 			
-			<h2 id="Draw">func <a href="http://localhost:9090/src/image/draw/draw.go?s=2825:2904#L90">Draw</a></h2>
+			<h2 id="Draw">func <a href="http://localhost:9090/src/image/draw/draw.go?s=2824:2903#L90">Draw</a>
+				<a class="permalink" href="index.html#Draw">&#xb6;</a>
+			</h2>
 			<pre>func Draw(dst <a href="index.html#Image">Image</a>, r <a href="../index.html">image</a>.<a href="../index.html#Rectangle">Rectangle</a>, src <a href="../index.html">image</a>.<a href="../index.html#Image">Image</a>, sp <a href="../index.html">image</a>.<a href="../index.html#Point">Point</a>, op <a href="index.html#Op">Op</a>)</pre>
 			<p>
 Draw calls DrawMask with a nil mask.
@@ -215,7 +217,9 @@ Draw calls DrawMask with a nil mask.
 		
 			
 			
-			<h2 id="DrawMask">func <a href="http://localhost:9090/src/image/draw/draw.go?s=3146:3263#L96">DrawMask</a></h2>
+			<h2 id="DrawMask">func <a href="http://localhost:9090/src/image/draw/draw.go?s=3145:3262#L96">DrawMask</a>
+				<a class="permalink" href="index.html#DrawMask">&#xb6;</a>
+			</h2>
 			<pre>func DrawMask(dst <a href="index.html#Image">Image</a>, r <a href="../index.html">image</a>.<a href="../index.html#Rectangle">Rectangle</a>, src <a href="../index.html">image</a>.<a href="../index.html#Image">Image</a>, sp <a href="../index.html">image</a>.<a href="../index.html#Point">Point</a>, mask <a href="../index.html">image</a>.<a href="../index.html#Image">Image</a>, mp <a href="../index.html">image</a>.<a href="../index.html#Point">Point</a>, op <a href="index.html#Op">Op</a>)</pre>
 			<p>
 DrawMask aligns r.Min in dst with sp in src and mp in mask and then replaces the rectangle r
@@ -229,7 +233,9 @@ in dst with the result of a Porter-Duff composition. A nil mask is treated as op
 		
 			
 			
-			<h2 id="Drawer">type <a href="http://localhost:9090/src/image/draw/draw.go?s=1343:1565#L40">Drawer</a></h2>
+			<h2 id="Drawer">type <a href="http://localhost:9090/src/image/draw/draw.go?s=1342:1564#L40">Drawer</a>
+				<a class="permalink" href="index.html#Drawer">&#xb6;</a>
+			</h2>
 			<pre>type Drawer interface {
     <span class="comment">// Draw aligns r.Min in dst with sp in src and then replaces the</span>
     <span class="comment">// rectangle r in dst with the result of drawing src on dst.</span>
@@ -261,7 +267,9 @@ diffusion.
 		
 			
 			
-			<h2 id="Image">type <a href="http://localhost:9090/src/image/draw/draw.go?s=573:640#L11">Image</a></h2>
+			<h2 id="Image">type <a href="http://localhost:9090/src/image/draw/draw.go?s=572:639#L11">Image</a>
+				<a class="permalink" href="index.html#Image">&#xb6;</a>
+			</h2>
 			<pre>type Image interface {
     <a href="../index.html">image</a>.<a href="../index.html#Image">Image</a>
     Set(x, y <a href="../../builtin/index.html#int">int</a>, c <a href="../color/index.html">color</a>.<a href="../color/index.html#Color">Color</a>)
@@ -285,7 +293,9 @@ Image is an image.Image with a Set method to change a single pixel.
 		
 			
 			
-			<h2 id="Op">type <a href="http://localhost:9090/src/image/draw/draw.go?s=957:968#L24">Op</a></h2>
+			<h2 id="Op">type <a href="http://localhost:9090/src/image/draw/draw.go?s=956:967#L24">Op</a>
+				<a class="permalink" href="index.html#Op">&#xb6;</a>
+			</h2>
 			<pre>type Op <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 Op is a Porter-Duff compositing operator.
@@ -312,7 +322,9 @@ Op is a Porter-Duff compositing operator.
 
 			
 				
-				<h3 id="Op.Draw">func (Op) <a href="http://localhost:9090/src/image/draw/draw.go?s=1170:1250#L35">Draw</a></h3>
+				<h3 id="Op.Draw">func (Op) <a href="http://localhost:9090/src/image/draw/draw.go?s=1169:1249#L35">Draw</a>
+					<a class="permalink" href="index.html#Op.Draw">&#xb6;</a>
+				</h3>
 				<pre>func (op <a href="index.html#Op">Op</a>) Draw(dst <a href="index.html#Image">Image</a>, r <a href="../index.html">image</a>.<a href="../index.html#Rectangle">Rectangle</a>, src <a href="../index.html">image</a>.<a href="../index.html#Image">Image</a>, sp <a href="../index.html">image</a>.<a href="../index.html#Point">Point</a>)</pre>
 				<p>
 Draw implements the Drawer interface by calling the Draw function with this
@@ -326,7 +338,9 @@ Op.
 		
 			
 			
-			<h2 id="Quantizer">type <a href="http://localhost:9090/src/image/draw/draw.go?s=688:910#L17">Quantizer</a></h2>
+			<h2 id="Quantizer">type <a href="http://localhost:9090/src/image/draw/draw.go?s=687:909#L17">Quantizer</a>
+				<a class="permalink" href="index.html#Quantizer">&#xb6;</a>
+			</h2>
 			<pre>type Quantizer interface {
     <span class="comment">// Quantize appends up to cap(p) - len(p) colors to p and returns the</span>
     <span class="comment">// updated palette suitable for converting m to a paletted image.</span>
@@ -360,7 +374,7 @@ Quantizer produces a palette for an image.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -378,6 +392,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

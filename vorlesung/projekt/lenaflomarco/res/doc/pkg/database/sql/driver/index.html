@@ -359,11 +359,13 @@ with fmt.Sprintf(&#34;%v&#34;, v).
 		
 			
 			
-			<h2 id="IsScanValue">func <a href="http://localhost:9090/src/database/sql/driver/types.go?s=5334:5370#L178">IsScanValue</a></h2>
+			<h2 id="IsScanValue">func <a href="http://localhost:9090/src/database/sql/driver/types.go?s=5263:5299#L178">IsScanValue</a>
+				<a class="permalink" href="index.html#IsScanValue">&#xb6;</a>
+			</h2>
 			<pre>func IsScanValue(v interface{}) <a href="../../../builtin/index.html#bool">bool</a></pre>
 			<p>
-IsScanValue reports whether v is a valid Value scan type.
-Unlike IsValue, IsScanValue does not permit the string type.
+IsScanValue is equivalent to IsValue.
+It exists for compatibility.
 </p>
 
 			
@@ -372,11 +374,12 @@ Unlike IsValue, IsScanValue does not permit the string type.
 		
 			
 			
-			<h2 id="IsValue">func <a href="http://localhost:9090/src/database/sql/driver/types.go?s=5072:5104#L166">IsValue</a></h2>
+			<h2 id="IsValue">func <a href="http://localhost:9090/src/database/sql/driver/types.go?s=5015:5047#L165">IsValue</a>
+				<a class="permalink" href="index.html#IsValue">&#xb6;</a>
+			</h2>
 			<pre>func IsValue(v interface{}) <a href="../../../builtin/index.html#bool">bool</a></pre>
 			<p>
 IsValue reports whether v is a valid Value parameter type.
-Unlike IsScanValue, IsValue permits the string type.
 </p>
 
 			
@@ -386,10 +389,12 @@ Unlike IsScanValue, IsValue permits the string type.
 		
 			
 			
-			<h2 id="ColumnConverter">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=4804:5087#L135">ColumnConverter</a></h2>
+			<h2 id="ColumnConverter">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=4764:5046#L135">ColumnConverter</a>
+				<a class="permalink" href="index.html#ColumnConverter">&#xb6;</a>
+			</h2>
 			<pre>type ColumnConverter interface {
     <span class="comment">// ColumnConverter returns a ValueConverter for the provided</span>
-    <span class="comment">// column index.  If the type of a specific column isn&#39;t known</span>
+    <span class="comment">// column index. If the type of a specific column isn&#39;t known</span>
     <span class="comment">// or shouldn&#39;t be handled specially, DefaultValueConverter</span>
     <span class="comment">// can be returned.</span>
     ColumnConverter(idx <a href="../../../builtin/index.html#int">int</a>) <a href="index.html#ValueConverter">ValueConverter</a>
@@ -415,7 +420,9 @@ any type to a driver Value.
 		
 			
 			
-			<h2 id="Conn">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=2778:3359#L73">Conn</a></h2>
+			<h2 id="Conn">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=2738:3319#L73">Conn</a>
+				<a class="permalink" href="index.html#Conn">&#xb6;</a>
+			</h2>
 			<pre>type Conn interface {
     <span class="comment">// Prepare returns a prepared statement, bound to this connection.</span>
     Prepare(query <a href="../../../builtin/index.html#string">string</a>) (<a href="index.html#Stmt">Stmt</a>, <a href="../../../builtin/index.html#error">error</a>)
@@ -456,7 +463,9 @@ Conn is assumed to be stateful.
 		
 			
 			
-			<h2 id="Driver">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=667:1088#L16">Driver</a></h2>
+			<h2 id="Driver">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=627:1048#L16">Driver</a>
+				<a class="permalink" href="index.html#Driver">&#xb6;</a>
+			</h2>
 			<pre>type Driver interface {
     <span class="comment">// Open returns a new connection to the database.</span>
     <span class="comment">// The name is a string in a driver-specific format.</span>
@@ -489,7 +498,9 @@ driver.
 		
 			
 			
-			<h2 id="Execer">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=2231:2306#L54">Execer</a></h2>
+			<h2 id="Execer">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=2191:2266#L54">Execer</a>
+				<a class="permalink" href="index.html#Execer">&#xb6;</a>
+			</h2>
 			<pre>type Execer interface {
     Exec(query <a href="../../../builtin/index.html#string">string</a>, args []<a href="index.html#Value">Value</a>) (<a href="index.html#Result">Result</a>, <a href="../../../builtin/index.html#error">error</a>)
 }</pre>
@@ -520,7 +531,9 @@ Exec may return ErrSkip.
 		
 			
 			
-			<h2 id="NotNull">type <a href="http://localhost:9090/src/database/sql/driver/types.go?s=4734:4783#L153">NotNull</a></h2>
+			<h2 id="NotNull">type <a href="http://localhost:9090/src/database/sql/driver/types.go?s=4733:4782#L153">NotNull</a>
+				<a class="permalink" href="index.html#NotNull">&#xb6;</a>
+			</h2>
 			<pre>type NotNull struct {
     Converter <a href="index.html#ValueConverter">ValueConverter</a>
 }</pre>
@@ -542,7 +555,9 @@ values but otherwise delegating to another ValueConverter.
 
 			
 				
-				<h3 id="NotNull.ConvertValue">func (NotNull) <a href="http://localhost:9090/src/database/sql/driver/types.go?s=4785:4844#L157">ConvertValue</a></h3>
+				<h3 id="NotNull.ConvertValue">func (NotNull) <a href="http://localhost:9090/src/database/sql/driver/types.go?s=4784:4843#L157">ConvertValue</a>
+					<a class="permalink" href="index.html#NotNull.ConvertValue">&#xb6;</a>
+				</h3>
 				<pre>func (n <a href="index.html#NotNull">NotNull</a>) ConvertValue(v interface{}) (<a href="index.html#Value">Value</a>, <a href="../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -552,7 +567,9 @@ values but otherwise delegating to another ValueConverter.
 		
 			
 			
-			<h2 id="Null">type <a href="http://localhost:9090/src/database/sql/driver/types.go?s=4419:4465#L140">Null</a></h2>
+			<h2 id="Null">type <a href="http://localhost:9090/src/database/sql/driver/types.go?s=4418:4464#L140">Null</a>
+				<a class="permalink" href="index.html#Null">&#xb6;</a>
+			</h2>
 			<pre>type Null struct {
     Converter <a href="index.html#ValueConverter">ValueConverter</a>
 }</pre>
@@ -574,7 +591,9 @@ values but otherwise delegating to another ValueConverter.
 
 			
 				
-				<h3 id="Null.ConvertValue">func (Null) <a href="http://localhost:9090/src/database/sql/driver/types.go?s=4467:4523#L144">ConvertValue</a></h3>
+				<h3 id="Null.ConvertValue">func (Null) <a href="http://localhost:9090/src/database/sql/driver/types.go?s=4466:4522#L144">ConvertValue</a>
+					<a class="permalink" href="index.html#Null.ConvertValue">&#xb6;</a>
+				</h3>
 				<pre>func (n <a href="index.html#Null">Null</a>) ConvertValue(v interface{}) (<a href="index.html#Value">Value</a>, <a href="../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -584,7 +603,9 @@ values but otherwise delegating to another ValueConverter.
 		
 			
 			
-			<h2 id="Queryer">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=2569:2644#L65">Queryer</a></h2>
+			<h2 id="Queryer">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=2529:2604#L65">Queryer</a>
+				<a class="permalink" href="index.html#Queryer">&#xb6;</a>
+			</h2>
 			<pre>type Queryer interface {
     Query(query <a href="../../../builtin/index.html#string">string</a>, args []<a href="index.html#Value">Value</a>) (<a href="index.html#Rows">Rows</a>, <a href="../../../builtin/index.html#error">error</a>)
 }</pre>
@@ -615,7 +636,9 @@ Query may return ErrSkip.
 		
 			
 			
-			<h2 id="Result">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=3407:3693#L92">Result</a></h2>
+			<h2 id="Result">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=3367:3653#L92">Result</a>
+				<a class="permalink" href="index.html#Result">&#xb6;</a>
+			</h2>
 			<pre>type Result interface {
     <span class="comment">// LastInsertId returns the database&#39;s auto-generated ID</span>
     <span class="comment">// after, for example, an INSERT into a table with primary</span>
@@ -645,11 +668,13 @@ Result is the result of a query execution.
 		
 			
 			
-			<h2 id="Rows">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=5146:5861#L144">Rows</a></h2>
+			<h2 id="Rows">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=5105:5671#L144">Rows</a>
+				<a class="permalink" href="index.html#Rows">&#xb6;</a>
+			</h2>
 			<pre>type Rows interface {
     <span class="comment">// Columns returns the names of the columns. The number of</span>
     <span class="comment">// columns of the result is inferred from the length of the</span>
-    <span class="comment">// slice.  If a particular column name isn&#39;t known, an empty</span>
+    <span class="comment">// slice. If a particular column name isn&#39;t known, an empty</span>
     <span class="comment">// string should be returned for that entry.</span>
     Columns() []<a href="../../../builtin/index.html#string">string</a>
 
@@ -659,10 +684,6 @@ Result is the result of a query execution.
     <span class="comment">// Next is called to populate the next row of data into</span>
     <span class="comment">// the provided slice. The provided slice will be the same</span>
     <span class="comment">// size as the Columns() are wide.</span>
-    <span class="comment">//</span>
-    <span class="comment">// The dest slice may be populated only with</span>
-    <span class="comment">// a driver Value type, but excluding string.</span>
-    <span class="comment">// All string values must be converted to []byte.</span>
     <span class="comment">//</span>
     <span class="comment">// Next should return io.EOF when there are no more rows.</span>
     Next(dest []<a href="index.html#Value">Value</a>) <a href="../../../builtin/index.html#error">error</a>
@@ -686,7 +707,9 @@ Rows is an iterator over an executed query&#39;s results.
 		
 			
 			
-			<h2 id="RowsAffected">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=6047:6070#L174">RowsAffected</a></h2>
+			<h2 id="RowsAffected">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=5857:5880#L170">RowsAffected</a>
+				<a class="permalink" href="index.html#RowsAffected">&#xb6;</a>
+			</h2>
 			<pre>type RowsAffected <a href="../../../builtin/index.html#int64">int64</a></pre>
 			<p>
 RowsAffected implements Result for an INSERT or UPDATE operation
@@ -706,7 +729,9 @@ which mutates a number of rows.
 
 			
 				
-				<h3 id="RowsAffected.LastInsertId">func (RowsAffected) <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=6104:6153#L178">LastInsertId</a></h3>
+				<h3 id="RowsAffected.LastInsertId">func (RowsAffected) <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=5914:5963#L174">LastInsertId</a>
+					<a class="permalink" href="index.html#RowsAffected.LastInsertId">&#xb6;</a>
+				</h3>
 				<pre>func (<a href="index.html#RowsAffected">RowsAffected</a>) LastInsertId() (<a href="../../../builtin/index.html#int64">int64</a>, <a href="../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -714,7 +739,9 @@ which mutates a number of rows.
 				
 			
 				
-				<h3 id="RowsAffected.RowsAffected">func (RowsAffected) <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=6210:6261#L182">RowsAffected</a></h3>
+				<h3 id="RowsAffected.RowsAffected">func (RowsAffected) <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=6020:6071#L178">RowsAffected</a>
+					<a class="permalink" href="index.html#RowsAffected.RowsAffected">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#RowsAffected">RowsAffected</a>) RowsAffected() (<a href="../../../builtin/index.html#int64">int64</a>, <a href="../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -724,7 +751,9 @@ which mutates a number of rows.
 		
 			
 			
-			<h2 id="Stmt">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=3803:4638#L105">Stmt</a></h2>
+			<h2 id="Stmt">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=3763:4598#L105">Stmt</a>
+				<a class="permalink" href="index.html#Stmt">&#xb6;</a>
+			</h2>
 			<pre>type Stmt interface {
     <span class="comment">// Close closes the statement.</span>
     <span class="comment">//</span>
@@ -771,7 +800,9 @@ used by multiple goroutines concurrently.
 		
 			
 			
-			<h2 id="Tx">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=5887:5942#L167">Tx</a></h2>
+			<h2 id="Tx">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=5697:5752#L163">Tx</a>
+				<a class="permalink" href="index.html#Tx">&#xb6;</a>
+			</h2>
 			<pre>type Tx interface {
     Commit() <a href="../../../builtin/index.html#error">error</a>
     Rollback() <a href="../../../builtin/index.html#error">error</a>
@@ -795,7 +826,9 @@ Tx is a transaction.
 		
 			
 			
-			<h2 id="Value">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=566:588#L12">Value</a></h2>
+			<h2 id="Value">type <a href="http://localhost:9090/src/database/sql/driver/driver.go?s=526:548#L12">Value</a>
+				<a class="permalink" href="index.html#Value">&#xb6;</a>
+			</h2>
 			<pre>type Value interface{}</pre>
 			<p>
 Value is a value that drivers must be able to handle.
@@ -805,7 +838,7 @@ It is either nil or an instance of one of these types:
 float64
 bool
 []byte
-string   [*] everywhere except from Rows.Next.
+string
 time.Time
 </pre>
 
@@ -824,7 +857,9 @@ time.Time
 		
 			
 			
-			<h2 id="ValueConverter">type <a href="http://localhost:9090/src/database/sql/driver/types.go?s=928:1058#L20">ValueConverter</a></h2>
+			<h2 id="ValueConverter">type <a href="http://localhost:9090/src/database/sql/driver/types.go?s=927:1057#L20">ValueConverter</a>
+				<a class="permalink" href="index.html#ValueConverter">&#xb6;</a>
+			</h2>
 			<pre>type ValueConverter interface {
     <span class="comment">// ConvertValue converts a value to a driver Value.</span>
     ConvertValue(v interface{}) (<a href="index.html#Value">Value</a>, <a href="../../../builtin/index.html#error">error</a>)
@@ -835,7 +870,7 @@ ValueConverter is the interface providing the ConvertValue method.
 <p>
 Various implementations of ValueConverter are provided by the
 driver package to provide consistent implementations of conversions
-between drivers.  The ValueConverters have several uses:
+between drivers. The ValueConverters have several uses:
 </p>
 <pre>* converting from the Value types as provided by the sql package
   into a database table&#39;s specific column type and making sure it
@@ -864,7 +899,9 @@ between drivers.  The ValueConverters have several uses:
 		
 			
 			
-			<h2 id="Valuer">type <a href="http://localhost:9090/src/database/sql/driver/types.go?s=1210:1293#L29">Valuer</a></h2>
+			<h2 id="Valuer">type <a href="http://localhost:9090/src/database/sql/driver/types.go?s=1209:1292#L29">Valuer</a>
+				<a class="permalink" href="index.html#Valuer">&#xb6;</a>
+			</h2>
 			<pre>type Valuer interface {
     <span class="comment">// Value returns a driver Value.</span>
     Value() (<a href="index.html#Value">Value</a>, <a href="../../../builtin/index.html#error">error</a>)
@@ -901,7 +938,7 @@ themselves to a driver Value.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -919,6 +956,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../../lib/godoc/godocs.js"></script>
 
 </body>

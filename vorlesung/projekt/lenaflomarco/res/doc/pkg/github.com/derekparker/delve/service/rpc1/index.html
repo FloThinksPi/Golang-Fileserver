@@ -414,7 +414,9 @@
 		
 			
 			
-			<h2 id="DisassembleRequest">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=6932:7055#L297">DisassembleRequest</a></h2>
+			<h2 id="DisassembleRequest">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=6963:7086#L298">DisassembleRequest</a>
+				<a class="permalink" href="index.html#DisassembleRequest">&#xb6;</a>
+			</h2>
 			<pre>type DisassembleRequest struct {
     Scope          <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>
     StartPC, EndPC <a href="../../../../../builtin/index.html#uint64">uint64</a>
@@ -436,7 +438,9 @@
 		
 			
 			
-			<h2 id="EvalSymbolArgs">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=5269:5336#L218">EvalSymbolArgs</a></h2>
+			<h2 id="EvalSymbolArgs">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=5300:5367#L219">EvalSymbolArgs</a>
+				<a class="permalink" href="index.html#EvalSymbolArgs">&#xb6;</a>
+			</h2>
 			<pre>type EvalSymbolArgs struct {
     Scope  <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>
     Symbol <a href="../../../../../builtin/index.html#string">string</a>
@@ -457,7 +461,9 @@
 		
 			
 			
-			<h2 id="FindLocationArgs">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=6683:6750#L286">FindLocationArgs</a></h2>
+			<h2 id="FindLocationArgs">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=6714:6781#L287">FindLocationArgs</a>
+				<a class="permalink" href="index.html#FindLocationArgs">&#xb6;</a>
+			</h2>
 			<pre>type FindLocationArgs struct {
     Scope <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>
     Loc   <a href="../../../../../builtin/index.html#string">string</a>
@@ -478,7 +484,9 @@
 		
 			
 			
-			<h2 id="RPCClient">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=169:293#L6">RPCClient</a></h2>
+			<h2 id="RPCClient">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=169:293#L6">RPCClient</a>
+				<a class="permalink" href="index.html#RPCClient">&#xb6;</a>
+			</h2>
 			<pre>type RPCClient struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -497,7 +505,9 @@ Client is a RPC service.Client.
 
 			
 				
-				<h3 id="NewClient">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=386:424#L17">NewClient</a></h3>
+				<h3 id="NewClient">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=386:424#L17">NewClient</a>
+					<a class="permalink" href="index.html#NewClient">&#xb6;</a>
+				</h3>
 				<pre>func NewClient(addr <a href="../../../../../builtin/index.html#string">string</a>) *<a href="index.html#RPCClient">RPCClient</a></pre>
 				<p>
 NewClient creates a new RPCClient.
@@ -509,7 +519,9 @@ NewClient creates a new RPCClient.
 
 			
 				
-				<h3 id="RPCClient.AmendBreakpoint">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=4516:4577#L178">AmendBreakpoint</a></h3>
+				<h3 id="RPCClient.AmendBreakpoint">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=4516:4577#L178">AmendBreakpoint</a>
+					<a class="permalink" href="index.html#RPCClient.AmendBreakpoint">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) AmendBreakpoint(bp *<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -517,7 +529,9 @@ NewClient creates a new RPCClient.
 				
 			
 				
-				<h3 id="RPCClient.AttachedToExistingProcess">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=7219:7271#L270">AttachedToExistingProcess</a></h3>
+				<h3 id="RPCClient.AttachedToExistingProcess">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=7219:7271#L270">AttachedToExistingProcess</a>
+					<a class="permalink" href="index.html#RPCClient.AttachedToExistingProcess">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) AttachedToExistingProcess() <a href="../../../../../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -525,7 +539,9 @@ NewClient creates a new RPCClient.
 				
 			
 				
-				<h3 id="RPCClient.CancelNext">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=4638:4676#L183">CancelNext</a></h3>
+				<h3 id="RPCClient.CancelNext">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=4638:4676#L183">CancelNext</a>
+					<a class="permalink" href="index.html#RPCClient.CancelNext">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) CancelNext() <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -533,7 +549,9 @@ NewClient creates a new RPCClient.
 				
 			
 				
-				<h3 id="RPCClient.ClearBreakpoint">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=4179:4247#L166">ClearBreakpoint</a></h3>
+				<h3 id="RPCClient.ClearBreakpoint">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=4179:4247#L166">ClearBreakpoint</a>
+					<a class="permalink" href="index.html#RPCClient.ClearBreakpoint">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) ClearBreakpoint(id <a href="../../../../../builtin/index.html#int">int</a>) (*<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -541,7 +559,9 @@ NewClient creates a new RPCClient.
 				
 			
 				
-				<h3 id="RPCClient.ClearBreakpointByName">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=4338:4417#L172">ClearBreakpointByName</a></h3>
+				<h3 id="RPCClient.ClearBreakpointByName">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=4338:4417#L172">ClearBreakpointByName</a>
+					<a class="permalink" href="index.html#RPCClient.ClearBreakpointByName">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) ClearBreakpointByName(name <a href="../../../../../builtin/index.html#string">string</a>) (*<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -549,7 +569,9 @@ NewClient creates a new RPCClient.
 				
 			
 				
-				<h3 id="RPCClient.Continue">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=992:1048#L48">Continue</a></h3>
+				<h3 id="RPCClient.Continue">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=992:1048#L48">Continue</a>
+					<a class="permalink" href="index.html#RPCClient.Continue">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) Continue() &lt;-chan *<a href="../api/index.html">api</a>.<a href="../api/index.html#DebuggerState">DebuggerState</a></pre>
 				
 				
@@ -557,7 +579,9 @@ NewClient creates a new RPCClient.
 				
 			
 				
-				<h3 id="RPCClient.CreateBreakpoint">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=3773:3862#L154">CreateBreakpoint</a></h3>
+				<h3 id="RPCClient.CreateBreakpoint">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=3773:3862#L154">CreateBreakpoint</a>
+					<a class="permalink" href="index.html#RPCClient.CreateBreakpoint">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) CreateBreakpoint(breakPoint *<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>) (*<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -565,7 +589,9 @@ NewClient creates a new RPCClient.
 				
 			
 				
-				<h3 id="RPCClient.Detach">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=678:721#L34">Detach</a></h3>
+				<h3 id="RPCClient.Detach">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=678:721#L34">Detach</a>
+					<a class="permalink" href="index.html#RPCClient.Detach">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) Detach(kill <a href="../../../../../builtin/index.html#bool">bool</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -573,7 +599,9 @@ NewClient creates a new RPCClient.
 				
 			
 				
-				<h3 id="RPCClient.DisassemblePC">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=7928:8051#L290">DisassemblePC</a></h3>
+				<h3 id="RPCClient.DisassemblePC">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=7928:8051#L290">DisassemblePC</a>
+					<a class="permalink" href="index.html#RPCClient.DisassemblePC">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) DisassemblePC(scope <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>, pc <a href="../../../../../builtin/index.html#uint64">uint64</a>, flavour <a href="../api/index.html">api</a>.<a href="../api/index.html#AssemblyFlavour">AssemblyFlavour</a>) (<a href="../api/index.html">api</a>.<a href="../api/index.html#AsmInstructions">AsmInstructions</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Disassemble function containing pc
@@ -584,7 +612,9 @@ Disassemble function containing pc
 				
 			
 				
-				<h3 id="RPCClient.DisassembleRange">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=7618:7756#L283">DisassembleRange</a></h3>
+				<h3 id="RPCClient.DisassembleRange">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=7618:7756#L283">DisassembleRange</a>
+					<a class="permalink" href="index.html#RPCClient.DisassembleRange">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) DisassembleRange(scope <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>, startPC, endPC <a href="../../../../../builtin/index.html#uint64">uint64</a>, flavour <a href="../api/index.html">api</a>.<a href="../api/index.html#AssemblyFlavour">AssemblyFlavour</a>) (<a href="../api/index.html">api</a>.<a href="../api/index.html#AsmInstructions">AsmInstructions</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Disassemble code between startPC and endPC
@@ -595,7 +625,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.EvalVariable">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=5017:5108#L199">EvalVariable</a></h3>
+				<h3 id="RPCClient.EvalVariable">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=5017:5108#L199">EvalVariable</a>
+					<a class="permalink" href="index.html#RPCClient.EvalVariable">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) EvalVariable(scope <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>, symbol <a href="../../../../../builtin/index.html#string">string</a>) (*<a href="../api/index.html">api</a>.<a href="../api/index.html#Variable">Variable</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -603,7 +635,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.FindLocation">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=7360:7449#L276">FindLocation</a></h3>
+				<h3 id="RPCClient.FindLocation">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=7360:7449#L276">FindLocation</a>
+					<a class="permalink" href="index.html#RPCClient.FindLocation">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) FindLocation(scope <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>, loc <a href="../../../../../builtin/index.html#string">string</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Location">Location</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -611,7 +645,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.GetBreakpoint">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=3396:3462#L142">GetBreakpoint</a></h3>
+				<h3 id="RPCClient.GetBreakpoint">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=3396:3462#L142">GetBreakpoint</a>
+					<a class="permalink" href="index.html#RPCClient.GetBreakpoint">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) GetBreakpoint(id <a href="../../../../../builtin/index.html#int">int</a>) (*<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -619,7 +655,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.GetBreakpointByName">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=3575:3652#L148">GetBreakpointByName</a></h3>
+				<h3 id="RPCClient.GetBreakpointByName">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=3575:3652#L148">GetBreakpointByName</a>
+					<a class="permalink" href="index.html#RPCClient.GetBreakpointByName">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) GetBreakpointByName(name <a href="../../../../../builtin/index.html#string">string</a>) (*<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -627,7 +665,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.GetState">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=840:898#L42">GetState</a></h3>
+				<h3 id="RPCClient.GetState">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=840:898#L42">GetState</a>
+					<a class="permalink" href="index.html#RPCClient.GetState">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) GetState() (*<a href="../api/index.html">api</a>.<a href="../api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -635,7 +675,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.GetThread">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=4865:4923#L193">GetThread</a></h3>
+				<h3 id="RPCClient.GetThread">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=4865:4923#L193">GetThread</a>
+					<a class="permalink" href="index.html#RPCClient.GetThread">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) GetThread(id <a href="../../../../../builtin/index.html#int">int</a>) (*<a href="../api/index.html">api</a>.<a href="../api/index.html#Thread">Thread</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -643,7 +685,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.Halt">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=3159:3213#L133">Halt</a></h3>
+				<h3 id="RPCClient.Halt">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=3159:3213#L133">Halt</a>
+					<a class="permalink" href="index.html#RPCClient.Halt">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) Halt() (*<a href="../api/index.html">api</a>.<a href="../api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -651,7 +695,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.ListBreakpoints">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=3996:4060#L160">ListBreakpoints</a></h3>
+				<h3 id="RPCClient.ListBreakpoints">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=3996:4060#L160">ListBreakpoints</a>
+					<a class="permalink" href="index.html#RPCClient.ListBreakpoints">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) ListBreakpoints() ([]*<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -659,7 +705,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.ListFunctionArgs">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=6593:6674#L252">ListFunctionArgs</a></h3>
+				<h3 id="RPCClient.ListFunctionArgs">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=6593:6674#L252">ListFunctionArgs</a>
+					<a class="permalink" href="index.html#RPCClient.ListFunctionArgs">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) ListFunctionArgs(scope <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Variable">Variable</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -667,7 +715,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.ListFunctions">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=5553:5619#L216">ListFunctions</a></h3>
+				<h3 id="RPCClient.ListFunctions">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=5553:5619#L216">ListFunctions</a>
+					<a class="permalink" href="index.html#RPCClient.ListFunctions">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) ListFunctions(filter <a href="../../../../../builtin/index.html#string">string</a>) ([]<a href="../../../../../builtin/index.html#string">string</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -675,7 +725,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.ListGoroutines">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=6772:6834#L258">ListGoroutines</a></h3>
+				<h3 id="RPCClient.ListGoroutines">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=6772:6834#L258">ListGoroutines</a>
+					<a class="permalink" href="index.html#RPCClient.ListGoroutines">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) ListGoroutines() ([]*<a href="../api/index.html">api</a>.<a href="../api/index.html#Goroutine">Goroutine</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -683,7 +735,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.ListLocalVariables">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=6279:6362#L240">ListLocalVariables</a></h3>
+				<h3 id="RPCClient.ListLocalVariables">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=6279:6362#L240">ListLocalVariables</a>
+					<a class="permalink" href="index.html#RPCClient.ListLocalVariables">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) ListLocalVariables(scope <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Variable">Variable</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -691,7 +745,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.ListPackageVariables">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=5863:5942#L228">ListPackageVariables</a></h3>
+				<h3 id="RPCClient.ListPackageVariables">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=5863:5942#L228">ListPackageVariables</a>
+					<a class="permalink" href="index.html#RPCClient.ListPackageVariables">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) ListPackageVariables(filter <a href="../../../../../builtin/index.html#string">string</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Variable">Variable</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -699,7 +755,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.ListPackageVariablesFor">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=6040:6136#L234">ListPackageVariablesFor</a></h3>
+				<h3 id="RPCClient.ListPackageVariablesFor">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=6040:6136#L234">ListPackageVariablesFor</a>
+					<a class="permalink" href="index.html#RPCClient.ListPackageVariablesFor">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) ListPackageVariablesFor(threadID <a href="../../../../../builtin/index.html#int">int</a>, filter <a href="../../../../../builtin/index.html#string">string</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Variable">Variable</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -707,7 +765,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.ListRegisters">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=6457:6508#L246">ListRegisters</a></h3>
+				<h3 id="RPCClient.ListRegisters">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=6457:6508#L246">ListRegisters</a>
+					<a class="permalink" href="index.html#RPCClient.ListRegisters">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) ListRegisters() (<a href="../../../../../builtin/index.html#string">string</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -715,7 +775,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.ListSources">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=5392:5456#L210">ListSources</a></h3>
+				<h3 id="RPCClient.ListSources">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=5392:5456#L210">ListSources</a>
+					<a class="permalink" href="index.html#RPCClient.ListSources">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) ListSources(filter <a href="../../../../../builtin/index.html#string">string</a>) ([]<a href="../../../../../builtin/index.html#string">string</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -723,7 +785,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.ListThreads">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=4710:4766#L187">ListThreads</a></h3>
+				<h3 id="RPCClient.ListThreads">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=4710:4766#L187">ListThreads</a>
+					<a class="permalink" href="index.html#RPCClient.ListThreads">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) ListThreads() ([]*<a href="../api/index.html">api</a>.<a href="../api/index.html#Thread">Thread</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -731,7 +795,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.ListTypes">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=5712:5774#L222">ListTypes</a></h3>
+				<h3 id="RPCClient.ListTypes">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=5712:5774#L222">ListTypes</a>
+					<a class="permalink" href="index.html#RPCClient.ListTypes">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) ListTypes(filter <a href="../../../../../builtin/index.html#string">string</a>) ([]<a href="../../../../../builtin/index.html#string">string</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -739,7 +805,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.Next">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=2060:2114#L95">Next</a></h3>
+				<h3 id="RPCClient.Next">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=2060:2114#L95">Next</a>
+					<a class="permalink" href="index.html#RPCClient.Next">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) Next() (*<a href="../api/index.html">api</a>.<a href="../api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -747,7 +815,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.ProcessPid">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=578:614#L28">ProcessPid</a></h3>
+				<h3 id="RPCClient.ProcessPid">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=578:614#L28">ProcessPid</a>
+					<a class="permalink" href="index.html#RPCClient.ProcessPid">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) ProcessPid() <a href="../../../../../builtin/index.html#int">int</a></pre>
 				
 				
@@ -755,7 +825,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.Restart">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=763:798#L38">Restart</a></h3>
+				<h3 id="RPCClient.Restart">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=763:798#L38">Restart</a>
+					<a class="permalink" href="index.html#RPCClient.Restart">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) Restart() <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -763,7 +835,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.SetVariable">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=5216:5296#L205">SetVariable</a></h3>
+				<h3 id="RPCClient.SetVariable">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=5216:5296#L205">SetVariable</a>
+					<a class="permalink" href="index.html#RPCClient.SetVariable">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) SetVariable(scope <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>, symbol, value <a href="../../../../../builtin/index.html#string">string</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -771,7 +845,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.Stacktrace">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=6948:7039#L264">Stacktrace</a></h3>
+				<h3 id="RPCClient.Stacktrace">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=6948:7039#L264">Stacktrace</a>
+					<a class="permalink" href="index.html#RPCClient.Stacktrace">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) Stacktrace(goroutineId, depth <a href="../../../../../builtin/index.html#int">int</a>, full <a href="../../../../../builtin/index.html#bool">bool</a>) ([]<a href="../api/index.html">api</a>.<a href="../api/index.html#Stackframe">Stackframe</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -779,7 +855,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.Step">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=2243:2297#L101">Step</a></h3>
+				<h3 id="RPCClient.Step">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=2243:2297#L101">Step</a>
+					<a class="permalink" href="index.html#RPCClient.Step">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) Step() (*<a href="../api/index.html">api</a>.<a href="../api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -787,7 +865,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.StepInstruction">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=2426:2491#L107">StepInstruction</a></h3>
+				<h3 id="RPCClient.StepInstruction">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=2426:2491#L107">StepInstruction</a>
+					<a class="permalink" href="index.html#RPCClient.StepInstruction">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) StepInstruction() (*<a href="../api/index.html">api</a>.<a href="../api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -795,7 +875,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.SwitchGoroutine">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=2886:2966#L123">SwitchGoroutine</a></h3>
+				<h3 id="RPCClient.SwitchGoroutine">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=2886:2966#L123">SwitchGoroutine</a>
+					<a class="permalink" href="index.html#RPCClient.SwitchGoroutine">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) SwitchGoroutine(goroutineID <a href="../../../../../builtin/index.html#int">int</a>) (*<a href="../api/index.html">api</a>.<a href="../api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -803,7 +885,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCClient.SwitchThread">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=2631:2705#L113">SwitchThread</a></h3>
+				<h3 id="RPCClient.SwitchThread">func (*RPCClient) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/client.go?s=2631:2705#L113">SwitchThread</a>
+					<a class="permalink" href="index.html#RPCClient.SwitchThread">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCClient">RPCClient</a>) SwitchThread(threadID <a href="../../../../../builtin/index.html#int">int</a>) (*<a href="../api/index.html">api</a>.<a href="../api/index.html#DebuggerState">DebuggerState</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -813,7 +897,9 @@ Disassemble code between startPC and endPC
 		
 			
 			
-			<h2 id="RPCServer">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=276:468#L5">RPCServer</a></h2>
+			<h2 id="RPCServer">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=276:468#L5">RPCServer</a>
+				<a class="permalink" href="index.html#RPCServer">&#xb6;</a>
+			</h2>
 			<pre>type RPCServer struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -829,7 +915,9 @@ Disassemble code between startPC and endPC
 
 			
 				
-				<h3 id="NewServer">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=470:548#L12">NewServer</a></h3>
+				<h3 id="NewServer">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=470:548#L12">NewServer</a>
+					<a class="permalink" href="index.html#NewServer">&#xb6;</a>
+				</h3>
 				<pre>func NewServer(config *<a href="../index.html">service</a>.<a href="../index.html#Config">Config</a>, debugger *<a href="../debugger/index.html">debugger</a>.<a href="../debugger/index.html#Debugger">Debugger</a>) *<a href="index.html#RPCServer">RPCServer</a></pre>
 				
 				
@@ -838,7 +926,9 @@ Disassemble code between startPC and endPC
 
 			
 				
-				<h3 id="RPCServer.AmendBreakpoint">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=3171:3248#L123">AmendBreakpoint</a></h3>
+				<h3 id="RPCServer.AmendBreakpoint">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=3186:3263#L124">AmendBreakpoint</a>
+					<a class="permalink" href="index.html#RPCServer.AmendBreakpoint">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) AmendBreakpoint(amend *<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>, unused *<a href="../../../../../builtin/index.html#int">int</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -846,7 +936,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.AttachedToExistingProcess">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=6533:6615#L279">AttachedToExistingProcess</a></h3>
+				<h3 id="RPCServer.AttachedToExistingProcess">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=6564:6646#L280">AttachedToExistingProcess</a>
+					<a class="permalink" href="index.html#RPCServer.AttachedToExistingProcess">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCServer">RPCServer</a>) AttachedToExistingProcess(arg interface{}, answer *<a href="../../../../../builtin/index.html#bool">bool</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -854,7 +946,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.ClearBreakpoint">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=2532:2609#L97">ClearBreakpoint</a></h3>
+				<h3 id="RPCServer.ClearBreakpoint">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=2547:2624#L98">ClearBreakpoint</a>
+					<a class="permalink" href="index.html#RPCServer.ClearBreakpoint">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) ClearBreakpoint(id <a href="../../../../../builtin/index.html#int">int</a>, breakpoint *<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -862,7 +956,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.ClearBreakpointByName">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=2840:2928#L110">ClearBreakpointByName</a></h3>
+				<h3 id="RPCServer.ClearBreakpointByName">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=2855:2943#L111">ClearBreakpointByName</a>
+					<a class="permalink" href="index.html#RPCServer.ClearBreakpointByName">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) ClearBreakpointByName(name <a href="../../../../../builtin/index.html#string">string</a>, breakpoint *<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -870,7 +966,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.Command">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=1163:1244#L41">Command</a></h3>
+				<h3 id="RPCServer.Command">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=1178:1259#L42">Command</a>
+					<a class="permalink" href="index.html#RPCServer.Command">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) Command(command *<a href="../api/index.html">api</a>.<a href="../api/index.html#DebuggerCommand">DebuggerCommand</a>, cb <a href="../index.html">service</a>.<a href="../index.html#RPCCallback">RPCCallback</a>)</pre>
 				
 				
@@ -878,7 +976,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.CreateBreakpoint">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=2324:2401#L88">CreateBreakpoint</a></h3>
+				<h3 id="RPCServer.CreateBreakpoint">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=2339:2416#L89">CreateBreakpoint</a>
+					<a class="permalink" href="index.html#RPCServer.CreateBreakpoint">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) CreateBreakpoint(bp, newBreakpoint *<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -886,7 +986,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.Detach">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=705:758#L21">Detach</a></h3>
+				<h3 id="RPCServer.Detach">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=705:758#L21">Detach</a>
+					<a class="permalink" href="index.html#RPCServer.Detach">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) Detach(kill <a href="../../../../../builtin/index.html#bool">bool</a>, ret *<a href="../../../../../builtin/index.html#int">int</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -894,7 +996,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.Disassemble">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=7057:7148#L303">Disassemble</a></h3>
+				<h3 id="RPCServer.Disassemble">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=7088:7179#L304">Disassemble</a>
+					<a class="permalink" href="index.html#RPCServer.Disassemble">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCServer">RPCServer</a>) Disassemble(args <a href="index.html#DisassembleRequest">DisassembleRequest</a>, answer *<a href="../api/index.html">api</a>.<a href="../api/index.html#AsmInstructions">AsmInstructions</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -902,7 +1006,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.EvalSymbol">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=5338:5419#L223">EvalSymbol</a></h3>
+				<h3 id="RPCServer.EvalSymbol">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=5369:5450#L224">EvalSymbol</a>
+					<a class="permalink" href="index.html#RPCServer.EvalSymbol">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) EvalSymbol(args <a href="index.html#EvalSymbolArgs">EvalSymbolArgs</a>, variable *<a href="../api/index.html">api</a>.<a href="../api/index.html#Variable">Variable</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -910,7 +1016,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.FindLocation">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=6752:6837#L291">FindLocation</a></h3>
+				<h3 id="RPCServer.FindLocation">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=6783:6868#L292">FindLocation</a>
+					<a class="permalink" href="index.html#RPCServer.FindLocation">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#RPCServer">RPCServer</a>) FindLocation(args <a href="index.html#FindLocationArgs">FindLocationArgs</a>, answer *[]<a href="../api/index.html">api</a>.<a href="../api/index.html#Location">Location</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -918,7 +1026,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.GetBreakpoint">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=1310:1385#L46">GetBreakpoint</a></h3>
+				<h3 id="RPCServer.GetBreakpoint">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=1325:1400#L47">GetBreakpoint</a>
+					<a class="permalink" href="index.html#RPCServer.GetBreakpoint">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) GetBreakpoint(id <a href="../../../../../builtin/index.html#int">int</a>, breakpoint *<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -926,7 +1036,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.GetBreakpointByName">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=1530:1616#L55">GetBreakpointByName</a></h3>
+				<h3 id="RPCServer.GetBreakpointByName">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=1545:1631#L56">GetBreakpointByName</a>
+					<a class="permalink" href="index.html#RPCServer.GetBreakpointByName">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) GetBreakpointByName(name <a href="../../../../../builtin/index.html#string">string</a>, breakpoint *<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -934,7 +1046,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.GetThread">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=3449:3512#L133">GetThread</a></h3>
+				<h3 id="RPCServer.GetThread">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=3464:3527#L134">GetThread</a>
+					<a class="permalink" href="index.html#RPCServer.GetThread">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) GetThread(id <a href="../../../../../builtin/index.html#int">int</a>, thread *<a href="../api/index.html">api</a>.<a href="../api/index.html#Thread">Thread</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -942,7 +1056,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.ListBreakpoints">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=2175:2265#L83">ListBreakpoints</a></h3>
+				<h3 id="RPCServer.ListBreakpoints">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=2190:2280#L84">ListBreakpoints</a>
+					<a class="permalink" href="index.html#RPCServer.ListBreakpoints">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) ListBreakpoints(arg interface{}, breakpoints *[]*<a href="../api/index.html">api</a>.<a href="../api/index.html#Breakpoint">Breakpoint</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -950,7 +1066,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.ListFunctionArgs">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=5040:5130#L209">ListFunctionArgs</a></h3>
+				<h3 id="RPCServer.ListFunctionArgs">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=5071:5161#L210">ListFunctionArgs</a>
+					<a class="permalink" href="index.html#RPCServer.ListFunctionArgs">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) ListFunctionArgs(scope <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>, variables *[]<a href="../api/index.html">api</a>.<a href="../api/index.html#Variable">Variable</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -958,7 +1076,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.ListFunctions">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=5993:6064#L252">ListFunctions</a></h3>
+				<h3 id="RPCServer.ListFunctions">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=6024:6095#L253">ListFunctions</a>
+					<a class="permalink" href="index.html#RPCServer.ListFunctions">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) ListFunctions(filter <a href="../../../../../builtin/index.html#string">string</a>, funcs *[]<a href="../../../../../builtin/index.html#string">string</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -966,7 +1086,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.ListGoroutines">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=6341:6428#L270">ListGoroutines</a></h3>
+				<h3 id="RPCServer.ListGoroutines">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=6372:6459#L271">ListGoroutines</a>
+					<a class="permalink" href="index.html#RPCServer.ListGoroutines">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) ListGoroutines(arg interface{}, goroutines *[]*<a href="../api/index.html">api</a>.<a href="../api/index.html#Goroutine">Goroutine</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -974,7 +1096,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.ListLocalVars">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=4817:4904#L200">ListLocalVars</a></h3>
+				<h3 id="RPCServer.ListLocalVars">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=4848:4935#L201">ListLocalVars</a>
+					<a class="permalink" href="index.html#RPCServer.ListLocalVars">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) ListLocalVars(scope <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>, variables *[]<a href="../api/index.html">api</a>.<a href="../api/index.html#Variable">Variable</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -982,7 +1106,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.ListPackageVars">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=3680:3763#L145">ListPackageVars</a></h3>
+				<h3 id="RPCServer.ListPackageVars">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=3695:3778#L146">ListPackageVars</a>
+					<a class="permalink" href="index.html#RPCServer.ListPackageVars">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) ListPackageVars(filter <a href="../../../../../builtin/index.html#string">string</a>, variables *[]<a href="../api/index.html">api</a>.<a href="../api/index.html#Variable">Variable</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -990,7 +1116,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.ListRegisters">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=4545:4620#L186">ListRegisters</a></h3>
+				<h3 id="RPCServer.ListRegisters">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=4560:4635#L187">ListRegisters</a>
+					<a class="permalink" href="index.html#RPCServer.ListRegisters">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) ListRegisters(arg interface{}, registers *<a href="../../../../../builtin/index.html#string">string</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -998,7 +1126,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.ListSources">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=5817:5888#L243">ListSources</a></h3>
+				<h3 id="RPCServer.ListSources">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=5848:5919#L244">ListSources</a>
+					<a class="permalink" href="index.html#RPCServer.ListSources">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) ListSources(filter <a href="../../../../../builtin/index.html#string">string</a>, sources *[]<a href="../../../../../builtin/index.html#string">string</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -1006,7 +1136,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.ListThreadPackageVars">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=4139:4235#L169">ListThreadPackageVars</a></h3>
+				<h3 id="RPCServer.ListThreadPackageVars">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=4154:4250#L170">ListThreadPackageVars</a>
+					<a class="permalink" href="index.html#RPCServer.ListThreadPackageVars">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) ListThreadPackageVars(args *<a href="index.html#ThreadListArgs">ThreadListArgs</a>, variables *[]<a href="../api/index.html">api</a>.<a href="../api/index.html#Variable">Variable</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -1014,7 +1146,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.ListThreads">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=3309:3393#L128">ListThreads</a></h3>
+				<h3 id="RPCServer.ListThreads">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=3324:3408#L129">ListThreads</a>
+					<a class="permalink" href="index.html#RPCServer.ListThreads">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) ListThreads(arg interface{}, threads *[]*<a href="../api/index.html">api</a>.<a href="../api/index.html#Thread">Thread</a>) (err <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -1022,7 +1156,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.ListTypes">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=6171:6238#L261">ListTypes</a></h3>
+				<h3 id="RPCServer.ListTypes">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=6202:6269#L262">ListTypes</a>
+					<a class="permalink" href="index.html#RPCServer.ListTypes">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) ListTypes(filter <a href="../../../../../builtin/index.html#string">string</a>, types *[]<a href="../../../../../builtin/index.html#string">string</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -1030,7 +1166,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.ProcessPid">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=591:655#L16">ProcessPid</a></h3>
+				<h3 id="RPCServer.ProcessPid">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=591:655#L16">ProcessPid</a>
+					<a class="permalink" href="index.html#RPCServer.ProcessPid">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) ProcessPid(arg1 interface{}, pid *<a href="../../../../../builtin/index.html#int">int</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -1038,7 +1176,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.Restart">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=796:858#L25">Restart</a></h3>
+				<h3 id="RPCServer.Restart">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=796:858#L25">Restart</a>
+					<a class="permalink" href="index.html#RPCServer.Restart">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) Restart(arg1 interface{}, arg2 *<a href="../../../../../builtin/index.html#int">int</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -1046,7 +1186,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.SetSymbol">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=5655:5723#L238">SetSymbol</a></h3>
+				<h3 id="RPCServer.SetSymbol">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=5686:5754#L239">SetSymbol</a>
+					<a class="permalink" href="index.html#RPCServer.SetSymbol">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) SetSymbol(args <a href="index.html#SetSymbolArgs">SetSymbolArgs</a>, unused *<a href="../../../../../builtin/index.html#int">int</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -1054,7 +1196,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.StacktraceGoroutine">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=1848:1953#L70">StacktraceGoroutine</a></h3>
+				<h3 id="RPCServer.StacktraceGoroutine">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=1863:1968#L71">StacktraceGoroutine</a>
+					<a class="permalink" href="index.html#RPCServer.StacktraceGoroutine">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) StacktraceGoroutine(args *<a href="index.html#StacktraceGoroutineArgs">StacktraceGoroutineArgs</a>, locations *[]<a href="../api/index.html">api</a>.<a href="../api/index.html#Stackframe">Stackframe</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -1062,7 +1206,9 @@ Disassemble code between startPC and endPC
 				
 			
 				
-				<h3 id="RPCServer.State">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=993:1067#L32">State</a></h3>
+				<h3 id="RPCServer.State">func (*RPCServer) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=1008:1082#L33">State</a>
+					<a class="permalink" href="index.html#RPCServer.State">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RPCServer">RPCServer</a>) State(arg interface{}, state *<a href="../api/index.html">api</a>.<a href="../api/index.html#DebuggerState">DebuggerState</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -1072,7 +1218,9 @@ Disassemble code between startPC and endPC
 		
 			
 			
-			<h2 id="SetSymbolArgs">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=5572:5653#L232">SetSymbolArgs</a></h2>
+			<h2 id="SetSymbolArgs">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=5603:5684#L233">SetSymbolArgs</a>
+				<a class="permalink" href="index.html#SetSymbolArgs">&#xb6;</a>
+			</h2>
 			<pre>type SetSymbolArgs struct {
     Scope  <a href="../api/index.html">api</a>.<a href="../api/index.html#EvalScope">EvalScope</a>
     Symbol <a href="../../../../../builtin/index.html#string">string</a>
@@ -1094,7 +1242,9 @@ Disassemble code between startPC and endPC
 		
 			
 			
-			<h2 id="StacktraceGoroutineArgs">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=1773:1846#L64">StacktraceGoroutineArgs</a></h2>
+			<h2 id="StacktraceGoroutineArgs">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=1788:1861#L65">StacktraceGoroutineArgs</a>
+				<a class="permalink" href="index.html#StacktraceGoroutineArgs">&#xb6;</a>
+			</h2>
 			<pre>type StacktraceGoroutineArgs struct {
     Id    <a href="../../../../../builtin/index.html#int">int</a>
     Depth <a href="../../../../../builtin/index.html#int">int</a>
@@ -1116,7 +1266,9 @@ Disassemble code between startPC and endPC
 		
 			
 			
-			<h2 id="ThreadListArgs">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=4080:4137#L164">ThreadListArgs</a></h2>
+			<h2 id="ThreadListArgs">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/rpc1/server.go?s=4095:4152#L165">ThreadListArgs</a>
+				<a class="permalink" href="index.html#ThreadListArgs">&#xb6;</a>
+			</h2>
 			<pre>type ThreadListArgs struct {
     Id     <a href="../../../../../builtin/index.html#int">int</a>
     Filter <a href="../../../../../builtin/index.html#string">string</a>
@@ -1146,7 +1298,7 @@ Disassemble code between startPC and endPC
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1164,6 +1316,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../../../../lib/godoc/godocs.js"></script>
 
 </body>

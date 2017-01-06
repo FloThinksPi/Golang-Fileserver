@@ -210,7 +210,9 @@ ErrBadPattern indicates a globbing pattern was malformed.
 		
 			
 			
-			<h2 id="Base">func <a href="http://localhost:9090/src/path/path.go?s=4482:4511#L166">Base</a></h2>
+			<h2 id="Base">func <a href="http://localhost:9090/src/path/path.go?s=4468:4497#L166">Base</a>
+				<a class="permalink" href="index.html#Base">&#xb6;</a>
+			</h2>
 			<pre>func Base(path <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 Base returns the last element of path.
@@ -225,11 +227,13 @@ If the path consists entirely of slashes, Base returns &#34;/&#34;.
 		
 			
 			
-			<h2 id="Clean">func <a href="http://localhost:9090/src/path/path.go?s=1820:1850#L59">Clean</a></h2>
+			<h2 id="Clean">func <a href="http://localhost:9090/src/path/path.go?s=1806:1836#L59">Clean</a>
+				<a class="permalink" href="index.html#Clean">&#xb6;</a>
+			</h2>
 			<pre>func Clean(path <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 Clean returns the shortest path name equivalent to path
-by purely lexical processing.  It applies the following rules
+by purely lexical processing. It applies the following rules
 iteratively until no further processing can be done:
 </p>
 <pre>1. Replace multiple slashes with a single slash.
@@ -249,7 +253,7 @@ returns the string &#34;.&#34;.
 <p>
 See also Rob Pike, &ldquo;Lexical File Names in Plan 9 or
 Getting Dot-Dot Right,&rdquo;
-<a href="http://plan9.bell-labs.com/sys/doc/lexnames.html">http://plan9.bell-labs.com/sys/doc/lexnames.html</a>
+<a href="https://9p.io/sys/doc/lexnames.html">https://9p.io/sys/doc/lexnames.html</a>
 </p>
 
 			
@@ -258,7 +262,9 @@ Getting Dot-Dot Right,&rdquo;
 		
 			
 			
-			<h2 id="Dir">func <a href="http://localhost:9090/src/path/path.go?s=5362:5390#L197">Dir</a></h2>
+			<h2 id="Dir">func <a href="http://localhost:9090/src/path/path.go?s=5348:5376#L197">Dir</a>
+				<a class="permalink" href="index.html#Dir">&#xb6;</a>
+			</h2>
 			<pre>func Dir(path <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 Dir returns all but the last element of path, typically the path&#39;s directory.
@@ -276,7 +282,9 @@ slash.
 		
 			
 			
-			<h2 id="Ext">func <a href="http://localhost:9090/src/path/path.go?s=4116:4144#L153">Ext</a></h2>
+			<h2 id="Ext">func <a href="http://localhost:9090/src/path/path.go?s=4102:4130#L153">Ext</a>
+				<a class="permalink" href="index.html#Ext">&#xb6;</a>
+			</h2>
 			<pre>func Ext(path <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 Ext returns the file name extension used by path.
@@ -291,7 +299,9 @@ it is empty if there is no dot.
 		
 			
 			
-			<h2 id="IsAbs">func <a href="http://localhost:9090/src/path/path.go?s=4890:4918#L186">IsAbs</a></h2>
+			<h2 id="IsAbs">func <a href="http://localhost:9090/src/path/path.go?s=4876:4904#L186">IsAbs</a>
+				<a class="permalink" href="index.html#IsAbs">&#xb6;</a>
+			</h2>
 			<pre>func IsAbs(path <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 			<p>
 IsAbs reports whether the path is absolute.
@@ -303,7 +313,9 @@ IsAbs reports whether the path is absolute.
 		
 			
 			
-			<h2 id="Join">func <a href="http://localhost:9090/src/path/path.go?s=3779:3811#L140">Join</a></h2>
+			<h2 id="Join">func <a href="http://localhost:9090/src/path/path.go?s=3765:3797#L140">Join</a>
+				<a class="permalink" href="index.html#Join">&#xb6;</a>
+			</h2>
 			<pre>func Join(elem ...<a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 Join joins any number of path elements into a single path, adding a
@@ -317,7 +329,9 @@ all empty strings are ignored.
 		
 			
 			
-			<h2 id="Match">func <a href="http://localhost:9090/src/path/match.go?s=1103:1161#L28">Match</a></h2>
+			<h2 id="Match">func <a href="http://localhost:9090/src/path/match.go?s=1103:1161#L28">Match</a>
+				<a class="permalink" href="index.html#Match">&#xb6;</a>
+			</h2>
 			<pre>func Match(pattern, name <a href="../builtin/index.html#string">string</a>) (matched <a href="../builtin/index.html#bool">bool</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Match reports whether name matches the shell file name pattern.
@@ -350,7 +364,9 @@ is malformed.
 		
 			
 			
-			<h2 id="Split">func <a href="http://localhost:9090/src/path/path.go?s=3488:3530#L132">Split</a></h2>
+			<h2 id="Split">func <a href="http://localhost:9090/src/path/path.go?s=3474:3516#L132">Split</a>
+				<a class="permalink" href="index.html#Split">&#xb6;</a>
+			</h2>
 			<pre>func Split(path <a href="../builtin/index.html#string">string</a>) (dir, file <a href="../builtin/index.html#string">string</a>)</pre>
 			<p>
 Split splits path immediately following the final slash,
@@ -414,7 +430,7 @@ The returned values have the property that path = dir+file.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -432,6 +448,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

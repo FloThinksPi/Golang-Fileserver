@@ -158,10 +158,10 @@ the interface but provides buffering and some help for textual I/O.
 					<dd>&nbsp; &nbsp; <a href="index.html#Reader.Read">func (b *Reader) Read(p []byte) (n int, err error)</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Reader.ReadByte">func (b *Reader) ReadByte() (c byte, err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Reader.ReadByte">func (b *Reader) ReadByte() (byte, error)</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Reader.ReadBytes">func (b *Reader) ReadBytes(delim byte) (line []byte, err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Reader.ReadBytes">func (b *Reader) ReadBytes(delim byte) ([]byte, error)</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#Reader.ReadLine">func (b *Reader) ReadLine() (line []byte, isPrefix bool, err error)</a></dd>
@@ -173,7 +173,7 @@ the interface but provides buffering and some help for textual I/O.
 					<dd>&nbsp; &nbsp; <a href="index.html#Reader.ReadSlice">func (b *Reader) ReadSlice(delim byte) (line []byte, err error)</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Reader.ReadString">func (b *Reader) ReadString(delim byte) (line string, err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Reader.ReadString">func (b *Reader) ReadString(delim byte) (string, error)</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#Reader.Reset">func (b *Reader) Reset(r io.Reader)</a></dd>
@@ -366,7 +366,9 @@ See the emptyFinalToken example for a use of this value.
 		
 			
 			
-			<h2 id="ScanBytes">func <a href="http://localhost:9090/src/bufio/scan.go?s=9294:9372#L269">ScanBytes</a></h2>
+			<h2 id="ScanBytes">func <a href="http://localhost:9090/src/bufio/scan.go?s=9294:9372#L269">ScanBytes</a>
+				<a class="permalink" href="index.html#ScanBytes">&#xb6;</a>
+			</h2>
 			<pre>func ScanBytes(data []<a href="../builtin/index.html#byte">byte</a>, atEOF <a href="../builtin/index.html#bool">bool</a>) (advance <a href="../builtin/index.html#int">int</a>, token []<a href="../builtin/index.html#byte">byte</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 ScanBytes is a split function for a Scanner that returns each byte as a token.
@@ -378,7 +380,9 @@ ScanBytes is a split function for a Scanner that returns each byte as a token.
 		
 			
 			
-			<h2 id="ScanLines">func <a href="http://localhost:9090/src/bufio/scan.go?s=11500:11578#L330">ScanLines</a></h2>
+			<h2 id="ScanLines">func <a href="http://localhost:9090/src/bufio/scan.go?s=11500:11578#L330">ScanLines</a>
+				<a class="permalink" href="index.html#ScanLines">&#xb6;</a>
+			</h2>
 			<pre>func ScanLines(data []<a href="../builtin/index.html#byte">byte</a>, atEOF <a href="../builtin/index.html#bool">bool</a>) (advance <a href="../builtin/index.html#int">int</a>, token []<a href="../builtin/index.html#byte">byte</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 ScanLines is a split function for a Scanner that returns each line of
@@ -395,7 +399,9 @@ newline.
 		
 			
 			
-			<h2 id="ScanRunes">func <a href="http://localhost:9090/src/bufio/scan.go?s=9941:10019#L284">ScanRunes</a></h2>
+			<h2 id="ScanRunes">func <a href="http://localhost:9090/src/bufio/scan.go?s=9941:10019#L284">ScanRunes</a>
+				<a class="permalink" href="index.html#ScanRunes">&#xb6;</a>
+			</h2>
 			<pre>func ScanRunes(data []<a href="../builtin/index.html#byte">byte</a>, atEOF <a href="../builtin/index.html#bool">bool</a>) (advance <a href="../builtin/index.html#int">int</a>, token []<a href="../builtin/index.html#byte">byte</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 ScanRunes is a split function for a Scanner that returns each
@@ -412,7 +418,9 @@ distinguish correctly encoded replacement runes from encoding errors.
 		
 			
 			
-			<h2 id="ScanWords">func <a href="http://localhost:9090/src/bufio/scan.go?s=12794:12872#L375">ScanWords</a></h2>
+			<h2 id="ScanWords">func <a href="http://localhost:9090/src/bufio/scan.go?s=12794:12872#L375">ScanWords</a>
+				<a class="permalink" href="index.html#ScanWords">&#xb6;</a>
+			</h2>
 			<pre>func ScanWords(data []<a href="../builtin/index.html#byte">byte</a>, atEOF <a href="../builtin/index.html#bool">bool</a>) (advance <a href="../builtin/index.html#int">int</a>, token []<a href="../builtin/index.html#byte">byte</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 ScanWords is a split function for a Scanner that returns each
@@ -428,7 +436,9 @@ unicode.IsSpace.
 		
 			
 			
-			<h2 id="ReadWriter">type <a href="http://localhost:9090/src/bufio/bufio.go?s=17449:17493#L712">ReadWriter</a></h2>
+			<h2 id="ReadWriter">type <a href="http://localhost:9090/src/bufio/bufio.go?s=17470:17514#L713">ReadWriter</a>
+				<a class="permalink" href="index.html#ReadWriter">&#xb6;</a>
+			</h2>
 			<pre>type ReadWriter struct {
     *<a href="index.html#Reader">Reader</a>
     *<a href="index.html#Writer">Writer</a>
@@ -449,7 +459,9 @@ It implements io.ReadWriter.
 
 			
 				
-				<h3 id="NewReadWriter">func <a href="http://localhost:9090/src/bufio/bufio.go?s=17567:17619#L718">NewReadWriter</a></h3>
+				<h3 id="NewReadWriter">func <a href="http://localhost:9090/src/bufio/bufio.go?s=17588:17640#L719">NewReadWriter</a>
+					<a class="permalink" href="index.html#NewReadWriter">&#xb6;</a>
+				</h3>
 				<pre>func NewReadWriter(r *<a href="index.html#Reader">Reader</a>, w *<a href="index.html#Writer">Writer</a>) *<a href="index.html#ReadWriter">ReadWriter</a></pre>
 				<p>
 NewReadWriter allocates a new ReadWriter that dispatches to r and w.
@@ -463,7 +475,9 @@ NewReadWriter allocates a new ReadWriter that dispatches to r and w.
 		
 			
 			
-			<h2 id="Reader">type <a href="http://localhost:9090/src/bufio/bufio.go?s=830:1042#L21">Reader</a></h2>
+			<h2 id="Reader">type <a href="http://localhost:9090/src/bufio/bufio.go?s=830:1042#L21">Reader</a>
+				<a class="permalink" href="index.html#Reader">&#xb6;</a>
+			</h2>
 			<pre>type Reader struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -482,7 +496,9 @@ Reader implements buffering for an io.Reader object.
 
 			
 				
-				<h3 id="NewReader">func <a href="http://localhost:9090/src/bufio/bufio.go?s=1648:1684#L51">NewReader</a></h3>
+				<h3 id="NewReader">func <a href="http://localhost:9090/src/bufio/bufio.go?s=1648:1684#L51">NewReader</a>
+					<a class="permalink" href="index.html#NewReader">&#xb6;</a>
+				</h3>
 				<pre>func NewReader(rd <a href="../io/index.html">io</a>.<a href="../io/index.html#Reader">Reader</a>) *<a href="index.html#Reader">Reader</a></pre>
 				<p>
 NewReader returns a new Reader whose buffer has the default size.
@@ -492,7 +508,9 @@ NewReader returns a new Reader whose buffer has the default size.
 				
 			
 				
-				<h3 id="NewReaderSize">func <a href="http://localhost:9090/src/bufio/bufio.go?s=1305:1355#L36">NewReaderSize</a></h3>
+				<h3 id="NewReaderSize">func <a href="http://localhost:9090/src/bufio/bufio.go?s=1305:1355#L36">NewReaderSize</a>
+					<a class="permalink" href="index.html#NewReaderSize">&#xb6;</a>
+				</h3>
 				<pre>func NewReaderSize(rd <a href="../io/index.html">io</a>.<a href="../io/index.html#Reader">Reader</a>, size <a href="../builtin/index.html#int">int</a>) *<a href="index.html#Reader">Reader</a></pre>
 				<p>
 NewReaderSize returns a new Reader whose buffer has at least the specified
@@ -506,7 +524,9 @@ size, it returns the underlying Reader.
 
 			
 				
-				<h3 id="Reader.Buffered">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=7000:7031#L281">Buffered</a></h3>
+				<h3 id="Reader.Buffered">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=7039:7070#L283">Buffered</a>
+					<a class="permalink" href="index.html#Reader.Buffered">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Reader">Reader</a>) Buffered() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Buffered returns the number of bytes that can be read from the current buffer.
@@ -517,7 +537,9 @@ Buffered returns the number of bytes that can be read from the current buffer.
 				
 			
 				
-				<h3 id="Reader.Discard">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=3757:3815#L142">Discard</a></h3>
+				<h3 id="Reader.Discard">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=3794:3852#L144">Discard</a>
+					<a class="permalink" href="index.html#Reader.Discard">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Reader">Reader</a>) Discard(n <a href="../builtin/index.html#int">int</a>) (discarded <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Discard skips the next n bytes, returning the number of bytes discarded.
@@ -533,7 +555,9 @@ reading from the underlying io.Reader.
 				
 			
 				
-				<h3 id="Reader.Peek">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=3036:3080#L113">Peek</a></h3>
+				<h3 id="Reader.Peek">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=3036:3080#L113">Peek</a>
+					<a class="permalink" href="index.html#Reader.Peek">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Reader">Reader</a>) Peek(n <a href="../builtin/index.html#int">int</a>) ([]<a href="../builtin/index.html#byte">byte</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Peek returns the next n bytes without advancing the reader. The bytes stop
@@ -547,7 +571,9 @@ ErrBufferFull if n is larger than b&#39;s buffer size.
 				
 			
 				
-				<h3 id="Reader.Read">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=4402:4452#L175">Read</a></h3>
+				<h3 id="Reader.Read">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=4439:4489#L177">Read</a>
+					<a class="permalink" href="index.html#Reader.Read">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Reader">Reader</a>) Read(p []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Read reads data into p.
@@ -562,8 +588,10 @@ At EOF, the count will be zero and err will be io.EOF.
 				
 			
 				
-				<h3 id="Reader.ReadByte">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=5158:5205#L213">ReadByte</a></h3>
-				<pre>func (b *<a href="index.html#Reader">Reader</a>) ReadByte() (c <a href="../builtin/index.html#byte">byte</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Reader.ReadByte">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=5195:5236#L215">ReadByte</a>
+					<a class="permalink" href="index.html#Reader.ReadByte">&#xb6;</a>
+				</h3>
+				<pre>func (b *<a href="index.html#Reader">Reader</a>) ReadByte() (<a href="../builtin/index.html#byte">byte</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadByte reads and returns a single byte.
 If no byte is available, returns an error.
@@ -574,8 +602,10 @@ If no byte is available, returns an error.
 				
 			
 				
-				<h3 id="Reader.ReadBytes">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=10455:10518#L388">ReadBytes</a></h3>
-				<pre>func (b *<a href="index.html#Reader">Reader</a>) ReadBytes(delim <a href="../builtin/index.html#byte">byte</a>) (line []<a href="../builtin/index.html#byte">byte</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Reader.ReadBytes">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=10494:10548#L390">ReadBytes</a>
+					<a class="permalink" href="index.html#Reader.ReadBytes">&#xb6;</a>
+				</h3>
+				<pre>func (b *<a href="index.html#Reader">Reader</a>) ReadBytes(delim <a href="../builtin/index.html#byte">byte</a>) ([]<a href="../builtin/index.html#byte">byte</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadBytes reads until the first occurrence of delim in the input,
 returning a slice containing the data up to and including the delimiter.
@@ -591,7 +621,9 @@ For simple uses, a Scanner may be more convenient.
 				
 			
 				
-				<h3 id="Reader.ReadLine">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=9262:9329#L346">ReadLine</a></h3>
+				<h3 id="Reader.ReadLine">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=9301:9368#L348">ReadLine</a>
+					<a class="permalink" href="index.html#Reader.ReadLine">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Reader">Reader</a>) ReadLine() (line []<a href="../builtin/index.html#byte">byte</a>, isPrefix <a href="../builtin/index.html#bool">bool</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadLine is a low-level line-reading primitive. Most callers should use
@@ -619,7 +651,9 @@ part of the line returned by ReadLine.
 				
 			
 				
-				<h3 id="Reader.ReadRune">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=5996:6053#L248">ReadRune</a></h3>
+				<h3 id="Reader.ReadRune">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=6027:6084#L250">ReadRune</a>
+					<a class="permalink" href="index.html#Reader.ReadRune">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Reader">Reader</a>) ReadRune() (r <a href="../builtin/index.html#rune">rune</a>, size <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadRune reads a single UTF-8 encoded Unicode character and returns the
@@ -632,7 +666,9 @@ and returns unicode.ReplacementChar (U+FFFD) with a size of 1.
 				
 			
 				
-				<h3 id="Reader.ReadSlice">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=7681:7744#L293">ReadSlice</a></h3>
+				<h3 id="Reader.ReadSlice">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=7720:7783#L295">ReadSlice</a>
+					<a class="permalink" href="index.html#Reader.ReadSlice">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Reader">Reader</a>) ReadSlice(delim <a href="../builtin/index.html#byte">byte</a>) (line []<a href="../builtin/index.html#byte">byte</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadSlice reads until the first occurrence of delim in the input,
@@ -652,8 +688,10 @@ ReadSlice returns err != nil if and only if line does not end in delim.
 				
 			
 				
-				<h3 id="Reader.ReadString">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=11657:11721#L435">ReadString</a></h3>
-				<pre>func (b *<a href="index.html#Reader">Reader</a>) ReadString(delim <a href="../builtin/index.html#byte">byte</a>) (line <a href="../builtin/index.html#string">string</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Reader.ReadString">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=11701:11756#L437">ReadString</a>
+					<a class="permalink" href="index.html#Reader.ReadString">&#xb6;</a>
+				</h3>
+				<pre>func (b *<a href="index.html#Reader">Reader</a>) ReadString(delim <a href="../builtin/index.html#byte">byte</a>) (<a href="../builtin/index.html#string">string</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadString reads until the first occurrence of delim in the input,
 returning a string containing the data up to and including the delimiter.
@@ -669,7 +707,9 @@ For simple uses, a Scanner may be more convenient.
 				
 			
 				
-				<h3 id="Reader.Reset">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=1839:1874#L57">Reset</a></h3>
+				<h3 id="Reader.Reset">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=1839:1874#L57">Reset</a>
+					<a class="permalink" href="index.html#Reader.Reset">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Reader">Reader</a>) Reset(r <a href="../io/index.html">io</a>.<a href="../io/index.html#Reader">Reader</a>)</pre>
 				<p>
 Reset discards any buffered data, resets all state, and switches
@@ -681,10 +721,12 @@ the buffered reader to read from r.
 				
 			
 				
-				<h3 id="Reader.UnreadByte">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=5477:5512#L228">UnreadByte</a></h3>
+				<h3 id="Reader.UnreadByte">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=5508:5543#L230">UnreadByte</a>
+					<a class="permalink" href="index.html#Reader.UnreadByte">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Reader">Reader</a>) UnreadByte() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
-UnreadByte unreads the last byte.  Only the most recently read byte can be unread.
+UnreadByte unreads the last byte. Only the most recently read byte can be unread.
 </p>
 
 				
@@ -692,10 +734,12 @@ UnreadByte unreads the last byte.  Only the most recently read byte can be unrea
 				
 			
 				
-				<h3 id="Reader.UnreadRune">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=6722:6757#L270">UnreadRune</a></h3>
+				<h3 id="Reader.UnreadRune">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=6761:6796#L272">UnreadRune</a>
+					<a class="permalink" href="index.html#Reader.UnreadRune">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Reader">Reader</a>) UnreadRune() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
-UnreadRune unreads the last rune.  If the most recent read operation on
+UnreadRune unreads the last rune. If the most recent read operation on
 the buffer was not a ReadRune, UnreadRune returns an error.  (In this
 regard it is stricter than UnreadByte, which will unread the last byte
 from any read operation.)
@@ -706,7 +750,9 @@ from any read operation.)
 				
 			
 				
-				<h3 id="Reader.WriteTo">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=11836:11894#L442">WriteTo</a></h3>
+				<h3 id="Reader.WriteTo">func (*Reader) <a href="http://localhost:9090/src/bufio/bufio.go?s=11858:11916#L443">WriteTo</a>
+					<a class="permalink" href="index.html#Reader.WriteTo">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Reader">Reader</a>) WriteTo(w <a href="../io/index.html">io</a>.<a href="../io/index.html#Writer">Writer</a>) (n <a href="../builtin/index.html#int64">int64</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 WriteTo implements io.WriterTo.
@@ -719,7 +765,9 @@ WriteTo implements io.WriterTo.
 		
 			
 			
-			<h2 id="Scanner">type <a href="http://localhost:9090/src/bufio/scan.go?s=1184:1841#L20">Scanner</a></h2>
+			<h2 id="Scanner">type <a href="http://localhost:9090/src/bufio/scan.go?s=1184:1841#L20">Scanner</a>
+				<a class="permalink" href="index.html#Scanner">&#xb6;</a>
+			</h2>
 			<pre>type Scanner struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -753,7 +801,9 @@ on a reader, should use bufio.Reader instead.
 
 			
 				
-				<h3 id="NewScanner">func <a href="http://localhost:9090/src/bufio/scan.go?s=3594:3631#L71">NewScanner</a></h3>
+				<h3 id="NewScanner">func <a href="http://localhost:9090/src/bufio/scan.go?s=3594:3631#L71">NewScanner</a>
+					<a class="permalink" href="index.html#NewScanner">&#xb6;</a>
+				</h3>
 				<pre>func NewScanner(r <a href="../io/index.html">io</a>.<a href="../io/index.html#Reader">Reader</a>) *<a href="index.html#Scanner">Scanner</a></pre>
 				<p>
 NewScanner returns a new Scanner to read from r.
@@ -766,7 +816,9 @@ The split function defaults to ScanLines.
 
 			
 				
-				<h3 id="Scanner.Buffer">func (*Scanner) <a href="http://localhost:9090/src/bufio/scan.go?s=8759:8804#L247">Buffer</a></h3>
+				<h3 id="Scanner.Buffer">func (*Scanner) <a href="http://localhost:9090/src/bufio/scan.go?s=8759:8804#L247">Buffer</a>
+					<a class="permalink" href="index.html#Scanner.Buffer">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Buffer(buf []<a href="../builtin/index.html#byte">byte</a>, max <a href="../builtin/index.html#int">int</a>)</pre>
 				<p>
 Buffer sets the initial buffer to use when scanning and the maximum
@@ -787,7 +839,9 @@ Buffer panics if it is called after scanning has started.
 				
 			
 				
-				<h3 id="Scanner.Bytes">func (*Scanner) <a href="http://localhost:9090/src/bufio/scan.go?s=4092:4124#L90">Bytes</a></h3>
+				<h3 id="Scanner.Bytes">func (*Scanner) <a href="http://localhost:9090/src/bufio/scan.go?s=4092:4124#L90">Bytes</a>
+					<a class="permalink" href="index.html#Scanner.Bytes">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Bytes() []<a href="../builtin/index.html#byte">byte</a></pre>
 				<p>
 Bytes returns the most recent token generated by a call to Scan.
@@ -800,7 +854,9 @@ by a subsequent call to Scan. It does no allocation.
 				
 			
 				
-				<h3 id="Scanner.Err">func (*Scanner) <a href="http://localhost:9090/src/bufio/scan.go?s=3814:3843#L80">Err</a></h3>
+				<h3 id="Scanner.Err">func (*Scanner) <a href="http://localhost:9090/src/bufio/scan.go?s=3814:3843#L80">Err</a>
+					<a class="permalink" href="index.html#Scanner.Err">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Err() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Err returns the first non-EOF error that was encountered by the Scanner.
@@ -811,7 +867,9 @@ Err returns the first non-EOF error that was encountered by the Scanner.
 				
 			
 				
-				<h3 id="Scanner.Scan">func (*Scanner) <a href="http://localhost:9090/src/bufio/scan.go?s=5433:5462#L118">Scan</a></h3>
+				<h3 id="Scanner.Scan">func (*Scanner) <a href="http://localhost:9090/src/bufio/scan.go?s=5433:5462#L118">Scan</a>
+					<a class="permalink" href="index.html#Scanner.Scan">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Scan() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Scan advances the Scanner to the next token, which will then be
@@ -829,7 +887,9 @@ advancing the input. This is a common error mode for scanners.
 				
 			
 				
-				<h3 id="Scanner.Split">func (*Scanner) <a href="http://localhost:9090/src/bufio/scan.go?s=9072:9112#L259">Split</a></h3>
+				<h3 id="Scanner.Split">func (*Scanner) <a href="http://localhost:9090/src/bufio/scan.go?s=9072:9112#L259">Split</a>
+					<a class="permalink" href="index.html#Scanner.Split">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Split(split <a href="index.html#SplitFunc">SplitFunc</a>)</pre>
 				<p>
 Split sets the split function for the Scanner.
@@ -844,7 +904,9 @@ Split panics if it is called after scanning has started.
 				
 			
 				
-				<h3 id="Scanner.Text">func (*Scanner) <a href="http://localhost:9090/src/bufio/scan.go?s=4262:4293#L96">Text</a></h3>
+				<h3 id="Scanner.Text">func (*Scanner) <a href="http://localhost:9090/src/bufio/scan.go?s=4262:4293#L96">Text</a>
+					<a class="permalink" href="index.html#Scanner.Text">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Text() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 Text returns the most recent token generated by a call to Scan
@@ -858,7 +920,9 @@ as a newly allocated string holding its bytes.
 		
 			
 			
-			<h2 id="SplitFunc">type <a href="http://localhost:9090/src/bufio/scan.go?s=2770:2853#L50">SplitFunc</a></h2>
+			<h2 id="SplitFunc">type <a href="http://localhost:9090/src/bufio/scan.go?s=2770:2853#L50">SplitFunc</a>
+				<a class="permalink" href="index.html#SplitFunc">&#xb6;</a>
+			</h2>
 			<pre>type SplitFunc func(data []<a href="../builtin/index.html#byte">byte</a>, atEOF <a href="../builtin/index.html#bool">bool</a>) (advance <a href="../builtin/index.html#int">int</a>, token []<a href="../builtin/index.html#byte">byte</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 SplitFunc is the signature of the split function used to tokenize the
@@ -896,7 +960,9 @@ as always, holds unprocessed text.
 		
 			
 			
-			<h2 id="Writer">type <a href="http://localhost:9090/src/bufio/bufio.go?s=13089:13158#L501">Writer</a></h2>
+			<h2 id="Writer">type <a href="http://localhost:9090/src/bufio/bufio.go?s=13111:13180#L502">Writer</a>
+				<a class="permalink" href="index.html#Writer">&#xb6;</a>
+			</h2>
 			<pre>type Writer struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -920,7 +986,9 @@ the underlying io.Writer.
 
 			
 				
-				<h3 id="NewWriter">func <a href="http://localhost:9090/src/bufio/bufio.go?s=13673:13708#L527">NewWriter</a></h3>
+				<h3 id="NewWriter">func <a href="http://localhost:9090/src/bufio/bufio.go?s=13695:13730#L528">NewWriter</a>
+					<a class="permalink" href="index.html#NewWriter">&#xb6;</a>
+				</h3>
 				<pre>func NewWriter(w <a href="../io/index.html">io</a>.<a href="../io/index.html#Writer">Writer</a>) *<a href="index.html#Writer">Writer</a></pre>
 				<p>
 NewWriter returns a new Writer whose buffer has the default size.
@@ -930,7 +998,9 @@ NewWriter returns a new Writer whose buffer has the default size.
 				
 			
 				
-				<h3 id="NewWriterSize">func <a href="http://localhost:9090/src/bufio/bufio.go?s=13354:13403#L511">NewWriterSize</a></h3>
+				<h3 id="NewWriterSize">func <a href="http://localhost:9090/src/bufio/bufio.go?s=13376:13425#L512">NewWriterSize</a>
+					<a class="permalink" href="index.html#NewWriterSize">&#xb6;</a>
+				</h3>
 				<pre>func NewWriterSize(w <a href="../io/index.html">io</a>.<a href="../io/index.html#Writer">Writer</a>, size <a href="../builtin/index.html#int">int</a>) *<a href="index.html#Writer">Writer</a></pre>
 				<p>
 NewWriterSize returns a new Writer whose buffer has at least the specified
@@ -944,7 +1014,9 @@ size, it returns the underlying Writer.
 
 			
 				
-				<h3 id="Writer.Available">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=14467:14499#L569">Available</a></h3>
+				<h3 id="Writer.Available">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=14489:14521#L570">Available</a>
+					<a class="permalink" href="index.html#Writer.Available">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Writer">Writer</a>) Available() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Available returns how many bytes are unused in the buffer.
@@ -955,7 +1027,9 @@ Available returns how many bytes are unused in the buffer.
 				
 			
 				
-				<h3 id="Writer.Buffered">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=14617:14648#L572">Buffered</a></h3>
+				<h3 id="Writer.Buffered">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=14639:14670#L573">Buffered</a>
+					<a class="permalink" href="index.html#Writer.Buffered">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Writer">Writer</a>) Buffered() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Buffered returns the number of bytes that have been written into the current buffer.
@@ -966,7 +1040,9 @@ Buffered returns the number of bytes that have been written into the current buf
 				
 			
 				
-				<h3 id="Writer.Flush">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=13998:14028#L540">Flush</a></h3>
+				<h3 id="Writer.Flush">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=14020:14050#L541">Flush</a>
+					<a class="permalink" href="index.html#Writer.Flush">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Writer">Writer</a>) Flush() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Flush writes any buffered data to the underlying io.Writer.
@@ -977,7 +1053,9 @@ Flush writes any buffered data to the underlying io.Writer.
 				
 			
 				
-				<h3 id="Writer.ReadFrom">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=16620:16679#L667">ReadFrom</a></h3>
+				<h3 id="Writer.ReadFrom">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=16642:16701#L668">ReadFrom</a>
+					<a class="permalink" href="index.html#Writer.ReadFrom">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Writer">Writer</a>) ReadFrom(r <a href="../io/index.html">io</a>.<a href="../io/index.html#Reader">Reader</a>) (n <a href="../builtin/index.html#int64">int64</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadFrom implements io.ReaderFrom.
@@ -988,7 +1066,9 @@ ReadFrom implements io.ReaderFrom.
 				
 			
 				
-				<h3 id="Writer.Reset">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=13862:13897#L533">Reset</a></h3>
+				<h3 id="Writer.Reset">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=13884:13919#L534">Reset</a>
+					<a class="permalink" href="index.html#Writer.Reset">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Writer">Writer</a>) Reset(w <a href="../io/index.html">io</a>.<a href="../io/index.html#Writer">Writer</a>)</pre>
 				<p>
 Reset discards any unflushed buffered data, clears any error, and
@@ -1000,7 +1080,9 @@ resets b to write its output to w.
 				
 			
 				
-				<h3 id="Writer.Write">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=14841:14893#L578">Write</a></h3>
+				<h3 id="Writer.Write">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=14863:14915#L579">Write</a>
+					<a class="permalink" href="index.html#Writer.Write">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Writer">Writer</a>) Write(p []<a href="../builtin/index.html#byte">byte</a>) (nn <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Write writes the contents of p into the buffer.
@@ -1014,7 +1096,9 @@ why the write is short.
 				
 			
 				
-				<h3 id="Writer.WriteByte">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=15317:15357#L603">WriteByte</a></h3>
+				<h3 id="Writer.WriteByte">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=15339:15379#L604">WriteByte</a>
+					<a class="permalink" href="index.html#Writer.WriteByte">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Writer">Writer</a>) WriteByte(c <a href="../builtin/index.html#byte">byte</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 WriteByte writes a single byte.
@@ -1025,7 +1109,9 @@ WriteByte writes a single byte.
 				
 			
 				
-				<h3 id="Writer.WriteRune">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=15603:15659#L617">WriteRune</a></h3>
+				<h3 id="Writer.WriteRune">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=15625:15681#L618">WriteRune</a>
+					<a class="permalink" href="index.html#Writer.WriteRune">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Writer">Writer</a>) WriteRune(r <a href="../builtin/index.html#rune">rune</a>) (size <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 WriteRune writes a single Unicode code point, returning
@@ -1037,7 +1123,9 @@ the number of bytes written and any error.
 				
 			
 				
-				<h3 id="Writer.WriteString">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=16291:16342#L648">WriteString</a></h3>
+				<h3 id="Writer.WriteString">func (*Writer) <a href="http://localhost:9090/src/bufio/bufio.go?s=16313:16364#L649">WriteString</a>
+					<a class="permalink" href="index.html#Writer.WriteString">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Writer">Writer</a>) WriteString(s <a href="../builtin/index.html#string">string</a>) (<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 WriteString writes a string.
@@ -1062,7 +1150,7 @@ why the write is short.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1080,6 +1168,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

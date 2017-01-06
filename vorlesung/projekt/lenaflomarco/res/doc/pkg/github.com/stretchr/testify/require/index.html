@@ -447,7 +447,9 @@ allowing custom error messages to be appended to the message the assertion metho
 		
 			
 			
-			<h2 id="Condition">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=301:378#L6">Condition</a></h2>
+			<h2 id="Condition">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=301:378#L6">Condition</a>
+				<a class="permalink" href="index.html#Condition">&#xb6;</a>
+			</h2>
 			<pre>func Condition(t <a href="index.html#TestingT">TestingT</a>, comp <a href="../assert/index.html">assert</a>.<a href="../assert/index.html#Comparison">Comparison</a>, msgAndArgs ...interface{})</pre>
 			<p>
 Condition uses a Comparison to assert a complex condition.
@@ -459,7 +461,9 @@ Condition uses a Comparison to assert a complex condition.
 		
 			
 			
-			<h2 id="Contains">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=943:1032#L20">Contains</a></h2>
+			<h2 id="Contains">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=943:1032#L20">Contains</a>
+				<a class="permalink" href="index.html#Contains">&#xb6;</a>
+			</h2>
 			<pre>func Contains(t <a href="index.html#TestingT">TestingT</a>, s interface{}, contains interface{}, msgAndArgs ...interface{})</pre>
 			<p>
 Contains asserts that the specified string, list(array, slice...) or map contains the
@@ -479,7 +483,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="Empty">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=1337:1406#L32">Empty</a></h2>
+			<h2 id="Empty">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=1337:1406#L32">Empty</a>
+				<a class="permalink" href="index.html#Empty">&#xb6;</a>
+			</h2>
 			<pre>func Empty(t <a href="index.html#TestingT">TestingT</a>, object interface{}, msgAndArgs ...interface{})</pre>
 			<p>
 Empty asserts that the specified object is empty.  I.e. nil, &#34;&#34;, false, 0 or either
@@ -497,7 +503,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="Equal">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=1660:1751#L43">Equal</a></h2>
+			<h2 id="Equal">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=1794:1885#L46">Equal</a>
+				<a class="permalink" href="index.html#Equal">&#xb6;</a>
+			</h2>
 			<pre>func Equal(t <a href="index.html#TestingT">TestingT</a>, expected interface{}, actual interface{}, msgAndArgs ...interface{})</pre>
 			<p>
 Equal asserts that two objects are equal.
@@ -507,6 +515,10 @@ Equal asserts that two objects are equal.
 <p>
 Returns whether the assertion was successful (true) or not (false).
 </p>
+<p>
+Pointer variable equality is determined based on the equality of the
+referenced values (as opposed to the memory addresses).
+</p>
 
 			
 			
@@ -514,7 +526,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="EqualError">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=2143:2231#L56">EqualError</a></h2>
+			<h2 id="EqualError">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=2277:2365#L59">EqualError</a>
+				<a class="permalink" href="index.html#EqualError">&#xb6;</a>
+			</h2>
 			<pre>func EqualError(t <a href="index.html#TestingT">TestingT</a>, theError <a href="../../../../builtin/index.html#error">error</a>, errString <a href="../../../../builtin/index.html#string">string</a>, msgAndArgs ...interface{})</pre>
 			<p>
 EqualError asserts that a function returned an error (i.e. not `nil`)
@@ -533,7 +547,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="EqualValues">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=2576:2673#L68">EqualValues</a></h2>
+			<h2 id="EqualValues">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=2710:2807#L71">EqualValues</a>
+				<a class="permalink" href="index.html#EqualValues">&#xb6;</a>
+			</h2>
 			<pre>func EqualValues(t <a href="index.html#TestingT">TestingT</a>, expected interface{}, actual interface{}, msgAndArgs ...interface{})</pre>
 			<p>
 EqualValues asserts that two objects are equal or convertable to the same types
@@ -551,7 +567,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="Error">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=3048:3108#L82">Error</a></h2>
+			<h2 id="Error">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=3182:3242#L85">Error</a>
+				<a class="permalink" href="index.html#Error">&#xb6;</a>
+			</h2>
 			<pre>func Error(t <a href="index.html#TestingT">TestingT</a>, err <a href="../../../../builtin/index.html#error">error</a>, msgAndArgs ...interface{})</pre>
 			<p>
 Error asserts that a function returned an error (i.e. not `nil`).
@@ -571,7 +589,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="Exactly">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=3399:3492#L93">Exactly</a></h2>
+			<h2 id="Exactly">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=3533:3626#L96">Exactly</a>
+				<a class="permalink" href="index.html#Exactly">&#xb6;</a>
+			</h2>
 			<pre>func Exactly(t <a href="index.html#TestingT">TestingT</a>, expected interface{}, actual interface{}, msgAndArgs ...interface{})</pre>
 			<p>
 Exactly asserts that two objects are equal is value and type.
@@ -588,7 +608,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="Fail">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=3607:3678#L100">Fail</a></h2>
+			<h2 id="Fail">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=3741:3812#L103">Fail</a>
+				<a class="permalink" href="index.html#Fail">&#xb6;</a>
+			</h2>
 			<pre>func Fail(t <a href="index.html#TestingT">TestingT</a>, failureMessage <a href="../../../../builtin/index.html#string">string</a>, msgAndArgs ...interface{})</pre>
 			<p>
 Fail reports a failure through
@@ -600,7 +622,9 @@ Fail reports a failure through
 		
 			
 			
-			<h2 id="FailNow">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=3776:3850#L107">FailNow</a></h2>
+			<h2 id="FailNow">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=3910:3984#L110">FailNow</a>
+				<a class="permalink" href="index.html#FailNow">&#xb6;</a>
+			</h2>
 			<pre>func FailNow(t <a href="index.html#TestingT">TestingT</a>, failureMessage <a href="../../../../builtin/index.html#string">string</a>, msgAndArgs ...interface{})</pre>
 			<p>
 FailNow fails test
@@ -612,7 +636,9 @@ FailNow fails test
 		
 			
 			
-			<h2 id="False">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=4114:4175#L118">False</a></h2>
+			<h2 id="False">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=4248:4309#L121">False</a>
+				<a class="permalink" href="index.html#False">&#xb6;</a>
+			</h2>
 			<pre>func False(t <a href="index.html#TestingT">TestingT</a>, value <a href="../../../../builtin/index.html#bool">bool</a>, msgAndArgs ...interface{})</pre>
 			<p>
 False asserts that the specified value is false.
@@ -629,7 +655,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="HTTPBodyContains">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=4501:4623#L130">HTTPBodyContains</a></h2>
+			<h2 id="HTTPBodyContains">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=4635:4757#L133">HTTPBodyContains</a>
+				<a class="permalink" href="index.html#HTTPBodyContains">&#xb6;</a>
+			</h2>
 			<pre>func HTTPBodyContains(t <a href="index.html#TestingT">TestingT</a>, handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method <a href="../../../../builtin/index.html#string">string</a>, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>, str interface{})</pre>
 			<p>
 HTTPBodyContains asserts that a specified handler returns a
@@ -647,7 +675,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="HTTPBodyNotContains">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=4987:5112#L142">HTTPBodyNotContains</a></h2>
+			<h2 id="HTTPBodyNotContains">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=5121:5246#L145">HTTPBodyNotContains</a>
+				<a class="permalink" href="index.html#HTTPBodyNotContains">&#xb6;</a>
+			</h2>
 			<pre>func HTTPBodyNotContains(t <a href="index.html#TestingT">TestingT</a>, handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method <a href="../../../../builtin/index.html#string">string</a>, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>, str interface{})</pre>
 			<p>
 HTTPBodyNotContains asserts that a specified handler returns a
@@ -665,7 +695,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="HTTPError">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=5449:5547#L153">HTTPError</a></h2>
+			<h2 id="HTTPError">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=5583:5681#L156">HTTPError</a>
+				<a class="permalink" href="index.html#HTTPError">&#xb6;</a>
+			</h2>
 			<pre>func HTTPError(t <a href="index.html#TestingT">TestingT</a>, handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method <a href="../../../../builtin/index.html#string">string</a>, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>)</pre>
 			<p>
 HTTPError asserts that a specified handler returns an error status code.
@@ -682,7 +714,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="HTTPRedirect">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=5876:5977#L164">HTTPRedirect</a></h2>
+			<h2 id="HTTPRedirect">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=6010:6111#L167">HTTPRedirect</a>
+				<a class="permalink" href="index.html#HTTPRedirect">&#xb6;</a>
+			</h2>
 			<pre>func HTTPRedirect(t <a href="index.html#TestingT">TestingT</a>, handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method <a href="../../../../builtin/index.html#string">string</a>, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>)</pre>
 			<p>
 HTTPRedirect asserts that a specified handler returns a redirect status code.
@@ -699,7 +733,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="HTTPSuccess">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=6291:6391#L175">HTTPSuccess</a></h2>
+			<h2 id="HTTPSuccess">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=6425:6525#L178">HTTPSuccess</a>
+				<a class="permalink" href="index.html#HTTPSuccess">&#xb6;</a>
+			</h2>
 			<pre>func HTTPSuccess(t <a href="index.html#TestingT">TestingT</a>, handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method <a href="../../../../builtin/index.html#string">string</a>, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>)</pre>
 			<p>
 HTTPSuccess asserts that a specified handler returns a success status code.
@@ -716,7 +752,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="Implements">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=6631:6734#L184">Implements</a></h2>
+			<h2 id="Implements">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=6765:6868#L187">Implements</a>
+				<a class="permalink" href="index.html#Implements">&#xb6;</a>
+			</h2>
 			<pre>func Implements(t <a href="index.html#TestingT">TestingT</a>, interfaceObject interface{}, object interface{}, msgAndArgs ...interface{})</pre>
 			<p>
 Implements asserts that an object is implemented by the specified interface.
@@ -730,7 +768,9 @@ Implements asserts that an object is implemented by the specified interface.
 		
 			
 			
-			<h2 id="InDelta">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=7025:7133#L195">InDelta</a></h2>
+			<h2 id="InDelta">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=7159:7267#L198">InDelta</a>
+				<a class="permalink" href="index.html#InDelta">&#xb6;</a>
+			</h2>
 			<pre>func InDelta(t <a href="index.html#TestingT">TestingT</a>, expected interface{}, actual interface{}, delta <a href="../../../../builtin/index.html#float64">float64</a>, msgAndArgs ...interface{})</pre>
 			<p>
 InDelta asserts that the two numerals are within delta of each other.
@@ -747,7 +787,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="InDeltaSlice">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=7292:7405#L202">InDeltaSlice</a></h2>
+			<h2 id="InDeltaSlice">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=7426:7539#L205">InDeltaSlice</a>
+				<a class="permalink" href="index.html#InDeltaSlice">&#xb6;</a>
+			</h2>
 			<pre>func InDeltaSlice(t <a href="index.html#TestingT">TestingT</a>, expected interface{}, actual interface{}, delta <a href="../../../../builtin/index.html#float64">float64</a>, msgAndArgs ...interface{})</pre>
 			<p>
 InDeltaSlice is the same as InDelta, except it compares two slices.
@@ -759,7 +801,9 @@ InDeltaSlice is the same as InDelta, except it compares two slices.
 		
 			
 			
-			<h2 id="InEpsilon">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=7658:7770#L211">InEpsilon</a></h2>
+			<h2 id="InEpsilon">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=7792:7904#L214">InEpsilon</a>
+				<a class="permalink" href="index.html#InEpsilon">&#xb6;</a>
+			</h2>
 			<pre>func InEpsilon(t <a href="index.html#TestingT">TestingT</a>, expected interface{}, actual interface{}, epsilon <a href="../../../../builtin/index.html#float64">float64</a>, msgAndArgs ...interface{})</pre>
 			<p>
 InEpsilon asserts that expected and actual have a relative error less than epsilon
@@ -774,7 +818,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="InEpsilonSlice">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=7953:8070#L218">InEpsilonSlice</a></h2>
+			<h2 id="InEpsilonSlice">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=8087:8204#L221">InEpsilonSlice</a>
+				<a class="permalink" href="index.html#InEpsilonSlice">&#xb6;</a>
+			</h2>
 			<pre>func InEpsilonSlice(t <a href="index.html#TestingT">TestingT</a>, expected interface{}, actual interface{}, epsilon <a href="../../../../builtin/index.html#float64">float64</a>, msgAndArgs ...interface{})</pre>
 			<p>
 InEpsilonSlice is the same as InEpsilon, except it compares each value from two slices.
@@ -786,7 +832,9 @@ InEpsilonSlice is the same as InEpsilon, except it compares each value from two 
 		
 			
 			
-			<h2 id="IsType">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=8234:8330#L225">IsType</a></h2>
+			<h2 id="IsType">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=8368:8464#L228">IsType</a>
+				<a class="permalink" href="index.html#IsType">&#xb6;</a>
+			</h2>
 			<pre>func IsType(t <a href="index.html#TestingT">TestingT</a>, expectedType interface{}, object interface{}, msgAndArgs ...interface{})</pre>
 			<p>
 IsType asserts that the specified objects are of the same type.
@@ -798,7 +846,9 @@ IsType asserts that the specified objects are of the same type.
 		
 			
 			
-			<h2 id="JSONEq">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=8640:8722#L236">JSONEq</a></h2>
+			<h2 id="JSONEq">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=8774:8856#L239">JSONEq</a>
+				<a class="permalink" href="index.html#JSONEq">&#xb6;</a>
+			</h2>
 			<pre>func JSONEq(t <a href="index.html#TestingT">TestingT</a>, expected <a href="../../../../builtin/index.html#string">string</a>, actual <a href="../../../../builtin/index.html#string">string</a>, msgAndArgs ...interface{})</pre>
 			<p>
 JSONEq asserts that two JSON strings are equivalent.
@@ -815,7 +865,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="Len">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=9069:9148#L248">Len</a></h2>
+			<h2 id="Len">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=9203:9282#L251">Len</a>
+				<a class="permalink" href="index.html#Len">&#xb6;</a>
+			</h2>
 			<pre>func Len(t <a href="index.html#TestingT">TestingT</a>, object interface{}, length <a href="../../../../builtin/index.html#int">int</a>, msgAndArgs ...interface{})</pre>
 			<p>
 Len asserts that the specified object has specific length.
@@ -833,7 +885,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="Nil">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=9399:9466#L259">Nil</a></h2>
+			<h2 id="Nil">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=9533:9600#L262">Nil</a>
+				<a class="permalink" href="index.html#Nil">&#xb6;</a>
+			</h2>
 			<pre>func Nil(t <a href="index.html#TestingT">TestingT</a>, object interface{}, msgAndArgs ...interface{})</pre>
 			<p>
 Nil asserts that the specified object is nil.
@@ -850,7 +904,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="NoError">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=9802:9864#L273">NoError</a></h2>
+			<h2 id="NoError">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=9936:9998#L276">NoError</a>
+				<a class="permalink" href="index.html#NoError">&#xb6;</a>
+			</h2>
 			<pre>func NoError(t <a href="index.html#TestingT">TestingT</a>, err <a href="../../../../builtin/index.html#error">error</a>, msgAndArgs ...interface{})</pre>
 			<p>
 NoError asserts that a function returned no error (i.e. `nil`).
@@ -870,7 +926,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="NotContains">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=10458:10550#L287">NotContains</a></h2>
+			<h2 id="NotContains">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=10592:10684#L290">NotContains</a>
+				<a class="permalink" href="index.html#NotContains">&#xb6;</a>
+			</h2>
 			<pre>func NotContains(t <a href="index.html#TestingT">TestingT</a>, s interface{}, contains interface{}, msgAndArgs ...interface{})</pre>
 			<p>
 NotContains asserts that the specified string, list(array, slice...) or map does NOT contain the
@@ -890,7 +948,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="NotEmpty">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=10920:10992#L301">NotEmpty</a></h2>
+			<h2 id="NotEmpty">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=11054:11126#L304">NotEmpty</a>
+				<a class="permalink" href="index.html#NotEmpty">&#xb6;</a>
+			</h2>
 			<pre>func NotEmpty(t <a href="index.html#TestingT">TestingT</a>, object interface{}, msgAndArgs ...interface{})</pre>
 			<p>
 NotEmpty asserts that the specified object is NOT empty.  I.e. not nil, &#34;&#34;, false, 0 or either
@@ -910,7 +970,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="NotEqual">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=11273:11367#L312">NotEqual</a></h2>
+			<h2 id="NotEqual">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=11541:11635#L318">NotEqual</a>
+				<a class="permalink" href="index.html#NotEqual">&#xb6;</a>
+			</h2>
 			<pre>func NotEqual(t <a href="index.html#TestingT">TestingT</a>, expected interface{}, actual interface{}, msgAndArgs ...interface{})</pre>
 			<p>
 NotEqual asserts that the specified values are NOT equal.
@@ -920,6 +982,10 @@ NotEqual asserts that the specified values are NOT equal.
 <p>
 Returns whether the assertion was successful (true) or not (false).
 </p>
+<p>
+Pointer variable equality is determined based on the equality of the
+referenced values (as opposed to the memory addresses).
+</p>
 
 			
 			
@@ -927,7 +993,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="NotNil">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=11637:11707#L323">NotNil</a></h2>
+			<h2 id="NotNil">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=11905:11975#L329">NotNil</a>
+				<a class="permalink" href="index.html#NotNil">&#xb6;</a>
+			</h2>
 			<pre>func NotNil(t <a href="index.html#TestingT">TestingT</a>, object interface{}, msgAndArgs ...interface{})</pre>
 			<p>
 NotNil asserts that the specified object is not nil.
@@ -944,7 +1012,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="NotPanics">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=12042:12119#L336">NotPanics</a></h2>
+			<h2 id="NotPanics">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=12310:12387#L342">NotPanics</a>
+				<a class="permalink" href="index.html#NotPanics">&#xb6;</a>
+			</h2>
 			<pre>func NotPanics(t <a href="index.html#TestingT">TestingT</a>, f <a href="../assert/index.html">assert</a>.<a href="../assert/index.html#PanicTestFunc">PanicTestFunc</a>, msgAndArgs ...interface{})</pre>
 			<p>
 NotPanics asserts that the code inside the specified PanicTestFunc does NOT panic.
@@ -963,7 +1033,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="NotRegexp">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=12460:12546#L348">NotRegexp</a></h2>
+			<h2 id="NotRegexp">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=12728:12814#L354">NotRegexp</a>
+				<a class="permalink" href="index.html#NotRegexp">&#xb6;</a>
+			</h2>
 			<pre>func NotRegexp(t <a href="index.html#TestingT">TestingT</a>, rx interface{}, str interface{}, msgAndArgs ...interface{})</pre>
 			<p>
 NotRegexp asserts that a specified regexp does not match a string.
@@ -981,7 +1053,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="NotZero">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=12704:12770#L355">NotZero</a></h2>
+			<h2 id="NotZero">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=12972:13038#L361">NotZero</a>
+				<a class="permalink" href="index.html#NotZero">&#xb6;</a>
+			</h2>
 			<pre>func NotZero(t <a href="index.html#TestingT">TestingT</a>, i interface{}, msgAndArgs ...interface{})</pre>
 			<p>
 NotZero asserts that i is not the zero value for its type and returns the truth.
@@ -993,7 +1067,9 @@ NotZero asserts that i is not the zero value for its type and returns the truth.
 		
 			
 			
-			<h2 id="Panics">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=13077:13151#L368">Panics</a></h2>
+			<h2 id="Panics">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=13345:13419#L374">Panics</a>
+				<a class="permalink" href="index.html#Panics">&#xb6;</a>
+			</h2>
 			<pre>func Panics(t <a href="index.html#TestingT">TestingT</a>, f <a href="../assert/index.html">assert</a>.<a href="../assert/index.html#PanicTestFunc">PanicTestFunc</a>, msgAndArgs ...interface{})</pre>
 			<p>
 Panics asserts that the code inside the specified PanicTestFunc panics.
@@ -1012,7 +1088,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="Regexp">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=13475:13558#L380">Regexp</a></h2>
+			<h2 id="Regexp">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=13743:13826#L386">Regexp</a>
+				<a class="permalink" href="index.html#Regexp">&#xb6;</a>
+			</h2>
 			<pre>func Regexp(t <a href="index.html#TestingT">TestingT</a>, rx interface{}, str interface{}, msgAndArgs ...interface{})</pre>
 			<p>
 Regexp asserts that a specified regexp matches a string.
@@ -1030,7 +1108,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="True">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=13810:13870#L391">True</a></h2>
+			<h2 id="True">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=14078:14138#L397">True</a>
+				<a class="permalink" href="index.html#True">&#xb6;</a>
+			</h2>
 			<pre>func True(t <a href="index.html#TestingT">TestingT</a>, value <a href="../../../../builtin/index.html#bool">bool</a>, msgAndArgs ...interface{})</pre>
 			<p>
 True asserts that the specified value is true.
@@ -1047,7 +1127,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="WithinDuration">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=14216:14333#L402">WithinDuration</a></h2>
+			<h2 id="WithinDuration">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=14484:14601#L408">WithinDuration</a>
+				<a class="permalink" href="index.html#WithinDuration">&#xb6;</a>
+			</h2>
 			<pre>func WithinDuration(t <a href="index.html#TestingT">TestingT</a>, expected <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Time">Time</a>, actual <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Time">Time</a>, delta <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Duration">Duration</a>, msgAndArgs ...interface{})</pre>
 			<p>
 WithinDuration asserts that the two times are within duration delta of each other.
@@ -1064,7 +1146,9 @@ Returns whether the assertion was successful (true) or not (false).
 		
 			
 			
-			<h2 id="Zero">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=14505:14568#L409">Zero</a></h2>
+			<h2 id="Zero">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require.go?s=14773:14836#L415">Zero</a>
+				<a class="permalink" href="index.html#Zero">&#xb6;</a>
+			</h2>
 			<pre>func Zero(t <a href="index.html#TestingT">TestingT</a>, i interface{}, msgAndArgs ...interface{})</pre>
 			<p>
 Zero asserts that i is the zero value for its type and returns the truth.
@@ -1077,7 +1161,9 @@ Zero asserts that i is the zero value for its type and returns the truth.
 		
 			
 			
-			<h2 id="Assertions">type <a href="http://localhost:9090/src/github.com/stretchr/testify/require/forward_requirements.go?s=92:130#L1">Assertions</a></h2>
+			<h2 id="Assertions">type <a href="http://localhost:9090/src/github.com/stretchr/testify/require/forward_requirements.go?s=92:130#L1">Assertions</a>
+				<a class="permalink" href="index.html#Assertions">&#xb6;</a>
+			</h2>
 			<pre>type Assertions struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -1097,7 +1183,9 @@ TestingT interface.
 
 			
 				
-				<h3 id="New">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/forward_requirements.go?s=197:229#L1">New</a></h3>
+				<h3 id="New">func <a href="http://localhost:9090/src/github.com/stretchr/testify/require/forward_requirements.go?s=197:229#L1">New</a>
+					<a class="permalink" href="index.html#New">&#xb6;</a>
+				</h3>
 				<pre>func New(t <a href="index.html#TestingT">TestingT</a>) *<a href="index.html#Assertions">Assertions</a></pre>
 				<p>
 New makes a new Assertions object for the specified TestingT.
@@ -1109,7 +1197,9 @@ New makes a new Assertions object for the specified TestingT.
 
 			
 				
-				<h3 id="Assertions.Condition">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=301:382#L6">Condition</a></h3>
+				<h3 id="Assertions.Condition">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=301:382#L6">Condition</a>
+					<a class="permalink" href="index.html#Assertions.Condition">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Condition(comp <a href="../assert/index.html">assert</a>.<a href="../assert/index.html#Comparison">Comparison</a>, msgAndArgs ...interface{})</pre>
 				<p>
 Condition uses a Comparison to assert a complex condition.
@@ -1120,7 +1210,9 @@ Condition uses a Comparison to assert a complex condition.
 				
 			
 				
-				<h3 id="Assertions.Contains">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=895:988#L18">Contains</a></h3>
+				<h3 id="Assertions.Contains">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=895:988#L18">Contains</a>
+					<a class="permalink" href="index.html#Assertions.Contains">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Contains(s interface{}, contains interface{}, msgAndArgs ...interface{})</pre>
 				<p>
 Contains asserts that the specified string, list(array, slice...) or map contains the
@@ -1139,7 +1231,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.Empty">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=1257:1330#L28">Empty</a></h3>
+				<h3 id="Assertions.Empty">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=1257:1330#L28">Empty</a>
+					<a class="permalink" href="index.html#Assertions.Empty">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Empty(object interface{}, msgAndArgs ...interface{})</pre>
 				<p>
 Empty asserts that the specified object is empty.  I.e. nil, &#34;&#34;, false, 0 or either
@@ -1156,7 +1250,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.Equal">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=1548:1643#L37">Equal</a></h3>
+				<h3 id="Assertions.Equal">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=1682:1777#L40">Equal</a>
+					<a class="permalink" href="index.html#Assertions.Equal">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Equal(expected interface{}, actual interface{}, msgAndArgs ...interface{})</pre>
 				<p>
 Equal asserts that two objects are equal.
@@ -1166,13 +1262,19 @@ Equal asserts that two objects are equal.
 <p>
 Returns whether the assertion was successful (true) or not (false).
 </p>
+<p>
+Pointer variable equality is determined based on the equality of the
+referenced values (as opposed to the memory addresses).
+</p>
 
 				
 				
 				
 			
 				
-				<h3 id="Assertions.EqualError">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=1999:2091#L48">EqualError</a></h3>
+				<h3 id="Assertions.EqualError">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=2133:2225#L51">EqualError</a>
+					<a class="permalink" href="index.html#Assertions.EqualError">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) EqualError(theError <a href="../../../../builtin/index.html#error">error</a>, errString <a href="../../../../builtin/index.html#string">string</a>, msgAndArgs ...interface{})</pre>
 				<p>
 EqualError asserts that a function returned an error (i.e. not `nil`)
@@ -1190,7 +1292,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.EqualValues">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=2400:2501#L58">EqualValues</a></h3>
+				<h3 id="Assertions.EqualValues">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=2534:2635#L61">EqualValues</a>
+					<a class="permalink" href="index.html#Assertions.EqualValues">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) EqualValues(expected interface{}, actual interface{}, msgAndArgs ...interface{})</pre>
 				<p>
 EqualValues asserts that two objects are equal or convertable to the same types
@@ -1207,7 +1311,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.Error">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=2840:2904#L70">Error</a></h3>
+				<h3 id="Assertions.Error">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=2974:3038#L73">Error</a>
+					<a class="permalink" href="index.html#Assertions.Error">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Error(err <a href="../../../../builtin/index.html#error">error</a>, msgAndArgs ...interface{})</pre>
 				<p>
 Error asserts that a function returned an error (i.e. not `nil`).
@@ -1226,7 +1332,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.Exactly">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=3159:3256#L79">Exactly</a></h3>
+				<h3 id="Assertions.Exactly">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=3293:3390#L82">Exactly</a>
+					<a class="permalink" href="index.html#Assertions.Exactly">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Exactly(expected interface{}, actual interface{}, msgAndArgs ...interface{})</pre>
 				<p>
 Exactly asserts that two objects are equal is value and type.
@@ -1242,7 +1350,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.Fail">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=3343:3418#L84">Fail</a></h3>
+				<h3 id="Assertions.Fail">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=3477:3552#L87">Fail</a>
+					<a class="permalink" href="index.html#Assertions.Fail">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Fail(failureMessage <a href="../../../../builtin/index.html#string">string</a>, msgAndArgs ...interface{})</pre>
 				<p>
 Fail reports a failure through
@@ -1253,7 +1363,9 @@ Fail reports a failure through
 				
 			
 				
-				<h3 id="Assertions.FailNow">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=3488:3566#L89">FailNow</a></h3>
+				<h3 id="Assertions.FailNow">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=3622:3700#L92">FailNow</a>
+					<a class="permalink" href="index.html#Assertions.FailNow">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) FailNow(failureMessage <a href="../../../../builtin/index.html#string">string</a>, msgAndArgs ...interface{})</pre>
 				<p>
 FailNow fails test
@@ -1264,7 +1376,9 @@ FailNow fails test
 				
 			
 				
-				<h3 id="Assertions.False">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=3794:3859#L98">False</a></h3>
+				<h3 id="Assertions.False">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=3928:3993#L101">False</a>
+					<a class="permalink" href="index.html#Assertions.False">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) False(value <a href="../../../../builtin/index.html#bool">bool</a>, msgAndArgs ...interface{})</pre>
 				<p>
 False asserts that the specified value is false.
@@ -1280,7 +1394,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.HTTPBodyContains">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=4149:4275#L108">HTTPBodyContains</a></h3>
+				<h3 id="Assertions.HTTPBodyContains">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=4283:4409#L111">HTTPBodyContains</a>
+					<a class="permalink" href="index.html#Assertions.HTTPBodyContains">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) HTTPBodyContains(handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method <a href="../../../../builtin/index.html#string">string</a>, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>, str interface{})</pre>
 				<p>
 HTTPBodyContains asserts that a specified handler returns a
@@ -1297,7 +1413,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.HTTPBodyNotContains">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=4603:4732#L118">HTTPBodyNotContains</a></h3>
+				<h3 id="Assertions.HTTPBodyNotContains">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=4737:4866#L121">HTTPBodyNotContains</a>
+					<a class="permalink" href="index.html#Assertions.HTTPBodyNotContains">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) HTTPBodyNotContains(handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method <a href="../../../../builtin/index.html#string">string</a>, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>, str interface{})</pre>
 				<p>
 HTTPBodyNotContains asserts that a specified handler returns a
@@ -1314,7 +1432,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.HTTPError">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=5033:5135#L127">HTTPError</a></h3>
+				<h3 id="Assertions.HTTPError">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=5167:5269#L130">HTTPError</a>
+					<a class="permalink" href="index.html#Assertions.HTTPError">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) HTTPError(handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method <a href="../../../../builtin/index.html#string">string</a>, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>)</pre>
 				<p>
 HTTPError asserts that a specified handler returns an error status code.
@@ -1330,7 +1450,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.HTTPRedirect">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=5428:5533#L136">HTTPRedirect</a></h3>
+				<h3 id="Assertions.HTTPRedirect">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=5562:5667#L139">HTTPRedirect</a>
+					<a class="permalink" href="index.html#Assertions.HTTPRedirect">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) HTTPRedirect(handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method <a href="../../../../builtin/index.html#string">string</a>, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>)</pre>
 				<p>
 HTTPRedirect asserts that a specified handler returns a redirect status code.
@@ -1346,7 +1468,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.HTTPSuccess">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=5811:5915#L145">HTTPSuccess</a></h3>
+				<h3 id="Assertions.HTTPSuccess">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=5945:6049#L148">HTTPSuccess</a>
+					<a class="permalink" href="index.html#Assertions.HTTPSuccess">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) HTTPSuccess(handler <a href="../../../../net/http/index.html">http</a>.<a href="../../../../net/http/index.html#HandlerFunc">HandlerFunc</a>, method <a href="../../../../builtin/index.html#string">string</a>, url <a href="../../../../builtin/index.html#string">string</a>, values <a href="../../../../net/url/index.html">url</a>.<a href="../../../../net/url/index.html#Values">Values</a>)</pre>
 				<p>
 HTTPSuccess asserts that a specified handler returns a success status code.
@@ -1362,7 +1486,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.Implements">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=6119:6226#L152">Implements</a></h3>
+				<h3 id="Assertions.Implements">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=6253:6360#L155">Implements</a>
+					<a class="permalink" href="index.html#Assertions.Implements">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Implements(interfaceObject interface{}, object interface{}, msgAndArgs ...interface{})</pre>
 				<p>
 Implements asserts that an object is implemented by the specified interface.
@@ -1375,7 +1501,9 @@ Implements asserts that an object is implemented by the specified interface.
 				
 			
 				
-				<h3 id="Assertions.InDelta">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=6481:6593#L161">InDelta</a></h3>
+				<h3 id="Assertions.InDelta">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=6615:6727#L164">InDelta</a>
+					<a class="permalink" href="index.html#Assertions.InDelta">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) InDelta(expected interface{}, actual interface{}, delta <a href="../../../../builtin/index.html#float64">float64</a>, msgAndArgs ...interface{})</pre>
 				<p>
 InDelta asserts that the two numerals are within delta of each other.
@@ -1391,7 +1519,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.InDeltaSlice">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=6724:6841#L166">InDeltaSlice</a></h3>
+				<h3 id="Assertions.InDeltaSlice">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=6858:6975#L169">InDeltaSlice</a>
+					<a class="permalink" href="index.html#Assertions.InDeltaSlice">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) InDeltaSlice(expected interface{}, actual interface{}, delta <a href="../../../../builtin/index.html#float64">float64</a>, msgAndArgs ...interface{})</pre>
 				<p>
 InDeltaSlice is the same as InDelta, except it compares two slices.
@@ -1402,7 +1532,9 @@ InDeltaSlice is the same as InDelta, except it compares two slices.
 				
 			
 				
-				<h3 id="Assertions.InEpsilon">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=7066:7182#L173">InEpsilon</a></h3>
+				<h3 id="Assertions.InEpsilon">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=7200:7316#L176">InEpsilon</a>
+					<a class="permalink" href="index.html#Assertions.InEpsilon">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) InEpsilon(expected interface{}, actual interface{}, epsilon <a href="../../../../builtin/index.html#float64">float64</a>, msgAndArgs ...interface{})</pre>
 				<p>
 InEpsilon asserts that expected and actual have a relative error less than epsilon
@@ -1416,7 +1548,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.InEpsilonSlice">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=7337:7458#L178">InEpsilonSlice</a></h3>
+				<h3 id="Assertions.InEpsilonSlice">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=7471:7592#L181">InEpsilonSlice</a>
+					<a class="permalink" href="index.html#Assertions.InEpsilonSlice">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) InEpsilonSlice(expected interface{}, actual interface{}, epsilon <a href="../../../../builtin/index.html#float64">float64</a>, msgAndArgs ...interface{})</pre>
 				<p>
 InEpsilonSlice is the same as InEpsilon, except it compares each value from two slices.
@@ -1427,7 +1561,9 @@ InEpsilonSlice is the same as InEpsilon, except it compares each value from two 
 				
 			
 				
-				<h3 id="Assertions.IsType">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=7594:7694#L183">IsType</a></h3>
+				<h3 id="Assertions.IsType">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=7728:7828#L186">IsType</a>
+					<a class="permalink" href="index.html#Assertions.IsType">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) IsType(expectedType interface{}, object interface{}, msgAndArgs ...interface{})</pre>
 				<p>
 IsType asserts that the specified objects are of the same type.
@@ -1438,7 +1574,9 @@ IsType asserts that the specified objects are of the same type.
 				
 			
 				
-				<h3 id="Assertions.JSONEq">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=7968:8054#L192">JSONEq</a></h3>
+				<h3 id="Assertions.JSONEq">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=8102:8188#L195">JSONEq</a>
+					<a class="permalink" href="index.html#Assertions.JSONEq">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) JSONEq(expected <a href="../../../../builtin/index.html#string">string</a>, actual <a href="../../../../builtin/index.html#string">string</a>, msgAndArgs ...interface{})</pre>
 				<p>
 JSONEq asserts that two JSON strings are equivalent.
@@ -1454,7 +1592,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.Len">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=8365:8448#L202">Len</a></h3>
+				<h3 id="Assertions.Len">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=8499:8582#L205">Len</a>
+					<a class="permalink" href="index.html#Assertions.Len">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Len(object interface{}, length <a href="../../../../builtin/index.html#int">int</a>, msgAndArgs ...interface{})</pre>
 				<p>
 Len asserts that the specified object has specific length.
@@ -1471,7 +1611,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.Nil">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=8663:8734#L211">Nil</a></h3>
+				<h3 id="Assertions.Nil">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=8797:8868#L214">Nil</a>
+					<a class="permalink" href="index.html#Assertions.Nil">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Nil(object interface{}, msgAndArgs ...interface{})</pre>
 				<p>
 Nil asserts that the specified object is nil.
@@ -1487,7 +1629,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.NoError">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=9034:9100#L223">NoError</a></h3>
+				<h3 id="Assertions.NoError">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=9168:9234#L226">NoError</a>
+					<a class="permalink" href="index.html#Assertions.NoError">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) NoError(err <a href="../../../../builtin/index.html#error">error</a>, msgAndArgs ...interface{})</pre>
 				<p>
 NoError asserts that a function returned no error (i.e. `nil`).
@@ -1506,7 +1650,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.NotContains">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=9642:9738#L235">NotContains</a></h3>
+				<h3 id="Assertions.NotContains">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=9776:9872#L238">NotContains</a>
+					<a class="permalink" href="index.html#Assertions.NotContains">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) NotContains(s interface{}, contains interface{}, msgAndArgs ...interface{})</pre>
 				<p>
 NotContains asserts that the specified string, list(array, slice...) or map does NOT contain the
@@ -1525,7 +1671,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.NotEmpty">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=10072:10148#L247">NotEmpty</a></h3>
+				<h3 id="Assertions.NotEmpty">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=10206:10282#L250">NotEmpty</a>
+					<a class="permalink" href="index.html#Assertions.NotEmpty">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) NotEmpty(object interface{}, msgAndArgs ...interface{})</pre>
 				<p>
 NotEmpty asserts that the specified object is NOT empty.  I.e. not nil, &#34;&#34;, false, 0 or either
@@ -1544,7 +1692,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.NotEqual">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=10393:10491#L256">NotEqual</a></h3>
+				<h3 id="Assertions.NotEqual">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=10661:10759#L262">NotEqual</a>
+					<a class="permalink" href="index.html#Assertions.NotEqual">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) NotEqual(expected interface{}, actual interface{}, msgAndArgs ...interface{})</pre>
 				<p>
 NotEqual asserts that the specified values are NOT equal.
@@ -1554,13 +1704,19 @@ NotEqual asserts that the specified values are NOT equal.
 <p>
 Returns whether the assertion was successful (true) or not (false).
 </p>
+<p>
+Pointer variable equality is determined based on the equality of the
+referenced values (as opposed to the memory addresses).
+</p>
 
 				
 				
 				
 			
 				
-				<h3 id="Assertions.NotNil">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=10725:10799#L265">NotNil</a></h3>
+				<h3 id="Assertions.NotNil">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=10993:11067#L271">NotNil</a>
+					<a class="permalink" href="index.html#Assertions.NotNil">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) NotNil(object interface{}, msgAndArgs ...interface{})</pre>
 				<p>
 NotNil asserts that the specified object is not nil.
@@ -1576,7 +1732,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.NotPanics">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=11098:11179#L276">NotPanics</a></h3>
+				<h3 id="Assertions.NotPanics">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=11366:11447#L282">NotPanics</a>
+					<a class="permalink" href="index.html#Assertions.NotPanics">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) NotPanics(f <a href="../assert/index.html">assert</a>.<a href="../assert/index.html#PanicTestFunc">PanicTestFunc</a>, msgAndArgs ...interface{})</pre>
 				<p>
 NotPanics asserts that the code inside the specified PanicTestFunc does NOT panic.
@@ -1594,7 +1752,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.NotRegexp">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=11476:11566#L286">NotRegexp</a></h3>
+				<h3 id="Assertions.NotRegexp">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=11744:11834#L292">NotRegexp</a>
+					<a class="permalink" href="index.html#Assertions.NotRegexp">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) NotRegexp(rx interface{}, str interface{}, msgAndArgs ...interface{})</pre>
 				<p>
 NotRegexp asserts that a specified regexp does not match a string.
@@ -1611,7 +1771,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.NotZero">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=11696:11766#L291">NotZero</a></h3>
+				<h3 id="Assertions.NotZero">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=11964:12034#L297">NotZero</a>
+					<a class="permalink" href="index.html#Assertions.NotZero">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) NotZero(i interface{}, msgAndArgs ...interface{})</pre>
 				<p>
 NotZero asserts that i is not the zero value for its type and returns the truth.
@@ -1622,7 +1784,9 @@ NotZero asserts that i is not the zero value for its type and returns the truth.
 				
 			
 				
-				<h3 id="Assertions.Panics">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=12037:12115#L302">Panics</a></h3>
+				<h3 id="Assertions.Panics">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=12305:12383#L308">Panics</a>
+					<a class="permalink" href="index.html#Assertions.Panics">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Panics(f <a href="../assert/index.html">assert</a>.<a href="../assert/index.html#PanicTestFunc">PanicTestFunc</a>, msgAndArgs ...interface{})</pre>
 				<p>
 Panics asserts that the code inside the specified PanicTestFunc panics.
@@ -1640,7 +1804,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.Regexp">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=12395:12482#L312">Regexp</a></h3>
+				<h3 id="Assertions.Regexp">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=12663:12750#L318">Regexp</a>
+					<a class="permalink" href="index.html#Assertions.Regexp">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Regexp(rx interface{}, str interface{}, msgAndArgs ...interface{})</pre>
 				<p>
 Regexp asserts that a specified regexp matches a string.
@@ -1657,7 +1823,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.True">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=12698:12762#L321">True</a></h3>
+				<h3 id="Assertions.True">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=12966:13030#L327">True</a>
+					<a class="permalink" href="index.html#Assertions.True">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) True(value <a href="../../../../builtin/index.html#bool">bool</a>, msgAndArgs ...interface{})</pre>
 				<p>
 True asserts that the specified value is true.
@@ -1673,7 +1841,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.WithinDuration">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=13072:13193#L330">WithinDuration</a></h3>
+				<h3 id="Assertions.WithinDuration">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=13340:13461#L336">WithinDuration</a>
+					<a class="permalink" href="index.html#Assertions.WithinDuration">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) WithinDuration(expected <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Time">Time</a>, actual <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Time">Time</a>, delta <a href="../../../../time/index.html">time</a>.<a href="../../../../time/index.html#Duration">Duration</a>, msgAndArgs ...interface{})</pre>
 				<p>
 WithinDuration asserts that the two times are within duration delta of each other.
@@ -1689,7 +1859,9 @@ Returns whether the assertion was successful (true) or not (false).
 				
 			
 				
-				<h3 id="Assertions.Zero">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=13337:13404#L335">Zero</a></h3>
+				<h3 id="Assertions.Zero">func (*Assertions) <a href="http://localhost:9090/src/github.com/stretchr/testify/require/require_forward.go?s=13605:13672#L341">Zero</a>
+					<a class="permalink" href="index.html#Assertions.Zero">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Assertions">Assertions</a>) Zero(i interface{}, msgAndArgs ...interface{})</pre>
 				<p>
 Zero asserts that i is the zero value for its type and returns the truth.
@@ -1702,7 +1874,9 @@ Zero asserts that i is the zero value for its type and returns the truth.
 		
 			
 			
-			<h2 id="TestingT">type <a href="http://localhost:9090/src/github.com/stretchr/testify/require/requirements.go?s=71:153#L1">TestingT</a></h2>
+			<h2 id="TestingT">type <a href="http://localhost:9090/src/github.com/stretchr/testify/require/requirements.go?s=71:153#L1">TestingT</a>
+				<a class="permalink" href="index.html#TestingT">&#xb6;</a>
+			</h2>
 			<pre>type TestingT interface {
     Errorf(format <a href="../../../../builtin/index.html#string">string</a>, args ...interface{})
     FailNow()
@@ -1735,7 +1909,7 @@ TestingT is an interface wrapper around *testing.T
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1753,6 +1927,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../../../lib/godoc/godocs.js"></script>
 
 </body>

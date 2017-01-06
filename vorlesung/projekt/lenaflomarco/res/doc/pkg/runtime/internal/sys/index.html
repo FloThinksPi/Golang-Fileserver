@@ -111,6 +111,29 @@ constants used by the runtime.
 			
 			
 			
+				
+				<dd><a href="index.html#Bswap32">func Bswap32(x uint32) uint32</a></dd>
+			
+				
+				<dd><a href="index.html#Bswap64">func Bswap64(x uint64) uint64</a></dd>
+			
+				
+				<dd><a href="index.html#Ctz16">func Ctz16(x uint16) uint16</a></dd>
+			
+				
+				<dd><a href="index.html#Ctz32">func Ctz32(x uint32) uint32</a></dd>
+			
+				
+				<dd><a href="index.html#Ctz64">func Ctz64(x uint64) uint64</a></dd>
+			
+				
+				<dd><a href="index.html#Ctz8">func Ctz8(x uint8) uint8</a></dd>
+			
+			
+				
+				<dd><a href="index.html#ArchFamilyType">type ArchFamilyType</a></dd>
+				
+				
 			
 				
 				<dd><a href="index.html#Uintreg">type Uintreg</a></dd>
@@ -128,7 +151,11 @@ constants used by the runtime.
 			<p>
 			<span style="font-size:90%">
 			
+				<a href="http://localhost:9090/src/runtime/internal/sys/arch.go">arch.go</a>
+			
 				<a href="http://localhost:9090/src/runtime/internal/sys/arch_amd64.go">arch_amd64.go</a>
+			
+				<a href="http://localhost:9090/src/runtime/internal/sys/intrinsics.go">intrinsics.go</a>
 			
 				<a href="http://localhost:9090/src/runtime/internal/sys/stubs.go">stubs.go</a>
 			
@@ -187,7 +214,7 @@ constants used by the runtime.
 			<h2 id="pkg-constants">Constants</h2>
 			
 				<pre>const (
-    <span id="TheChar">TheChar</span>       = &#39;6&#39;
+    <span id="ArchFamily">ArchFamily</span>    = <a href="index.html#AMD64">AMD64</a>
     <span id="BigEndian">BigEndian</span>     = 0
     <span id="CacheLineSize">CacheLineSize</span> = 64
     <span id="PhysPageSize">PhysPageSize</span>  = 4096
@@ -199,6 +226,12 @@ constants used by the runtime.
 				
 			
 				<pre>const <span id="DefaultGoroot">DefaultGoroot</span> = `/usr/lib/golang`</pre>
+				
+			
+				<pre>const <span id="GOARCH">GOARCH</span> = `amd64`</pre>
+				
+			
+				<pre>const <span id="GOOS">GOOS</span> = `linux`</pre>
 				
 			
 				<pre>const <span id="Goarch386">Goarch386</span> = 0</pre>
@@ -311,22 +344,139 @@ constants used by the runtime.
 				<pre>const <span id="StackGuardMultiplier">StackGuardMultiplier</span> = 1</pre>
 				
 			
-				<pre>const <span id="TheGoarch">TheGoarch</span> = `amd64`</pre>
-				
-			
-				<pre>const <span id="TheGoos">TheGoos</span> = `linux`</pre>
-				
-			
-				<pre>const <span id="TheVersion">TheVersion</span> = `go1.6.3`</pre>
+				<pre>const <span id="TheVersion">TheVersion</span> = `go1.7.4`</pre>
 				
 			
 		
 		
 		
+			
+			
+			<h2 id="Bswap32">func <a href="http://localhost:9090/src/runtime/internal/sys/intrinsics.go?s=2853:2882#L96">Bswap32</a>
+				<a class="permalink" href="index.html#Bswap32">&#xb6;</a>
+			</h2>
+			<pre>func Bswap32(x <a href="../../../builtin/index.html#uint32">uint32</a>) <a href="../../../builtin/index.html#uint32">uint32</a></pre>
+			<p>
+Bswap32 returns its input with byte order reversed
+0x01020304 -&gt; 0x04030201
+</p>
+
+			
+			
+
 		
 			
 			
-			<h2 id="Uintreg">type <a href="http://localhost:9090/src/runtime/internal/sys/arch_amd64.go?s=348:367#L8">Uintreg</a></h2>
+			<h2 id="Bswap64">func <a href="http://localhost:9090/src/runtime/internal/sys/intrinsics.go?s=2471:2500#L78">Bswap64</a>
+				<a class="permalink" href="index.html#Bswap64">&#xb6;</a>
+			</h2>
+			<pre>func Bswap64(x <a href="../../../builtin/index.html#uint64">uint64</a>) <a href="../../../builtin/index.html#uint64">uint64</a></pre>
+			<p>
+Bswap64 returns its input with byte order reversed
+0x0102030405060708 -&gt; 0x0807060504030201
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Ctz16">func <a href="http://localhost:9090/src/runtime/internal/sys/intrinsics.go?s=1758:1785#L58">Ctz16</a>
+				<a class="permalink" href="index.html#Ctz16">&#xb6;</a>
+			</h2>
+			<pre>func Ctz16(x <a href="../../../builtin/index.html#uint16">uint16</a>) <a href="../../../builtin/index.html#uint16">uint16</a></pre>
+			<p>
+Ctz16 counts trailing (low-order) zeroes,
+and if all are zero, then 16.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Ctz32">func <a href="http://localhost:9090/src/runtime/internal/sys/intrinsics.go?s=1405:1432#L48">Ctz32</a>
+				<a class="permalink" href="index.html#Ctz32">&#xb6;</a>
+			</h2>
+			<pre>func Ctz32(x <a href="../../../builtin/index.html#uint32">uint32</a>) <a href="../../../builtin/index.html#uint32">uint32</a></pre>
+			<p>
+Ctz32 counts trailing (low-order) zeroes,
+and if all are zero, then 32.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Ctz64">func <a href="http://localhost:9090/src/runtime/internal/sys/intrinsics.go?s=1052:1079#L38">Ctz64</a>
+				<a class="permalink" href="index.html#Ctz64">&#xb6;</a>
+			</h2>
+			<pre>func Ctz64(x <a href="../../../builtin/index.html#uint64">uint64</a>) <a href="../../../builtin/index.html#uint64">uint64</a></pre>
+			<p>
+Ctz64 counts trailing (low-order) zeroes,
+and if all are zero, then 64.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Ctz8">func <a href="http://localhost:9090/src/runtime/internal/sys/intrinsics.go?s=2109:2133#L68">Ctz8</a>
+				<a class="permalink" href="index.html#Ctz8">&#xb6;</a>
+			</h2>
+			<pre>func Ctz8(x <a href="../../../builtin/index.html#uint8">uint8</a>) <a href="../../../builtin/index.html#uint8">uint8</a></pre>
+			<p>
+Ctz8 counts trailing (low-order) zeroes,
+and if all are zero, then 8.
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="ArchFamilyType">type <a href="http://localhost:9090/src/runtime/internal/sys/arch.go?s=173:196#L1">ArchFamilyType</a>
+				<a class="permalink" href="index.html#ArchFamilyType">&#xb6;</a>
+			</h2>
+			<pre>type ArchFamilyType <a href="../../../builtin/index.html#int">int</a></pre>
+			
+
+			
+				<pre>const (
+    <span id="AMD64">AMD64</span> <a href="index.html#ArchFamilyType">ArchFamilyType</a> = <a href="../../../builtin/index.html#iota">iota</a>
+    <span id="ARM">ARM</span>
+    <span id="ARM64">ARM64</span>
+    <span id="I386">I386</span>
+    <span id="MIPS64">MIPS64</span>
+    <span id="PPC64">PPC64</span>
+    <span id="S390X">S390X</span>
+)</pre>
+				
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Uintreg">type <a href="http://localhost:9090/src/runtime/internal/sys/arch_amd64.go?s=350:369#L8">Uintreg</a>
+				<a class="permalink" href="index.html#Uintreg">&#xb6;</a>
+			</h2>
 			<pre>type Uintreg <a href="../../../builtin/index.html#uint64">uint64</a></pre>
 			
 
@@ -353,7 +503,7 @@ constants used by the runtime.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -371,6 +521,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../../lib/godoc/godocs.js"></script>
 
 </body>

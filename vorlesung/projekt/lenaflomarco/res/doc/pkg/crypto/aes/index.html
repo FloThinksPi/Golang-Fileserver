@@ -140,9 +140,11 @@ U.S. Federal Information Processing Standards Publication 197.
 			
 				<a href="http://localhost:9090/src/crypto/aes/cipher.go">cipher.go</a>
 			
-				<a href="http://localhost:9090/src/crypto/aes/cipher_asm.go">cipher_asm.go</a>
+				<a href="http://localhost:9090/src/crypto/aes/cipher_amd64.go">cipher_amd64.go</a>
 			
 				<a href="http://localhost:9090/src/crypto/aes/const.go">const.go</a>
+			
+				<a href="http://localhost:9090/src/crypto/aes/modes.go">modes.go</a>
 			
 			</span>
 			</p>
@@ -201,7 +203,9 @@ The AES block size in bytes.
 		
 			
 			
-			<h2 id="NewCipher">func <a href="http://localhost:9090/src/crypto/aes/cipher.go?s=688:736#L21">NewCipher</a></h2>
+			<h2 id="NewCipher">func <a href="http://localhost:9090/src/crypto/aes/cipher.go?s=688:736#L21">NewCipher</a>
+				<a class="permalink" href="index.html#NewCipher">&#xb6;</a>
+			</h2>
 			<pre>func NewCipher(key []<a href="../../builtin/index.html#byte">byte</a>) (<a href="../cipher/index.html">cipher</a>.<a href="../cipher/index.html#Block">Block</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 NewCipher creates and returns a new cipher.Block.
@@ -217,7 +221,9 @@ AES-128, AES-192, or AES-256.
 		
 			
 			
-			<h2 id="KeySizeError">type <a href="http://localhost:9090/src/crypto/aes/cipher.go?s=391:412#L11">KeySizeError</a></h2>
+			<h2 id="KeySizeError">type <a href="http://localhost:9090/src/crypto/aes/cipher.go?s=391:412#L11">KeySizeError</a>
+				<a class="permalink" href="index.html#KeySizeError">&#xb6;</a>
+			</h2>
 			<pre>type KeySizeError <a href="../../builtin/index.html#int">int</a></pre>
 			
 
@@ -233,7 +239,9 @@ AES-128, AES-192, or AES-256.
 
 			
 				
-				<h3 id="KeySizeError.Error">func (KeySizeError) <a href="http://localhost:9090/src/crypto/aes/cipher.go?s=414:450#L13">Error</a></h3>
+				<h3 id="KeySizeError.Error">func (KeySizeError) <a href="http://localhost:9090/src/crypto/aes/cipher.go?s=414:450#L13">Error</a>
+					<a class="permalink" href="index.html#KeySizeError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (k <a href="index.html#KeySizeError">KeySizeError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -252,7 +260,7 @@ AES-128, AES-192, or AES-256.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -270,6 +278,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

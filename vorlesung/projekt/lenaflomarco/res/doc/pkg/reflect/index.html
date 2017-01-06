@@ -89,7 +89,7 @@
 				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
 				<p>
 Package reflect implements run-time reflection, allowing a program to
-manipulate objects with arbitrary types.  The typical use is to take a value
+manipulate objects with arbitrary types. The typical use is to take a value
 with static type interface{} and extract its dynamic type information by
 calling TypeOf, which returns a Type.
 </p>
@@ -183,6 +183,9 @@ See &#34;The Laws of Reflection&#34; for an introduction to reflection in Go:
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#StructTag.Get">func (tag StructTag) Get(key string) string</a></dd>
 				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#StructTag.Lookup">func (tag StructTag) Lookup(key string) (value string, ok bool)</a></dd>
+				
 			
 				
 				<dd><a href="index.html#Type">type Type</a></dd>
@@ -204,6 +207,9 @@ See &#34;The Laws of Reflection&#34; for an introduction to reflection in Go:
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#SliceOf">func SliceOf(t Type) Type</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#StructOf">func StructOf(fields []StructField) Type</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#TypeOf">func TypeOf(i interface{}) Type</a></dd>
@@ -504,7 +510,9 @@ See &#34;The Laws of Reflection&#34; for an introduction to reflection in Go:
 		
 			
 			
-			<h2 id="Copy">func <a href="http://localhost:9090/src/reflect/value.go?s=54389:54418#L1828">Copy</a></h2>
+			<h2 id="Copy">func <a href="http://localhost:9090/src/reflect/value.go?s=54369:54398#L1827">Copy</a>
+				<a class="permalink" href="index.html#Copy">&#xb6;</a>
+			</h2>
 			<pre>func Copy(dst, src <a href="index.html#Value">Value</a>) <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 Copy copies the contents of src into dst until either
@@ -520,7 +528,9 @@ dst and src must have the same element type.
 		
 			
 			
-			<h2 id="DeepEqual">func <a href="http://localhost:9090/src/reflect/deepequal.go?s=5535:5572#L166">DeepEqual</a></h2>
+			<h2 id="DeepEqual">func <a href="http://localhost:9090/src/reflect/deepequal.go?s=5534:5571#L166">DeepEqual</a>
+				<a class="permalink" href="index.html#DeepEqual">&#xb6;</a>
+			</h2>
 			<pre>func DeepEqual(x, y interface{}) <a href="../builtin/index.html#bool">bool</a></pre>
 			<p>
 DeepEqual reports whether x and y are &ldquo;deeply equal,&rdquo; defined as follows.
@@ -584,7 +594,9 @@ they are deeply equal regardless of content.
 		
 			
 			
-			<h2 id="Select">func <a href="http://localhost:9090/src/reflect/value.go?s=57637:57706#L1925">Select</a></h2>
+			<h2 id="Select">func <a href="http://localhost:9090/src/reflect/value.go?s=57633:57702#L1924">Select</a>
+				<a class="permalink" href="index.html#Select">&#xb6;</a>
+			</h2>
 			<pre>func Select(cases []<a href="index.html#SelectCase">SelectCase</a>) (chosen <a href="../builtin/index.html#int">int</a>, recv <a href="index.html#Value">Value</a>, recvOK <a href="../builtin/index.html#bool">bool</a>)</pre>
 			<p>
 Select executes a select operation described by the list of cases.
@@ -603,7 +615,9 @@ boolean indicating whether the value corresponds to a send on the channel
 		
 			
 			
-			<h2 id="ChanDir">type <a href="http://localhost:9090/src/reflect/type.go?s=9943:9959#L283">ChanDir</a></h2>
+			<h2 id="ChanDir">type <a href="http://localhost:9090/src/reflect/type.go?s=10714:10730#L315">ChanDir</a>
+				<a class="permalink" href="index.html#ChanDir">&#xb6;</a>
+			</h2>
 			<pre>type ChanDir <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 ChanDir represents a channel type&#39;s direction.
@@ -629,7 +643,9 @@ ChanDir represents a channel type&#39;s direction.
 
 			
 				
-				<h3 id="ChanDir.String">func (ChanDir) <a href="http://localhost:9090/src/reflect/type.go?s=19413:19445#L680">String</a></h3>
+				<h3 id="ChanDir.String">func (ChanDir) <a href="http://localhost:9090/src/reflect/type.go?s=28226:28258#L1044">String</a>
+					<a class="permalink" href="index.html#ChanDir.String">&#xb6;</a>
+				</h3>
 				<pre>func (d <a href="index.html#ChanDir">ChanDir</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -639,7 +655,9 @@ ChanDir represents a channel type&#39;s direction.
 		
 			
 			
-			<h2 id="Kind">type <a href="http://localhost:9090/src/reflect/type.go?s=7533:7547#L201">Kind</a></h2>
+			<h2 id="Kind">type <a href="http://localhost:9090/src/reflect/type.go?s=7527:7541#L201">Kind</a>
+				<a class="permalink" href="index.html#Kind">&#xb6;</a>
+			</h2>
 			<pre>type Kind <a href="../builtin/index.html#uint">uint</a></pre>
 			<p>
 A Kind represents the specific kind of type that a Type represents.
@@ -690,7 +708,9 @@ The zero Kind is not a valid kind.
 
 			
 				
-				<h3 id="Kind.String">func (Kind) <a href="http://localhost:9090/src/reflect/type.go?s=13255:13284#L398">String</a></h3>
+				<h3 id="Kind.String">func (Kind) <a href="http://localhost:9090/src/reflect/type.go?s=17070:17099#L568">String</a>
+					<a class="permalink" href="index.html#Kind.String">&#xb6;</a>
+				</h3>
 				<pre>func (k <a href="index.html#Kind">Kind</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -700,11 +720,13 @@ The zero Kind is not a valid kind.
 		
 			
 			
-			<h2 id="Method">type <a href="http://localhost:9090/src/reflect/type.go?s=12602:13100#L376">Method</a></h2>
+			<h2 id="Method">type <a href="http://localhost:9090/src/reflect/type.go?s=16418:16915#L546">Method</a>
+				<a class="permalink" href="index.html#Method">&#xb6;</a>
+			</h2>
 			<pre>type Method struct {
     <span class="comment">// Name is the method name.</span>
     <span class="comment">// PkgPath is the package path that qualifies a lower case (unexported)</span>
-    <span class="comment">// method name.  It is empty for upper case (exported) method names.</span>
+    <span class="comment">// method name. It is empty for upper case (exported) method names.</span>
     <span class="comment">// The combination of PkgPath and Name uniquely identifies a method</span>
     <span class="comment">// in a method set.</span>
     <span class="comment">// See https://golang.org/ref/spec#Uniqueness_of_identifiers</span>
@@ -734,7 +756,9 @@ Method represents a single method.
 		
 			
 			
-			<h2 id="SelectCase">type <a href="http://localhost:9090/src/reflect/value.go?s=56981:57144#L1912">SelectCase</a></h2>
+			<h2 id="SelectCase">type <a href="http://localhost:9090/src/reflect/value.go?s=56977:57140#L1911">SelectCase</a>
+				<a class="permalink" href="index.html#SelectCase">&#xb6;</a>
+			</h2>
 			<pre>type SelectCase struct {
     Dir  <a href="index.html#SelectDir">SelectDir</a> <span class="comment">// direction of case</span>
     Chan <a href="index.html#Value">Value</a>     <span class="comment">// channel to use (for send or receive)</span>
@@ -777,7 +801,9 @@ When a receive operation is selected, the received Value is returned by Select.
 		
 			
 			
-			<h2 id="SelectDir">type <a href="http://localhost:9090/src/reflect/value.go?s=55810:55828#L1884">SelectDir</a></h2>
+			<h2 id="SelectDir">type <a href="http://localhost:9090/src/reflect/value.go?s=55806:55824#L1883">SelectDir</a>
+				<a class="permalink" href="index.html#SelectDir">&#xb6;</a>
+			</h2>
 			<pre>type SelectDir <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 A SelectDir describes the communication direction of a select case.
@@ -805,7 +831,9 @@ A SelectDir describes the communication direction of a select case.
 		
 			
 			
-			<h2 id="SliceHeader">type <a href="http://localhost:9090/src/reflect/value.go?s=52356:52417#L1748">SliceHeader</a></h2>
+			<h2 id="SliceHeader">type <a href="http://localhost:9090/src/reflect/value.go?s=52336:52397#L1747">SliceHeader</a>
+				<a class="permalink" href="index.html#SliceHeader">&#xb6;</a>
+			</h2>
 			<pre>type SliceHeader struct {
     Data <a href="../builtin/index.html#uintptr">uintptr</a>
     Len  <a href="../builtin/index.html#int">int</a>
@@ -835,7 +863,9 @@ a separate, correctly typed pointer to the underlying data.
 		
 			
 			
-			<h2 id="StringHeader">type <a href="http://localhost:9090/src/reflect/value.go?s=51810:51862#L1731">StringHeader</a></h2>
+			<h2 id="StringHeader">type <a href="http://localhost:9090/src/reflect/value.go?s=51790:51842#L1730">StringHeader</a>
+				<a class="permalink" href="index.html#StringHeader">&#xb6;</a>
+			</h2>
 			<pre>type StringHeader struct {
     Data <a href="../builtin/index.html#uintptr">uintptr</a>
     Len  <a href="../builtin/index.html#int">int</a>
@@ -864,12 +894,14 @@ a separate, correctly typed pointer to the underlying data.
 		
 			
 			
-			<h2 id="StructField">type <a href="http://localhost:9090/src/reflect/type.go?s=20401:20926#L726">StructField</a></h2>
+			<h2 id="StructField">type <a href="http://localhost:9090/src/reflect/type.go?s=29342:29866#L1094">StructField</a>
+				<a class="permalink" href="index.html#StructField">&#xb6;</a>
+			</h2>
 			<pre>type StructField struct {
     <span class="comment">// Name is the field name.</span>
     Name <a href="../builtin/index.html#string">string</a>
     <span class="comment">// PkgPath is the package path that qualifies a lower case (unexported)</span>
-    <span class="comment">// field name.  It is empty for upper case (exported) field names.</span>
+    <span class="comment">// field name. It is empty for upper case (exported) field names.</span>
     <span class="comment">// See https://golang.org/ref/spec#Uniqueness_of_identifiers</span>
     PkgPath <a href="../builtin/index.html#string">string</a>
 
@@ -898,7 +930,9 @@ A StructField describes a single field in a struct.
 		
 			
 			
-			<h2 id="StructTag">type <a href="http://localhost:9090/src/reflect/type.go?s=21320:21341#L749">StructTag</a></h2>
+			<h2 id="StructTag">type <a href="http://localhost:9090/src/reflect/type.go?s=30260:30281#L1117">StructTag</a>
+				<a class="permalink" href="index.html#StructTag">&#xb6;</a>
+			</h2>
 			<pre>type StructTag <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 A StructTag is the tag string in a struct field.
@@ -925,13 +959,34 @@ characters and Go string literal syntax.
 
 			
 				
-				<h3 id="StructTag.Get">func (StructTag) <a href="http://localhost:9090/src/reflect/type.go?s=21574:21617#L755">Get</a></h3>
+				<h3 id="StructTag.Get">func (StructTag) <a href="http://localhost:9090/src/reflect/type.go?s=30595:30638#L1124">Get</a>
+					<a class="permalink" href="index.html#StructTag.Get">&#xb6;</a>
+				</h3>
 				<pre>func (tag <a href="index.html#StructTag">StructTag</a>) Get(key <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 Get returns the value associated with key in the tag string.
 If there is no such key in the tag, Get returns the empty string.
 If the tag does not have the conventional format, the value
-returned by Get is unspecified.
+returned by Get is unspecified. To determine whether a tag is
+explicitly set to the empty string, use Lookup.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="StructTag.Lookup">func (StructTag) <a href="http://localhost:9090/src/reflect/type.go?s=31072:31135#L1135">Lookup</a>
+					<a class="permalink" href="index.html#StructTag.Lookup">&#xb6;</a>
+				</h3>
+				<pre>func (tag <a href="index.html#StructTag">StructTag</a>) Lookup(key <a href="../builtin/index.html#string">string</a>) (value <a href="../builtin/index.html#string">string</a>, ok <a href="../builtin/index.html#bool">bool</a>)</pre>
+				<p>
+Lookup returns the value associated with key in the tag string.
+If the key is present in the tag the value (which may be empty)
+is returned. Otherwise the returned value will be the empty string.
+The ok return value reports whether the value was explicitly set in
+the tag string. If the tag does not have the conventional format,
+the value returned by Lookup is unspecified.
 </p>
 
 				
@@ -941,7 +996,9 @@ returned by Get is unspecified.
 		
 			
 			
-			<h2 id="Type">type <a href="http://localhost:9090/src/reflect/type.go?s=1133:6709#L22">Type</a></h2>
+			<h2 id="Type">type <a href="http://localhost:9090/src/reflect/type.go?s=1130:6703#L22">Type</a>
+				<a class="permalink" href="index.html#Type">&#xb6;</a>
+			</h2>
 			<pre>type Type interface {
 
     <span class="comment">// Align returns the alignment in bytes of a value of</span>
@@ -992,7 +1049,7 @@ returned by Get is unspecified.
     <span class="comment">// String returns a string representation of the type.</span>
     <span class="comment">// The string representation may use shortened package names</span>
     <span class="comment">// (e.g., base64 instead of &#34;encoding/base64&#34;) and is not</span>
-    <span class="comment">// guaranteed to be unique among types.  To test for equality,</span>
+    <span class="comment">// guaranteed to be unique among types. To test for equality,</span>
     <span class="comment">// compare the Types directly.</span>
     String() <a href="../builtin/index.html#string">string</a>
 
@@ -1021,7 +1078,7 @@ returned by Get is unspecified.
     ChanDir() <a href="index.html#ChanDir">ChanDir</a>
 
     <span class="comment">// IsVariadic reports whether a function type&#39;s final input parameter</span>
-    <span class="comment">// is a &#34;...&#34; parameter.  If so, t.In(t.NumIn() - 1) returns the parameter&#39;s</span>
+    <span class="comment">// is a &#34;...&#34; parameter. If so, t.In(t.NumIn() - 1) returns the parameter&#39;s</span>
     <span class="comment">// implicit actual type []T.</span>
     <span class="comment">//</span>
     <span class="comment">// For concreteness, if t represents func(x int, y ... float64), then</span>
@@ -1044,7 +1101,7 @@ returned by Get is unspecified.
     Field(i <a href="../builtin/index.html#int">int</a>) <a href="index.html#StructField">StructField</a>
 
     <span class="comment">// FieldByIndex returns the nested field corresponding</span>
-    <span class="comment">// to the index sequence.  It is equivalent to calling Field</span>
+    <span class="comment">// to the index sequence. It is equivalent to calling Field</span>
     <span class="comment">// successively for each index i.</span>
     <span class="comment">// It panics if the type&#39;s Kind is not Struct.</span>
     FieldByIndex(index []<a href="../builtin/index.html#int">int</a>) <a href="index.html#StructField">StructField</a>
@@ -1093,10 +1150,10 @@ returned by Get is unspecified.
 Type is the representation of a Go type.
 </p>
 <p>
-Not all methods apply to all kinds of types.  Restrictions,
+Not all methods apply to all kinds of types. Restrictions,
 if any, are noted in the documentation for each method.
 Use the Kind method to find out the kind of type before
-calling kind-specific methods.  Calling a method
+calling kind-specific methods. Calling a method
 inappropriate to the kind of type causes a run-time panic.
 </p>
 
@@ -1111,7 +1168,9 @@ inappropriate to the kind of type causes a run-time panic.
 
 			
 				
-				<h3 id="ArrayOf">func <a href="http://localhost:9090/src/reflect/type.go?s=51298:51337#L1843">ArrayOf</a></h3>
+				<h3 id="ArrayOf">func <a href="http://localhost:9090/src/reflect/type.go?s=75790:75829#L2792">ArrayOf</a>
+					<a class="permalink" href="index.html#ArrayOf">&#xb6;</a>
+				</h3>
 				<pre>func ArrayOf(count <a href="../builtin/index.html#int">int</a>, elem <a href="index.html#Type">Type</a>) <a href="index.html#Type">Type</a></pre>
 				<p>
 ArrayOf returns the array type with the given count and element type.
@@ -1126,7 +1185,9 @@ ArrayOf panics.
 				
 			
 				
-				<h3 id="ChanOf">func <a href="http://localhost:9090/src/reflect/type.go?s=39386:39423#L1412">ChanOf</a></h3>
+				<h3 id="ChanOf">func <a href="http://localhost:9090/src/reflect/type.go?s=49168:49205#L1800">ChanOf</a>
+					<a class="permalink" href="index.html#ChanOf">&#xb6;</a>
+				</h3>
 				<pre>func ChanOf(dir <a href="index.html#ChanDir">ChanDir</a>, t <a href="index.html#Type">Type</a>) <a href="index.html#Type">Type</a></pre>
 				<p>
 ChanOf returns the channel type with the given direction and element type.
@@ -1141,7 +1202,9 @@ If t&#39;s size is equal to or exceeds this limit, ChanOf panics.
 				
 			
 				
-				<h3 id="FuncOf">func <a href="http://localhost:9090/src/reflect/type.go?s=42613:42660#L1533">FuncOf</a></h3>
+				<h3 id="FuncOf">func <a href="http://localhost:9090/src/reflect/type.go?s=52793:52840#L1945">FuncOf</a>
+					<a class="permalink" href="index.html#FuncOf">&#xb6;</a>
+				</h3>
 				<pre>func FuncOf(in, out []<a href="index.html#Type">Type</a>, variadic <a href="../builtin/index.html#bool">bool</a>) <a href="index.html#Type">Type</a></pre>
 				<p>
 FuncOf returns the function type with the given argument and result types.
@@ -1158,7 +1221,9 @@ true.
 				
 			
 				
-				<h3 id="MapOf">func <a href="http://localhost:9090/src/reflect/type.go?s=40899:40930#L1471">MapOf</a></h3>
+				<h3 id="MapOf">func <a href="http://localhost:9090/src/reflect/type.go?s=50695:50726#L1858">MapOf</a>
+					<a class="permalink" href="index.html#MapOf">&#xb6;</a>
+				</h3>
 				<pre>func MapOf(key, elem <a href="index.html#Type">Type</a>) <a href="index.html#Type">Type</a></pre>
 				<p>
 MapOf returns the map type with the given key and element types.
@@ -1174,7 +1239,9 @@ not implement Go&#39;s == operator), MapOf panics.
 				
 			
 				
-				<h3 id="PtrTo">func <a href="http://localhost:9090/src/reflect/type.go?s=29154:29177#L1018">PtrTo</a></h3>
+				<h3 id="PtrTo">func <a href="http://localhost:9090/src/reflect/type.go?s=38855:38878#L1400">PtrTo</a>
+					<a class="permalink" href="index.html#PtrTo">&#xb6;</a>
+				</h3>
 				<pre>func PtrTo(t <a href="index.html#Type">Type</a>) <a href="index.html#Type">Type</a></pre>
 				<p>
 PtrTo returns the pointer type with element t.
@@ -1185,7 +1252,9 @@ For example, if t represents type Foo, PtrTo(t) represents *Foo.
 				
 			
 				
-				<h3 id="SliceOf">func <a href="http://localhost:9090/src/reflect/type.go?s=50261:50286#L1803">SliceOf</a></h3>
+				<h3 id="SliceOf">func <a href="http://localhost:9090/src/reflect/type.go?s=61420:61445#L2251">SliceOf</a>
+					<a class="permalink" href="index.html#SliceOf">&#xb6;</a>
+				</h3>
 				<pre>func SliceOf(t <a href="index.html#Type">Type</a>) <a href="index.html#Type">Type</a></pre>
 				<p>
 SliceOf returns the slice type with element type t.
@@ -1196,7 +1265,27 @@ For example, if t represents int, SliceOf(t) represents []int.
 				
 			
 				
-				<h3 id="TypeOf">func <a href="http://localhost:9090/src/reflect/type.go?s=28830:28861#L1005">TypeOf</a></h3>
+				<h3 id="StructOf">func <a href="http://localhost:9090/src/reflect/type.go?s=63675:63715#L2340">StructOf</a>
+					<a class="permalink" href="index.html#StructOf">&#xb6;</a>
+				</h3>
+				<pre>func StructOf(fields []<a href="index.html#StructField">StructField</a>) <a href="index.html#Type">Type</a></pre>
+				<p>
+StructOf returns the struct type containing fields.
+The Offset and Index fields are ignored and computed as they would be
+by the compiler.
+</p>
+<p>
+StructOf currently does not generate wrapper methods for embedded fields.
+This limitation may be lifted in a future version.
+</p>
+
+				
+				
+			
+				
+				<h3 id="TypeOf">func <a href="http://localhost:9090/src/reflect/type.go?s=38531:38562#L1387">TypeOf</a>
+					<a class="permalink" href="index.html#TypeOf">&#xb6;</a>
+				</h3>
 				<pre>func TypeOf(i interface{}) <a href="index.html#Type">Type</a></pre>
 				<p>
 TypeOf returns the reflection Type that represents the dynamic type of i.
@@ -1211,7 +1300,9 @@ If i is a nil interface value, TypeOf returns nil.
 		
 			
 			
-			<h2 id="Value">type <a href="http://localhost:9090/src/reflect/value.go?s=1426:2646#L27">Value</a></h2>
+			<h2 id="Value">type <a href="http://localhost:9090/src/reflect/value.go?s=1349:2568#L26">Value</a>
+				<a class="permalink" href="index.html#Value">&#xb6;</a>
+			</h2>
 			<pre>type Value struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -1219,10 +1310,10 @@ If i is a nil interface value, TypeOf returns nil.
 Value is the reflection interface to a Go value.
 </p>
 <p>
-Not all methods apply to all kinds of values.  Restrictions,
+Not all methods apply to all kinds of values. Restrictions,
 if any, are noted in the documentation for each method.
 Use the Kind method to find out the kind of value before
-calling kind-specific methods.  Calling a method
+calling kind-specific methods. Calling a method
 inappropriate to the kind of type causes a run time panic.
 </p>
 <p>
@@ -1254,7 +1345,9 @@ To compare two Values, compare the results of the Interface method.
 
 			
 				
-				<h3 id="Append">func <a href="http://localhost:9090/src/reflect/value.go?s=53613:53651#L1803">Append</a></h3>
+				<h3 id="Append">func <a href="http://localhost:9090/src/reflect/value.go?s=53593:53631#L1802">Append</a>
+					<a class="permalink" href="index.html#Append">&#xb6;</a>
+				</h3>
 				<pre>func Append(s <a href="index.html#Value">Value</a>, x ...<a href="index.html#Value">Value</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 Append appends the values x to a slice s and returns the resulting slice.
@@ -1265,7 +1358,9 @@ As in Go, each x&#39;s value must be assignable to the slice&#39;s element type.
 				
 			
 				
-				<h3 id="AppendSlice">func <a href="http://localhost:9090/src/reflect/value.go?s=53920:53954#L1814">AppendSlice</a></h3>
+				<h3 id="AppendSlice">func <a href="http://localhost:9090/src/reflect/value.go?s=53900:53934#L1813">AppendSlice</a>
+					<a class="permalink" href="index.html#AppendSlice">&#xb6;</a>
+				</h3>
 				<pre>func AppendSlice(s, t <a href="index.html#Value">Value</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 AppendSlice appends a slice t to a slice s and returns the resulting slice.
@@ -1276,7 +1371,9 @@ The slices s and t must have the same element type.
 				
 			
 				
-				<h3 id="Indirect">func <a href="http://localhost:9090/src/reflect/value.go?s=61361:61389#L2065">Indirect</a></h3>
+				<h3 id="Indirect">func <a href="http://localhost:9090/src/reflect/value.go?s=61339:61367#L2064">Indirect</a>
+					<a class="permalink" href="index.html#Indirect">&#xb6;</a>
+				</h3>
 				<pre>func Indirect(v <a href="index.html#Value">Value</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 Indirect returns the value that v points to.
@@ -1288,7 +1385,9 @@ If v is not a pointer, Indirect returns v.
 				
 			
 				
-				<h3 id="MakeChan">func <a href="http://localhost:9090/src/reflect/value.go?s=60613:60654#L2039">MakeChan</a></h3>
+				<h3 id="MakeChan">func <a href="http://localhost:9090/src/reflect/value.go?s=60591:60632#L2038">MakeChan</a>
+					<a class="permalink" href="index.html#MakeChan">&#xb6;</a>
+				</h3>
 				<pre>func MakeChan(typ <a href="index.html#Type">Type</a>, buffer <a href="../builtin/index.html#int">int</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 MakeChan creates a new channel with the specified type and buffer size.
@@ -1298,7 +1397,9 @@ MakeChan creates a new channel with the specified type and buffer size.
 				
 			
 				
-				<h3 id="MakeFunc">func <a href="http://localhost:9090/src/reflect/makefunc.go?s=1482:1552#L34">MakeFunc</a></h3>
+				<h3 id="MakeFunc">func <a href="http://localhost:9090/src/reflect/makefunc.go?s=1481:1551#L34">MakeFunc</a>
+					<a class="permalink" href="index.html#MakeFunc">&#xb6;</a>
+				</h3>
 				<pre>func MakeFunc(typ <a href="index.html#Type">Type</a>, fn func(args []<a href="index.html#Value">Value</a>) (results []<a href="index.html#Value">Value</a>)) <a href="index.html#Value">Value</a></pre>
 				<p>
 MakeFunc returns a new function of the given Type
@@ -1331,7 +1432,9 @@ of how to use MakeFunc to build a swap function for different types.
 				
 			
 				
-				<h3 id="MakeMap">func <a href="http://localhost:9090/src/reflect/value.go?s=61036:61064#L2054">MakeMap</a></h3>
+				<h3 id="MakeMap">func <a href="http://localhost:9090/src/reflect/value.go?s=61014:61042#L2053">MakeMap</a>
+					<a class="permalink" href="index.html#MakeMap">&#xb6;</a>
+				</h3>
 				<pre>func MakeMap(typ <a href="index.html#Type">Type</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 MakeMap creates a new map of the specified type.
@@ -1341,7 +1444,9 @@ MakeMap creates a new map of the specified type.
 				
 			
 				
-				<h3 id="MakeSlice">func <a href="http://localhost:9090/src/reflect/value.go?s=60088:60132#L2020">MakeSlice</a></h3>
+				<h3 id="MakeSlice">func <a href="http://localhost:9090/src/reflect/value.go?s=60066:60110#L2019">MakeSlice</a>
+					<a class="permalink" href="index.html#MakeSlice">&#xb6;</a>
+				</h3>
 				<pre>func MakeSlice(typ <a href="index.html#Type">Type</a>, len, cap <a href="../builtin/index.html#int">int</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 MakeSlice creates a new zero-initialized slice value
@@ -1352,18 +1457,22 @@ for the specified slice type, length, and capacity.
 				
 			
 				
-				<h3 id="New">func <a href="http://localhost:9090/src/reflect/value.go?s=62593:62617#L2107">New</a></h3>
+				<h3 id="New">func <a href="http://localhost:9090/src/reflect/value.go?s=62568:62592#L2106">New</a>
+					<a class="permalink" href="index.html#New">&#xb6;</a>
+				</h3>
 				<pre>func New(typ <a href="index.html#Type">Type</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 New returns a Value representing a pointer to a new zero value
-for the specified type.  That is, the returned Value&#39;s Type is PtrTo(typ).
+for the specified type. That is, the returned Value&#39;s Type is PtrTo(typ).
 </p>
 
 				
 				
 			
 				
-				<h3 id="NewAt">func <a href="http://localhost:9090/src/reflect/value.go?s=62877:62921#L2118">NewAt</a></h3>
+				<h3 id="NewAt">func <a href="http://localhost:9090/src/reflect/value.go?s=62852:62896#L2117">NewAt</a>
+					<a class="permalink" href="index.html#NewAt">&#xb6;</a>
+				</h3>
 				<pre>func NewAt(typ <a href="index.html#Type">Type</a>, p <a href="../unsafe/index.html">unsafe</a>.<a href="../unsafe/index.html#Pointer">Pointer</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 NewAt returns a Value representing a pointer to a value of the
@@ -1374,18 +1483,22 @@ specified type, using p as that pointer.
 				
 			
 				
-				<h3 id="ValueOf">func <a href="http://localhost:9090/src/reflect/value.go?s=61581:61614#L2074">ValueOf</a></h3>
+				<h3 id="ValueOf">func <a href="http://localhost:9090/src/reflect/value.go?s=61558:61591#L2073">ValueOf</a>
+					<a class="permalink" href="index.html#ValueOf">&#xb6;</a>
+				</h3>
 				<pre>func ValueOf(i interface{}) <a href="index.html#Value">Value</a></pre>
 				<p>
 ValueOf returns a new Value initialized to the concrete value
-stored in the interface i.  ValueOf(nil) returns the zero Value.
+stored in the interface i. ValueOf(nil) returns the zero Value.
 </p>
 
 				
 				
 			
 				
-				<h3 id="Zero">func <a href="http://localhost:9090/src/reflect/value.go?s=62218:62243#L2093">Zero</a></h3>
+				<h3 id="Zero">func <a href="http://localhost:9090/src/reflect/value.go?s=62194:62219#L2092">Zero</a>
+					<a class="permalink" href="index.html#Zero">&#xb6;</a>
+				</h3>
 				<pre>func Zero(typ <a href="index.html#Type">Type</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 Zero returns a Value representing the zero value for the specified type.
@@ -1401,7 +1514,9 @@ The returned value is neither addressable nor settable.
 
 			
 				
-				<h3 id="Value.Addr">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=7513:7540#L228">Addr</a></h3>
+				<h3 id="Value.Addr">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=7432:7459#L227">Addr</a>
+					<a class="permalink" href="index.html#Value.Addr">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Addr() <a href="index.html#Value">Value</a></pre>
 				<p>
 Addr returns a pointer value representing the address of v.
@@ -1416,7 +1531,9 @@ pointer receiver.
 				
 			
 				
-				<h3 id="Value.Bool">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=7772:7798#L237">Bool</a></h3>
+				<h3 id="Value.Bool">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=7691:7717#L236">Bool</a>
+					<a class="permalink" href="index.html#Value.Bool">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Bool() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Bool returns v&#39;s underlying value.
@@ -1428,7 +1545,9 @@ It panics if v&#39;s kind is not Bool.
 				
 			
 				
-				<h3 id="Value.Bytes">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=7945:7974#L244">Bytes</a></h3>
+				<h3 id="Value.Bytes">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=7864:7893#L243">Bytes</a>
+					<a class="permalink" href="index.html#Value.Bytes">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Bytes() []<a href="../builtin/index.html#byte">byte</a></pre>
 				<p>
 Bytes returns v&#39;s underlying value.
@@ -1440,7 +1559,9 @@ It panics if v&#39;s underlying value is not a slice of bytes.
 				
 			
 				
-				<h3 id="Value.Call">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=9736:9775#L290">Call</a></h3>
+				<h3 id="Value.Call">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=9654:9693#L289">Call</a>
+					<a class="permalink" href="index.html#Value.Call">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Call(in []<a href="index.html#Value">Value</a>) []<a href="index.html#Value">Value</a></pre>
 				<p>
 Call calls the function v with the input arguments in.
@@ -1458,7 +1579,9 @@ itself, copying in the corresponding values.
 				
 			
 				
-				<h3 id="Value.CallSlice">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=10313:10357#L303">CallSlice</a></h3>
+				<h3 id="Value.CallSlice">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=10231:10275#L302">CallSlice</a>
+					<a class="permalink" href="index.html#Value.CallSlice">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) CallSlice(in []<a href="index.html#Value">Value</a>) []<a href="index.html#Value">Value</a></pre>
 				<p>
 CallSlice calls the variadic function v with the input arguments in,
@@ -1475,11 +1598,13 @@ type of the function&#39;s corresponding input parameter.
 				
 			
 				
-				<h3 id="Value.CanAddr">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=8842:8871#L269">CanAddr</a></h3>
+				<h3 id="Value.CanAddr">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=8760:8789#L268">CanAddr</a>
+					<a class="permalink" href="index.html#Value.CanAddr">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) CanAddr() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 CanAddr reports whether the value&#39;s address can be obtained with Addr.
-Such values are called addressable.  A value is addressable if it is
+Such values are called addressable. A value is addressable if it is
 an element of a slice, an element of an addressable array,
 a field of an addressable struct, or the result of dereferencing a pointer.
 If CanAddr returns false, calling Addr will panic.
@@ -1490,7 +1615,9 @@ If CanAddr returns false, calling Addr will panic.
 				
 			
 				
-				<h3 id="Value.CanInterface">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=27131:27165#L885">CanInterface</a></h3>
+				<h3 id="Value.CanInterface">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=27124:27158#L884">CanInterface</a>
+					<a class="permalink" href="index.html#Value.CanInterface">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) CanInterface() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 CanInterface reports whether Interface can be used without panicking.
@@ -1501,7 +1628,9 @@ CanInterface reports whether Interface can be used without panicking.
 				
 			
 				
-				<h3 id="Value.CanSet">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=9186:9214#L278">CanSet</a></h3>
+				<h3 id="Value.CanSet">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=9104:9132#L277">CanSet</a>
+					<a class="permalink" href="index.html#Value.CanSet">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) CanSet() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 CanSet reports whether the value of v can be changed.
@@ -1516,7 +1645,9 @@ setter (e.g., SetBool, SetInt) will panic.
 				
 			
 				
-				<h3 id="Value.Cap">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=20853:20877#L654">Cap</a></h3>
+				<h3 id="Value.Cap">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=20848:20872#L653">Cap</a>
+					<a class="permalink" href="index.html#Value.Cap">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Cap() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Cap returns v&#39;s capacity.
@@ -1528,7 +1659,9 @@ It panics if v&#39;s Kind is not Array, Chan, or Slice.
 				
 			
 				
-				<h3 id="Value.Close">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=21221:21243#L670">Close</a></h3>
+				<h3 id="Value.Close">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=21211:21233#L669">Close</a>
+					<a class="permalink" href="index.html#Value.Close">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Close()</pre>
 				<p>
 Close closes the channel v.
@@ -1540,7 +1673,9 @@ It panics if v&#39;s Kind is not Chan.
 				
 			
 				
-				<h3 id="Value.Complex">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=21423:21458#L678">Complex</a></h3>
+				<h3 id="Value.Complex">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=21413:21448#L677">Complex</a>
+					<a class="permalink" href="index.html#Value.Complex">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Complex() <a href="../builtin/index.html#complex128">complex128</a></pre>
 				<p>
 Complex returns v&#39;s underlying value, as a complex128.
@@ -1552,7 +1687,9 @@ It panics if v&#39;s Kind is not Complex64 or Complex128
 				
 			
 				
-				<h3 id="Value.Convert">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=64136:64172#L2160">Convert</a></h3>
+				<h3 id="Value.Convert">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=64111:64147#L2159">Convert</a>
+					<a class="permalink" href="index.html#Value.Convert">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Convert(t <a href="index.html#Type">Type</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 Convert returns the value v converted to type t.
@@ -1565,7 +1702,9 @@ of the value v to type t, Convert panics.
 				
 			
 				
-				<h3 id="Value.Elem">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=21841:21868#L693">Elem</a></h3>
+				<h3 id="Value.Elem">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=21831:21858#L692">Elem</a>
+					<a class="permalink" href="index.html#Value.Elem">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Elem() <a href="index.html#Value">Value</a></pre>
 				<p>
 Elem returns the value that the interface v contains
@@ -1579,7 +1718,9 @@ It returns the zero Value if v is nil.
 				
 			
 				
-				<h3 id="Value.Field">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=22675:22708#L730">Field</a></h3>
+				<h3 id="Value.Field">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=22665:22698#L729">Field</a>
+					<a class="permalink" href="index.html#Value.Field">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Field(i <a href="../builtin/index.html#int">int</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 Field returns the i&#39;th field of the struct v.
@@ -1591,7 +1732,9 @@ It panics if v&#39;s Kind is not Struct or i is out of range.
 				
 			
 				
-				<h3 id="Value.FieldByIndex">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=23707:23753#L762">FieldByIndex</a></h3>
+				<h3 id="Value.FieldByIndex">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=23707:23753#L761">FieldByIndex</a>
+					<a class="permalink" href="index.html#Value.FieldByIndex">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) FieldByIndex(index []<a href="../builtin/index.html#int">int</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 FieldByIndex returns the nested field corresponding to index.
@@ -1603,7 +1746,9 @@ It panics if v&#39;s Kind is not struct.
 				
 			
 				
-				<h3 id="Value.FieldByName">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=24234:24279#L784">FieldByName</a></h3>
+				<h3 id="Value.FieldByName">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=24234:24279#L783">FieldByName</a>
+					<a class="permalink" href="index.html#Value.FieldByName">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) FieldByName(name <a href="../builtin/index.html#string">string</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 FieldByName returns the struct field with the given name.
@@ -1616,7 +1761,9 @@ It panics if v&#39;s Kind is not struct.
 				
 			
 				
-				<h3 id="Value.FieldByNameFunc">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=24584:24645#L796">FieldByNameFunc</a></h3>
+				<h3 id="Value.FieldByNameFunc">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=24584:24645#L795">FieldByNameFunc</a>
+					<a class="permalink" href="index.html#Value.FieldByNameFunc">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) FieldByNameFunc(match func(<a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#bool">bool</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 FieldByNameFunc returns the struct field with a name
@@ -1630,7 +1777,9 @@ It returns the zero Value if no field was found.
 				
 			
 				
-				<h3 id="Value.Float">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=24855:24885#L805">Float</a></h3>
+				<h3 id="Value.Float">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=24855:24885#L804">Float</a>
+					<a class="permalink" href="index.html#Value.Float">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Float() <a href="../builtin/index.html#float64">float64</a></pre>
 				<p>
 Float returns v&#39;s underlying value, as a float64.
@@ -1642,7 +1791,9 @@ It panics if v&#39;s Kind is not Float32 or Float64
 				
 			
 				
-				<h3 id="Value.Index">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=25225:25258#L820">Index</a></h3>
+				<h3 id="Value.Index">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=25225:25258#L819">Index</a>
+					<a class="permalink" href="index.html#Value.Index">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Index(i <a href="../builtin/index.html#int">int</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 Index returns v&#39;s i&#39;th element.
@@ -1654,7 +1805,9 @@ It panics if v&#39;s Kind is not Array, Slice, or String or i is out of range.
 				
 			
 				
-				<h3 id="Value.Int">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=26729:26755#L866">Int</a></h3>
+				<h3 id="Value.Int">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=26729:26755#L865">Int</a>
+					<a class="permalink" href="index.html#Value.Int">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Int() <a href="../builtin/index.html#int64">int64</a></pre>
 				<p>
 Int returns v&#39;s underlying value, as an int64.
@@ -1666,7 +1819,9 @@ It panics if v&#39;s Kind is not Int, Int8, Int16, Int32, or Int64.
 				
 			
 				
-				<h3 id="Value.Interface">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=27488:27530#L897">Interface</a></h3>
+				<h3 id="Value.Interface">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=27481:27523#L896">Interface</a>
+					<a class="permalink" href="index.html#Value.Interface">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Interface() (i interface{})</pre>
 				<p>
 Interface returns v&#39;s current value as an interface{}.
@@ -1684,7 +1839,9 @@ unexported struct fields.
 				
 			
 				
-				<h3 id="Value.InterfaceData">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=28578:28619#L933">InterfaceData</a></h3>
+				<h3 id="Value.InterfaceData">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=28571:28612#L932">InterfaceData</a>
+					<a class="permalink" href="index.html#Value.InterfaceData">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) InterfaceData() [2]<a href="../builtin/index.html#uintptr">uintptr</a></pre>
 				<p>
 InterfaceData returns the interface v&#39;s value as a uintptr pair.
@@ -1696,7 +1853,9 @@ It panics if v&#39;s Kind is not Interface.
 				
 			
 				
-				<h3 id="Value.IsNil">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=29365:29392#L951">IsNil</a></h3>
+				<h3 id="Value.IsNil">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=29358:29385#L950">IsNil</a>
+					<a class="permalink" href="index.html#Value.IsNil">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) IsNil() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsNil reports whether its argument v is nil. The argument must be
@@ -1713,7 +1872,9 @@ Value.
 				
 			
 				
-				<h3 id="Value.IsValid">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=30133:30162#L976">IsValid</a></h3>
+				<h3 id="Value.IsValid">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=30126:30155#L975">IsValid</a>
+					<a class="permalink" href="index.html#Value.IsValid">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) IsValid() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsValid reports whether v represents a value.
@@ -1728,7 +1889,9 @@ If one does, its documentation states the conditions explicitly.
 				
 			
 				
-				<h3 id="Value.Kind">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=30287:30313#L982">Kind</a></h3>
+				<h3 id="Value.Kind">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=30280:30306#L981">Kind</a>
+					<a class="permalink" href="index.html#Value.Kind">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Kind() <a href="index.html#Kind">Kind</a></pre>
 				<p>
 Kind returns v&#39;s Kind.
@@ -1740,7 +1903,9 @@ If v is the zero Value (IsValid returns false), Kind returns Invalid.
 				
 			
 				
-				<h3 id="Value.Len">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=30431:30455#L988">Len</a></h3>
+				<h3 id="Value.Len">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=30424:30448#L987">Len</a>
+					<a class="permalink" href="index.html#Value.Len">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Len() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Len returns v&#39;s length.
@@ -1752,7 +1917,9 @@ It panics if v&#39;s Kind is not Array, Chan, Map, Slice, or String.
 				
 			
 				
-				<h3 id="Value.MapIndex">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=31167:31207#L1012">MapIndex</a></h3>
+				<h3 id="Value.MapIndex">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=31160:31200#L1011">MapIndex</a>
+					<a class="permalink" href="index.html#Value.MapIndex">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) MapIndex(key <a href="index.html#Value">Value</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 MapIndex returns the value associated with key in the map v.
@@ -1766,7 +1933,9 @@ As in Go, the key&#39;s value must be assignable to the map&#39;s key type.
 				
 			
 				
-				<h3 id="Value.MapKeys">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=32401:32433#L1053">MapKeys</a></h3>
+				<h3 id="Value.MapKeys">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=32392:32424#L1052">MapKeys</a>
+					<a class="permalink" href="index.html#Value.MapKeys">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) MapKeys() []<a href="index.html#Value">Value</a></pre>
 				<p>
 MapKeys returns a slice containing all the keys present in the map,
@@ -1780,7 +1949,9 @@ It returns an empty slice if v represents a nil map.
 				
 			
 				
-				<h3 id="Value.Method">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=33527:33561#L1094">Method</a></h3>
+				<h3 id="Value.Method">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=33517:33551#L1093">Method</a>
+					<a class="permalink" href="index.html#Value.Method">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Method(i <a href="../builtin/index.html#int">int</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 Method returns a function value corresponding to v&#39;s i&#39;th method.
@@ -1794,7 +1965,9 @@ Method panics if i is out of range or if v is a nil interface value.
 				
 			
 				
-				<h3 id="Value.MethodByName">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=34564:34610#L1126">MethodByName</a></h3>
+				<h3 id="Value.MethodByName">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=34554:34600#L1125">MethodByName</a>
+					<a class="permalink" href="index.html#Value.MethodByName">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) MethodByName(name <a href="../builtin/index.html#string">string</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 MethodByName returns a function value corresponding to the method
@@ -1809,7 +1982,9 @@ It returns the zero Value if no method was found.
 				
 			
 				
-				<h3 id="Value.NumField">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=34936:34965#L1142">NumField</a></h3>
+				<h3 id="Value.NumField">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=34926:34955#L1141">NumField</a>
+					<a class="permalink" href="index.html#Value.NumField">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) NumField() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 NumField returns the number of fields in the struct v.
@@ -1821,7 +1996,9 @@ It panics if v&#39;s Kind is not Struct.
 				
 			
 				
-				<h3 id="Value.NumMethod">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=34086:34116#L1111">NumMethod</a></h3>
+				<h3 id="Value.NumMethod">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=34076:34106#L1110">NumMethod</a>
+					<a class="permalink" href="index.html#Value.NumMethod">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) NumMethod() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 NumMethod returns the number of methods in the value&#39;s method set.
@@ -1832,7 +2009,9 @@ NumMethod returns the number of methods in the value&#39;s method set.
 				
 			
 				
-				<h3 id="Value.OverflowComplex">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=35200:35249#L1150">OverflowComplex</a></h3>
+				<h3 id="Value.OverflowComplex">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=35190:35239#L1149">OverflowComplex</a>
+					<a class="permalink" href="index.html#Value.OverflowComplex">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) OverflowComplex(x <a href="../builtin/index.html#complex128">complex128</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 OverflowComplex reports whether the complex128 x cannot be represented by v&#39;s type.
@@ -1844,7 +2023,9 @@ It panics if v&#39;s Kind is not Complex64 or Complex128.
 				
 			
 				
-				<h3 id="Value.OverflowFloat">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=35594:35638#L1163">OverflowFloat</a></h3>
+				<h3 id="Value.OverflowFloat">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=35584:35628#L1162">OverflowFloat</a>
+					<a class="permalink" href="index.html#Value.OverflowFloat">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) OverflowFloat(x <a href="../builtin/index.html#float64">float64</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 OverflowFloat reports whether the float64 x cannot be represented by v&#39;s type.
@@ -1856,7 +2037,9 @@ It panics if v&#39;s Kind is not Float32 or Float64.
 				
 			
 				
-				<h3 id="Value.OverflowInt">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=36071:36111#L1183">OverflowInt</a></h3>
+				<h3 id="Value.OverflowInt">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=36061:36101#L1182">OverflowInt</a>
+					<a class="permalink" href="index.html#Value.OverflowInt">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) OverflowInt(x <a href="../builtin/index.html#int64">int64</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 OverflowInt reports whether the int64 x cannot be represented by v&#39;s type.
@@ -1868,7 +2051,9 @@ It panics if v&#39;s Kind is not Int, Int8, int16, Int32, or Int64.
 				
 			
 				
-				<h3 id="Value.OverflowUint">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=36504:36546#L1196">OverflowUint</a></h3>
+				<h3 id="Value.OverflowUint">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=36494:36536#L1195">OverflowUint</a>
+					<a class="permalink" href="index.html#Value.OverflowUint">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) OverflowUint(x <a href="../builtin/index.html#uint64">uint64</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 OverflowUint reports whether the uint64 x cannot be represented by v&#39;s type.
@@ -1880,7 +2065,9 @@ It panics if v&#39;s Kind is not Uint, Uintptr, Uint8, Uint16, Uint32, or Uint64
 				
 			
 				
-				<h3 id="Value.Pointer">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=37518:37550#L1221">Pointer</a></h3>
+				<h3 id="Value.Pointer">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=37507:37539#L1220">Pointer</a>
+					<a class="permalink" href="index.html#Value.Pointer">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Pointer() <a href="../builtin/index.html#uintptr">uintptr</a></pre>
 				<p>
 Pointer returns v&#39;s value as a uintptr.
@@ -1897,7 +2084,7 @@ result is zero if and only if v is a nil func Value.
 </p>
 <p>
 If v&#39;s Kind is Slice, the returned pointer is to the first
-element of the slice.  If the slice is nil the returned value
+element of the slice. If the slice is nil the returned value
 is 0.  If the slice is empty but non-nil the return value is non-zero.
 </p>
 
@@ -1906,7 +2093,9 @@ is 0.  If the slice is empty but non-nil the return value is non-zero.
 				
 			
 				
-				<h3 id="Value.Recv">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=38726:38766#L1257">Recv</a></h3>
+				<h3 id="Value.Recv">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=38715:38755#L1256">Recv</a>
+					<a class="permalink" href="index.html#Value.Recv">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Recv() (x <a href="index.html#Value">Value</a>, ok <a href="../builtin/index.html#bool">bool</a>)</pre>
 				<p>
 Recv receives and returns a value from the channel v.
@@ -1921,7 +2110,9 @@ on the channel, false if it is a zero value received because the channel is clos
 				
 			
 				
-				<h3 id="Value.Send">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=39580:39608#L1290">Send</a></h3>
+				<h3 id="Value.Send">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=39569:39597#L1289">Send</a>
+					<a class="permalink" href="index.html#Value.Send">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Send(x <a href="index.html#Value">Value</a>)</pre>
 				<p>
 Send sends x on the channel v.
@@ -1934,7 +2125,9 @@ As in Go, x&#39;s value must be assignable to the channel&#39;s element type.
 				
 			
 				
-				<h3 id="Value.Set">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=40271:40298#L1317">Set</a></h3>
+				<h3 id="Value.Set">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=40260:40287#L1316">Set</a>
+					<a class="permalink" href="index.html#Value.Set">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Set(x <a href="index.html#Value">Value</a>)</pre>
 				<p>
 Set assigns x to the value v.
@@ -1947,7 +2140,9 @@ As in Go, x&#39;s value must be assignable to v&#39;s type.
 				
 			
 				
-				<h3 id="Value.SetBool">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=40712:40742#L1334">SetBool</a></h3>
+				<h3 id="Value.SetBool">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=40701:40731#L1333">SetBool</a>
+					<a class="permalink" href="index.html#Value.SetBool">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) SetBool(x <a href="../builtin/index.html#bool">bool</a>)</pre>
 				<p>
 SetBool sets v&#39;s underlying value.
@@ -1959,7 +2154,9 @@ It panics if v&#39;s Kind is not Bool or if CanSet() is false.
 				
 			
 				
-				<h3 id="Value.SetBytes">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=40908:40941#L1342">SetBytes</a></h3>
+				<h3 id="Value.SetBytes">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=40897:40930#L1341">SetBytes</a>
+					<a class="permalink" href="index.html#Value.SetBytes">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) SetBytes(x []<a href="../builtin/index.html#byte">byte</a>)</pre>
 				<p>
 SetBytes sets v&#39;s underlying value.
@@ -1971,7 +2168,9 @@ It panics if v&#39;s underlying value is not a slice of bytes.
 				
 			
 				
-				<h3 id="Value.SetCap">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=43138:43166#L1426">SetCap</a></h3>
+				<h3 id="Value.SetCap">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=43127:43155#L1425">SetCap</a>
+					<a class="permalink" href="index.html#Value.SetCap">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) SetCap(n <a href="../builtin/index.html#int">int</a>)</pre>
 				<p>
 SetCap sets v&#39;s capacity to n.
@@ -1984,7 +2183,9 @@ greater than the capacity of the slice.
 				
 			
 				
-				<h3 id="Value.SetComplex">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=41528:41567#L1364">SetComplex</a></h3>
+				<h3 id="Value.SetComplex">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=41517:41556#L1363">SetComplex</a>
+					<a class="permalink" href="index.html#Value.SetComplex">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) SetComplex(x <a href="../builtin/index.html#complex128">complex128</a>)</pre>
 				<p>
 SetComplex sets v&#39;s underlying value to x.
@@ -1996,7 +2197,9 @@ It panics if v&#39;s Kind is not Complex64 or Complex128, or if CanSet() is fals
 				
 			
 				
-				<h3 id="Value.SetFloat">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=41916:41950#L1378">SetFloat</a></h3>
+				<h3 id="Value.SetFloat">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=41905:41939#L1377">SetFloat</a>
+					<a class="permalink" href="index.html#Value.SetFloat">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) SetFloat(x <a href="../builtin/index.html#float64">float64</a>)</pre>
 				<p>
 SetFloat sets v&#39;s underlying value to x.
@@ -2008,7 +2211,9 @@ It panics if v&#39;s Kind is not Float32 or Float64, or if CanSet() is false.
 				
 			
 				
-				<h3 id="Value.SetInt">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=42298:42328#L1392">SetInt</a></h3>
+				<h3 id="Value.SetInt">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=42287:42317#L1391">SetInt</a>
+					<a class="permalink" href="index.html#Value.SetInt">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) SetInt(x <a href="../builtin/index.html#int64">int64</a>)</pre>
 				<p>
 SetInt sets v&#39;s underlying value to x.
@@ -2020,7 +2225,9 @@ It panics if v&#39;s Kind is not Int, Int8, Int16, Int32, or Int64, or if CanSet
 				
 			
 				
-				<h3 id="Value.SetLen">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=42786:42814#L1413">SetLen</a></h3>
+				<h3 id="Value.SetLen">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=42775:42803#L1412">SetLen</a>
+					<a class="permalink" href="index.html#Value.SetLen">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) SetLen(n <a href="../builtin/index.html#int">int</a>)</pre>
 				<p>
 SetLen sets v&#39;s length to n.
@@ -2033,7 +2240,9 @@ greater than the capacity of the slice.
 				
 			
 				
-				<h3 id="Value.SetMapIndex">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=43718:43760#L1442">SetMapIndex</a></h3>
+				<h3 id="Value.SetMapIndex">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=43697:43739#L1441">SetMapIndex</a>
+					<a class="permalink" href="index.html#Value.SetMapIndex">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) SetMapIndex(key, val <a href="index.html#Value">Value</a>)</pre>
 				<p>
 SetMapIndex sets the value associated with key in the map v to val.
@@ -2049,7 +2258,9 @@ and val&#39;s value must be assignable to the map&#39;s value type.
 				
 			
 				
-				<h3 id="Value.SetPointer">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=45002:45045#L1493">SetPointer</a></h3>
+				<h3 id="Value.SetPointer">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=44981:45024#L1492">SetPointer</a>
+					<a class="permalink" href="index.html#Value.SetPointer">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) SetPointer(x <a href="../unsafe/index.html">unsafe</a>.<a href="../unsafe/index.html#Pointer">Pointer</a>)</pre>
 				<p>
 SetPointer sets the unsafe.Pointer value v to x.
@@ -2061,7 +2272,9 @@ It panics if v&#39;s Kind is not UnsafePointer.
 				
 			
 				
-				<h3 id="Value.SetString">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=45238:45272#L1501">SetString</a></h3>
+				<h3 id="Value.SetString">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=45217:45251#L1500">SetString</a>
+					<a class="permalink" href="index.html#Value.SetString">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) SetString(x <a href="../builtin/index.html#string">string</a>)</pre>
 				<p>
 SetString sets v&#39;s underlying value to x.
@@ -2073,7 +2286,9 @@ It panics if v&#39;s Kind is not String or if CanSet() is false.
 				
 			
 				
-				<h3 id="Value.SetUint">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=44485:44517#L1471">SetUint</a></h3>
+				<h3 id="Value.SetUint">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=44464:44496#L1470">SetUint</a>
+					<a class="permalink" href="index.html#Value.SetUint">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) SetUint(x <a href="../builtin/index.html#uint64">uint64</a>)</pre>
 				<p>
 SetUint sets v&#39;s underlying value to x.
@@ -2085,7 +2300,9 @@ It panics if v&#39;s Kind is not Uint, Uintptr, Uint8, Uint16, Uint32, or Uint64
 				
 			
 				
-				<h3 id="Value.Slice">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=45497:45533#L1510">Slice</a></h3>
+				<h3 id="Value.Slice">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=45476:45512#L1509">Slice</a>
+					<a class="permalink" href="index.html#Value.Slice">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Slice(i, j <a href="../builtin/index.html#int">int</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 Slice returns v[i:j].
@@ -2098,7 +2315,9 @@ or if the indexes are out of bounds.
 				
 			
 				
-				<h3 id="Value.Slice3">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=47067:47107#L1569">Slice3</a></h3>
+				<h3 id="Value.Slice3">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=47030:47070#L1568">Slice3</a>
+					<a class="permalink" href="index.html#Value.Slice3">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Slice3(i, j, k <a href="../builtin/index.html#int">int</a>) <a href="index.html#Value">Value</a></pre>
 				<p>
 Slice3 is the 3-index form of the slice operation: it returns v[i:j:k].
@@ -2111,7 +2330,9 @@ or if the indexes are out of bounds.
 				
 			
 				
-				<h3 id="Value.String">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=48638:48668#L1624">String</a></h3>
+				<h3 id="Value.String">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=48601:48631#L1623">String</a>
+					<a class="permalink" href="index.html#Value.String">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 String returns the string v&#39;s underlying value, as a string.
@@ -2127,7 +2348,9 @@ method implicitly but instead prints the concrete values they hold.
 				
 			
 				
-				<h3 id="Value.TryRecv">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=49338:49381#L1641">TryRecv</a></h3>
+				<h3 id="Value.TryRecv">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=49301:49344#L1640">TryRecv</a>
+					<a class="permalink" href="index.html#Value.TryRecv">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) TryRecv() (x <a href="index.html#Value">Value</a>, ok <a href="../builtin/index.html#bool">bool</a>)</pre>
 				<p>
 TryRecv attempts to receive a value from the channel v but will not block.
@@ -2142,7 +2365,9 @@ If the channel is closed, x is the zero value for the channel&#39;s element type
 				
 			
 				
-				<h3 id="Value.TrySend">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=49664:49700#L1651">TrySend</a></h3>
+				<h3 id="Value.TrySend">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=49627:49663#L1650">TrySend</a>
+					<a class="permalink" href="index.html#Value.TrySend">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) TrySend(x <a href="index.html#Value">Value</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 TrySend attempts to send x on the channel v but will not block.
@@ -2156,7 +2381,9 @@ As in Go, x&#39;s value must be assignable to the channel&#39;s element type.
 				
 			
 				
-				<h3 id="Value.Type">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=49792:49818#L1658">Type</a></h3>
+				<h3 id="Value.Type">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=49755:49781#L1657">Type</a>
+					<a class="permalink" href="index.html#Value.Type">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Type() <a href="index.html#Type">Type</a></pre>
 				<p>
 Type returns v&#39;s type.
@@ -2167,7 +2394,9 @@ Type returns v&#39;s type.
 				
 			
 				
-				<h3 id="Value.Uint">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=50654:50682#L1691">Uint</a></h3>
+				<h3 id="Value.Uint">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=50642:50670#L1690">Uint</a>
+					<a class="permalink" href="index.html#Value.Uint">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) Uint() <a href="../builtin/index.html#uint64">uint64</a></pre>
 				<p>
 Uint returns v&#39;s underlying value, as a uint64.
@@ -2179,7 +2408,9 @@ It panics if v&#39;s Kind is not Uint, Uintptr, Uint8, Uint16, Uint32, or Uint64
 				
 			
 				
-				<h3 id="Value.UnsafeAddr">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=51200:51235#L1714">UnsafeAddr</a></h3>
+				<h3 id="Value.UnsafeAddr">func (Value) <a href="http://localhost:9090/src/reflect/value.go?s=51180:51215#L1713">UnsafeAddr</a>
+					<a class="permalink" href="index.html#Value.UnsafeAddr">&#xb6;</a>
+				</h3>
 				<pre>func (v <a href="index.html#Value">Value</a>) UnsafeAddr() <a href="../builtin/index.html#uintptr">uintptr</a></pre>
 				<p>
 UnsafeAddr returns a pointer to v&#39;s data.
@@ -2194,14 +2425,16 @@ It panics if v is not addressable.
 		
 			
 			
-			<h2 id="ValueError">type <a href="http://localhost:9090/src/reflect/value.go?s=5024:5078#L141">ValueError</a></h2>
+			<h2 id="ValueError">type <a href="http://localhost:9090/src/reflect/value.go?s=4943:4997#L140">ValueError</a>
+				<a class="permalink" href="index.html#ValueError">&#xb6;</a>
+			</h2>
 			<pre>type ValueError struct {
     Method <a href="../builtin/index.html#string">string</a>
     Kind   <a href="index.html#Kind">Kind</a>
 }</pre>
 			<p>
 A ValueError occurs when a Value method is invoked on
-a Value that does not support it.  Such cases are documented
+a Value that does not support it. Such cases are documented
 in the description of each method.
 </p>
 
@@ -2218,7 +2451,9 @@ in the description of each method.
 
 			
 				
-				<h3 id="ValueError.Error">func (*ValueError) <a href="http://localhost:9090/src/reflect/value.go?s=5080:5115#L146">Error</a></h3>
+				<h3 id="ValueError.Error">func (*ValueError) <a href="http://localhost:9090/src/reflect/value.go?s=4999:5034#L145">Error</a>
+					<a class="permalink" href="index.html#ValueError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#ValueError">ValueError</a>) Error() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2233,13 +2468,15 @@ in the description of each method.
 			<h2 id="pkg-note-BUG">Bugs</h2>
 			<ul style="list-style: none; padding: 0;">
 			
-			<li><a href="http://localhost:9090/src/reflect/type.go?s=6711:7216#L185">&#x261e;</a> FieldByName and related functions consider struct field names to be equal
+			<li><a href="http://localhost:9090/src/reflect/type.go?s=6705:7210#L185" style="float: left;">&#x261e;</a> <p>
+FieldByName and related functions consider struct field names to be equal
 if the names are equal, even if they are unexported names originating
 in different packages. The practical effect of this is that the result of
 t.FieldByName(&#34;x&#34;) is not well defined if the struct type t contains
 multiple fields named x (embedded from different packages).
 FieldByName may return one of the fields named x or may report that there are none.
 See golang.org/issue/4876 for more details.
+</p>
 </li>
 			
 			</ul>
@@ -2253,7 +2490,7 @@ See golang.org/issue/4876 for more details.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -2271,6 +2508,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

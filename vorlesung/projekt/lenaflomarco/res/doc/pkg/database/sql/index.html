@@ -384,7 +384,9 @@ defers this error until a Scan.
 		
 			
 			
-			<h2 id="Drivers">func <a href="http://localhost:9090/src/database/sql/sql.go?s=1388:1411#L48">Drivers</a></h2>
+			<h2 id="Drivers">func <a href="http://localhost:9090/src/database/sql/sql.go?s=1388:1411#L48">Drivers</a>
+				<a class="permalink" href="index.html#Drivers">&#xb6;</a>
+			</h2>
 			<pre>func Drivers() []<a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 Drivers returns a sorted list of the names of the registered drivers.
@@ -396,7 +398,9 @@ Drivers returns a sorted list of the names of the registered drivers.
 		
 			
 			
-			<h2 id="Register">func <a href="http://localhost:9090/src/database/sql/sql.go?s=902:950#L28">Register</a></h2>
+			<h2 id="Register">func <a href="http://localhost:9090/src/database/sql/sql.go?s=902:950#L28">Register</a>
+				<a class="permalink" href="index.html#Register">&#xb6;</a>
+			</h2>
 			<pre>func Register(name <a href="../../builtin/index.html#string">string</a>, driver <a href="driver/index.html">driver</a>.<a href="driver/index.html#Driver">Driver</a>)</pre>
 			<p>
 Register makes a database driver available by the provided name.
@@ -411,7 +415,9 @@ it panics.
 		
 			
 			
-			<h2 id="DB">type <a href="http://localhost:9090/src/database/sql/sql.go?s=5829:6970#L214">DB</a></h2>
+			<h2 id="DB">type <a href="http://localhost:9090/src/database/sql/sql.go?s=5828:6969#L214">DB</a>
+				<a class="permalink" href="index.html#DB">&#xb6;</a>
+			</h2>
 			<pre>type DB struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -442,7 +448,9 @@ can be controlled with SetMaxIdleConns.
 
 			
 				
-				<h3 id="Open">func <a href="http://localhost:9090/src/database/sql/sql.go?s=13549:13606#L470">Open</a></h3>
+				<h3 id="Open">func <a href="http://localhost:9090/src/database/sql/sql.go?s=13548:13605#L470">Open</a>
+					<a class="permalink" href="index.html#Open">&#xb6;</a>
+				</h3>
 				<pre>func Open(driverName, dataSourceName <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#DB">DB</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Open opens a database specified by its database driver name and a
@@ -473,7 +481,9 @@ close a DB.
 
 			
 				
-				<h3 id="DB.Begin">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=30174:30208#L1138">Begin</a></h3>
+				<h3 id="DB.Begin">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=30060:30094#L1139">Begin</a>
+					<a class="permalink" href="index.html#DB.Begin">&#xb6;</a>
+				</h3>
 				<pre>func (db *<a href="index.html#DB">DB</a>) Begin() (*<a href="index.html#Tx">Tx</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Begin starts a transaction. The isolation level is dependent on
@@ -485,7 +495,9 @@ the driver.
 				
 			
 				
-				<h3 id="DB.Close">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=14543:14570#L505">Close</a></h3>
+				<h3 id="DB.Close">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=14542:14569#L505">Close</a>
+					<a class="permalink" href="index.html#DB.Close">&#xb6;</a>
+				</h3>
 				<pre>func (db *<a href="index.html#DB">DB</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the database, releasing any open resources.
@@ -500,7 +512,9 @@ long-lived and shared between many goroutines.
 				
 			
 				
-				<h3 id="DB.Driver">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=30811:30847#L1173">Driver</a></h3>
+				<h3 id="DB.Driver">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=30697:30733#L1174">Driver</a>
+					<a class="permalink" href="index.html#DB.Driver">&#xb6;</a>
+				</h3>
 				<pre>func (db *<a href="index.html#DB">DB</a>) Driver() <a href="driver/index.html">driver</a>.<a href="driver/index.html#Driver">Driver</a></pre>
 				<p>
 Driver returns the database&#39;s underlying driver.
@@ -511,7 +525,9 @@ Driver returns the database&#39;s underlying driver.
 				
 			
 				
-				<h3 id="DB.Exec">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=26758:26827#L995">Exec</a></h3>
+				<h3 id="DB.Exec">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=26644:26713#L996">Exec</a>
+					<a class="permalink" href="index.html#DB.Exec">&#xb6;</a>
+				</h3>
 				<pre>func (db *<a href="index.html#DB">DB</a>) Exec(query <a href="../../builtin/index.html#string">string</a>, args ...interface{}) (<a href="index.html#Result">Result</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Exec executes a query without returning any rows.
@@ -523,7 +539,9 @@ The args are for any placeholder parameters in the query.
 				
 			
 				
-				<h3 id="DB.Ping">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=14098:14124#L489">Ping</a></h3>
+				<h3 id="DB.Ping">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=14097:14123#L489">Ping</a>
+					<a class="permalink" href="index.html#DB.Ping">&#xb6;</a>
+				</h3>
 				<pre>func (db *<a href="index.html#DB">DB</a>) Ping() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Ping verifies a connection to the database is still alive,
@@ -535,7 +553,9 @@ establishing a connection if necessary.
 				
 			
 				
-				<h3 id="DB.Prepare">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=25486:25536#L949">Prepare</a></h3>
+				<h3 id="DB.Prepare">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=25372:25422#L950">Prepare</a>
+					<a class="permalink" href="index.html#DB.Prepare">&#xb6;</a>
+				</h3>
 				<pre>func (db *<a href="index.html#DB">DB</a>) Prepare(query <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#Stmt">Stmt</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Prepare creates a prepared statement for later queries or executions.
@@ -550,7 +570,9 @@ when the statement is no longer needed.
 				
 			
 				
-				<h3 id="DB.Query">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=27955:28024#L1047">Query</a></h3>
+				<h3 id="DB.Query">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=27841:27910#L1048">Query</a>
+					<a class="permalink" href="index.html#DB.Query">&#xb6;</a>
+				</h3>
 				<pre>func (db *<a href="index.html#DB">DB</a>) Query(query <a href="../../builtin/index.html#string">string</a>, args ...interface{}) (*<a href="index.html#Rows">Rows</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Query executes a query that returns rows, typically a SELECT.
@@ -562,7 +584,9 @@ The args are for any placeholder parameters in the query.
 				
 			
 				
-				<h3 id="DB.QueryRow">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=29950:30012#L1131">QueryRow</a></h3>
+				<h3 id="DB.QueryRow">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=29836:29898#L1132">QueryRow</a>
+					<a class="permalink" href="index.html#DB.QueryRow">&#xb6;</a>
+				</h3>
 				<pre>func (db *<a href="index.html#DB">DB</a>) QueryRow(query <a href="../../builtin/index.html#string">string</a>, args ...interface{}) *<a href="index.html#Row">Row</a></pre>
 				<p>
 QueryRow executes a query that is expected to return at most one row.
@@ -575,7 +599,9 @@ Row&#39;s Scan method is called.
 				
 			
 				
-				<h3 id="DB.SetConnMaxLifetime">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=16957:17006#L608">SetConnMaxLifetime</a></h3>
+				<h3 id="DB.SetConnMaxLifetime">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=16956:17005#L608">SetConnMaxLifetime</a>
+					<a class="permalink" href="index.html#DB.SetConnMaxLifetime">&#xb6;</a>
+				</h3>
 				<pre>func (db *<a href="index.html#DB">DB</a>) SetConnMaxLifetime(d <a href="../../time/index.html">time</a>.<a href="../../time/index.html#Duration">Duration</a>)</pre>
 				<p>
 SetConnMaxLifetime sets the maximum amount of time a connection may be reused.
@@ -592,7 +618,9 @@ If d &lt;= 0, connections are reused forever.
 				
 			
 				
-				<h3 id="DB.SetMaxIdleConns">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=15641:15677#L557">SetMaxIdleConns</a></h3>
+				<h3 id="DB.SetMaxIdleConns">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=15640:15676#L557">SetMaxIdleConns</a>
+					<a class="permalink" href="index.html#DB.SetMaxIdleConns">&#xb6;</a>
+				</h3>
 				<pre>func (db *<a href="index.html#DB">DB</a>) SetMaxIdleConns(n <a href="../../builtin/index.html#int">int</a>)</pre>
 				<p>
 SetMaxIdleConns sets the maximum number of connections in the idle
@@ -611,7 +639,9 @@ If n &lt;= 0, no idle connections are retained.
 				
 			
 				
-				<h3 id="DB.SetMaxOpenConns">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=16529:16565#L590">SetMaxOpenConns</a></h3>
+				<h3 id="DB.SetMaxOpenConns">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=16528:16564#L590">SetMaxOpenConns</a>
+					<a class="permalink" href="index.html#DB.SetMaxOpenConns">&#xb6;</a>
+				</h3>
 				<pre>func (db *<a href="index.html#DB">DB</a>) SetMaxOpenConns(n <a href="../../builtin/index.html#int">int</a>)</pre>
 				<p>
 SetMaxOpenConns sets the maximum number of open connections to the database.
@@ -631,7 +661,9 @@ The default is 0 (unlimited).
 				
 			
 				
-				<h3 id="DB.Stats">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=18606:18635#L688">Stats</a></h3>
+				<h3 id="DB.Stats">func (*DB) <a href="http://localhost:9090/src/database/sql/sql.go?s=18605:18634#L688">Stats</a>
+					<a class="permalink" href="index.html#DB.Stats">&#xb6;</a>
+				</h3>
 				<pre>func (db *<a href="index.html#DB">DB</a>) Stats() <a href="index.html#DBStats">DBStats</a></pre>
 				<p>
 Stats returns database statistics.
@@ -644,7 +676,9 @@ Stats returns database statistics.
 		
 			
 			
-			<h2 id="DBStats">type <a href="http://localhost:9090/src/database/sql/sql.go?s=18451:18566#L682">DBStats</a></h2>
+			<h2 id="DBStats">type <a href="http://localhost:9090/src/database/sql/sql.go?s=18450:18565#L682">DBStats</a>
+				<a class="permalink" href="index.html#DBStats">&#xb6;</a>
+			</h2>
 			<pre>type DBStats struct {
     <span class="comment">// OpenConnections is the number of open connections to the database.</span>
     OpenConnections <a href="../../builtin/index.html#int">int</a>
@@ -668,7 +702,9 @@ DBStats contains database statistics.
 		
 			
 			
-			<h2 id="NullBool">type <a href="http://localhost:9090/src/database/sql/sql.go?s=4055:4140#L155">NullBool</a></h2>
+			<h2 id="NullBool">type <a href="http://localhost:9090/src/database/sql/sql.go?s=4055:4140#L155">NullBool</a>
+				<a class="permalink" href="index.html#NullBool">&#xb6;</a>
+			</h2>
 			<pre>type NullBool struct {
     Bool  <a href="../../builtin/index.html#bool">bool</a>
     Valid <a href="../../builtin/index.html#bool">bool</a> <span class="comment">// Valid is true if Bool is not NULL</span>
@@ -692,7 +728,9 @@ it can be used as a scan destination, similar to NullString.
 
 			
 				
-				<h3 id="NullBool.Scan">func (*NullBool) <a href="http://localhost:9090/src/database/sql/sql.go?s=4184:4232#L161">Scan</a></h3>
+				<h3 id="NullBool.Scan">func (*NullBool) <a href="http://localhost:9090/src/database/sql/sql.go?s=4184:4232#L161">Scan</a>
+					<a class="permalink" href="index.html#NullBool.Scan">&#xb6;</a>
+				</h3>
 				<pre>func (n *<a href="index.html#NullBool">NullBool</a>) Scan(value interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Scan implements the Scanner interface.
@@ -703,7 +741,9 @@ Scan implements the Scanner interface.
 				
 			
 				
-				<h3 id="NullBool.Value">func (NullBool) <a href="http://localhost:9090/src/database/sql/sql.go?s=4409:4456#L171">Value</a></h3>
+				<h3 id="NullBool.Value">func (NullBool) <a href="http://localhost:9090/src/database/sql/sql.go?s=4409:4456#L171">Value</a>
+					<a class="permalink" href="index.html#NullBool.Value">&#xb6;</a>
+				</h3>
 				<pre>func (n <a href="index.html#NullBool">NullBool</a>) Value() (<a href="driver/index.html">driver</a>.<a href="driver/index.html#Value">Value</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Value implements the driver Valuer interface.
@@ -716,7 +756,9 @@ Value implements the driver Valuer interface.
 		
 			
 			
-			<h2 id="NullFloat64">type <a href="http://localhost:9090/src/database/sql/sql.go?s=3408:3506#L129">NullFloat64</a></h2>
+			<h2 id="NullFloat64">type <a href="http://localhost:9090/src/database/sql/sql.go?s=3408:3506#L129">NullFloat64</a>
+				<a class="permalink" href="index.html#NullFloat64">&#xb6;</a>
+			</h2>
 			<pre>type NullFloat64 struct {
     Float64 <a href="../../builtin/index.html#float64">float64</a>
     Valid   <a href="../../builtin/index.html#bool">bool</a> <span class="comment">// Valid is true if Float64 is not NULL</span>
@@ -740,7 +782,9 @@ it can be used as a scan destination, similar to NullString.
 
 			
 				
-				<h3 id="NullFloat64.Scan">func (*NullFloat64) <a href="http://localhost:9090/src/database/sql/sql.go?s=3550:3601#L135">Scan</a></h3>
+				<h3 id="NullFloat64.Scan">func (*NullFloat64) <a href="http://localhost:9090/src/database/sql/sql.go?s=3550:3601#L135">Scan</a>
+					<a class="permalink" href="index.html#NullFloat64.Scan">&#xb6;</a>
+				</h3>
 				<pre>func (n *<a href="index.html#NullFloat64">NullFloat64</a>) Scan(value interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Scan implements the Scanner interface.
@@ -751,7 +795,9 @@ Scan implements the Scanner interface.
 				
 			
 				
-				<h3 id="NullFloat64.Value">func (NullFloat64) <a href="http://localhost:9090/src/database/sql/sql.go?s=3780:3830#L145">Value</a></h3>
+				<h3 id="NullFloat64.Value">func (NullFloat64) <a href="http://localhost:9090/src/database/sql/sql.go?s=3780:3830#L145">Value</a>
+					<a class="permalink" href="index.html#NullFloat64.Value">&#xb6;</a>
+				</h3>
 				<pre>func (n <a href="index.html#NullFloat64">NullFloat64</a>) Value() (<a href="driver/index.html">driver</a>.<a href="driver/index.html#Value">Value</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Value implements the driver Valuer interface.
@@ -764,7 +810,9 @@ Value implements the driver Valuer interface.
 		
 			
 			
-			<h2 id="NullInt64">type <a href="http://localhost:9090/src/database/sql/sql.go?s=2772:2860#L103">NullInt64</a></h2>
+			<h2 id="NullInt64">type <a href="http://localhost:9090/src/database/sql/sql.go?s=2772:2860#L103">NullInt64</a>
+				<a class="permalink" href="index.html#NullInt64">&#xb6;</a>
+			</h2>
 			<pre>type NullInt64 struct {
     Int64 <a href="../../builtin/index.html#int64">int64</a>
     Valid <a href="../../builtin/index.html#bool">bool</a> <span class="comment">// Valid is true if Int64 is not NULL</span>
@@ -788,7 +836,9 @@ it can be used as a scan destination, similar to NullString.
 
 			
 				
-				<h3 id="NullInt64.Scan">func (*NullInt64) <a href="http://localhost:9090/src/database/sql/sql.go?s=2904:2953#L109">Scan</a></h3>
+				<h3 id="NullInt64.Scan">func (*NullInt64) <a href="http://localhost:9090/src/database/sql/sql.go?s=2904:2953#L109">Scan</a>
+					<a class="permalink" href="index.html#NullInt64.Scan">&#xb6;</a>
+				</h3>
 				<pre>func (n *<a href="index.html#NullInt64">NullInt64</a>) Scan(value interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Scan implements the Scanner interface.
@@ -799,7 +849,9 @@ Scan implements the Scanner interface.
 				
 			
 				
-				<h3 id="NullInt64.Value">func (NullInt64) <a href="http://localhost:9090/src/database/sql/sql.go?s=3128:3176#L119">Value</a></h3>
+				<h3 id="NullInt64.Value">func (NullInt64) <a href="http://localhost:9090/src/database/sql/sql.go?s=3128:3176#L119">Value</a>
+					<a class="permalink" href="index.html#NullInt64.Value">&#xb6;</a>
+				</h3>
 				<pre>func (n <a href="index.html#NullInt64">NullInt64</a>) Value() (<a href="driver/index.html">driver</a>.<a href="driver/index.html#Value">Value</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Value implements the driver Valuer interface.
@@ -812,7 +864,9 @@ Value implements the driver Valuer interface.
 		
 			
 			
-			<h2 id="NullString">type <a href="http://localhost:9090/src/database/sql/sql.go?s=2122:2215#L77">NullString</a></h2>
+			<h2 id="NullString">type <a href="http://localhost:9090/src/database/sql/sql.go?s=2122:2215#L77">NullString</a>
+				<a class="permalink" href="index.html#NullString">&#xb6;</a>
+			</h2>
 			<pre>type NullString struct {
     String <a href="../../builtin/index.html#string">string</a>
     Valid  <a href="../../builtin/index.html#bool">bool</a> <span class="comment">// Valid is true if String is not NULL</span>
@@ -845,7 +899,9 @@ if s.Valid {
 
 			
 				
-				<h3 id="NullString.Scan">func (*NullString) <a href="http://localhost:9090/src/database/sql/sql.go?s=2259:2310#L83">Scan</a></h3>
+				<h3 id="NullString.Scan">func (*NullString) <a href="http://localhost:9090/src/database/sql/sql.go?s=2259:2310#L83">Scan</a>
+					<a class="permalink" href="index.html#NullString.Scan">&#xb6;</a>
+				</h3>
 				<pre>func (ns *<a href="index.html#NullString">NullString</a>) Scan(value interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Scan implements the Scanner interface.
@@ -856,7 +912,9 @@ Scan implements the Scanner interface.
 				
 			
 				
-				<h3 id="NullString.Value">func (NullString) <a href="http://localhost:9090/src/database/sql/sql.go?s=2492:2542#L93">Value</a></h3>
+				<h3 id="NullString.Value">func (NullString) <a href="http://localhost:9090/src/database/sql/sql.go?s=2492:2542#L93">Value</a>
+					<a class="permalink" href="index.html#NullString.Value">&#xb6;</a>
+				</h3>
 				<pre>func (ns <a href="index.html#NullString">NullString</a>) Value() (<a href="driver/index.html">driver</a>.<a href="driver/index.html#Value">Value</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Value implements the driver Valuer interface.
@@ -869,7 +927,9 @@ Value implements the driver Valuer interface.
 		
 			
 			
-			<h2 id="RawBytes">type <a href="http://localhost:9090/src/database/sql/sql.go?s=1771:1791#L62">RawBytes</a></h2>
+			<h2 id="RawBytes">type <a href="http://localhost:9090/src/database/sql/sql.go?s=1771:1791#L62">RawBytes</a>
+				<a class="permalink" href="index.html#RawBytes">&#xb6;</a>
+			</h2>
 			<pre>type RawBytes []<a href="../../builtin/index.html#byte">byte</a></pre>
 			<p>
 RawBytes is a byte slice that holds a reference to memory owned by
@@ -892,7 +952,9 @@ valid until the next call to Next, Scan, or Close.
 		
 			
 			
-			<h2 id="Result">type <a href="http://localhost:9090/src/database/sql/sql.go?s=50998:51504#L1924">Result</a></h2>
+			<h2 id="Result">type <a href="http://localhost:9090/src/database/sql/sql.go?s=50875:51381#L1925">Result</a>
+				<a class="permalink" href="index.html#Result">&#xb6;</a>
+			</h2>
 			<pre>type Result interface {
     <span class="comment">// LastInsertId returns the integer generated by the database</span>
     <span class="comment">// in response to a command. Typically this will be from an</span>
@@ -925,7 +987,9 @@ A Result summarizes an executed SQL command.
 		
 			
 			
-			<h2 id="Row">type <a href="http://localhost:9090/src/database/sql/sql.go?s=49261:49378#L1869">Row</a></h2>
+			<h2 id="Row">type <a href="http://localhost:9090/src/database/sql/sql.go?s=49140:49257#L1870">Row</a>
+				<a class="permalink" href="index.html#Row">&#xb6;</a>
+			</h2>
 			<pre>type Row struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -946,7 +1010,9 @@ Row is the result of calling QueryRow to select a single row.
 
 			
 				
-				<h3 id="Row.Scan">func (*Row) <a href="http://localhost:9090/src/database/sql/sql.go?s=49664:49709#L1880">Scan</a></h3>
+				<h3 id="Row.Scan">func (*Row) <a href="http://localhost:9090/src/database/sql/sql.go?s=49543:49588#L1881">Scan</a>
+					<a class="permalink" href="index.html#Row.Scan">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#Row">Row</a>) Scan(dest ...interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Scan copies the columns from the matched row into the values
@@ -963,7 +1029,9 @@ the query, Scan returns ErrNoRows.
 		
 			
 			
-			<h2 id="Rows">type <a href="http://localhost:9090/src/database/sql/sql.go?s=44282:44598#L1723">Rows</a></h2>
+			<h2 id="Rows">type <a href="http://localhost:9090/src/database/sql/sql.go?s=44163:44479#L1724">Rows</a>
+				<a class="permalink" href="index.html#Rows">&#xb6;</a>
+			</h2>
 			<pre>type Rows struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -997,7 +1065,9 @@ err = rows.Err() // get any error encountered during iteration
 
 			
 				
-				<h3 id="Rows.Close">func (*Rows) <a href="http://localhost:9090/src/database/sql/sql.go?s=48946:48975#L1852">Close</a></h3>
+				<h3 id="Rows.Close">func (*Rows) <a href="http://localhost:9090/src/database/sql/sql.go?s=48825:48854#L1853">Close</a>
+					<a class="permalink" href="index.html#Rows.Close">&#xb6;</a>
+				</h3>
 				<pre>func (rs *<a href="index.html#Rows">Rows</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the Rows, preventing further enumeration. If Next returns
@@ -1010,7 +1080,9 @@ result of Err. Close is idempotent and does not affect the result of Err.
 				
 			
 				
-				<h3 id="Rows.Columns">func (*Rows) <a href="http://localhost:9090/src/database/sql/sql.go?s=45584:45627#L1767">Columns</a></h3>
+				<h3 id="Rows.Columns">func (*Rows) <a href="http://localhost:9090/src/database/sql/sql.go?s=45463:45506#L1768">Columns</a>
+					<a class="permalink" href="index.html#Rows.Columns">&#xb6;</a>
+				</h3>
 				<pre>func (rs *<a href="index.html#Rows">Rows</a>) Columns() ([]<a href="../../builtin/index.html#string">string</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Columns returns the column names.
@@ -1023,7 +1095,9 @@ are from QueryRow and there was a deferred error.
 				
 			
 				
-				<h3 id="Rows.Err">func (*Rows) <a href="http://localhost:9090/src/database/sql/sql.go?s=45332:45359#L1757">Err</a></h3>
+				<h3 id="Rows.Err">func (*Rows) <a href="http://localhost:9090/src/database/sql/sql.go?s=45211:45238#L1758">Err</a>
+					<a class="permalink" href="index.html#Rows.Err">&#xb6;</a>
+				</h3>
 				<pre>func (rs *<a href="index.html#Rows">Rows</a>) Err() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Err returns the error, if any, that was encountered during iteration.
@@ -1035,12 +1109,14 @@ Err may be called after an explicit or implicit Close.
 				
 			
 				
-				<h3 id="Rows.Next">func (*Rows) <a href="http://localhost:9090/src/database/sql/sql.go?s=44935:44962#L1740">Next</a></h3>
+				<h3 id="Rows.Next">func (*Rows) <a href="http://localhost:9090/src/database/sql/sql.go?s=44814:44841#L1741">Next</a>
+					<a class="permalink" href="index.html#Rows.Next">&#xb6;</a>
+				</h3>
 				<pre>func (rs *<a href="index.html#Rows">Rows</a>) Next() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
-Next prepares the next result row for reading with the Scan method.  It
+Next prepares the next result row for reading with the Scan method. It
 returns true on success, or false if there is no next result row or an error
-happened while preparing it.  Err should be consulted to distinguish between
+happened while preparing it. Err should be consulted to distinguish between
 the two cases.
 </p>
 <p>
@@ -1052,7 +1128,9 @@ Every call to Scan, even the first one, must be preceded by a call to Next.
 				
 			
 				
-				<h3 id="Rows.Scan">func (*Rows) <a href="http://localhost:9090/src/database/sql/sql.go?s=48150:48197#L1828">Scan</a></h3>
+				<h3 id="Rows.Scan">func (*Rows) <a href="http://localhost:9090/src/database/sql/sql.go?s=48029:48076#L1829">Scan</a>
+					<a class="permalink" href="index.html#Rows.Scan">&#xb6;</a>
+				</h3>
 				<pre>func (rs *<a href="index.html#Rows">Rows</a>) Scan(dest ...interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Scan copies the columns in the current row into the values pointed
@@ -1123,7 +1201,9 @@ string inputs parseable by strconv.ParseBool.
 		
 			
 			
-			<h2 id="Scanner">type <a href="http://localhost:9090/src/database/sql/sql.go?s=4559:4942#L179">Scanner</a></h2>
+			<h2 id="Scanner">type <a href="http://localhost:9090/src/database/sql/sql.go?s=4559:4941#L179">Scanner</a>
+				<a class="permalink" href="index.html#Scanner">&#xb6;</a>
+			</h2>
 			<pre>type Scanner interface {
     <span class="comment">// Scan assigns a value from a database driver.</span>
     <span class="comment">//</span>
@@ -1137,7 +1217,7 @@ string inputs parseable by strconv.ParseBool.
     <span class="comment">//    time.Time</span>
     <span class="comment">//    nil - for NULL values</span>
     <span class="comment">//</span>
-    <span class="comment">// An error should be returned if the value can not be stored</span>
+    <span class="comment">// An error should be returned if the value cannot be stored</span>
     <span class="comment">// without loss of information.</span>
     Scan(src interface{}) <a href="../../builtin/index.html#error">error</a>
 }</pre>
@@ -1160,7 +1240,9 @@ Scanner is an interface used by Scan.
 		
 			
 			
-			<h2 id="Stmt">type <a href="http://localhost:9090/src/database/sql/sql.go?s=36980:37778#L1418">Stmt</a></h2>
+			<h2 id="Stmt">type <a href="http://localhost:9090/src/database/sql/sql.go?s=36863:37659#L1419">Stmt</a>
+				<a class="permalink" href="index.html#Stmt">&#xb6;</a>
+			</h2>
 			<pre>type Stmt struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -1182,7 +1264,9 @@ A Stmt is safe for concurrent use by multiple goroutines.
 
 			
 				
-				<h3 id="Stmt.Close">func (*Stmt) <a href="http://localhost:9090/src/database/sql/sql.go?s=43295:43323#L1672">Close</a></h3>
+				<h3 id="Stmt.Close">func (*Stmt) <a href="http://localhost:9090/src/database/sql/sql.go?s=43176:43204#L1673">Close</a>
+					<a class="permalink" href="index.html#Stmt.Close">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Stmt">Stmt</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the statement.
@@ -1193,7 +1277,9 @@ Close closes the statement.
 				
 			
 				
-				<h3 id="Stmt.Exec">func (*Stmt) <a href="http://localhost:9090/src/database/sql/sql.go?s=37908:37964#L1446">Exec</a></h3>
+				<h3 id="Stmt.Exec">func (*Stmt) <a href="http://localhost:9090/src/database/sql/sql.go?s=37789:37845#L1447">Exec</a>
+					<a class="permalink" href="index.html#Stmt.Exec">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Stmt">Stmt</a>) Exec(args ...interface{}) (<a href="index.html#Result">Result</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Exec executes a prepared statement with the given arguments and
@@ -1205,7 +1291,9 @@ returns a Result summarizing the effect of the statement.
 				
 			
 				
-				<h3 id="Stmt.Query">func (*Stmt) <a href="http://localhost:9090/src/database/sql/sql.go?s=41189:41245#L1587">Query</a></h3>
+				<h3 id="Stmt.Query">func (*Stmt) <a href="http://localhost:9090/src/database/sql/sql.go?s=41070:41126#L1588">Query</a>
+					<a class="permalink" href="index.html#Stmt.Query">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Stmt">Stmt</a>) Query(args ...interface{}) (*<a href="index.html#Rows">Rows</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Query executes a prepared query statement with the given arguments
@@ -1217,7 +1305,9 @@ and returns the query results as a *Rows.
 				
 			
 				
-				<h3 id="Stmt.QueryRow">func (*Stmt) <a href="http://localhost:9090/src/database/sql/sql.go?s=43109:43158#L1663">QueryRow</a></h3>
+				<h3 id="Stmt.QueryRow">func (*Stmt) <a href="http://localhost:9090/src/database/sql/sql.go?s=42990:43039#L1664">QueryRow</a>
+					<a class="permalink" href="index.html#Stmt.QueryRow">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Stmt">Stmt</a>) QueryRow(args ...interface{}) *<a href="index.html#Row">Row</a></pre>
 				<p>
 QueryRow executes a prepared query statement with the given arguments.
@@ -1241,7 +1331,9 @@ err := nameByUseridStmt.QueryRow(id).Scan(&amp;name)
 		
 			
 			
-			<h2 id="Tx">type <a href="http://localhost:9090/src/database/sql/sql.go?s=31234:31711#L1187">Tx</a></h2>
+			<h2 id="Tx">type <a href="http://localhost:9090/src/database/sql/sql.go?s=31120:31596#L1188">Tx</a>
+				<a class="permalink" href="index.html#Tx">&#xb6;</a>
+			</h2>
 			<pre>type Tx struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -1274,7 +1366,9 @@ by the call to Commit or Rollback.
 
 			
 				
-				<h3 id="Tx.Commit">func (*Tx) <a href="http://localhost:9090/src/database/sql/sql.go?s=32289:32317#L1237">Commit</a></h3>
+				<h3 id="Tx.Commit">func (*Tx) <a href="http://localhost:9090/src/database/sql/sql.go?s=32174:32202#L1238">Commit</a>
+					<a class="permalink" href="index.html#Tx.Commit">&#xb6;</a>
+				</h3>
 				<pre>func (tx *<a href="index.html#Tx">Tx</a>) Commit() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Commit commits the transaction.
@@ -1285,7 +1379,9 @@ Commit commits the transaction.
 				
 			
 				
-				<h3 id="Tx.Exec">func (*Tx) <a href="http://localhost:9090/src/database/sql/sql.go?s=35514:35583#L1359">Exec</a></h3>
+				<h3 id="Tx.Exec">func (*Tx) <a href="http://localhost:9090/src/database/sql/sql.go?s=35397:35466#L1360">Exec</a>
+					<a class="permalink" href="index.html#Tx.Exec">&#xb6;</a>
+				</h3>
 				<pre>func (tx *<a href="index.html#Tx">Tx</a>) Exec(query <a href="../../builtin/index.html#string">string</a>, args ...interface{}) (<a href="index.html#Result">Result</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Exec executes a query that doesn&#39;t return rows.
@@ -1297,7 +1393,9 @@ For example: an INSERT and UPDATE.
 				
 			
 				
-				<h3 id="Tx.Prepare">func (*Tx) <a href="http://localhost:9090/src/database/sql/sql.go?s=33035:33085#L1272">Prepare</a></h3>
+				<h3 id="Tx.Prepare">func (*Tx) <a href="http://localhost:9090/src/database/sql/sql.go?s=32920:32970#L1273">Prepare</a>
+					<a class="permalink" href="index.html#Tx.Prepare">&#xb6;</a>
+				</h3>
 				<pre>func (tx *<a href="index.html#Tx">Tx</a>) Prepare(query <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#Stmt">Stmt</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Prepare creates a prepared statement for use within a transaction.
@@ -1315,7 +1413,9 @@ To use an existing prepared statement on this transaction, see Tx.Stmt.
 				
 			
 				
-				<h3 id="Tx.Query">func (*Tx) <a href="http://localhost:9090/src/database/sql/sql.go?s=36223:36292#L1393">Query</a></h3>
+				<h3 id="Tx.Query">func (*Tx) <a href="http://localhost:9090/src/database/sql/sql.go?s=36106:36175#L1394">Query</a>
+					<a class="permalink" href="index.html#Tx.Query">&#xb6;</a>
+				</h3>
 				<pre>func (tx *<a href="index.html#Tx">Tx</a>) Query(query <a href="../../builtin/index.html#string">string</a>, args ...interface{}) (*<a href="index.html#Rows">Rows</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Query executes a query that returns rows, typically a SELECT.
@@ -1326,7 +1426,9 @@ Query executes a query that returns rows, typically a SELECT.
 				
 			
 				
-				<h3 id="Tx.QueryRow">func (*Tx) <a href="http://localhost:9090/src/database/sql/sql.go?s=36622:36684#L1405">QueryRow</a></h3>
+				<h3 id="Tx.QueryRow">func (*Tx) <a href="http://localhost:9090/src/database/sql/sql.go?s=36505:36567#L1406">QueryRow</a>
+					<a class="permalink" href="index.html#Tx.QueryRow">&#xb6;</a>
+				</h3>
 				<pre>func (tx *<a href="index.html#Tx">Tx</a>) QueryRow(query <a href="../../builtin/index.html#string">string</a>, args ...interface{}) *<a href="index.html#Row">Row</a></pre>
 				<p>
 QueryRow executes a query that is expected to return at most one row.
@@ -1339,7 +1441,9 @@ Row&#39;s Scan method is called.
 				
 			
 				
-				<h3 id="Tx.Rollback">func (*Tx) <a href="http://localhost:9090/src/database/sql/sql.go?s=32531:32561#L1252">Rollback</a></h3>
+				<h3 id="Tx.Rollback">func (*Tx) <a href="http://localhost:9090/src/database/sql/sql.go?s=32416:32446#L1253">Rollback</a>
+					<a class="permalink" href="index.html#Tx.Rollback">&#xb6;</a>
+				</h3>
 				<pre>func (tx *<a href="index.html#Tx">Tx</a>) Rollback() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Rollback aborts the transaction.
@@ -1350,7 +1454,9 @@ Rollback aborts the transaction.
 				
 			
 				
-				<h3 id="Tx.Stmt">func (*Tx) <a href="http://localhost:9090/src/database/sql/sql.go?s=34663:34699#L1325">Stmt</a></h3>
+				<h3 id="Tx.Stmt">func (*Tx) <a href="http://localhost:9090/src/database/sql/sql.go?s=34547:34583#L1326">Stmt</a>
+					<a class="permalink" href="index.html#Tx.Stmt">&#xb6;</a>
+				</h3>
 				<pre>func (tx *<a href="index.html#Tx">Tx</a>) Stmt(stmt *<a href="index.html#Stmt">Stmt</a>) *<a href="index.html#Stmt">Stmt</a></pre>
 				<p>
 Stmt returns a transaction-specific prepared statement from
@@ -1424,7 +1530,7 @@ be used once the transaction has been committed or rolled back.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1442,6 +1548,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

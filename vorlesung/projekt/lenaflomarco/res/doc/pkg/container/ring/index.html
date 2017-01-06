@@ -200,7 +200,9 @@ Package ring implements operations on circular lists.
 		
 			
 			
-			<h2 id="Ring">type <a href="http://localhost:9090/src/container/ring/ring.go?s=523:633#L4">Ring</a></h2>
+			<h2 id="Ring">type <a href="http://localhost:9090/src/container/ring/ring.go?s=523:633#L4">Ring</a>
+				<a class="permalink" href="index.html#Ring">&#xb6;</a>
+			</h2>
 			<pre>type Ring struct {
     Value interface{} <span class="comment">// for use by client; untouched by this library</span>
     <span class="comment">// contains filtered or unexported fields</span>
@@ -224,7 +226,9 @@ ring with a nil Value.
 
 			
 				
-				<h3 id="New">func <a href="http://localhost:9090/src/container/ring/ring.go?s=1389:1410#L52">New</a></h3>
+				<h3 id="New">func <a href="http://localhost:9090/src/container/ring/ring.go?s=1389:1410#L52">New</a>
+					<a class="permalink" href="index.html#New">&#xb6;</a>
+				</h3>
 				<pre>func New(n <a href="../../builtin/index.html#int">int</a>) *<a href="index.html#Ring">Ring</a></pre>
 				<p>
 New creates a ring of n elements.
@@ -236,7 +240,9 @@ New creates a ring of n elements.
 
 			
 				
-				<h3 id="Ring.Do">func (*Ring) <a href="http://localhost:9090/src/container/ring/ring.go?s=3118:3156#L124">Do</a></h3>
+				<h3 id="Ring.Do">func (*Ring) <a href="http://localhost:9090/src/container/ring/ring.go?s=3118:3156#L124">Do</a>
+					<a class="permalink" href="index.html#Ring.Do">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#Ring">Ring</a>) Do(f func(interface{}))</pre>
 				<p>
 Do calls function f on each element of the ring, in forward order.
@@ -248,7 +254,9 @@ The behavior of Do is undefined if f changes *r.
 				
 			
 				
-				<h3 id="Ring.Len">func (*Ring) <a href="http://localhost:9090/src/container/ring/ring.go?s=2869:2893#L111">Len</a></h3>
+				<h3 id="Ring.Len">func (*Ring) <a href="http://localhost:9090/src/container/ring/ring.go?s=2869:2893#L111">Len</a>
+					<a class="permalink" href="index.html#Ring.Len">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#Ring">Ring</a>) Len() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 Len computes the number of elements in ring r.
@@ -260,7 +268,9 @@ It executes in time proportional to the number of elements.
 				
 			
 				
-				<h3 id="Ring.Link">func (*Ring) <a href="http://localhost:9090/src/container/ring/ring.go?s=2221:2255#L83">Link</a></h3>
+				<h3 id="Ring.Link">func (*Ring) <a href="http://localhost:9090/src/container/ring/ring.go?s=2221:2255#L83">Link</a>
+					<a class="permalink" href="index.html#Ring.Link">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#Ring">Ring</a>) Link(s *<a href="index.html#Ring">Ring</a>) *<a href="index.html#Ring">Ring</a></pre>
 				<p>
 Link connects ring r with ring s such that r.Next()
@@ -287,7 +297,9 @@ last element of s after insertion.
 				
 			
 				
-				<h3 id="Ring.Move">func (*Ring) <a href="http://localhost:9090/src/container/ring/ring.go?s=1146:1178#L34">Move</a></h3>
+				<h3 id="Ring.Move">func (*Ring) <a href="http://localhost:9090/src/container/ring/ring.go?s=1146:1178#L34">Move</a>
+					<a class="permalink" href="index.html#Ring.Move">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#Ring">Ring</a>) Move(n <a href="../../builtin/index.html#int">int</a>) *<a href="index.html#Ring">Ring</a></pre>
 				<p>
 Move moves n % r.Len() elements backward (n &lt; 0) or forward (n &gt;= 0)
@@ -299,7 +311,9 @@ in the ring and returns that ring element. r must not be empty.
 				
 			
 				
-				<h3 id="Ring.Next">func (*Ring) <a href="http://localhost:9090/src/container/ring/ring.go?s=762:789#L16">Next</a></h3>
+				<h3 id="Ring.Next">func (*Ring) <a href="http://localhost:9090/src/container/ring/ring.go?s=762:789#L16">Next</a>
+					<a class="permalink" href="index.html#Ring.Next">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#Ring">Ring</a>) Next() *<a href="index.html#Ring">Ring</a></pre>
 				<p>
 Next returns the next ring element. r must not be empty.
@@ -310,7 +324,9 @@ Next returns the next ring element. r must not be empty.
 				
 			
 				
-				<h3 id="Ring.Prev">func (*Ring) <a href="http://localhost:9090/src/container/ring/ring.go?s=915:942#L24">Prev</a></h3>
+				<h3 id="Ring.Prev">func (*Ring) <a href="http://localhost:9090/src/container/ring/ring.go?s=915:942#L24">Prev</a>
+					<a class="permalink" href="index.html#Ring.Prev">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#Ring">Ring</a>) Prev() *<a href="index.html#Ring">Ring</a></pre>
 				<p>
 Prev returns the previous ring element. r must not be empty.
@@ -321,7 +337,9 @@ Prev returns the previous ring element. r must not be empty.
 				
 			
 				
-				<h3 id="Ring.Unlink">func (*Ring) <a href="http://localhost:9090/src/container/ring/ring.go?s=2654:2688#L101">Unlink</a></h3>
+				<h3 id="Ring.Unlink">func (*Ring) <a href="http://localhost:9090/src/container/ring/ring.go?s=2654:2688#L101">Unlink</a>
+					<a class="permalink" href="index.html#Ring.Unlink">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#Ring">Ring</a>) Unlink(n <a href="../../builtin/index.html#int">int</a>) *<a href="index.html#Ring">Ring</a></pre>
 				<p>
 Unlink removes n % r.Len() elements from the ring r, starting
@@ -345,7 +363,7 @@ The result is the removed subring. r must not be empty.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -363,6 +381,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

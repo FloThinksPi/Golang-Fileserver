@@ -182,6 +182,16 @@ func TestExampleTestSuite(t *testing.T) {
 			
 			
 				
+				<dd><a href="index.html#AfterTest">type AfterTest</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#BeforeTest">type BeforeTest</a></dd>
+				
+				
+			
+				
 				<dd><a href="index.html#SetupAllSuite">type SetupAllSuite</a></dd>
 				
 				
@@ -288,7 +298,9 @@ func TestExampleTestSuite(t *testing.T) {
 		
 			
 			
-			<h2 id="Run">func <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=1500:1542#L49">Run</a></h2>
+			<h2 id="Run">func <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=1500:1542#L49">Run</a>
+				<a class="permalink" href="index.html#Run">&#xb6;</a>
+			</h2>
 			<pre>func Run(t *<a href="../../../../testing/index.html">testing</a>.<a href="../../../../testing/index.html#T">T</a>, suite <a href="index.html#TestingSuite">TestingSuite</a>)</pre>
 			<p>
 Run takes a testing suite and runs all of the tests attached
@@ -302,7 +314,61 @@ to it.
 		
 			
 			
-			<h2 id="SetupAllSuite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=294:340#L4">SetupAllSuite</a></h2>
+			<h2 id="AfterTest">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=1116:1183#L34">AfterTest</a>
+				<a class="permalink" href="index.html#AfterTest">&#xb6;</a>
+			</h2>
+			<pre>type AfterTest interface {
+    AfterTest(suiteName, testName <a href="../../../../builtin/index.html#string">string</a>)
+}</pre>
+			<p>
+AfterTest has a function to be executed right after the test
+finishes and receives the suite and test names as input
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="BeforeTest">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=922:991#L28">BeforeTest</a>
+				<a class="permalink" href="index.html#BeforeTest">&#xb6;</a>
+			</h2>
+			<pre>type BeforeTest interface {
+    BeforeTest(suiteName, testName <a href="../../../../builtin/index.html#string">string</a>)
+}</pre>
+			<p>
+BeforeTest has a function to be executed right before the test
+starts and receives the suite and test names as input
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SetupAllSuite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=294:340#L4">SetupAllSuite</a>
+				<a class="permalink" href="index.html#SetupAllSuite">&#xb6;</a>
+			</h2>
 			<pre>type SetupAllSuite interface {
     SetupSuite()
 }</pre>
@@ -326,7 +392,9 @@ tests in the suite are run.
 		
 			
 			
-			<h2 id="SetupTestSuite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=433:479#L10">SetupTestSuite</a></h2>
+			<h2 id="SetupTestSuite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=433:479#L10">SetupTestSuite</a>
+				<a class="permalink" href="index.html#SetupTestSuite">&#xb6;</a>
+			</h2>
 			<pre>type SetupTestSuite interface {
     SetupTest()
 }</pre>
@@ -350,7 +418,9 @@ test in the suite.
 		
 			
 			
-			<h2 id="Suite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=381:471#L9">Suite</a></h2>
+			<h2 id="Suite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=381:471#L9">Suite</a>
+				<a class="permalink" href="index.html#Suite">&#xb6;</a>
+			</h2>
 			<pre>type Suite struct {
     *<a href="../assert/index.html">assert</a>.<a href="../assert/index.html#Assertions">Assertions</a>
     <span class="comment">// contains filtered or unexported fields</span>
@@ -373,7 +443,9 @@ retrieving the current *testing.T context.
 
 			
 				
-				<h3 id="Suite.Assert">func (*Suite) <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=1272:1319#L40">Assert</a></h3>
+				<h3 id="Suite.Assert">func (*Suite) <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=1272:1319#L40">Assert</a>
+					<a class="permalink" href="index.html#Suite.Assert">&#xb6;</a>
+				</h3>
 				<pre>func (suite *<a href="index.html#Suite">Suite</a>) Assert() *<a href="../assert/index.html">assert</a>.<a href="../assert/index.html#Assertions">Assertions</a></pre>
 				<p>
 Assert returns an assert context for suite.  Normally, you can call
@@ -388,7 +460,9 @@ can call `suite.Assert().NoError()`.
 				
 			
 				
-				<h3 id="Suite.Require">func (*Suite) <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=792:841#L28">Require</a></h3>
+				<h3 id="Suite.Require">func (*Suite) <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=792:841#L28">Require</a>
+					<a class="permalink" href="index.html#Suite.Require">&#xb6;</a>
+				</h3>
 				<pre>func (suite *<a href="index.html#Suite">Suite</a>) Require() *<a href="../require/index.html">require</a>.<a href="../require/index.html#Assertions">Assertions</a></pre>
 				<p>
 Require returns a require context for suite.
@@ -399,7 +473,9 @@ Require returns a require context for suite.
 				
 			
 				
-				<h3 id="Suite.SetT">func (*Suite) <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=621:659#L21">SetT</a></h3>
+				<h3 id="Suite.SetT">func (*Suite) <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=621:659#L21">SetT</a>
+					<a class="permalink" href="index.html#Suite.SetT">&#xb6;</a>
+				</h3>
 				<pre>func (suite *<a href="index.html#Suite">Suite</a>) SetT(t *<a href="../../../../testing/index.html">testing</a>.<a href="../../../../testing/index.html#T">T</a>)</pre>
 				<p>
 SetT sets the current *testing.T context.
@@ -410,7 +486,9 @@ SetT sets the current *testing.T context.
 				
 			
 				
-				<h3 id="Suite.T">func (*Suite) <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=520:554#L16">T</a></h3>
+				<h3 id="Suite.T">func (*Suite) <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/suite.go?s=520:554#L16">T</a>
+					<a class="permalink" href="index.html#Suite.T">&#xb6;</a>
+				</h3>
 				<pre>func (suite *<a href="index.html#Suite">Suite</a>) T() *<a href="../../../../testing/index.html">testing</a>.<a href="../../../../testing/index.html#T">T</a></pre>
 				<p>
 T retrieves the current *testing.T context.
@@ -423,7 +501,9 @@ T retrieves the current *testing.T context.
 		
 			
 			
-			<h2 id="TearDownAllSuite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=595:647#L16">TearDownAllSuite</a></h2>
+			<h2 id="TearDownAllSuite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=595:647#L16">TearDownAllSuite</a>
+				<a class="permalink" href="index.html#TearDownAllSuite">&#xb6;</a>
+			</h2>
 			<pre>type TearDownAllSuite interface {
     TearDownSuite()
 }</pre>
@@ -447,7 +527,9 @@ all the tests in the suite have been run.
 		
 			
 			
-			<h2 id="TearDownTestSuite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=745:797#L22">TearDownTestSuite</a></h2>
+			<h2 id="TearDownTestSuite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=745:797#L22">TearDownTestSuite</a>
+				<a class="permalink" href="index.html#TearDownTestSuite">&#xb6;</a>
+			</h2>
 			<pre>type TearDownTestSuite interface {
     TearDownTest()
 }</pre>
@@ -471,7 +553,9 @@ each test in the suite.
 		
 			
 			
-			<h2 id="TestingSuite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=128:193#L1">TestingSuite</a></h2>
+			<h2 id="TestingSuite">type <a href="http://localhost:9090/src/github.com/stretchr/testify/suite/interfaces.go?s=128:193#L1">TestingSuite</a>
+				<a class="permalink" href="index.html#TestingSuite">&#xb6;</a>
+			</h2>
 			<pre>type TestingSuite interface {
     T() *<a href="../../../../testing/index.html">testing</a>.<a href="../../../../testing/index.html#T">T</a>
     SetT(*<a href="../../../../testing/index.html">testing</a>.<a href="../../../../testing/index.html#T">T</a>)
@@ -505,7 +589,7 @@ generated by &#39;go test&#39;.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -523,6 +607,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../../../lib/godoc/godocs.js"></script>
 
 </body>

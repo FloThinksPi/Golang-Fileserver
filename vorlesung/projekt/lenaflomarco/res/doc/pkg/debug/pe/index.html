@@ -216,6 +216,12 @@ Package pe implements access to PE (Microsoft Windows Portable Executable) files
 			
 				<a href="http://localhost:9090/src/debug/pe/pe.go">pe.go</a>
 			
+				<a href="http://localhost:9090/src/debug/pe/section.go">section.go</a>
+			
+				<a href="http://localhost:9090/src/debug/pe/string.go">string.go</a>
+			
+				<a href="http://localhost:9090/src/debug/pe/symbol.go">symbol.go</a>
+			
 			</span>
 			</p>
 		
@@ -295,7 +301,9 @@ Package pe implements access to PE (Microsoft Windows Portable Executable) files
 		
 			
 			
-			<h2 id="COFFSymbol">type <a href="http://localhost:9090/src/debug/pe/pe.go?s=3115:3302#L94">COFFSymbol</a></h2>
+			<h2 id="COFFSymbol">type <a href="http://localhost:9090/src/debug/pe/symbol.go?s=301:488#L6">COFFSymbol</a>
+				<a class="permalink" href="index.html#COFFSymbol">&#xb6;</a>
+			</h2>
 			<pre>type COFFSymbol struct {
     Name               [8]<a href="../../builtin/index.html#uint8">uint8</a>
     Value              <a href="../../builtin/index.html#uint32">uint32</a>
@@ -304,7 +312,10 @@ Package pe implements access to PE (Microsoft Windows Portable Executable) files
     StorageClass       <a href="../../builtin/index.html#uint8">uint8</a>
     NumberOfAuxSymbols <a href="../../builtin/index.html#uint8">uint8</a>
 }</pre>
-			
+			<p>
+COFFSymbol represents single COFF symbol table record.
+</p>
+
 
 			
 
@@ -320,7 +331,9 @@ Package pe implements access to PE (Microsoft Windows Portable Executable) files
 		
 			
 			
-			<h2 id="DataDirectory">type <a href="http://localhost:9090/src/debug/pe/pe.go?s=404:479#L7">DataDirectory</a></h2>
+			<h2 id="DataDirectory">type <a href="http://localhost:9090/src/debug/pe/pe.go?s=403:478#L7">DataDirectory</a>
+				<a class="permalink" href="index.html#DataDirectory">&#xb6;</a>
+			</h2>
 			<pre>type DataDirectory struct {
     VirtualAddress <a href="../../builtin/index.html#uint32">uint32</a>
     Size           <a href="../../builtin/index.html#uint32">uint32</a>
@@ -341,12 +354,14 @@ Package pe implements access to PE (Microsoft Windows Portable Executable) files
 		
 			
 			
-			<h2 id="File">type <a href="http://localhost:9090/src/debug/pe/file.go?s=382:564#L9">File</a></h2>
+			<h2 id="File">type <a href="http://localhost:9090/src/debug/pe/file.go?s=360:714#L7">File</a>
+				<a class="permalink" href="index.html#File">&#xb6;</a>
+			</h2>
 			<pre>type File struct {
     <a href="index.html#FileHeader">FileHeader</a>
     OptionalHeader interface{} <span class="comment">// of type *OptionalHeader32 or *OptionalHeader64</span>
     Sections       []*<a href="index.html#Section">Section</a>
-    Symbols        []*<a href="index.html#Symbol">Symbol</a>
+    Symbols        []*<a href="index.html#Symbol">Symbol</a> <span class="comment">// COFF symbols with auxiliary symbol records removed</span>
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
@@ -364,7 +379,9 @@ A File represents an open PE file.
 
 			
 				
-				<h3 id="NewFile">func <a href="http://localhost:9090/src/debug/pe/file.go?s=2892:2934#L123">NewFile</a></h3>
+				<h3 id="NewFile">func <a href="http://localhost:9090/src/debug/pe/file.go?s=1599:1641#L53">NewFile</a>
+					<a class="permalink" href="index.html#NewFile">&#xb6;</a>
+				</h3>
 				<pre>func NewFile(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReaderAt">ReaderAt</a>) (*<a href="index.html#File">File</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 NewFile creates a new File for accessing a PE binary in an underlying reader.
@@ -374,7 +391,9 @@ NewFile creates a new File for accessing a PE binary in an underlying reader.
 				
 			
 				
-				<h3 id="Open">func <a href="http://localhost:9090/src/debug/pe/file.go?s=2215:2252#L91">Open</a></h3>
+				<h3 id="Open">func <a href="http://localhost:9090/src/debug/pe/file.go?s=799:836#L19">Open</a>
+					<a class="permalink" href="index.html#Open">&#xb6;</a>
+				</h3>
 				<pre>func Open(name <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#File">File</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Open opens the named file using os.Open and prepares it for use as a PE binary.
@@ -386,7 +405,9 @@ Open opens the named file using os.Open and prepares it for use as a PE binary.
 
 			
 				
-				<h3 id="File.Close">func (*File) <a href="http://localhost:9090/src/debug/pe/file.go?s=2542:2570#L108">Close</a></h3>
+				<h3 id="File.Close">func (*File) <a href="http://localhost:9090/src/debug/pe/file.go?s=1126:1154#L36">Close</a>
+					<a class="permalink" href="index.html#File.Close">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the File.
@@ -399,7 +420,9 @@ Close has no effect.
 				
 			
 				
-				<h3 id="File.DWARF">func (*File) <a href="http://localhost:9090/src/debug/pe/file.go?s=7724:7767#L287">DWARF</a></h3>
+				<h3 id="File.DWARF">func (*File) <a href="http://localhost:9090/src/debug/pe/file.go?s=5777:5820#L206">DWARF</a>
+					<a class="permalink" href="index.html#File.DWARF">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) DWARF() (*<a href="../dwarf/index.html">dwarf</a>.<a href="../dwarf/index.html#Data">Data</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -407,7 +430,9 @@ Close has no effect.
 				
 			
 				
-				<h3 id="File.ImportedLibraries">func (*File) <a href="http://localhost:9090/src/debug/pe/file.go?s=10304:10356#L383">ImportedLibraries</a></h3>
+				<h3 id="File.ImportedLibraries">func (*File) <a href="http://localhost:9090/src/debug/pe/file.go?s=9064:9116#L320">ImportedLibraries</a>
+					<a class="permalink" href="index.html#File.ImportedLibraries">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) ImportedLibraries() ([]<a href="../../builtin/index.html#string">string</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 ImportedLibraries returns the names of all libraries
@@ -420,7 +445,9 @@ linked with the binary at dynamic link time.
 				
 			
 				
-				<h3 id="File.ImportedSymbols">func (*File) <a href="http://localhost:9090/src/debug/pe/file.go?s=8606:8656#L317">ImportedSymbols</a></h3>
+				<h3 id="File.ImportedSymbols">func (*File) <a href="http://localhost:9090/src/debug/pe/file.go?s=6949:6999#L248">ImportedSymbols</a>
+					<a class="permalink" href="index.html#File.ImportedSymbols">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) ImportedSymbols() ([]<a href="../../builtin/index.html#string">string</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 ImportedSymbols returns the names of all symbols
@@ -434,7 +461,9 @@ It does not return weak symbols.
 				
 			
 				
-				<h3 id="File.Section">func (*File) <a href="http://localhost:9090/src/debug/pe/file.go?s=7589:7633#L278">Section</a></h3>
+				<h3 id="File.Section">func (*File) <a href="http://localhost:9090/src/debug/pe/file.go?s=5642:5686#L197">Section</a>
+					<a class="permalink" href="index.html#File.Section">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Section(name <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Section">Section</a></pre>
 				<p>
 Section returns the first section with the given name, or nil if no such
@@ -448,7 +477,9 @@ section exists.
 		
 			
 			
-			<h2 id="FileHeader">type <a href="http://localhost:9090/src/debug/pe/pe.go?s=173:402#L1">FileHeader</a></h2>
+			<h2 id="FileHeader">type <a href="http://localhost:9090/src/debug/pe/pe.go?s=172:401#L1">FileHeader</a>
+				<a class="permalink" href="index.html#FileHeader">&#xb6;</a>
+			</h2>
 			<pre>type FileHeader struct {
     Machine              <a href="../../builtin/index.html#uint16">uint16</a>
     NumberOfSections     <a href="../../builtin/index.html#uint16">uint16</a>
@@ -474,11 +505,16 @@ section exists.
 		
 			
 			
-			<h2 id="FormatError">type <a href="http://localhost:9090/src/debug/pe/file.go?s=1883:1950#L75">FormatError</a></h2>
+			<h2 id="FormatError">type <a href="http://localhost:9090/src/debug/pe/file.go?s=9283:9310#L328">FormatError</a>
+				<a class="permalink" href="index.html#FormatError">&#xb6;</a>
+			</h2>
 			<pre>type FormatError struct {
-    <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
-			
+			<p>
+FormatError is unused.
+The type is retained for compatibility.
+</p>
+
 
 			
 
@@ -492,7 +528,9 @@ section exists.
 
 			
 				
-				<h3 id="FormatError.Error">func (*FormatError) <a href="http://localhost:9090/src/debug/pe/file.go?s=1952:1988#L81">Error</a></h3>
+				<h3 id="FormatError.Error">func (*FormatError) <a href="http://localhost:9090/src/debug/pe/file.go?s=9312:9348#L331">Error</a>
+					<a class="permalink" href="index.html#FormatError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#FormatError">FormatError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -502,7 +540,9 @@ section exists.
 		
 			
 			
-			<h2 id="ImportDirectory">type <a href="http://localhost:9090/src/debug/pe/file.go?s=1330:1509#L52">ImportDirectory</a></h2>
+			<h2 id="ImportDirectory">type <a href="http://localhost:9090/src/debug/pe/file.go?s=6571:6750#L234">ImportDirectory</a>
+				<a class="permalink" href="index.html#ImportDirectory">&#xb6;</a>
+			</h2>
 			<pre>type ImportDirectory struct {
     OriginalFirstThunk <a href="../../builtin/index.html#uint32">uint32</a>
     TimeDateStamp      <a href="../../builtin/index.html#uint32">uint32</a>
@@ -527,7 +567,9 @@ section exists.
 		
 			
 			
-			<h2 id="OptionalHeader32">type <a href="http://localhost:9090/src/debug/pe/pe.go?s=481:1638#L12">OptionalHeader32</a></h2>
+			<h2 id="OptionalHeader32">type <a href="http://localhost:9090/src/debug/pe/pe.go?s=480:1637#L12">OptionalHeader32</a>
+				<a class="permalink" href="index.html#OptionalHeader32">&#xb6;</a>
+			</h2>
 			<pre>type OptionalHeader32 struct {
     Magic                       <a href="../../builtin/index.html#uint16">uint16</a>
     MajorLinkerVersion          <a href="../../builtin/index.html#uint8">uint8</a>
@@ -577,7 +619,9 @@ section exists.
 		
 			
 			
-			<h2 id="OptionalHeader64">type <a href="http://localhost:9090/src/debug/pe/pe.go?s=1640:2761#L46">OptionalHeader64</a></h2>
+			<h2 id="OptionalHeader64">type <a href="http://localhost:9090/src/debug/pe/pe.go?s=1639:2760#L46">OptionalHeader64</a>
+				<a class="permalink" href="index.html#OptionalHeader64">&#xb6;</a>
+			</h2>
 			<pre>type OptionalHeader64 struct {
     Magic                       <a href="../../builtin/index.html#uint16">uint16</a>
     MajorLinkerVersion          <a href="../../builtin/index.html#uint8">uint8</a>
@@ -626,7 +670,9 @@ section exists.
 		
 			
 			
-			<h2 id="Section">type <a href="http://localhost:9090/src/debug/pe/file.go?s=887:1196#L31">Section</a></h2>
+			<h2 id="Section">type <a href="http://localhost:9090/src/debug/pe/section.go?s=2253:2580#L74">Section</a>
+				<a class="permalink" href="index.html#Section">&#xb6;</a>
+			</h2>
 			<pre>type Section struct {
     <a href="index.html#SectionHeader">SectionHeader</a>
 
@@ -639,7 +685,10 @@ section exists.
     <a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReaderAt">ReaderAt</a>
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
-			
+			<p>
+Section provides access to PE COFF section.
+</p>
+
 
 			
 
@@ -653,10 +702,12 @@ section exists.
 
 			
 				
-				<h3 id="Section.Data">func (*Section) <a href="http://localhost:9090/src/debug/pe/file.go?s=1569:1609#L63">Data</a></h3>
+				<h3 id="Section.Data">func (*Section) <a href="http://localhost:9090/src/debug/pe/section.go?s=2642:2682#L89">Data</a>
+					<a class="permalink" href="index.html#Section.Data">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Section">Section</a>) Data() ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
-Data reads and returns the contents of the PE section.
+Data reads and returns the contents of the PE section s.
 </p>
 
 				
@@ -664,10 +715,12 @@ Data reads and returns the contents of the PE section.
 				
 			
 				
-				<h3 id="Section.Open">func (*Section) <a href="http://localhost:9090/src/debug/pe/file.go?s=1794:1832#L73">Open</a></h3>
+				<h3 id="Section.Open">func (*Section) <a href="http://localhost:9090/src/debug/pe/section.go?s=2869:2907#L99">Open</a>
+					<a class="permalink" href="index.html#Section.Open">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Section">Section</a>) Open() <a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReadSeeker">ReadSeeker</a></pre>
 				<p>
-Open returns a new ReadSeeker reading the PE section.
+Open returns a new ReadSeeker reading the PE section s.
 </p>
 
 				
@@ -677,7 +730,9 @@ Open returns a new ReadSeeker reading the PE section.
 		
 			
 			
-			<h2 id="SectionHeader">type <a href="http://localhost:9090/src/debug/pe/file.go?s=566:885#L18">SectionHeader</a></h2>
+			<h2 id="SectionHeader">type <a href="http://localhost:9090/src/debug/pe/section.go?s=1885:2204#L60">SectionHeader</a>
+				<a class="permalink" href="index.html#SectionHeader">&#xb6;</a>
+			</h2>
 			<pre>type SectionHeader struct {
     Name                 <a href="../../builtin/index.html#string">string</a>
     VirtualSize          <a href="../../builtin/index.html#uint32">uint32</a>
@@ -690,7 +745,11 @@ Open returns a new ReadSeeker reading the PE section.
     NumberOfLineNumbers  <a href="../../builtin/index.html#uint16">uint16</a>
     Characteristics      <a href="../../builtin/index.html#uint32">uint32</a>
 }</pre>
-			
+			<p>
+SectionHeader is similar to SectionHeader32 with Name
+field replaced by Go string.
+</p>
+
 
 			
 
@@ -706,7 +765,9 @@ Open returns a new ReadSeeker reading the PE section.
 		
 			
 			
-			<h2 id="SectionHeader32">type <a href="http://localhost:9090/src/debug/pe/pe.go?s=2763:3086#L79">SectionHeader32</a></h2>
+			<h2 id="SectionHeader32">type <a href="http://localhost:9090/src/debug/pe/section.go?s=286:609#L5">SectionHeader32</a>
+				<a class="permalink" href="index.html#SectionHeader32">&#xb6;</a>
+			</h2>
 			<pre>type SectionHeader32 struct {
     Name                 [8]<a href="../../builtin/index.html#uint8">uint8</a>
     VirtualSize          <a href="../../builtin/index.html#uint32">uint32</a>
@@ -719,7 +780,10 @@ Open returns a new ReadSeeker reading the PE section.
     NumberOfLineNumbers  <a href="../../builtin/index.html#uint16">uint16</a>
     Characteristics      <a href="../../builtin/index.html#uint32">uint32</a>
 }</pre>
-			
+			<p>
+SectionHeader32 represents real PE COFF section header.
+</p>
+
 
 			
 
@@ -735,7 +799,9 @@ Open returns a new ReadSeeker reading the PE section.
 		
 			
 			
-			<h2 id="Symbol">type <a href="http://localhost:9090/src/debug/pe/file.go?s=1198:1328#L44">Symbol</a></h2>
+			<h2 id="Symbol">type <a href="http://localhost:9090/src/debug/pe/symbol.go?s=2299:2429#L79">Symbol</a>
+				<a class="permalink" href="index.html#Symbol">&#xb6;</a>
+			</h2>
 			<pre>type Symbol struct {
     Name          <a href="../../builtin/index.html#string">string</a>
     Value         <a href="../../builtin/index.html#uint32">uint32</a>
@@ -743,7 +809,11 @@ Open returns a new ReadSeeker reading the PE section.
     Type          <a href="../../builtin/index.html#uint16">uint16</a>
     StorageClass  <a href="../../builtin/index.html#uint8">uint8</a>
 }</pre>
-			
+			<p>
+Symbol is similar to COFFSymbol with Name field replaced
+by Go string. Symbol also does not have NumberOfAuxSymbols.
+</p>
+
 
 			
 
@@ -768,7 +838,7 @@ Open returns a new ReadSeeker reading the PE section.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -786,6 +856,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

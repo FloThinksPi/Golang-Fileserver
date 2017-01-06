@@ -91,8 +91,8 @@
 				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
 				<p>
 Package sync provides basic synchronization primitives such as mutual
-exclusion locks.  Other than the Once and WaitGroup types, most are intended
-for use by low-level library routines.  Higher-level synchronization is
+exclusion locks. Other than the Once and WaitGroup types, most are intended
+for use by low-level library routines. Higher-level synchronization is
 better done via channels and communication.
 </p>
 <p>
@@ -277,8 +277,11 @@ Values containing the types defined in this package should not be copied.
 		
 			
 			
-			<h2 id="Cond">type <a href="http://localhost:9090/src/sync/cond.go?s=626:789#L13">Cond</a></h2>
+			<h2 id="Cond">type <a href="http://localhost:9090/src/sync/cond.go?s=609:753#L12">Cond</a>
+				<a class="permalink" href="index.html#Cond">&#xb6;</a>
+			</h2>
 			<pre>type Cond struct {
+
     <span class="comment">// L is held while observing or changing the condition</span>
     L <a href="index.html#Locker">Locker</a>
     <span class="comment">// contains filtered or unexported fields</span>
@@ -309,7 +312,9 @@ A Cond must not be copied after first use.
 
 			
 				
-				<h3 id="NewCond">func <a href="http://localhost:9090/src/sync/cond.go?s=836:864#L23">NewCond</a></h3>
+				<h3 id="NewCond">func <a href="http://localhost:9090/src/sync/cond.go?s=800:828#L23">NewCond</a>
+					<a class="permalink" href="index.html#NewCond">&#xb6;</a>
+				</h3>
 				<pre>func NewCond(l <a href="index.html#Locker">Locker</a>) *<a href="index.html#Cond">Cond</a></pre>
 				<p>
 NewCond returns a new Cond with Locker l.
@@ -321,7 +326,9 @@ NewCond returns a new Cond with Locker l.
 
 			
 				
-				<h3 id="Cond.Broadcast">func (*Cond) <a href="http://localhost:9090/src/sync/cond.go?s=1988:2014#L69">Broadcast</a></h3>
+				<h3 id="Cond.Broadcast">func (*Cond) <a href="http://localhost:9090/src/sync/cond.go?s=1921:1947#L64">Broadcast</a>
+					<a class="permalink" href="index.html#Cond.Broadcast">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Cond">Cond</a>) Broadcast()</pre>
 				<p>
 Broadcast wakes all goroutines waiting on c.
@@ -336,7 +343,9 @@ during the call.
 				
 			
 				
-				<h3 id="Cond.Signal">func (*Cond) <a href="http://localhost:9090/src/sync/cond.go?s=1806:1829#L61">Signal</a></h3>
+				<h3 id="Cond.Signal">func (*Cond) <a href="http://localhost:9090/src/sync/cond.go?s=1701:1724#L55">Signal</a>
+					<a class="permalink" href="index.html#Cond.Signal">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Cond">Cond</a>) Signal()</pre>
 				<p>
 Signal wakes one goroutine waiting on c, if there is any.
@@ -351,18 +360,20 @@ during the call.
 				
 			
 				
-				<h3 id="Cond.Wait">func (*Cond) <a href="http://localhost:9090/src/sync/cond.go?s=1446:1467#L43">Wait</a></h3>
+				<h3 id="Cond.Wait">func (*Cond) <a href="http://localhost:9090/src/sync/cond.go?s=1407:1428#L43">Wait</a>
+					<a class="permalink" href="index.html#Cond.Wait">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Cond">Cond</a>) Wait()</pre>
 				<p>
 Wait atomically unlocks c.L and suspends execution
-of the calling goroutine.  After later resuming execution,
-Wait locks c.L before returning.  Unlike in other systems,
+of the calling goroutine. After later resuming execution,
+Wait locks c.L before returning. Unlike in other systems,
 Wait cannot return unless awoken by Broadcast or Signal.
 </p>
 <p>
 Because c.L is not locked when Wait first resumes, the caller
 typically cannot assume that the condition is true when
-Wait returns.  Instead, the caller should Wait in a loop:
+Wait returns. Instead, the caller should Wait in a loop:
 </p>
 <pre>c.L.Lock()
 for !condition() {
@@ -379,7 +390,9 @@ c.L.Unlock()
 		
 			
 			
-			<h2 id="Locker">type <a href="http://localhost:9090/src/sync/mutex.go?s=845:888#L18">Locker</a></h2>
+			<h2 id="Locker">type <a href="http://localhost:9090/src/sync/mutex.go?s=893:936#L20">Locker</a>
+				<a class="permalink" href="index.html#Locker">&#xb6;</a>
+			</h2>
 			<pre>type Locker interface {
     Lock()
     Unlock()
@@ -403,7 +416,9 @@ A Locker represents an object that can be locked and unlocked.
 		
 			
 			
-			<h2 id="Mutex">type <a href="http://localhost:9090/src/sync/mutex.go?s=729:777#L12">Mutex</a></h2>
+			<h2 id="Mutex">type <a href="http://localhost:9090/src/sync/mutex.go?s=777:825#L14">Mutex</a>
+				<a class="permalink" href="index.html#Mutex">&#xb6;</a>
+			</h2>
 			<pre>type Mutex struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -411,6 +426,9 @@ A Locker represents an object that can be locked and unlocked.
 A Mutex is a mutual exclusion lock.
 Mutexes can be created as part of other structures;
 the zero value for a Mutex is an unlocked mutex.
+</p>
+<p>
+A Mutex must not be copied after first use.
 </p>
 
 
@@ -426,7 +444,9 @@ the zero value for a Mutex is an unlocked mutex.
 
 			
 				
-				<h3 id="Mutex.Lock">func (*Mutex) <a href="http://localhost:9090/src/sync/mutex.go?s=1095:1117#L32">Lock</a></h3>
+				<h3 id="Mutex.Lock">func (*Mutex) <a href="http://localhost:9090/src/sync/mutex.go?s=1143:1165#L34">Lock</a>
+					<a class="permalink" href="index.html#Mutex.Lock">&#xb6;</a>
+				</h3>
 				<pre>func (m *<a href="index.html#Mutex">Mutex</a>) Lock()</pre>
 				<p>
 Lock locks m.
@@ -439,7 +459,9 @@ blocks until the mutex is available.
 				
 			
 				
-				<h3 id="Mutex.Unlock">func (*Mutex) <a href="http://localhost:9090/src/sync/mutex.go?s=2502:2526#L90">Unlock</a></h3>
+				<h3 id="Mutex.Unlock">func (*Mutex) <a href="http://localhost:9090/src/sync/mutex.go?s=2550:2574#L92">Unlock</a>
+					<a class="permalink" href="index.html#Mutex.Unlock">&#xb6;</a>
+				</h3>
 				<pre>func (m *<a href="index.html#Mutex">Mutex</a>) Unlock()</pre>
 				<p>
 Unlock unlocks m.
@@ -458,7 +480,9 @@ arrange for another goroutine to unlock it.
 		
 			
 			
-			<h2 id="Once">type <a href="http://localhost:9090/src/sync/once.go?s=260:305#L2">Once</a></h2>
+			<h2 id="Once">type <a href="http://localhost:9090/src/sync/once.go?s=260:305#L2">Once</a>
+				<a class="permalink" href="index.html#Once">&#xb6;</a>
+			</h2>
 			<pre>type Once struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -479,7 +503,9 @@ Once is an object that will perform exactly one action.
 
 			
 				
-				<h3 id="Once.Do">func (*Once) <a href="http://localhost:9090/src/sync/once.go?s=1139:1166#L25">Do</a></h3>
+				<h3 id="Once.Do">func (*Once) <a href="http://localhost:9090/src/sync/once.go?s=1137:1164#L25">Do</a>
+					<a class="permalink" href="index.html#Once.Do">&#xb6;</a>
+				</h3>
 				<pre>func (o *<a href="index.html#Once">Once</a>) Do(f func())</pre>
 				<p>
 Do calls the function f if and only if Do is being called for the
@@ -489,11 +515,11 @@ first time for this instance of Once. In other words, given
 </pre>
 <p>
 if once.Do(f) is called multiple times, only the first call will invoke f,
-even if f has a different value in each invocation.  A new instance of
+even if f has a different value in each invocation. A new instance of
 Once is required for each function to execute.
 </p>
 <p>
-Do is intended for initialization that must be run exactly once.  Since f
+Do is intended for initialization that must be run exactly once. Since f
 is niladic, it may be necessary to use a function literal to capture the
 arguments to a function to be invoked by Do:
 </p>
@@ -515,7 +541,9 @@ without calling f.
 		
 			
 			
-			<h2 id="Pool">type <a href="http://localhost:9090/src/sync/pool.go?s=1587:1930#L33">Pool</a></h2>
+			<h2 id="Pool">type <a href="http://localhost:9090/src/sync/pool.go?s=1633:1992#L34">Pool</a>
+				<a class="permalink" href="index.html#Pool">&#xb6;</a>
+			</h2>
 			<pre>type Pool struct {
 
     <span class="comment">// New optionally specifies a function to generate</span>
@@ -560,6 +588,9 @@ not a suitable use for a Pool, since the overhead does not amortize well in
 that scenario. It is more efficient to have such objects implement their own
 free list.
 </p>
+<p>
+A Pool must not be copied after first use.
+</p>
 
 
 			
@@ -574,7 +605,9 @@ free list.
 
 			
 				
-				<h3 id="Pool.Get">func (*Pool) <a href="http://localhost:9090/src/sync/pool.go?s=3041:3073#L84">Get</a></h3>
+				<h3 id="Pool.Get">func (*Pool) <a href="http://localhost:9090/src/sync/pool.go?s=3103:3135#L87">Get</a>
+					<a class="permalink" href="index.html#Pool.Get">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Pool">Pool</a>) Get() interface{}</pre>
 				<p>
 Get selects an arbitrary item from the Pool, removes it from the
@@ -593,7 +626,9 @@ the result of calling p.New.
 				
 			
 				
-				<h3 id="Pool.Put">func (*Pool) <a href="http://localhost:9090/src/sync/pool.go?s=2221:2254#L52">Put</a></h3>
+				<h3 id="Pool.Put">func (*Pool) <a href="http://localhost:9090/src/sync/pool.go?s=2283:2316#L55">Put</a>
+					<a class="permalink" href="index.html#Pool.Put">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Pool">Pool</a>) Put(x interface{})</pre>
 				<p>
 Put adds x to the pool.
@@ -606,17 +641,27 @@ Put adds x to the pool.
 		
 			
 			
-			<h2 id="RWMutex">type <a href="http://localhost:9090/src/sync/rwmutex.go?s=479:811#L9">RWMutex</a></h2>
+			<h2 id="RWMutex">type <a href="http://localhost:9090/src/sync/rwmutex.go?s=894:1226#L15">RWMutex</a>
+				<a class="permalink" href="index.html#RWMutex">&#xb6;</a>
+			</h2>
 			<pre>type RWMutex struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
 An RWMutex is a reader/writer mutual exclusion lock.
-The lock can be held by an arbitrary number of readers
-or a single writer.
-RWMutexes can be created as part of other
-structures; the zero value for a RWMutex is
-an unlocked mutex.
+The lock can be held by an arbitrary number of readers or a single writer.
+RWMutexes can be created as part of other structures;
+the zero value for a RWMutex is an unlocked mutex.
+</p>
+<p>
+An RWMutex must not be copied after first use.
+</p>
+<p>
+If a goroutine holds a RWMutex for reading, it must not expect this or any
+other goroutine to be able to also take the read lock until the first read
+lock is released. In particular, this prohibits recursive read locking.
+This is to ensure that the lock eventually becomes available;
+a blocked Lock call excludes new readers from acquiring the lock.
 </p>
 
 
@@ -632,15 +677,14 @@ an unlocked mutex.
 
 			
 				
-				<h3 id="RWMutex.Lock">func (*RWMutex) <a href="http://localhost:9090/src/sync/rwmutex.go?s=2113:2138#L67">Lock</a></h3>
+				<h3 id="RWMutex.Lock">func (*RWMutex) <a href="http://localhost:9090/src/sync/rwmutex.go?s=2399:2424#L70">Lock</a>
+					<a class="permalink" href="index.html#RWMutex.Lock">&#xb6;</a>
+				</h3>
 				<pre>func (rw *<a href="index.html#RWMutex">RWMutex</a>) Lock()</pre>
 				<p>
 Lock locks rw for writing.
 If the lock is already locked for reading or writing,
 Lock blocks until the lock is available.
-To ensure that the lock eventually becomes available,
-a blocked Lock call excludes new readers from acquiring
-the lock.
 </p>
 
 				
@@ -648,7 +692,9 @@ the lock.
 				
 			
 				
-				<h3 id="RWMutex.RLock">func (*RWMutex) <a href="http://localhost:9090/src/sync/rwmutex.go?s=879:905#L20">RLock</a></h3>
+				<h3 id="RWMutex.RLock">func (*RWMutex) <a href="http://localhost:9090/src/sync/rwmutex.go?s=1294:1320#L26">RLock</a>
+					<a class="permalink" href="index.html#RWMutex.RLock">&#xb6;</a>
+				</h3>
 				<pre>func (rw *<a href="index.html#RWMutex">RWMutex</a>) RLock()</pre>
 				<p>
 RLock locks rw for reading.
@@ -659,7 +705,9 @@ RLock locks rw for reading.
 				
 			
 				
-				<h3 id="RWMutex.RLocker">func (*RWMutex) <a href="http://localhost:9090/src/sync/rwmutex.go?s=3660:3695#L120">RLocker</a></h3>
+				<h3 id="RWMutex.RLocker">func (*RWMutex) <a href="http://localhost:9090/src/sync/rwmutex.go?s=3944:3979#L123">RLocker</a>
+					<a class="permalink" href="index.html#RWMutex.RLocker">&#xb6;</a>
+				</h3>
 				<pre>func (rw *<a href="index.html#RWMutex">RWMutex</a>) RLocker() <a href="index.html#Locker">Locker</a></pre>
 				<p>
 RLocker returns a Locker interface that implements
@@ -671,7 +719,9 @@ the Lock and Unlock methods by calling rw.RLock and rw.RUnlock.
 				
 			
 				
-				<h3 id="RWMutex.RUnlock">func (*RWMutex) <a href="http://localhost:9090/src/sync/rwmutex.go?s=1346:1374#L39">RUnlock</a></h3>
+				<h3 id="RWMutex.RUnlock">func (*RWMutex) <a href="http://localhost:9090/src/sync/rwmutex.go?s=1761:1789#L45">RUnlock</a>
+					<a class="permalink" href="index.html#RWMutex.RUnlock">&#xb6;</a>
+				</h3>
 				<pre>func (rw *<a href="index.html#RWMutex">RWMutex</a>) RUnlock()</pre>
 				<p>
 RUnlock undoes a single RLock call;
@@ -685,15 +735,17 @@ on entry to RUnlock.
 				
 			
 				
-				<h3 id="RWMutex.Unlock">func (*RWMutex) <a href="http://localhost:9090/src/sync/rwmutex.go?s=2960:2987#L93">Unlock</a></h3>
+				<h3 id="RWMutex.Unlock">func (*RWMutex) <a href="http://localhost:9090/src/sync/rwmutex.go?s=3244:3271#L96">Unlock</a>
+					<a class="permalink" href="index.html#RWMutex.Unlock">&#xb6;</a>
+				</h3>
 				<pre>func (rw *<a href="index.html#RWMutex">RWMutex</a>) Unlock()</pre>
 				<p>
-Unlock unlocks rw for writing.  It is a run-time error if rw is
+Unlock unlocks rw for writing. It is a run-time error if rw is
 not locked for writing on entry to Unlock.
 </p>
 <p>
 As with Mutexes, a locked RWMutex is not associated with a particular
-goroutine.  One goroutine may RLock (Lock) an RWMutex and then
+goroutine. One goroutine may RLock (Lock) an RWMutex and then
 arrange for another goroutine to RUnlock (Unlock) it.
 </p>
 
@@ -704,16 +756,21 @@ arrange for another goroutine to RUnlock (Unlock) it.
 		
 			
 			
-			<h2 id="WaitGroup">type <a href="http://localhost:9090/src/sync/waitgroup.go?s=522:830#L8">WaitGroup</a></h2>
+			<h2 id="WaitGroup">type <a href="http://localhost:9090/src/sync/waitgroup.go?s=574:898#L10">WaitGroup</a>
+				<a class="permalink" href="index.html#WaitGroup">&#xb6;</a>
+			</h2>
 			<pre>type WaitGroup struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
 A WaitGroup waits for a collection of goroutines to finish.
 The main goroutine calls Add to set the number of
-goroutines to wait for.  Then each of the goroutines
-runs and calls Done when finished.  At the same time,
+goroutines to wait for. Then each of the goroutines
+runs and calls Done when finished. At the same time,
 Wait can be used to block until all goroutines have finished.
+</p>
+<p>
+A WaitGroup must not be copied after first use.
 </p>
 
 
@@ -729,7 +786,9 @@ Wait can be used to block until all goroutines have finished.
 
 			
 				
-				<h3 id="WaitGroup.Add">func (*WaitGroup) <a href="http://localhost:9090/src/sync/waitgroup.go?s=1789:1824#L38">Add</a></h3>
+				<h3 id="WaitGroup.Add">func (*WaitGroup) <a href="http://localhost:9090/src/sync/waitgroup.go?s=1857:1892#L42">Add</a>
+					<a class="permalink" href="index.html#WaitGroup.Add">&#xb6;</a>
+				</h3>
 				<pre>func (wg *<a href="index.html#WaitGroup">WaitGroup</a>) Add(delta <a href="../builtin/index.html#int">int</a>)</pre>
 				<p>
 Add adds delta, which may be negative, to the WaitGroup counter.
@@ -753,7 +812,9 @@ See the WaitGroup example.
 				
 			
 				
-				<h3 id="WaitGroup.Done">func (*WaitGroup) <a href="http://localhost:9090/src/sync/waitgroup.go?s=3164:3191#L85">Done</a></h3>
+				<h3 id="WaitGroup.Done">func (*WaitGroup) <a href="http://localhost:9090/src/sync/waitgroup.go?s=3232:3259#L89">Done</a>
+					<a class="permalink" href="index.html#WaitGroup.Done">&#xb6;</a>
+				</h3>
 				<pre>func (wg *<a href="index.html#WaitGroup">WaitGroup</a>) Done()</pre>
 				<p>
 Done decrements the WaitGroup counter.
@@ -764,7 +825,9 @@ Done decrements the WaitGroup counter.
 				
 			
 				
-				<h3 id="WaitGroup.Wait">func (*WaitGroup) <a href="http://localhost:9090/src/sync/waitgroup.go?s=3261:3288#L90">Wait</a></h3>
+				<h3 id="WaitGroup.Wait">func (*WaitGroup) <a href="http://localhost:9090/src/sync/waitgroup.go?s=3329:3356#L94">Wait</a>
+					<a class="permalink" href="index.html#WaitGroup.Wait">&#xb6;</a>
+				</h3>
 				<pre>func (wg *<a href="index.html#WaitGroup">WaitGroup</a>) Wait()</pre>
 				<p>
 Wait blocks until the WaitGroup counter is zero.
@@ -824,7 +887,7 @@ Wait blocks until the WaitGroup counter is zero.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -842,6 +905,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

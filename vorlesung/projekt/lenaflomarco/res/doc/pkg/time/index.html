@@ -309,10 +309,10 @@ The calendrical calculations always assume a Gregorian calendar.
 					<dd>&nbsp; &nbsp; <a href="index.html#Time.UnmarshalBinary">func (t *Time) UnmarshalBinary(data []byte) error</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Time.UnmarshalJSON">func (t *Time) UnmarshalJSON(data []byte) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Time.UnmarshalJSON">func (t *Time) UnmarshalJSON(data []byte) error</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Time.UnmarshalText">func (t *Time) UnmarshalText(data []byte) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Time.UnmarshalText">func (t *Time) UnmarshalText(data []byte) error</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#Time.Weekday">func (t Time) Weekday() Weekday</a></dd>
@@ -469,7 +469,7 @@ compatibility with fixed-width Unix time formats.
 </p>
 <p>
 A decimal point followed by one or more zeros represents a fractional
-second, printed to the given number of decimal places.  A decimal point
+second, printed to the given number of decimal places. A decimal point
 followed by one or more nines represents a fractional second, printed to
 the given number of decimal places, with trailing zeros removed.
 When parsing (only), the input may contain a fractional second
@@ -487,7 +487,7 @@ Numeric time zone offsets format as follows:
 <p>
 Replacing the sign in the format with a Z triggers
 the ISO 8601 behavior of printing Z instead of an
-offset for the UTC zone.  Thus:
+offset for the UTC zone. Thus:
 </p>
 <pre>Z0700  Z or ±hhmm
 Z07:00 Z or ±hh:mm
@@ -504,6 +504,9 @@ time zone abbreviation, while strictly speaking those RFCs require the
 use of &#34;GMT&#34; in that case.
 In general RFC1123Z should be used instead of RFC1123 for servers
 that insist on that format, and RFC3339 should be preferred for new protocols.
+RFC822, RFC822Z, RFC1123, and RFC1123Z are useful for formatting;
+when used with time.Parse they do not accept all the time formats
+permitted by the RFCs.
 </p>
 
 			
@@ -512,12 +515,17 @@ that insist on that format, and RFC3339 should be preferred for new protocols.
 		
 			
 			
-			<h2 id="After">func <a href="http://localhost:9090/src/time/sleep.go?s=3012:3046#L99">After</a></h2>
+			<h2 id="After">func <a href="http://localhost:9090/src/time/sleep.go?s=4035:4069#L124">After</a>
+				<a class="permalink" href="index.html#After">&#xb6;</a>
+			</h2>
 			<pre>func After(d <a href="index.html#Duration">Duration</a>) &lt;-chan <a href="index.html#Time">Time</a></pre>
 			<p>
 After waits for the duration to elapse and then sends the current time
 on the returned channel.
 It is equivalent to NewTimer(d).C.
+The underlying Timer is not recovered by the garbage collector
+until the timer fires. If efficiency is a concern, use NewTimer
+instead and call Timer.Stop if the timer is no longer needed.
 </p>
 
 			
@@ -526,7 +534,9 @@ It is equivalent to NewTimer(d).C.
 		
 			
 			
-			<h2 id="Sleep">func <a href="http://localhost:9090/src/time/sleep.go?s=308:330#L1">Sleep</a></h2>
+			<h2 id="Sleep">func <a href="http://localhost:9090/src/time/sleep.go?s=308:330#L1">Sleep</a>
+				<a class="permalink" href="index.html#Sleep">&#xb6;</a>
+			</h2>
 			<pre>func Sleep(d <a href="index.html#Duration">Duration</a>)</pre>
 			<p>
 Sleep pauses the current goroutine for at least the duration d.
@@ -539,13 +549,16 @@ A negative or zero duration causes Sleep to return immediately.
 		
 			
 			
-			<h2 id="Tick">func <a href="http://localhost:9090/src/time/tick.go?s=1667:1700#L43">Tick</a></h2>
+			<h2 id="Tick">func <a href="http://localhost:9090/src/time/tick.go?s=1719:1752#L44">Tick</a>
+				<a class="permalink" href="index.html#Tick">&#xb6;</a>
+			</h2>
 			<pre>func Tick(d <a href="index.html#Duration">Duration</a>) &lt;-chan <a href="index.html#Time">Time</a></pre>
 			<p>
 Tick is a convenience wrapper for NewTicker providing access to the ticking
 channel only. While Tick is useful for clients that have no need to shut down
 the Ticker, be aware that without a way to shut it down the underlying
 Ticker cannot be recovered by the garbage collector; it &#34;leaks&#34;.
+Unlike NewTicker, Tick will return nil if d &lt;= 0.
 </p>
 
 			
@@ -555,11 +568,13 @@ Ticker cannot be recovered by the garbage collector; it &#34;leaks&#34;.
 		
 			
 			
-			<h2 id="Duration">type <a href="http://localhost:9090/src/time/time.go?s=13980:13999#L420">Duration</a></h2>
+			<h2 id="Duration">type <a href="http://localhost:9090/src/time/time.go?s=13914:13933#L417">Duration</a>
+				<a class="permalink" href="index.html#Duration">&#xb6;</a>
+			</h2>
 			<pre>type Duration <a href="../builtin/index.html#int64">int64</a></pre>
 			<p>
 A Duration represents the elapsed time between two instants
-as an int64 nanosecond count.  The representation limits the
+as an int64 nanosecond count. The representation limits the
 largest representable duration to approximately 290 years.
 </p>
 
@@ -574,7 +589,7 @@ largest representable duration to approximately 290 years.
     <span id="Hour">Hour</span>                 = 60 * <a href="index.html#Minute">Minute</a>
 )</pre>
 				<p>
-Common durations.  There is no definition for units of Day or larger
+Common durations. There is no definition for units of Day or larger
 to avoid confusion across daylight savings time zone transitions.
 </p>
 <p>
@@ -600,7 +615,9 @@ fmt.Print(time.Duration(seconds)*time.Second) // prints 10s
 
 			
 				
-				<h3 id="ParseDuration">func <a href="http://localhost:9090/src/time/format.go?s=35149:35195#L1179">ParseDuration</a></h3>
+				<h3 id="ParseDuration">func <a href="http://localhost:9090/src/time/format.go?s=35310:35356#L1182">ParseDuration</a>
+					<a class="permalink" href="index.html#ParseDuration">&#xb6;</a>
+				</h3>
 				<pre>func ParseDuration(s <a href="../builtin/index.html#string">string</a>) (<a href="index.html#Duration">Duration</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ParseDuration parses a duration string.
@@ -614,7 +631,9 @@ Valid time units are &#34;ns&#34;, &#34;us&#34; (or &#34;µs&#34;), &#34;ms&#34;
 				
 			
 				
-				<h3 id="Since">func <a href="http://localhost:9090/src/time/time.go?s=19263:19290#L633">Since</a></h3>
+				<h3 id="Since">func <a href="http://localhost:9090/src/time/time.go?s=19158:19185#L629">Since</a>
+					<a class="permalink" href="index.html#Since">&#xb6;</a>
+				</h3>
 				<pre>func Since(t <a href="index.html#Time">Time</a>) <a href="index.html#Duration">Duration</a></pre>
 				<p>
 Since returns the time elapsed since t.
@@ -627,7 +646,9 @@ It is shorthand for time.Now().Sub(t).
 
 			
 				
-				<h3 id="Duration.Hours">func (Duration) <a href="http://localhost:9090/src/time/time.go?s=18219:18252#L593">Hours</a></h3>
+				<h3 id="Duration.Hours">func (Duration) <a href="http://localhost:9090/src/time/time.go?s=18135:18168#L589">Hours</a>
+					<a class="permalink" href="index.html#Duration.Hours">&#xb6;</a>
+				</h3>
 				<pre>func (d <a href="index.html#Duration">Duration</a>) Hours() <a href="../builtin/index.html#float64">float64</a></pre>
 				<p>
 Hours returns the duration as a floating point number of hours.
@@ -638,7 +659,9 @@ Hours returns the duration as a floating point number of hours.
 				
 			
 				
-				<h3 id="Duration.Minutes">func (Duration) <a href="http://localhost:9090/src/time/time.go?s=18025:18060#L586">Minutes</a></h3>
+				<h3 id="Duration.Minutes">func (Duration) <a href="http://localhost:9090/src/time/time.go?s=17941:17976#L582">Minutes</a>
+					<a class="permalink" href="index.html#Duration.Minutes">&#xb6;</a>
+				</h3>
 				<pre>func (d <a href="index.html#Duration">Duration</a>) Minutes() <a href="../builtin/index.html#float64">float64</a></pre>
 				<p>
 Minutes returns the duration as a floating point number of minutes.
@@ -649,7 +672,9 @@ Minutes returns the duration as a floating point number of minutes.
 				
 			
 				
-				<h3 id="Duration.Nanoseconds">func (Duration) <a href="http://localhost:9090/src/time/time.go?s=17239:17276#L567">Nanoseconds</a></h3>
+				<h3 id="Duration.Nanoseconds">func (Duration) <a href="http://localhost:9090/src/time/time.go?s=17155:17192#L563">Nanoseconds</a>
+					<a class="permalink" href="index.html#Duration.Nanoseconds">&#xb6;</a>
+				</h3>
 				<pre>func (d <a href="index.html#Duration">Duration</a>) Nanoseconds() <a href="../builtin/index.html#int64">int64</a></pre>
 				<p>
 Nanoseconds returns the duration as an integer nanosecond count.
@@ -660,7 +685,9 @@ Nanoseconds returns the duration as an integer nanosecond count.
 				
 			
 				
-				<h3 id="Duration.Seconds">func (Duration) <a href="http://localhost:9090/src/time/time.go?s=17832:17867#L579">Seconds</a></h3>
+				<h3 id="Duration.Seconds">func (Duration) <a href="http://localhost:9090/src/time/time.go?s=17748:17783#L575">Seconds</a>
+					<a class="permalink" href="index.html#Duration.Seconds">&#xb6;</a>
+				</h3>
 				<pre>func (d <a href="index.html#Duration">Duration</a>) Seconds() <a href="../builtin/index.html#float64">float64</a></pre>
 				<p>
 Seconds returns the duration as a floating point number of seconds.
@@ -671,14 +698,15 @@ Seconds returns the duration as a floating point number of seconds.
 				
 			
 				
-				<h3 id="Duration.String">func (Duration) <a href="http://localhost:9090/src/time/time.go?s=15077:15110#L452">String</a></h3>
+				<h3 id="Duration.String">func (Duration) <a href="http://localhost:9090/src/time/time.go?s=14992:15025#L448">String</a>
+					<a class="permalink" href="index.html#Duration.String">&#xb6;</a>
+				</h3>
 				<pre>func (d <a href="index.html#Duration">Duration</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 String returns a string representing the duration in the form &#34;72h3m0.5s&#34;.
-Leading zero units are omitted.  As a special case, durations less than one
+Leading zero units are omitted. As a special case, durations less than one
 second format use a smaller unit (milli-, micro-, or nanoseconds) to ensure
-that the leading digit is non-zero.  The zero duration formats as 0,
-with no unit.
+that the leading digit is non-zero. The zero duration formats as 0s.
 </p>
 
 				
@@ -688,7 +716,9 @@ with no unit.
 		
 			
 			
-			<h2 id="Location">type <a href="http://localhost:9090/src/time/zoneinfo.go?s=415:930#L5">Location</a></h2>
+			<h2 id="Location">type <a href="http://localhost:9090/src/time/zoneinfo.go?s=415:930#L5">Location</a>
+				<a class="permalink" href="index.html#Location">&#xb6;</a>
+			</h2>
 			<pre>type Location struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -721,7 +751,9 @@ UTC represents Universal Coordinated Time (UTC).
 
 			
 				
-				<h3 id="FixedZone">func <a href="http://localhost:9090/src/time/zoneinfo.go?s=2522:2571#L79">FixedZone</a></h3>
+				<h3 id="FixedZone">func <a href="http://localhost:9090/src/time/zoneinfo.go?s=2522:2571#L79">FixedZone</a>
+					<a class="permalink" href="index.html#FixedZone">&#xb6;</a>
+				</h3>
 				<pre>func FixedZone(name <a href="../builtin/index.html#string">string</a>, offset <a href="../builtin/index.html#int">int</a>) *<a href="index.html#Location">Location</a></pre>
 				<p>
 FixedZone returns a Location that always uses
@@ -732,7 +764,9 @@ the given zone name and offset (seconds east of UTC).
 				
 			
 				
-				<h3 id="LoadLocation">func <a href="http://localhost:9090/src/time/zoneinfo.go?s=7498:7547#L263">LoadLocation</a></h3>
+				<h3 id="LoadLocation">func <a href="http://localhost:9090/src/time/zoneinfo.go?s=7498:7547#L263">LoadLocation</a>
+					<a class="permalink" href="index.html#LoadLocation">&#xb6;</a>
+				</h3>
 				<pre>func LoadLocation(name <a href="../builtin/index.html#string">string</a>) (*<a href="index.html#Location">Location</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 LoadLocation returns the Location with the given name.
@@ -760,7 +794,9 @@ and finally looks in $GOROOT/lib/time/zoneinfo.zip.
 
 			
 				
-				<h3 id="Location.String">func (*Location) <a href="http://localhost:9090/src/time/zoneinfo.go?s=2355:2389#L73">String</a></h3>
+				<h3 id="Location.String">func (*Location) <a href="http://localhost:9090/src/time/zoneinfo.go?s=2355:2389#L73">String</a>
+					<a class="permalink" href="index.html#Location.String">&#xb6;</a>
+				</h3>
 				<pre>func (l *<a href="index.html#Location">Location</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 String returns a descriptive name for the time zone information,
@@ -774,7 +810,9 @@ corresponding to the argument to LoadLocation.
 		
 			
 			
-			<h2 id="Month">type <a href="http://localhost:9090/src/time/time.go?s=3100:3114#L67">Month</a></h2>
+			<h2 id="Month">type <a href="http://localhost:9090/src/time/time.go?s=3098:3112#L67">Month</a>
+				<a class="permalink" href="index.html#Month">&#xb6;</a>
+			</h2>
 			<pre>type Month <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 A Month specifies a month of the year (January = 1, ...).
@@ -809,7 +847,9 @@ A Month specifies a month of the year (January = 1, ...).
 
 			
 				
-				<h3 id="Month.String">func (Month) <a href="http://localhost:9090/src/time/time.go?s=3483:3513#L100">String</a></h3>
+				<h3 id="Month.String">func (Month) <a href="http://localhost:9090/src/time/time.go?s=3481:3511#L100">String</a>
+					<a class="permalink" href="index.html#Month.String">&#xb6;</a>
+				</h3>
 				<pre>func (m <a href="index.html#Month">Month</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 String returns the English name of the month (&#34;January&#34;, &#34;February&#34;, ...).
@@ -822,7 +862,9 @@ String returns the English name of the month (&#34;January&#34;, &#34;February&#
 		
 			
 			
-			<h2 id="ParseError">type <a href="http://localhost:9090/src/time/format.go?s=18238:18359#L601">ParseError</a></h2>
+			<h2 id="ParseError">type <a href="http://localhost:9090/src/time/format.go?s=18399:18520#L604">ParseError</a>
+				<a class="permalink" href="index.html#ParseError">&#xb6;</a>
+			</h2>
 			<pre>type ParseError struct {
     Layout     <a href="../builtin/index.html#string">string</a>
     Value      <a href="../builtin/index.html#string">string</a>
@@ -847,7 +889,9 @@ ParseError describes a problem parsing a time string.
 
 			
 				
-				<h3 id="ParseError.Error">func (*ParseError) <a href="http://localhost:9090/src/time/format.go?s=18478:18513#L614">Error</a></h3>
+				<h3 id="ParseError.Error">func (*ParseError) <a href="http://localhost:9090/src/time/format.go?s=18639:18674#L617">Error</a>
+					<a class="permalink" href="index.html#ParseError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#ParseError">ParseError</a>) Error() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 Error returns the string representation of a ParseError.
@@ -860,7 +904,9 @@ Error returns the string representation of a ParseError.
 		
 			
 			
-			<h2 id="Ticker">type <a href="http://localhost:9090/src/time/tick.go?s=269:371#L1">Ticker</a></h2>
+			<h2 id="Ticker">type <a href="http://localhost:9090/src/time/tick.go?s=269:371#L1">Ticker</a>
+				<a class="permalink" href="index.html#Ticker">&#xb6;</a>
+			</h2>
 			<pre>type Ticker struct {
     C &lt;-chan <a href="index.html#Time">Time</a> <span class="comment">// The channel on which the ticks are delivered.</span>
     <span class="comment">// contains filtered or unexported fields</span>
@@ -881,7 +927,9 @@ at intervals.
 
 			
 				
-				<h3 id="NewTicker">func <a href="http://localhost:9090/src/time/tick.go?s=706:740#L11">NewTicker</a></h3>
+				<h3 id="NewTicker">func <a href="http://localhost:9090/src/time/tick.go?s=706:740#L11">NewTicker</a>
+					<a class="permalink" href="index.html#NewTicker">&#xb6;</a>
+				</h3>
 				<pre>func NewTicker(d <a href="index.html#Duration">Duration</a>) *<a href="index.html#Ticker">Ticker</a></pre>
 				<p>
 NewTicker returns a new Ticker containing a channel that will send the
@@ -897,10 +945,12 @@ Stop the ticker to release associated resources.
 
 			
 				
-				<h3 id="Ticker.Stop">func (*Ticker) <a href="http://localhost:9090/src/time/tick.go?s=1319:1342#L35">Stop</a></h3>
+				<h3 id="Ticker.Stop">func (*Ticker) <a href="http://localhost:9090/src/time/tick.go?s=1318:1341#L35">Stop</a>
+					<a class="permalink" href="index.html#Ticker.Stop">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Ticker">Ticker</a>) Stop()</pre>
 				<p>
-Stop turns off a ticker.  After Stop, no more ticks will be sent.
+Stop turns off a ticker. After Stop, no more ticks will be sent.
 Stop does not close the channel, to prevent a read from the channel succeeding
 incorrectly.
 </p>
@@ -912,7 +962,9 @@ incorrectly.
 		
 			
 			
-			<h2 id="Time">type <a href="http://localhost:9090/src/time/time.go?s=1855:2369#L29">Time</a></h2>
+			<h2 id="Time">type <a href="http://localhost:9090/src/time/time.go?s=1853:2367#L29">Time</a>
+				<a class="permalink" href="index.html#Time">&#xb6;</a>
+			</h2>
 			<pre>type Time struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -921,8 +973,8 @@ A Time represents an instant in time with nanosecond precision.
 </p>
 <p>
 Programs using times should typically store and pass them as values,
-not pointers.  That is, time variables and struct fields should be of
-type time.Time, not *time.Time.  A Time value can be used by
+not pointers. That is, time variables and struct fields should be of
+type time.Time, not *time.Time. A Time value can be used by
 multiple goroutines simultaneously.
 </p>
 <p>
@@ -961,7 +1013,9 @@ values, which can be achieved through use of the UTC or Local method.
 
 			
 				
-				<h3 id="Date">func <a href="http://localhost:9090/src/time/time.go?s=30075:30158#L1018">Date</a></h3>
+				<h3 id="Date">func <a href="http://localhost:9090/src/time/time.go?s=29994:30077#L1016">Date</a>
+					<a class="permalink" href="index.html#Date">&#xb6;</a>
+				</h3>
 				<pre>func Date(year <a href="../builtin/index.html#int">int</a>, month <a href="index.html#Month">Month</a>, day, hour, min, sec, nsec <a href="../builtin/index.html#int">int</a>, loc *<a href="index.html#Location">Location</a>) <a href="index.html#Time">Time</a></pre>
 				<p>
 Date returns the Time corresponding to
@@ -979,7 +1033,7 @@ For example, October 32 converts to November 1.
 <p>
 A daylight savings time transition skips or repeats times.
 For example, in the United States, March 13, 2011 2:15am never occurred,
-while November 6, 2011 1:15am occurred twice.  In such cases, the
+while November 6, 2011 1:15am occurred twice. In such cases, the
 choice of time zone, and therefore the time, is not well-defined.
 Date returns a time that is correct in one of the two zones involved
 in the transition, but it does not guarantee which.
@@ -992,7 +1046,9 @@ Date panics if loc is nil.
 				
 			
 				
-				<h3 id="Now">func <a href="http://localhost:9090/src/time/time.go?s=22856:22871#L771">Now</a></h3>
+				<h3 id="Now">func <a href="http://localhost:9090/src/time/time.go?s=22750:22765#L767">Now</a>
+					<a class="permalink" href="index.html#Now">&#xb6;</a>
+				</h3>
 				<pre>func Now() <a href="index.html#Time">Time</a></pre>
 				<p>
 Now returns the current local time.
@@ -1002,7 +1058,9 @@ Now returns the current local time.
 				
 			
 				
-				<h3 id="Parse">func <a href="http://localhost:9090/src/time/format.go?s=22436:22482#L722">Parse</a></h3>
+				<h3 id="Parse">func <a href="http://localhost:9090/src/time/format.go?s=22597:22643#L725">Parse</a>
+					<a class="permalink" href="index.html#Parse">&#xb6;</a>
+				</h3>
 				<pre>func Parse(layout, value <a href="../builtin/index.html#string">string</a>) (<a href="index.html#Time">Time</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Parse parses a formatted string and returns the time value it represents.
@@ -1063,7 +1121,9 @@ that use a numeric zone offset, or use ParseInLocation.
 				
 			
 				
-				<h3 id="ParseInLocation">func <a href="http://localhost:9090/src/time/format.go?s=22894:22965#L731">ParseInLocation</a></h3>
+				<h3 id="ParseInLocation">func <a href="http://localhost:9090/src/time/format.go?s=23055:23126#L734">ParseInLocation</a>
+					<a class="permalink" href="index.html#ParseInLocation">&#xb6;</a>
+				</h3>
 				<pre>func ParseInLocation(layout, value <a href="../builtin/index.html#string">string</a>, loc *<a href="index.html#Location">Location</a>) (<a href="index.html#Time">Time</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ParseInLocation is like Parse but differs in two important ways.
@@ -1077,7 +1137,9 @@ against the Local location; ParseInLocation uses the given location.
 				
 			
 				
-				<h3 id="Unix">func <a href="http://localhost:9090/src/time/time.go?s=28704:28741#L968">Unix</a></h3>
+				<h3 id="Unix">func <a href="http://localhost:9090/src/time/time.go?s=28624:28661#L966">Unix</a>
+					<a class="permalink" href="index.html#Unix">&#xb6;</a>
+				</h3>
 				<pre>func Unix(sec <a href="../builtin/index.html#int64">int64</a>, nsec <a href="../builtin/index.html#int64">int64</a>) <a href="index.html#Time">Time</a></pre>
 				<p>
 Unix returns the local Time corresponding to the given Unix time,
@@ -1093,7 +1155,9 @@ value is 1&lt;&lt;63-1 (the largest int64 value).
 
 			
 				
-				<h3 id="Time.Add">func (Time) <a href="http://localhost:9090/src/time/time.go?s=18374:18408#L600">Add</a></h3>
+				<h3 id="Time.Add">func (Time) <a href="http://localhost:9090/src/time/time.go?s=18290:18324#L596">Add</a>
+					<a class="permalink" href="index.html#Time.Add">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Add(d <a href="index.html#Duration">Duration</a>) <a href="index.html#Time">Time</a></pre>
 				<p>
 Add returns the time t+d.
@@ -1104,7 +1168,9 @@ Add returns the time t+d.
 				
 			
 				
-				<h3 id="Time.AddDate">func (Time) <a href="http://localhost:9090/src/time/time.go?s=19687:19746#L645">AddDate</a></h3>
+				<h3 id="Time.AddDate">func (Time) <a href="http://localhost:9090/src/time/time.go?s=19582:19641#L641">AddDate</a>
+					<a class="permalink" href="index.html#Time.AddDate">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) AddDate(years <a href="../builtin/index.html#int">int</a>, months <a href="../builtin/index.html#int">int</a>, days <a href="../builtin/index.html#int">int</a>) <a href="index.html#Time">Time</a></pre>
 				<p>
 AddDate returns the time corresponding to adding the
@@ -1123,7 +1189,9 @@ December 1, the normalized form for November 31.
 				
 			
 				
-				<h3 id="Time.After">func (Time) <a href="http://localhost:9090/src/time/time.go?s=2427:2459#L48">After</a></h3>
+				<h3 id="Time.After">func (Time) <a href="http://localhost:9090/src/time/time.go?s=2425:2457#L48">After</a>
+					<a class="permalink" href="index.html#Time.After">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) After(u <a href="index.html#Time">Time</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 After reports whether the time instant t is after u.
@@ -1134,7 +1202,9 @@ After reports whether the time instant t is after u.
 				
 			
 				
-				<h3 id="Time.AppendFormat">func (Time) <a href="http://localhost:9090/src/time/format.go?s=14187:14245#L443">AppendFormat</a></h3>
+				<h3 id="Time.AppendFormat">func (Time) <a href="http://localhost:9090/src/time/format.go?s=14349:14407#L446">AppendFormat</a>
+					<a class="permalink" href="index.html#Time.AppendFormat">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) AppendFormat(b []<a href="../builtin/index.html#byte">byte</a>, layout <a href="../builtin/index.html#string">string</a>) []<a href="../builtin/index.html#byte">byte</a></pre>
 				<p>
 AppendFormat is like Format but appends the textual
@@ -1146,7 +1216,9 @@ representation to b and returns the extended buffer.
 				
 			
 				
-				<h3 id="Time.Before">func (Time) <a href="http://localhost:9090/src/time/time.go?s=2582:2615#L53">Before</a></h3>
+				<h3 id="Time.Before">func (Time) <a href="http://localhost:9090/src/time/time.go?s=2580:2613#L53">Before</a>
+					<a class="permalink" href="index.html#Time.Before">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Before(u <a href="index.html#Time">Time</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Before reports whether the time instant t is before u.
@@ -1157,7 +1229,9 @@ Before reports whether the time instant t is before u.
 				
 			
 				
-				<h3 id="Time.Clock">func (Time) <a href="http://localhost:9090/src/time/time.go?s=12570:12612#L375">Clock</a></h3>
+				<h3 id="Time.Clock">func (Time) <a href="http://localhost:9090/src/time/time.go?s=12505:12547#L372">Clock</a>
+					<a class="permalink" href="index.html#Time.Clock">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Clock() (hour, min, sec <a href="../builtin/index.html#int">int</a>)</pre>
 				<p>
 Clock returns the hour, minute, and second within the day specified by t.
@@ -1168,7 +1242,9 @@ Clock returns the hour, minute, and second within the day specified by t.
 				
 			
 				
-				<h3 id="Time.Date">func (Time) <a href="http://localhost:9090/src/time/time.go?s=9862:9915#L280">Date</a></h3>
+				<h3 id="Time.Date">func (Time) <a href="http://localhost:9090/src/time/time.go?s=9797:9850#L277">Date</a>
+					<a class="permalink" href="index.html#Time.Date">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Date() (year <a href="../builtin/index.html#int">int</a>, month <a href="index.html#Month">Month</a>, day <a href="../builtin/index.html#int">int</a>)</pre>
 				<p>
 Date returns the year, month, and day in which t occurs.
@@ -1179,7 +1255,9 @@ Date returns the year, month, and day in which t occurs.
 				
 			
 				
-				<h3 id="Time.Day">func (Time) <a href="http://localhost:9090/src/time/time.go?s=10270:10293#L298">Day</a></h3>
+				<h3 id="Time.Day">func (Time) <a href="http://localhost:9090/src/time/time.go?s=10205:10228#L295">Day</a>
+					<a class="permalink" href="index.html#Time.Day">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Day() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Day returns the day of the month specified by t.
@@ -1190,7 +1268,9 @@ Day returns the day of the month specified by t.
 				
 			
 				
-				<h3 id="Time.Equal">func (Time) <a href="http://localhost:9090/src/time/time.go?s=2958:2990#L62">Equal</a></h3>
+				<h3 id="Time.Equal">func (Time) <a href="http://localhost:9090/src/time/time.go?s=2956:2988#L62">Equal</a>
+					<a class="permalink" href="index.html#Time.Equal">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Equal(u <a href="index.html#Time">Time</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Equal reports whether t and u represent the same time instant.
@@ -1205,7 +1285,9 @@ the locations.
 				
 			
 				
-				<h3 id="Time.Format">func (Time) <a href="http://localhost:9090/src/time/format.go?s=13822:13864#L427">Format</a></h3>
+				<h3 id="Time.Format">func (Time) <a href="http://localhost:9090/src/time/format.go?s=13984:14026#L430">Format</a>
+					<a class="permalink" href="index.html#Time.Format">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Format(layout <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 Format returns a textual representation of the time value formatted
@@ -1236,7 +1318,9 @@ documentation for ANSIC and the other constants defined by this package.
 				
 			
 				
-				<h3 id="Time.GobDecode">func (*Time) <a href="http://localhost:9090/src/time/time.go?s=26765:26808#L916">GobDecode</a></h3>
+				<h3 id="Time.GobDecode">func (*Time) <a href="http://localhost:9090/src/time/time.go?s=26659:26702#L912">GobDecode</a>
+					<a class="permalink" href="index.html#Time.GobDecode">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Time">Time</a>) GobDecode(data []<a href="../builtin/index.html#byte">byte</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 GobDecode implements the gob.GobDecoder interface.
@@ -1247,7 +1331,9 @@ GobDecode implements the gob.GobDecoder interface.
 				
 			
 				
-				<h3 id="Time.GobEncode">func (Time) <a href="http://localhost:9090/src/time/time.go?s=26638:26679#L911">GobEncode</a></h3>
+				<h3 id="Time.GobEncode">func (Time) <a href="http://localhost:9090/src/time/time.go?s=26532:26573#L907">GobEncode</a>
+					<a class="permalink" href="index.html#Time.GobEncode">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) GobEncode() ([]<a href="../builtin/index.html#byte">byte</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 GobEncode implements the gob.GobEncoder interface.
@@ -1258,7 +1344,9 @@ GobEncode implements the gob.GobEncoder interface.
 				
 			
 				
-				<h3 id="Time.Hour">func (Time) <a href="http://localhost:9090/src/time/time.go?s=12994:13018#L390">Hour</a></h3>
+				<h3 id="Time.Hour">func (Time) <a href="http://localhost:9090/src/time/time.go?s=12929:12953#L387">Hour</a>
+					<a class="permalink" href="index.html#Time.Hour">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Hour() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Hour returns the hour within the day specified by t, in the range [0, 23].
@@ -1269,7 +1357,9 @@ Hour returns the hour within the day specified by t, in the range [0, 23].
 				
 			
 				
-				<h3 id="Time.ISOWeek">func (Time) <a href="http://localhost:9090/src/time/time.go?s=10978:11018#L319">ISOWeek</a></h3>
+				<h3 id="Time.ISOWeek">func (Time) <a href="http://localhost:9090/src/time/time.go?s=10913:10953#L316">ISOWeek</a>
+					<a class="permalink" href="index.html#Time.ISOWeek">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) ISOWeek() (year, week <a href="../builtin/index.html#int">int</a>)</pre>
 				<p>
 ISOWeek returns the ISO 8601 year and week number in which t occurs.
@@ -1283,7 +1373,9 @@ of year n+1.
 				
 			
 				
-				<h3 id="Time.In">func (Time) <a href="http://localhost:9090/src/time/time.go?s=23247:23283#L791">In</a></h3>
+				<h3 id="Time.In">func (Time) <a href="http://localhost:9090/src/time/time.go?s=23141:23177#L787">In</a>
+					<a class="permalink" href="index.html#Time.In">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) In(loc *<a href="index.html#Location">Location</a>) <a href="index.html#Time">Time</a></pre>
 				<p>
 In returns t with the location information set to loc.
@@ -1297,7 +1389,9 @@ In panics if loc is nil.
 				
 			
 				
-				<h3 id="Time.IsZero">func (Time) <a href="http://localhost:9090/src/time/time.go?s=8503:8530#L231">IsZero</a></h3>
+				<h3 id="Time.IsZero">func (Time) <a href="http://localhost:9090/src/time/time.go?s=8438:8465#L228">IsZero</a>
+					<a class="permalink" href="index.html#Time.IsZero">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) IsZero() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsZero reports whether t represents the zero time instant,
@@ -1309,7 +1403,9 @@ January 1, year 1, 00:00:00 UTC.
 				
 			
 				
-				<h3 id="Time.Local">func (Time) <a href="http://localhost:9090/src/time/time.go?s=23101:23127#L783">Local</a></h3>
+				<h3 id="Time.Local">func (Time) <a href="http://localhost:9090/src/time/time.go?s=22995:23021#L779">Local</a>
+					<a class="permalink" href="index.html#Time.Local">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Local() <a href="index.html#Time">Time</a></pre>
 				<p>
 Local returns t with the location set to local time.
@@ -1320,7 +1416,9 @@ Local returns t with the location set to local time.
 				
 			
 				
-				<h3 id="Time.Location">func (Time) <a href="http://localhost:9090/src/time/time.go?s=23450:23484#L800">Location</a></h3>
+				<h3 id="Time.Location">func (Time) <a href="http://localhost:9090/src/time/time.go?s=23344:23378#L796">Location</a>
+					<a class="permalink" href="index.html#Time.Location">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Location() *<a href="index.html#Location">Location</a></pre>
 				<p>
 Location returns the time zone information associated with t.
@@ -1331,7 +1429,9 @@ Location returns the time zone information associated with t.
 				
 			
 				
-				<h3 id="Time.MarshalBinary">func (Time) <a href="http://localhost:9090/src/time/time.go?s=24443:24488#L832">MarshalBinary</a></h3>
+				<h3 id="Time.MarshalBinary">func (Time) <a href="http://localhost:9090/src/time/time.go?s=24337:24382#L828">MarshalBinary</a>
+					<a class="permalink" href="index.html#Time.MarshalBinary">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) MarshalBinary() ([]<a href="../builtin/index.html#byte">byte</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 MarshalBinary implements the encoding.BinaryMarshaler interface.
@@ -1342,7 +1442,9 @@ MarshalBinary implements the encoding.BinaryMarshaler interface.
 				
 			
 				
-				<h3 id="Time.MarshalJSON">func (Time) <a href="http://localhost:9090/src/time/time.go?s=26997:27040#L922">MarshalJSON</a></h3>
+				<h3 id="Time.MarshalJSON">func (Time) <a href="http://localhost:9090/src/time/time.go?s=26891:26934#L918">MarshalJSON</a>
+					<a class="permalink" href="index.html#Time.MarshalJSON">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) MarshalJSON() ([]<a href="../builtin/index.html#byte">byte</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 MarshalJSON implements the json.Marshaler interface.
@@ -1354,7 +1456,9 @@ The time is a quoted string in RFC 3339 format, with sub-second precision added 
 				
 			
 				
-				<h3 id="Time.MarshalText">func (Time) <a href="http://localhost:9090/src/time/time.go?s=27863:27906#L946">MarshalText</a></h3>
+				<h3 id="Time.MarshalText">func (Time) <a href="http://localhost:9090/src/time/time.go?s=27770:27813#L943">MarshalText</a>
+					<a class="permalink" href="index.html#Time.MarshalText">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) MarshalText() ([]<a href="../builtin/index.html#byte">byte</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 MarshalText implements the encoding.TextMarshaler interface.
@@ -1366,7 +1470,9 @@ The time is formatted in RFC 3339 format, with sub-second precision added if pre
 				
 			
 				
-				<h3 id="Time.Minute">func (Time) <a href="http://localhost:9090/src/time/time.go?s=13166:13192#L395">Minute</a></h3>
+				<h3 id="Time.Minute">func (Time) <a href="http://localhost:9090/src/time/time.go?s=13101:13127#L392">Minute</a>
+					<a class="permalink" href="index.html#Time.Minute">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Minute() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Minute returns the minute offset within the hour specified by t, in the range [0, 59].
@@ -1377,7 +1483,9 @@ Minute returns the minute offset within the hour specified by t, in the range [0
 				
 			
 				
-				<h3 id="Time.Month">func (Time) <a href="http://localhost:9090/src/time/time.go?s=10139:10166#L292">Month</a></h3>
+				<h3 id="Time.Month">func (Time) <a href="http://localhost:9090/src/time/time.go?s=10074:10101#L289">Month</a>
+					<a class="permalink" href="index.html#Time.Month">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Month() <a href="index.html#Month">Month</a></pre>
 				<p>
 Month returns the month of the year specified by t.
@@ -1388,7 +1496,9 @@ Month returns the month of the year specified by t.
 				
 			
 				
-				<h3 id="Time.Nanosecond">func (Time) <a href="http://localhost:9090/src/time/time.go?s=13527:13557#L406">Nanosecond</a></h3>
+				<h3 id="Time.Nanosecond">func (Time) <a href="http://localhost:9090/src/time/time.go?s=13462:13492#L403">Nanosecond</a>
+					<a class="permalink" href="index.html#Time.Nanosecond">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Nanosecond() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Nanosecond returns the nanosecond offset within the second specified by t,
@@ -1400,7 +1510,9 @@ in the range [0, 999999999].
 				
 			
 				
-				<h3 id="Time.Round">func (Time) <a href="http://localhost:9090/src/time/time.go?s=32258:32294#L1103">Round</a></h3>
+				<h3 id="Time.Round">func (Time) <a href="http://localhost:9090/src/time/time.go?s=32177:32213#L1101">Round</a>
+					<a class="permalink" href="index.html#Time.Round">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Round(d <a href="index.html#Duration">Duration</a>) <a href="index.html#Time">Time</a></pre>
 				<p>
 Round returns the result of rounding t to the nearest multiple of d (since the zero time).
@@ -1413,7 +1525,9 @@ If d &lt;= 0, Round returns t unchanged.
 				
 			
 				
-				<h3 id="Time.Second">func (Time) <a href="http://localhost:9090/src/time/time.go?s=13345:13371#L400">Second</a></h3>
+				<h3 id="Time.Second">func (Time) <a href="http://localhost:9090/src/time/time.go?s=13280:13306#L397">Second</a>
+					<a class="permalink" href="index.html#Time.Second">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Second() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Second returns the second offset within the minute specified by t, in the range [0, 59].
@@ -1424,7 +1538,9 @@ Second returns the second offset within the minute specified by t, in the range 
 				
 			
 				
-				<h3 id="Time.String">func (Time) <a href="http://localhost:9090/src/time/format.go?s=12854:12883#L407">String</a></h3>
+				<h3 id="Time.String">func (Time) <a href="http://localhost:9090/src/time/format.go?s=13016:13045#L410">String</a>
+					<a class="permalink" href="index.html#Time.String">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 String returns the time formatted using the format string
@@ -1437,7 +1553,9 @@ String returns the time formatted using the format string
 				
 			
 				
-				<h3 id="Time.Sub">func (Time) <a href="http://localhost:9090/src/time/time.go?s=18822:18856#L618">Sub</a></h3>
+				<h3 id="Time.Sub">func (Time) <a href="http://localhost:9090/src/time/time.go?s=18731:18765#L614">Sub</a>
+					<a class="permalink" href="index.html#Time.Sub">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Sub(u <a href="index.html#Time">Time</a>) <a href="index.html#Duration">Duration</a></pre>
 				<p>
 Sub returns the duration t-u. If the result exceeds the maximum (or minimum)
@@ -1451,7 +1569,9 @@ To compute t-d for a duration d, use t.Add(-d).
 				
 			
 				
-				<h3 id="Time.Truncate">func (Time) <a href="http://localhost:9090/src/time/time.go?s=31954:31993#L1092">Truncate</a></h3>
+				<h3 id="Time.Truncate">func (Time) <a href="http://localhost:9090/src/time/time.go?s=31873:31912#L1090">Truncate</a>
+					<a class="permalink" href="index.html#Time.Truncate">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Truncate(d <a href="index.html#Duration">Duration</a>) <a href="index.html#Time">Time</a></pre>
 				<p>
 Truncate returns the result of rounding t down to a multiple of d (since the zero time).
@@ -1463,7 +1583,9 @@ If d &lt;= 0, Truncate returns t unchanged.
 				
 			
 				
-				<h3 id="Time.UTC">func (Time) <a href="http://localhost:9090/src/time/time.go?s=22992:23016#L777">UTC</a></h3>
+				<h3 id="Time.UTC">func (Time) <a href="http://localhost:9090/src/time/time.go?s=22886:22910#L773">UTC</a>
+					<a class="permalink" href="index.html#Time.UTC">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) UTC() <a href="index.html#Time">Time</a></pre>
 				<p>
 UTC returns t with the location set to UTC.
@@ -1474,7 +1596,9 @@ UTC returns t with the location set to UTC.
 				
 			
 				
-				<h3 id="Time.Unix">func (Time) <a href="http://localhost:9090/src/time/time.go?s=23909:23935#L817">Unix</a></h3>
+				<h3 id="Time.Unix">func (Time) <a href="http://localhost:9090/src/time/time.go?s=23803:23829#L813">Unix</a>
+					<a class="permalink" href="index.html#Time.Unix">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Unix() <a href="../builtin/index.html#int64">int64</a></pre>
 				<p>
 Unix returns t as a Unix time, the number of seconds elapsed
@@ -1486,7 +1610,9 @@ since January 1, 1970 UTC.
 				
 			
 				
-				<h3 id="Time.UnixNano">func (Time) <a href="http://localhost:9090/src/time/time.go?s=24254:24284#L825">UnixNano</a></h3>
+				<h3 id="Time.UnixNano">func (Time) <a href="http://localhost:9090/src/time/time.go?s=24148:24178#L821">UnixNano</a>
+					<a class="permalink" href="index.html#Time.UnixNano">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) UnixNano() <a href="../builtin/index.html#int64">int64</a></pre>
 				<p>
 UnixNano returns t as a Unix time, the number of nanoseconds elapsed
@@ -1500,7 +1626,9 @@ means the result of calling UnixNano on the zero Time is undefined.
 				
 			
 				
-				<h3 id="Time.UnmarshalBinary">func (*Time) <a href="http://localhost:9090/src/time/time.go?s=25444:25493#L871">UnmarshalBinary</a></h3>
+				<h3 id="Time.UnmarshalBinary">func (*Time) <a href="http://localhost:9090/src/time/time.go?s=25338:25387#L867">UnmarshalBinary</a>
+					<a class="permalink" href="index.html#Time.UnmarshalBinary">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Time">Time</a>) UnmarshalBinary(data []<a href="../builtin/index.html#byte">byte</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 UnmarshalBinary implements the encoding.BinaryUnmarshaler interface.
@@ -1511,8 +1639,10 @@ UnmarshalBinary implements the encoding.BinaryUnmarshaler interface.
 				
 			
 				
-				<h3 id="Time.UnmarshalJSON">func (*Time) <a href="http://localhost:9090/src/time/time.go?s=27539:27592#L938">UnmarshalJSON</a></h3>
-				<pre>func (t *<a href="index.html#Time">Time</a>) UnmarshalJSON(data []<a href="../builtin/index.html#byte">byte</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Time.UnmarshalJSON">func (*Time) <a href="http://localhost:9090/src/time/time.go?s=27433:27480#L934">UnmarshalJSON</a>
+					<a class="permalink" href="index.html#Time.UnmarshalJSON">&#xb6;</a>
+				</h3>
+				<pre>func (t *<a href="index.html#Time">Time</a>) UnmarshalJSON(data []<a href="../builtin/index.html#byte">byte</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 UnmarshalJSON implements the json.Unmarshaler interface.
 The time is expected to be a quoted string in RFC 3339 format.
@@ -1523,8 +1653,10 @@ The time is expected to be a quoted string in RFC 3339 format.
 				
 			
 				
-				<h3 id="Time.UnmarshalText">func (*Time) <a href="http://localhost:9090/src/time/time.go?s=28236:28289#L957">UnmarshalText</a></h3>
-				<pre>func (t *<a href="index.html#Time">Time</a>) UnmarshalText(data []<a href="../builtin/index.html#byte">byte</a>) (err <a href="../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Time.UnmarshalText">func (*Time) <a href="http://localhost:9090/src/time/time.go?s=28143:28190#L954">UnmarshalText</a>
+					<a class="permalink" href="index.html#Time.UnmarshalText">&#xb6;</a>
+				</h3>
+				<pre>func (t *<a href="index.html#Time">Time</a>) UnmarshalText(data []<a href="../builtin/index.html#byte">byte</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 UnmarshalText implements the encoding.TextUnmarshaler interface.
 The time is expected to be in RFC 3339 format.
@@ -1535,7 +1667,9 @@ The time is expected to be in RFC 3339 format.
 				
 			
 				
-				<h3 id="Time.Weekday">func (Time) <a href="http://localhost:9090/src/time/time.go?s=10396:10427#L304">Weekday</a></h3>
+				<h3 id="Time.Weekday">func (Time) <a href="http://localhost:9090/src/time/time.go?s=10331:10362#L301">Weekday</a>
+					<a class="permalink" href="index.html#Time.Weekday">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Weekday() <a href="index.html#Weekday">Weekday</a></pre>
 				<p>
 Weekday returns the day of the week specified by t.
@@ -1546,7 +1680,9 @@ Weekday returns the day of the week specified by t.
 				
 			
 				
-				<h3 id="Time.Year">func (Time) <a href="http://localhost:9090/src/time/time.go?s=10009:10033#L286">Year</a></h3>
+				<h3 id="Time.Year">func (Time) <a href="http://localhost:9090/src/time/time.go?s=9944:9968#L283">Year</a>
+					<a class="permalink" href="index.html#Time.Year">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Year() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Year returns the year in which t occurs.
@@ -1557,7 +1693,9 @@ Year returns the year in which t occurs.
 				
 			
 				
-				<h3 id="Time.YearDay">func (Time) <a href="http://localhost:9090/src/time/time.go?s=13709:13736#L412">YearDay</a></h3>
+				<h3 id="Time.YearDay">func (Time) <a href="http://localhost:9090/src/time/time.go?s=13644:13671#L409">YearDay</a>
+					<a class="permalink" href="index.html#Time.YearDay">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) YearDay() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 YearDay returns the day of the year specified by t, in the range [1,365] for non-leap years,
@@ -1569,7 +1707,9 @@ and [1,366] in leap years.
 				
 			
 				
-				<h3 id="Time.Zone">func (Time) <a href="http://localhost:9090/src/time/time.go?s=23693:23739#L810">Zone</a></h3>
+				<h3 id="Time.Zone">func (Time) <a href="http://localhost:9090/src/time/time.go?s=23587:23633#L806">Zone</a>
+					<a class="permalink" href="index.html#Time.Zone">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Time">Time</a>) Zone() (name <a href="../builtin/index.html#string">string</a>, offset <a href="../builtin/index.html#int">int</a>)</pre>
 				<p>
 Zone computes the time zone in effect at time t, returning the abbreviated
@@ -1583,7 +1723,9 @@ name of the zone (such as &#34;CET&#34;) and its offset in seconds east of UTC.
 		
 			
 			
-			<h2 id="Timer">type <a href="http://localhost:9090/src/time/sleep.go?s=1447:1499#L37">Timer</a></h2>
+			<h2 id="Timer">type <a href="http://localhost:9090/src/time/sleep.go?s=1446:1498#L37">Timer</a>
+				<a class="permalink" href="index.html#Timer">&#xb6;</a>
+			</h2>
 			<pre>type Timer struct {
     C &lt;-chan <a href="index.html#Time">Time</a>
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1606,7 +1748,9 @@ A Timer must be created with NewTimer or AfterFunc.
 
 			
 				
-				<h3 id="AfterFunc">func <a href="http://localhost:9090/src/time/sleep.go?s=3243:3286#L106">AfterFunc</a></h3>
+				<h3 id="AfterFunc">func <a href="http://localhost:9090/src/time/sleep.go?s=4266:4309#L131">AfterFunc</a>
+					<a class="permalink" href="index.html#AfterFunc">&#xb6;</a>
+				</h3>
 				<pre>func AfterFunc(d <a href="index.html#Duration">Duration</a>, f func()) *<a href="index.html#Timer">Timer</a></pre>
 				<p>
 AfterFunc waits for the duration to elapse and then calls f
@@ -1618,7 +1762,9 @@ be used to cancel the call using its Stop method.
 				
 			
 				
-				<h3 id="NewTimer">func <a href="http://localhost:9090/src/time/sleep.go?s=1986:2018#L56">NewTimer</a></h3>
+				<h3 id="NewTimer">func <a href="http://localhost:9090/src/time/sleep.go?s=2220:2252#L64">NewTimer</a>
+					<a class="permalink" href="index.html#NewTimer">&#xb6;</a>
+				</h3>
 				<pre>func NewTimer(d <a href="index.html#Duration">Duration</a>) *<a href="index.html#Timer">Timer</a></pre>
 				<p>
 NewTimer creates a new Timer that will send
@@ -1631,12 +1777,33 @@ the current time on its channel after at least duration d.
 
 			
 				
-				<h3 id="Timer.Reset">func (*Timer) <a href="http://localhost:9090/src/time/sleep.go?s=2330:2368#L73">Reset</a></h3>
+				<h3 id="Timer.Reset">func (*Timer) <a href="http://localhost:9090/src/time/sleep.go?s=3155:3193#L95">Reset</a>
+					<a class="permalink" href="index.html#Timer.Reset">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Timer">Timer</a>) Reset(d <a href="index.html#Duration">Duration</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Reset changes the timer to expire after duration d.
 It returns true if the timer had been active, false if the timer had
 expired or been stopped.
+</p>
+<p>
+To reuse an active timer, always call its Stop method first and—if it had
+expired—drain the value from its channel. For example:
+</p>
+<pre>if !t.Stop() {
+	&lt;-t.C
+}
+t.Reset(d)
+</pre>
+<p>
+This should not be done concurrent to other receives from the Timer&#39;s
+channel.
+</p>
+<p>
+Note that it is not possible to use Reset&#39;s return value correctly, as there
+is a race condition between draining the channel and the new timer expiring.
+Reset should always be used in concert with Stop, as described above.
+The return value exists to preserve compatibility with existing programs.
 </p>
 
 				
@@ -1644,7 +1811,9 @@ expired or been stopped.
 				
 			
 				
-				<h3 id="Timer.Stop">func (*Timer) <a href="http://localhost:9090/src/time/sleep.go?s=1746:1773#L47">Stop</a></h3>
+				<h3 id="Timer.Stop">func (*Timer) <a href="http://localhost:9090/src/time/sleep.go?s=1980:2007#L55">Stop</a>
+					<a class="permalink" href="index.html#Timer.Stop">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Timer">Timer</a>) Stop() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Stop prevents the Timer from firing.
@@ -1652,6 +1821,18 @@ It returns true if the call stops the timer, false if the timer has already
 expired or been stopped.
 Stop does not close the channel, to prevent a read from the channel succeeding
 incorrectly.
+</p>
+<p>
+To prevent the timer firing after a call to Stop,
+check the return value and drain the channel. For example:
+</p>
+<pre>if !t.Stop() {
+	&lt;-t.C
+}
+</pre>
+<p>
+This cannot be done concurrent to other receives from the Timer&#39;s
+channel.
 </p>
 
 				
@@ -1661,7 +1842,9 @@ incorrectly.
 		
 			
 			
-			<h2 id="Weekday">type <a href="http://localhost:9090/src/time/time.go?s=3598:3614#L103">Weekday</a></h2>
+			<h2 id="Weekday">type <a href="http://localhost:9090/src/time/time.go?s=3596:3612#L103">Weekday</a>
+				<a class="permalink" href="index.html#Weekday">&#xb6;</a>
+			</h2>
 			<pre>type Weekday <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 A Weekday specifies a day of the week (Sunday = 0, ...).
@@ -1691,7 +1874,9 @@ A Weekday specifies a day of the week (Sunday = 0, ...).
 
 			
 				
-				<h3 id="Weekday.String">func (Weekday) <a href="http://localhost:9090/src/time/time.go?s=3891:3923#L126">String</a></h3>
+				<h3 id="Weekday.String">func (Weekday) <a href="http://localhost:9090/src/time/time.go?s=3889:3921#L126">String</a>
+					<a class="permalink" href="index.html#Weekday.String">&#xb6;</a>
+				</h3>
 				<pre>func (d <a href="index.html#Weekday">Weekday</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 String returns the English name of the day (&#34;Sunday&#34;, &#34;Monday&#34;, ...).
@@ -1713,7 +1898,7 @@ String returns the English name of the day (&#34;Sunday&#34;, &#34;Monday&#34;, 
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1731,6 +1916,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

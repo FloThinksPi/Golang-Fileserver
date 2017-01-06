@@ -186,7 +186,9 @@ certificates. See RFC 1421.
 		
 			
 			
-			<h2 id="Encode">func <a href="http://localhost:9090/src/encoding/pem/pem.go?s=5906:5948#L222">Encode</a></h2>
+			<h2 id="Encode">func <a href="http://localhost:9090/src/encoding/pem/pem.go?s=5905:5947#L222">Encode</a>
+				<a class="permalink" href="index.html#Encode">&#xb6;</a>
+			</h2>
 			<pre>func Encode(out <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, b *<a href="index.html#Block">Block</a>) <a href="../../builtin/index.html#error">error</a></pre>
 			
 			
@@ -195,7 +197,9 @@ certificates. See RFC 1421.
 		
 			
 			
-			<h2 id="EncodeToMemory">func <a href="http://localhost:9090/src/encoding/pem/pem.go?s=7241:7277#L280">EncodeToMemory</a></h2>
+			<h2 id="EncodeToMemory">func <a href="http://localhost:9090/src/encoding/pem/pem.go?s=7240:7276#L280">EncodeToMemory</a>
+				<a class="permalink" href="index.html#EncodeToMemory">&#xb6;</a>
+			</h2>
 			<pre>func EncodeToMemory(b *<a href="index.html#Block">Block</a>) []<a href="../../builtin/index.html#byte">byte</a></pre>
 			
 			
@@ -205,7 +209,9 @@ certificates. See RFC 1421.
 		
 			
 			
-			<h2 id="Block">type <a href="http://localhost:9090/src/encoding/pem/pem.go?s=669:934#L17">Block</a></h2>
+			<h2 id="Block">type <a href="http://localhost:9090/src/encoding/pem/pem.go?s=669:934#L17">Block</a>
+				<a class="permalink" href="index.html#Block">&#xb6;</a>
+			</h2>
 			<pre>type Block struct {
     Type    <a href="../../builtin/index.html#string">string</a>            <span class="comment">// The type, taken from the preamble (i.e. &#34;RSA PRIVATE KEY&#34;).</span>
     Headers map[<a href="../../builtin/index.html#string">string</a>]<a href="../../builtin/index.html#string">string</a> <span class="comment">// Optional headers.</span>
@@ -237,7 +243,9 @@ where Headers is a possibly empty sequence of Key: Value lines.
 
 			
 				
-				<h3 id="Decode">func <a href="http://localhost:9090/src/encoding/pem/pem.go?s=2203:2251#L68">Decode</a></h3>
+				<h3 id="Decode">func <a href="http://localhost:9090/src/encoding/pem/pem.go?s=2203:2251#L68">Decode</a>
+					<a class="permalink" href="index.html#Decode">&#xb6;</a>
+				</h3>
 				<pre>func Decode(data []<a href="../../builtin/index.html#byte">byte</a>) (p *<a href="index.html#Block">Block</a>, rest []<a href="../../builtin/index.html#byte">byte</a>)</pre>
 				<p>
 Decode will find the next PEM formatted block (certificate, private key
@@ -263,7 +271,7 @@ rest.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -281,6 +289,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

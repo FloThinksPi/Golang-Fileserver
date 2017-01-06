@@ -125,7 +125,7 @@ a result of Coron; the AES-CTR stream is IRO under standard assumptions.
 				<dd><a href="index.html#PrivateKey">type PrivateKey</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#GenerateKey">func GenerateKey(c elliptic.Curve, rand io.Reader) (priv *PrivateKey, err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#GenerateKey">func GenerateKey(c elliptic.Curve, rand io.Reader) (*PrivateKey, error)</a></dd>
 				
 				
 					
@@ -201,13 +201,16 @@ a result of Coron; the AES-CTR stream is IRO under standard assumptions.
 		
 			
 			
-			<h2 id="Sign">func <a href="http://localhost:9090/src/crypto/ecdsa/ecdsa.go?s=4343:4426#L140">Sign</a></h2>
+			<h2 id="Sign">func <a href="http://localhost:9090/src/crypto/ecdsa/ecdsa.go?s=4459:4542#L141">Sign</a>
+				<a class="permalink" href="index.html#Sign">&#xb6;</a>
+			</h2>
 			<pre>func Sign(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, priv *<a href="index.html#PrivateKey">PrivateKey</a>, hash []<a href="../../builtin/index.html#byte">byte</a>) (r, s *<a href="../../math/big/index.html">big</a>.<a href="../../math/big/index.html#Int">Int</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
-Sign signs an arbitrary length hash (which should be the result of hashing a
-larger message) using the private key, priv. It returns the signature as a
-pair of integers. The security of the private key depends on the entropy of
-rand.
+Sign signs a hash (which should be the result of hashing a larger message)
+using the private key, priv. If the hash is longer than the bit-length of the
+private key&#39;s curve order, the hash will be truncated to that length.  It
+returns the signature as a pair of integers. The security of the private key
+depends on the entropy of rand.
 </p>
 
 			
@@ -216,7 +219,9 @@ rand.
 		
 			
 			
-			<h2 id="Verify">func <a href="http://localhost:9090/src/crypto/ecdsa/ecdsa.go?s=6093:6153#L216">Verify</a></h2>
+			<h2 id="Verify">func <a href="http://localhost:9090/src/crypto/ecdsa/ecdsa.go?s=6209:6269#L217">Verify</a>
+				<a class="permalink" href="index.html#Verify">&#xb6;</a>
+			</h2>
 			<pre>func Verify(pub *<a href="index.html#PublicKey">PublicKey</a>, hash []<a href="../../builtin/index.html#byte">byte</a>, r, s *<a href="../../math/big/index.html">big</a>.<a href="../../math/big/index.html#Int">Int</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 Verify verifies the signature in r, s of hash using the public key, pub. Its
@@ -230,7 +235,9 @@ return value records whether the signature is valid.
 		
 			
 			
-			<h2 id="PrivateKey">type <a href="http://localhost:9090/src/crypto/ecdsa/ecdsa.go?s=1388:1437#L43">PrivateKey</a></h2>
+			<h2 id="PrivateKey">type <a href="http://localhost:9090/src/crypto/ecdsa/ecdsa.go?s=1388:1437#L43">PrivateKey</a>
+				<a class="permalink" href="index.html#PrivateKey">&#xb6;</a>
+			</h2>
 			<pre>type PrivateKey struct {
     <a href="index.html#PublicKey">PublicKey</a>
     D *<a href="../../math/big/index.html">big</a>.<a href="../../math/big/index.html#Int">Int</a>
@@ -250,8 +257,10 @@ PrivateKey represents a ECDSA private key.
 
 			
 				
-				<h3 id="GenerateKey">func <a href="http://localhost:9090/src/crypto/ecdsa/ecdsa.go?s=2616:2696#L90">GenerateKey</a></h3>
-				<pre>func GenerateKey(c <a href="../elliptic/index.html">elliptic</a>.<a href="../elliptic/index.html#Curve">Curve</a>, rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) (priv *<a href="index.html#PrivateKey">PrivateKey</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="GenerateKey">func <a href="http://localhost:9090/src/crypto/ecdsa/ecdsa.go?s=2616:2687#L90">GenerateKey</a>
+					<a class="permalink" href="index.html#GenerateKey">&#xb6;</a>
+				</h3>
+				<pre>func GenerateKey(c <a href="../elliptic/index.html">elliptic</a>.<a href="../elliptic/index.html#Curve">Curve</a>, rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) (*<a href="index.html#PrivateKey">PrivateKey</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 GenerateKey generates a public and private key pair.
 </p>
@@ -262,7 +271,9 @@ GenerateKey generates a public and private key pair.
 
 			
 				
-				<h3 id="PrivateKey.Public">func (*PrivateKey) <a href="http://localhost:9090/src/crypto/ecdsa/ecdsa.go?s=1542:1591#L53">Public</a></h3>
+				<h3 id="PrivateKey.Public">func (*PrivateKey) <a href="http://localhost:9090/src/crypto/ecdsa/ecdsa.go?s=1542:1591#L53">Public</a>
+					<a class="permalink" href="index.html#PrivateKey.Public">&#xb6;</a>
+				</h3>
 				<pre>func (priv *<a href="index.html#PrivateKey">PrivateKey</a>) Public() <a href="../index.html">crypto</a>.<a href="../index.html#PublicKey">PublicKey</a></pre>
 				<p>
 Public returns the public key corresponding to priv.
@@ -273,7 +284,9 @@ Public returns the public key corresponding to priv.
 				
 			
 				
-				<h3 id="PrivateKey.Sign">func (*PrivateKey) <a href="http://localhost:9090/src/crypto/ecdsa/ecdsa.go?s=1863:1959#L61">Sign</a></h3>
+				<h3 id="PrivateKey.Sign">func (*PrivateKey) <a href="http://localhost:9090/src/crypto/ecdsa/ecdsa.go?s=1863:1959#L61">Sign</a>
+					<a class="permalink" href="index.html#PrivateKey.Sign">&#xb6;</a>
+				</h3>
 				<pre>func (priv *<a href="index.html#PrivateKey">PrivateKey</a>) Sign(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, msg []<a href="../../builtin/index.html#byte">byte</a>, opts <a href="../index.html">crypto</a>.<a href="../index.html#SignerOpts">SignerOpts</a>) ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Sign signs msg with priv, reading randomness from rand. This method is
@@ -289,7 +302,9 @@ directly.
 		
 			
 			
-			<h2 id="PublicKey">type <a href="http://localhost:9090/src/crypto/ecdsa/ecdsa.go?s=1284:1340#L37">PublicKey</a></h2>
+			<h2 id="PublicKey">type <a href="http://localhost:9090/src/crypto/ecdsa/ecdsa.go?s=1284:1340#L37">PublicKey</a>
+				<a class="permalink" href="index.html#PublicKey">&#xb6;</a>
+			</h2>
 			<pre>type PublicKey struct {
     <a href="../elliptic/index.html">elliptic</a>.<a href="../elliptic/index.html#Curve">Curve</a>
     X, Y *<a href="../../math/big/index.html">big</a>.<a href="../../math/big/index.html#Int">Int</a>
@@ -322,7 +337,7 @@ PublicKey represents an ECDSA public key.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -340,6 +355,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

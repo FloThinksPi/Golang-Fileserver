@@ -116,6 +116,8 @@ assume they are safe for parallel execution.
 			<div id="manual-nav">
 			<dl>
 			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
 			
 				<dd><a href="index.html#pkg-variables">Variables</a></dd>
 			
@@ -371,6 +373,19 @@ assume they are safe for parallel execution.
 		</div> <!-- #pkg-callgraph -->
 
 		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				<pre>const (
+    <span id="SeekStart">SeekStart</span>   = 0 <span class="comment">// seek relative to the origin of the file</span>
+    <span id="SeekCurrent">SeekCurrent</span> = 1 <span class="comment">// seek relative to the current offset</span>
+    <span id="SeekEnd">SeekEnd</span>     = 2 <span class="comment">// seek relative to the end</span>
+)</pre>
+				<p>
+Seek whence values.
+</p>
+
+			
+		
 		
 			<h2 id="pkg-variables">Variables</h2>
 			
@@ -422,11 +437,13 @@ middle of reading a fixed-size block or data structure.
 		
 			
 			
-			<h2 id="Copy">func <a href="http://localhost:9090/src/io/io.go?s=12235:12295#L339">Copy</a></h2>
+			<h2 id="Copy">func <a href="http://localhost:9090/src/io/io.go?s=12490:12550#L349">Copy</a>
+				<a class="permalink" href="index.html#Copy">&#xb6;</a>
+			</h2>
 			<pre>func Copy(dst <a href="index.html#Writer">Writer</a>, src <a href="index.html#Reader">Reader</a>) (written <a href="../builtin/index.html#int64">int64</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Copy copies from src to dst until either EOF is reached
-on src or an error occurs.  It returns the number of bytes
+on src or an error occurs. It returns the number of bytes
 copied and the first error encountered while copying, if any.
 </p>
 <p>
@@ -447,7 +464,9 @@ the copy is implemented by calling dst.ReadFrom(src).
 		
 			
 			
-			<h2 id="CopyBuffer">func <a href="http://localhost:9090/src/io/io.go?s=12575:12653#L347">CopyBuffer</a></h2>
+			<h2 id="CopyBuffer">func <a href="http://localhost:9090/src/io/io.go?s=12830:12908#L357">CopyBuffer</a>
+				<a class="permalink" href="index.html#CopyBuffer">&#xb6;</a>
+			</h2>
 			<pre>func CopyBuffer(dst <a href="index.html#Writer">Writer</a>, src <a href="index.html#Reader">Reader</a>, buf []<a href="../builtin/index.html#byte">byte</a>) (written <a href="../builtin/index.html#int64">int64</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 CopyBuffer is identical to Copy except that it stages through the
@@ -462,7 +481,9 @@ zero length, CopyBuffer panics.
 		
 			
 			
-			<h2 id="CopyN">func <a href="http://localhost:9090/src/io/io.go?s=11389:11459#L315">CopyN</a></h2>
+			<h2 id="CopyN">func <a href="http://localhost:9090/src/io/io.go?s=11645:11715#L325">CopyN</a>
+				<a class="permalink" href="index.html#CopyN">&#xb6;</a>
+			</h2>
 			<pre>func CopyN(dst <a href="index.html#Writer">Writer</a>, src <a href="index.html#Reader">Reader</a>, n <a href="../builtin/index.html#int64">int64</a>) (written <a href="../builtin/index.html#int64">int64</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 CopyN copies n bytes (or until an error) from src to dst.
@@ -481,7 +502,9 @@ the copy is implemented using it.
 		
 			
 			
-			<h2 id="ReadAtLeast">func <a href="http://localhost:9090/src/io/io.go?s=10351:10417#L281">ReadAtLeast</a></h2>
+			<h2 id="ReadAtLeast">func <a href="http://localhost:9090/src/io/io.go?s=10607:10673#L291">ReadAtLeast</a>
+				<a class="permalink" href="index.html#ReadAtLeast">&#xb6;</a>
+			</h2>
 			<pre>func ReadAtLeast(r <a href="index.html#Reader">Reader</a>, buf []<a href="../builtin/index.html#byte">byte</a>, min <a href="../builtin/index.html#int">int</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 ReadAtLeast reads from r into buf until it has read at least min bytes.
@@ -499,7 +522,9 @@ On return, n &gt;= min if and only if err == nil.
 		
 			
 			
-			<h2 id="ReadFull">func <a href="http://localhost:9090/src/io/io.go?s=10995:11049#L304">ReadFull</a></h2>
+			<h2 id="ReadFull">func <a href="http://localhost:9090/src/io/io.go?s=11251:11305#L314">ReadFull</a>
+				<a class="permalink" href="index.html#ReadFull">&#xb6;</a>
+			</h2>
 			<pre>func ReadFull(r <a href="index.html#Reader">Reader</a>, buf []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 ReadFull reads exactly len(buf) bytes from r into buf.
@@ -516,11 +541,14 @@ On return, n == len(buf) if and only if err == nil.
 		
 			
 			
-			<h2 id="WriteString">func <a href="http://localhost:9090/src/io/io.go?s=9764:9819#L267">WriteString</a></h2>
+			<h2 id="WriteString">func <a href="http://localhost:9090/src/io/io.go?s=10020:10075#L277">WriteString</a>
+				<a class="permalink" href="index.html#WriteString">&#xb6;</a>
+			</h2>
 			<pre>func WriteString(w <a href="index.html#Writer">Writer</a>, s <a href="../builtin/index.html#string">string</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 WriteString writes the contents of the string s to w, which accepts a slice of bytes.
 If w implements a WriteString method, it is invoked directly.
+Otherwise, w.Write is called exactly once.
 </p>
 
 			
@@ -530,9 +558,11 @@ If w implements a WriteString method, it is invoked directly.
 		
 			
 			
-			<h2 id="ByteReader">type <a href="http://localhost:9090/src/io/io.go?s=8263:8324#L218">ByteReader</a></h2>
+			<h2 id="ByteReader">type <a href="http://localhost:9090/src/io/io.go?s=8479:8534#L227">ByteReader</a>
+				<a class="permalink" href="index.html#ByteReader">&#xb6;</a>
+			</h2>
 			<pre>type ByteReader interface {
-    ReadByte() (c <a href="../builtin/index.html#byte">byte</a>, err <a href="../builtin/index.html#error">error</a>)
+    ReadByte() (<a href="../builtin/index.html#byte">byte</a>, <a href="../builtin/index.html#error">error</a>)
 }</pre>
 			<p>
 ByteReader is the interface that wraps the ReadByte method.
@@ -556,7 +586,9 @@ ReadByte reads and returns the next byte from the input.
 		
 			
 			
-			<h2 id="ByteScanner">type <a href="http://localhost:9090/src/io/io.go?s=8625:8687#L229">ByteScanner</a></h2>
+			<h2 id="ByteScanner">type <a href="http://localhost:9090/src/io/io.go?s=8835:8897#L238">ByteScanner</a>
+				<a class="permalink" href="index.html#ByteScanner">&#xb6;</a>
+			</h2>
 			<pre>type ByteScanner interface {
     <a href="index.html#ByteReader">ByteReader</a>
     UnreadByte() <a href="../builtin/index.html#error">error</a>
@@ -587,7 +619,9 @@ call to ReadByte.
 		
 			
 			
-			<h2 id="ByteWriter">type <a href="http://localhost:9090/src/io/io.go?s=8753:8807#L235">ByteWriter</a></h2>
+			<h2 id="ByteWriter">type <a href="http://localhost:9090/src/io/io.go?s=8963:9017#L244">ByteWriter</a>
+				<a class="permalink" href="index.html#ByteWriter">&#xb6;</a>
+			</h2>
 			<pre>type ByteWriter interface {
     WriteByte(c <a href="../builtin/index.html#byte">byte</a>) <a href="../builtin/index.html#error">error</a>
 }</pre>
@@ -610,7 +644,9 @@ ByteWriter is the interface that wraps the WriteByte method.
 		
 			
 			
-			<h2 id="Closer">type <a href="http://localhost:9090/src/io/io.go?s=3853:3893#L81">Closer</a></h2>
+			<h2 id="Closer">type <a href="http://localhost:9090/src/io/io.go?s=4043:4083#L88">Closer</a>
+				<a class="permalink" href="index.html#Closer">&#xb6;</a>
+			</h2>
 			<pre>type Closer interface {
     Close() <a href="../builtin/index.html#error">error</a>
 }</pre>
@@ -637,7 +673,9 @@ Specific implementations may document their own behavior.
 		
 			
 			
-			<h2 id="LimitedReader">type <a href="http://localhost:9090/src/io/io.go?s=14016:14109#L404">LimitedReader</a></h2>
+			<h2 id="LimitedReader">type <a href="http://localhost:9090/src/io/io.go?s=14271:14364#L414">LimitedReader</a>
+				<a class="permalink" href="index.html#LimitedReader">&#xb6;</a>
+			</h2>
 			<pre>type LimitedReader struct {
     R <a href="index.html#Reader">Reader</a> <span class="comment">// underlying reader</span>
     N <a href="../builtin/index.html#int64">int64</a>  <span class="comment">// max bytes remaining</span>
@@ -661,7 +699,9 @@ updates N to reflect the new amount remaining.
 
 			
 				
-				<h3 id="LimitedReader.Read">func (*LimitedReader) <a href="http://localhost:9090/src/io/io.go?s=14111:14168#L409">Read</a></h3>
+				<h3 id="LimitedReader.Read">func (*LimitedReader) <a href="http://localhost:9090/src/io/io.go?s=14366:14423#L419">Read</a>
+					<a class="permalink" href="index.html#LimitedReader.Read">&#xb6;</a>
+				</h3>
 				<pre>func (l *<a href="index.html#LimitedReader">LimitedReader</a>) Read(p []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -671,7 +711,9 @@ updates N to reflect the new amount remaining.
 		
 			
 			
-			<h2 id="PipeReader">type <a href="http://localhost:9090/src/io/pipe.go?s=2308:2343#L114">PipeReader</a></h2>
+			<h2 id="PipeReader">type <a href="http://localhost:9090/src/io/pipe.go?s=2260:2295#L109">PipeReader</a>
+				<a class="permalink" href="index.html#PipeReader">&#xb6;</a>
+			</h2>
 			<pre>type PipeReader struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -690,7 +732,9 @@ A PipeReader is the read half of a pipe.
 
 			
 				
-				<h3 id="Pipe">func <a href="http://localhost:9090/src/io/pipe.go?s=4486:4524#L179">Pipe</a></h3>
+				<h3 id="Pipe">func <a href="http://localhost:9090/src/io/pipe.go?s=4438:4476#L174">Pipe</a>
+					<a class="permalink" href="index.html#Pipe">&#xb6;</a>
+				</h3>
 				<pre>func Pipe() (*<a href="index.html#PipeReader">PipeReader</a>, *<a href="index.html#PipeWriter">PipeWriter</a>)</pre>
 				<p>
 Pipe creates a synchronous in-memory pipe.
@@ -710,7 +754,9 @@ the individual calls will be gated sequentially.
 
 			
 				
-				<h3 id="PipeReader.Close">func (*PipeReader) <a href="http://localhost:9090/src/io/pipe.go?s=2791:2825#L129">Close</a></h3>
+				<h3 id="PipeReader.Close">func (*PipeReader) <a href="http://localhost:9090/src/io/pipe.go?s=2743:2777#L124">Close</a>
+					<a class="permalink" href="index.html#PipeReader.Close">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#PipeReader">PipeReader</a>) Close() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the reader; subsequent writes to the
@@ -722,7 +768,9 @@ write half of the pipe will return the error ErrClosedPipe.
 				
 			
 				
-				<h3 id="PipeReader.CloseWithError">func (*PipeReader) <a href="http://localhost:9090/src/io/pipe.go?s=2976:3028#L135">CloseWithError</a></h3>
+				<h3 id="PipeReader.CloseWithError">func (*PipeReader) <a href="http://localhost:9090/src/io/pipe.go?s=2928:2980#L130">CloseWithError</a>
+					<a class="permalink" href="index.html#PipeReader.CloseWithError">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#PipeReader">PipeReader</a>) CloseWithError(err <a href="../builtin/index.html#error">error</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 CloseWithError closes the reader; subsequent writes
@@ -734,7 +782,9 @@ to the write half of the pipe will return the error err.
 				
 			
 				
-				<h3 id="PipeReader.Read">func (*PipeReader) <a href="http://localhost:9090/src/io/pipe.go?s=2589:2646#L123">Read</a></h3>
+				<h3 id="PipeReader.Read">func (*PipeReader) <a href="http://localhost:9090/src/io/pipe.go?s=2541:2598#L118">Read</a>
+					<a class="permalink" href="index.html#PipeReader.Read">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#PipeReader">PipeReader</a>) Read(data []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Read implements the standard Read interface:
@@ -751,7 +801,9 @@ returned as err; otherwise err is EOF.
 		
 			
 			
-			<h2 id="PipeWriter">type <a href="http://localhost:9090/src/io/pipe.go?s=3108:3143#L141">PipeWriter</a></h2>
+			<h2 id="PipeWriter">type <a href="http://localhost:9090/src/io/pipe.go?s=3060:3095#L136">PipeWriter</a>
+				<a class="permalink" href="index.html#PipeWriter">&#xb6;</a>
+			</h2>
 			<pre>type PipeWriter struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -772,7 +824,9 @@ A PipeWriter is the write half of a pipe.
 
 			
 				
-				<h3 id="PipeWriter.Close">func (*PipeWriter) <a href="http://localhost:9090/src/io/pipe.go?s=3611:3645#L156">Close</a></h3>
+				<h3 id="PipeWriter.Close">func (*PipeWriter) <a href="http://localhost:9090/src/io/pipe.go?s=3563:3597#L151">Close</a>
+					<a class="permalink" href="index.html#PipeWriter.Close">&#xb6;</a>
+				</h3>
 				<pre>func (w *<a href="index.html#PipeWriter">PipeWriter</a>) Close() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the writer; subsequent reads from the
@@ -784,7 +838,9 @@ read half of the pipe will return no bytes and EOF.
 				
 			
 				
-				<h3 id="PipeWriter.CloseWithError">func (*PipeWriter) <a href="http://localhost:9090/src/io/pipe.go?s=3875:3927#L165">CloseWithError</a></h3>
+				<h3 id="PipeWriter.CloseWithError">func (*PipeWriter) <a href="http://localhost:9090/src/io/pipe.go?s=3827:3879#L160">CloseWithError</a>
+					<a class="permalink" href="index.html#PipeWriter.CloseWithError">&#xb6;</a>
+				</h3>
 				<pre>func (w *<a href="index.html#PipeWriter">PipeWriter</a>) CloseWithError(err <a href="../builtin/index.html#error">error</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 CloseWithError closes the writer; subsequent reads from the
@@ -800,7 +856,9 @@ CloseWithError always returns nil.
 				
 			
 				
-				<h3 id="PipeWriter.Write">func (*PipeWriter) <a href="http://localhost:9090/src/io/pipe.go?s=3414:3472#L150">Write</a></h3>
+				<h3 id="PipeWriter.Write">func (*PipeWriter) <a href="http://localhost:9090/src/io/pipe.go?s=3366:3424#L145">Write</a>
+					<a class="permalink" href="index.html#PipeWriter.Write">&#xb6;</a>
+				</h3>
 				<pre>func (w *<a href="index.html#PipeWriter">PipeWriter</a>) Write(data []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Write implements the standard Write interface:
@@ -817,7 +875,9 @@ returned as err; otherwise err is ErrClosedPipe.
 		
 			
 			
-			<h2 id="ReadCloser">type <a href="http://localhost:9090/src/io/io.go?s=4757:4802#L107">ReadCloser</a></h2>
+			<h2 id="ReadCloser">type <a href="http://localhost:9090/src/io/io.go?s=4977:5022#L116">ReadCloser</a>
+				<a class="permalink" href="index.html#ReadCloser">&#xb6;</a>
+			</h2>
 			<pre>type ReadCloser interface {
     <a href="index.html#Reader">Reader</a>
     <a href="index.html#Closer">Closer</a>
@@ -841,7 +901,9 @@ ReadCloser is the interface that groups the basic Read and Close methods.
 		
 			
 			
-			<h2 id="ReadSeeker">type <a href="http://localhost:9090/src/io/io.go?s=5156:5201#L126">ReadSeeker</a></h2>
+			<h2 id="ReadSeeker">type <a href="http://localhost:9090/src/io/io.go?s=5376:5421#L135">ReadSeeker</a>
+				<a class="permalink" href="index.html#ReadSeeker">&#xb6;</a>
+			</h2>
 			<pre>type ReadSeeker interface {
     <a href="index.html#Reader">Reader</a>
     <a href="index.html#Seeker">Seeker</a>
@@ -865,7 +927,9 @@ ReadSeeker is the interface that groups the basic Read and Seek methods.
 		
 			
 			
-			<h2 id="ReadWriteCloser">type <a href="http://localhost:9090/src/io/io.go?s=5020:5078#L119">ReadWriteCloser</a></h2>
+			<h2 id="ReadWriteCloser">type <a href="http://localhost:9090/src/io/io.go?s=5240:5298#L128">ReadWriteCloser</a>
+				<a class="permalink" href="index.html#ReadWriteCloser">&#xb6;</a>
+			</h2>
 			<pre>type ReadWriteCloser interface {
     <a href="index.html#Reader">Reader</a>
     <a href="index.html#Writer">Writer</a>
@@ -890,7 +954,9 @@ ReadWriteCloser is the interface that groups the basic Read, Write and Close met
 		
 			
 			
-			<h2 id="ReadWriteSeeker">type <a href="http://localhost:9090/src/io/io.go?s=5417:5475#L138">ReadWriteSeeker</a></h2>
+			<h2 id="ReadWriteSeeker">type <a href="http://localhost:9090/src/io/io.go?s=5637:5695#L147">ReadWriteSeeker</a>
+				<a class="permalink" href="index.html#ReadWriteSeeker">&#xb6;</a>
+			</h2>
 			<pre>type ReadWriteSeeker interface {
     <a href="index.html#Reader">Reader</a>
     <a href="index.html#Writer">Writer</a>
@@ -915,7 +981,9 @@ ReadWriteSeeker is the interface that groups the basic Read, Write and Seek meth
 		
 			
 			
-			<h2 id="ReadWriter">type <a href="http://localhost:9090/src/io/io.go?s=4633:4678#L101">ReadWriter</a></h2>
+			<h2 id="ReadWriter">type <a href="http://localhost:9090/src/io/io.go?s=4853:4898#L110">ReadWriter</a>
+				<a class="permalink" href="index.html#ReadWriter">&#xb6;</a>
+			</h2>
 			<pre>type ReadWriter interface {
     <a href="index.html#Reader">Reader</a>
     <a href="index.html#Writer">Writer</a>
@@ -939,7 +1007,9 @@ ReadWriter is the interface that groups the basic Read and Write methods.
 		
 			
 			
-			<h2 id="Reader">type <a href="http://localhost:9090/src/io/io.go?s=3113:3173#L60">Reader</a></h2>
+			<h2 id="Reader">type <a href="http://localhost:9090/src/io/io.go?s=3303:3363#L67">Reader</a>
+				<a class="permalink" href="index.html#Reader">&#xb6;</a>
+			</h2>
 			<pre>type Reader interface {
     Read(p []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)
 }</pre>
@@ -947,8 +1017,8 @@ ReadWriter is the interface that groups the basic Read and Write methods.
 Reader is the interface that wraps the basic Read method.
 </p>
 <p>
-Read reads up to len(p) bytes into p.  It returns the number of bytes
-read (0 &lt;= n &lt;= len(p)) and any error encountered.  Even if Read
+Read reads up to len(p) bytes into p. It returns the number of bytes
+read (0 &lt;= n &lt;= len(p)) and any error encountered. Even if Read
 returns n &lt; len(p), it may use all of p as scratch space during the call.
 If some data is available but not len(p) bytes, Read conventionally
 returns what is available instead of waiting for more.
@@ -956,16 +1026,16 @@ returns what is available instead of waiting for more.
 <p>
 When Read encounters an error or end-of-file condition after
 successfully reading n &gt; 0 bytes, it returns the number of
-bytes read.  It may return the (non-nil) error from the same call
+bytes read. It may return the (non-nil) error from the same call
 or return the error (and n == 0) from a subsequent call.
 An instance of this general case is that a Reader returning
 a non-zero number of bytes at the end of the input stream may
-return either err == EOF or err == nil.  The next Read should
+return either err == EOF or err == nil. The next Read should
 return 0, EOF.
 </p>
 <p>
 Callers should always process the n &gt; 0 bytes returned before
-considering the error err.  Doing so correctly handles I/O errors
+considering the error err. Doing so correctly handles I/O errors
 that happen after reading some bytes and also both of the
 allowed EOF behaviors.
 </p>
@@ -990,7 +1060,9 @@ Implementations must not retain p.
 
 			
 				
-				<h3 id="LimitReader">func <a href="http://localhost:9090/src/io/io.go?s=13781:13823#L399">LimitReader</a></h3>
+				<h3 id="LimitReader">func <a href="http://localhost:9090/src/io/io.go?s=14036:14078#L409">LimitReader</a>
+					<a class="permalink" href="index.html#LimitReader">&#xb6;</a>
+				</h3>
 				<pre>func LimitReader(r <a href="index.html#Reader">Reader</a>, n <a href="../builtin/index.html#int64">int64</a>) <a href="index.html#Reader">Reader</a></pre>
 				<p>
 LimitReader returns a Reader that reads from r
@@ -1002,11 +1074,13 @@ The underlying implementation is a *LimitedReader.
 				
 			
 				
-				<h3 id="MultiReader">func <a href="http://localhost:9090/src/io/multi.go?s=830:872#L21">MultiReader</a></h3>
+				<h3 id="MultiReader">func <a href="http://localhost:9090/src/io/multi.go?s=1028:1070#L29">MultiReader</a>
+					<a class="permalink" href="index.html#MultiReader">&#xb6;</a>
+				</h3>
 				<pre>func MultiReader(readers ...<a href="index.html#Reader">Reader</a>) <a href="index.html#Reader">Reader</a></pre>
 				<p>
 MultiReader returns a Reader that&#39;s the logical concatenation of
-the provided input readers.  They&#39;re read sequentially.  Once all
+the provided input readers. They&#39;re read sequentially. Once all
 inputs have returned EOF, Read will return EOF.  If any of the readers
 return a non-nil, non-EOF error, Read will return that error.
 </p>
@@ -1015,12 +1089,14 @@ return a non-nil, non-EOF error, Read will return that error.
 				
 			
 				
-				<h3 id="TeeReader">func <a href="http://localhost:9090/src/io/io.go?s=16109:16150#L493">TeeReader</a></h3>
+				<h3 id="TeeReader">func <a href="http://localhost:9090/src/io/io.go?s=16387:16428#L503">TeeReader</a>
+					<a class="permalink" href="index.html#TeeReader">&#xb6;</a>
+				</h3>
 				<pre>func TeeReader(r <a href="index.html#Reader">Reader</a>, w <a href="index.html#Writer">Writer</a>) <a href="index.html#Reader">Reader</a></pre>
 				<p>
 TeeReader returns a Reader that writes to w what it reads from r.
 All reads from r performed through it are matched with
-corresponding writes to w.  There is no internal buffering -
+corresponding writes to w. There is no internal buffering -
 the write must complete before the read completes.
 Any error encountered while writing is reported as a read error.
 </p>
@@ -1033,7 +1109,9 @@ Any error encountered while writing is reported as a read error.
 		
 			
 			
-			<h2 id="ReaderAt">type <a href="http://localhost:9090/src/io/io.go?s=7328:7403#L192">ReaderAt</a></h2>
+			<h2 id="ReaderAt">type <a href="http://localhost:9090/src/io/io.go?s=7545:7620#L201">ReaderAt</a>
+				<a class="permalink" href="index.html#ReaderAt">&#xb6;</a>
+			</h2>
 			<pre>type ReaderAt interface {
     ReadAt(p []<a href="../builtin/index.html#byte">byte</a>, off <a href="../builtin/index.html#int64">int64</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)
 }</pre>
@@ -1042,17 +1120,17 @@ ReaderAt is the interface that wraps the basic ReadAt method.
 </p>
 <p>
 ReadAt reads len(p) bytes into p starting at offset off in the
-underlying input source.  It returns the number of bytes
+underlying input source. It returns the number of bytes
 read (0 &lt;= n &lt;= len(p)) and any error encountered.
 </p>
 <p>
 When ReadAt returns n &lt; len(p), it returns a non-nil error
-explaining why more bytes were not returned.  In this respect,
+explaining why more bytes were not returned. In this respect,
 ReadAt is stricter than Read.
 </p>
 <p>
 Even if ReadAt returns n &lt; len(p), it may use all of p as scratch
-space during the call.  If some data is available but not len(p) bytes,
+space during the call. If some data is available but not len(p) bytes,
 ReadAt blocks until either all the data is available or an error occurs.
 In this respect ReadAt is different from Read.
 </p>
@@ -1088,7 +1166,9 @@ Implementations must not retain p.
 		
 			
 			
-			<h2 id="ReaderFrom">type <a href="http://localhost:9090/src/io/io.go?s=5771:5841#L151">ReaderFrom</a></h2>
+			<h2 id="ReaderFrom">type <a href="http://localhost:9090/src/io/io.go?s=5991:6061#L160">ReaderFrom</a>
+				<a class="permalink" href="index.html#ReaderFrom">&#xb6;</a>
+			</h2>
 			<pre>type ReaderFrom interface {
     ReadFrom(r <a href="index.html#Reader">Reader</a>) (n <a href="../builtin/index.html#int64">int64</a>, err <a href="../builtin/index.html#error">error</a>)
 }</pre>
@@ -1119,7 +1199,9 @@ The Copy function uses ReaderFrom if available.
 		
 			
 			
-			<h2 id="RuneReader">type <a href="http://localhost:9090/src/io/io.go?s=9031:9102#L244">RuneReader</a></h2>
+			<h2 id="RuneReader">type <a href="http://localhost:9090/src/io/io.go?s=9241:9312#L253">RuneReader</a>
+				<a class="permalink" href="index.html#RuneReader">&#xb6;</a>
+			</h2>
 			<pre>type RuneReader interface {
     ReadRune() (r <a href="../builtin/index.html#rune">rune</a>, size <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)
 }</pre>
@@ -1147,7 +1229,9 @@ available, err will be set.
 		
 			
 			
-			<h2 id="RuneScanner">type <a href="http://localhost:9090/src/io/io.go?s=9403:9465#L255">RuneScanner</a></h2>
+			<h2 id="RuneScanner">type <a href="http://localhost:9090/src/io/io.go?s=9613:9675#L264">RuneScanner</a>
+				<a class="permalink" href="index.html#RuneScanner">&#xb6;</a>
+			</h2>
 			<pre>type RuneScanner interface {
     <a href="index.html#RuneReader">RuneReader</a>
     UnreadRune() <a href="../builtin/index.html#error">error</a>
@@ -1178,7 +1262,9 @@ call to ReadRune.
 		
 			
 			
-			<h2 id="SectionReader">type <a href="http://localhost:9090/src/io/io.go?s=14634:14718#L429">SectionReader</a></h2>
+			<h2 id="SectionReader">type <a href="http://localhost:9090/src/io/io.go?s=14889:14973#L439">SectionReader</a>
+				<a class="permalink" href="index.html#SectionReader">&#xb6;</a>
+			</h2>
 			<pre>type SectionReader struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -1198,7 +1284,9 @@ of an underlying ReaderAt.
 
 			
 				
-				<h3 id="NewSectionReader">func <a href="http://localhost:9090/src/io/io.go?s=14421:14489#L423">NewSectionReader</a></h3>
+				<h3 id="NewSectionReader">func <a href="http://localhost:9090/src/io/io.go?s=14676:14744#L433">NewSectionReader</a>
+					<a class="permalink" href="index.html#NewSectionReader">&#xb6;</a>
+				</h3>
 				<pre>func NewSectionReader(r <a href="index.html#ReaderAt">ReaderAt</a>, off <a href="../builtin/index.html#int64">int64</a>, n <a href="../builtin/index.html#int64">int64</a>) *<a href="index.html#SectionReader">SectionReader</a></pre>
 				<p>
 NewSectionReader returns a SectionReader that reads from r
@@ -1211,7 +1299,9 @@ starting at offset off and stops with EOF after n bytes.
 
 			
 				
-				<h3 id="SectionReader.Read">func (*SectionReader) <a href="http://localhost:9090/src/io/io.go?s=14720:14777#L436">Read</a></h3>
+				<h3 id="SectionReader.Read">func (*SectionReader) <a href="http://localhost:9090/src/io/io.go?s=14975:15032#L446">Read</a>
+					<a class="permalink" href="index.html#SectionReader.Read">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#SectionReader">SectionReader</a>) Read(p []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -1219,7 +1309,9 @@ starting at offset off and stops with EOF after n bytes.
 				
 			
 				
-				<h3 id="SectionReader.ReadAt">func (*SectionReader) <a href="http://localhost:9090/src/io/io.go?s=15357:15427#L469">ReadAt</a></h3>
+				<h3 id="SectionReader.ReadAt">func (*SectionReader) <a href="http://localhost:9090/src/io/io.go?s=15636:15706#L479">ReadAt</a>
+					<a class="permalink" href="index.html#SectionReader.ReadAt">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#SectionReader">SectionReader</a>) ReadAt(p []<a href="../builtin/index.html#byte">byte</a>, off <a href="../builtin/index.html#int64">int64</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -1227,7 +1319,9 @@ starting at offset off and stops with EOF after n bytes.
 				
 			
 				
-				<h3 id="SectionReader.Seek">func (*SectionReader) <a href="http://localhost:9090/src/io/io.go?s=15054:15123#L451">Seek</a></h3>
+				<h3 id="SectionReader.Seek">func (*SectionReader) <a href="http://localhost:9090/src/io/io.go?s=15309:15378#L461">Seek</a>
+					<a class="permalink" href="index.html#SectionReader.Seek">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#SectionReader">SectionReader</a>) Seek(offset <a href="../builtin/index.html#int64">int64</a>, whence <a href="../builtin/index.html#int">int</a>) (<a href="../builtin/index.html#int64">int64</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -1235,7 +1329,9 @@ starting at offset off and stops with EOF after n bytes.
 				
 			
 				
-				<h3 id="SectionReader.Size">func (*SectionReader) <a href="http://localhost:9090/src/io/io.go?s=15730:15766#L486">Size</a></h3>
+				<h3 id="SectionReader.Size">func (*SectionReader) <a href="http://localhost:9090/src/io/io.go?s=16009:16045#L496">Size</a>
+					<a class="permalink" href="index.html#SectionReader.Size">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#SectionReader">SectionReader</a>) Size() <a href="../builtin/index.html#int64">int64</a></pre>
 				<p>
 Size returns the size of the section in bytes.
@@ -1248,7 +1344,9 @@ Size returns the size of the section in bytes.
 		
 			
 			
-			<h2 id="Seeker">type <a href="http://localhost:9090/src/io/io.go?s=4482:4554#L96">Seeker</a></h2>
+			<h2 id="Seeker">type <a href="http://localhost:9090/src/io/io.go?s=4702:4774#L105">Seeker</a>
+				<a class="permalink" href="index.html#Seeker">&#xb6;</a>
+			</h2>
 			<pre>type Seeker interface {
     Seek(offset <a href="../builtin/index.html#int64">int64</a>, whence <a href="../builtin/index.html#int">int</a>) (<a href="../builtin/index.html#int64">int64</a>, <a href="../builtin/index.html#error">error</a>)
 }</pre>
@@ -1257,10 +1355,12 @@ Seeker is the interface that wraps the basic Seek method.
 </p>
 <p>
 Seek sets the offset for the next Read or Write to offset,
-interpreted according to whence: 0 means relative to the start of
-the file, 1 means relative to the current offset, and 2 means
-relative to the end. Seek returns the new offset relative to the
-start of the file and an error, if any.
+interpreted according to whence:
+SeekStart means relative to the start of the file,
+SeekCurrent means relative to the current offset, and
+SeekEnd means relative to the end.
+Seek returns the new offset relative to the start of the
+file and an error, if any.
 </p>
 <p>
 Seeking to an offset before the start of the file is an error.
@@ -1283,7 +1383,9 @@ I/O operations on the underlying object is implementation-dependent.
 		
 			
 			
-			<h2 id="WriteCloser">type <a href="http://localhost:9090/src/io/io.go?s=4883:4929#L113">WriteCloser</a></h2>
+			<h2 id="WriteCloser">type <a href="http://localhost:9090/src/io/io.go?s=5103:5149#L122">WriteCloser</a>
+				<a class="permalink" href="index.html#WriteCloser">&#xb6;</a>
+			</h2>
 			<pre>type WriteCloser interface {
     <a href="index.html#Writer">Writer</a>
     <a href="index.html#Closer">Closer</a>
@@ -1307,7 +1409,9 @@ WriteCloser is the interface that groups the basic Write and Close methods.
 		
 			
 			
-			<h2 id="WriteSeeker">type <a href="http://localhost:9090/src/io/io.go?s=5281:5327#L132">WriteSeeker</a></h2>
+			<h2 id="WriteSeeker">type <a href="http://localhost:9090/src/io/io.go?s=5501:5547#L141">WriteSeeker</a>
+				<a class="permalink" href="index.html#WriteSeeker">&#xb6;</a>
+			</h2>
 			<pre>type WriteSeeker interface {
     <a href="index.html#Writer">Writer</a>
     <a href="index.html#Seeker">Seeker</a>
@@ -1331,7 +1435,9 @@ WriteSeeker is the interface that groups the basic Write and Seek methods.
 		
 			
 			
-			<h2 id="Writer">type <a href="http://localhost:9090/src/io/io.go?s=3604:3665#L73">Writer</a></h2>
+			<h2 id="Writer">type <a href="http://localhost:9090/src/io/io.go?s=3794:3855#L80">Writer</a>
+				<a class="permalink" href="index.html#Writer">&#xb6;</a>
+			</h2>
 			<pre>type Writer interface {
     Write(p []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)
 }</pre>
@@ -1360,7 +1466,9 @@ Implementations must not retain p.
 
 			
 				
-				<h3 id="MultiWriter">func <a href="http://localhost:9090/src/io/multi.go?s=1804:1846#L71">MultiWriter</a></h3>
+				<h3 id="MultiWriter">func <a href="http://localhost:9090/src/io/multi.go?s=2002:2044#L79">MultiWriter</a>
+					<a class="permalink" href="index.html#MultiWriter">&#xb6;</a>
+				</h3>
 				<pre>func MultiWriter(writers ...<a href="index.html#Writer">Writer</a>) <a href="index.html#Writer">Writer</a></pre>
 				<p>
 MultiWriter creates a writer that duplicates its writes to all the
@@ -1375,7 +1483,9 @@ provided writers, similar to the Unix tee(1) command.
 		
 			
 			
-			<h2 id="WriterAt">type <a href="http://localhost:9090/src/io/io.go?s=8059:8135#L211">WriterAt</a></h2>
+			<h2 id="WriterAt">type <a href="http://localhost:9090/src/io/io.go?s=8275:8351#L220">WriterAt</a>
+				<a class="permalink" href="index.html#WriterAt">&#xb6;</a>
+			</h2>
 			<pre>type WriterAt interface {
     WriteAt(p []<a href="../builtin/index.html#byte">byte</a>, off <a href="../builtin/index.html#int64">int64</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)
 }</pre>
@@ -1384,7 +1494,7 @@ WriterAt is the interface that wraps the basic WriteAt method.
 </p>
 <p>
 WriteAt writes len(p) bytes from p to the underlying data stream
-at offset off.  It returns the number of bytes written from p (0 &lt;= n &lt;= len(p))
+at offset off. It returns the number of bytes written from p (0 &lt;= n &lt;= len(p))
 and any error encountered that caused the write to stop early.
 WriteAt must return a non-nil error if it returns n &lt; len(p).
 </p>
@@ -1416,7 +1526,9 @@ Implementations must not retain p.
 		
 			
 			
-			<h2 id="WriterTo">type <a href="http://localhost:9090/src/io/io.go?s=6161:6228#L162">WriterTo</a></h2>
+			<h2 id="WriterTo">type <a href="http://localhost:9090/src/io/io.go?s=6381:6448#L171">WriterTo</a>
+				<a class="permalink" href="index.html#WriterTo">&#xb6;</a>
+			</h2>
 			<pre>type WriterTo interface {
     WriteTo(w <a href="index.html#Writer">Writer</a>) (n <a href="../builtin/index.html#int64">int64</a>, err <a href="../builtin/index.html#error">error</a>)
 }</pre>
@@ -1494,7 +1606,7 @@ The Copy function uses WriterTo if available.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1512,6 +1624,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

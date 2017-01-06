@@ -90,13 +90,13 @@
 				<p>
 Package scanner provides a scanner and tokenizer for UTF-8-encoded text.
 It takes an io.Reader providing the source, which then can be tokenized
-through repeated calls to the Scan function.  For compatibility with
+through repeated calls to the Scan function. For compatibility with
 existing tools, the NUL character is not allowed. If the first character
 in the source is a UTF-8 encoded byte order mark (BOM), it is discarded.
 </p>
 <p>
 By default, a Scanner skips white space and Go comments and recognizes all
-literals as defined by the Go language specification.  It may be
+literals as defined by the Go language specification. It may be
 customized to recognize only a subset of those literals and to recognize
 different identifier and white space characters.
 </p>
@@ -271,7 +271,9 @@ Its value selects Go&#39;s white space characters.
 		
 			
 			
-			<h2 id="TokenString">func <a href="http://localhost:9090/src/text/scanner/scanner.go?s=3045:3078#L91">TokenString</a></h2>
+			<h2 id="TokenString">func <a href="http://localhost:9090/src/text/scanner/scanner.go?s=3017:3050#L88">TokenString</a>
+				<a class="permalink" href="index.html#TokenString">&#xb6;</a>
+			</h2>
 			<pre>func TokenString(tok <a href="../../builtin/index.html#rune">rune</a>) <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 TokenString returns a printable string for a token or Unicode character.
@@ -284,7 +286,9 @@ TokenString returns a printable string for a token or Unicode character.
 		
 			
 			
-			<h2 id="Position">type <a href="http://localhost:9090/src/text/scanner/scanner.go?s=989:1220#L18">Position</a></h2>
+			<h2 id="Position">type <a href="http://localhost:9090/src/text/scanner/scanner.go?s=987:1218#L18">Position</a>
+				<a class="permalink" href="index.html#Position">&#xb6;</a>
+			</h2>
 			<pre>type Position struct {
     Filename <a href="../../builtin/index.html#string">string</a> <span class="comment">// filename, if any</span>
     Offset   <a href="../../builtin/index.html#int">int</a>    <span class="comment">// byte offset, starting at 0</span>
@@ -309,7 +313,9 @@ A position is valid if Line &gt; 0.
 
 			
 				
-				<h3 id="Position.IsValid">func (*Position) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=1272:1307#L26">IsValid</a></h3>
+				<h3 id="Position.IsValid">func (*Position) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=1270:1305#L26">IsValid</a>
+					<a class="permalink" href="index.html#Position.IsValid">&#xb6;</a>
+				</h3>
 				<pre>func (pos *<a href="index.html#Position">Position</a>) IsValid() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsValid reports whether the position is valid.
@@ -320,7 +326,9 @@ IsValid reports whether the position is valid.
 				
 			
 				
-				<h3 id="Position.String">func (Position) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=1333:1368#L28">String</a></h3>
+				<h3 id="Position.String">func (Position) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=1331:1366#L28">String</a>
+					<a class="permalink" href="index.html#Position.String">&#xb6;</a>
+				</h3>
 				<pre>func (pos <a href="index.html#Position">Position</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -330,7 +338,9 @@ IsValid reports whether the position is valid.
 		
 			
 			
-			<h2 id="Scanner">type <a href="http://localhost:9090/src/text/scanner/scanner.go?s=3490:5944#L105">Scanner</a></h2>
+			<h2 id="Scanner">type <a href="http://localhost:9090/src/text/scanner/scanner.go?s=3462:5916#L102">Scanner</a>
+				<a class="permalink" href="index.html#Scanner">&#xb6;</a>
+			</h2>
 			<pre>type Scanner struct {
 
     <span class="comment">// Error is called for each error encountered. If no Error</span>
@@ -384,7 +394,9 @@ A Scanner implements reading of Unicode characters and tokens from an io.Reader.
 
 			
 				
-				<h3 id="Scanner.Init">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=6124:6170#L169">Init</a></h3>
+				<h3 id="Scanner.Init">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=6096:6142#L166">Init</a>
+					<a class="permalink" href="index.html#Scanner.Init">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Init(src <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) *<a href="index.html#Scanner">Scanner</a></pre>
 				<p>
 Init initializes a Scanner with a new source and returns s.
@@ -397,7 +409,9 @@ and Whitespace is set to GoWhitespace.
 				
 			
 				
-				<h3 id="Scanner.Next">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=9435:9464#L292">Next</a></h3>
+				<h3 id="Scanner.Next">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=9407:9436#L289">Next</a>
+					<a class="permalink" href="index.html#Scanner.Next">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Next() <a href="../../builtin/index.html#rune">rune</a></pre>
 				<p>
 Next reads and returns the next Unicode character.
@@ -413,7 +427,9 @@ get the current position.
 				
 			
 				
-				<h3 id="Scanner.Peek">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=9796:9825#L305">Peek</a></h3>
+				<h3 id="Scanner.Peek">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=9768:9797#L302">Peek</a>
+					<a class="permalink" href="index.html#Scanner.Peek">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Peek() <a href="../../builtin/index.html#rune">rune</a></pre>
 				<p>
 Peek returns the next Unicode character in the source without advancing
@@ -426,7 +442,9 @@ character of the source.
 				
 			
 				
-				<h3 id="Scanner.Pos">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=16389:16427#L633">Pos</a></h3>
+				<h3 id="Scanner.Pos">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=16361:16399#L630">Pos</a>
+					<a class="permalink" href="index.html#Scanner.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Pos() (pos <a href="index.html#Position">Position</a>)</pre>
 				<p>
 Pos returns the position of the character immediately after
@@ -438,7 +456,9 @@ the character or token returned by the last call to Next or Scan.
 				
 			
 				
-				<h3 id="Scanner.Scan">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=14348:14377#L531">Scan</a></h3>
+				<h3 id="Scanner.Scan">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=14320:14349#L528">Scan</a>
+					<a class="permalink" href="index.html#Scanner.Scan">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) Scan() <a href="../../builtin/index.html#rune">rune</a></pre>
 				<p>
 Scan reads the next token or Unicode character from source and returns it.
@@ -453,7 +473,9 @@ message to os.Stderr.
 				
 			
 				
-				<h3 id="Scanner.TokenText">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=16949:16985#L655">TokenText</a></h3>
+				<h3 id="Scanner.TokenText">func (*Scanner) <a href="http://localhost:9090/src/text/scanner/scanner.go?s=16921:16957#L652">TokenText</a>
+					<a class="permalink" href="index.html#Scanner.TokenText">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scanner">Scanner</a>) TokenText() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 TokenText returns the string corresponding to the most recently scanned token.
@@ -476,7 +498,7 @@ Valid after calling Scan().
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -494,6 +516,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

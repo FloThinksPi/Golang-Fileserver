@@ -379,7 +379,9 @@ pointer, channel, func, interface, map, or slice type.
 		
 			
 			
-			<h2 id="append">func <a href="http://localhost:9090/src/builtin/builtin.go?s=4716:4763#L124">append</a></h2>
+			<h2 id="append">func <a href="http://localhost:9090/src/builtin/builtin.go?s=4716:4763#L124">append</a>
+				<a class="permalink" href="index.html#append">&#xb6;</a>
+			</h2>
 			<pre>func append(slice []<a href="index.html#Type">Type</a>, elems ...<a href="index.html#Type">Type</a>) []<a href="index.html#Type">Type</a></pre>
 			<p>
 The append built-in function appends elements to the end of a slice. If
@@ -403,7 +405,9 @@ As a special case, it is legal to append a string to a byte slice, like this:
 		
 			
 			
-			<h2 id="cap">func <a href="http://localhost:9090/src/builtin/builtin.go?s=6143:6163#L154">cap</a></h2>
+			<h2 id="cap">func <a href="http://localhost:9090/src/builtin/builtin.go?s=6143:6163#L154">cap</a>
+				<a class="permalink" href="index.html#cap">&#xb6;</a>
+			</h2>
 			<pre>func cap(v <a href="index.html#Type">Type</a>) int</pre>
 			<p>
 The cap built-in function returns the capacity of v, according to its type:
@@ -422,7 +426,9 @@ if v is nil, cap(v) is zero.
 		
 			
 			
-			<h2 id="close">func <a href="http://localhost:9090/src/builtin/builtin.go?s=8588:8613#L203">close</a></h2>
+			<h2 id="close">func <a href="http://localhost:9090/src/builtin/builtin.go?s=8588:8613#L203">close</a>
+				<a class="permalink" href="index.html#close">&#xb6;</a>
+			</h2>
 			<pre>func close(c chan&lt;- <a href="index.html#Type">Type</a>)</pre>
 			<p>
 The close built-in function closes a channel, which must be either
@@ -444,7 +450,9 @@ will also set ok to false for a closed channel.
 		
 			
 			
-			<h2 id="complex">func <a href="http://localhost:9090/src/builtin/builtin.go?s=7650:7690#L184">complex</a></h2>
+			<h2 id="complex">func <a href="http://localhost:9090/src/builtin/builtin.go?s=7650:7690#L184">complex</a>
+				<a class="permalink" href="index.html#complex">&#xb6;</a>
+			</h2>
 			<pre>func complex(r, i <a href="index.html#FloatType">FloatType</a>) <a href="index.html#ComplexType">ComplexType</a></pre>
 			<p>
 The complex built-in function constructs a complex value from two
@@ -460,7 +468,9 @@ complex128 for float64).
 		
 			
 			
-			<h2 id="copy">func <a href="http://localhost:9090/src/builtin/builtin.go?s=5085:5115#L131">copy</a></h2>
+			<h2 id="copy">func <a href="http://localhost:9090/src/builtin/builtin.go?s=5085:5115#L131">copy</a>
+				<a class="permalink" href="index.html#copy">&#xb6;</a>
+			</h2>
 			<pre>func copy(dst, src []<a href="index.html#Type">Type</a>) int</pre>
 			<p>
 The copy built-in function copies elements from a source slice into a
@@ -476,7 +486,9 @@ len(src) and len(dst).
 		
 			
 			
-			<h2 id="delete">func <a href="http://localhost:9090/src/builtin/builtin.go?s=5281:5320#L136">delete</a></h2>
+			<h2 id="delete">func <a href="http://localhost:9090/src/builtin/builtin.go?s=5281:5320#L136">delete</a>
+				<a class="permalink" href="index.html#delete">&#xb6;</a>
+			</h2>
 			<pre>func delete(m map[<a href="index.html#Type">Type</a>]<a href="index.html#Type1">Type1</a>, key <a href="index.html#Type">Type</a>)</pre>
 			<p>
 The delete built-in function deletes the element with the specified key
@@ -490,7 +502,9 @@ is a no-op.
 		
 			
 			
-			<h2 id="imag">func <a href="http://localhost:9090/src/builtin/builtin.go?s=8050:8084#L193">imag</a></h2>
+			<h2 id="imag">func <a href="http://localhost:9090/src/builtin/builtin.go?s=8050:8084#L193">imag</a>
+				<a class="permalink" href="index.html#imag">&#xb6;</a>
+			</h2>
 			<pre>func imag(c <a href="index.html#ComplexType">ComplexType</a>) <a href="index.html#FloatType">FloatType</a></pre>
 			<p>
 The imag built-in function returns the imaginary part of the complex
@@ -504,7 +518,9 @@ the type of c.
 		
 			
 			
-			<h2 id="len">func <a href="http://localhost:9090/src/builtin/builtin.go?s=5727:5747#L145">len</a></h2>
+			<h2 id="len">func <a href="http://localhost:9090/src/builtin/builtin.go?s=5727:5747#L145">len</a>
+				<a class="permalink" href="index.html#len">&#xb6;</a>
+			</h2>
 			<pre>func len(v <a href="index.html#Type">Type</a>) int</pre>
 			<p>
 The len built-in function returns the length of v, according to its type:
@@ -523,7 +539,9 @@ if v is nil, len(v) is zero.
 		
 			
 			
-			<h2 id="make">func <a href="http://localhost:9090/src/builtin/builtin.go?s=7091:7129#L172">make</a></h2>
+			<h2 id="make">func <a href="http://localhost:9090/src/builtin/builtin.go?s=7091:7129#L172">make</a>
+				<a class="permalink" href="index.html#make">&#xb6;</a>
+			</h2>
 			<pre>func make(Type, size <a href="index.html#IntegerType">IntegerType</a>) <a href="index.html#Type">Type</a></pre>
 			<p>
 The make built-in function allocates and initializes an object of type
@@ -551,7 +569,9 @@ unbuffered.
 		
 			
 			
-			<h2 id="new">func <a href="http://localhost:9090/src/builtin/builtin.go?s=7309:7329#L177">new</a></h2>
+			<h2 id="new">func <a href="http://localhost:9090/src/builtin/builtin.go?s=7309:7329#L177">new</a>
+				<a class="permalink" href="index.html#new">&#xb6;</a>
+			</h2>
 			<pre>func new(<a href="index.html#Type">Type</a>) *<a href="index.html#Type">Type</a></pre>
 			<p>
 The new built-in function allocates memory. The first argument is a type,
@@ -565,7 +585,9 @@ allocated zero value of that type.
 		
 			
 			
-			<h2 id="panic">func <a href="http://localhost:9090/src/builtin/builtin.go?s=9359:9384#L216">panic</a></h2>
+			<h2 id="panic">func <a href="http://localhost:9090/src/builtin/builtin.go?s=9359:9384#L216">panic</a>
+				<a class="permalink" href="index.html#panic">&#xb6;</a>
+			</h2>
 			<pre>func panic(v interface{})</pre>
 			<p>
 The panic built-in function stops normal execution of the current
@@ -587,7 +609,9 @@ recover.
 		
 			
 			
-			<h2 id="print">func <a href="http://localhost:9090/src/builtin/builtin.go?s=10264:10288#L233">print</a></h2>
+			<h2 id="print">func <a href="http://localhost:9090/src/builtin/builtin.go?s=10264:10288#L233">print</a>
+				<a class="permalink" href="index.html#print">&#xb6;</a>
+			</h2>
 			<pre>func print(args ...<a href="index.html#Type">Type</a>)</pre>
 			<p>
 The print built-in function formats its arguments in an
@@ -602,7 +626,9 @@ to stay in the language.
 		
 			
 			
-			<h2 id="println">func <a href="http://localhost:9090/src/builtin/builtin.go?s=10598:10624#L240">println</a></h2>
+			<h2 id="println">func <a href="http://localhost:9090/src/builtin/builtin.go?s=10598:10624#L240">println</a>
+				<a class="permalink" href="index.html#println">&#xb6;</a>
+			</h2>
 			<pre>func println(args ...<a href="index.html#Type">Type</a>)</pre>
 			<p>
 The println built-in function formats its arguments in an
@@ -618,7 +644,9 @@ to stay in the language.
 		
 			
 			
-			<h2 id="real">func <a href="http://localhost:9090/src/builtin/builtin.go?s=7849:7883#L188">real</a></h2>
+			<h2 id="real">func <a href="http://localhost:9090/src/builtin/builtin.go?s=7849:7883#L188">real</a>
+				<a class="permalink" href="index.html#real">&#xb6;</a>
+			</h2>
 			<pre>func real(c <a href="index.html#ComplexType">ComplexType</a>) <a href="index.html#FloatType">FloatType</a></pre>
 			<p>
 The real built-in function returns the real part of the complex number c.
@@ -631,7 +659,9 @@ The return value will be floating point type corresponding to the type of c.
 		
 			
 			
-			<h2 id="recover">func <a href="http://localhost:9090/src/builtin/builtin.go?s=10004:10030#L227">recover</a></h2>
+			<h2 id="recover">func <a href="http://localhost:9090/src/builtin/builtin.go?s=10004:10030#L227">recover</a>
+				<a class="permalink" href="index.html#recover">&#xb6;</a>
+			</h2>
 			<pre>func recover() interface{}</pre>
 			<p>
 The recover built-in function allows a program to manage behavior of a
@@ -652,7 +682,9 @@ panicking.
 		
 			
 			
-			<h2 id="ComplexType">type <a href="http://localhost:9090/src/builtin/builtin.go?s=4105:4131#L113">ComplexType</a></h2>
+			<h2 id="ComplexType">type <a href="http://localhost:9090/src/builtin/builtin.go?s=4105:4131#L113">ComplexType</a>
+				<a class="permalink" href="index.html#ComplexType">&#xb6;</a>
+			</h2>
 			<pre>type ComplexType complex64</pre>
 			<p>
 ComplexType is here for the purposes of documentation only. It is a
@@ -674,7 +706,9 @@ stand-in for either complex type: complex64 or complex128.
 		
 			
 			
-			<h2 id="FloatType">type <a href="http://localhost:9090/src/builtin/builtin.go?s=3948:3970#L109">FloatType</a></h2>
+			<h2 id="FloatType">type <a href="http://localhost:9090/src/builtin/builtin.go?s=3948:3970#L109">FloatType</a>
+				<a class="permalink" href="index.html#FloatType">&#xb6;</a>
+			</h2>
 			<pre>type FloatType float32</pre>
 			<p>
 FloatType is here for the purposes of documentation only. It is a stand-in
@@ -696,7 +730,9 @@ for either float type: float32 or float64.
 		
 			
 			
-			<h2 id="IntegerType">type <a href="http://localhost:9090/src/builtin/builtin.go?s=3802:3822#L105">IntegerType</a></h2>
+			<h2 id="IntegerType">type <a href="http://localhost:9090/src/builtin/builtin.go?s=3802:3822#L105">IntegerType</a>
+				<a class="permalink" href="index.html#IntegerType">&#xb6;</a>
+			</h2>
 			<pre>type IntegerType int</pre>
 			<p>
 IntegerType is here for the purposes of documentation only. It is a stand-in
@@ -718,7 +754,9 @@ for any integer type: int, uint, int8 etc.
 		
 			
 			
-			<h2 id="Type">type <a href="http://localhost:9090/src/builtin/builtin.go?s=3484:3497#L96">Type</a></h2>
+			<h2 id="Type">type <a href="http://localhost:9090/src/builtin/builtin.go?s=3484:3497#L96">Type</a>
+				<a class="permalink" href="index.html#Type">&#xb6;</a>
+			</h2>
 			<pre>type Type int</pre>
 			<p>
 Type is here for the purposes of documentation only. It is a stand-in
@@ -741,7 +779,9 @@ invocation.
 		
 			
 			
-			<h2 id="Type1">type <a href="http://localhost:9090/src/builtin/builtin.go?s=3660:3674#L101">Type1</a></h2>
+			<h2 id="Type1">type <a href="http://localhost:9090/src/builtin/builtin.go?s=3660:3674#L101">Type1</a>
+				<a class="permalink" href="index.html#Type1">&#xb6;</a>
+			</h2>
 			<pre>type Type1 int</pre>
 			<p>
 Type1 is here for the purposes of documentation only. It is a stand-in
@@ -764,7 +804,9 @@ invocation.
 		
 			
 			
-			<h2 id="bool">type <a href="http://localhost:9090/src/builtin/builtin.go?s=481:495#L4">bool</a></h2>
+			<h2 id="bool">type <a href="http://localhost:9090/src/builtin/builtin.go?s=481:495#L4">bool</a>
+				<a class="permalink" href="index.html#bool">&#xb6;</a>
+			</h2>
 			<pre>type bool bool</pre>
 			<p>
 bool is the set of boolean values, true and false.
@@ -785,7 +827,9 @@ bool is the set of boolean values, true and false.
 		
 			
 			
-			<h2 id="byte">type <a href="http://localhost:9090/src/builtin/builtin.go?s=2701:2715#L78">byte</a></h2>
+			<h2 id="byte">type <a href="http://localhost:9090/src/builtin/builtin.go?s=2701:2715#L78">byte</a>
+				<a class="permalink" href="index.html#byte">&#xb6;</a>
+			</h2>
 			<pre>type byte byte</pre>
 			<p>
 byte is an alias for uint8 and is equivalent to uint8 in all ways. It is
@@ -808,7 +852,9 @@ integer values.
 		
 			
 			
-			<h2 id="complex128">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1867:1893#L56">complex128</a></h2>
+			<h2 id="complex128">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1867:1893#L56">complex128</a>
+				<a class="permalink" href="index.html#complex128">&#xb6;</a>
+			</h2>
 			<pre>type complex128 complex128</pre>
 			<p>
 complex128 is the set of all complex numbers with float64 real and
@@ -830,7 +876,9 @@ imaginary parts.
 		
 			
 			
-			<h2 id="complex64">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1751:1775#L52">complex64</a></h2>
+			<h2 id="complex64">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1751:1775#L52">complex64</a>
+				<a class="permalink" href="index.html#complex64">&#xb6;</a>
+			</h2>
 			<pre>type complex64 complex64</pre>
 			<p>
 complex64 is the set of all complex numbers with float32 real and
@@ -852,7 +900,9 @@ imaginary parts.
 		
 			
 			
-			<h2 id="error">type <a href="http://localhost:9090/src/builtin/builtin.go?s=10775:10815#L244">error</a></h2>
+			<h2 id="error">type <a href="http://localhost:9090/src/builtin/builtin.go?s=10775:10815#L244">error</a>
+				<a class="permalink" href="index.html#error">&#xb6;</a>
+			</h2>
 			<pre>type error interface {
     Error() string
 }</pre>
@@ -876,7 +926,9 @@ representing an error condition, with the nil value representing no error.
 		
 			
 			
-			<h2 id="float32">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1549:1569#L45">float32</a></h2>
+			<h2 id="float32">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1549:1569#L45">float32</a>
+				<a class="permalink" href="index.html#float32">&#xb6;</a>
+			</h2>
 			<pre>type float32 float32</pre>
 			<p>
 float32 is the set of all IEEE-754 32-bit floating-point numbers.
@@ -897,7 +949,9 @@ float32 is the set of all IEEE-754 32-bit floating-point numbers.
 		
 			
 			
-			<h2 id="float64">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1640:1660#L48">float64</a></h2>
+			<h2 id="float64">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1640:1660#L48">float64</a>
+				<a class="permalink" href="index.html#float64">&#xb6;</a>
+			</h2>
 			<pre>type float64 float64</pre>
 			<p>
 float64 is the set of all IEEE-754 64-bit floating-point numbers.
@@ -918,7 +972,9 @@ float64 is the set of all IEEE-754 64-bit floating-point numbers.
 		
 			
 			
-			<h2 id="int">type <a href="http://localhost:9090/src/builtin/builtin.go?s=2249:2261#L65">int</a></h2>
+			<h2 id="int">type <a href="http://localhost:9090/src/builtin/builtin.go?s=2249:2261#L65">int</a>
+				<a class="permalink" href="index.html#int">&#xb6;</a>
+			</h2>
 			<pre>type int int</pre>
 			<p>
 int is a signed integer type that is at least 32 bits in size. It is a
@@ -940,7 +996,9 @@ distinct type, however, and not an alias for, say, int32.
 		
 			
 			
-			<h2 id="int16">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1222:1238#L34">int16</a></h2>
+			<h2 id="int16">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1222:1238#L34">int16</a>
+				<a class="permalink" href="index.html#int16">&#xb6;</a>
+			</h2>
 			<pre>type int16 int16</pre>
 			<p>
 int16 is the set of all signed 16-bit integers.
@@ -962,7 +1020,9 @@ Range: -32768 through 32767.
 		
 			
 			
-			<h2 id="int32">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1333:1349#L38">int32</a></h2>
+			<h2 id="int32">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1333:1349#L38">int32</a>
+				<a class="permalink" href="index.html#int32">&#xb6;</a>
+			</h2>
 			<pre>type int32 int32</pre>
 			<p>
 int32 is the set of all signed 32-bit integers.
@@ -984,7 +1044,9 @@ Range: -2147483648 through 2147483647.
 		
 			
 			
-			<h2 id="int64">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1462:1478#L42">int64</a></h2>
+			<h2 id="int64">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1462:1478#L42">int64</a>
+				<a class="permalink" href="index.html#int64">&#xb6;</a>
+			</h2>
 			<pre>type int64 int64</pre>
 			<p>
 int64 is the set of all signed 64-bit integers.
@@ -1006,7 +1068,9 @@ Range: -9223372036854775808 through 9223372036854775807.
 		
 			
 			
-			<h2 id="int8">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1123:1137#L30">int8</a></h2>
+			<h2 id="int8">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1123:1137#L30">int8</a>
+				<a class="permalink" href="index.html#int8">&#xb6;</a>
+			</h2>
 			<pre>type int8 int8</pre>
 			<p>
 int8 is the set of all signed 8-bit integers.
@@ -1028,7 +1092,9 @@ Range: -128 through 127.
 		
 			
 			
-			<h2 id="rune">type <a href="http://localhost:9090/src/builtin/builtin.go?s=2870:2884#L82">rune</a></h2>
+			<h2 id="rune">type <a href="http://localhost:9090/src/builtin/builtin.go?s=2870:2884#L82">rune</a>
+				<a class="permalink" href="index.html#rune">&#xb6;</a>
+			</h2>
 			<pre>type rune rune</pre>
 			<p>
 rune is an alias for int32 and is equivalent to int32 in all ways. It is
@@ -1050,7 +1116,9 @@ used, by convention, to distinguish character values from integer values.
 		
 			
 			
-			<h2 id="string">type <a href="http://localhost:9090/src/builtin/builtin.go?s=2094:2112#L61">string</a></h2>
+			<h2 id="string">type <a href="http://localhost:9090/src/builtin/builtin.go?s=2094:2112#L61">string</a>
+				<a class="permalink" href="index.html#string">&#xb6;</a>
+			</h2>
 			<pre>type string string</pre>
 			<p>
 string is the set of all strings of 8-bit bytes, conventionally but not
@@ -1073,7 +1141,9 @@ not nil. Values of string type are immutable.
 		
 			
 			
-			<h2 id="uint">type <a href="http://localhost:9090/src/builtin/builtin.go?s=2403:2417#L69">uint</a></h2>
+			<h2 id="uint">type <a href="http://localhost:9090/src/builtin/builtin.go?s=2403:2417#L69">uint</a>
+				<a class="permalink" href="index.html#uint">&#xb6;</a>
+			</h2>
 			<pre>type uint uint</pre>
 			<p>
 uint is an unsigned integer type that is at least 32 bits in size. It is a
@@ -1095,7 +1165,9 @@ distinct type, however, and not an alias for, say, uint32.
 		
 			
 			
-			<h2 id="uint16">type <a href="http://localhost:9090/src/builtin/builtin.go?s=804:822#L18">uint16</a></h2>
+			<h2 id="uint16">type <a href="http://localhost:9090/src/builtin/builtin.go?s=804:822#L18">uint16</a>
+				<a class="permalink" href="index.html#uint16">&#xb6;</a>
+			</h2>
 			<pre>type uint16 uint16</pre>
 			<p>
 uint16 is the set of all unsigned 16-bit integers.
@@ -1117,7 +1189,9 @@ Range: 0 through 65535.
 		
 			
 			
-			<h2 id="uint32">type <a href="http://localhost:9090/src/builtin/builtin.go?s=910:928#L22">uint32</a></h2>
+			<h2 id="uint32">type <a href="http://localhost:9090/src/builtin/builtin.go?s=910:928#L22">uint32</a>
+				<a class="permalink" href="index.html#uint32">&#xb6;</a>
+			</h2>
 			<pre>type uint32 uint32</pre>
 			<p>
 uint32 is the set of all unsigned 32-bit integers.
@@ -1139,7 +1213,9 @@ Range: 0 through 4294967295.
 		
 			
 			
-			<h2 id="uint64">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1026:1044#L26">uint64</a></h2>
+			<h2 id="uint64">type <a href="http://localhost:9090/src/builtin/builtin.go?s=1026:1044#L26">uint64</a>
+				<a class="permalink" href="index.html#uint64">&#xb6;</a>
+			</h2>
 			<pre>type uint64 uint64</pre>
 			<p>
 uint64 is the set of all unsigned 64-bit integers.
@@ -1161,7 +1237,9 @@ Range: 0 through 18446744073709551615.
 		
 			
 			
-			<h2 id="uint8">type <a href="http://localhost:9090/src/builtin/builtin.go?s=705:721#L14">uint8</a></h2>
+			<h2 id="uint8">type <a href="http://localhost:9090/src/builtin/builtin.go?s=705:721#L14">uint8</a>
+				<a class="permalink" href="index.html#uint8">&#xb6;</a>
+			</h2>
 			<pre>type uint8 uint8</pre>
 			<p>
 uint8 is the set of all unsigned 8-bit integers.
@@ -1183,7 +1261,9 @@ Range: 0 through 255.
 		
 			
 			
-			<h2 id="uintptr">type <a href="http://localhost:9090/src/builtin/builtin.go?s=2513:2533#L73">uintptr</a></h2>
+			<h2 id="uintptr">type <a href="http://localhost:9090/src/builtin/builtin.go?s=2513:2533#L73">uintptr</a>
+				<a class="permalink" href="index.html#uintptr">&#xb6;</a>
+			</h2>
 			<pre>type uintptr uintptr</pre>
 			<p>
 uintptr is an integer type that is large enough to hold the bit pattern of
@@ -1214,7 +1294,7 @@ any pointer.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1232,6 +1312,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

@@ -200,7 +200,9 @@ field in the AST (ast.FuncDecl.Recv) field is not restricted to one entry.
 		
 			
 			
-			<h2 id="ParseDir">func <a href="http://localhost:9090/src/go/parser/interface.go?s=4280:4413#L124">ParseDir</a></h2>
+			<h2 id="ParseDir">func <a href="http://localhost:9090/src/go/parser/interface.go?s=4420:4553#L129">ParseDir</a>
+				<a class="permalink" href="index.html#ParseDir">&#xb6;</a>
+			</h2>
 			<pre>func ParseDir(fset *<a href="../token/index.html">token</a>.<a href="../token/index.html#FileSet">FileSet</a>, path <a href="../../builtin/index.html#string">string</a>, filter func(<a href="../../os/index.html">os</a>.<a href="../../os/index.html#FileInfo">FileInfo</a>) <a href="../../builtin/index.html#bool">bool</a>, mode <a href="index.html#Mode">Mode</a>) (pkgs map[<a href="../../builtin/index.html#string">string</a>]*<a href="../ast/index.html">ast</a>.<a href="../ast/index.html#Package">Package</a>, first <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 ParseDir calls ParseFile for all files with names ending in &#34;.go&#34; in the
@@ -210,7 +212,8 @@ AST with all the packages found.
 <p>
 If filter != nil, only the files with os.FileInfo entries passing through
 the filter (and ending in &#34;.go&#34;) are considered. The mode bits are passed
-to ParseFile unchanged. Position information is recorded in fset.
+to ParseFile unchanged. Position information is recorded in fset, which
+must not be nil.
 </p>
 <p>
 If the directory couldn&#39;t be read, a nil map and the respective error are
@@ -224,7 +227,9 @@ first error encountered are returned.
 		
 			
 			
-			<h2 id="ParseExpr">func <a href="http://localhost:9090/src/go/parser/interface.go?s=6567:6609#L214">ParseExpr</a></h2>
+			<h2 id="ParseExpr">func <a href="http://localhost:9090/src/go/parser/interface.go?s=6841:6883#L224">ParseExpr</a>
+				<a class="permalink" href="index.html#ParseExpr">&#xb6;</a>
+			</h2>
 			<pre>func ParseExpr(x <a href="../../builtin/index.html#string">string</a>) (<a href="../ast/index.html">ast</a>.<a href="../ast/index.html#Expr">Expr</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 ParseExpr is a convenience function for obtaining the AST of an expression x.
@@ -238,12 +243,15 @@ in error messages is the empty string.
 		
 			
 			
-			<h2 id="ParseExprFrom">func <a href="http://localhost:9090/src/go/parser/interface.go?s=5299:5401#L164">ParseExprFrom</a></h2>
+			<h2 id="ParseExprFrom">func <a href="http://localhost:9090/src/go/parser/interface.go?s=5478:5580#L170">ParseExprFrom</a>
+				<a class="permalink" href="index.html#ParseExprFrom">&#xb6;</a>
+			</h2>
 			<pre>func ParseExprFrom(fset *<a href="../token/index.html">token</a>.<a href="../token/index.html#FileSet">FileSet</a>, filename <a href="../../builtin/index.html#string">string</a>, src interface{}, mode <a href="index.html#Mode">Mode</a>) (<a href="../ast/index.html">ast</a>.<a href="../ast/index.html#Expr">Expr</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 ParseExprFrom is a convenience function for parsing an expression.
 The arguments have the same meaning as for Parse, but the source must
-be a valid Go (type or value) expression.
+be a valid Go (type or value) expression. Specifically, fset must not
+be nil.
 </p>
 
 			
@@ -252,7 +260,9 @@ be a valid Go (type or value) expression.
 		
 			
 			
-			<h2 id="ParseFile">func <a href="http://localhost:9090/src/go/parser/interface.go?s=2923:3028#L74">ParseFile</a></h2>
+			<h2 id="ParseFile">func <a href="http://localhost:9090/src/go/parser/interface.go?s=2946:3051#L74">ParseFile</a>
+				<a class="permalink" href="index.html#ParseFile">&#xb6;</a>
+			</h2>
 			<pre>func ParseFile(fset *<a href="../token/index.html">token</a>.<a href="../token/index.html#FileSet">FileSet</a>, filename <a href="../../builtin/index.html#string">string</a>, src interface{}, mode <a href="index.html#Mode">Mode</a>) (f *<a href="../ast/index.html">ast</a>.<a href="../ast/index.html#File">File</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 ParseFile parses the source code of a single Go source file and returns
@@ -268,7 +278,7 @@ If src == nil, ParseFile parses the file specified by filename.
 <p>
 The mode parameter controls the amount of source text parsed and other
 optional parser functionality. Position information is recorded in the
-file set fset.
+file set fset, which must not be nil.
 </p>
 <p>
 If the source couldn&#39;t be read, the returned AST is nil and the error
@@ -285,7 +295,9 @@ are returned via a scanner.ErrorList which is sorted by file position.
 		
 			
 			
-			<h2 id="Mode">type <a href="http://localhost:9090/src/go/parser/interface.go?s=1235:1249#L43">Mode</a></h2>
+			<h2 id="Mode">type <a href="http://localhost:9090/src/go/parser/interface.go?s=1235:1249#L43">Mode</a>
+				<a class="permalink" href="index.html#Mode">&#xb6;</a>
+			</h2>
 			<pre>type Mode <a href="../../builtin/index.html#uint">uint</a></pre>
 			<p>
 A Mode value is a set of flags (or 0).
@@ -328,7 +340,7 @@ parser functionality.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -346,6 +358,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

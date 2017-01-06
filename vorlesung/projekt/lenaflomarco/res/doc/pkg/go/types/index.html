@@ -296,7 +296,7 @@ For a tutorial, see <a href="https://golang.org/s/types-tutorial">https://golang
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Checker.Files">func (check *Checker) Files(files []*ast.File) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Checker.Files">func (check *Checker) Files(files []*ast.File) error</a></dd>
 				
 			
 				
@@ -891,7 +891,7 @@ For a tutorial, see <a href="https://golang.org/s/types-tutorial">https://golang
 				<dd><a href="index.html#TypeAndValue">type TypeAndValue</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Eval">func Eval(fset *token.FileSet, pkg *Package, pos token.Pos, expr string) (tv TypeAndValue, err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Eval">func Eval(fset *token.FileSet, pkg *Package, pos token.Pos, expr string) (TypeAndValue, error)</a></dd>
 				
 				
 					
@@ -1157,7 +1157,9 @@ For a tutorial, see <a href="https://golang.org/s/types-tutorial">https://golang
 		
 			
 			
-			<h2 id="AssertableTo">func <a href="http://localhost:9090/src/go/types/api.go?s=12441:12485#L338">AssertableTo</a></h2>
+			<h2 id="AssertableTo">func <a href="http://localhost:9090/src/go/types/api.go?s=12441:12485#L338">AssertableTo</a>
+				<a class="permalink" href="index.html#AssertableTo">&#xb6;</a>
+			</h2>
 			<pre>func AssertableTo(V *<a href="index.html#Interface">Interface</a>, T <a href="index.html#Type">Type</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 AssertableTo reports whether a value of type V can be asserted to have type T.
@@ -1169,7 +1171,9 @@ AssertableTo reports whether a value of type V can be asserted to have type T.
 		
 			
 			
-			<h2 id="AssignableTo">func <a href="http://localhost:9090/src/go/types/api.go?s=12625:12658#L344">AssignableTo</a></h2>
+			<h2 id="AssignableTo">func <a href="http://localhost:9090/src/go/types/api.go?s=12625:12658#L344">AssignableTo</a>
+				<a class="permalink" href="index.html#AssignableTo">&#xb6;</a>
+			</h2>
 			<pre>func AssignableTo(V, T <a href="index.html#Type">Type</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 AssignableTo reports whether a value of type V is assignable to a variable of type T.
@@ -1181,7 +1185,9 @@ AssignableTo reports whether a value of type V is assignable to a variable of ty
 		
 			
 			
-			<h2 id="Comparable">func <a href="http://localhost:9090/src/go/types/predicates.go?s=1744:1772#L71">Comparable</a></h2>
+			<h2 id="Comparable">func <a href="http://localhost:9090/src/go/types/predicates.go?s=1744:1772#L71">Comparable</a>
+				<a class="permalink" href="index.html#Comparable">&#xb6;</a>
+			</h2>
 			<pre>func Comparable(T <a href="index.html#Type">Type</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 Comparable reports whether values of type T are comparable.
@@ -1193,7 +1199,9 @@ Comparable reports whether values of type T are comparable.
 		
 			
 			
-			<h2 id="ConvertibleTo">func <a href="http://localhost:9090/src/go/types/api.go?s=12863:12897#L350">ConvertibleTo</a></h2>
+			<h2 id="ConvertibleTo">func <a href="http://localhost:9090/src/go/types/api.go?s=12863:12897#L350">ConvertibleTo</a>
+				<a class="permalink" href="index.html#ConvertibleTo">&#xb6;</a>
+			</h2>
 			<pre>func ConvertibleTo(V, T <a href="index.html#Type">Type</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 ConvertibleTo reports whether a value of type V is convertible to a value of type T.
@@ -1205,7 +1213,9 @@ ConvertibleTo reports whether a value of type V is convertible to a value of typ
 		
 			
 			
-			<h2 id="DefPredeclaredTestFuncs">func <a href="http://localhost:9090/src/go/types/universe.go?s=4742:4772#L160">DefPredeclaredTestFuncs</a></h2>
+			<h2 id="DefPredeclaredTestFuncs">func <a href="http://localhost:9090/src/go/types/universe.go?s=4742:4772#L160">DefPredeclaredTestFuncs</a>
+				<a class="permalink" href="index.html#DefPredeclaredTestFuncs">&#xb6;</a>
+			</h2>
 			<pre>func DefPredeclaredTestFuncs()</pre>
 			<p>
 DefPredeclaredTestFuncs defines the assert and trace built-ins.
@@ -1219,7 +1229,9 @@ package only.
 		
 			
 			
-			<h2 id="ExprString">func <a href="http://localhost:9090/src/go/types/exprstring.go?s=333:367#L5">ExprString</a></h2>
+			<h2 id="ExprString">func <a href="http://localhost:9090/src/go/types/exprstring.go?s=333:367#L5">ExprString</a>
+				<a class="permalink" href="index.html#ExprString">&#xb6;</a>
+			</h2>
 			<pre>func ExprString(x <a href="../ast/index.html">ast</a>.<a href="../ast/index.html#Expr">Expr</a>) <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 ExprString returns the (possibly simplified) string representation for x.
@@ -1231,7 +1243,9 @@ ExprString returns the (possibly simplified) string representation for x.
 		
 			
 			
-			<h2 id="Id">func <a href="http://localhost:9090/src/go/types/object.go?s=1838:1879#L47">Id</a></h2>
+			<h2 id="Id">func <a href="http://localhost:9090/src/go/types/object.go?s=1838:1879#L47">Id</a>
+				<a class="permalink" href="index.html#Id">&#xb6;</a>
+			</h2>
 			<pre>func Id(pkg *<a href="index.html#Package">Package</a>, name <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 Id returns name if it is exported, otherwise it
@@ -1244,7 +1258,9 @@ returns the name qualified with the package path.
 		
 			
 			
-			<h2 id="Identical">func <a href="http://localhost:9090/src/go/types/predicates.go?s=2473:2503#L104">Identical</a></h2>
+			<h2 id="Identical">func <a href="http://localhost:9090/src/go/types/predicates.go?s=2473:2503#L104">Identical</a>
+				<a class="permalink" href="index.html#Identical">&#xb6;</a>
+			</h2>
 			<pre>func Identical(x, y <a href="index.html#Type">Type</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 Identical reports whether x and y are identical.
@@ -1256,7 +1272,9 @@ Identical reports whether x and y are identical.
 		
 			
 			
-			<h2 id="Implements">func <a href="http://localhost:9090/src/go/types/api.go?s=13071:13113#L356">Implements</a></h2>
+			<h2 id="Implements">func <a href="http://localhost:9090/src/go/types/api.go?s=13071:13113#L356">Implements</a>
+				<a class="permalink" href="index.html#Implements">&#xb6;</a>
+			</h2>
 			<pre>func Implements(V <a href="index.html#Type">Type</a>, T *<a href="index.html#Interface">Interface</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 Implements reports whether type V implements interface T.
@@ -1268,7 +1286,9 @@ Implements reports whether type V implements interface T.
 		
 			
 			
-			<h2 id="IsInterface">func <a href="http://localhost:9090/src/go/types/predicates.go?s=1593:1624#L65">IsInterface</a></h2>
+			<h2 id="IsInterface">func <a href="http://localhost:9090/src/go/types/predicates.go?s=1593:1624#L65">IsInterface</a>
+				<a class="permalink" href="index.html#IsInterface">&#xb6;</a>
+			</h2>
 			<pre>func IsInterface(typ <a href="index.html#Type">Type</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 IsInterface reports whether typ is an interface type.
@@ -1280,7 +1300,9 @@ IsInterface reports whether typ is an interface type.
 		
 			
 			
-			<h2 id="ObjectString">func <a href="http://localhost:9090/src/go/types/object.go?s=9152:9202#L314">ObjectString</a></h2>
+			<h2 id="ObjectString">func <a href="http://localhost:9090/src/go/types/object.go?s=9151:9201#L314">ObjectString</a>
+				<a class="permalink" href="index.html#ObjectString">&#xb6;</a>
+			</h2>
 			<pre>func ObjectString(obj <a href="index.html#Object">Object</a>, qf <a href="index.html#Qualifier">Qualifier</a>) <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 ObjectString returns the string form of obj.
@@ -1294,7 +1316,9 @@ package-level objects, and may be nil.
 		
 			
 			
-			<h2 id="SelectionString">func <a href="http://localhost:9090/src/go/types/selection.go?s=3594:3649#L109">SelectionString</a></h2>
+			<h2 id="SelectionString">func <a href="http://localhost:9090/src/go/types/selection.go?s=3594:3649#L109">SelectionString</a>
+				<a class="permalink" href="index.html#SelectionString">&#xb6;</a>
+			</h2>
 			<pre>func SelectionString(s *<a href="index.html#Selection">Selection</a>, qf <a href="index.html#Qualifier">Qualifier</a>) <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 SelectionString returns the string form of s.
@@ -1315,7 +1339,9 @@ Examples:
 		
 			
 			
-			<h2 id="TypeString">func <a href="http://localhost:9090/src/go/types/typestring.go?s=2131:2177#L54">TypeString</a></h2>
+			<h2 id="TypeString">func <a href="http://localhost:9090/src/go/types/typestring.go?s=2131:2177#L54">TypeString</a>
+				<a class="permalink" href="index.html#TypeString">&#xb6;</a>
+			</h2>
 			<pre>func TypeString(typ <a href="index.html#Type">Type</a>, qf <a href="index.html#Qualifier">Qualifier</a>) <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 TypeString returns the string representation of typ.
@@ -1329,7 +1355,9 @@ package-level objects, and may be nil.
 		
 			
 			
-			<h2 id="WriteExpr">func <a href="http://localhost:9090/src/go/types/exprstring.go?s=518:563#L12">WriteExpr</a></h2>
+			<h2 id="WriteExpr">func <a href="http://localhost:9090/src/go/types/exprstring.go?s=518:563#L12">WriteExpr</a>
+				<a class="permalink" href="index.html#WriteExpr">&#xb6;</a>
+			</h2>
 			<pre>func WriteExpr(buf *<a href="../../bytes/index.html">bytes</a>.<a href="../../bytes/index.html#Buffer">Buffer</a>, x <a href="../ast/index.html">ast</a>.<a href="../ast/index.html#Expr">Expr</a>)</pre>
 			<p>
 WriteExpr writes the (possibly simplified) string representation for x to buf.
@@ -1341,7 +1369,9 @@ WriteExpr writes the (possibly simplified) string representation for x to buf.
 		
 			
 			
-			<h2 id="WriteSignature">func <a href="http://localhost:9090/src/go/types/typestring.go?s=7169:7237#L264">WriteSignature</a></h2>
+			<h2 id="WriteSignature">func <a href="http://localhost:9090/src/go/types/typestring.go?s=7169:7237#L264">WriteSignature</a>
+				<a class="permalink" href="index.html#WriteSignature">&#xb6;</a>
+			</h2>
 			<pre>func WriteSignature(buf *<a href="../../bytes/index.html">bytes</a>.<a href="../../bytes/index.html#Buffer">Buffer</a>, sig *<a href="index.html#Signature">Signature</a>, qf <a href="index.html#Qualifier">Qualifier</a>)</pre>
 			<p>
 WriteSignature writes the representation of the signature sig to buf,
@@ -1356,7 +1386,9 @@ package-level objects, and may be nil.
 		
 			
 			
-			<h2 id="WriteType">func <a href="http://localhost:9090/src/go/types/typestring.go?s=2397:2454#L63">WriteType</a></h2>
+			<h2 id="WriteType">func <a href="http://localhost:9090/src/go/types/typestring.go?s=2397:2454#L63">WriteType</a>
+				<a class="permalink" href="index.html#WriteType">&#xb6;</a>
+			</h2>
 			<pre>func WriteType(buf *<a href="../../bytes/index.html">bytes</a>.<a href="../../bytes/index.html#Buffer">Buffer</a>, typ <a href="index.html#Type">Type</a>, qf <a href="index.html#Qualifier">Qualifier</a>)</pre>
 			<p>
 WriteType writes the string representation of typ to buf.
@@ -1371,7 +1403,9 @@ package-level objects, and may be nil.
 		
 			
 			
-			<h2 id="Array">type <a href="http://localhost:9090/src/go/types/type.go?s=1722:1766#L87">Array</a></h2>
+			<h2 id="Array">type <a href="http://localhost:9090/src/go/types/type.go?s=1722:1766#L87">Array</a>
+				<a class="permalink" href="index.html#Array">&#xb6;</a>
+			</h2>
 			<pre>type Array struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -1390,7 +1424,9 @@ An Array represents an array type.
 
 			
 				
-				<h3 id="NewArray">func <a href="http://localhost:9090/src/go/types/type.go?s=1844:1886#L93">NewArray</a></h3>
+				<h3 id="NewArray">func <a href="http://localhost:9090/src/go/types/type.go?s=1844:1886#L93">NewArray</a>
+					<a class="permalink" href="index.html#NewArray">&#xb6;</a>
+				</h3>
 				<pre>func NewArray(elem <a href="index.html#Type">Type</a>, len <a href="../../builtin/index.html#int64">int64</a>) *<a href="index.html#Array">Array</a></pre>
 				<p>
 NewArray returns a new array type for the given element type and length.
@@ -1402,7 +1438,9 @@ NewArray returns a new array type for the given element type and length.
 
 			
 				
-				<h3 id="Array.Elem">func (*Array) <a href="http://localhost:9090/src/go/types/type.go?s=2042:2069#L99">Elem</a></h3>
+				<h3 id="Array.Elem">func (*Array) <a href="http://localhost:9090/src/go/types/type.go?s=2042:2069#L99">Elem</a>
+					<a class="permalink" href="index.html#Array.Elem">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Array">Array</a>) Elem() <a href="index.html#Type">Type</a></pre>
 				<p>
 Elem returns element type of array a.
@@ -1413,7 +1451,9 @@ Elem returns element type of array a.
 				
 			
 				
-				<h3 id="Array.Len">func (*Array) <a href="http://localhost:9090/src/go/types/type.go?s=1955:1982#L96">Len</a></h3>
+				<h3 id="Array.Len">func (*Array) <a href="http://localhost:9090/src/go/types/type.go?s=1955:1982#L96">Len</a>
+					<a class="permalink" href="index.html#Array.Len">&#xb6;</a>
+				</h3>
 				<pre>func (a *<a href="index.html#Array">Array</a>) Len() <a href="../../builtin/index.html#int64">int64</a></pre>
 				<p>
 Len returns the length of array a.
@@ -1424,7 +1464,9 @@ Len returns the length of array a.
 				
 			
 				
-				<h3 id="Array.String">func (*Array) <a href="http://localhost:9090/src/go/types/type.go?s=13553:13584#L436">String</a></h3>
+				<h3 id="Array.String">func (*Array) <a href="http://localhost:9090/src/go/types/type.go?s=13552:13583#L436">String</a>
+					<a class="permalink" href="index.html#Array.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Array">Array</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1432,7 +1474,9 @@ Len returns the length of array a.
 				
 			
 				
-				<h3 id="Array.Underlying">func (*Array) <a href="http://localhost:9090/src/go/types/type.go?s=12965:12998#L424">Underlying</a></h3>
+				<h3 id="Array.Underlying">func (*Array) <a href="http://localhost:9090/src/go/types/type.go?s=12964:12997#L424">Underlying</a>
+					<a class="permalink" href="index.html#Array.Underlying">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Array">Array</a>) Underlying() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -1442,7 +1486,9 @@ Len returns the length of array a.
 		
 			
 			
-			<h2 id="Basic">type <a href="http://localhost:9090/src/go/types/type.go?s=1317:1383#L71">Basic</a></h2>
+			<h2 id="Basic">type <a href="http://localhost:9090/src/go/types/type.go?s=1317:1383#L71">Basic</a>
+				<a class="permalink" href="index.html#Basic">&#xb6;</a>
+			</h2>
 			<pre>type Basic struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -1463,7 +1509,9 @@ A Basic represents a basic type.
 
 			
 				
-				<h3 id="Basic.Info">func (*Basic) <a href="http://localhost:9090/src/go/types/type.go?s=1541:1573#L81">Info</a></h3>
+				<h3 id="Basic.Info">func (*Basic) <a href="http://localhost:9090/src/go/types/type.go?s=1541:1573#L81">Info</a>
+					<a class="permalink" href="index.html#Basic.Info">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Basic">Basic</a>) Info() <a href="index.html#BasicInfo">BasicInfo</a></pre>
 				<p>
 Info returns information about properties of basic type b.
@@ -1474,7 +1522,9 @@ Info returns information about properties of basic type b.
 				
 			
 				
-				<h3 id="Basic.Kind">func (*Basic) <a href="http://localhost:9090/src/go/types/type.go?s=1427:1459#L78">Kind</a></h3>
+				<h3 id="Basic.Kind">func (*Basic) <a href="http://localhost:9090/src/go/types/type.go?s=1427:1459#L78">Kind</a>
+					<a class="permalink" href="index.html#Basic.Kind">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Basic">Basic</a>) Kind() <a href="index.html#BasicKind">BasicKind</a></pre>
 				<p>
 Kind returns the kind of basic type b.
@@ -1485,7 +1535,9 @@ Kind returns the kind of basic type b.
 				
 			
 				
-				<h3 id="Basic.Name">func (*Basic) <a href="http://localhost:9090/src/go/types/type.go?s=1635:1664#L84">Name</a></h3>
+				<h3 id="Basic.Name">func (*Basic) <a href="http://localhost:9090/src/go/types/type.go?s=1635:1664#L84">Name</a>
+					<a class="permalink" href="index.html#Basic.Name">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Basic">Basic</a>) Name() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 Name returns the name of basic type b.
@@ -1496,7 +1548,9 @@ Name returns the name of basic type b.
 				
 			
 				
-				<h3 id="Basic.String">func (*Basic) <a href="http://localhost:9090/src/go/types/type.go?s=13487:13518#L435">String</a></h3>
+				<h3 id="Basic.String">func (*Basic) <a href="http://localhost:9090/src/go/types/type.go?s=13486:13517#L435">String</a>
+					<a class="permalink" href="index.html#Basic.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Basic">Basic</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1504,7 +1558,9 @@ Name returns the name of basic type b.
 				
 			
 				
-				<h3 id="Basic.Underlying">func (*Basic) <a href="http://localhost:9090/src/go/types/type.go?s=12914:12947#L423">Underlying</a></h3>
+				<h3 id="Basic.Underlying">func (*Basic) <a href="http://localhost:9090/src/go/types/type.go?s=12913:12946#L423">Underlying</a>
+					<a class="permalink" href="index.html#Basic.Underlying">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Basic">Basic</a>) Underlying() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -1514,7 +1570,9 @@ Name returns the name of basic type b.
 		
 			
 			
-			<h2 id="BasicInfo">type <a href="http://localhost:9090/src/go/types/type.go?s=981:999#L53">BasicInfo</a></h2>
+			<h2 id="BasicInfo">type <a href="http://localhost:9090/src/go/types/type.go?s=981:999#L53">BasicInfo</a>
+				<a class="permalink" href="index.html#BasicInfo">&#xb6;</a>
+			</h2>
 			<pre>type BasicInfo <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 BasicInfo is a set of flags describing properties of a basic type.
@@ -1553,7 +1611,9 @@ Properties of basic types.
 		
 			
 			
-			<h2 id="BasicKind">type <a href="http://localhost:9090/src/go/types/type.go?s=498:516#L13">BasicKind</a></h2>
+			<h2 id="BasicKind">type <a href="http://localhost:9090/src/go/types/type.go?s=498:516#L13">BasicKind</a>
+				<a class="permalink" href="index.html#BasicKind">&#xb6;</a>
+			</h2>
 			<pre>type BasicKind <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 BasicKind describes the kind of basic type.
@@ -1612,7 +1672,9 @@ BasicKind describes the kind of basic type.
 		
 			
 			
-			<h2 id="Builtin">type <a href="http://localhost:9090/src/go/types/object.go?s=7404:7449#L220">Builtin</a></h2>
+			<h2 id="Builtin">type <a href="http://localhost:9090/src/go/types/object.go?s=7403:7448#L220">Builtin</a>
+				<a class="permalink" href="index.html#Builtin">&#xb6;</a>
+			</h2>
 			<pre>type Builtin struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -1634,7 +1696,9 @@ Builtins don&#39;t have a valid type.
 
 			
 				
-				<h3 id="Builtin.Exported">func (*Builtin) <a href="http://localhost:9090/src/go/types/object.go?s=2973:3007#L86">Exported</a></h3>
+				<h3 id="Builtin.Exported">func (*Builtin) <a href="http://localhost:9090/src/go/types/object.go?s=2973:3007#L86">Exported</a>
+					<a class="permalink" href="index.html#Builtin.Exported">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Builtin">Builtin</a>) Exported() <a href="../../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -1642,7 +1706,9 @@ Builtins don&#39;t have a valid type.
 				
 			
 				
-				<h3 id="Builtin.Id">func (*Builtin) <a href="http://localhost:9090/src/go/types/object.go?s=3049:3079#L87">Id</a></h3>
+				<h3 id="Builtin.Id">func (*Builtin) <a href="http://localhost:9090/src/go/types/object.go?s=3049:3079#L87">Id</a>
+					<a class="permalink" href="index.html#Builtin.Id">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Builtin">Builtin</a>) Id() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1650,7 +1716,9 @@ Builtins don&#39;t have a valid type.
 				
 			
 				
-				<h3 id="Builtin.Name">func (*Builtin) <a href="http://localhost:9090/src/go/types/object.go?s=2854:2886#L84">Name</a></h3>
+				<h3 id="Builtin.Name">func (*Builtin) <a href="http://localhost:9090/src/go/types/object.go?s=2854:2886#L84">Name</a>
+					<a class="permalink" href="index.html#Builtin.Name">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Builtin">Builtin</a>) Name() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1658,7 +1726,9 @@ Builtins don&#39;t have a valid type.
 				
 			
 				
-				<h3 id="Builtin.Parent">func (*Builtin) <a href="http://localhost:9090/src/go/types/object.go?s=2674:2708#L81">Parent</a></h3>
+				<h3 id="Builtin.Parent">func (*Builtin) <a href="http://localhost:9090/src/go/types/object.go?s=2674:2708#L81">Parent</a>
+					<a class="permalink" href="index.html#Builtin.Parent">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Builtin">Builtin</a>) Parent() *<a href="index.html#Scope">Scope</a></pre>
 				
 				
@@ -1666,7 +1736,9 @@ Builtins don&#39;t have a valid type.
 				
 			
 				
-				<h3 id="Builtin.Pkg">func (*Builtin) <a href="http://localhost:9090/src/go/types/object.go?s=2795:2828#L83">Pkg</a></h3>
+				<h3 id="Builtin.Pkg">func (*Builtin) <a href="http://localhost:9090/src/go/types/object.go?s=2795:2828#L83">Pkg</a>
+					<a class="permalink" href="index.html#Builtin.Pkg">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Builtin">Builtin</a>) Pkg() *<a href="index.html#Package">Package</a></pre>
 				
 				
@@ -1674,7 +1746,9 @@ Builtins don&#39;t have a valid type.
 				
 			
 				
-				<h3 id="Builtin.Pos">func (*Builtin) <a href="http://localhost:9090/src/go/types/object.go?s=2736:2770#L82">Pos</a></h3>
+				<h3 id="Builtin.Pos">func (*Builtin) <a href="http://localhost:9090/src/go/types/object.go?s=2736:2770#L82">Pos</a>
+					<a class="permalink" href="index.html#Builtin.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Builtin">Builtin</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1682,7 +1756,9 @@ Builtins don&#39;t have a valid type.
 				
 			
 				
-				<h3 id="Builtin.String">func (*Builtin) <a href="http://localhost:9090/src/go/types/object.go?s=9705:9740#L326">String</a></h3>
+				<h3 id="Builtin.String">func (*Builtin) <a href="http://localhost:9090/src/go/types/object.go?s=9704:9739#L326">String</a>
+					<a class="permalink" href="index.html#Builtin.String">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Builtin">Builtin</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1690,7 +1766,9 @@ Builtins don&#39;t have a valid type.
 				
 			
 				
-				<h3 id="Builtin.Type">func (*Builtin) <a href="http://localhost:9090/src/go/types/object.go?s=2914:2944#L85">Type</a></h3>
+				<h3 id="Builtin.Type">func (*Builtin) <a href="http://localhost:9090/src/go/types/object.go?s=2914:2944#L85">Type</a>
+					<a class="permalink" href="index.html#Builtin.Type">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Builtin">Builtin</a>) Type() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -1700,7 +1778,9 @@ Builtins don&#39;t have a valid type.
 		
 			
 			
-			<h2 id="Chan">type <a href="http://localhost:9090/src/go/types/type.go?s=10440:10485#L346">Chan</a></h2>
+			<h2 id="Chan">type <a href="http://localhost:9090/src/go/types/type.go?s=10439:10484#L346">Chan</a>
+				<a class="permalink" href="index.html#Chan">&#xb6;</a>
+			</h2>
 			<pre>type Chan struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -1719,7 +1799,9 @@ A Chan represents a channel type.
 
 			
 				
-				<h3 id="NewChan">func <a href="http://localhost:9090/src/go/types/type.go?s=10761:10803#L362">NewChan</a></h3>
+				<h3 id="NewChan">func <a href="http://localhost:9090/src/go/types/type.go?s=10760:10802#L362">NewChan</a>
+					<a class="permalink" href="index.html#NewChan">&#xb6;</a>
+				</h3>
 				<pre>func NewChan(dir <a href="index.html#ChanDir">ChanDir</a>, elem <a href="index.html#Type">Type</a>) *<a href="index.html#Chan">Chan</a></pre>
 				<p>
 NewChan returns a new channel type for the given direction and element type.
@@ -1731,7 +1813,9 @@ NewChan returns a new channel type for the given direction and element type.
 
 			
 				
-				<h3 id="Chan.Dir">func (*Chan) <a href="http://localhost:9090/src/go/types/type.go?s=10877:10905#L367">Dir</a></h3>
+				<h3 id="Chan.Dir">func (*Chan) <a href="http://localhost:9090/src/go/types/type.go?s=10876:10904#L367">Dir</a>
+					<a class="permalink" href="index.html#Chan.Dir">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Chan">Chan</a>) Dir() <a href="index.html#ChanDir">ChanDir</a></pre>
 				<p>
 Dir returns the direction of channel c.
@@ -1742,7 +1826,9 @@ Dir returns the direction of channel c.
 				
 			
 				
-				<h3 id="Chan.Elem">func (*Chan) <a href="http://localhost:9090/src/go/types/type.go?s=10971:10997#L370">Elem</a></h3>
+				<h3 id="Chan.Elem">func (*Chan) <a href="http://localhost:9090/src/go/types/type.go?s=10970:10996#L370">Elem</a>
+					<a class="permalink" href="index.html#Chan.Elem">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Chan">Chan</a>) Elem() <a href="index.html#Type">Type</a></pre>
 				<p>
 Elem returns the element type of channel c.
@@ -1753,7 +1839,9 @@ Elem returns the element type of channel c.
 				
 			
 				
-				<h3 id="Chan.String">func (*Chan) <a href="http://localhost:9090/src/go/types/type.go?s=14081:14111#L444">String</a></h3>
+				<h3 id="Chan.String">func (*Chan) <a href="http://localhost:9090/src/go/types/type.go?s=14080:14110#L444">String</a>
+					<a class="permalink" href="index.html#Chan.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Chan">Chan</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1761,7 +1849,9 @@ Elem returns the element type of channel c.
 				
 			
 				
-				<h3 id="Chan.Underlying">func (*Chan) <a href="http://localhost:9090/src/go/types/type.go?s=13373:13405#L432">Underlying</a></h3>
+				<h3 id="Chan.Underlying">func (*Chan) <a href="http://localhost:9090/src/go/types/type.go?s=13372:13404#L432">Underlying</a>
+					<a class="permalink" href="index.html#Chan.Underlying">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Chan">Chan</a>) Underlying() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -1771,7 +1861,9 @@ Elem returns the element type of channel c.
 		
 			
 			
-			<h2 id="ChanDir">type <a href="http://localhost:9090/src/go/types/type.go?s=10537:10553#L352">ChanDir</a></h2>
+			<h2 id="ChanDir">type <a href="http://localhost:9090/src/go/types/type.go?s=10536:10552#L352">ChanDir</a>
+				<a class="permalink" href="index.html#ChanDir">&#xb6;</a>
+			</h2>
 			<pre>type ChanDir <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 A ChanDir value indicates a channel direction.
@@ -1802,7 +1894,9 @@ The direction of a channel is indicated by one of these constants.
 		
 			
 			
-			<h2 id="Checker">type <a href="http://localhost:9090/src/go/types/check.go?s=2236:3496#L52">Checker</a></h2>
+			<h2 id="Checker">type <a href="http://localhost:9090/src/go/types/check.go?s=2236:3496#L52">Checker</a>
+				<a class="permalink" href="index.html#Checker">&#xb6;</a>
+			</h2>
 			<pre>type Checker struct {
     *<a href="index.html#Info">Info</a>
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1823,7 +1917,9 @@ It must be created with NewChecker.
 
 			
 				
-				<h3 id="NewChecker">func <a href="http://localhost:9090/src/go/types/check.go?s=5077:5162#L138">NewChecker</a></h3>
+				<h3 id="NewChecker">func <a href="http://localhost:9090/src/go/types/check.go?s=5077:5162#L138">NewChecker</a>
+					<a class="permalink" href="index.html#NewChecker">&#xb6;</a>
+				</h3>
 				<pre>func NewChecker(conf *<a href="index.html#Config">Config</a>, fset *<a href="../token/index.html">token</a>.<a href="../token/index.html#FileSet">FileSet</a>, pkg *<a href="index.html#Package">Package</a>, info *<a href="index.html#Info">Info</a>) *<a href="index.html#Checker">Checker</a></pre>
 				<p>
 NewChecker returns a new Checker instance for a given package.
@@ -1836,8 +1932,10 @@ Package files may be added incrementally via checker.Files.
 
 			
 				
-				<h3 id="Checker.Files">func (*Checker) <a href="http://localhost:9090/src/go/types/check.go?s=6655:6713#L208">Files</a></h3>
-				<pre>func (check *<a href="index.html#Checker">Checker</a>) Files(files []*<a href="../ast/index.html">ast</a>.<a href="../ast/index.html#File">File</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Checker.Files">func (*Checker) <a href="http://localhost:9090/src/go/types/check.go?s=6655:6707#L208">Files</a>
+					<a class="permalink" href="index.html#Checker.Files">&#xb6;</a>
+				</h3>
+				<pre>func (check *<a href="index.html#Checker">Checker</a>) Files(files []*<a href="../ast/index.html">ast</a>.<a href="../ast/index.html#File">File</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Files checks the provided files as part of the checker&#39;s package.
 </p>
@@ -1849,7 +1947,9 @@ Files checks the provided files as part of the checker&#39;s package.
 		
 			
 			
-			<h2 id="Config">type <a href="http://localhost:9090/src/go/types/api.go?s=3499:4981#L82">Config</a></h2>
+			<h2 id="Config">type <a href="http://localhost:9090/src/go/types/api.go?s=3499:4981#L82">Config</a>
+				<a class="permalink" href="index.html#Config">&#xb6;</a>
+			</h2>
 			<pre>type Config struct {
     <span class="comment">// If IgnoreFuncBodies is set, function bodies are not</span>
     <span class="comment">// type-checked.</span>
@@ -1907,7 +2007,9 @@ The zero value for Config is a ready-to-use default configuration.
 
 			
 				
-				<h3 id="Config.Check">func (*Config) <a href="http://localhost:9090/src/go/types/api.go?s=12156:12264#L332">Check</a></h3>
+				<h3 id="Config.Check">func (*Config) <a href="http://localhost:9090/src/go/types/api.go?s=12156:12264#L332">Check</a>
+					<a class="permalink" href="index.html#Config.Check">&#xb6;</a>
+				</h3>
 				<pre>func (conf *<a href="index.html#Config">Config</a>) Check(path <a href="../../builtin/index.html#string">string</a>, fset *<a href="../token/index.html">token</a>.<a href="../token/index.html#FileSet">FileSet</a>, files []*<a href="../ast/index.html">ast</a>.<a href="../ast/index.html#File">File</a>, info *<a href="index.html#Info">Info</a>) (*<a href="index.html#Package">Package</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Check type-checks a package and returns the resulting package object and
@@ -1932,7 +2034,9 @@ The clean path must not be empty or dot (&#34;.&#34;).
 		
 			
 			
-			<h2 id="Const">type <a href="http://localhost:9090/src/go/types/object.go?s=4733:4838#L134">Const</a></h2>
+			<h2 id="Const">type <a href="http://localhost:9090/src/go/types/object.go?s=4733:4838#L134">Const</a>
+				<a class="permalink" href="index.html#Const">&#xb6;</a>
+			</h2>
 			<pre>type Const struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -1951,7 +2055,9 @@ A Const represents a declared constant.
 
 			
 				
-				<h3 id="NewConst">func <a href="http://localhost:9090/src/go/types/object.go?s=4840:4932#L140">NewConst</a></h3>
+				<h3 id="NewConst">func <a href="http://localhost:9090/src/go/types/object.go?s=4840:4932#L140">NewConst</a>
+					<a class="permalink" href="index.html#NewConst">&#xb6;</a>
+				</h3>
 				<pre>func NewConst(pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>, pkg *<a href="index.html#Package">Package</a>, name <a href="../../builtin/index.html#string">string</a>, typ <a href="index.html#Type">Type</a>, val <a href="../constant/index.html">constant</a>.<a href="../constant/index.html#Value">Value</a>) *<a href="index.html#Const">Const</a></pre>
 				
 				
@@ -1960,7 +2066,9 @@ A Const represents a declared constant.
 
 			
 				
-				<h3 id="Const.Exported">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=2973:3007#L86">Exported</a></h3>
+				<h3 id="Const.Exported">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=2973:3007#L86">Exported</a>
+					<a class="permalink" href="index.html#Const.Exported">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Const">Const</a>) Exported() <a href="../../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -1968,7 +2076,9 @@ A Const represents a declared constant.
 				
 			
 				
-				<h3 id="Const.Id">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=3049:3079#L87">Id</a></h3>
+				<h3 id="Const.Id">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=3049:3079#L87">Id</a>
+					<a class="permalink" href="index.html#Const.Id">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Const">Const</a>) Id() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1976,7 +2086,9 @@ A Const represents a declared constant.
 				
 			
 				
-				<h3 id="Const.Name">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=2854:2886#L84">Name</a></h3>
+				<h3 id="Const.Name">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=2854:2886#L84">Name</a>
+					<a class="permalink" href="index.html#Const.Name">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Const">Const</a>) Name() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1984,7 +2096,9 @@ A Const represents a declared constant.
 				
 			
 				
-				<h3 id="Const.Parent">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=2674:2708#L81">Parent</a></h3>
+				<h3 id="Const.Parent">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=2674:2708#L81">Parent</a>
+					<a class="permalink" href="index.html#Const.Parent">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Const">Const</a>) Parent() *<a href="index.html#Scope">Scope</a></pre>
 				
 				
@@ -1992,7 +2106,9 @@ A Const represents a declared constant.
 				
 			
 				
-				<h3 id="Const.Pkg">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=2795:2828#L83">Pkg</a></h3>
+				<h3 id="Const.Pkg">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=2795:2828#L83">Pkg</a>
+					<a class="permalink" href="index.html#Const.Pkg">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Const">Const</a>) Pkg() *<a href="index.html#Package">Package</a></pre>
 				
 				
@@ -2000,7 +2116,9 @@ A Const represents a declared constant.
 				
 			
 				
-				<h3 id="Const.Pos">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=2736:2770#L82">Pos</a></h3>
+				<h3 id="Const.Pos">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=2736:2770#L82">Pos</a>
+					<a class="permalink" href="index.html#Const.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Const">Const</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2008,7 +2126,9 @@ A Const represents a declared constant.
 				
 			
 				
-				<h3 id="Const.String">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=9350:9383#L321">String</a></h3>
+				<h3 id="Const.String">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=9349:9382#L321">String</a>
+					<a class="permalink" href="index.html#Const.String">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Const">Const</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2016,7 +2136,9 @@ A Const represents a declared constant.
 				
 			
 				
-				<h3 id="Const.Type">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=2914:2944#L85">Type</a></h3>
+				<h3 id="Const.Type">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=2914:2944#L85">Type</a>
+					<a class="permalink" href="index.html#Const.Type">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Const">Const</a>) Type() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -2024,7 +2146,9 @@ A Const represents a declared constant.
 				
 			
 				
-				<h3 id="Const.Val">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=5015:5053#L144">Val</a></h3>
+				<h3 id="Const.Val">func (*Const) <a href="http://localhost:9090/src/go/types/object.go?s=5015:5053#L144">Val</a>
+					<a class="permalink" href="index.html#Const.Val">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Const">Const</a>) Val() <a href="../constant/index.html">constant</a>.<a href="../constant/index.html#Value">Value</a></pre>
 				
 				
@@ -2034,7 +2158,9 @@ A Const represents a declared constant.
 		
 			
 			
-			<h2 id="Error">type <a href="http://localhost:9090/src/go/types/api.go?s=1537:1742#L31">Error</a></h2>
+			<h2 id="Error">type <a href="http://localhost:9090/src/go/types/api.go?s=1537:1742#L31">Error</a>
+				<a class="permalink" href="index.html#Error">&#xb6;</a>
+			</h2>
 			<pre>type Error struct {
     Fset *<a href="../token/index.html">token</a>.<a href="../token/index.html#FileSet">FileSet</a> <span class="comment">// file set for interpretation of Pos</span>
     Pos  <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>      <span class="comment">// error position</span>
@@ -2061,7 +2187,9 @@ behavior if ignored.
 
 			
 				
-				<h3 id="Error.Error">func (Error) <a href="http://localhost:9090/src/go/types/api.go?s=1832:1863#L40">Error</a></h3>
+				<h3 id="Error.Error">func (Error) <a href="http://localhost:9090/src/go/types/api.go?s=1832:1863#L40">Error</a>
+					<a class="permalink" href="index.html#Error.Error">&#xb6;</a>
+				</h3>
 				<pre>func (err <a href="index.html#Error">Error</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 Error returns an error string formatted as follows:
@@ -2075,13 +2203,15 @@ filename:line:column: message
 		
 			
 			
-			<h2 id="Func">type <a href="http://localhost:9090/src/go/types/object.go?s=6527:6555#L183">Func</a></h2>
+			<h2 id="Func">type <a href="http://localhost:9090/src/go/types/object.go?s=6526:6554#L183">Func</a>
+				<a class="permalink" href="index.html#Func">&#xb6;</a>
+			</h2>
 			<pre>type Func struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
 A Func represents a declared function, concrete method, or abstract
-(interface) method.  Its Type() is always a *Signature.
+(interface) method. Its Type() is always a *Signature.
 An abstract method may belong to many interfaces due to embedding.
 </p>
 
@@ -2096,7 +2226,9 @@ An abstract method may belong to many interfaces due to embedding.
 
 			
 				
-				<h3 id="MissingMethod">func <a href="http://localhost:9090/src/go/types/lookup.go?s=8488:8572#L227">MissingMethod</a></h3>
+				<h3 id="MissingMethod">func <a href="http://localhost:9090/src/go/types/lookup.go?s=8488:8572#L227">MissingMethod</a>
+					<a class="permalink" href="index.html#MissingMethod">&#xb6;</a>
+				</h3>
 				<pre>func MissingMethod(V <a href="index.html#Type">Type</a>, T *<a href="index.html#Interface">Interface</a>, static <a href="../../builtin/index.html#bool">bool</a>) (method *<a href="index.html#Func">Func</a>, wrongType <a href="../../builtin/index.html#bool">bool</a>)</pre>
 				<p>
 MissingMethod returns (nil, false) if V implements T, otherwise it
@@ -2115,7 +2247,9 @@ x is of interface type V).
 				
 			
 				
-				<h3 id="NewFunc">func <a href="http://localhost:9090/src/go/types/object.go?s=6557:6633#L187">NewFunc</a></h3>
+				<h3 id="NewFunc">func <a href="http://localhost:9090/src/go/types/object.go?s=6556:6632#L187">NewFunc</a>
+					<a class="permalink" href="index.html#NewFunc">&#xb6;</a>
+				</h3>
 				<pre>func NewFunc(pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>, pkg *<a href="index.html#Package">Package</a>, name <a href="../../builtin/index.html#string">string</a>, sig *<a href="index.html#Signature">Signature</a>) *<a href="index.html#Func">Func</a></pre>
 				
 				
@@ -2124,7 +2258,9 @@ x is of interface type V).
 
 			
 				
-				<h3 id="Func.Exported">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=2973:3007#L86">Exported</a></h3>
+				<h3 id="Func.Exported">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=2973:3007#L86">Exported</a>
+					<a class="permalink" href="index.html#Func.Exported">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Func">Func</a>) Exported() <a href="../../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -2132,7 +2268,9 @@ x is of interface type V).
 				
 			
 				
-				<h3 id="Func.FullName">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=6876:6910#L198">FullName</a></h3>
+				<h3 id="Func.FullName">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=6875:6909#L198">FullName</a>
+					<a class="permalink" href="index.html#Func.FullName">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Func">Func</a>) FullName() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 FullName returns the package- or receiver-type-qualified name of
@@ -2144,7 +2282,9 @@ function or method obj.
 				
 			
 				
-				<h3 id="Func.Id">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=3049:3079#L87">Id</a></h3>
+				<h3 id="Func.Id">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=3049:3079#L87">Id</a>
+					<a class="permalink" href="index.html#Func.Id">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Func">Func</a>) Id() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2152,7 +2292,9 @@ function or method obj.
 				
 			
 				
-				<h3 id="Func.Name">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=2854:2886#L84">Name</a></h3>
+				<h3 id="Func.Name">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=2854:2886#L84">Name</a>
+					<a class="permalink" href="index.html#Func.Name">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Func">Func</a>) Name() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2160,7 +2302,9 @@ function or method obj.
 				
 			
 				
-				<h3 id="Func.Parent">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=2674:2708#L81">Parent</a></h3>
+				<h3 id="Func.Parent">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=2674:2708#L81">Parent</a>
+					<a class="permalink" href="index.html#Func.Parent">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Func">Func</a>) Parent() *<a href="index.html#Scope">Scope</a></pre>
 				
 				
@@ -2168,7 +2312,9 @@ function or method obj.
 				
 			
 				
-				<h3 id="Func.Pkg">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=2795:2828#L83">Pkg</a></h3>
+				<h3 id="Func.Pkg">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=2795:2828#L83">Pkg</a>
+					<a class="permalink" href="index.html#Func.Pkg">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Func">Func</a>) Pkg() *<a href="index.html#Package">Package</a></pre>
 				
 				
@@ -2176,7 +2322,9 @@ function or method obj.
 				
 			
 				
-				<h3 id="Func.Pos">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=2736:2770#L82">Pos</a></h3>
+				<h3 id="Func.Pos">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=2736:2770#L82">Pos</a>
+					<a class="permalink" href="index.html#Func.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Func">Func</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2184,7 +2332,9 @@ function or method obj.
 				
 			
 				
-				<h3 id="Func.Scope">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=6990:7021#L204">Scope</a></h3>
+				<h3 id="Func.Scope">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=6989:7020#L204">Scope</a>
+					<a class="permalink" href="index.html#Func.Scope">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Func">Func</a>) Scope() *<a href="index.html#Scope">Scope</a></pre>
 				
 				
@@ -2192,7 +2342,9 @@ function or method obj.
 				
 			
 				
-				<h3 id="Func.String">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=9563:9595#L324">String</a></h3>
+				<h3 id="Func.String">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=9562:9594#L324">String</a>
+					<a class="permalink" href="index.html#Func.String">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Func">Func</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2200,7 +2352,9 @@ function or method obj.
 				
 			
 				
-				<h3 id="Func.Type">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=2914:2944#L85">Type</a></h3>
+				<h3 id="Func.Type">func (*Func) <a href="http://localhost:9090/src/go/types/object.go?s=2914:2944#L85">Type</a>
+					<a class="permalink" href="index.html#Func.Type">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Func">Func</a>) Type() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -2210,7 +2364,9 @@ function or method obj.
 		
 			
 			
-			<h2 id="ImportMode">type <a href="http://localhost:9090/src/go/types/api.go?s=2488:2507#L58">ImportMode</a></h2>
+			<h2 id="ImportMode">type <a href="http://localhost:9090/src/go/types/api.go?s=2488:2507#L58">ImportMode</a>
+				<a class="permalink" href="index.html#ImportMode">&#xb6;</a>
+			</h2>
 			<pre>type ImportMode <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 ImportMode is reserved for future use.
@@ -2231,7 +2387,9 @@ ImportMode is reserved for future use.
 		
 			
 			
-			<h2 id="Importer">type <a href="http://localhost:9090/src/go/types/api.go?s=2186:2444#L49">Importer</a></h2>
+			<h2 id="Importer">type <a href="http://localhost:9090/src/go/types/api.go?s=2186:2444#L49">Importer</a>
+				<a class="permalink" href="index.html#Importer">&#xb6;</a>
+			</h2>
 			<pre>type Importer interface {
     <span class="comment">// Import returns the imported package for the given import</span>
     <span class="comment">// path, or an error if the package couldn&#39;t be imported.</span>
@@ -2263,7 +2421,9 @@ If possible, external implementations should implement ImporterFrom.
 		
 			
 			
-			<h2 id="ImporterFrom">type <a href="http://localhost:9090/src/go/types/api.go?s=2686:3368#L63">ImporterFrom</a></h2>
+			<h2 id="ImporterFrom">type <a href="http://localhost:9090/src/go/types/api.go?s=2686:3368#L63">ImporterFrom</a>
+				<a class="permalink" href="index.html#ImporterFrom">&#xb6;</a>
+			</h2>
 			<pre>type ImporterFrom interface {
     <span class="comment">// Importer is present for backward-compatibility. Calling</span>
     <span class="comment">// Import(path) is the same as calling ImportFrom(path, &#34;&#34;, 0);</span>
@@ -2301,7 +2461,9 @@ Use go/importer to obtain an ImporterFrom implementation.
 		
 			
 			
-			<h2 id="Info">type <a href="http://localhost:9090/src/go/types/api.go?s=5198:8436#L126">Info</a></h2>
+			<h2 id="Info">type <a href="http://localhost:9090/src/go/types/api.go?s=5198:8436#L126">Info</a>
+				<a class="permalink" href="index.html#Info">&#xb6;</a>
+			</h2>
 			<pre>type Info struct {
     <span class="comment">// Types maps expressions to their types, and for constant</span>
     <span class="comment">// expressions, their values. Invalid expressions are omitted.</span>
@@ -2402,7 +2564,9 @@ be incomplete.
 
 			
 				
-				<h3 id="Info.ObjectOf">func (*Info) <a href="http://localhost:9090/src/go/types/api.go?s=9062:9110#L230">ObjectOf</a></h3>
+				<h3 id="Info.ObjectOf">func (*Info) <a href="http://localhost:9090/src/go/types/api.go?s=9062:9110#L230">ObjectOf</a>
+					<a class="permalink" href="index.html#Info.ObjectOf">&#xb6;</a>
+				</h3>
 				<pre>func (info *<a href="index.html#Info">Info</a>) ObjectOf(id *<a href="../ast/index.html">ast</a>.<a href="../ast/index.html#Ident">Ident</a>) <a href="index.html#Object">Object</a></pre>
 				<p>
 ObjectOf returns the object denoted by the specified id,
@@ -2421,7 +2585,9 @@ Precondition: the Uses and Defs maps are populated.
 				
 			
 				
-				<h3 id="Info.TypeOf">func (*Info) <a href="http://localhost:9090/src/go/types/api.go?s=8568:8609#L210">TypeOf</a></h3>
+				<h3 id="Info.TypeOf">func (*Info) <a href="http://localhost:9090/src/go/types/api.go?s=8568:8609#L210">TypeOf</a>
+					<a class="permalink" href="index.html#Info.TypeOf">&#xb6;</a>
+				</h3>
 				<pre>func (info *<a href="index.html#Info">Info</a>) TypeOf(e <a href="../ast/index.html">ast</a>.<a href="../ast/index.html#Expr">Expr</a>) <a href="index.html#Type">Type</a></pre>
 				<p>
 TypeOf returns the type of expression e, or nil if not found.
@@ -2435,7 +2601,9 @@ Precondition: the Types, Uses and Defs maps are populated.
 		
 			
 			
-			<h2 id="Initializer">type <a href="http://localhost:9090/src/go/types/api.go?s=11285:11355#L303">Initializer</a></h2>
+			<h2 id="Initializer">type <a href="http://localhost:9090/src/go/types/api.go?s=11285:11355#L303">Initializer</a>
+				<a class="permalink" href="index.html#Initializer">&#xb6;</a>
+			</h2>
 			<pre>type Initializer struct {
     Lhs []*<a href="index.html#Var">Var</a> <span class="comment">// var Lhs = Rhs</span>
     Rhs <a href="../ast/index.html">ast</a>.<a href="../ast/index.html#Expr">Expr</a>
@@ -2459,7 +2627,9 @@ expression.
 
 			
 				
-				<h3 id="Initializer.String">func (*Initializer) <a href="http://localhost:9090/src/go/types/api.go?s=11357:11397#L308">String</a></h3>
+				<h3 id="Initializer.String">func (*Initializer) <a href="http://localhost:9090/src/go/types/api.go?s=11357:11397#L308">String</a>
+					<a class="permalink" href="index.html#Initializer.String">&#xb6;</a>
+				</h3>
 				<pre>func (init *<a href="index.html#Initializer">Initializer</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2469,7 +2639,9 @@ expression.
 		
 			
 			
-			<h2 id="Interface">type <a href="http://localhost:9090/src/go/types/type.go?s=6845:7125#L236">Interface</a></h2>
+			<h2 id="Interface">type <a href="http://localhost:9090/src/go/types/type.go?s=6844:7124#L236">Interface</a>
+				<a class="permalink" href="index.html#Interface">&#xb6;</a>
+			</h2>
 			<pre>type Interface struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -2488,7 +2660,9 @@ An Interface represents an interface type.
 
 			
 				
-				<h3 id="NewInterface">func <a href="http://localhost:9090/src/go/types/type.go?s=7209:7274#L244">NewInterface</a></h3>
+				<h3 id="NewInterface">func <a href="http://localhost:9090/src/go/types/type.go?s=7208:7273#L244">NewInterface</a>
+					<a class="permalink" href="index.html#NewInterface">&#xb6;</a>
+				</h3>
 				<pre>func NewInterface(methods []*<a href="index.html#Func">Func</a>, embeddeds []*<a href="index.html#Named">Named</a>) *<a href="index.html#Interface">Interface</a></pre>
 				<p>
 NewInterface returns a new interface for the given methods and embedded types.
@@ -2500,7 +2674,9 @@ NewInterface returns a new interface for the given methods and embedded types.
 
 			
 				
-				<h3 id="Interface.Complete">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=9285:9326#L296">Complete</a></h3>
+				<h3 id="Interface.Complete">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=9284:9325#L296">Complete</a>
+					<a class="permalink" href="index.html#Interface.Complete">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Interface">Interface</a>) Complete() *<a href="index.html#Interface">Interface</a></pre>
 				<p>
 Complete computes the interface&#39;s method set. It must be called by users of
@@ -2514,7 +2690,9 @@ Complete returns the receiver.
 				
 			
 				
-				<h3 id="Interface.Embedded">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=8504:8546#L280">Embedded</a></h3>
+				<h3 id="Interface.Embedded">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=8503:8545#L280">Embedded</a>
+					<a class="permalink" href="index.html#Interface.Embedded">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Interface">Interface</a>) Embedded(i <a href="../../builtin/index.html#int">int</a>) *<a href="index.html#Named">Named</a></pre>
 				<p>
 Embedded returns the i&#39;th embedded type of interface t for 0 &lt;= i &lt; t.NumEmbeddeds().
@@ -2526,7 +2704,9 @@ The types are ordered by the corresponding TypeName&#39;s unique Id.
 				
 			
 				
-				<h3 id="Interface.Empty">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=8951:8983#L290">Empty</a></h3>
+				<h3 id="Interface.Empty">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=8950:8982#L290">Empty</a>
+					<a class="permalink" href="index.html#Interface.Empty">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Interface">Interface</a>) Empty() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 Empty returns true if t is the empty interface.
@@ -2537,7 +2717,9 @@ Empty returns true if t is the empty interface.
 				
 			
 				
-				<h3 id="Interface.ExplicitMethod">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=8137:8184#L273">ExplicitMethod</a></h3>
+				<h3 id="Interface.ExplicitMethod">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=8136:8183#L273">ExplicitMethod</a>
+					<a class="permalink" href="index.html#Interface.ExplicitMethod">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Interface">Interface</a>) ExplicitMethod(i <a href="../../builtin/index.html#int">int</a>) *<a href="index.html#Func">Func</a></pre>
 				<p>
 ExplicitMethod returns the i&#39;th explicitly declared method of interface t for 0 &lt;= i &lt; t.NumExplicitMethods().
@@ -2549,7 +2731,9 @@ The methods are ordered by their unique Id.
 				
 			
 				
-				<h3 id="Interface.Method">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=8832:8871#L287">Method</a></h3>
+				<h3 id="Interface.Method">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=8831:8870#L287">Method</a>
+					<a class="permalink" href="index.html#Interface.Method">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Interface">Interface</a>) Method(i <a href="../../builtin/index.html#int">int</a>) *<a href="index.html#Func">Func</a></pre>
 				<p>
 Method returns the i&#39;th method of interface t for 0 &lt;= i &lt; t.NumMethods().
@@ -2561,7 +2745,9 @@ The methods are ordered by their unique Id.
 				
 			
 				
-				<h3 id="Interface.NumEmbeddeds">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=8279:8317#L276">NumEmbeddeds</a></h3>
+				<h3 id="Interface.NumEmbeddeds">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=8278:8316#L276">NumEmbeddeds</a>
+					<a class="permalink" href="index.html#Interface.NumEmbeddeds">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Interface">Interface</a>) NumEmbeddeds() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 NumEmbeddeds returns the number of embedded types in interface t.
@@ -2572,7 +2758,9 @@ NumEmbeddeds returns the number of embedded types in interface t.
 				
 			
 				
-				<h3 id="Interface.NumExplicitMethods">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=7904:7948#L269">NumExplicitMethods</a></h3>
+				<h3 id="Interface.NumExplicitMethods">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=7903:7947#L269">NumExplicitMethods</a>
+					<a class="permalink" href="index.html#Interface.NumExplicitMethods">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Interface">Interface</a>) NumExplicitMethods() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 NumExplicitMethods returns the number of explicitly declared methods of interface t.
@@ -2583,7 +2771,9 @@ NumExplicitMethods returns the number of explicitly declared methods of interfac
 				
 			
 				
-				<h3 id="Interface.NumMethods">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=8640:8676#L283">NumMethods</a></h3>
+				<h3 id="Interface.NumMethods">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=8639:8675#L283">NumMethods</a>
+					<a class="permalink" href="index.html#Interface.NumMethods">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Interface">Interface</a>) NumMethods() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 NumMethods returns the total number of methods of interface t.
@@ -2594,7 +2784,9 @@ NumMethods returns the total number of methods of interface t.
 				
 			
 				
-				<h3 id="Interface.String">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=13949:13984#L442">String</a></h3>
+				<h3 id="Interface.String">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=13948:13983#L442">String</a>
+					<a class="permalink" href="index.html#Interface.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Interface">Interface</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2602,7 +2794,9 @@ NumMethods returns the total number of methods of interface t.
 				
 			
 				
-				<h3 id="Interface.Underlying">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=13271:13308#L430">Underlying</a></h3>
+				<h3 id="Interface.Underlying">func (*Interface) <a href="http://localhost:9090/src/go/types/type.go?s=13270:13307#L430">Underlying</a>
+					<a class="permalink" href="index.html#Interface.Underlying">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Interface">Interface</a>) Underlying() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -2612,7 +2806,9 @@ NumMethods returns the total number of methods of interface t.
 		
 			
 			
-			<h2 id="Label">type <a href="http://localhost:9090/src/go/types/object.go?s=7102:7171#L209">Label</a></h2>
+			<h2 id="Label">type <a href="http://localhost:9090/src/go/types/object.go?s=7101:7170#L209">Label</a>
+				<a class="permalink" href="index.html#Label">&#xb6;</a>
+			</h2>
 			<pre>type Label struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -2631,7 +2827,9 @@ A Label represents a declared label.
 
 			
 				
-				<h3 id="NewLabel">func <a href="http://localhost:9090/src/go/types/object.go?s=7173:7235#L214">NewLabel</a></h3>
+				<h3 id="NewLabel">func <a href="http://localhost:9090/src/go/types/object.go?s=7172:7234#L214">NewLabel</a>
+					<a class="permalink" href="index.html#NewLabel">&#xb6;</a>
+				</h3>
 				<pre>func NewLabel(pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>, pkg *<a href="index.html#Package">Package</a>, name <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Label">Label</a></pre>
 				
 				
@@ -2640,7 +2838,9 @@ A Label represents a declared label.
 
 			
 				
-				<h3 id="Label.Exported">func (*Label) <a href="http://localhost:9090/src/go/types/object.go?s=2973:3007#L86">Exported</a></h3>
+				<h3 id="Label.Exported">func (*Label) <a href="http://localhost:9090/src/go/types/object.go?s=2973:3007#L86">Exported</a>
+					<a class="permalink" href="index.html#Label.Exported">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Label">Label</a>) Exported() <a href="../../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -2648,7 +2848,9 @@ A Label represents a declared label.
 				
 			
 				
-				<h3 id="Label.Id">func (*Label) <a href="http://localhost:9090/src/go/types/object.go?s=3049:3079#L87">Id</a></h3>
+				<h3 id="Label.Id">func (*Label) <a href="http://localhost:9090/src/go/types/object.go?s=3049:3079#L87">Id</a>
+					<a class="permalink" href="index.html#Label.Id">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Label">Label</a>) Id() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2656,7 +2858,9 @@ A Label represents a declared label.
 				
 			
 				
-				<h3 id="Label.Name">func (*Label) <a href="http://localhost:9090/src/go/types/object.go?s=2854:2886#L84">Name</a></h3>
+				<h3 id="Label.Name">func (*Label) <a href="http://localhost:9090/src/go/types/object.go?s=2854:2886#L84">Name</a>
+					<a class="permalink" href="index.html#Label.Name">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Label">Label</a>) Name() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2664,7 +2868,9 @@ A Label represents a declared label.
 				
 			
 				
-				<h3 id="Label.Parent">func (*Label) <a href="http://localhost:9090/src/go/types/object.go?s=2674:2708#L81">Parent</a></h3>
+				<h3 id="Label.Parent">func (*Label) <a href="http://localhost:9090/src/go/types/object.go?s=2674:2708#L81">Parent</a>
+					<a class="permalink" href="index.html#Label.Parent">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Label">Label</a>) Parent() *<a href="index.html#Scope">Scope</a></pre>
 				
 				
@@ -2672,7 +2878,9 @@ A Label represents a declared label.
 				
 			
 				
-				<h3 id="Label.Pkg">func (*Label) <a href="http://localhost:9090/src/go/types/object.go?s=2795:2828#L83">Pkg</a></h3>
+				<h3 id="Label.Pkg">func (*Label) <a href="http://localhost:9090/src/go/types/object.go?s=2795:2828#L83">Pkg</a>
+					<a class="permalink" href="index.html#Label.Pkg">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Label">Label</a>) Pkg() *<a href="index.html#Package">Package</a></pre>
 				
 				
@@ -2680,7 +2888,9 @@ A Label represents a declared label.
 				
 			
 				
-				<h3 id="Label.Pos">func (*Label) <a href="http://localhost:9090/src/go/types/object.go?s=2736:2770#L82">Pos</a></h3>
+				<h3 id="Label.Pos">func (*Label) <a href="http://localhost:9090/src/go/types/object.go?s=2736:2770#L82">Pos</a>
+					<a class="permalink" href="index.html#Label.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Label">Label</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2688,7 +2898,9 @@ A Label represents a declared label.
 				
 			
 				
-				<h3 id="Label.String">func (*Label) <a href="http://localhost:9090/src/go/types/object.go?s=9634:9667#L325">String</a></h3>
+				<h3 id="Label.String">func (*Label) <a href="http://localhost:9090/src/go/types/object.go?s=9633:9666#L325">String</a>
+					<a class="permalink" href="index.html#Label.String">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Label">Label</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2696,7 +2908,9 @@ A Label represents a declared label.
 				
 			
 				
-				<h3 id="Label.Type">func (*Label) <a href="http://localhost:9090/src/go/types/object.go?s=2914:2944#L85">Type</a></h3>
+				<h3 id="Label.Type">func (*Label) <a href="http://localhost:9090/src/go/types/object.go?s=2914:2944#L85">Type</a>
+					<a class="permalink" href="index.html#Label.Type">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Label">Label</a>) Type() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -2706,7 +2920,9 @@ A Label represents a declared label.
 		
 			
 			
-			<h2 id="Map">type <a href="http://localhost:9090/src/go/types/type.go?s=10070:10105#L330">Map</a></h2>
+			<h2 id="Map">type <a href="http://localhost:9090/src/go/types/type.go?s=10069:10104#L330">Map</a>
+				<a class="permalink" href="index.html#Map">&#xb6;</a>
+			</h2>
 			<pre>type Map struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -2725,7 +2941,9 @@ A Map represents a map type.
 
 			
 				
-				<h3 id="NewMap">func <a href="http://localhost:9090/src/go/types/type.go?s=10172:10204#L335">NewMap</a></h3>
+				<h3 id="NewMap">func <a href="http://localhost:9090/src/go/types/type.go?s=10171:10203#L335">NewMap</a>
+					<a class="permalink" href="index.html#NewMap">&#xb6;</a>
+				</h3>
 				<pre>func NewMap(key, elem <a href="index.html#Type">Type</a>) *<a href="index.html#Map">Map</a></pre>
 				<p>
 NewMap returns a new map for the given key and element types.
@@ -2737,7 +2955,9 @@ NewMap returns a new map for the given key and element types.
 
 			
 				
-				<h3 id="Map.Elem">func (*Map) <a href="http://localhost:9090/src/go/types/type.go?s=10358:10383#L343">Elem</a></h3>
+				<h3 id="Map.Elem">func (*Map) <a href="http://localhost:9090/src/go/types/type.go?s=10357:10382#L343">Elem</a>
+					<a class="permalink" href="index.html#Map.Elem">&#xb6;</a>
+				</h3>
 				<pre>func (m *<a href="index.html#Map">Map</a>) Elem() <a href="index.html#Type">Type</a></pre>
 				<p>
 Elem returns the element type of map m.
@@ -2748,7 +2968,9 @@ Elem returns the element type of map m.
 				
 			
 				
-				<h3 id="Map.Key">func (*Map) <a href="http://localhost:9090/src/go/types/type.go?s=10272:10296#L340">Key</a></h3>
+				<h3 id="Map.Key">func (*Map) <a href="http://localhost:9090/src/go/types/type.go?s=10271:10295#L340">Key</a>
+					<a class="permalink" href="index.html#Map.Key">&#xb6;</a>
+				</h3>
 				<pre>func (m *<a href="index.html#Map">Map</a>) Key() <a href="index.html#Type">Type</a></pre>
 				<p>
 Key returns the key type of map m.
@@ -2759,7 +2981,9 @@ Key returns the key type of map m.
 				
 			
 				
-				<h3 id="Map.String">func (*Map) <a href="http://localhost:9090/src/go/types/type.go?s=14015:14044#L443">String</a></h3>
+				<h3 id="Map.String">func (*Map) <a href="http://localhost:9090/src/go/types/type.go?s=14014:14043#L443">String</a>
+					<a class="permalink" href="index.html#Map.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Map">Map</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2767,7 +2991,9 @@ Key returns the key type of map m.
 				
 			
 				
-				<h3 id="Map.Underlying">func (*Map) <a href="http://localhost:9090/src/go/types/type.go?s=13322:13353#L431">Underlying</a></h3>
+				<h3 id="Map.Underlying">func (*Map) <a href="http://localhost:9090/src/go/types/type.go?s=13321:13352#L431">Underlying</a>
+					<a class="permalink" href="index.html#Map.Underlying">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Map">Map</a>) Underlying() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -2777,7 +3003,9 @@ Key returns the key type of map m.
 		
 			
 			
-			<h2 id="MethodSet">type <a href="http://localhost:9090/src/go/types/methodset.go?s=483:527#L8">MethodSet</a></h2>
+			<h2 id="MethodSet">type <a href="http://localhost:9090/src/go/types/methodset.go?s=483:527#L8">MethodSet</a>
+				<a class="permalink" href="index.html#MethodSet">&#xb6;</a>
+			</h2>
 			<pre>type MethodSet struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -2798,7 +3026,9 @@ The zero value for a MethodSet is a ready-to-use empty method set.
 
 			
 				
-				<h3 id="NewMethodSet">func <a href="http://localhost:9090/src/go/types/methodset.go?s=1587:1623#L57">NewMethodSet</a></h3>
+				<h3 id="NewMethodSet">func <a href="http://localhost:9090/src/go/types/methodset.go?s=1587:1623#L57">NewMethodSet</a>
+					<a class="permalink" href="index.html#NewMethodSet">&#xb6;</a>
+				</h3>
 				<pre>func NewMethodSet(T <a href="index.html#Type">Type</a>) *<a href="index.html#MethodSet">MethodSet</a></pre>
 				<p>
 NewMethodSet returns the method set for the given type T.
@@ -2811,7 +3041,9 @@ It always returns a non-nil method set, even if it is empty.
 
 			
 				
-				<h3 id="MethodSet.At">func (*MethodSet) <a href="http://localhost:9090/src/go/types/methodset.go?s=938:978#L30">At</a></h3>
+				<h3 id="MethodSet.At">func (*MethodSet) <a href="http://localhost:9090/src/go/types/methodset.go?s=938:978#L30">At</a>
+					<a class="permalink" href="index.html#MethodSet.At">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#MethodSet">MethodSet</a>) At(i <a href="../../builtin/index.html#int">int</a>) *<a href="index.html#Selection">Selection</a></pre>
 				<p>
 At returns the i&#39;th method in s for 0 &lt;= i &lt; s.Len().
@@ -2822,7 +3054,9 @@ At returns the i&#39;th method in s for 0 &lt;= i &lt; s.Len().
 				
 			
 				
-				<h3 id="MethodSet.Len">func (*MethodSet) <a href="http://localhost:9090/src/go/types/methodset.go?s=827:856#L27">Len</a></h3>
+				<h3 id="MethodSet.Len">func (*MethodSet) <a href="http://localhost:9090/src/go/types/methodset.go?s=827:856#L27">Len</a>
+					<a class="permalink" href="index.html#MethodSet.Len">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#MethodSet">MethodSet</a>) Len() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 Len returns the number of methods in s.
@@ -2833,7 +3067,9 @@ Len returns the number of methods in s.
 				
 			
 				
-				<h3 id="MethodSet.Lookup">func (*MethodSet) <a href="http://localhost:9090/src/go/types/methodset.go?s=1083:1147#L33">Lookup</a></h3>
+				<h3 id="MethodSet.Lookup">func (*MethodSet) <a href="http://localhost:9090/src/go/types/methodset.go?s=1083:1147#L33">Lookup</a>
+					<a class="permalink" href="index.html#MethodSet.Lookup">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#MethodSet">MethodSet</a>) Lookup(pkg *<a href="index.html#Package">Package</a>, name <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Selection">Selection</a></pre>
 				<p>
 Lookup returns the method with matching package and name, or nil if not found.
@@ -2844,7 +3080,9 @@ Lookup returns the method with matching package and name, or nil if not found.
 				
 			
 				
-				<h3 id="MethodSet.String">func (*MethodSet) <a href="http://localhost:9090/src/go/types/methodset.go?s=529:564#L12">String</a></h3>
+				<h3 id="MethodSet.String">func (*MethodSet) <a href="http://localhost:9090/src/go/types/methodset.go?s=529:564#L12">String</a>
+					<a class="permalink" href="index.html#MethodSet.String">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#MethodSet">MethodSet</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2854,7 +3092,9 @@ Lookup returns the method with matching package and name, or nil if not found.
 		
 			
 			
-			<h2 id="Named">type <a href="http://localhost:9090/src/go/types/type.go?s=11053:11314#L373">Named</a></h2>
+			<h2 id="Named">type <a href="http://localhost:9090/src/go/types/type.go?s=11052:11313#L373">Named</a>
+				<a class="permalink" href="index.html#Named">&#xb6;</a>
+			</h2>
 			<pre>type Named struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -2873,7 +3113,9 @@ A Named represents a named type.
 
 			
 				
-				<h3 id="NewNamed">func <a href="http://localhost:9090/src/go/types/type.go?s=11464:11533#L381">NewNamed</a></h3>
+				<h3 id="NewNamed">func <a href="http://localhost:9090/src/go/types/type.go?s=11463:11532#L381">NewNamed</a>
+					<a class="permalink" href="index.html#NewNamed">&#xb6;</a>
+				</h3>
 				<pre>func NewNamed(obj *<a href="index.html#TypeName">TypeName</a>, underlying <a href="index.html#Type">Type</a>, methods []*<a href="index.html#Func">Func</a>) *<a href="index.html#Named">Named</a></pre>
 				<p>
 NewNamed returns a new named type for the given type name, underlying type, and associated methods.
@@ -2886,7 +3128,9 @@ The underlying type must not be a *Named.
 
 			
 				
-				<h3 id="Named.AddMethod">func (*Named) <a href="http://localhost:9090/src/go/types/type.go?s=12738:12772#L415">AddMethod</a></h3>
+				<h3 id="Named.AddMethod">func (*Named) <a href="http://localhost:9090/src/go/types/type.go?s=12737:12771#L415">AddMethod</a>
+					<a class="permalink" href="index.html#Named.AddMethod">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Named">Named</a>) AddMethod(m *<a href="index.html#Func">Func</a>)</pre>
 				<p>
 AddMethod adds method m unless it is already in the method list.
@@ -2898,7 +3142,9 @@ TODO(gri) find a better solution instead of providing this function
 				
 			
 				
-				<h3 id="Named.Method">func (*Named) <a href="http://localhost:9090/src/go/types/type.go?s=12092:12127#L399">Method</a></h3>
+				<h3 id="Named.Method">func (*Named) <a href="http://localhost:9090/src/go/types/type.go?s=12091:12126#L399">Method</a>
+					<a class="permalink" href="index.html#Named.Method">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Named">Named</a>) Method(i <a href="../../builtin/index.html#int">int</a>) *<a href="index.html#Func">Func</a></pre>
 				<p>
 Method returns the i&#39;th method of named type t for 0 &lt;= i &lt; t.NumMethods().
@@ -2909,7 +3155,9 @@ Method returns the i&#39;th method of named type t for 0 &lt;= i &lt; t.NumMetho
 				
 			
 				
-				<h3 id="Named.NumMethods">func (*Named) <a href="http://localhost:9090/src/go/types/type.go?s=11953:11985#L396">NumMethods</a></h3>
+				<h3 id="Named.NumMethods">func (*Named) <a href="http://localhost:9090/src/go/types/type.go?s=11952:11984#L396">NumMethods</a>
+					<a class="permalink" href="index.html#Named.NumMethods">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Named">Named</a>) NumMethods() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 NumMethods returns the number of explicit methods whose receiver is named type t.
@@ -2920,7 +3168,9 @@ NumMethods returns the number of explicit methods whose receiver is named type t
 				
 			
 				
-				<h3 id="Named.Obj">func (*Named) <a href="http://localhost:9090/src/go/types/type.go?s=11818:11849#L393">Obj</a></h3>
+				<h3 id="Named.Obj">func (*Named) <a href="http://localhost:9090/src/go/types/type.go?s=11817:11848#L393">Obj</a>
+					<a class="permalink" href="index.html#Named.Obj">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Named">Named</a>) Obj() *<a href="index.html#TypeName">TypeName</a></pre>
 				<p>
 TypeName returns the type name for the named type t.
@@ -2931,7 +3181,9 @@ TypeName returns the type name for the named type t.
 				
 			
 				
-				<h3 id="Named.SetUnderlying">func (*Named) <a href="http://localhost:9090/src/go/types/type.go?s=12308:12354#L403">SetUnderlying</a></h3>
+				<h3 id="Named.SetUnderlying">func (*Named) <a href="http://localhost:9090/src/go/types/type.go?s=12307:12353#L403">SetUnderlying</a>
+					<a class="permalink" href="index.html#Named.SetUnderlying">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Named">Named</a>) SetUnderlying(underlying <a href="index.html#Type">Type</a>)</pre>
 				<p>
 SetUnderlying sets the underlying type and marks t as complete.
@@ -2943,7 +3195,9 @@ TODO(gri) determine if there&#39;s a better solution rather than providing this 
 				
 			
 				
-				<h3 id="Named.String">func (*Named) <a href="http://localhost:9090/src/go/types/type.go?s=14147:14178#L445">String</a></h3>
+				<h3 id="Named.String">func (*Named) <a href="http://localhost:9090/src/go/types/type.go?s=14146:14177#L445">String</a>
+					<a class="permalink" href="index.html#Named.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Named">Named</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2951,7 +3205,9 @@ TODO(gri) determine if there&#39;s a better solution rather than providing this 
 				
 			
 				
-				<h3 id="Named.Underlying">func (*Named) <a href="http://localhost:9090/src/go/types/type.go?s=13424:13457#L433">Underlying</a></h3>
+				<h3 id="Named.Underlying">func (*Named) <a href="http://localhost:9090/src/go/types/type.go?s=13423:13456#L433">Underlying</a>
+					<a class="permalink" href="index.html#Named.Underlying">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Named">Named</a>) Underlying() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -2961,7 +3217,9 @@ TODO(gri) determine if there&#39;s a better solution rather than providing this 
 		
 			
 			
-			<h2 id="Nil">type <a href="http://localhost:9090/src/go/types/object.go?s=7621:7648#L230">Nil</a></h2>
+			<h2 id="Nil">type <a href="http://localhost:9090/src/go/types/object.go?s=7620:7647#L230">Nil</a>
+				<a class="permalink" href="index.html#Nil">&#xb6;</a>
+			</h2>
 			<pre>type Nil struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -2982,7 +3240,9 @@ Nil represents the predeclared value nil.
 
 			
 				
-				<h3 id="Nil.Exported">func (*Nil) <a href="http://localhost:9090/src/go/types/object.go?s=2973:3007#L86">Exported</a></h3>
+				<h3 id="Nil.Exported">func (*Nil) <a href="http://localhost:9090/src/go/types/object.go?s=2973:3007#L86">Exported</a>
+					<a class="permalink" href="index.html#Nil.Exported">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Nil">Nil</a>) Exported() <a href="../../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -2990,7 +3250,9 @@ Nil represents the predeclared value nil.
 				
 			
 				
-				<h3 id="Nil.Id">func (*Nil) <a href="http://localhost:9090/src/go/types/object.go?s=3049:3079#L87">Id</a></h3>
+				<h3 id="Nil.Id">func (*Nil) <a href="http://localhost:9090/src/go/types/object.go?s=3049:3079#L87">Id</a>
+					<a class="permalink" href="index.html#Nil.Id">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Nil">Nil</a>) Id() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2998,7 +3260,9 @@ Nil represents the predeclared value nil.
 				
 			
 				
-				<h3 id="Nil.Name">func (*Nil) <a href="http://localhost:9090/src/go/types/object.go?s=2854:2886#L84">Name</a></h3>
+				<h3 id="Nil.Name">func (*Nil) <a href="http://localhost:9090/src/go/types/object.go?s=2854:2886#L84">Name</a>
+					<a class="permalink" href="index.html#Nil.Name">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Nil">Nil</a>) Name() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -3006,7 +3270,9 @@ Nil represents the predeclared value nil.
 				
 			
 				
-				<h3 id="Nil.Parent">func (*Nil) <a href="http://localhost:9090/src/go/types/object.go?s=2674:2708#L81">Parent</a></h3>
+				<h3 id="Nil.Parent">func (*Nil) <a href="http://localhost:9090/src/go/types/object.go?s=2674:2708#L81">Parent</a>
+					<a class="permalink" href="index.html#Nil.Parent">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Nil">Nil</a>) Parent() *<a href="index.html#Scope">Scope</a></pre>
 				
 				
@@ -3014,7 +3280,9 @@ Nil represents the predeclared value nil.
 				
 			
 				
-				<h3 id="Nil.Pkg">func (*Nil) <a href="http://localhost:9090/src/go/types/object.go?s=2795:2828#L83">Pkg</a></h3>
+				<h3 id="Nil.Pkg">func (*Nil) <a href="http://localhost:9090/src/go/types/object.go?s=2795:2828#L83">Pkg</a>
+					<a class="permalink" href="index.html#Nil.Pkg">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Nil">Nil</a>) Pkg() *<a href="index.html#Package">Package</a></pre>
 				
 				
@@ -3022,7 +3290,9 @@ Nil represents the predeclared value nil.
 				
 			
 				
-				<h3 id="Nil.Pos">func (*Nil) <a href="http://localhost:9090/src/go/types/object.go?s=2736:2770#L82">Pos</a></h3>
+				<h3 id="Nil.Pos">func (*Nil) <a href="http://localhost:9090/src/go/types/object.go?s=2736:2770#L82">Pos</a>
+					<a class="permalink" href="index.html#Nil.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Nil">Nil</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3030,7 +3300,9 @@ Nil represents the predeclared value nil.
 				
 			
 				
-				<h3 id="Nil.String">func (*Nil) <a href="http://localhost:9090/src/go/types/object.go?s=9776:9807#L327">String</a></h3>
+				<h3 id="Nil.String">func (*Nil) <a href="http://localhost:9090/src/go/types/object.go?s=9775:9806#L327">String</a>
+					<a class="permalink" href="index.html#Nil.String">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Nil">Nil</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -3038,7 +3310,9 @@ Nil represents the predeclared value nil.
 				
 			
 				
-				<h3 id="Nil.Type">func (*Nil) <a href="http://localhost:9090/src/go/types/object.go?s=2914:2944#L85">Type</a></h3>
+				<h3 id="Nil.Type">func (*Nil) <a href="http://localhost:9090/src/go/types/object.go?s=2914:2944#L85">Type</a>
+					<a class="permalink" href="index.html#Nil.Type">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Nil">Nil</a>) Type() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -3048,7 +3322,9 @@ Nil represents the predeclared value nil.
 		
 			
 			
-			<h2 id="Object">type <a href="http://localhost:9090/src/go/types/object.go?s=501:1732#L11">Object</a></h2>
+			<h2 id="Object">type <a href="http://localhost:9090/src/go/types/object.go?s=501:1732#L11">Object</a>
+				<a class="permalink" href="index.html#Object">&#xb6;</a>
+			</h2>
 			<pre>type Object interface {
     Parent() *<a href="index.html#Scope">Scope</a> <span class="comment">// scope in which this object is declared</span>
     Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of object identifier in declaration</span>
@@ -3079,7 +3355,9 @@ All objects implement the Object interface.
 
 			
 				
-				<h3 id="LookupFieldOrMethod">func <a href="http://localhost:9090/src/go/types/lookup.go?s=1550:1668#L25">LookupFieldOrMethod</a></h3>
+				<h3 id="LookupFieldOrMethod">func <a href="http://localhost:9090/src/go/types/lookup.go?s=1550:1668#L25">LookupFieldOrMethod</a>
+					<a class="permalink" href="index.html#LookupFieldOrMethod">&#xb6;</a>
+				</h3>
 				<pre>func LookupFieldOrMethod(T <a href="index.html#Type">Type</a>, addressable <a href="../../builtin/index.html#bool">bool</a>, pkg *<a href="index.html#Package">Package</a>, name <a href="../../builtin/index.html#string">string</a>) (obj <a href="index.html#Object">Object</a>, index []<a href="../../builtin/index.html#int">int</a>, indirect <a href="../../builtin/index.html#bool">bool</a>)</pre>
 				<p>
 LookupFieldOrMethod looks up a field or method with given package and name
@@ -3120,7 +3398,9 @@ index and indirect values have the following meaning:
 		
 			
 			
-			<h2 id="Package">type <a href="http://localhost:9090/src/go/types/package.go?s=243:451#L3">Package</a></h2>
+			<h2 id="Package">type <a href="http://localhost:9090/src/go/types/package.go?s=243:451#L3">Package</a>
+				<a class="permalink" href="index.html#Package">&#xb6;</a>
+			</h2>
 			<pre>type Package struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -3139,7 +3419,9 @@ A Package describes a Go package.
 
 			
 				
-				<h3 id="NewPackage">func <a href="http://localhost:9090/src/go/types/package.go?s=637:680#L15">NewPackage</a></h3>
+				<h3 id="NewPackage">func <a href="http://localhost:9090/src/go/types/package.go?s=637:680#L15">NewPackage</a>
+					<a class="permalink" href="index.html#NewPackage">&#xb6;</a>
+				</h3>
 				<pre>func NewPackage(path, name <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Package">Package</a></pre>
 				<p>
 NewPackage returns a new Package for the given package path and name;
@@ -3153,7 +3435,9 @@ The package is not complete and contains no explicit imports.
 
 			
 				
-				<h3 id="Package.Complete">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=1476:1511#L39">Complete</a></h3>
+				<h3 id="Package.Complete">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=1476:1511#L39">Complete</a>
+					<a class="permalink" href="index.html#Package.Complete">&#xb6;</a>
+				</h3>
 				<pre>func (pkg *<a href="index.html#Package">Package</a>) Complete() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 A package is complete if its scope contains (at least) all
@@ -3165,7 +3449,9 @@ exported objects; otherwise it is incomplete.
 				
 			
 				
-				<h3 id="Package.Imports">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=1987:2027#L50">Imports</a></h3>
+				<h3 id="Package.Imports">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=1986:2026#L50">Imports</a>
+					<a class="permalink" href="index.html#Package.Imports">&#xb6;</a>
+				</h3>
 				<pre>func (pkg *<a href="index.html#Package">Package</a>) Imports() []*<a href="index.html#Package">Package</a></pre>
 				<p>
 Imports returns the list of packages directly imported by
@@ -3173,7 +3459,7 @@ pkg; the list is in source order. Package unsafe is excluded.
 </p>
 <p>
 If pkg was loaded from export data, Imports includes packages that
-provide package-level objects referenced by pkg.  This may be more or
+provide package-level objects referenced by pkg. This may be more or
 less than the set of packages directly imported by pkg&#39;s source code.
 </p>
 
@@ -3182,7 +3468,9 @@ less than the set of packages directly imported by pkg&#39;s source code.
 				
 			
 				
-				<h3 id="Package.MarkComplete">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=1582:1616#L42">MarkComplete</a></h3>
+				<h3 id="Package.MarkComplete">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=1582:1616#L42">MarkComplete</a>
+					<a class="permalink" href="index.html#Package.MarkComplete">&#xb6;</a>
+				</h3>
 				<pre>func (pkg *<a href="index.html#Package">Package</a>) MarkComplete()</pre>
 				<p>
 MarkComplete marks a package as complete.
@@ -3193,7 +3481,9 @@ MarkComplete marks a package as complete.
 				
 			
 				
-				<h3 id="Package.Name">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=1007:1040#L27">Name</a></h3>
+				<h3 id="Package.Name">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=1007:1040#L27">Name</a>
+					<a class="permalink" href="index.html#Package.Name">&#xb6;</a>
+				</h3>
 				<pre>func (pkg *<a href="index.html#Package">Package</a>) Name() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 Name returns the package name.
@@ -3204,7 +3494,9 @@ Name returns the package name.
 				
 			
 				
-				<h3 id="Package.Path">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=918:951#L24">Path</a></h3>
+				<h3 id="Package.Path">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=918:951#L24">Path</a>
+					<a class="permalink" href="index.html#Package.Path">&#xb6;</a>
+				</h3>
 				<pre>func (pkg *<a href="index.html#Package">Package</a>) Path() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 Path returns the package path.
@@ -3215,7 +3507,9 @@ Path returns the package path.
 				
 			
 				
-				<h3 id="Package.Scope">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=1308:1342#L35">Scope</a></h3>
+				<h3 id="Package.Scope">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=1308:1342#L35">Scope</a>
+					<a class="permalink" href="index.html#Package.Scope">&#xb6;</a>
+				</h3>
 				<pre>func (pkg *<a href="index.html#Package">Package</a>) Scope() *<a href="index.html#Scope">Scope</a></pre>
 				<p>
 Scope returns the (complete or incomplete) package scope
@@ -3228,7 +3522,9 @@ Consts, Vars, and Funcs).
 				
 			
 				
-				<h3 id="Package.SetImports">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=2197:2244#L54">SetImports</a></h3>
+				<h3 id="Package.SetImports">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=2196:2243#L54">SetImports</a>
+					<a class="permalink" href="index.html#Package.SetImports">&#xb6;</a>
+				</h3>
 				<pre>func (pkg *<a href="index.html#Package">Package</a>) SetImports(list []*<a href="index.html#Package">Package</a>)</pre>
 				<p>
 SetImports sets the list of explicitly imported packages to list.
@@ -3240,7 +3536,9 @@ It is the caller&#39;s responsibility to make sure list elements are unique.
 				
 			
 				
-				<h3 id="Package.SetName">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=1096:1136#L30">SetName</a></h3>
+				<h3 id="Package.SetName">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=1096:1136#L30">SetName</a>
+					<a class="permalink" href="index.html#Package.SetName">&#xb6;</a>
+				</h3>
 				<pre>func (pkg *<a href="index.html#Package">Package</a>) SetName(name <a href="../../builtin/index.html#string">string</a>)</pre>
 				<p>
 SetName sets the package name.
@@ -3251,7 +3549,9 @@ SetName sets the package name.
 				
 			
 				
-				<h3 id="Package.String">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=2269:2304#L56">String</a></h3>
+				<h3 id="Package.String">func (*Package) <a href="http://localhost:9090/src/go/types/package.go?s=2268:2303#L56">String</a>
+					<a class="permalink" href="index.html#Package.String">&#xb6;</a>
+				</h3>
 				<pre>func (pkg *<a href="index.html#Package">Package</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -3261,7 +3561,9 @@ SetName sets the package name.
 		
 			
 			
-			<h2 id="PkgName">type <a href="http://localhost:9090/src/go/types/object.go?s=4208:4304#L119">PkgName</a></h2>
+			<h2 id="PkgName">type <a href="http://localhost:9090/src/go/types/object.go?s=4208:4304#L119">PkgName</a>
+				<a class="permalink" href="index.html#PkgName">&#xb6;</a>
+			</h2>
 			<pre>type PkgName struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -3280,7 +3582,9 @@ A PkgName represents an imported Go package.
 
 			
 				
-				<h3 id="NewPkgName">func <a href="http://localhost:9090/src/go/types/object.go?s=4306:4391#L125">NewPkgName</a></h3>
+				<h3 id="NewPkgName">func <a href="http://localhost:9090/src/go/types/object.go?s=4306:4391#L125">NewPkgName</a>
+					<a class="permalink" href="index.html#NewPkgName">&#xb6;</a>
+				</h3>
 				<pre>func NewPkgName(pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>, pkg *<a href="index.html#Package">Package</a>, name <a href="../../builtin/index.html#string">string</a>, imported *<a href="index.html#Package">Package</a>) *<a href="index.html#PkgName">PkgName</a></pre>
 				
 				
@@ -3289,7 +3593,9 @@ A PkgName represents an imported Go package.
 
 			
 				
-				<h3 id="PkgName.Exported">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=2973:3007#L86">Exported</a></h3>
+				<h3 id="PkgName.Exported">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=2973:3007#L86">Exported</a>
+					<a class="permalink" href="index.html#PkgName.Exported">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#PkgName">PkgName</a>) Exported() <a href="../../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -3297,7 +3603,9 @@ A PkgName represents an imported Go package.
 				
 			
 				
-				<h3 id="PkgName.Id">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=3049:3079#L87">Id</a></h3>
+				<h3 id="PkgName.Id">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=3049:3079#L87">Id</a>
+					<a class="permalink" href="index.html#PkgName.Id">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#PkgName">PkgName</a>) Id() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -3305,7 +3613,9 @@ A PkgName represents an imported Go package.
 				
 			
 				
-				<h3 id="PkgName.Imported">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=4625:4664#L131">Imported</a></h3>
+				<h3 id="PkgName.Imported">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=4625:4664#L131">Imported</a>
+					<a class="permalink" href="index.html#PkgName.Imported">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#PkgName">PkgName</a>) Imported() *<a href="index.html#Package">Package</a></pre>
 				<p>
 Imported returns the package that was imported.
@@ -3317,7 +3627,9 @@ It is distinct from Pkg(), which is the package containing the import statement.
 				
 			
 				
-				<h3 id="PkgName.Name">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=2854:2886#L84">Name</a></h3>
+				<h3 id="PkgName.Name">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=2854:2886#L84">Name</a>
+					<a class="permalink" href="index.html#PkgName.Name">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#PkgName">PkgName</a>) Name() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -3325,7 +3637,9 @@ It is distinct from Pkg(), which is the package containing the import statement.
 				
 			
 				
-				<h3 id="PkgName.Parent">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=2674:2708#L81">Parent</a></h3>
+				<h3 id="PkgName.Parent">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=2674:2708#L81">Parent</a>
+					<a class="permalink" href="index.html#PkgName.Parent">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#PkgName">PkgName</a>) Parent() *<a href="index.html#Scope">Scope</a></pre>
 				
 				
@@ -3333,7 +3647,9 @@ It is distinct from Pkg(), which is the package containing the import statement.
 				
 			
 				
-				<h3 id="PkgName.Pkg">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=2795:2828#L83">Pkg</a></h3>
+				<h3 id="PkgName.Pkg">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=2795:2828#L83">Pkg</a>
+					<a class="permalink" href="index.html#PkgName.Pkg">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#PkgName">PkgName</a>) Pkg() *<a href="index.html#Package">Package</a></pre>
 				
 				
@@ -3341,7 +3657,9 @@ It is distinct from Pkg(), which is the package containing the import statement.
 				
 			
 				
-				<h3 id="PkgName.Pos">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=2736:2770#L82">Pos</a></h3>
+				<h3 id="PkgName.Pos">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=2736:2770#L82">Pos</a>
+					<a class="permalink" href="index.html#PkgName.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#PkgName">PkgName</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3349,7 +3667,9 @@ It is distinct from Pkg(), which is the package containing the import statement.
 				
 			
 				
-				<h3 id="PkgName.String">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=9279:9314#L320">String</a></h3>
+				<h3 id="PkgName.String">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=9278:9313#L320">String</a>
+					<a class="permalink" href="index.html#PkgName.String">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#PkgName">PkgName</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -3357,7 +3677,9 @@ It is distinct from Pkg(), which is the package containing the import statement.
 				
 			
 				
-				<h3 id="PkgName.Type">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=2914:2944#L85">Type</a></h3>
+				<h3 id="PkgName.Type">func (*PkgName) <a href="http://localhost:9090/src/go/types/object.go?s=2914:2944#L85">Type</a>
+					<a class="permalink" href="index.html#PkgName.Type">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#PkgName">PkgName</a>) Type() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -3367,7 +3689,9 @@ It is distinct from Pkg(), which is the package containing the import statement.
 		
 			
 			
-			<h2 id="Pointer">type <a href="http://localhost:9090/src/go/types/type.go?s=3737:3787#L152">Pointer</a></h2>
+			<h2 id="Pointer">type <a href="http://localhost:9090/src/go/types/type.go?s=3737:3787#L152">Pointer</a>
+				<a class="permalink" href="index.html#Pointer">&#xb6;</a>
+			</h2>
 			<pre>type Pointer struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -3386,7 +3710,9 @@ A Pointer represents a pointer type.
 
 			
 				
-				<h3 id="NewPointer">func <a href="http://localhost:9090/src/go/types/type.go?s=3865:3900#L157">NewPointer</a></h3>
+				<h3 id="NewPointer">func <a href="http://localhost:9090/src/go/types/type.go?s=3865:3900#L157">NewPointer</a>
+					<a class="permalink" href="index.html#NewPointer">&#xb6;</a>
+				</h3>
 				<pre>func NewPointer(elem <a href="index.html#Type">Type</a>) *<a href="index.html#Pointer">Pointer</a></pre>
 				<p>
 NewPointer returns a new pointer type for the given element (base) type.
@@ -3398,7 +3724,9 @@ NewPointer returns a new pointer type for the given element (base) type.
 
 			
 				
-				<h3 id="Pointer.Elem">func (*Pointer) <a href="http://localhost:9090/src/go/types/type.go?s=3992:4021#L160">Elem</a></h3>
+				<h3 id="Pointer.Elem">func (*Pointer) <a href="http://localhost:9090/src/go/types/type.go?s=3992:4021#L160">Elem</a>
+					<a class="permalink" href="index.html#Pointer.Elem">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Pointer">Pointer</a>) Elem() <a href="index.html#Type">Type</a></pre>
 				<p>
 Elem returns the element type for the given pointer p.
@@ -3409,7 +3737,9 @@ Elem returns the element type for the given pointer p.
 				
 			
 				
-				<h3 id="Pointer.String">func (*Pointer) <a href="http://localhost:9090/src/go/types/type.go?s=13751:13784#L439">String</a></h3>
+				<h3 id="Pointer.String">func (*Pointer) <a href="http://localhost:9090/src/go/types/type.go?s=13750:13783#L439">String</a>
+					<a class="permalink" href="index.html#Pointer.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Pointer">Pointer</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -3417,7 +3747,9 @@ Elem returns the element type for the given pointer p.
 				
 			
 				
-				<h3 id="Pointer.Underlying">func (*Pointer) <a href="http://localhost:9090/src/go/types/type.go?s=13118:13153#L427">Underlying</a></h3>
+				<h3 id="Pointer.Underlying">func (*Pointer) <a href="http://localhost:9090/src/go/types/type.go?s=13117:13152#L427">Underlying</a>
+					<a class="permalink" href="index.html#Pointer.Underlying">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Pointer">Pointer</a>) Underlying() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -3427,7 +3759,9 @@ Elem returns the element type for the given pointer p.
 		
 			
 			
-			<h2 id="Qualifier">type <a href="http://localhost:9090/src/go/types/typestring.go?s=781:817#L15">Qualifier</a></h2>
+			<h2 id="Qualifier">type <a href="http://localhost:9090/src/go/types/typestring.go?s=781:817#L15">Qualifier</a>
+				<a class="permalink" href="index.html#Qualifier">&#xb6;</a>
+			</h2>
 			<pre>type Qualifier func(*<a href="index.html#Package">Package</a>) <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 A Qualifier controls how named package-level objects are printed in
@@ -3455,7 +3789,9 @@ object is qualified by the import path, e.g., &#34;encoding/json.Marshal&#34;.
 
 			
 				
-				<h3 id="RelativeTo">func <a href="http://localhost:9090/src/go/types/typestring.go?s=922:961#L19">RelativeTo</a></h3>
+				<h3 id="RelativeTo">func <a href="http://localhost:9090/src/go/types/typestring.go?s=922:961#L19">RelativeTo</a>
+					<a class="permalink" href="index.html#RelativeTo">&#xb6;</a>
+				</h3>
 				<pre>func RelativeTo(pkg *<a href="index.html#Package">Package</a>) <a href="index.html#Qualifier">Qualifier</a></pre>
 				<p>
 RelativeTo(pkg) returns a Qualifier that fully qualifies members of
@@ -3470,7 +3806,9 @@ all packages other than pkg.
 		
 			
 			
-			<h2 id="Scope">type <a href="http://localhost:9090/src/go/types/scope.go?s=628:843#L15">Scope</a></h2>
+			<h2 id="Scope">type <a href="http://localhost:9090/src/go/types/scope.go?s=628:843#L15">Scope</a>
+				<a class="permalink" href="index.html#Scope">&#xb6;</a>
+			</h2>
 			<pre>type Scope struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -3492,11 +3830,13 @@ empty scope.
 
 			
 				
-				<h3 id="NewScope">func <a href="http://localhost:9090/src/go/types/scope.go?s=968:1039#L25">NewScope</a></h3>
+				<h3 id="NewScope">func <a href="http://localhost:9090/src/go/types/scope.go?s=967:1038#L25">NewScope</a>
+					<a class="permalink" href="index.html#NewScope">&#xb6;</a>
+				</h3>
 				<pre>func NewScope(parent *<a href="index.html#Scope">Scope</a>, pos, end <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>, comment <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Scope">Scope</a></pre>
 				<p>
 NewScope returns a new, empty scope contained in the given parent
-scope, if any.  The comment is for debugging only.
+scope, if any. The comment is for debugging only.
 </p>
 
 				
@@ -3505,7 +3845,9 @@ scope, if any.  The comment is for debugging only.
 
 			
 				
-				<h3 id="Scope.Child">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=1870:1905#L56">Child</a></h3>
+				<h3 id="Scope.Child">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=1869:1904#L56">Child</a>
+					<a class="permalink" href="index.html#Scope.Child">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) Child(i <a href="../../builtin/index.html#int">int</a>) *<a href="index.html#Scope">Scope</a></pre>
 				<p>
 Child returns the i&#39;th child scope for 0 &lt;= i &lt; NumChildren().
@@ -3516,7 +3858,9 @@ Child returns the i&#39;th child scope for 0 &lt;= i &lt; NumChildren().
 				
 			
 				
-				<h3 id="Scope.Contains">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=4035:4079#L113">Contains</a></h3>
+				<h3 id="Scope.Contains">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=4034:4078#L113">Contains</a>
+					<a class="permalink" href="index.html#Scope.Contains">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) Contains(pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 Contains returns true if pos is within the scope&#39;s extent.
@@ -3529,7 +3873,9 @@ AST has complete position information.
 				
 			
 				
-				<h3 id="Scope.End">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=3816:3847#L108">End</a></h3>
+				<h3 id="Scope.End">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=3815:3846#L108">End</a>
+					<a class="permalink" href="index.html#Scope.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3537,7 +3883,9 @@ AST has complete position information.
 				
 			
 				
-				<h3 id="Scope.Innermost">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=4397:4444#L122">Innermost</a></h3>
+				<h3 id="Scope.Innermost">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=4396:4443#L122">Innermost</a>
+					<a class="permalink" href="index.html#Scope.Innermost">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) Innermost(pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>) *<a href="index.html#Scope">Scope</a></pre>
 				<p>
 Innermost returns the innermost (child) scope containing
@@ -3552,7 +3900,9 @@ AST has complete position information.
 				
 			
 				
-				<h3 id="Scope.Insert">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=3268:3309#L88">Insert</a></h3>
+				<h3 id="Scope.Insert">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=3267:3308#L88">Insert</a>
+					<a class="permalink" href="index.html#Scope.Insert">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) Insert(obj <a href="index.html#Object">Object</a>) <a href="index.html#Object">Object</a></pre>
 				<p>
 Insert attempts to insert an object obj into scope s.
@@ -3567,7 +3917,9 @@ if not already set, and returns nil.
 				
 			
 				
-				<h3 id="Scope.Len">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=1396:1421#L38">Len</a></h3>
+				<h3 id="Scope.Len">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=1395:1420#L38">Len</a>
+					<a class="permalink" href="index.html#Scope.Len">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) Len() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 Len() returns the number of scope elements.
@@ -3578,7 +3930,9 @@ Len() returns the number of scope elements.
 				
 			
 				
-				<h3 id="Scope.Lookup">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=2050:2092#L60">Lookup</a></h3>
+				<h3 id="Scope.Lookup">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=2049:2091#L60">Lookup</a>
+					<a class="permalink" href="index.html#Scope.Lookup">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) Lookup(name <a href="../../builtin/index.html#string">string</a>) <a href="index.html#Object">Object</a></pre>
 				<p>
 Lookup returns the object in scope s with the given name if such an
@@ -3590,7 +3944,9 @@ object exists; otherwise the result is nil.
 				
 			
 				
-				<h3 id="Scope.LookupParent">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=2757:2830#L74">LookupParent</a></h3>
+				<h3 id="Scope.LookupParent">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=2756:2829#L74">LookupParent</a>
+					<a class="permalink" href="index.html#Scope.LookupParent">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) LookupParent(name <a href="../../builtin/index.html#string">string</a>, pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>) (*<a href="index.html#Scope">Scope</a>, <a href="index.html#Object">Object</a>)</pre>
 				<p>
 LookupParent follows the parent chain of scopes starting with s until
@@ -3611,7 +3967,9 @@ whose scope is the scope of the package that exported them.
 				
 			
 				
-				<h3 id="Scope.Names">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=1507:1539#L41">Names</a></h3>
+				<h3 id="Scope.Names">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=1506:1538#L41">Names</a>
+					<a class="permalink" href="index.html#Scope.Names">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) Names() []<a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 Names returns the scope&#39;s element names in sorted order.
@@ -3622,7 +3980,9 @@ Names returns the scope&#39;s element names in sorted order.
 				
 			
 				
-				<h3 id="Scope.NumChildren">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=1742:1775#L53">NumChildren</a></h3>
+				<h3 id="Scope.NumChildren">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=1741:1774#L53">NumChildren</a>
+					<a class="permalink" href="index.html#Scope.NumChildren">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) NumChildren() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 NumChildren() returns the number of scopes nested in s.
@@ -3633,7 +3993,9 @@ NumChildren() returns the number of scopes nested in s.
 				
 			
 				
-				<h3 id="Scope.Parent">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=1296:1327#L35">Parent</a></h3>
+				<h3 id="Scope.Parent">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=1295:1326#L35">Parent</a>
+					<a class="permalink" href="index.html#Scope.Parent">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) Parent() *<a href="index.html#Scope">Scope</a></pre>
 				<p>
 Parent returns the scope&#39;s containing (parent) scope.
@@ -3644,7 +4006,9 @@ Parent returns the scope&#39;s containing (parent) scope.
 				
 			
 				
-				<h3 id="Scope.Pos">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=3767:3798#L107">Pos</a></h3>
+				<h3 id="Scope.Pos">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=3766:3797#L107">Pos</a>
+					<a class="permalink" href="index.html#Scope.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				<p>
 Pos and End describe the scope&#39;s source code extent [pos, end).
@@ -3658,7 +4022,9 @@ for Universe and package scopes.
 				
 			
 				
-				<h3 id="Scope.String">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=5658:5689#L176">String</a></h3>
+				<h3 id="Scope.String">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=5657:5688#L176">String</a>
+					<a class="permalink" href="index.html#Scope.String">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 String returns a string representation of the scope, for debugging.
@@ -3669,7 +4035,9 @@ String returns a string representation of the scope, for debugging.
 				
 			
 				
-				<h3 id="Scope.WriteTo">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=5098:5155#L149">WriteTo</a></h3>
+				<h3 id="Scope.WriteTo">func (*Scope) <a href="http://localhost:9090/src/go/types/scope.go?s=5097:5154#L149">WriteTo</a>
+					<a class="permalink" href="index.html#Scope.WriteTo">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) WriteTo(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, n <a href="../../builtin/index.html#int">int</a>, recurse <a href="../../builtin/index.html#bool">bool</a>)</pre>
 				<p>
 WriteTo writes a string representation of the scope to w,
@@ -3686,7 +4054,9 @@ If recurse is set, it also writes nested (children) scopes.
 		
 			
 			
-			<h2 id="Selection">type <a href="http://localhost:9090/src/go/types/selection.go?s=1093:1326#L30">Selection</a></h2>
+			<h2 id="Selection">type <a href="http://localhost:9090/src/go/types/selection.go?s=1093:1326#L30">Selection</a>
+				<a class="permalink" href="index.html#Selection">&#xb6;</a>
+			</h2>
 			<pre>type Selection struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -3722,7 +4092,9 @@ T.m         MethodExpr    T       m      func m(_ T)        {1, 0}    false
 
 			
 				
-				<h3 id="Selection.Index">func (*Selection) <a href="http://localhost:9090/src/go/types/selection.go?s=3090:3123#L92">Index</a></h3>
+				<h3 id="Selection.Index">func (*Selection) <a href="http://localhost:9090/src/go/types/selection.go?s=3090:3123#L92">Index</a>
+					<a class="permalink" href="index.html#Selection.Index">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Selection">Selection</a>) Index() []<a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 Index describes the path from x to f in x.f.
@@ -3743,7 +4115,9 @@ traversed to get from (the type of) x to f, starting at embedding depth 0.
 				
 			
 				
-				<h3 id="Selection.Indirect">func (*Selection) <a href="http://localhost:9090/src/go/types/selection.go?s=3239:3274#L96">Indirect</a></h3>
+				<h3 id="Selection.Indirect">func (*Selection) <a href="http://localhost:9090/src/go/types/selection.go?s=3239:3274#L96">Indirect</a>
+					<a class="permalink" href="index.html#Selection.Indirect">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Selection">Selection</a>) Indirect() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 Indirect reports whether any pointer indirection was required to get from
@@ -3755,7 +4129,9 @@ x to f in x.f.
 				
 			
 				
-				<h3 id="Selection.Kind">func (*Selection) <a href="http://localhost:9090/src/go/types/selection.go?s=1364:1404#L39">Kind</a></h3>
+				<h3 id="Selection.Kind">func (*Selection) <a href="http://localhost:9090/src/go/types/selection.go?s=1364:1404#L39">Kind</a>
+					<a class="permalink" href="index.html#Selection.Kind">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Selection">Selection</a>) Kind() <a href="index.html#SelectionKind">SelectionKind</a></pre>
 				<p>
 Kind returns the selection kind.
@@ -3766,7 +4142,9 @@ Kind returns the selection kind.
 				
 			
 				
-				<h3 id="Selection.Obj">func (*Selection) <a href="http://localhost:9090/src/go/types/selection.go?s=1620:1652#L46">Obj</a></h3>
+				<h3 id="Selection.Obj">func (*Selection) <a href="http://localhost:9090/src/go/types/selection.go?s=1620:1652#L46">Obj</a>
+					<a class="permalink" href="index.html#Selection.Obj">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Selection">Selection</a>) Obj() <a href="index.html#Object">Object</a></pre>
 				<p>
 Obj returns the object denoted by x.f; a *Var for
@@ -3778,7 +4156,9 @@ a field selection, and a *Func in all other cases.
 				
 			
 				
-				<h3 id="Selection.Recv">func (*Selection) <a href="http://localhost:9090/src/go/types/selection.go?s=1462:1493#L42">Recv</a></h3>
+				<h3 id="Selection.Recv">func (*Selection) <a href="http://localhost:9090/src/go/types/selection.go?s=1462:1493#L42">Recv</a>
+					<a class="permalink" href="index.html#Selection.Recv">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Selection">Selection</a>) Recv() <a href="index.html#Type">Type</a></pre>
 				<p>
 Recv returns the type of x in x.f.
@@ -3789,7 +4169,9 @@ Recv returns the type of x in x.f.
 				
 			
 				
-				<h3 id="Selection.String">func (*Selection) <a href="http://localhost:9090/src/go/types/selection.go?s=3298:3333#L98">String</a></h3>
+				<h3 id="Selection.String">func (*Selection) <a href="http://localhost:9090/src/go/types/selection.go?s=3298:3333#L98">String</a>
+					<a class="permalink" href="index.html#Selection.String">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Selection">Selection</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -3797,7 +4179,9 @@ Recv returns the type of x in x.f.
 				
 			
 				
-				<h3 id="Selection.Type">func (*Selection) <a href="http://localhost:9090/src/go/types/selection.go?s=1786:1817#L50">Type</a></h3>
+				<h3 id="Selection.Type">func (*Selection) <a href="http://localhost:9090/src/go/types/selection.go?s=1786:1817#L50">Type</a>
+					<a class="permalink" href="index.html#Selection.Type">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Selection">Selection</a>) Type() <a href="index.html#Type">Type</a></pre>
 				<p>
 Type returns the type of x.f, which may be different from the type of f.
@@ -3811,7 +4195,9 @@ See Selection for more information.
 		
 			
 			
-			<h2 id="SelectionKind">type <a href="http://localhost:9090/src/go/types/selection.go?s=343:365#L6">SelectionKind</a></h2>
+			<h2 id="SelectionKind">type <a href="http://localhost:9090/src/go/types/selection.go?s=343:365#L6">SelectionKind</a>
+				<a class="permalink" href="index.html#SelectionKind">&#xb6;</a>
+			</h2>
 			<pre>type SelectionKind <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 SelectionKind describes the kind of a selector expression x.f
@@ -3840,7 +4226,9 @@ SelectionKind describes the kind of a selector expression x.f
 		
 			
 			
-			<h2 id="Signature">type <a href="http://localhost:9090/src/go/types/type.go?s=4744:5427#L189">Signature</a></h2>
+			<h2 id="Signature">type <a href="http://localhost:9090/src/go/types/type.go?s=4744:5427#L189">Signature</a>
+				<a class="permalink" href="index.html#Signature">&#xb6;</a>
+			</h2>
 			<pre>type Signature struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -3859,7 +4247,9 @@ A Signature represents a (non-builtin) function or method type.
 
 			
 				
-				<h3 id="NewSignature">func <a href="http://localhost:9090/src/go/types/type.go?s=5696:5774#L205">NewSignature</a></h3>
+				<h3 id="NewSignature">func <a href="http://localhost:9090/src/go/types/type.go?s=5696:5774#L205">NewSignature</a>
+					<a class="permalink" href="index.html#NewSignature">&#xb6;</a>
+				</h3>
 				<pre>func NewSignature(recv *<a href="index.html#Var">Var</a>, params, results *<a href="index.html#Tuple">Tuple</a>, variadic <a href="../../builtin/index.html#bool">bool</a>) *<a href="index.html#Signature">Signature</a></pre>
 				<p>
 NewSignature returns a new function type for the given receiver, parameters,
@@ -3874,7 +4264,9 @@ must be of unnamed slice type.
 
 			
 				
-				<h3 id="Signature.Params">func (*Signature) <a href="http://localhost:9090/src/go/types/type.go?s=6512:6547#L227">Params</a></h3>
+				<h3 id="Signature.Params">func (*Signature) <a href="http://localhost:9090/src/go/types/type.go?s=6511:6546#L227">Params</a>
+					<a class="permalink" href="index.html#Signature.Params">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Signature">Signature</a>) Params() *<a href="index.html#Tuple">Tuple</a></pre>
 				<p>
 Params returns the parameters of signature s, or nil.
@@ -3885,7 +4277,9 @@ Params returns the parameters of signature s, or nil.
 				
 			
 				
-				<h3 id="Signature.Recv">func (*Signature) <a href="http://localhost:9090/src/go/types/type.go?s=6404:6435#L224">Recv</a></h3>
+				<h3 id="Signature.Recv">func (*Signature) <a href="http://localhost:9090/src/go/types/type.go?s=6403:6434#L224">Recv</a>
+					<a class="permalink" href="index.html#Signature.Recv">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Signature">Signature</a>) Recv() *<a href="index.html#Var">Var</a></pre>
 				<p>
 Recv returns the receiver of signature s (if a method), or nil if a
@@ -3893,7 +4287,7 @@ function.
 </p>
 <p>
 For an abstract method, Recv returns the enclosing interface either
-as a *Named or an *Interface.  Due to embedding, an interface may
+as a *Named or an *Interface. Due to embedding, an interface may
 contain methods whose receiver type is a different interface.
 </p>
 
@@ -3902,7 +4296,9 @@ contain methods whose receiver type is a different interface.
 				
 			
 				
-				<h3 id="Signature.Results">func (*Signature) <a href="http://localhost:9090/src/go/types/type.go?s=6624:6660#L230">Results</a></h3>
+				<h3 id="Signature.Results">func (*Signature) <a href="http://localhost:9090/src/go/types/type.go?s=6623:6659#L230">Results</a>
+					<a class="permalink" href="index.html#Signature.Results">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Signature">Signature</a>) Results() *<a href="index.html#Tuple">Tuple</a></pre>
 				<p>
 Results returns the results of signature s, or nil.
@@ -3913,7 +4309,9 @@ Results returns the results of signature s, or nil.
 				
 			
 				
-				<h3 id="Signature.String">func (*Signature) <a href="http://localhost:9090/src/go/types/type.go?s=13883:13918#L441">String</a></h3>
+				<h3 id="Signature.String">func (*Signature) <a href="http://localhost:9090/src/go/types/type.go?s=13882:13917#L441">String</a>
+					<a class="permalink" href="index.html#Signature.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Signature">Signature</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -3921,7 +4319,9 @@ Results returns the results of signature s, or nil.
 				
 			
 				
-				<h3 id="Signature.Underlying">func (*Signature) <a href="http://localhost:9090/src/go/types/type.go?s=13220:13257#L429">Underlying</a></h3>
+				<h3 id="Signature.Underlying">func (*Signature) <a href="http://localhost:9090/src/go/types/type.go?s=13219:13256#L429">Underlying</a>
+					<a class="permalink" href="index.html#Signature.Underlying">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Signature">Signature</a>) Underlying() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -3929,7 +4329,9 @@ Results returns the results of signature s, or nil.
 				
 			
 				
-				<h3 id="Signature.Variadic">func (*Signature) <a href="http://localhost:9090/src/go/types/type.go?s=6740:6775#L233">Variadic</a></h3>
+				<h3 id="Signature.Variadic">func (*Signature) <a href="http://localhost:9090/src/go/types/type.go?s=6739:6774#L233">Variadic</a>
+					<a class="permalink" href="index.html#Signature.Variadic">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Signature">Signature</a>) Variadic() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 Variadic reports whether the signature s is variadic.
@@ -3942,7 +4344,9 @@ Variadic reports whether the signature s is variadic.
 		
 			
 			
-			<h2 id="Sizes">type <a href="http://localhost:9090/src/go/types/sizes.go?s=265:769#L1">Sizes</a></h2>
+			<h2 id="Sizes">type <a href="http://localhost:9090/src/go/types/sizes.go?s=265:769#L1">Sizes</a>
+				<a class="permalink" href="index.html#Sizes">&#xb6;</a>
+			</h2>
 			<pre>type Sizes interface {
     <span class="comment">// Alignof returns the alignment of a variable of type T.</span>
     <span class="comment">// Alignof must implement the alignment guarantees required by the spec.</span>
@@ -3975,7 +4379,9 @@ Sizes defines the sizing functions for package unsafe.
 		
 			
 			
-			<h2 id="Slice">type <a href="http://localhost:9090/src/go/types/type.go?s=2125:2157#L102">Slice</a></h2>
+			<h2 id="Slice">type <a href="http://localhost:9090/src/go/types/type.go?s=2125:2157#L102">Slice</a>
+				<a class="permalink" href="index.html#Slice">&#xb6;</a>
+			</h2>
 			<pre>type Slice struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -3994,7 +4400,9 @@ A Slice represents a slice type.
 
 			
 				
-				<h3 id="NewSlice">func <a href="http://localhost:9090/src/go/types/type.go?s=2224:2255#L107">NewSlice</a></h3>
+				<h3 id="NewSlice">func <a href="http://localhost:9090/src/go/types/type.go?s=2224:2255#L107">NewSlice</a>
+					<a class="permalink" href="index.html#NewSlice">&#xb6;</a>
+				</h3>
 				<pre>func NewSlice(elem <a href="index.html#Type">Type</a>) *<a href="index.html#Slice">Slice</a></pre>
 				<p>
 NewSlice returns a new slice type for the given element type.
@@ -4006,7 +4414,9 @@ NewSlice returns a new slice type for the given element type.
 
 			
 				
-				<h3 id="Slice.Elem">func (*Slice) <a href="http://localhost:9090/src/go/types/type.go?s=2326:2353#L110">Elem</a></h3>
+				<h3 id="Slice.Elem">func (*Slice) <a href="http://localhost:9090/src/go/types/type.go?s=2326:2353#L110">Elem</a>
+					<a class="permalink" href="index.html#Slice.Elem">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Slice">Slice</a>) Elem() <a href="index.html#Type">Type</a></pre>
 				<p>
 Elem returns the element type of slice s.
@@ -4017,7 +4427,9 @@ Elem returns the element type of slice s.
 				
 			
 				
-				<h3 id="Slice.String">func (*Slice) <a href="http://localhost:9090/src/go/types/type.go?s=13619:13650#L437">String</a></h3>
+				<h3 id="Slice.String">func (*Slice) <a href="http://localhost:9090/src/go/types/type.go?s=13618:13649#L437">String</a>
+					<a class="permalink" href="index.html#Slice.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Slice">Slice</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -4025,7 +4437,9 @@ Elem returns the element type of slice s.
 				
 			
 				
-				<h3 id="Slice.Underlying">func (*Slice) <a href="http://localhost:9090/src/go/types/type.go?s=13016:13049#L425">Underlying</a></h3>
+				<h3 id="Slice.Underlying">func (*Slice) <a href="http://localhost:9090/src/go/types/type.go?s=13015:13048#L425">Underlying</a>
+					<a class="permalink" href="index.html#Slice.Underlying">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Slice">Slice</a>) Underlying() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -4035,7 +4449,9 @@ Elem returns the element type of slice s.
 		
 			
 			
-			<h2 id="StdSizes">type <a href="http://localhost:9090/src/go/types/sizes.go?s=1657:1804#L33">StdSizes</a></h2>
+			<h2 id="StdSizes">type <a href="http://localhost:9090/src/go/types/sizes.go?s=1657:1804#L33">StdSizes</a>
+				<a class="permalink" href="index.html#StdSizes">&#xb6;</a>
+			</h2>
 			<pre>type StdSizes struct {
     WordSize <a href="../../builtin/index.html#int64">int64</a> <span class="comment">// word size in bytes - must be &gt;= 4 (32bits)</span>
     MaxAlign <a href="../../builtin/index.html#int64">int64</a> <span class="comment">// maximum alignment in bytes - must be &gt;= 1</span>
@@ -4075,7 +4491,9 @@ It makes the following simplifying assumptions:
 
 			
 				
-				<h3 id="StdSizes.Alignof">func (*StdSizes) <a href="http://localhost:9090/src/go/types/sizes.go?s=1806:1846#L38">Alignof</a></h3>
+				<h3 id="StdSizes.Alignof">func (*StdSizes) <a href="http://localhost:9090/src/go/types/sizes.go?s=1806:1846#L38">Alignof</a>
+					<a class="permalink" href="index.html#StdSizes.Alignof">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#StdSizes">StdSizes</a>) Alignof(T <a href="index.html#Type">Type</a>) <a href="../../builtin/index.html#int64">int64</a></pre>
 				
 				
@@ -4083,7 +4501,9 @@ It makes the following simplifying assumptions:
 				
 			
 				
-				<h3 id="StdSizes.Offsetsof">func (*StdSizes) <a href="http://localhost:9090/src/go/types/sizes.go?s=2655:2706#L69">Offsetsof</a></h3>
+				<h3 id="StdSizes.Offsetsof">func (*StdSizes) <a href="http://localhost:9090/src/go/types/sizes.go?s=2655:2706#L69">Offsetsof</a>
+					<a class="permalink" href="index.html#StdSizes.Offsetsof">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#StdSizes">StdSizes</a>) Offsetsof(fields []*<a href="index.html#Var">Var</a>) []<a href="../../builtin/index.html#int64">int64</a></pre>
 				
 				
@@ -4091,7 +4511,9 @@ It makes the following simplifying assumptions:
 				
 			
 				
-				<h3 id="StdSizes.Sizeof">func (*StdSizes) <a href="http://localhost:9090/src/go/types/sizes.go?s=3133:3172#L97">Sizeof</a></h3>
+				<h3 id="StdSizes.Sizeof">func (*StdSizes) <a href="http://localhost:9090/src/go/types/sizes.go?s=3133:3172#L97">Sizeof</a>
+					<a class="permalink" href="index.html#StdSizes.Sizeof">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#StdSizes">StdSizes</a>) Sizeof(T <a href="index.html#Type">Type</a>) <a href="../../builtin/index.html#int64">int64</a></pre>
 				
 				
@@ -4101,7 +4523,9 @@ It makes the following simplifying assumptions:
 		
 			
 			
-			<h2 id="Struct">type <a href="http://localhost:9090/src/go/types/type.go?s=2411:2657#L113">Struct</a></h2>
+			<h2 id="Struct">type <a href="http://localhost:9090/src/go/types/type.go?s=2411:2657#L113">Struct</a>
+				<a class="permalink" href="index.html#Struct">&#xb6;</a>
+			</h2>
 			<pre>type Struct struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -4120,7 +4544,9 @@ A Struct represents a struct type.
 
 			
 				
-				<h3 id="NewStruct">func <a href="http://localhost:9090/src/go/types/type.go?s=2957:3009#L124">NewStruct</a></h3>
+				<h3 id="NewStruct">func <a href="http://localhost:9090/src/go/types/type.go?s=2957:3009#L124">NewStruct</a>
+					<a class="permalink" href="index.html#NewStruct">&#xb6;</a>
+				</h3>
 				<pre>func NewStruct(fields []*<a href="index.html#Var">Var</a>, tags []<a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Struct">Struct</a></pre>
 				<p>
 NewStruct returns a new struct with the given fields and corresponding field tags.
@@ -4135,7 +4561,9 @@ if no field has a tag, tags may be nil.
 
 			
 				
-				<h3 id="Struct.Field">func (*Struct) <a href="http://localhost:9090/src/go/types/type.go?s=3483:3517#L141">Field</a></h3>
+				<h3 id="Struct.Field">func (*Struct) <a href="http://localhost:9090/src/go/types/type.go?s=3483:3517#L141">Field</a>
+					<a class="permalink" href="index.html#Struct.Field">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Struct">Struct</a>) Field(i <a href="../../builtin/index.html#int">int</a>) *<a href="index.html#Var">Var</a></pre>
 				<p>
 Field returns the i&#39;th field for 0 &lt;= i &lt; NumFields().
@@ -4146,7 +4574,9 @@ Field returns the i&#39;th field for 0 &lt;= i &lt; NumFields().
 				
 			
 				
-				<h3 id="Struct.NumFields">func (*Struct) <a href="http://localhost:9090/src/go/types/type.go?s=3366:3398#L138">NumFields</a></h3>
+				<h3 id="Struct.NumFields">func (*Struct) <a href="http://localhost:9090/src/go/types/type.go?s=3366:3398#L138">NumFields</a>
+					<a class="permalink" href="index.html#Struct.NumFields">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Struct">Struct</a>) NumFields() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 NumFields returns the number of fields in the struct (including blank and anonymous fields).
@@ -4157,7 +4587,9 @@ NumFields returns the number of fields in the struct (including blank and anonym
 				
 			
 				
-				<h3 id="Struct.String">func (*Struct) <a href="http://localhost:9090/src/go/types/type.go?s=13685:13717#L438">String</a></h3>
+				<h3 id="Struct.String">func (*Struct) <a href="http://localhost:9090/src/go/types/type.go?s=13684:13716#L438">String</a>
+					<a class="permalink" href="index.html#Struct.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Struct">Struct</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -4165,7 +4597,9 @@ NumFields returns the number of fields in the struct (including blank and anonym
 				
 			
 				
-				<h3 id="Struct.Tag">func (*Struct) <a href="http://localhost:9090/src/go/types/type.go?s=3602:3636#L144">Tag</a></h3>
+				<h3 id="Struct.Tag">func (*Struct) <a href="http://localhost:9090/src/go/types/type.go?s=3602:3636#L144">Tag</a>
+					<a class="permalink" href="index.html#Struct.Tag">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Struct">Struct</a>) Tag(i <a href="../../builtin/index.html#int">int</a>) <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 Tag returns the i&#39;th field tag for 0 &lt;= i &lt; NumFields().
@@ -4176,7 +4610,9 @@ Tag returns the i&#39;th field tag for 0 &lt;= i &lt; NumFields().
 				
 			
 				
-				<h3 id="Struct.Underlying">func (*Struct) <a href="http://localhost:9090/src/go/types/type.go?s=13067:13101#L426">Underlying</a></h3>
+				<h3 id="Struct.Underlying">func (*Struct) <a href="http://localhost:9090/src/go/types/type.go?s=13066:13100#L426">Underlying</a>
+					<a class="permalink" href="index.html#Struct.Underlying">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Struct">Struct</a>) Underlying() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -4186,7 +4622,9 @@ Tag returns the i&#39;th field tag for 0 &lt;= i &lt; NumFields().
 		
 			
 			
-			<h2 id="Tuple">type <a href="http://localhost:9090/src/go/types/type.go?s=4271:4305#L165">Tuple</a></h2>
+			<h2 id="Tuple">type <a href="http://localhost:9090/src/go/types/type.go?s=4271:4305#L165">Tuple</a>
+				<a class="permalink" href="index.html#Tuple">&#xb6;</a>
+			</h2>
 			<pre>type Tuple struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -4207,7 +4645,9 @@ assignments; they are not first class types of Go.
 
 			
 				
-				<h3 id="NewTuple">func <a href="http://localhost:9090/src/go/types/type.go?s=4364:4395#L170">NewTuple</a></h3>
+				<h3 id="NewTuple">func <a href="http://localhost:9090/src/go/types/type.go?s=4364:4395#L170">NewTuple</a>
+					<a class="permalink" href="index.html#NewTuple">&#xb6;</a>
+				</h3>
 				<pre>func NewTuple(x ...*<a href="index.html#Var">Var</a>) *<a href="index.html#Tuple">Tuple</a></pre>
 				<p>
 NewTuple returns a new tuple for the given variables.
@@ -4219,7 +4659,9 @@ NewTuple returns a new tuple for the given variables.
 
 			
 				
-				<h3 id="Tuple.At">func (*Tuple) <a href="http://localhost:9090/src/go/types/type.go?s=4624:4654#L186">At</a></h3>
+				<h3 id="Tuple.At">func (*Tuple) <a href="http://localhost:9090/src/go/types/type.go?s=4624:4654#L186">At</a>
+					<a class="permalink" href="index.html#Tuple.At">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Tuple">Tuple</a>) At(i <a href="../../builtin/index.html#int">int</a>) *<a href="index.html#Var">Var</a></pre>
 				<p>
 At returns the i&#39;th variable of tuple t.
@@ -4230,7 +4672,9 @@ At returns the i&#39;th variable of tuple t.
 				
 			
 				
-				<h3 id="Tuple.Len">func (*Tuple) <a href="http://localhost:9090/src/go/types/type.go?s=4500:4525#L178">Len</a></h3>
+				<h3 id="Tuple.Len">func (*Tuple) <a href="http://localhost:9090/src/go/types/type.go?s=4500:4525#L178">Len</a>
+					<a class="permalink" href="index.html#Tuple.Len">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Tuple">Tuple</a>) Len() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 Len returns the number variables of tuple t.
@@ -4241,7 +4685,9 @@ Len returns the number variables of tuple t.
 				
 			
 				
-				<h3 id="Tuple.String">func (*Tuple) <a href="http://localhost:9090/src/go/types/type.go?s=13817:13848#L440">String</a></h3>
+				<h3 id="Tuple.String">func (*Tuple) <a href="http://localhost:9090/src/go/types/type.go?s=13816:13847#L440">String</a>
+					<a class="permalink" href="index.html#Tuple.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Tuple">Tuple</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -4249,7 +4695,9 @@ Len returns the number variables of tuple t.
 				
 			
 				
-				<h3 id="Tuple.Underlying">func (*Tuple) <a href="http://localhost:9090/src/go/types/type.go?s=13169:13202#L428">Underlying</a></h3>
+				<h3 id="Tuple.Underlying">func (*Tuple) <a href="http://localhost:9090/src/go/types/type.go?s=13168:13201#L428">Underlying</a>
+					<a class="permalink" href="index.html#Tuple.Underlying">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Tuple">Tuple</a>) Underlying() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -4259,7 +4707,9 @@ Len returns the number variables of tuple t.
 		
 			
 			
-			<h2 id="Type">type <a href="http://localhost:9090/src/go/types/type.go?s=281:449#L4">Type</a></h2>
+			<h2 id="Type">type <a href="http://localhost:9090/src/go/types/type.go?s=281:449#L4">Type</a>
+				<a class="permalink" href="index.html#Type">&#xb6;</a>
+			</h2>
 			<pre>type Type interface {
     <span class="comment">// Underlying returns the underlying type of a type.</span>
     Underlying() <a href="index.html#Type">Type</a>
@@ -4287,7 +4737,9 @@ All types implement the Type interface.
 		
 			
 			
-			<h2 id="TypeAndValue">type <a href="http://localhost:9090/src/go/types/api.go?s=9291:9372#L239">TypeAndValue</a></h2>
+			<h2 id="TypeAndValue">type <a href="http://localhost:9090/src/go/types/api.go?s=9291:9372#L239">TypeAndValue</a>
+				<a class="permalink" href="index.html#TypeAndValue">&#xb6;</a>
+			</h2>
 			<pre>type TypeAndValue struct {
     Type  <a href="index.html#Type">Type</a>
     Value <a href="../constant/index.html">constant</a>.<a href="../constant/index.html#Value">Value</a>
@@ -4309,8 +4761,10 @@ of the corresponding expression.
 
 			
 				
-				<h3 id="Eval">func <a href="http://localhost:9090/src/go/types/eval.go?s=1291:1392#L27">Eval</a></h3>
-				<pre>func Eval(fset *<a href="../token/index.html">token</a>.<a href="../token/index.html#FileSet">FileSet</a>, pkg *<a href="index.html#Package">Package</a>, pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>, expr <a href="../../builtin/index.html#string">string</a>) (tv <a href="index.html#TypeAndValue">TypeAndValue</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Eval">func <a href="http://localhost:9090/src/go/types/eval.go?s=1291:1385#L27">Eval</a>
+					<a class="permalink" href="index.html#Eval">&#xb6;</a>
+				</h3>
+				<pre>func Eval(fset *<a href="../token/index.html">token</a>.<a href="../token/index.html#FileSet">FileSet</a>, pkg *<a href="index.html#Package">Package</a>, pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>, expr <a href="../../builtin/index.html#string">string</a>) (<a href="index.html#TypeAndValue">TypeAndValue</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Eval returns the type and, if constant, the value for the
 expression expr, evaluated at position pos of package pkg,
@@ -4347,7 +4801,9 @@ respective context-specific type.
 
 			
 				
-				<h3 id="TypeAndValue.Addressable">func (TypeAndValue) <a href="http://localhost:9090/src/go/types/api.go?s=10614:10655#L284">Addressable</a></h3>
+				<h3 id="TypeAndValue.Addressable">func (TypeAndValue) <a href="http://localhost:9090/src/go/types/api.go?s=10614:10655#L284">Addressable</a>
+					<a class="permalink" href="index.html#TypeAndValue.Addressable">&#xb6;</a>
+				</h3>
 				<pre>func (tv <a href="index.html#TypeAndValue">TypeAndValue</a>) Addressable() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 Addressable reports whether the corresponding expression
@@ -4359,7 +4815,9 @@ is addressable (<a href="https://golang.org/ref/spec#Address_operators">https://
 				
 			
 				
-				<h3 id="TypeAndValue.Assignable">func (TypeAndValue) <a href="http://localhost:9090/src/go/types/api.go?s=10806:10846#L290">Assignable</a></h3>
+				<h3 id="TypeAndValue.Assignable">func (TypeAndValue) <a href="http://localhost:9090/src/go/types/api.go?s=10806:10846#L290">Assignable</a>
+					<a class="permalink" href="index.html#TypeAndValue.Assignable">&#xb6;</a>
+				</h3>
 				<pre>func (tv <a href="index.html#TypeAndValue">TypeAndValue</a>) Assignable() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 Assignable reports whether the corresponding expression
@@ -4371,7 +4829,9 @@ is assignable to (provided a value of the right type).
 				
 			
 				
-				<h3 id="TypeAndValue.HasOk">func (TypeAndValue) <a href="http://localhost:9090/src/go/types/api.go?s=11009:11044#L296">HasOk</a></h3>
+				<h3 id="TypeAndValue.HasOk">func (TypeAndValue) <a href="http://localhost:9090/src/go/types/api.go?s=11009:11044#L296">HasOk</a>
+					<a class="permalink" href="index.html#TypeAndValue.HasOk">&#xb6;</a>
+				</h3>
 				<pre>func (tv <a href="index.html#TypeAndValue">TypeAndValue</a>) HasOk() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 HasOk reports whether the corresponding expression may be
@@ -4383,7 +4843,9 @@ used on the lhs of a comma-ok assignment.
 				
 			
 				
-				<h3 id="TypeAndValue.IsBuiltin">func (TypeAndValue) <a href="http://localhost:9090/src/go/types/api.go?s=9933:9972#L261">IsBuiltin</a></h3>
+				<h3 id="TypeAndValue.IsBuiltin">func (TypeAndValue) <a href="http://localhost:9090/src/go/types/api.go?s=9933:9972#L261">IsBuiltin</a>
+					<a class="permalink" href="index.html#TypeAndValue.IsBuiltin">&#xb6;</a>
+				</h3>
 				<pre>func (tv <a href="index.html#TypeAndValue">TypeAndValue</a>) IsBuiltin() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsBuiltin reports whether the corresponding expression denotes
@@ -4395,7 +4857,9 @@ a (possibly parenthesized) built-in function.
 				
 			
 				
-				<h3 id="TypeAndValue.IsNil">func (TypeAndValue) <a href="http://localhost:9090/src/go/types/api.go?s=10391:10426#L278">IsNil</a></h3>
+				<h3 id="TypeAndValue.IsNil">func (TypeAndValue) <a href="http://localhost:9090/src/go/types/api.go?s=10391:10426#L278">IsNil</a>
+					<a class="permalink" href="index.html#TypeAndValue.IsNil">&#xb6;</a>
+				</h3>
 				<pre>func (tv <a href="index.html#TypeAndValue">TypeAndValue</a>) IsNil() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsNil reports whether the corresponding expression denotes the
@@ -4407,7 +4871,9 @@ predeclared value nil.
 				
 			
 				
-				<h3 id="TypeAndValue.IsType">func (TypeAndValue) <a href="http://localhost:9090/src/go/types/api.go?s=9749:9785#L255">IsType</a></h3>
+				<h3 id="TypeAndValue.IsType">func (TypeAndValue) <a href="http://localhost:9090/src/go/types/api.go?s=9749:9785#L255">IsType</a>
+					<a class="permalink" href="index.html#TypeAndValue.IsType">&#xb6;</a>
+				</h3>
 				<pre>func (tv <a href="index.html#TypeAndValue">TypeAndValue</a>) IsType() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsType reports whether the corresponding expression specifies a type.
@@ -4418,7 +4884,9 @@ IsType reports whether the corresponding expression specifies a type.
 				
 			
 				
-				<h3 id="TypeAndValue.IsValue">func (TypeAndValue) <a href="http://localhost:9090/src/go/types/api.go?s=10154:10191#L268">IsValue</a></h3>
+				<h3 id="TypeAndValue.IsValue">func (TypeAndValue) <a href="http://localhost:9090/src/go/types/api.go?s=10154:10191#L268">IsValue</a>
+					<a class="permalink" href="index.html#TypeAndValue.IsValue">&#xb6;</a>
+				</h3>
 				<pre>func (tv <a href="index.html#TypeAndValue">TypeAndValue</a>) IsValue() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsValue reports whether the corresponding expression is a value.
@@ -4431,7 +4899,9 @@ nil Value.
 				
 			
 				
-				<h3 id="TypeAndValue.IsVoid">func (TypeAndValue) <a href="http://localhost:9090/src/go/types/api.go?s=9607:9643#L250">IsVoid</a></h3>
+				<h3 id="TypeAndValue.IsVoid">func (TypeAndValue) <a href="http://localhost:9090/src/go/types/api.go?s=9607:9643#L250">IsVoid</a>
+					<a class="permalink" href="index.html#TypeAndValue.IsVoid">&#xb6;</a>
+				</h3>
 				<pre>func (tv <a href="index.html#TypeAndValue">TypeAndValue</a>) IsVoid() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsVoid reports whether the corresponding expression
@@ -4445,7 +4915,9 @@ is a function call without results.
 		
 			
 			
-			<h2 id="TypeName">type <a href="http://localhost:9090/src/go/types/object.go?s=5116:5148#L147">TypeName</a></h2>
+			<h2 id="TypeName">type <a href="http://localhost:9090/src/go/types/object.go?s=5116:5148#L147">TypeName</a>
+				<a class="permalink" href="index.html#TypeName">&#xb6;</a>
+			</h2>
 			<pre>type TypeName struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -4464,7 +4936,9 @@ A TypeName represents a declared type.
 
 			
 				
-				<h3 id="NewTypeName">func <a href="http://localhost:9090/src/go/types/object.go?s=5150:5228#L151">NewTypeName</a></h3>
+				<h3 id="NewTypeName">func <a href="http://localhost:9090/src/go/types/object.go?s=5150:5228#L151">NewTypeName</a>
+					<a class="permalink" href="index.html#NewTypeName">&#xb6;</a>
+				</h3>
 				<pre>func NewTypeName(pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>, pkg *<a href="index.html#Package">Package</a>, name <a href="../../builtin/index.html#string">string</a>, typ <a href="index.html#Type">Type</a>) *<a href="index.html#TypeName">TypeName</a></pre>
 				
 				
@@ -4473,7 +4947,9 @@ A TypeName represents a declared type.
 
 			
 				
-				<h3 id="TypeName.Exported">func (*TypeName) <a href="http://localhost:9090/src/go/types/object.go?s=2973:3007#L86">Exported</a></h3>
+				<h3 id="TypeName.Exported">func (*TypeName) <a href="http://localhost:9090/src/go/types/object.go?s=2973:3007#L86">Exported</a>
+					<a class="permalink" href="index.html#TypeName.Exported">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#TypeName">TypeName</a>) Exported() <a href="../../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -4481,7 +4957,9 @@ A TypeName represents a declared type.
 				
 			
 				
-				<h3 id="TypeName.Id">func (*TypeName) <a href="http://localhost:9090/src/go/types/object.go?s=3049:3079#L87">Id</a></h3>
+				<h3 id="TypeName.Id">func (*TypeName) <a href="http://localhost:9090/src/go/types/object.go?s=3049:3079#L87">Id</a>
+					<a class="permalink" href="index.html#TypeName.Id">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#TypeName">TypeName</a>) Id() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -4489,7 +4967,9 @@ A TypeName represents a declared type.
 				
 			
 				
-				<h3 id="TypeName.Name">func (*TypeName) <a href="http://localhost:9090/src/go/types/object.go?s=2854:2886#L84">Name</a></h3>
+				<h3 id="TypeName.Name">func (*TypeName) <a href="http://localhost:9090/src/go/types/object.go?s=2854:2886#L84">Name</a>
+					<a class="permalink" href="index.html#TypeName.Name">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#TypeName">TypeName</a>) Name() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -4497,7 +4977,9 @@ A TypeName represents a declared type.
 				
 			
 				
-				<h3 id="TypeName.Parent">func (*TypeName) <a href="http://localhost:9090/src/go/types/object.go?s=2674:2708#L81">Parent</a></h3>
+				<h3 id="TypeName.Parent">func (*TypeName) <a href="http://localhost:9090/src/go/types/object.go?s=2674:2708#L81">Parent</a>
+					<a class="permalink" href="index.html#TypeName.Parent">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#TypeName">TypeName</a>) Parent() *<a href="index.html#Scope">Scope</a></pre>
 				
 				
@@ -4505,7 +4987,9 @@ A TypeName represents a declared type.
 				
 			
 				
-				<h3 id="TypeName.Pkg">func (*TypeName) <a href="http://localhost:9090/src/go/types/object.go?s=2795:2828#L83">Pkg</a></h3>
+				<h3 id="TypeName.Pkg">func (*TypeName) <a href="http://localhost:9090/src/go/types/object.go?s=2795:2828#L83">Pkg</a>
+					<a class="permalink" href="index.html#TypeName.Pkg">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#TypeName">TypeName</a>) Pkg() *<a href="index.html#Package">Package</a></pre>
 				
 				
@@ -4513,7 +4997,9 @@ A TypeName represents a declared type.
 				
 			
 				
-				<h3 id="TypeName.Pos">func (*TypeName) <a href="http://localhost:9090/src/go/types/object.go?s=2736:2770#L82">Pos</a></h3>
+				<h3 id="TypeName.Pos">func (*TypeName) <a href="http://localhost:9090/src/go/types/object.go?s=2736:2770#L82">Pos</a>
+					<a class="permalink" href="index.html#TypeName.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#TypeName">TypeName</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -4521,7 +5007,9 @@ A TypeName represents a declared type.
 				
 			
 				
-				<h3 id="TypeName.String">func (*TypeName) <a href="http://localhost:9090/src/go/types/object.go?s=9421:9457#L322">String</a></h3>
+				<h3 id="TypeName.String">func (*TypeName) <a href="http://localhost:9090/src/go/types/object.go?s=9420:9456#L322">String</a>
+					<a class="permalink" href="index.html#TypeName.String">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#TypeName">TypeName</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -4529,7 +5017,9 @@ A TypeName represents a declared type.
 				
 			
 				
-				<h3 id="TypeName.Type">func (*TypeName) <a href="http://localhost:9090/src/go/types/object.go?s=2914:2944#L85">Type</a></h3>
+				<h3 id="TypeName.Type">func (*TypeName) <a href="http://localhost:9090/src/go/types/object.go?s=2914:2944#L85">Type</a>
+					<a class="permalink" href="index.html#TypeName.Type">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#TypeName">TypeName</a>) Type() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -4539,7 +5029,9 @@ A TypeName represents a declared type.
 		
 			
 			
-			<h2 id="Var">type <a href="http://localhost:9090/src/go/types/object.go?s=5411:5675#L156">Var</a></h2>
+			<h2 id="Var">type <a href="http://localhost:9090/src/go/types/object.go?s=5411:5675#L156">Var</a>
+				<a class="permalink" href="index.html#Var">&#xb6;</a>
+			</h2>
 			<pre>type Var struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -4558,21 +5050,27 @@ A Variable represents a declared variable (including function parameters and res
 
 			
 				
-				<h3 id="NewField">func <a href="http://localhost:9090/src/go/types/object.go?s=6013:6099#L172">NewField</a></h3>
+				<h3 id="NewField">func <a href="http://localhost:9090/src/go/types/object.go?s=6013:6099#L172">NewField</a>
+					<a class="permalink" href="index.html#NewField">&#xb6;</a>
+				</h3>
 				<pre>func NewField(pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>, pkg *<a href="index.html#Package">Package</a>, name <a href="../../builtin/index.html#string">string</a>, typ <a href="index.html#Type">Type</a>, anonymous <a href="../../builtin/index.html#bool">bool</a>) *<a href="index.html#Var">Var</a></pre>
 				
 				
 				
 			
 				
-				<h3 id="NewParam">func <a href="http://localhost:9090/src/go/types/object.go?s=5822:5892#L168">NewParam</a></h3>
+				<h3 id="NewParam">func <a href="http://localhost:9090/src/go/types/object.go?s=5822:5892#L168">NewParam</a>
+					<a class="permalink" href="index.html#NewParam">&#xb6;</a>
+				</h3>
 				<pre>func NewParam(pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>, pkg *<a href="index.html#Package">Package</a>, name <a href="../../builtin/index.html#string">string</a>, typ <a href="index.html#Type">Type</a>) *<a href="index.html#Var">Var</a></pre>
 				
 				
 				
 			
 				
-				<h3 id="NewVar">func <a href="http://localhost:9090/src/go/types/object.go?s=5677:5745#L164">NewVar</a></h3>
+				<h3 id="NewVar">func <a href="http://localhost:9090/src/go/types/object.go?s=5677:5745#L164">NewVar</a>
+					<a class="permalink" href="index.html#NewVar">&#xb6;</a>
+				</h3>
 				<pre>func NewVar(pos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>, pkg *<a href="index.html#Package">Package</a>, name <a href="../../builtin/index.html#string">string</a>, typ <a href="index.html#Type">Type</a>) *<a href="index.html#Var">Var</a></pre>
 				
 				
@@ -4581,7 +5079,9 @@ A Variable represents a declared variable (including function parameters and res
 
 			
 				
-				<h3 id="Var.Anonymous">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=6213:6245#L176">Anonymous</a></h3>
+				<h3 id="Var.Anonymous">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=6213:6245#L176">Anonymous</a>
+					<a class="permalink" href="index.html#Var.Anonymous">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Var">Var</a>) Anonymous() <a href="../../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -4589,7 +5089,9 @@ A Variable represents a declared variable (including function parameters and res
 				
 			
 				
-				<h3 id="Var.Exported">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=2973:3007#L86">Exported</a></h3>
+				<h3 id="Var.Exported">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=2973:3007#L86">Exported</a>
+					<a class="permalink" href="index.html#Var.Exported">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Var">Var</a>) Exported() <a href="../../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -4597,7 +5099,9 @@ A Variable represents a declared variable (including function parameters and res
 				
 			
 				
-				<h3 id="Var.Id">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=3049:3079#L87">Id</a></h3>
+				<h3 id="Var.Id">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=3049:3079#L87">Id</a>
+					<a class="permalink" href="index.html#Var.Id">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Var">Var</a>) Id() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -4605,7 +5109,9 @@ A Variable represents a declared variable (including function parameters and res
 				
 			
 				
-				<h3 id="Var.IsField">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=6272:6302#L178">IsField</a></h3>
+				<h3 id="Var.IsField">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=6272:6302#L178">IsField</a>
+					<a class="permalink" href="index.html#Var.IsField">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Var">Var</a>) IsField() <a href="../../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -4613,7 +5119,9 @@ A Variable represents a declared variable (including function parameters and res
 				
 			
 				
-				<h3 id="Var.Name">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=2854:2886#L84">Name</a></h3>
+				<h3 id="Var.Name">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=2854:2886#L84">Name</a>
+					<a class="permalink" href="index.html#Var.Name">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Var">Var</a>) Name() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -4621,7 +5129,9 @@ A Variable represents a declared variable (including function parameters and res
 				
 			
 				
-				<h3 id="Var.Parent">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=2674:2708#L81">Parent</a></h3>
+				<h3 id="Var.Parent">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=2674:2708#L81">Parent</a>
+					<a class="permalink" href="index.html#Var.Parent">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Var">Var</a>) Parent() *<a href="index.html#Scope">Scope</a></pre>
 				
 				
@@ -4629,7 +5139,9 @@ A Variable represents a declared variable (including function parameters and res
 				
 			
 				
-				<h3 id="Var.Pkg">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=2795:2828#L83">Pkg</a></h3>
+				<h3 id="Var.Pkg">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=2795:2828#L83">Pkg</a>
+					<a class="permalink" href="index.html#Var.Pkg">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Var">Var</a>) Pkg() *<a href="index.html#Package">Package</a></pre>
 				
 				
@@ -4637,7 +5149,9 @@ A Variable represents a declared variable (including function parameters and res
 				
 			
 				
-				<h3 id="Var.Pos">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=2736:2770#L82">Pos</a></h3>
+				<h3 id="Var.Pos">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=2736:2770#L82">Pos</a>
+					<a class="permalink" href="index.html#Var.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Var">Var</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -4645,7 +5159,9 @@ A Variable represents a declared variable (including function parameters and res
 				
 			
 				
-				<h3 id="Var.String">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=9492:9523#L323">String</a></h3>
+				<h3 id="Var.String">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=9491:9522#L323">String</a>
+					<a class="permalink" href="index.html#Var.String">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Var">Var</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -4653,7 +5169,9 @@ A Variable represents a declared variable (including function parameters and res
 				
 			
 				
-				<h3 id="Var.Type">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=2914:2944#L85">Type</a></h3>
+				<h3 id="Var.Type">func (*Var) <a href="http://localhost:9090/src/go/types/object.go?s=2914:2944#L85">Type</a>
+					<a class="permalink" href="index.html#Var.Type">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Var">Var</a>) Type() <a href="index.html#Type">Type</a></pre>
 				
 				
@@ -4672,7 +5190,7 @@ A Variable represents a declared variable (including function parameters and res
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -4690,6 +5208,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

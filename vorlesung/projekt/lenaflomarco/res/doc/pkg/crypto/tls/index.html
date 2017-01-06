@@ -233,6 +233,11 @@ Package tls partially implements TLS 1.2, as specified in RFC 5246.
 					<dd>&nbsp; &nbsp; <a href="index.html#RecordHeaderError.Error">func (e RecordHeaderError) Error() string</a></dd>
 				
 			
+				
+				<dd><a href="index.html#RenegotiationSupport">type RenegotiationSupport</a></dd>
+				
+				
+			
 			
 				
 				<dd><a href="index.html#pkg-note-BUG">Bugs</a></dd>
@@ -337,12 +342,15 @@ Package tls partially implements TLS 1.2, as specified in RFC 5246.
 
     <span class="comment">// TLS_FALLBACK_SCSV isn&#39;t a standard cipher suite but an indicator</span>
     <span class="comment">// that the client is doing version fallback. See</span>
-    <span class="comment">// https://tools.ietf.org/html/draft-ietf-tls-downgrade-scsv-00.</span>
+    <span class="comment">// https://tools.ietf.org/html/rfc7507.</span>
     <span id="TLS_FALLBACK_SCSV">TLS_FALLBACK_SCSV</span> <a href="../../builtin/index.html#uint16">uint16</a> = 0x5600
 )</pre>
 				<p>
-A list of the possible cipher suite ids. Taken from
-<a href="http://www.iana.org/assignments/tls-parameters/tls-parameters.xml">http://www.iana.org/assignments/tls-parameters/tls-parameters.xml</a>
+A list of cipher suite IDs that are, or have been, implemented by this
+package.
+</p>
+<p>
+Taken from <a href="http://www.iana.org/assignments/tls-parameters/tls-parameters.xml">http://www.iana.org/assignments/tls-parameters/tls-parameters.xml</a>
 </p>
 
 			
@@ -359,7 +367,9 @@ A list of the possible cipher suite ids. Taken from
 		
 			
 			
-			<h2 id="Listen">func <a href="http://localhost:9090/src/crypto/tls/tls.go?s=2241:2313#L65">Listen</a></h2>
+			<h2 id="Listen">func <a href="http://localhost:9090/src/crypto/tls/tls.go?s=2245:2317#L64">Listen</a>
+				<a class="permalink" href="index.html#Listen">&#xb6;</a>
+			</h2>
 			<pre>func Listen(network, laddr <a href="../../builtin/index.html#string">string</a>, config *<a href="index.html#Config">Config</a>) (<a href="../../net/index.html">net</a>.<a href="../../net/index.html#Listener">Listener</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 Listen creates a TLS listener accepting connections on the
@@ -374,7 +384,9 @@ at least one certificate or else set GetCertificate.
 		
 			
 			
-			<h2 id="NewListener">func <a href="http://localhost:9090/src/crypto/tls/tls.go?s=1879:1944#L54">NewListener</a></h2>
+			<h2 id="NewListener">func <a href="http://localhost:9090/src/crypto/tls/tls.go?s=1883:1948#L53">NewListener</a>
+				<a class="permalink" href="index.html#NewListener">&#xb6;</a>
+			</h2>
 			<pre>func NewListener(inner <a href="../../net/index.html">net</a>.<a href="../../net/index.html#Listener">Listener</a>, config *<a href="index.html#Config">Config</a>) <a href="../../net/index.html">net</a>.<a href="../../net/index.html#Listener">Listener</a></pre>
 			<p>
 NewListener creates a Listener which accepts connections from an inner
@@ -390,7 +402,9 @@ at least one certificate or else set GetCertificate.
 		
 			
 			
-			<h2 id="Certificate">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=18722:19694#L556">Certificate</a></h2>
+			<h2 id="Certificate">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=21472:22444#L621">Certificate</a>
+				<a class="permalink" href="index.html#Certificate">&#xb6;</a>
+			</h2>
 			<pre>type Certificate struct {
     Certificate [][]<a href="../../builtin/index.html#byte">byte</a>
     <span class="comment">// PrivateKey contains the private key corresponding to the public key</span>
@@ -426,20 +440,25 @@ A Certificate is a chain of one or more certificates, leaf first.
 
 			
 				
-				<h3 id="LoadX509KeyPair">func <a href="http://localhost:9090/src/crypto/tls/tls.go?s=5250:5317#L168">LoadX509KeyPair</a></h3>
+				<h3 id="LoadX509KeyPair">func <a href="http://localhost:9090/src/crypto/tls/tls.go?s=5382:5449#L168">LoadX509KeyPair</a>
+					<a class="permalink" href="index.html#LoadX509KeyPair">&#xb6;</a>
+				</h3>
 				<pre>func LoadX509KeyPair(certFile, keyFile <a href="../../builtin/index.html#string">string</a>) (<a href="index.html#Certificate">Certificate</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
-LoadX509KeyPair reads and parses a public/private key pair from a pair of
-files. The files must contain PEM encoded data. On successful return,
-Certificate.Leaf will be nil because the parsed form of the certificate is
-not retained.
+LoadX509KeyPair reads and parses a public/private key pair from a pair
+of files. The files must contain PEM encoded data. The certificate file
+may contain intermediate certificates following the leaf certificate to
+form a certificate chain. On successful return, Certificate.Leaf will
+be nil because the parsed form of the certificate is not retained.
 </p>
 
 				
 				
 			
 				
-				<h3 id="X509KeyPair">func <a href="http://localhost:9090/src/crypto/tls/tls.go?s=5758:5829#L183">X509KeyPair</a></h3>
+				<h3 id="X509KeyPair">func <a href="http://localhost:9090/src/crypto/tls/tls.go?s=5890:5961#L183">X509KeyPair</a>
+					<a class="permalink" href="index.html#X509KeyPair">&#xb6;</a>
+				</h3>
 				<pre>func X509KeyPair(certPEMBlock, keyPEMBlock []<a href="../../builtin/index.html#byte">byte</a>) (<a href="index.html#Certificate">Certificate</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 X509KeyPair parses a public/private key pair from a pair of
@@ -455,7 +474,9 @@ the parsed form of the certificate is not retained.
 		
 			
 			
-			<h2 id="ClientAuthType">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=5897:5920#L171">ClientAuthType</a></h2>
+			<h2 id="ClientAuthType">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=5932:5955#L172">ClientAuthType</a>
+				<a class="permalink" href="index.html#ClientAuthType">&#xb6;</a>
+			</h2>
 			<pre>type ClientAuthType <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 ClientAuthType declares the policy the server will follow for
@@ -486,7 +507,9 @@ TLS Client Authentication.
 		
 			
 			
-			<h2 id="ClientHelloInfo">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=7461:8359#L207">ClientHelloInfo</a></h2>
+			<h2 id="ClientHelloInfo">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=7496:8394#L208">ClientHelloInfo</a>
+				<a class="permalink" href="index.html#ClientHelloInfo">&#xb6;</a>
+			</h2>
 			<pre>type ClientHelloInfo struct {
     <span class="comment">// CipherSuites lists the CipherSuites supported by the client (e.g.</span>
     <span class="comment">// TLS_RSA_WITH_RC4_128_SHA).</span>
@@ -530,7 +553,9 @@ guide certificate selection in the GetCertificate callback.
 		
 			
 			
-			<h2 id="ClientSessionCache">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=6982:7317#L196">ClientSessionCache</a></h2>
+			<h2 id="ClientSessionCache">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=7017:7352#L197">ClientSessionCache</a>
+				<a class="permalink" href="index.html#ClientSessionCache">&#xb6;</a>
+			</h2>
 			<pre>type ClientSessionCache interface {
     <span class="comment">// Get searches for a ClientSessionState associated with the given key.</span>
     <span class="comment">// On return, ok is true if one was found.</span>
@@ -557,7 +582,9 @@ goroutines.
 
 			
 				
-				<h3 id="NewLRUClientSessionCache">func <a href="http://localhost:9090/src/crypto/tls/common.go?s=20353:20415#L607">NewLRUClientSessionCache</a></h3>
+				<h3 id="NewLRUClientSessionCache">func <a href="http://localhost:9090/src/crypto/tls/common.go?s=22996:23058#L665">NewLRUClientSessionCache</a>
+					<a class="permalink" href="index.html#NewLRUClientSessionCache">&#xb6;</a>
+				</h3>
 				<pre>func NewLRUClientSessionCache(capacity <a href="../../builtin/index.html#int">int</a>) <a href="index.html#ClientSessionCache">ClientSessionCache</a></pre>
 				<p>
 NewLRUClientSessionCache returns a ClientSessionCache with the given
@@ -573,7 +600,9 @@ is used instead.
 		
 			
 			
-			<h2 id="ClientSessionState">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=6149:6732#L183">ClientSessionState</a></h2>
+			<h2 id="ClientSessionState">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=6184:6767#L184">ClientSessionState</a>
+				<a class="permalink" href="index.html#ClientSessionState">&#xb6;</a>
+			</h2>
 			<pre>type ClientSessionState struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -597,7 +626,9 @@ sessions.
 		
 			
 			
-			<h2 id="Config">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=8571:13326#L235">Config</a></h2>
+			<h2 id="Config">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=9735:14940#L263">Config</a>
+				<a class="permalink" href="index.html#Config">&#xb6;</a>
+			</h2>
 			<pre>type Config struct {
     <span class="comment">// Rand provides the source of entropy for nonces and RSA blinding.</span>
     <span class="comment">// If Rand is nil, TLS uses the cryptographic random reader in package</span>
@@ -704,6 +735,16 @@ sessions.
     <span class="comment">// an ECDHE handshake, in preference order. If empty, the default will</span>
     <span class="comment">// be used.</span>
     CurvePreferences []<a href="index.html#CurveID">CurveID</a>
+
+    <span class="comment">// DynamicRecordSizingDisabled disables adaptive sizing of TLS records.</span>
+    <span class="comment">// When true, the largest possible TLS record size is always used. When</span>
+    <span class="comment">// false, the size of TLS records may be adjusted in an attempt to</span>
+    <span class="comment">// improve latency.</span>
+    DynamicRecordSizingDisabled <a href="../../builtin/index.html#bool">bool</a>
+
+    <span class="comment">// Renegotiation controls what types of renegotiation are supported.</span>
+    <span class="comment">// The default, none, is correct for the vast majority of applications.</span>
+    Renegotiation <a href="index.html#RenegotiationSupport">RenegotiationSupport</a>
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
@@ -726,7 +767,9 @@ modify it.
 
 			
 				
-				<h3 id="Config.BuildNameToCertificate">func (*Config) <a href="http://localhost:9090/src/crypto/tls/common.go?s=18204:18245#L538">BuildNameToCertificate</a></h3>
+				<h3 id="Config.BuildNameToCertificate">func (*Config) <a href="http://localhost:9090/src/crypto/tls/common.go?s=20954:20995#L603">BuildNameToCertificate</a>
+					<a class="permalink" href="index.html#Config.BuildNameToCertificate">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Config">Config</a>) BuildNameToCertificate()</pre>
 				<p>
 BuildNameToCertificate parses c.Certificates and builds c.NameToCertificate
@@ -739,7 +782,9 @@ certificates.
 				
 			
 				
-				<h3 id="Config.SetSessionTicketKeys">func (*Config) <a href="http://localhost:9090/src/crypto/tls/common.go?s=15336:15390#L414">SetSessionTicketKeys</a></h3>
+				<h3 id="Config.SetSessionTicketKeys">func (*Config) <a href="http://localhost:9090/src/crypto/tls/common.go?s=18093:18147#L479">SetSessionTicketKeys</a>
+					<a class="permalink" href="index.html#Config.SetSessionTicketKeys">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Config">Config</a>) SetSessionTicketKeys(keys [][32]<a href="../../builtin/index.html#byte">byte</a>)</pre>
 				<p>
 SetSessionTicketKeys updates the session ticket keys for a server. The first
@@ -756,7 +801,9 @@ if keys is empty.
 		
 			
 			
-			<h2 id="Conn">type <a href="http://localhost:9090/src/crypto/tls/conn.go?s=434:2064#L15">Conn</a></h2>
+			<h2 id="Conn">type <a href="http://localhost:9090/src/crypto/tls/conn.go?s=434:3440#L15">Conn</a>
+				<a class="permalink" href="index.html#Conn">&#xb6;</a>
+			</h2>
 			<pre>type Conn struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -776,7 +823,9 @@ It implements the net.Conn interface.
 
 			
 				
-				<h3 id="Client">func <a href="http://localhost:9090/src/crypto/tls/tls.go?s=1129:1177#L29">Client</a></h3>
+				<h3 id="Client">func <a href="http://localhost:9090/src/crypto/tls/tls.go?s=1129:1177#L29">Client</a>
+					<a class="permalink" href="index.html#Client">&#xb6;</a>
+				</h3>
 				<pre>func Client(conn <a href="../../net/index.html">net</a>.<a href="../../net/index.html#Conn">Conn</a>, config *<a href="index.html#Config">Config</a>) *<a href="index.html#Conn">Conn</a></pre>
 				<p>
 Client returns a new TLS client side connection
@@ -789,7 +838,9 @@ InsecureSkipVerify in the config.
 				
 			
 				
-				<h3 id="Dial">func <a href="http://localhost:9090/src/crypto/tls/tls.go?s=4874:4936#L160">Dial</a></h3>
+				<h3 id="Dial">func <a href="http://localhost:9090/src/crypto/tls/tls.go?s=4884:4946#L159">Dial</a>
+					<a class="permalink" href="index.html#Dial">&#xb6;</a>
+				</h3>
 				<pre>func Dial(network, addr <a href="../../builtin/index.html#string">string</a>, config *<a href="index.html#Config">Config</a>) (*<a href="index.html#Conn">Conn</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Dial connects to the given network address using net.Dial
@@ -804,7 +855,9 @@ for the defaults.
 				
 			
 				
-				<h3 id="DialWithDialer">func <a href="http://localhost:9090/src/crypto/tls/tls.go?s=3222:3314#L89">DialWithDialer</a></h3>
+				<h3 id="DialWithDialer">func <a href="http://localhost:9090/src/crypto/tls/tls.go?s=3226:3318#L88">DialWithDialer</a>
+					<a class="permalink" href="index.html#DialWithDialer">&#xb6;</a>
+				</h3>
 				<pre>func DialWithDialer(dialer *<a href="../../net/index.html">net</a>.<a href="../../net/index.html#Dialer">Dialer</a>, network, addr <a href="../../builtin/index.html#string">string</a>, config *<a href="index.html#Config">Config</a>) (*<a href="index.html#Conn">Conn</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 DialWithDialer connects to the given network address using dialer.Dial and
@@ -821,7 +874,9 @@ configuration; see the documentation of Config for the defaults.
 				
 			
 				
-				<h3 id="Server">func <a href="http://localhost:9090/src/crypto/tls/tls.go?s=837:885#L21">Server</a></h3>
+				<h3 id="Server">func <a href="http://localhost:9090/src/crypto/tls/tls.go?s=837:885#L21">Server</a>
+					<a class="permalink" href="index.html#Server">&#xb6;</a>
+				</h3>
 				<pre>func Server(conn <a href="../../net/index.html">net</a>.<a href="../../net/index.html#Conn">Conn</a>, config *<a href="index.html#Config">Config</a>) *<a href="index.html#Conn">Conn</a></pre>
 				<p>
 Server returns a new TLS server side connection
@@ -836,7 +891,9 @@ at least one certificate or else set GetCertificate.
 
 			
 				
-				<h3 id="Conn.Close">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=27608:27636#L972">Close</a></h3>
+				<h3 id="Conn.Close">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=33481:33509#L1153">Close</a>
+					<a class="permalink" href="index.html#Conn.Close">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Conn">Conn</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the connection.
@@ -847,7 +904,9 @@ Close closes the connection.
 				
 			
 				
-				<h3 id="Conn.ConnectionState">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=29076:29124#L1031">ConnectionState</a></h3>
+				<h3 id="Conn.ConnectionState">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=36916:36964#L1271">ConnectionState</a>
+					<a class="permalink" href="index.html#Conn.ConnectionState">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Conn">Conn</a>) ConnectionState() <a href="index.html#ConnectionState">ConnectionState</a></pre>
 				<p>
 ConnectionState returns basic TLS details about the connection.
@@ -858,7 +917,9 @@ ConnectionState returns basic TLS details about the connection.
 				
 			
 				
-				<h3 id="Conn.Handshake">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=28683:28715#L1012">Handshake</a></h3>
+				<h3 id="Conn.Handshake">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=34556:34588#L1193">Handshake</a>
+					<a class="permalink" href="index.html#Conn.Handshake">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Conn">Conn</a>) Handshake() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Handshake runs the client or server handshake
@@ -872,7 +933,9 @@ explicitly: the first Read or Write will call it automatically.
 				
 			
 				
-				<h3 id="Conn.LocalAddr">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=2227:2262#L63">LocalAddr</a></h3>
+				<h3 id="Conn.LocalAddr">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=3603:3638#L93">LocalAddr</a>
+					<a class="permalink" href="index.html#Conn.LocalAddr">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Conn">Conn</a>) LocalAddr() <a href="../../net/index.html">net</a>.<a href="../../net/index.html#Addr">Addr</a></pre>
 				<p>
 LocalAddr returns the local network address.
@@ -883,7 +946,9 @@ LocalAddr returns the local network address.
 				
 			
 				
-				<h3 id="Conn.OCSPResponse">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=29897:29933#L1058">OCSPResponse</a></h3>
+				<h3 id="Conn.OCSPResponse">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=37830:37866#L1302">OCSPResponse</a>
+					<a class="permalink" href="index.html#Conn.OCSPResponse">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Conn">Conn</a>) OCSPResponse() []<a href="../../builtin/index.html#byte">byte</a></pre>
 				<p>
 OCSPResponse returns the stapled OCSP response from the TLS server, if
@@ -895,7 +960,9 @@ any. (Only valid for client connections.)
 				
 			
 				
-				<h3 id="Conn.Read">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=25776:25824#L911">Read</a></h3>
+				<h3 id="Conn.Read">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=31458:31506#L1085">Read</a>
+					<a class="permalink" href="index.html#Conn.Read">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Conn">Conn</a>) Read(b []<a href="../../builtin/index.html#byte">byte</a>) (n <a href="../../builtin/index.html#int">int</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Read can be made to time out and return a net.Error with Timeout() == true
@@ -907,7 +974,9 @@ after a fixed time limit; see SetDeadline and SetReadDeadline.
 				
 			
 				
-				<h3 id="Conn.RemoteAddr">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=2345:2381#L68">RemoteAddr</a></h3>
+				<h3 id="Conn.RemoteAddr">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=3721:3757#L98">RemoteAddr</a>
+					<a class="permalink" href="index.html#Conn.RemoteAddr">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Conn">Conn</a>) RemoteAddr() <a href="../../net/index.html">net</a>.<a href="../../net/index.html#Addr">Addr</a></pre>
 				<p>
 RemoteAddr returns the remote network address.
@@ -918,7 +987,9 @@ RemoteAddr returns the remote network address.
 				
 			
 				
-				<h3 id="Conn.SetDeadline">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=2665:2710#L75">SetDeadline</a></h3>
+				<h3 id="Conn.SetDeadline">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=4041:4086#L105">SetDeadline</a>
+					<a class="permalink" href="index.html#Conn.SetDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Conn">Conn</a>) SetDeadline(t <a href="../../time/index.html">time</a>.<a href="../../time/index.html#Time">Time</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 SetDeadline sets the read and write deadlines associated with the connection.
@@ -931,7 +1002,9 @@ After a Write has timed out, the TLS state is corrupt and all future writes will
 				
 			
 				
-				<h3 id="Conn.SetReadDeadline">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=2870:2919#L81">SetReadDeadline</a></h3>
+				<h3 id="Conn.SetReadDeadline">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=4246:4295#L111">SetReadDeadline</a>
+					<a class="permalink" href="index.html#Conn.SetReadDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Conn">Conn</a>) SetReadDeadline(t <a href="../../time/index.html">time</a>.<a href="../../time/index.html#Time">Time</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 SetReadDeadline sets the read deadline on the underlying connection.
@@ -943,7 +1016,9 @@ A zero value for t means Read will not time out.
 				
 			
 				
-				<h3 id="Conn.SetWriteDeadline">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=3193:3243#L88">SetWriteDeadline</a></h3>
+				<h3 id="Conn.SetWriteDeadline">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=4569:4619#L118">SetWriteDeadline</a>
+					<a class="permalink" href="index.html#Conn.SetWriteDeadline">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Conn">Conn</a>) SetWriteDeadline(t <a href="../../time/index.html">time</a>.<a href="../../time/index.html#Time">Time</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 SetWriteDeadline sets the write deadline on the underlying connection.
@@ -956,11 +1031,13 @@ After a Write has timed out, the TLS state is corrupt and all future writes will
 				
 			
 				
-				<h3 id="Conn.VerifyHostname">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=30193:30241#L1068">VerifyHostname</a></h3>
+				<h3 id="Conn.VerifyHostname">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=38125:38173#L1312">VerifyHostname</a>
+					<a class="permalink" href="index.html#Conn.VerifyHostname">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Conn">Conn</a>) VerifyHostname(host <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 VerifyHostname checks that the peer certificate chain is valid for
-connecting to host.  If so, it returns nil; if not, it returns an error
+connecting to host. If so, it returns nil; if not, it returns an error
 describing the problem.
 </p>
 
@@ -969,7 +1046,9 @@ describing the problem.
 				
 			
 				
-				<h3 id="Conn.Write">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=24359:24402#L857">Write</a></h3>
+				<h3 id="Conn.Write">func (*Conn) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=29102:29145#L989">Write</a>
+					<a class="permalink" href="index.html#Conn.Write">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Conn">Conn</a>) Write(b []<a href="../../builtin/index.html#byte">byte</a>) (<a href="../../builtin/index.html#int">int</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Write writes data to the connection.
@@ -982,7 +1061,9 @@ Write writes data to the connection.
 		
 			
 			
-			<h2 id="ConnectionState">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=4296:5800#L147">ConnectionState</a></h2>
+			<h2 id="ConnectionState">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=4331:5835#L148">ConnectionState</a>
+				<a class="permalink" href="index.html#ConnectionState">&#xb6;</a>
+			</h2>
 			<pre>type ConnectionState struct {
     Version                     <a href="../../builtin/index.html#uint16">uint16</a>                <span class="comment">// TLS version used by the connection (e.g. VersionTLS12)</span>
     HandshakeComplete           <a href="../../builtin/index.html#bool">bool</a>                  <span class="comment">// TLS handshake is complete</span>
@@ -1023,7 +1104,9 @@ ConnectionState records basic TLS details about the connection.
 		
 			
 			
-			<h2 id="CurveID">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=2318:2337#L81">CurveID</a></h2>
+			<h2 id="CurveID">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=2352:2371#L82">CurveID</a>
+				<a class="permalink" href="index.html#CurveID">&#xb6;</a>
+			</h2>
 			<pre>type CurveID <a href="../../builtin/index.html#uint16">uint16</a></pre>
 			<p>
 CurveID is the type of a TLS identifier for an elliptic curve. See
@@ -1052,7 +1135,9 @@ CurveID is the type of a TLS identifier for an elliptic curve. See
 		
 			
 			
-			<h2 id="RecordHeaderError">type <a href="http://localhost:9090/src/crypto/tls/conn.go?s=14495:14721#L506">RecordHeaderError</a></h2>
+			<h2 id="RecordHeaderError">type <a href="http://localhost:9090/src/crypto/tls/conn.go?s=15653:15879#L522">RecordHeaderError</a>
+				<a class="permalink" href="index.html#RecordHeaderError">&#xb6;</a>
+			</h2>
 			<pre>type RecordHeaderError struct {
     <span class="comment">// Msg contains a human readable string that describes the error.</span>
     Msg <a href="../../builtin/index.html#string">string</a>
@@ -1077,12 +1162,63 @@ RecordHeaderError results when a TLS record header is invalid.
 
 			
 				
-				<h3 id="RecordHeaderError.Error">func (RecordHeaderError) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=14723:14764#L514">Error</a></h3>
+				<h3 id="RecordHeaderError.Error">func (RecordHeaderError) <a href="http://localhost:9090/src/crypto/tls/conn.go?s=15881:15922#L530">Error</a>
+					<a class="permalink" href="index.html#RecordHeaderError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#RecordHeaderError">RecordHeaderError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
 				
 				
+			
+		
+			
+			
+			<h2 id="RenegotiationSupport">type <a href="http://localhost:9090/src/crypto/tls/common.go?s=9143:9172#L244">RenegotiationSupport</a>
+				<a class="permalink" href="index.html#RenegotiationSupport">&#xb6;</a>
+			</h2>
+			<pre>type RenegotiationSupport <a href="../../builtin/index.html#int">int</a></pre>
+			<p>
+RenegotiationSupport enumerates the different levels of support for TLS
+renegotiation. TLS renegotiation is the act of performing subsequent
+handshakes on a connection after the first. This significantly complicates
+the state machine and has been the source of numerous, subtle security
+issues. Initiating a renegotiation is not supported, but support for
+accepting renegotiation requests may be enabled.
+</p>
+<p>
+Even when enabled, the server may not change its identity between handshakes
+(i.e. the leaf certificate must be the same). Additionally, concurrent
+handshake and application data flow is not permitted so renegotiation can
+only be used with protocols that synchronise with the renegotiation, such as
+HTTPS.
+</p>
+
+
+			
+				<pre>const (
+    <span class="comment">// RenegotiateNever disables renegotiation.</span>
+    <span id="RenegotiateNever">RenegotiateNever</span> <a href="index.html#RenegotiationSupport">RenegotiationSupport</a> = <a href="../../builtin/index.html#iota">iota</a>
+
+    <span class="comment">// RenegotiateOnceAsClient allows a remote server to request</span>
+    <span class="comment">// renegotiation once per connection.</span>
+    <span id="RenegotiateOnceAsClient">RenegotiateOnceAsClient</span>
+
+    <span class="comment">// RenegotiateFreelyAsClient allows a remote server to repeatedly</span>
+    <span class="comment">// request renegotiation.</span>
+    <span id="RenegotiateFreelyAsClient">RenegotiateFreelyAsClient</span>
+)</pre>
+				
+			
+
+			
+
+			
+			
+			
+
+			
+
 			
 		
 	
@@ -1092,10 +1228,12 @@ RecordHeaderError results when a TLS record header is invalid.
 			<h2 id="pkg-note-BUG">Bugs</h2>
 			<ul style="list-style: none; padding: 0;">
 			
-			<li><a href="http://localhost:9090/src/crypto/tls/tls.go?s=244:485#L1">&#x261e;</a> The crypto/tls package does not implement countermeasures
+			<li><a href="http://localhost:9090/src/crypto/tls/tls.go?s=244:485#L1" style="float: left;">&#x261e;</a> <p>
+The crypto/tls package does not implement countermeasures
 against Lucky13 attacks on CBC-mode encryption. See
-http://www.isg.rhul.ac.uk/tls/TLStiming.pdf and
-https://www.imperialviolet.org/2013/02/04/luckythirteen.html.
+<a href="http://www.isg.rhul.ac.uk/tls/TLStiming.pdf">http://www.isg.rhul.ac.uk/tls/TLStiming.pdf</a> and
+<a href="https://www.imperialviolet.org/2013/02/04/luckythirteen.html">https://www.imperialviolet.org/2013/02/04/luckythirteen.html</a>.
+</p>
 </li>
 			
 			</ul>
@@ -1109,7 +1247,7 @@ https://www.imperialviolet.org/2013/02/04/luckythirteen.html.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1127,6 +1265,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

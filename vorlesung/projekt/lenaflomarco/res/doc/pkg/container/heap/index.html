@@ -202,7 +202,9 @@ implementation; the file example_pq_test.go has the complete source.
 		
 			
 			
-			<h2 id="Fix">func <a href="http://localhost:9090/src/container/heap/heap.go?s=2773:2801#L75">Fix</a></h2>
+			<h2 id="Fix">func <a href="http://localhost:9090/src/container/heap/heap.go?s=2772:2800#L75">Fix</a>
+				<a class="permalink" href="index.html#Fix">&#xb6;</a>
+			</h2>
 			<pre>func Fix(h <a href="index.html#Interface">Interface</a>, i <a href="../../builtin/index.html#int">int</a>)</pre>
 			<p>
 Fix re-establishes the heap ordering after the element at index i has changed its value.
@@ -217,7 +219,9 @@ The complexity is O(log(n)) where n = h.Len().
 		
 			
 			
-			<h2 id="Init">func <a href="http://localhost:9090/src/container/heap/heap.go?s=1656:1678#L31">Init</a></h2>
+			<h2 id="Init">func <a href="http://localhost:9090/src/container/heap/heap.go?s=1655:1677#L31">Init</a>
+				<a class="permalink" href="index.html#Init">&#xb6;</a>
+			</h2>
 			<pre>func Init(h <a href="index.html#Interface">Interface</a>)</pre>
 			<p>
 A heap must be initialized before any of the heap operations
@@ -232,7 +236,9 @@ Its complexity is O(n) where n = h.Len().
 		
 			
 			
-			<h2 id="Pop">func <a href="http://localhost:9090/src/container/heap/heap.go?s=2106:2139#L51">Pop</a></h2>
+			<h2 id="Pop">func <a href="http://localhost:9090/src/container/heap/heap.go?s=2105:2138#L51">Pop</a>
+				<a class="permalink" href="index.html#Pop">&#xb6;</a>
+			</h2>
 			<pre>func Pop(h <a href="index.html#Interface">Interface</a>) interface{}</pre>
 			<p>
 Pop removes the minimum element (according to Less) from the heap
@@ -246,7 +252,9 @@ It is equivalent to Remove(h, 0).
 		
 			
 			
-			<h2 id="Push">func <a href="http://localhost:9090/src/container/heap/heap.go?s=1859:1896#L42">Push</a></h2>
+			<h2 id="Push">func <a href="http://localhost:9090/src/container/heap/heap.go?s=1858:1895#L42">Push</a>
+				<a class="permalink" href="index.html#Push">&#xb6;</a>
+			</h2>
 			<pre>func Push(h <a href="index.html#Interface">Interface</a>, x interface{})</pre>
 			<p>
 Push pushes the element x onto the heap. The complexity is
@@ -259,7 +267,9 @@ O(log(n)) where n = h.Len().
 		
 			
 			
-			<h2 id="Remove">func <a href="http://localhost:9090/src/container/heap/heap.go?s=2317:2360#L61">Remove</a></h2>
+			<h2 id="Remove">func <a href="http://localhost:9090/src/container/heap/heap.go?s=2316:2359#L61">Remove</a>
+				<a class="permalink" href="index.html#Remove">&#xb6;</a>
+			</h2>
 			<pre>func Remove(h <a href="index.html#Interface">Interface</a>, i <a href="../../builtin/index.html#int">int</a>) interface{}</pre>
 			<p>
 Remove removes the element at index i from the heap.
@@ -273,7 +283,9 @@ The complexity is O(log(n)) where n = h.Len().
 		
 			
 			
-			<h2 id="Interface">type <a href="http://localhost:9090/src/container/heap/heap.go?s=1242:1394#L20">Interface</a></h2>
+			<h2 id="Interface">type <a href="http://localhost:9090/src/container/heap/heap.go?s=1241:1393#L20">Interface</a>
+				<a class="permalink" href="index.html#Interface">&#xb6;</a>
+			</h2>
 			<pre>type Interface interface {
     <a href="../../sort/index.html">sort</a>.<a href="../../sort/index.html#Interface">Interface</a>
     Push(x interface{}) <span class="comment">// add x as element Len()</span>
@@ -288,7 +300,7 @@ Init has been called or if the data is empty or sorted):
 </pre>
 <p>
 Note that Push and Pop in this interface are for package heap&#39;s
-implementation to call.  To add and remove things from the heap,
+implementation to call. To add and remove things from the heap,
 use heap.Push and heap.Pop.
 </p>
 
@@ -316,7 +328,7 @@ use heap.Push and heap.Pop.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -334,6 +346,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

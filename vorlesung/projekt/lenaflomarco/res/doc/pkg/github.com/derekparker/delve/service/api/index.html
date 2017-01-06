@@ -110,6 +110,9 @@
 			
 			
 				
+				<dd><a href="index.html#ConvertRegisters">func ConvertRegisters(in []proc.Register) (out []Register)</a></dd>
+			
+				
 				<dd><a href="index.html#LoadConfigToProc">func LoadConfigToProc(cfg *LoadConfig) *proc.LoadConfig</a></dd>
 			
 				
@@ -158,6 +161,11 @@
 				
 			
 				
+				<dd><a href="index.html#DiscardedBreakpoint">type DiscardedBreakpoint</a></dd>
+				
+				
+			
+				
 				<dd><a href="index.html#EvalScope">type EvalScope</a></dd>
 				
 				
@@ -202,6 +210,19 @@
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#ConvertLocation">func ConvertLocation(loc proc.Location) Location</a></dd>
 				
+				
+			
+				
+				<dd><a href="index.html#Register">type Register</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Registers">type Registers</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Registers.String">func (regs Registers) String() string</a></dd>
 				
 			
 				
@@ -312,6 +333,8 @@
     <span id="Continue">Continue</span> = &#34;continue&#34;
     <span class="comment">// Step continues to next source line, entering function calls.</span>
     <span id="Step">Step</span> = &#34;step&#34;
+    <span class="comment">// StepOut continues to the return address of the current function</span>
+    <span id="StepOut">StepOut</span> = &#34;stepOut&#34;
     <span class="comment">// SingleStep continues for exactly 1 cpu instruction.</span>
     <span id="StepInstruction">StepInstruction</span> = &#34;stepInstruction&#34;
     <span class="comment">// Next continues to the next source line, not entering function calls.</span>
@@ -342,7 +365,20 @@
 		
 			
 			
-			<h2 id="LoadConfigToProc">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=5040:5095#L222">LoadConfigToProc</a></h2>
+			<h2 id="ConvertRegisters">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=5515:5573#L248">ConvertRegisters</a>
+				<a class="permalink" href="index.html#ConvertRegisters">&#xb6;</a>
+			</h2>
+			<pre>func ConvertRegisters(in []<a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#Register">Register</a>) (out []<a href="index.html#Register">Register</a>)</pre>
+			
+			
+			
+
+		
+			
+			
+			<h2 id="LoadConfigToProc">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=5046:5101#L222">LoadConfigToProc</a>
+				<a class="permalink" href="index.html#LoadConfigToProc">&#xb6;</a>
+			</h2>
 			<pre>func LoadConfigToProc(cfg *<a href="index.html#LoadConfig">LoadConfig</a>) *<a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#LoadConfig">LoadConfig</a></pre>
 			
 			
@@ -351,7 +387,9 @@
 		
 			
 			
-			<h2 id="ValidBreakpointName">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=2439:2482#L63">ValidBreakpointName</a></h2>
+			<h2 id="ValidBreakpointName">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=2448:2491#L64">ValidBreakpointName</a>
+				<a class="permalink" href="index.html#ValidBreakpointName">&#xb6;</a>
+			</h2>
 			<pre>func ValidBreakpointName(name <a href="../../../../../builtin/index.html#string">string</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 			
 			
@@ -361,7 +399,9 @@
 		
 			
 			
-			<h2 id="AsmInstruction">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=9155:9606#L250">AsmInstruction</a></h2>
+			<h2 id="AsmInstruction">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=9253:9704#L253">AsmInstruction</a>
+				<a class="permalink" href="index.html#AsmInstruction">&#xb6;</a>
+			</h2>
 			<pre>type AsmInstruction struct {
     <span class="comment">// Loc is the location of this instruction</span>
     Loc <a href="index.html#Location">Location</a>
@@ -391,7 +431,9 @@ AsmInstruction represents one assembly instruction at some address
 
 			
 				
-				<h3 id="ConvertAsmInstruction">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=4656:4736#L206">ConvertAsmInstruction</a></h3>
+				<h3 id="ConvertAsmInstruction">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=4662:4742#L206">ConvertAsmInstruction</a>
+					<a class="permalink" href="index.html#ConvertAsmInstruction">&#xb6;</a>
+				</h3>
 				<pre>func ConvertAsmInstruction(inst <a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#AsmInstruction">AsmInstruction</a>, text <a href="../../../../../builtin/index.html#string">string</a>) <a href="index.html#AsmInstruction">AsmInstruction</a></pre>
 				
 				
@@ -402,7 +444,9 @@ AsmInstruction represents one assembly instruction at some address
 		
 			
 			
-			<h2 id="AsmInstructions">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=9608:9645#L265">AsmInstructions</a></h2>
+			<h2 id="AsmInstructions">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=9706:9743#L268">AsmInstructions</a>
+				<a class="permalink" href="index.html#AsmInstructions">&#xb6;</a>
+			</h2>
 			<pre>type AsmInstructions []<a href="index.html#AsmInstruction">AsmInstruction</a></pre>
 			
 
@@ -420,7 +464,9 @@ AsmInstruction represents one assembly instruction at some address
 		
 			
 			
-			<h2 id="AssemblyFlavour">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=8948:8972#L242">AssemblyFlavour</a></h2>
+			<h2 id="AssemblyFlavour">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=9046:9070#L245">AssemblyFlavour</a>
+				<a class="permalink" href="index.html#AssemblyFlavour">&#xb6;</a>
+			</h2>
 			<pre>type AssemblyFlavour <a href="../../../../../builtin/index.html#int">int</a></pre>
 			
 
@@ -438,7 +484,9 @@ AsmInstruction represents one assembly instruction at some address
 		
 			
 			
-			<h2 id="Breakpoint">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=1168:2437#L27">Breakpoint</a></h2>
+			<h2 id="Breakpoint">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=1177:2446#L28">Breakpoint</a>
+				<a class="permalink" href="index.html#Breakpoint">&#xb6;</a>
+			</h2>
 			<pre>type Breakpoint struct {
     <span class="comment">// ID is a unique identifier for the breakpoint.</span>
     ID <a href="../../../../../builtin/index.html#int">int</a> `json:&#34;id&#34;`
@@ -490,7 +538,9 @@ suspended.
 
 			
 				
-				<h3 id="ConvertBreakpoint">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=256:311#L8">ConvertBreakpoint</a></h3>
+				<h3 id="ConvertBreakpoint">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=256:311#L8">ConvertBreakpoint</a>
+					<a class="permalink" href="index.html#ConvertBreakpoint">&#xb6;</a>
+				</h3>
 				<pre>func ConvertBreakpoint(bp *<a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#Breakpoint">Breakpoint</a>) *<a href="index.html#Breakpoint">Breakpoint</a></pre>
 				<p>
 ConvertBreakpoint converts from a proc.Breakpoint to
@@ -505,7 +555,9 @@ an api.Breakpoint.
 		
 			
 			
-			<h2 id="BreakpointInfo">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=7960:8258#L212">BreakpointInfo</a></h2>
+			<h2 id="BreakpointInfo">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=7969:8267#L213">BreakpointInfo</a>
+				<a class="permalink" href="index.html#BreakpointInfo">&#xb6;</a>
+			</h2>
 			<pre>type BreakpointInfo struct {
     Stacktrace []<a href="index.html#Stackframe">Stackframe</a> `json:&#34;stacktrace,omitempty&#34;`
     Goroutine  *<a href="index.html#Goroutine">Goroutine</a>   `json:&#34;goroutine,omitempty&#34;`
@@ -532,7 +584,9 @@ Informations about the current breakpoint
 		
 			
 			
-			<h2 id="DebuggerCommand">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=7553:7913#L200">DebuggerCommand</a></h2>
+			<h2 id="DebuggerCommand">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=7562:7922#L201">DebuggerCommand</a>
+				<a class="permalink" href="index.html#DebuggerCommand">&#xb6;</a>
+			</h2>
 			<pre>type DebuggerCommand struct {
     <span class="comment">// Name is the command to run.</span>
     Name <a href="../../../../../builtin/index.html#string">string</a> `json:&#34;name&#34;`
@@ -562,7 +616,9 @@ DebuggerCommand is a command which changes the debugger&#39;s execution state.
 		
 			
 			
-			<h2 id="DebuggerState">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=224:1083#L6">DebuggerState</a></h2>
+			<h2 id="DebuggerState">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=233:1092#L7">DebuggerState</a>
+				<a class="permalink" href="index.html#DebuggerState">&#xb6;</a>
+			</h2>
 			<pre>type DebuggerState struct {
     <span class="comment">// CurrentThread is the currently selected debugger thread.</span>
     CurrentThread *<a href="index.html#Thread">Thread</a> `json:&#34;currentThread,omitempty&#34;`
@@ -600,7 +656,32 @@ DebuggerState represents the current context of the debugger.
 		
 			
 			
-			<h2 id="EvalScope">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=8260:8319#L220">EvalScope</a></h2>
+			<h2 id="DiscardedBreakpoint">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=10290:10363#L307">DiscardedBreakpoint</a>
+				<a class="permalink" href="index.html#DiscardedBreakpoint">&#xb6;</a>
+			</h2>
+			<pre>type DiscardedBreakpoint struct {
+    Breakpoint *<a href="index.html#Breakpoint">Breakpoint</a>
+    Reason     <a href="../../../../../builtin/index.html#error">error</a>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="EvalScope">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=8269:8328#L221">EvalScope</a>
+				<a class="permalink" href="index.html#EvalScope">&#xb6;</a>
+			</h2>
 			<pre>type EvalScope struct {
     GoroutineID <a href="../../../../../builtin/index.html#int">int</a>
     Frame       <a href="../../../../../builtin/index.html#int">int</a>
@@ -621,7 +702,9 @@ DebuggerState represents the current context of the debugger.
 		
 			
 			
-			<h2 id="Function">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=4155:4329#L127">Function</a></h2>
+			<h2 id="Function">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=4164:4338#L128">Function</a>
+				<a class="permalink" href="index.html#Function">&#xb6;</a>
+			</h2>
 			<pre>type Function struct {
     <span class="comment">// Name is the function name.</span>
     Name   <a href="../../../../../builtin/index.html#string">string</a> `json:&#34;name&#34;`
@@ -644,7 +727,9 @@ Function represents thread-scoped function information.
 
 			
 				
-				<h3 id="ConvertFunction">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=3853:3899#L167">ConvertFunction</a></h3>
+				<h3 id="ConvertFunction">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=3853:3899#L167">ConvertFunction</a>
+					<a class="permalink" href="index.html#ConvertFunction">&#xb6;</a>
+				</h3>
 				<pre>func ConvertFunction(fn *<a href="../../../../../debug/gosym/index.html">gosym</a>.<a href="../../../../../debug/gosym/index.html#Func">Func</a>) *<a href="index.html#Function">Function</a></pre>
 				<p>
 ConvertFunction converts from gosym.Func to
@@ -659,7 +744,9 @@ api.Function.
 		
 			
 			
-			<h2 id="GetVersionIn">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=9647:9675#L267">GetVersionIn</a></h2>
+			<h2 id="GetVersionIn">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=9745:9773#L270">GetVersionIn</a>
+				<a class="permalink" href="index.html#GetVersionIn">&#xb6;</a>
+			</h2>
 			<pre>type GetVersionIn struct {
 }</pre>
 			
@@ -678,7 +765,9 @@ api.Function.
 		
 			
 			
-			<h2 id="GetVersionOut">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=9677:9745#L270">GetVersionOut</a></h2>
+			<h2 id="GetVersionOut">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=9775:9843#L273">GetVersionOut</a>
+				<a class="permalink" href="index.html#GetVersionOut">&#xb6;</a>
+			</h2>
 			<pre>type GetVersionOut struct {
     DelveVersion <a href="../../../../../builtin/index.html#string">string</a>
     APIVersion   <a href="../../../../../builtin/index.html#int">int</a>
@@ -699,7 +788,9 @@ api.Function.
 		
 			
 			
-			<h2 id="Goroutine">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=6982:7473#L186">Goroutine</a></h2>
+			<h2 id="Goroutine">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=6991:7482#L187">Goroutine</a>
+				<a class="permalink" href="index.html#Goroutine">&#xb6;</a>
+			</h2>
 			<pre>type Goroutine struct {
     <span class="comment">// ID is a unique identifier for the goroutine.</span>
     ID <a href="../../../../../builtin/index.html#int">int</a> `json:&#34;id&#34;`
@@ -728,7 +819,9 @@ internal G structure.
 
 			
 				
-				<h3 id="ConvertGoroutine">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=4098:4141#L181">ConvertGoroutine</a></h3>
+				<h3 id="ConvertGoroutine">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=4098:4141#L181">ConvertGoroutine</a>
+					<a class="permalink" href="index.html#ConvertGoroutine">&#xb6;</a>
+				</h3>
 				<pre>func ConvertGoroutine(g *<a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#G">G</a>) *<a href="index.html#Goroutine">Goroutine</a></pre>
 				<p>
 ConvertGoroutine converts from proc.G to api.Goroutine.
@@ -742,7 +835,9 @@ ConvertGoroutine converts from proc.G to api.Goroutine.
 		
 			
 			
-			<h2 id="LoadConfig">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=6347:6878#L171">LoadConfig</a></h2>
+			<h2 id="LoadConfig">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=6356:6887#L172">LoadConfig</a>
+				<a class="permalink" href="index.html#LoadConfig">&#xb6;</a>
+			</h2>
 			<pre>type LoadConfig struct {
     <span class="comment">// FollowPointers requests pointers to be automatically dereferenced.</span>
     FollowPointers <a href="../../../../../builtin/index.html#bool">bool</a>
@@ -770,7 +865,9 @@ LoadConfig describes how to load values from target&#39;s memory
 
 			
 				
-				<h3 id="LoadConfigFromProc">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=5276:5333#L235">LoadConfigFromProc</a></h3>
+				<h3 id="LoadConfigFromProc">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=5282:5339#L235">LoadConfigFromProc</a>
+					<a class="permalink" href="index.html#LoadConfigFromProc">&#xb6;</a>
+				</h3>
 				<pre>func LoadConfigFromProc(cfg *<a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#LoadConfig">LoadConfig</a>) *<a href="index.html#LoadConfig">LoadConfig</a></pre>
 				
 				
@@ -781,7 +878,9 @@ LoadConfig describes how to load values from target&#39;s memory
 		
 			
 			
-			<h2 id="Location">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=3560:3732#L99">Location</a></h2>
+			<h2 id="Location">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=3569:3741#L100">Location</a>
+				<a class="permalink" href="index.html#Location">&#xb6;</a>
+			</h2>
 			<pre>type Location struct {
     PC       <a href="../../../../../builtin/index.html#uint64">uint64</a>    `json:&#34;pc&#34;`
     File     <a href="../../../../../builtin/index.html#string">string</a>    `json:&#34;file&#34;`
@@ -800,7 +899,9 @@ LoadConfig describes how to load values from target&#39;s memory
 
 			
 				
-				<h3 id="ConvertLocation">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=4480:4528#L197">ConvertLocation</a></h3>
+				<h3 id="ConvertLocation">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=4486:4534#L197">ConvertLocation</a>
+					<a class="permalink" href="index.html#ConvertLocation">&#xb6;</a>
+				</h3>
 				<pre>func ConvertLocation(loc <a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#Location">Location</a>) <a href="index.html#Location">Location</a></pre>
 				<p>
 ConvertLocation converts from proc.Location to api.Location.
@@ -814,7 +915,62 @@ ConvertLocation converts from proc.Location to api.Location.
 		
 			
 			
-			<h2 id="SetAPIVersionIn">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=9747:9794#L275">SetAPIVersionIn</a></h2>
+			<h2 id="Register">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=9928:9980#L285">Register</a>
+				<a class="permalink" href="index.html#Register">&#xb6;</a>
+			</h2>
+			<pre>type Register struct {
+    Name  <a href="../../../../../builtin/index.html#string">string</a>
+    Value <a href="../../../../../builtin/index.html#string">string</a>
+}</pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Registers">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=9982:10007#L290">Registers</a>
+				<a class="permalink" href="index.html#Registers">&#xb6;</a>
+			</h2>
+			<pre>type Registers []<a href="index.html#Register">Register</a></pre>
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Registers.String">func (Registers) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=10009:10046#L292">String</a>
+					<a class="permalink" href="index.html#Registers.String">&#xb6;</a>
+				</h3>
+				<pre>func (regs <a href="index.html#Registers">Registers</a>) String() <a href="../../../../../builtin/index.html#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="SetAPIVersionIn">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=9845:9892#L278">SetAPIVersionIn</a>
+				<a class="permalink" href="index.html#SetAPIVersionIn">&#xb6;</a>
+			</h2>
 			<pre>type SetAPIVersionIn struct {
     APIVersion <a href="../../../../../builtin/index.html#int">int</a>
 }</pre>
@@ -834,7 +990,9 @@ ConvertLocation converts from proc.Location to api.Location.
 		
 			
 			
-			<h2 id="SetAPIVersionOut">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=9796:9828#L279">SetAPIVersionOut</a></h2>
+			<h2 id="SetAPIVersionOut">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=9894:9926#L282">SetAPIVersionOut</a>
+				<a class="permalink" href="index.html#SetAPIVersionOut">&#xb6;</a>
+			</h2>
 			<pre>type SetAPIVersionOut struct {
 }</pre>
 			
@@ -853,7 +1011,9 @@ ConvertLocation converts from proc.Location to api.Location.
 		
 			
 			
-			<h2 id="Stackframe">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=3734:3814#L106">Stackframe</a></h2>
+			<h2 id="Stackframe">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=3743:3823#L107">Stackframe</a>
+				<a class="permalink" href="index.html#Stackframe">&#xb6;</a>
+			</h2>
 			<pre>type Stackframe struct {
     <a href="index.html#Location">Location</a>
     Locals    []<a href="index.html#Variable">Variable</a>
@@ -873,7 +1033,9 @@ ConvertLocation converts from proc.Location to api.Location.
 
 			
 				
-				<h3 id="Stackframe.Var">func (*Stackframe) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=3816:3867#L112">Var</a></h3>
+				<h3 id="Stackframe.Var">func (*Stackframe) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=3825:3876#L113">Var</a>
+					<a class="permalink" href="index.html#Stackframe.Var">&#xb6;</a>
+				</h3>
 				<pre>func (frame *<a href="index.html#Stackframe">Stackframe</a>) Var(name <a href="../../../../../builtin/index.html#string">string</a>) *<a href="index.html#Variable">Variable</a></pre>
 				
 				
@@ -883,7 +1045,9 @@ ConvertLocation converts from proc.Location to api.Location.
 		
 			
 			
-			<h2 id="Thread">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=2820:3558#L78">Thread</a></h2>
+			<h2 id="Thread">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=2829:3567#L79">Thread</a>
+				<a class="permalink" href="index.html#Thread">&#xb6;</a>
+			</h2>
 			<pre>type Thread struct {
     <span class="comment">// ID is a unique identifier for the thread.</span>
     ID <a href="../../../../../builtin/index.html#int">int</a> `json:&#34;id&#34;`
@@ -919,7 +1083,9 @@ Thread is a thread within the debugged process.
 
 			
 				
-				<h3 id="ConvertThread">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=1056:1099#L39">ConvertThread</a></h3>
+				<h3 id="ConvertThread">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=1056:1099#L39">ConvertThread</a>
+					<a class="permalink" href="index.html#ConvertThread">&#xb6;</a>
+				</h3>
 				<pre>func ConvertThread(th *<a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#Thread">Thread</a>) *<a href="index.html#Thread">Thread</a></pre>
 				<p>
 ConvertThread converts a proc.Thread into an
@@ -934,7 +1100,9 @@ api thread.
 		
 			
 			
-			<h2 id="Variable">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=4365:6281#L136">Variable</a></h2>
+			<h2 id="Variable">type <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/types.go?s=4374:6290#L137">Variable</a>
+				<a class="permalink" href="index.html#Variable">&#xb6;</a>
+			</h2>
 			<pre>type Variable struct {
     <span class="comment">// Name of the variable or struct member</span>
     Name <a href="../../../../../builtin/index.html#string">string</a> `json:&#34;name&#34;`
@@ -983,7 +1151,9 @@ Variable describes a variable.
 
 			
 				
-				<h3 id="ConvertVar">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=1967:2010#L92">ConvertVar</a></h3>
+				<h3 id="ConvertVar">func <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/conversions.go?s=1967:2010#L92">ConvertVar</a>
+					<a class="permalink" href="index.html#ConvertVar">&#xb6;</a>
+				</h3>
 				<pre>func ConvertVar(v *<a href="../../proc/index.html">proc</a>.<a href="../../proc/index.html#Variable">Variable</a>) *<a href="index.html#Variable">Variable</a></pre>
 				<p>
 ConvertVar converts from proc.Variable to api.Variable.
@@ -995,7 +1165,9 @@ ConvertVar converts from proc.Variable to api.Variable.
 
 			
 				
-				<h3 id="Variable.MultilineString">func (*Variable) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/prettyprint.go?s=582:638#L15">MultilineString</a></h3>
+				<h3 id="Variable.MultilineString">func (*Variable) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/prettyprint.go?s=582:638#L15">MultilineString</a>
+					<a class="permalink" href="index.html#Variable.MultilineString">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#Variable">Variable</a>) MultilineString(indent <a href="../../../../../builtin/index.html#string">string</a>) <a href="../../../../../builtin/index.html#string">string</a></pre>
 				<p>
 MultilineString returns a representation of v on multiple lines.
@@ -1006,7 +1178,9 @@ MultilineString returns a representation of v on multiple lines.
 				
 			
 				
-				<h3 id="Variable.SinglelineString">func (*Variable) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/prettyprint.go?s=381:425#L8">SinglelineString</a></h3>
+				<h3 id="Variable.SinglelineString">func (*Variable) <a href="http://localhost:9090/src/github.com/derekparker/delve/service/api/prettyprint.go?s=381:425#L8">SinglelineString</a>
+					<a class="permalink" href="index.html#Variable.SinglelineString">&#xb6;</a>
+				</h3>
 				<pre>func (v *<a href="index.html#Variable">Variable</a>) SinglelineString() <a href="../../../../../builtin/index.html#string">string</a></pre>
 				<p>
 SinglelineString returns a representation of v on a single line.
@@ -1028,7 +1202,7 @@ SinglelineString returns a representation of v on a single line.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1046,6 +1220,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../../../../lib/godoc/godocs.js"></script>
 
 </body>

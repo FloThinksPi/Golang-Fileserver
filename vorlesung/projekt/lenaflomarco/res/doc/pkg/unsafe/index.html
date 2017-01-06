@@ -193,7 +193,9 @@ Go 1 compatibility guidelines.
 		
 			
 			
-			<h2 id="Alignof">func <a href="http://localhost:9090/src/unsafe/unsafe.go?s=8764:8801#L184">Alignof</a></h2>
+			<h2 id="Alignof">func <a href="http://localhost:9090/src/unsafe/unsafe.go?s=8760:8797#L184">Alignof</a>
+				<a class="permalink" href="index.html#Alignof">&#xb6;</a>
+			</h2>
 			<pre>func Alignof(x <a href="index.html#ArbitraryType">ArbitraryType</a>) <a href="../builtin/index.html#uintptr">uintptr</a></pre>
 			<p>
 Alignof takes an expression x of any type and returns the required alignment
@@ -202,7 +204,7 @@ It is the largest value m such that the address of v is always zero mod m.
 It is the same as the value returned by reflect.TypeOf(x).Align().
 As a special case, if a variable s is of struct type and f is a field
 within that struct, then Alignof(s.f) will return the required alignment
-of a field of that type within a struct.  This case is the same as the
+of a field of that type within a struct. This case is the same as the
 value returned by reflect.TypeOf(s.f).FieldAlign().
 </p>
 
@@ -212,11 +214,13 @@ value returned by reflect.TypeOf(s.f).FieldAlign().
 		
 			
 			
-			<h2 id="Offsetof">func <a href="http://localhost:9090/src/unsafe/unsafe.go?s=8150:8188#L174">Offsetof</a></h2>
+			<h2 id="Offsetof">func <a href="http://localhost:9090/src/unsafe/unsafe.go?s=8147:8185#L174">Offsetof</a>
+				<a class="permalink" href="index.html#Offsetof">&#xb6;</a>
+			</h2>
 			<pre>func Offsetof(x <a href="index.html#ArbitraryType">ArbitraryType</a>) <a href="../builtin/index.html#uintptr">uintptr</a></pre>
 			<p>
 Offsetof returns the offset within the struct of the field represented by x,
-which must be of the form structValue.field.  In other words, it returns the
+which must be of the form structValue.field. In other words, it returns the
 number of bytes between the start of the struct and the start of the field.
 </p>
 
@@ -226,7 +230,9 @@ number of bytes between the start of the struct and the start of the field.
 		
 			
 			
-			<h2 id="Sizeof">func <a href="http://localhost:9090/src/unsafe/unsafe.go?s=7873:7909#L169">Sizeof</a></h2>
+			<h2 id="Sizeof">func <a href="http://localhost:9090/src/unsafe/unsafe.go?s=7871:7907#L169">Sizeof</a>
+				<a class="permalink" href="index.html#Sizeof">&#xb6;</a>
+			</h2>
 			<pre>func Sizeof(x <a href="index.html#ArbitraryType">ArbitraryType</a>) <a href="../builtin/index.html#uintptr">uintptr</a></pre>
 			<p>
 Sizeof takes an expression x of any type and returns the size in bytes
@@ -243,11 +249,13 @@ descriptor, not the size of the memory referenced by the slice.
 		
 			
 			
-			<h2 id="ArbitraryType">type <a href="http://localhost:9090/src/unsafe/unsafe.go?s=548:570#L5">ArbitraryType</a></h2>
+			<h2 id="ArbitraryType">type <a href="http://localhost:9090/src/unsafe/unsafe.go?s=547:569#L5">ArbitraryType</a>
+				<a class="permalink" href="index.html#ArbitraryType">&#xb6;</a>
+			</h2>
 			<pre>type ArbitraryType <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 ArbitraryType is here for the purposes of documentation only and is not actually
-part of the unsafe package.  It represents the type of an arbitrary Go expression.
+part of the unsafe package. It represents the type of an arbitrary Go expression.
 </p>
 
 
@@ -265,10 +273,12 @@ part of the unsafe package.  It represents the type of an arbitrary Go expressio
 		
 			
 			
-			<h2 id="Pointer">type <a href="http://localhost:9090/src/unsafe/unsafe.go?s=7497:7524#L162">Pointer</a></h2>
+			<h2 id="Pointer">type <a href="http://localhost:9090/src/unsafe/unsafe.go?s=7495:7522#L162">Pointer</a>
+				<a class="permalink" href="index.html#Pointer">&#xb6;</a>
+			</h2>
 			<pre>type Pointer *<a href="index.html#ArbitraryType">ArbitraryType</a></pre>
 			<p>
-Pointer represents a pointer to an arbitrary type.  There are four special operations
+Pointer represents a pointer to an arbitrary type. There are four special operations
 available for type Pointer that are not available for other types:
 </p>
 <pre>- A pointer value of any type can be converted to a Pointer.
@@ -477,7 +487,7 @@ s := *(*string)(unsafe.Pointer(&amp;hdr)) // p possibly already lost
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -495,6 +505,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

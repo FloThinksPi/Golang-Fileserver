@@ -124,7 +124,7 @@ The package is using the Elastic Tabstops algorithm described at
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Flush">func (b *Writer) Flush() (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Flush">func (b *Writer) Flush() error</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#Writer.Init">func (b *Writer) Init(output io.Writer, minwidth, tabwidth, padding int, padchar byte, flags uint) *Writer</a></dd>
@@ -240,7 +240,9 @@ The value 0xff was chosen because it cannot appear in a valid UTF-8 sequence.
 		
 			
 			
-			<h2 id="Writer">type <a href="http://localhost:9090/src/text/tabwriter/tabwriter.go?s=3231:3937#L67">Writer</a></h2>
+			<h2 id="Writer">type <a href="http://localhost:9090/src/text/tabwriter/tabwriter.go?s=3750:4456#L81">Writer</a>
+				<a class="permalink" href="index.html#Writer">&#xb6;</a>
+			</h2>
 			<pre>type Writer struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -249,19 +251,35 @@ A Writer is a filter that inserts padding around tab-delimited
 columns in its input to align them in the output.
 </p>
 <p>
-The Writer treats incoming bytes as UTF-8 encoded text consisting
-of cells terminated by (horizontal or vertical) tabs or line
-breaks (newline or formfeed characters). Cells in adjacent lines
-constitute a column. The Writer inserts padding as needed to
-make all cells in a column have the same width, effectively
-aligning the columns. It assumes that all characters have the
-same width except for tabs for which a tabwidth must be specified.
-Note that cells are tab-terminated, not tab-separated: trailing
-non-tab text at the end of a line does not form a column cell.
+The Writer treats incoming bytes as UTF-8-encoded text consisting
+of cells terminated by horizontal (&#39;\t&#39;) or vertical (&#39;\v&#39;) tabs,
+and newline (&#39;\n&#39;) or formfeed (&#39;\f&#39;) characters; both newline and
+formfeed act as line breaks.
+</p>
+<p>
+Tab-terminated cells in contiguous lines constitute a column. The
+Writer inserts padding as needed to make all cells in a column have
+the same width, effectively aligning the columns. It assumes that
+all characters have the same width, except for tabs for which a
+tabwidth must be specified. Column cells must be tab-terminated, not
+tab-separated: non-tab terminated trailing text at the end of a line
+forms a cell but that cell is not part of an aligned column.
+For instance, in this example (where | stands for a horizontal tab):
+</p>
+<pre>aaaa|bbb|d
+aa  |b  |dd
+a   |
+aa  |cccc|eee
+</pre>
+<p>
+the b and c are in distinct columns (the b column is not contiguous
+all the way). The d and e are not in a column at all (there&#39;s no
+terminating tab, nor would the column be contiguous).
 </p>
 <p>
 The Writer assumes that all Unicode code points have the same width;
-this may not be true in some fonts.
+this may not be true in some fonts or if the string contains combining
+characters.
 </p>
 <p>
 If DiscardEmptyColumns is set, empty columns that are terminated
@@ -285,9 +303,9 @@ width of the escaped text is always computed excluding the Escape
 characters.
 </p>
 <p>
-The formfeed character (&#39;\f&#39;) acts like a newline but it also
-terminates all columns in the current line (effectively calling
-Flush). Cells in the next line start new columns. Unless found
+The formfeed character acts like a newline but it also terminates
+all columns in the current line (effectively calling Flush). Tab-
+terminated cells in the next line start new columns. Unless found
 inside an HTML tag or inside an escaped text segment, formfeed
 characters appear as newlines in the output.
 </p>
@@ -308,7 +326,9 @@ call Flush when done calling Write.
 
 			
 				
-				<h3 id="NewWriter">func <a href="http://localhost:9090/src/text/tabwriter/tabwriter.go?s=16274:16373#L546">NewWriter</a></h3>
+				<h3 id="NewWriter">func <a href="http://localhost:9090/src/text/tabwriter/tabwriter.go?s=16847:16946#L562">NewWriter</a>
+					<a class="permalink" href="index.html#NewWriter">&#xb6;</a>
+				</h3>
 				<pre>func NewWriter(output <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, minwidth, tabwidth, padding <a href="../../builtin/index.html#int">int</a>, padchar <a href="../../builtin/index.html#byte">byte</a>, flags <a href="../../builtin/index.html#uint">uint</a>) *<a href="index.html#Writer">Writer</a></pre>
 				<p>
 NewWriter allocates and initializes a new tabwriter.Writer.
@@ -321,8 +341,10 @@ The parameters are the same as for the Init function.
 
 			
 				
-				<h3 id="Writer.Flush">func (*Writer) <a href="http://localhost:9090/src/text/tabwriter/tabwriter.go?s=13927:13963#L442">Flush</a></h3>
-				<pre>func (b *<a href="index.html#Writer">Writer</a>) Flush() (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Writer.Flush">func (*Writer) <a href="http://localhost:9090/src/text/tabwriter/tabwriter.go?s=14443:14473#L455">Flush</a>
+					<a class="permalink" href="index.html#Writer.Flush">&#xb6;</a>
+				</h3>
+				<pre>func (b *<a href="index.html#Writer">Writer</a>) Flush() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Flush should be called after the last call to Write to ensure
 that any data buffered in the Writer is written to output. Any
@@ -335,7 +357,9 @@ complete for formatting purposes.
 				
 			
 				
-				<h3 id="Writer.Init">func (*Writer) <a href="http://localhost:9090/src/text/tabwriter/tabwriter.go?s=6891:6997#L162">Init</a></h3>
+				<h3 id="Writer.Init">func (*Writer) <a href="http://localhost:9090/src/text/tabwriter/tabwriter.go?s=7410:7516#L176">Init</a>
+					<a class="permalink" href="index.html#Writer.Init">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Writer">Writer</a>) Init(output <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, minwidth, tabwidth, padding <a href="../../builtin/index.html#int">int</a>, padchar <a href="../../builtin/index.html#byte">byte</a>, flags <a href="../../builtin/index.html#uint">uint</a>) *<a href="index.html#Writer">Writer</a></pre>
 				<p>
 A Writer must be initialized with a call to Init. The first parameter (output)
@@ -358,7 +382,9 @@ flags		formatting control
 				
 			
 				
-				<h3 id="Writer.Write">func (*Writer) <a href="http://localhost:9090/src/text/tabwriter/tabwriter.go?s=14473:14526#L467">Write</a></h3>
+				<h3 id="Writer.Write">func (*Writer) <a href="http://localhost:9090/src/text/tabwriter/tabwriter.go?s=15046:15099#L483">Write</a>
+					<a class="permalink" href="index.html#Writer.Write">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#Writer">Writer</a>) Write(buf []<a href="../../builtin/index.html#byte">byte</a>) (n <a href="../../builtin/index.html#int">int</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Write writes buf to the writer b.
@@ -382,7 +408,7 @@ while writing to the underlying output stream.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -400,6 +426,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

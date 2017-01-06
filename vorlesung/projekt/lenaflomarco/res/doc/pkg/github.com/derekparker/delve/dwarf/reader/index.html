@@ -229,7 +229,9 @@
 		
 			
 			
-			<h2 id="Reader">type <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=115:163#L1">Reader</a></h2>
+			<h2 id="Reader">type <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=115:163#L1">Reader</a>
+				<a class="permalink" href="index.html#Reader">&#xb6;</a>
+			</h2>
 			<pre>type Reader struct {
     *<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/">dwarf</a>.<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/#Reader">Reader</a>
     <span class="comment">// contains filtered or unexported fields</span>
@@ -246,7 +248,9 @@
 
 			
 				
-				<h3 id="New">func <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=219:253#L7">New</a></h3>
+				<h3 id="New">func <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=219:253#L7">New</a>
+					<a class="permalink" href="index.html#New">&#xb6;</a>
+				</h3>
 				<pre>func New(data *<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/">dwarf</a>.<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/#Data">Data</a>) *<a href="index.html#Reader">Reader</a></pre>
 				<p>
 New returns a reader for the specified dwarf data.
@@ -258,7 +262,9 @@ New returns a reader for the specified dwarf data.
 
 			
 				
-				<h3 id="Reader.AddrFor">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=1373:1431#L57">AddrFor</a></h3>
+				<h3 id="Reader.AddrFor">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=1373:1431#L57">AddrFor</a>
+					<a class="permalink" href="index.html#Reader.AddrFor">&#xb6;</a>
+				</h3>
 				<pre>func (reader *<a href="index.html#Reader">Reader</a>) AddrFor(name <a href="../../../../../builtin/index.html#string">string</a>) (<a href="../../../../../builtin/index.html#uint64">uint64</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Returns the address for the named entry.
@@ -269,7 +275,9 @@ Returns the address for the named entry.
 				
 			
 				
-				<h3 id="Reader.AddrForMember">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=1932:2026#L75">AddrForMember</a></h3>
+				<h3 id="Reader.AddrForMember">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=1932:2026#L75">AddrForMember</a>
+					<a class="permalink" href="index.html#Reader.AddrForMember">&#xb6;</a>
+				</h3>
 				<pre>func (reader *<a href="index.html#Reader">Reader</a>) AddrForMember(member <a href="../../../../../builtin/index.html#string">string</a>, initialInstructions []<a href="../../../../../builtin/index.html#byte">byte</a>) (<a href="../../../../../builtin/index.html#uint64">uint64</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Returns the address for the named struct member. Expects the reader to be at the parent entry
@@ -281,7 +289,9 @@ or one of the parents children, thus does not seek to parent by itself.
 				
 			
 				
-				<h3 id="Reader.FindEntryNamed">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=4795:4879#L175">FindEntryNamed</a></h3>
+				<h3 id="Reader.FindEntryNamed">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=4795:4879#L175">FindEntryNamed</a>
+					<a class="permalink" href="index.html#Reader.FindEntryNamed">&#xb6;</a>
+				</h3>
 				<pre>func (reader *<a href="index.html#Reader">Reader</a>) FindEntryNamed(name <a href="../../../../../builtin/index.html#string">string</a>, member <a href="../../../../../builtin/index.html#bool">bool</a>) (*<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/">dwarf</a>.<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/#Entry">Entry</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Finds the entry for &#39;name&#39;.
@@ -292,7 +302,9 @@ Finds the entry for &#39;name&#39;.
 				
 			
 				
-				<h3 id="Reader.InstructionsForEntry">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=6014:6092#L230">InstructionsForEntry</a></h3>
+				<h3 id="Reader.InstructionsForEntry">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=6014:6092#L230">InstructionsForEntry</a>
+					<a class="permalink" href="index.html#Reader.InstructionsForEntry">&#xb6;</a>
+				</h3>
 				<pre>func (reader *<a href="index.html#Reader">Reader</a>) InstructionsForEntry(entry *<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/">dwarf</a>.<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/#Entry">Entry</a>) ([]<a href="../../../../../builtin/index.html#byte">byte</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -300,7 +312,9 @@ Finds the entry for &#39;name&#39;.
 				
 			
 				
-				<h3 id="Reader.InstructionsForEntryNamed">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=5583:5672#L212">InstructionsForEntryNamed</a></h3>
+				<h3 id="Reader.InstructionsForEntryNamed">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=5583:5672#L212">InstructionsForEntryNamed</a>
+					<a class="permalink" href="index.html#Reader.InstructionsForEntryNamed">&#xb6;</a>
+				</h3>
 				<pre>func (reader *<a href="index.html#Reader">Reader</a>) InstructionsForEntryNamed(name <a href="../../../../../builtin/index.html#string">string</a>, member <a href="../../../../../builtin/index.html#bool">bool</a>) ([]<a href="../../../../../builtin/index.html#byte">byte</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -308,7 +322,9 @@ Finds the entry for &#39;name&#39;.
 				
 			
 				
-				<h3 id="Reader.NextCompileUnit">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=8492:8553#L323">NextCompileUnit</a></h3>
+				<h3 id="Reader.NextCompileUnit">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=8492:8553#L323">NextCompileUnit</a>
+					<a class="permalink" href="index.html#Reader.NextCompileUnit">&#xb6;</a>
+				</h3>
 				<pre>func (reader *<a href="index.html#Reader">Reader</a>) NextCompileUnit() (*<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/">dwarf</a>.<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/#Entry">Entry</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -316,7 +332,9 @@ Finds the entry for &#39;name&#39;.
 				
 			
 				
-				<h3 id="Reader.NextMemberVariable">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=7361:7425#L275">NextMemberVariable</a></h3>
+				<h3 id="Reader.NextMemberVariable">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=7361:7425#L275">NextMemberVariable</a>
+					<a class="permalink" href="index.html#Reader.NextMemberVariable">&#xb6;</a>
+				</h3>
 				<pre>func (reader *<a href="index.html#Reader">Reader</a>) NextMemberVariable() (*<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/">dwarf</a>.<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/#Entry">Entry</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 NextMememberVariable moves the reader to the next debug entry that describes a member variable and returns the entry.
@@ -327,7 +345,9 @@ NextMememberVariable moves the reader to the next debug entry that describes a m
 				
 			
 				
-				<h3 id="Reader.NextPackageVariable">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=8012:8077#L300">NextPackageVariable</a></h3>
+				<h3 id="Reader.NextPackageVariable">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=8012:8077#L300">NextPackageVariable</a>
+					<a class="permalink" href="index.html#Reader.NextPackageVariable">&#xb6;</a>
+				</h3>
 				<pre>func (reader *<a href="index.html#Reader">Reader</a>) NextPackageVariable() (*<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/">dwarf</a>.<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/#Entry">Entry</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 NextPackageVariable moves the reader to the next debug entry that describes a package variable.
@@ -339,7 +359,9 @@ Any TagVariable entry that is not inside a sub prgram entry and is marked extern
 				
 			
 				
-				<h3 id="Reader.NextScopeVariable">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=6767:6830#L251">NextScopeVariable</a></h3>
+				<h3 id="Reader.NextScopeVariable">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=6767:6830#L251">NextScopeVariable</a>
+					<a class="permalink" href="index.html#Reader.NextScopeVariable">&#xb6;</a>
+				</h3>
 				<pre>func (reader *<a href="index.html#Reader">Reader</a>) NextScopeVariable() (*<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/">dwarf</a>.<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/#Entry">Entry</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 NextScopeVariable moves the reader to the next debug entry that describes a local variable and returns the entry.
@@ -350,7 +372,9 @@ NextScopeVariable moves the reader to the next debug entry that describes a loca
 				
 			
 				
-				<h3 id="Reader.NextType">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=3663:3717#L136">NextType</a></h3>
+				<h3 id="Reader.NextType">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=3663:3717#L136">NextType</a>
+					<a class="permalink" href="index.html#Reader.NextType">&#xb6;</a>
+				</h3>
 				<pre>func (reader *<a href="index.html#Reader">Reader</a>) NextType() (*<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/">dwarf</a>.<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/#Entry">Entry</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				
 				
@@ -358,7 +382,9 @@ NextScopeVariable moves the reader to the next debug entry that describes a loca
 				
 			
 				
-				<h3 id="Reader.Seek">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=342:386#L12">Seek</a></h3>
+				<h3 id="Reader.Seek">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=342:386#L12">Seek</a>
+					<a class="permalink" href="index.html#Reader.Seek">&#xb6;</a>
+				</h3>
 				<pre>func (reader *<a href="index.html#Reader">Reader</a>) Seek(off <a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/">dwarf</a>.<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/#Offset">Offset</a>)</pre>
 				<p>
 Seek moves the reader to an arbitrary offset.
@@ -369,7 +395,9 @@ Seek moves the reader to an arbitrary offset.
 				
 			
 				
-				<h3 id="Reader.SeekToEntry">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=490:549#L18">SeekToEntry</a></h3>
+				<h3 id="Reader.SeekToEntry">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=490:549#L18">SeekToEntry</a>
+					<a class="permalink" href="index.html#Reader.SeekToEntry">&#xb6;</a>
+				</h3>
 				<pre>func (reader *<a href="index.html#Reader">Reader</a>) SeekToEntry(entry *<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/">dwarf</a>.<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/#Entry">Entry</a>) <a href="../../../../../builtin/index.html#error">error</a></pre>
 				<p>
 SeekToEntry moves the reader to an arbitrary entry.
@@ -380,7 +408,9 @@ SeekToEntry moves the reader to an arbitrary entry.
 				
 			
 				
-				<h3 id="Reader.SeekToFunction">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=780:849#L27">SeekToFunction</a></h3>
+				<h3 id="Reader.SeekToFunction">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=780:849#L27">SeekToFunction</a>
+					<a class="permalink" href="index.html#Reader.SeekToFunction">&#xb6;</a>
+				</h3>
 				<pre>func (reader *<a href="index.html#Reader">Reader</a>) SeekToFunction(pc <a href="../../../../../builtin/index.html#uint64">uint64</a>) (*<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/">dwarf</a>.<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/#Entry">Entry</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 SeekToFunctionEntry moves the reader to the function that includes the
@@ -392,7 +422,9 @@ specified program counter.
 				
 			
 				
-				<h3 id="Reader.SeekToType">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=2836:2958#L102">SeekToType</a></h3>
+				<h3 id="Reader.SeekToType">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=2836:2958#L102">SeekToType</a>
+					<a class="permalink" href="index.html#Reader.SeekToType">&#xb6;</a>
+				</h3>
 				<pre>func (reader *<a href="index.html#Reader">Reader</a>) SeekToType(entry *<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/">dwarf</a>.<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/#Entry">Entry</a>, resolveTypedefs <a href="../../../../../builtin/index.html#bool">bool</a>, resolvePointerTypes <a href="../../../../../builtin/index.html#bool">bool</a>) (*<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/">dwarf</a>.<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/#Entry">Entry</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 SeekToType moves the reader to the type specified by the entry,
@@ -405,7 +437,9 @@ to a struct type the NextMemberVariable call can be used to walk all member data
 				
 			
 				
-				<h3 id="Reader.SeekToTypeNamed">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=4379:4451#L154">SeekToTypeNamed</a></h3>
+				<h3 id="Reader.SeekToTypeNamed">func (*Reader) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/reader/reader.go?s=4379:4451#L154">SeekToTypeNamed</a>
+					<a class="permalink" href="index.html#Reader.SeekToTypeNamed">&#xb6;</a>
+				</h3>
 				<pre>func (reader *<a href="index.html#Reader">Reader</a>) SeekToTypeNamed(name <a href="../../../../../builtin/index.html#string">string</a>) (*<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/">dwarf</a>.<a href="http://localhost:9090/pkg/golang.org/x/debug/dwarf/#Entry">Entry</a>, <a href="../../../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 SeekToTypeNamed moves the reader to the type specified by the name.
@@ -429,7 +463,7 @@ can be used to walk all member data.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -447,6 +481,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../../../../lib/godoc/godocs.js"></script>
 
 </body>

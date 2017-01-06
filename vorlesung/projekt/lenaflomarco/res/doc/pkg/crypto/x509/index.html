@@ -137,19 +137,19 @@ Package x509 parses X.509-encoded keys and certificates.
 				<dd><a href="index.html#MarshalPKIXPublicKey">func MarshalPKIXPublicKey(pub interface{}) ([]byte, error)</a></dd>
 			
 				
-				<dd><a href="index.html#ParseCRL">func ParseCRL(crlBytes []byte) (certList *pkix.CertificateList, err error)</a></dd>
+				<dd><a href="index.html#ParseCRL">func ParseCRL(crlBytes []byte) (*pkix.CertificateList, error)</a></dd>
 			
 				
 				<dd><a href="index.html#ParseCertificates">func ParseCertificates(asn1Data []byte) ([]*Certificate, error)</a></dd>
 			
 				
-				<dd><a href="index.html#ParseDERCRL">func ParseDERCRL(derBytes []byte) (certList *pkix.CertificateList, err error)</a></dd>
+				<dd><a href="index.html#ParseDERCRL">func ParseDERCRL(derBytes []byte) (*pkix.CertificateList, error)</a></dd>
 			
 				
-				<dd><a href="index.html#ParseECPrivateKey">func ParseECPrivateKey(der []byte) (key *ecdsa.PrivateKey, err error)</a></dd>
+				<dd><a href="index.html#ParseECPrivateKey">func ParseECPrivateKey(der []byte) (*ecdsa.PrivateKey, error)</a></dd>
 			
 				
-				<dd><a href="index.html#ParsePKCS1PrivateKey">func ParsePKCS1PrivateKey(der []byte) (key *rsa.PrivateKey, err error)</a></dd>
+				<dd><a href="index.html#ParsePKCS1PrivateKey">func ParsePKCS1PrivateKey(der []byte) (*rsa.PrivateKey, error)</a></dd>
 			
 				
 				<dd><a href="index.html#ParsePKCS8PrivateKey">func ParsePKCS8PrivateKey(der []byte) (key interface{}, err error)</a></dd>
@@ -164,6 +164,9 @@ Package x509 parses X.509-encoded keys and certificates.
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#NewCertPool">func NewCertPool() *CertPool</a></dd>
 				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#SystemCertPool">func SystemCertPool() (*CertPool, error)</a></dd>
+				
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#CertPool.AddCert">func (s *CertPool) AddCert(cert *Certificate)</a></dd>
@@ -172,7 +175,7 @@ Package x509 parses X.509-encoded keys and certificates.
 					<dd>&nbsp; &nbsp; <a href="index.html#CertPool.AppendCertsFromPEM">func (s *CertPool) AppendCertsFromPEM(pemCerts []byte) (ok bool)</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#CertPool.Subjects">func (s *CertPool) Subjects() (res [][]byte)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#CertPool.Subjects">func (s *CertPool) Subjects() [][]byte</a></dd>
 				
 			
 				
@@ -183,13 +186,13 @@ Package x509 parses X.509-encoded keys and certificates.
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Certificate.CheckCRLSignature">func (c *Certificate) CheckCRLSignature(crl *pkix.CertificateList) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Certificate.CheckCRLSignature">func (c *Certificate) CheckCRLSignature(crl *pkix.CertificateList) error</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Certificate.CheckSignature">func (c *Certificate) CheckSignature(algo SignatureAlgorithm, signed, signature []byte) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Certificate.CheckSignature">func (c *Certificate) CheckSignature(algo SignatureAlgorithm, signed, signature []byte) error</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#Certificate.CheckSignatureFrom">func (c *Certificate) CheckSignatureFrom(parent *Certificate) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#Certificate.CheckSignatureFrom">func (c *Certificate) CheckSignatureFrom(parent *Certificate) error</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#Certificate.CreateCRL">func (c *Certificate) CreateCRL(rand io.Reader, priv interface{}, revokedCerts []pkix.RevokedCertificate, now, expiry time.Time) (crlBytes []byte, err error)</a></dd>
@@ -220,7 +223,7 @@ Package x509 parses X.509-encoded keys and certificates.
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#CertificateRequest.CheckSignature">func (c *CertificateRequest) CheckSignature() (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#CertificateRequest.CheckSignature">func (c *CertificateRequest) CheckSignature() error</a></dd>
 				
 			
 				
@@ -285,7 +288,7 @@ Package x509 parses X.509-encoded keys and certificates.
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#SystemRootsError.Error">func (SystemRootsError) Error() string</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#SystemRootsError.Error">func (se SystemRootsError) Error() string</a></dd>
 				
 			
 				
@@ -404,7 +407,9 @@ IncorrectPasswordError is returned when an incorrect password is detected.
 		
 			
 			
-			<h2 id="CreateCertificate">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=49148:49265#L1550">CreateCertificate</a></h2>
+			<h2 id="CreateCertificate">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=49615:49732#L1564">CreateCertificate</a>
+				<a class="permalink" href="index.html#CreateCertificate">&#xb6;</a>
+			</h2>
 			<pre>func CreateCertificate(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, template, parent *<a href="index.html#Certificate">Certificate</a>, pub, priv interface{}) (cert []<a href="../../builtin/index.html#byte">byte</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 CreateCertificate creates a new certificate based on a template. The
@@ -432,11 +437,13 @@ includes *rsa.PublicKey and *ecdsa.PublicKey.)
 		
 			
 			
-			<h2 id="CreateCertificateRequest">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=58172:58289#L1841">CreateCertificateRequest</a></h2>
+			<h2 id="CreateCertificateRequest">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=58701:58818#L1858">CreateCertificateRequest</a>
+				<a class="permalink" href="index.html#CreateCertificateRequest">&#xb6;</a>
+			</h2>
 			<pre>func CreateCertificateRequest(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, template *<a href="index.html#CertificateRequest">CertificateRequest</a>, priv interface{}) (csr []<a href="../../builtin/index.html#byte">byte</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
-CreateCertificateRequest creates a new certificate based on a template. The
-following members of template are used: Subject, Attributes,
+CreateCertificateRequest creates a new certificate request based on a template.
+The following members of template are used: Subject, Attributes,
 SignatureAlgorithm, Extensions, DNSNames, EmailAddresses, and IPAddresses.
 The private key is the private key of the signer.
 </p>
@@ -454,7 +461,9 @@ includes *rsa.PublicKey and *ecdsa.PublicKey.)
 		
 			
 			
-			<h2 id="DecryptPEMBlock">func <a href="http://localhost:9090/src/crypto/x509/pem_decrypt.go?s=3144:3211#L105">DecryptPEMBlock</a></h2>
+			<h2 id="DecryptPEMBlock">func <a href="http://localhost:9090/src/crypto/x509/pem_decrypt.go?s=3143:3210#L105">DecryptPEMBlock</a>
+				<a class="permalink" href="index.html#DecryptPEMBlock">&#xb6;</a>
+			</h2>
 			<pre>func DecryptPEMBlock(b *<a href="../../encoding/pem/index.html">pem</a>.<a href="../../encoding/pem/index.html#Block">Block</a>, password []<a href="../../builtin/index.html#byte">byte</a>) ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 DecryptPEMBlock takes a password encrypted PEM block and the password used to
@@ -473,7 +482,9 @@ bytes will be random noise.
 		
 			
 			
-			<h2 id="EncryptPEMBlock">func <a href="http://localhost:9090/src/crypto/x509/pem_decrypt.go?s=5073:5185#L173">EncryptPEMBlock</a></h2>
+			<h2 id="EncryptPEMBlock">func <a href="http://localhost:9090/src/crypto/x509/pem_decrypt.go?s=5072:5184#L173">EncryptPEMBlock</a>
+				<a class="permalink" href="index.html#EncryptPEMBlock">&#xb6;</a>
+			</h2>
 			<pre>func EncryptPEMBlock(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, blockType <a href="../../builtin/index.html#string">string</a>, data, password []<a href="../../builtin/index.html#byte">byte</a>, alg <a href="index.html#PEMCipher">PEMCipher</a>) (*<a href="../../encoding/pem/index.html">pem</a>.<a href="../../encoding/pem/index.html#Block">Block</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 EncryptPEMBlock returns a PEM block of the specified type holding the
@@ -487,7 +498,9 @@ password.
 		
 			
 			
-			<h2 id="IsEncryptedPEMBlock">func <a href="http://localhost:9090/src/crypto/x509/pem_decrypt.go?s=2315:2358#L89">IsEncryptedPEMBlock</a></h2>
+			<h2 id="IsEncryptedPEMBlock">func <a href="http://localhost:9090/src/crypto/x509/pem_decrypt.go?s=2314:2357#L89">IsEncryptedPEMBlock</a>
+				<a class="permalink" href="index.html#IsEncryptedPEMBlock">&#xb6;</a>
+			</h2>
 			<pre>func IsEncryptedPEMBlock(b *<a href="../../encoding/pem/index.html">pem</a>.<a href="../../encoding/pem/index.html#Block">Block</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 IsEncryptedPEMBlock returns if the PEM block is password encrypted.
@@ -499,7 +512,9 @@ IsEncryptedPEMBlock returns if the PEM block is password encrypted.
 		
 			
 			
-			<h2 id="MarshalECPrivateKey">func <a href="http://localhost:9090/src/crypto/x509/sec1.go?s=1008:1071#L27">MarshalECPrivateKey</a></h2>
+			<h2 id="MarshalECPrivateKey">func <a href="http://localhost:9090/src/crypto/x509/sec1.go?s=1002:1065#L27">MarshalECPrivateKey</a>
+				<a class="permalink" href="index.html#MarshalECPrivateKey">&#xb6;</a>
+			</h2>
 			<pre>func MarshalECPrivateKey(key *<a href="../ecdsa/index.html">ecdsa</a>.<a href="../ecdsa/index.html#PrivateKey">PrivateKey</a>) ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 MarshalECPrivateKey marshals an EC private key into ASN.1, DER format.
@@ -511,7 +526,9 @@ MarshalECPrivateKey marshals an EC private key into ASN.1, DER format.
 		
 			
 			
-			<h2 id="MarshalPKCS1PrivateKey">func <a href="http://localhost:9090/src/crypto/x509/pkcs1.go?s=2109:2164#L77">MarshalPKCS1PrivateKey</a></h2>
+			<h2 id="MarshalPKCS1PrivateKey">func <a href="http://localhost:9090/src/crypto/x509/pkcs1.go?s=2117:2172#L76">MarshalPKCS1PrivateKey</a>
+				<a class="permalink" href="index.html#MarshalPKCS1PrivateKey">&#xb6;</a>
+			</h2>
 			<pre>func MarshalPKCS1PrivateKey(key *<a href="../rsa/index.html">rsa</a>.<a href="../rsa/index.html#PrivateKey">PrivateKey</a>) []<a href="../../builtin/index.html#byte">byte</a></pre>
 			<p>
 MarshalPKCS1PrivateKey converts a private key to ASN.1 DER encoded form.
@@ -523,7 +540,9 @@ MarshalPKCS1PrivateKey converts a private key to ASN.1 DER encoded form.
 		
 			
 			
-			<h2 id="MarshalPKIXPublicKey">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=2581:2639#L81">MarshalPKIXPublicKey</a></h2>
+			<h2 id="MarshalPKIXPublicKey">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=2771:2829#L87">MarshalPKIXPublicKey</a>
+				<a class="permalink" href="index.html#MarshalPKIXPublicKey">&#xb6;</a>
+			</h2>
 			<pre>func MarshalPKIXPublicKey(pub interface{}) ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 MarshalPKIXPublicKey serialises a public key to DER-encoded PKIX format.
@@ -535,8 +554,10 @@ MarshalPKIXPublicKey serialises a public key to DER-encoded PKIX format.
 		
 			
 			
-			<h2 id="ParseCRL">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=51379:51453#L1633">ParseCRL</a></h2>
-			<pre>func ParseCRL(crlBytes []<a href="../../builtin/index.html#byte">byte</a>) (certList *<a href="pkix/index.html">pkix</a>.<a href="pkix/index.html#CertificateList">CertificateList</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+			<h2 id="ParseCRL">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=51887:51948#L1647">ParseCRL</a>
+				<a class="permalink" href="index.html#ParseCRL">&#xb6;</a>
+			</h2>
+			<pre>func ParseCRL(crlBytes []<a href="../../builtin/index.html#byte">byte</a>) (*<a href="pkix/index.html">pkix</a>.<a href="pkix/index.html#CertificateList">CertificateList</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 ParseCRL parses a CRL from the given bytes. It&#39;s often the case that PEM
 encoded CRLs will appear where they should be DER encoded, so this function
@@ -550,7 +571,9 @@ garbage.
 		
 			
 			
-			<h2 id="ParseCertificates">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=38444:38507#L1182">ParseCertificates</a></h2>
+			<h2 id="ParseCertificates">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=38894:38957#L1196">ParseCertificates</a>
+				<a class="permalink" href="index.html#ParseCertificates">&#xb6;</a>
+			</h2>
 			<pre>func ParseCertificates(asn1Data []<a href="../../builtin/index.html#byte">byte</a>) ([]*<a href="index.html#Certificate">Certificate</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 ParseCertificates parses one or more certificates from the given ASN.1 DER
@@ -563,8 +586,10 @@ data. The certificates must be concatenated with no intermediate padding.
 		
 			
 			
-			<h2 id="ParseDERCRL">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=51710:51787#L1644">ParseDERCRL</a></h2>
-			<pre>func ParseDERCRL(derBytes []<a href="../../builtin/index.html#byte">byte</a>) (certList *<a href="pkix/index.html">pkix</a>.<a href="pkix/index.html#CertificateList">CertificateList</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+			<h2 id="ParseDERCRL">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=52205:52269#L1658">ParseDERCRL</a>
+				<a class="permalink" href="index.html#ParseDERCRL">&#xb6;</a>
+			</h2>
+			<pre>func ParseDERCRL(derBytes []<a href="../../builtin/index.html#byte">byte</a>) (*<a href="pkix/index.html">pkix</a>.<a href="pkix/index.html#CertificateList">CertificateList</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 ParseDERCRL parses a DER encoded CRL from the given bytes.
 </p>
@@ -575,8 +600,10 @@ ParseDERCRL parses a DER encoded CRL from the given bytes.
 		
 			
 			
-			<h2 id="ParseECPrivateKey">func <a href="http://localhost:9090/src/crypto/x509/sec1.go?s=823:892#L22">ParseECPrivateKey</a></h2>
-			<pre>func ParseECPrivateKey(der []<a href="../../builtin/index.html#byte">byte</a>) (key *<a href="../ecdsa/index.html">ecdsa</a>.<a href="../ecdsa/index.html#PrivateKey">PrivateKey</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+			<h2 id="ParseECPrivateKey">func <a href="http://localhost:9090/src/crypto/x509/sec1.go?s=825:886#L22">ParseECPrivateKey</a>
+				<a class="permalink" href="index.html#ParseECPrivateKey">&#xb6;</a>
+			</h2>
+			<pre>func ParseECPrivateKey(der []<a href="../../builtin/index.html#byte">byte</a>) (*<a href="../ecdsa/index.html">ecdsa</a>.<a href="../ecdsa/index.html#PrivateKey">PrivateKey</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 ParseECPrivateKey parses an ASN.1 Elliptic Curve Private Key Structure.
 </p>
@@ -587,8 +614,10 @@ ParseECPrivateKey parses an ASN.1 Elliptic Curve Private Key Structure.
 		
 			
 			
-			<h2 id="ParsePKCS1PrivateKey">func <a href="http://localhost:9090/src/crypto/x509/pkcs1.go?s=945:1015#L29">ParsePKCS1PrivateKey</a></h2>
-			<pre>func ParsePKCS1PrivateKey(der []<a href="../../builtin/index.html#byte">byte</a>) (key *<a href="../rsa/index.html">rsa</a>.<a href="../rsa/index.html#PrivateKey">PrivateKey</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+			<h2 id="ParsePKCS1PrivateKey">func <a href="http://localhost:9090/src/crypto/x509/pkcs1.go?s=945:1007#L29">ParsePKCS1PrivateKey</a>
+				<a class="permalink" href="index.html#ParsePKCS1PrivateKey">&#xb6;</a>
+			</h2>
+			<pre>func ParsePKCS1PrivateKey(der []<a href="../../builtin/index.html#byte">byte</a>) (*<a href="../rsa/index.html">rsa</a>.<a href="../rsa/index.html#PrivateKey">PrivateKey</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 ParsePKCS1PrivateKey returns an RSA private key from its ASN.1 PKCS#1 DER encoded form.
 </p>
@@ -599,11 +628,13 @@ ParsePKCS1PrivateKey returns an RSA private key from its ASN.1 PKCS#1 DER encode
 		
 			
 			
-			<h2 id="ParsePKCS8PrivateKey">func <a href="http://localhost:9090/src/crypto/x509/pkcs8.go?s=626:692#L16">ParsePKCS8PrivateKey</a></h2>
+			<h2 id="ParsePKCS8PrivateKey">func <a href="http://localhost:9090/src/crypto/x509/pkcs8.go?s=580:646#L16">ParsePKCS8PrivateKey</a>
+				<a class="permalink" href="index.html#ParsePKCS8PrivateKey">&#xb6;</a>
+			</h2>
 			<pre>func ParsePKCS8PrivateKey(der []<a href="../../builtin/index.html#byte">byte</a>) (key interface{}, err <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
-ParsePKCS8PrivateKey parses an unencrypted, PKCS#8 private key. See
-<a href="http://www.rsa.com/rsalabs/node.asp?id=2130">http://www.rsa.com/rsalabs/node.asp?id=2130</a> and RFC5208.
+ParsePKCS8PrivateKey parses an unencrypted, PKCS#8 private key.
+See RFC 5208.
 </p>
 
 			
@@ -612,12 +643,22 @@ ParsePKCS8PrivateKey parses an unencrypted, PKCS#8 private key. See
 		
 			
 			
-			<h2 id="ParsePKIXPublicKey">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=816:885#L29">ParsePKIXPublicKey</a></h2>
+			<h2 id="ParsePKIXPublicKey">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=1006:1075#L35">ParsePKIXPublicKey</a>
+				<a class="permalink" href="index.html#ParsePKIXPublicKey">&#xb6;</a>
+			</h2>
 			<pre>func ParsePKIXPublicKey(derBytes []<a href="../../builtin/index.html#byte">byte</a>) (pub interface{}, err <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 ParsePKIXPublicKey parses a DER encoded public key. These values are
 typically found in PEM blocks with &#34;BEGIN PUBLIC KEY&#34;.
 </p>
+<p>
+Supported key types include RSA, DSA, and ECDSA. Unknown key
+types result in an error.
+</p>
+<p>
+On success, pub will be of type *rsa.PublicKey, *dsa.PublicKey,
+or *ecdsa.PublicKey.
+</p>
 
 			
 			
@@ -626,7 +667,9 @@ typically found in PEM blocks with &#34;BEGIN PUBLIC KEY&#34;.
 		
 			
 			
-			<h2 id="CertPool">type <a href="http://localhost:9090/src/crypto/x509/cert_pool.go?s=240:361#L2">CertPool</a></h2>
+			<h2 id="CertPool">type <a href="http://localhost:9090/src/crypto/x509/cert_pool.go?s=261:382#L4">CertPool</a>
+				<a class="permalink" href="index.html#CertPool">&#xb6;</a>
+			</h2>
 			<pre>type CertPool struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -645,7 +688,9 @@ CertPool is a set of certificates.
 
 			
 				
-				<h3 id="NewCertPool">func <a href="http://localhost:9090/src/crypto/x509/cert_pool.go?s=409:437#L9">NewCertPool</a></h3>
+				<h3 id="NewCertPool">func <a href="http://localhost:9090/src/crypto/x509/cert_pool.go?s=430:458#L11">NewCertPool</a>
+					<a class="permalink" href="index.html#NewCertPool">&#xb6;</a>
+				</h3>
 				<pre>func NewCertPool() *<a href="index.html#CertPool">CertPool</a></pre>
 				<p>
 NewCertPool returns a new, empty CertPool.
@@ -654,10 +699,28 @@ NewCertPool returns a new, empty CertPool.
 				
 				
 			
+				
+				<h3 id="SystemCertPool">func <a href="http://localhost:9090/src/crypto/x509/cert_pool.go?s=730:770#L22">SystemCertPool</a>
+					<a class="permalink" href="index.html#SystemCertPool">&#xb6;</a>
+				</h3>
+				<pre>func SystemCertPool() (*<a href="index.html#CertPool">CertPool</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
+				<p>
+SystemCertPool returns a copy of the system cert pool.
+</p>
+<p>
+Any mutations to the returned pool are not written to disk and do
+not affect any other pool.
+</p>
+
+				
+				
+			
 
 			
 				
-				<h3 id="CertPool.AddCert">func (*CertPool) <a href="http://localhost:9090/src/crypto/x509/cert_pool.go?s=1329:1374#L46">AddCert</a></h3>
+				<h3 id="CertPool.AddCert">func (*CertPool) <a href="http://localhost:9090/src/crypto/x509/cert_pool.go?s=1967:2012#L73">AddCert</a>
+					<a class="permalink" href="index.html#CertPool.AddCert">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#CertPool">CertPool</a>) AddCert(cert *<a href="index.html#Certificate">Certificate</a>)</pre>
 				<p>
 AddCert adds a certificate to a pool.
@@ -668,7 +731,9 @@ AddCert adds a certificate to a pool.
 				
 			
 				
-				<h3 id="CertPool.AppendCertsFromPEM">func (*CertPool) <a href="http://localhost:9090/src/crypto/x509/cert_pool.go?s=2159:2223#L75">AppendCertsFromPEM</a></h3>
+				<h3 id="CertPool.AppendCertsFromPEM">func (*CertPool) <a href="http://localhost:9090/src/crypto/x509/cert_pool.go?s=2797:2861#L102">AppendCertsFromPEM</a>
+					<a class="permalink" href="index.html#CertPool.AppendCertsFromPEM">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#CertPool">CertPool</a>) AppendCertsFromPEM(pemCerts []<a href="../../builtin/index.html#byte">byte</a>) (ok <a href="../../builtin/index.html#bool">bool</a>)</pre>
 				<p>
 AppendCertsFromPEM attempts to parse a series of PEM encoded certificates.
@@ -685,8 +750,10 @@ of root CAs in a format suitable for this function.
 				
 			
 				
-				<h3 id="CertPool.Subjects">func (*CertPool) <a href="http://localhost:9090/src/crypto/x509/cert_pool.go?s=2650:2694#L100">Subjects</a></h3>
-				<pre>func (s *<a href="index.html#CertPool">CertPool</a>) Subjects() (res [][]<a href="../../builtin/index.html#byte">byte</a>)</pre>
+				<h3 id="CertPool.Subjects">func (*CertPool) <a href="http://localhost:9090/src/crypto/x509/cert_pool.go?s=3288:3326#L127">Subjects</a>
+					<a class="permalink" href="index.html#CertPool.Subjects">&#xb6;</a>
+				</h3>
+				<pre>func (s *<a href="index.html#CertPool">CertPool</a>) Subjects() [][]<a href="../../builtin/index.html#byte">byte</a></pre>
 				<p>
 Subjects returns a list of the DER-encoded subjects of
 all of the certificates in the pool.
@@ -699,7 +766,9 @@ all of the certificates in the pool.
 		
 			
 			
-			<h2 id="Certificate">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=14961:17866#L469">Certificate</a></h2>
+			<h2 id="Certificate">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=15439:18344#L483">Certificate</a>
+				<a class="permalink" href="index.html#Certificate">&#xb6;</a>
+			</h2>
 			<pre>type Certificate struct {
     Raw                     []<a href="../../builtin/index.html#byte">byte</a> <span class="comment">// Complete ASN.1 DER content (certificate, signature algorithm and signature).</span>
     RawTBSCertificate       []<a href="../../builtin/index.html#byte">byte</a> <span class="comment">// Certificate part of raw ASN.1 DER content.</span>
@@ -790,7 +859,9 @@ A Certificate represents an X.509 certificate.
 
 			
 				
-				<h3 id="ParseCertificate">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=38008:38068#L1167">ParseCertificate</a></h3>
+				<h3 id="ParseCertificate">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=38458:38518#L1181">ParseCertificate</a>
+					<a class="permalink" href="index.html#ParseCertificate">&#xb6;</a>
+				</h3>
 				<pre>func ParseCertificate(asn1Data []<a href="../../builtin/index.html#byte">byte</a>) (*<a href="index.html#Certificate">Certificate</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 ParseCertificate parses a single certificate from the given ASN.1 DER data.
@@ -802,8 +873,10 @@ ParseCertificate parses a single certificate from the given ASN.1 DER data.
 
 			
 				
-				<h3 id="Certificate.CheckCRLSignature">func (*Certificate) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=24403:24481#L716">CheckCRLSignature</a></h3>
-				<pre>func (c *<a href="index.html#Certificate">Certificate</a>) CheckCRLSignature(crl *<a href="pkix/index.html">pkix</a>.<a href="pkix/index.html#CertificateList">CertificateList</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Certificate.CheckCRLSignature">func (*Certificate) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=24869:24941#L730">CheckCRLSignature</a>
+					<a class="permalink" href="index.html#Certificate.CheckCRLSignature">&#xb6;</a>
+				</h3>
+				<pre>func (c *<a href="index.html#Certificate">Certificate</a>) CheckCRLSignature(crl *<a href="pkix/index.html">pkix</a>.<a href="pkix/index.html#CertificateList">CertificateList</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 CheckCRLSignature checks that the signature in crl is from c.
 </p>
@@ -813,8 +886,10 @@ CheckCRLSignature checks that the signature in crl is from c.
 				
 			
 				
-				<h3 id="Certificate.CheckSignature">func (*Certificate) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=22245:22344#L648">CheckSignature</a></h3>
-				<pre>func (c *<a href="index.html#Certificate">Certificate</a>) CheckSignature(algo <a href="index.html#SignatureAlgorithm">SignatureAlgorithm</a>, signed, signature []<a href="../../builtin/index.html#byte">byte</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Certificate.CheckSignature">func (*Certificate) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=22717:22810#L662">CheckSignature</a>
+					<a class="permalink" href="index.html#Certificate.CheckSignature">&#xb6;</a>
+				</h3>
+				<pre>func (c *<a href="index.html#Certificate">Certificate</a>) CheckSignature(algo <a href="index.html#SignatureAlgorithm">SignatureAlgorithm</a>, signed, signature []<a href="../../builtin/index.html#byte">byte</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 CheckSignature verifies that signature is a valid signature over signed from
 c&#39;s public key.
@@ -825,8 +900,10 @@ c&#39;s public key.
 				
 			
 				
-				<h3 id="Certificate.CheckSignatureFrom">func (*Certificate) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=21177:21250#L620">CheckSignatureFrom</a></h3>
-				<pre>func (c *<a href="index.html#Certificate">Certificate</a>) CheckSignatureFrom(parent *<a href="index.html#Certificate">Certificate</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="Certificate.CheckSignatureFrom">func (*Certificate) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=21655:21722#L634">CheckSignatureFrom</a>
+					<a class="permalink" href="index.html#Certificate.CheckSignatureFrom">&#xb6;</a>
+				</h3>
+				<pre>func (c *<a href="index.html#Certificate">Certificate</a>) CheckSignatureFrom(parent *<a href="index.html#Certificate">Certificate</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 CheckSignatureFrom verifies that the signature on c is a valid signature
 from parent.
@@ -837,7 +914,9 @@ from parent.
 				
 			
 				
-				<h3 id="Certificate.CreateCRL">func (*Certificate) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=52151:52308#L1656">CreateCRL</a></h3>
+				<h3 id="Certificate.CreateCRL">func (*Certificate) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=52634:52791#L1670">CreateCRL</a>
+					<a class="permalink" href="index.html#Certificate.CreateCRL">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Certificate">Certificate</a>) CreateCRL(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, priv interface{}, revokedCerts []<a href="pkix/index.html">pkix</a>.<a href="pkix/index.html#RevokedCertificate">RevokedCertificate</a>, now, expiry <a href="../../time/index.html">time</a>.<a href="../../time/index.html#Time">Time</a>) (crlBytes []<a href="../../builtin/index.html#byte">byte</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 CreateCRL returns a DER encoded CRL, signed by this Certificate, that
@@ -849,7 +928,9 @@ contains the given list of revoked certificates.
 				
 			
 				
-				<h3 id="Certificate.Equal">func (*Certificate) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=18705:18757#L565">Equal</a></h3>
+				<h3 id="Certificate.Equal">func (*Certificate) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=19183:19235#L579">Equal</a>
+					<a class="permalink" href="index.html#Certificate.Equal">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Certificate">Certificate</a>) Equal(other *<a href="index.html#Certificate">Certificate</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 				
 				
@@ -857,7 +938,9 @@ contains the given list of revoked certificates.
 				
 			
 				
-				<h3 id="Certificate.Verify">func (*Certificate) <a href="http://localhost:9090/src/crypto/x509/verify.go?s=7315:7400#L207">Verify</a></h3>
+				<h3 id="Certificate.Verify">func (*Certificate) <a href="http://localhost:9090/src/crypto/x509/verify.go?s=7402:7487#L213">Verify</a>
+					<a class="permalink" href="index.html#Certificate.Verify">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Certificate">Certificate</a>) Verify(opts <a href="index.html#VerifyOptions">VerifyOptions</a>) (chains [][]*<a href="index.html#Certificate">Certificate</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Verify attempts to verify c by building one or more chains from c to a
@@ -878,7 +961,9 @@ WARNING: this doesn&#39;t do any revocation checking.
 				
 			
 				
-				<h3 id="Certificate.VerifyHostname">func (*Certificate) <a href="http://localhost:9090/src/crypto/x509/verify.go?s=12003:12055#L398">VerifyHostname</a></h3>
+				<h3 id="Certificate.VerifyHostname">func (*Certificate) <a href="http://localhost:9090/src/crypto/x509/verify.go?s=12104:12156#L404">VerifyHostname</a>
+					<a class="permalink" href="index.html#Certificate.VerifyHostname">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Certificate">Certificate</a>) VerifyHostname(h <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 VerifyHostname returns nil if c is a valid certificate for the named host.
@@ -892,7 +977,9 @@ Otherwise it returns an error describing the mismatch.
 		
 			
 			
-			<h2 id="CertificateInvalidError">type <a href="http://localhost:9090/src/crypto/x509/verify.go?s=1130:1212#L30">CertificateInvalidError</a></h2>
+			<h2 id="CertificateInvalidError">type <a href="http://localhost:9090/src/crypto/x509/verify.go?s=1130:1212#L30">CertificateInvalidError</a>
+				<a class="permalink" href="index.html#CertificateInvalidError">&#xb6;</a>
+			</h2>
 			<pre>type CertificateInvalidError struct {
     Cert   *<a href="index.html#Certificate">Certificate</a>
     Reason <a href="index.html#InvalidReason">InvalidReason</a>
@@ -915,7 +1002,9 @@ library probably want to handle all these errors uniformly.
 
 			
 				
-				<h3 id="CertificateInvalidError.Error">func (CertificateInvalidError) <a href="http://localhost:9090/src/crypto/x509/verify.go?s=1214:1261#L35">Error</a></h3>
+				<h3 id="CertificateInvalidError.Error">func (CertificateInvalidError) <a href="http://localhost:9090/src/crypto/x509/verify.go?s=1214:1261#L35">Error</a>
+					<a class="permalink" href="index.html#CertificateInvalidError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#CertificateInvalidError">CertificateInvalidError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -925,7 +1014,9 @@ library probably want to handle all these errors uniformly.
 		
 			
 			
-			<h2 id="CertificateRequest">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=53669:54982#L1710">CertificateRequest</a></h2>
+			<h2 id="CertificateRequest">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=54152:55465#L1724">CertificateRequest</a>
+				<a class="permalink" href="index.html#CertificateRequest">&#xb6;</a>
+			</h2>
 			<pre>type CertificateRequest struct {
     Raw                      []<a href="../../builtin/index.html#byte">byte</a> <span class="comment">// Complete ASN.1 DER content (CSR, signature algorithm and signature).</span>
     RawTBSCertificateRequest []<a href="../../builtin/index.html#byte">byte</a> <span class="comment">// Certificate request info part of raw ASN.1 DER content.</span>
@@ -978,7 +1069,9 @@ CertificateRequest represents a PKCS #10, certificate signature request.
 
 			
 				
-				<h3 id="ParseCertificateRequest">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=62005:62079#L1990">ParseCertificateRequest</a></h3>
+				<h3 id="ParseCertificateRequest">func <a href="http://localhost:9090/src/crypto/x509/x509.go?s=62534:62608#L2007">ParseCertificateRequest</a>
+					<a class="permalink" href="index.html#ParseCertificateRequest">&#xb6;</a>
+				</h3>
 				<pre>func ParseCertificateRequest(asn1Data []<a href="../../builtin/index.html#byte">byte</a>) (*<a href="index.html#CertificateRequest">CertificateRequest</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 ParseCertificateRequest parses a single certificate request from the
@@ -991,10 +1084,12 @@ given ASN.1 DER data.
 
 			
 				
-				<h3 id="CertificateRequest.CheckSignature">func (*CertificateRequest) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=63786:63843#L2051">CheckSignature</a></h3>
-				<pre>func (c *<a href="index.html#CertificateRequest">CertificateRequest</a>) CheckSignature() (err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="CertificateRequest.CheckSignature">func (*CertificateRequest) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=64306:64357#L2068">CheckSignature</a>
+					<a class="permalink" href="index.html#CertificateRequest.CheckSignature">&#xb6;</a>
+				</h3>
+				<pre>func (c *<a href="index.html#CertificateRequest">CertificateRequest</a>) CheckSignature() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
-CheckSignature verifies that the signature on c is a valid signature
+CheckSignature reports whether the signature on c is valid.
 </p>
 
 				
@@ -1004,7 +1099,9 @@ CheckSignature verifies that the signature on c is a valid signature
 		
 			
 			
-			<h2 id="ConstraintViolationError">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=18522:18560#L559">ConstraintViolationError</a></h2>
+			<h2 id="ConstraintViolationError">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=19000:19038#L573">ConstraintViolationError</a>
+				<a class="permalink" href="index.html#ConstraintViolationError">&#xb6;</a>
+			</h2>
 			<pre>type ConstraintViolationError struct{}</pre>
 			<p>
 ConstraintViolationError results when a requested usage is not permitted by
@@ -1025,7 +1122,9 @@ certificate signing key.
 
 			
 				
-				<h3 id="ConstraintViolationError.Error">func (ConstraintViolationError) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=18562:18608#L561">Error</a></h3>
+				<h3 id="ConstraintViolationError.Error">func (ConstraintViolationError) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=19040:19086#L575">Error</a>
+					<a class="permalink" href="index.html#ConstraintViolationError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (<a href="index.html#ConstraintViolationError">ConstraintViolationError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1035,7 +1134,9 @@ certificate signing key.
 		
 			
 			
-			<h2 id="ExtKeyUsage">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=13281:13301#L414">ExtKeyUsage</a></h2>
+			<h2 id="ExtKeyUsage">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=13759:13779#L428">ExtKeyUsage</a>
+				<a class="permalink" href="index.html#ExtKeyUsage">&#xb6;</a>
+			</h2>
 			<pre>type ExtKeyUsage <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 ExtKeyUsage represents an extended set of actions that are valid for a given key.
@@ -1073,7 +1174,9 @@ Each of the ExtKeyUsage* constants define a unique action.
 		
 			
 			
-			<h2 id="HostnameError">type <a href="http://localhost:9090/src/crypto/x509/verify.go?s=1903:1978#L53">HostnameError</a></h2>
+			<h2 id="HostnameError">type <a href="http://localhost:9090/src/crypto/x509/verify.go?s=1903:1978#L53">HostnameError</a>
+				<a class="permalink" href="index.html#HostnameError">&#xb6;</a>
+			</h2>
 			<pre>type HostnameError struct {
     Certificate *<a href="index.html#Certificate">Certificate</a>
     Host        <a href="../../builtin/index.html#string">string</a>
@@ -1096,7 +1199,9 @@ requested name.
 
 			
 				
-				<h3 id="HostnameError.Error">func (HostnameError) <a href="http://localhost:9090/src/crypto/x509/verify.go?s=1980:2017#L58">Error</a></h3>
+				<h3 id="HostnameError.Error">func (HostnameError) <a href="http://localhost:9090/src/crypto/x509/verify.go?s=1980:2017#L58">Error</a>
+					<a class="permalink" href="index.html#HostnameError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (h <a href="index.html#HostnameError">HostnameError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1106,7 +1211,9 @@ requested name.
 		
 			
 			
-			<h2 id="InsecureAlgorithmError">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=18136:18182#L550">InsecureAlgorithmError</a></h2>
+			<h2 id="InsecureAlgorithmError">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=18614:18660#L564">InsecureAlgorithmError</a>
+				<a class="permalink" href="index.html#InsecureAlgorithmError">&#xb6;</a>
+			</h2>
 			<pre>type InsecureAlgorithmError <a href="index.html#SignatureAlgorithm">SignatureAlgorithm</a></pre>
 			<p>
 An InsecureAlgorithmError
@@ -1125,7 +1232,9 @@ An InsecureAlgorithmError
 
 			
 				
-				<h3 id="InsecureAlgorithmError.Error">func (InsecureAlgorithmError) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=18184:18230#L552">Error</a></h3>
+				<h3 id="InsecureAlgorithmError.Error">func (InsecureAlgorithmError) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=18662:18708#L566">Error</a>
+					<a class="permalink" href="index.html#InsecureAlgorithmError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#InsecureAlgorithmError">InsecureAlgorithmError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1135,7 +1244,9 @@ An InsecureAlgorithmError
 		
 			
 			
-			<h2 id="InvalidReason">type <a href="http://localhost:9090/src/crypto/x509/verify.go?s=256:278#L7">InvalidReason</a></h2>
+			<h2 id="InvalidReason">type <a href="http://localhost:9090/src/crypto/x509/verify.go?s=256:278#L7">InvalidReason</a>
+				<a class="permalink" href="index.html#InvalidReason">&#xb6;</a>
+			</h2>
 			<pre>type InvalidReason <a href="../../builtin/index.html#int">int</a></pre>
 			
 
@@ -1173,7 +1284,9 @@ An InsecureAlgorithmError
 		
 			
 			
-			<h2 id="KeyUsage">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=11194:11211#L371">KeyUsage</a></h2>
+			<h2 id="KeyUsage">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=11672:11689#L385">KeyUsage</a>
+				<a class="permalink" href="index.html#KeyUsage">&#xb6;</a>
+			</h2>
 			<pre>type KeyUsage <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 KeyUsage represents the set of actions that are valid for a given key. It&#39;s
@@ -1208,7 +1321,9 @@ a bitmap of the KeyUsage* constants.
 		
 			
 			
-			<h2 id="PEMCipher">type <a href="http://localhost:9090/src/crypto/x509/pem_decrypt.go?s=472:490#L13">PEMCipher</a></h2>
+			<h2 id="PEMCipher">type <a href="http://localhost:9090/src/crypto/x509/pem_decrypt.go?s=472:490#L13">PEMCipher</a>
+				<a class="permalink" href="index.html#PEMCipher">&#xb6;</a>
+			</h2>
 			<pre>type PEMCipher <a href="../../builtin/index.html#int">int</a></pre>
 			
 
@@ -1238,7 +1353,9 @@ Possible values for the EncryptPEMBlock encryption algorithm.
 		
 			
 			
-			<h2 id="PublicKeyAlgorithm">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=5065:5092#L190">PublicKeyAlgorithm</a></h2>
+			<h2 id="PublicKeyAlgorithm">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=5255:5282#L196">PublicKeyAlgorithm</a>
+				<a class="permalink" href="index.html#PublicKeyAlgorithm">&#xb6;</a>
+			</h2>
 			<pre>type PublicKeyAlgorithm <a href="../../builtin/index.html#int">int</a></pre>
 			
 
@@ -1264,7 +1381,9 @@ Possible values for the EncryptPEMBlock encryption algorithm.
 		
 			
 			
-			<h2 id="SignatureAlgorithm">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=4230:4257#L150">SignatureAlgorithm</a></h2>
+			<h2 id="SignatureAlgorithm">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=4420:4447#L156">SignatureAlgorithm</a>
+				<a class="permalink" href="index.html#SignatureAlgorithm">&#xb6;</a>
+			</h2>
 			<pre>type SignatureAlgorithm <a href="../../builtin/index.html#int">int</a></pre>
 			
 
@@ -1297,7 +1416,9 @@ Possible values for the EncryptPEMBlock encryption algorithm.
 
 			
 				
-				<h3 id="SignatureAlgorithm.String">func (SignatureAlgorithm) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=4910:4956#L183">String</a></h3>
+				<h3 id="SignatureAlgorithm.String">func (SignatureAlgorithm) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=5100:5146#L189">String</a>
+					<a class="permalink" href="index.html#SignatureAlgorithm.String">&#xb6;</a>
+				</h3>
 				<pre>func (algo <a href="index.html#SignatureAlgorithm">SignatureAlgorithm</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1307,8 +1428,12 @@ Possible values for the EncryptPEMBlock encryption algorithm.
 		
 			
 			
-			<h2 id="SystemRootsError">type <a href="http://localhost:9090/src/crypto/x509/verify.go?s=3548:3578#L110">SystemRootsError</a></h2>
-			<pre>type SystemRootsError struct{}</pre>
+			<h2 id="SystemRootsError">type <a href="http://localhost:9090/src/crypto/x509/verify.go?s=3548:3591#L110">SystemRootsError</a>
+				<a class="permalink" href="index.html#SystemRootsError">&#xb6;</a>
+			</h2>
+			<pre>type SystemRootsError struct {
+    Err <a href="../../builtin/index.html#error">error</a>
+}</pre>
 			<p>
 SystemRootsError results when we fail to load the system root certificates.
 </p>
@@ -1326,8 +1451,10 @@ SystemRootsError results when we fail to load the system root certificates.
 
 			
 				
-				<h3 id="SystemRootsError.Error">func (SystemRootsError) <a href="http://localhost:9090/src/crypto/x509/verify.go?s=3580:3618#L112">Error</a></h3>
-				<pre>func (<a href="index.html#SystemRootsError">SystemRootsError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
+				<h3 id="SystemRootsError.Error">func (SystemRootsError) <a href="http://localhost:9090/src/crypto/x509/verify.go?s=3593:3634#L114">Error</a>
+					<a class="permalink" href="index.html#SystemRootsError.Error">&#xb6;</a>
+				</h3>
+				<pre>func (se <a href="index.html#SystemRootsError">SystemRootsError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
 				
@@ -1336,7 +1463,9 @@ SystemRootsError results when we fail to load the system root certificates.
 		
 			
 			
-			<h2 id="UnhandledCriticalExtension">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=24644:24684#L721">UnhandledCriticalExtension</a></h2>
+			<h2 id="UnhandledCriticalExtension">type <a href="http://localhost:9090/src/crypto/x509/x509.go?s=25104:25144#L735">UnhandledCriticalExtension</a>
+				<a class="permalink" href="index.html#UnhandledCriticalExtension">&#xb6;</a>
+			</h2>
 			<pre>type UnhandledCriticalExtension struct{}</pre>
 			
 
@@ -1352,7 +1481,9 @@ SystemRootsError results when we fail to load the system root certificates.
 
 			
 				
-				<h3 id="UnhandledCriticalExtension.Error">func (UnhandledCriticalExtension) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=24686:24736#L723">Error</a></h3>
+				<h3 id="UnhandledCriticalExtension.Error">func (UnhandledCriticalExtension) <a href="http://localhost:9090/src/crypto/x509/x509.go?s=25146:25196#L737">Error</a>
+					<a class="permalink" href="index.html#UnhandledCriticalExtension.Error">&#xb6;</a>
+				</h3>
 				<pre>func (h <a href="index.html#UnhandledCriticalExtension">UnhandledCriticalExtension</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1362,7 +1493,9 @@ SystemRootsError results when we fail to load the system root certificates.
 		
 			
 			
-			<h2 id="UnknownAuthorityError">type <a href="http://localhost:9090/src/crypto/x509/verify.go?s=2658:2962#L84">UnknownAuthorityError</a></h2>
+			<h2 id="UnknownAuthorityError">type <a href="http://localhost:9090/src/crypto/x509/verify.go?s=2658:2962#L84">UnknownAuthorityError</a>
+				<a class="permalink" href="index.html#UnknownAuthorityError">&#xb6;</a>
+			</h2>
 			<pre>type UnknownAuthorityError struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -1383,7 +1516,9 @@ UnknownAuthorityError results when the certificate issuer is unknown
 
 			
 				
-				<h3 id="UnknownAuthorityError.Error">func (UnknownAuthorityError) <a href="http://localhost:9090/src/crypto/x509/verify.go?s=2964:3009#L94">Error</a></h3>
+				<h3 id="UnknownAuthorityError.Error">func (UnknownAuthorityError) <a href="http://localhost:9090/src/crypto/x509/verify.go?s=2964:3009#L94">Error</a>
+					<a class="permalink" href="index.html#UnknownAuthorityError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#UnknownAuthorityError">UnknownAuthorityError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1393,7 +1528,9 @@ UnknownAuthorityError results when the certificate issuer is unknown
 		
 			
 			
-			<h2 id="VerifyOptions">type <a href="http://localhost:9090/src/crypto/x509/verify.go?s=4072:4585#L122">VerifyOptions</a></h2>
+			<h2 id="VerifyOptions">type <a href="http://localhost:9090/src/crypto/x509/verify.go?s=4160:4673#L128">VerifyOptions</a>
+				<a class="permalink" href="index.html#VerifyOptions">&#xb6;</a>
+			</h2>
 			<pre>type VerifyOptions struct {
     DNSName       <a href="../../builtin/index.html#string">string</a>
     Intermediates *<a href="index.html#CertPool">CertPool</a>
@@ -1472,7 +1609,7 @@ because other PKIX verification APIs have ended up needing many options.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1490,6 +1627,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

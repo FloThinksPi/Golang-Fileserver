@@ -180,6 +180,8 @@ References:
 			
 				<a href="http://localhost:9090/src/archive/tar/common.go">common.go</a>
 			
+				<a href="http://localhost:9090/src/archive/tar/format.go">format.go</a>
+			
 				<a href="http://localhost:9090/src/archive/tar/reader.go">reader.go</a>
 			
 				<a href="http://localhost:9090/src/archive/tar/stat_atim.go">stat_atim.go</a>
@@ -235,8 +237,6 @@ References:
 			<h2 id="pkg-constants">Constants</h2>
 			
 				<pre>const (
-
-    <span class="comment">// Types</span>
     <span id="TypeReg">TypeReg</span>           = &#39;0&#39;    <span class="comment">// regular file</span>
     <span id="TypeRegA">TypeRegA</span>          = &#39;\x00&#39; <span class="comment">// regular file</span>
     <span id="TypeLink">TypeLink</span>          = &#39;1&#39;    <span class="comment">// hard link</span>
@@ -252,7 +252,10 @@ References:
     <span id="TypeGNULongLink">TypeGNULongLink</span>   = &#39;K&#39;    <span class="comment">// Next file symlinks to a file w/ a long name</span>
     <span id="TypeGNUSparse">TypeGNUSparse</span>     = &#39;S&#39;    <span class="comment">// sparse file</span>
 )</pre>
-				
+				<p>
+Header type flags.
+</p>
+
 			
 		
 		
@@ -275,7 +278,9 @@ References:
 		
 			
 			
-			<h2 id="Header">type <a href="http://localhost:9090/src/archive/tar/common.go?s=1401:2114#L36">Header</a></h2>
+			<h2 id="Header">type <a href="http://localhost:9090/src/archive/tar/common.go?s=1395:2108#L34">Header</a>
+				<a class="permalink" href="index.html#Header">&#xb6;</a>
+			</h2>
 			<pre>type Header struct {
     Name       <a href="../../builtin/index.html#string">string</a>    <span class="comment">// name of header file entry</span>
     Mode       <a href="../../builtin/index.html#int64">int64</a>     <span class="comment">// permission and mode bits</span>
@@ -309,7 +314,9 @@ Some fields may not be populated.
 
 			
 				
-				<h3 id="FileInfoHeader">func <a href="http://localhost:9090/src/archive/tar/common.go?s=5701:5766#L194">FileInfoHeader</a></h3>
+				<h3 id="FileInfoHeader">func <a href="http://localhost:9090/src/archive/tar/common.go?s=5495:5560#L186">FileInfoHeader</a>
+					<a class="permalink" href="index.html#FileInfoHeader">&#xb6;</a>
+				</h3>
 				<pre>func FileInfoHeader(fi <a href="../../os/index.html">os</a>.<a href="../../os/index.html#FileInfo">FileInfo</a>, link <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#Header">Header</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 FileInfoHeader creates a partially-populated Header from fi.
@@ -326,7 +333,9 @@ of the returned header to provide the full path name of the file.
 
 			
 				
-				<h3 id="Header.FileInfo">func (*Header) <a href="http://localhost:9090/src/archive/tar/common.go?s=2367:2406#L61">FileInfo</a></h3>
+				<h3 id="Header.FileInfo">func (*Header) <a href="http://localhost:9090/src/archive/tar/common.go?s=2161:2200#L53">FileInfo</a>
+					<a class="permalink" href="index.html#Header.FileInfo">&#xb6;</a>
+				</h3>
 				<pre>func (h *<a href="index.html#Header">Header</a>) FileInfo() <a href="../../os/index.html">os</a>.<a href="../../os/index.html#FileInfo">FileInfo</a></pre>
 				<p>
 FileInfo returns an os.FileInfo for the Header.
@@ -339,7 +348,9 @@ FileInfo returns an os.FileInfo for the Header.
 		
 			
 			
-			<h2 id="Reader">type <a href="http://localhost:9090/src/archive/tar/reader.go?s=688:939#L22">Reader</a></h2>
+			<h2 id="Reader">type <a href="http://localhost:9090/src/archive/tar/reader.go?s=682:928#L21">Reader</a>
+				<a class="permalink" href="index.html#Reader">&#xb6;</a>
+			</h2>
 			<pre>type Reader struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -361,7 +372,9 @@ and then it can be treated as an io.Reader to access the file&#39;s data.
 
 			
 				
-				<h3 id="NewReader">func <a href="http://localhost:9090/src/archive/tar/reader.go?s=3593:3628#L104">NewReader</a></h3>
+				<h3 id="NewReader">func <a href="http://localhost:9090/src/archive/tar/reader.go?s=3187:3222#L92">NewReader</a>
+					<a class="permalink" href="index.html#NewReader">&#xb6;</a>
+				</h3>
 				<pre>func NewReader(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) *<a href="index.html#Reader">Reader</a></pre>
 				<p>
 NewReader creates a new Reader reading from r.
@@ -373,7 +386,9 @@ NewReader creates a new Reader reading from r.
 
 			
 				
-				<h3 id="Reader.Next">func (*Reader) <a href="http://localhost:9090/src/archive/tar/reader.go?s=3760:3801#L109">Next</a></h3>
+				<h3 id="Reader.Next">func (*Reader) <a href="http://localhost:9090/src/archive/tar/reader.go?s=3354:3395#L97">Next</a>
+					<a class="permalink" href="index.html#Reader.Next">&#xb6;</a>
+				</h3>
 				<pre>func (tr *<a href="index.html#Reader">Reader</a>) Next() (*<a href="index.html#Header">Header</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Next advances to the next entry in the tar archive.
@@ -387,7 +402,9 @@ io.EOF is returned at the end of the input.
 				
 			
 				
-				<h3 id="Reader.Read">func (*Reader) <a href="http://localhost:9090/src/archive/tar/reader.go?s=25725:25776#L854">Read</a></h3>
+				<h3 id="Reader.Read">func (*Reader) <a href="http://localhost:9090/src/archive/tar/reader.go?s=24320:24371#L810">Read</a>
+					<a class="permalink" href="index.html#Reader.Read">&#xb6;</a>
+				</h3>
 				<pre>func (tr *<a href="index.html#Reader">Reader</a>) Read(b []<a href="../../builtin/index.html#byte">byte</a>) (n <a href="../../builtin/index.html#int">int</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Read reads from the current entry in the tar archive.
@@ -407,7 +424,9 @@ the Header.Size claims.
 		
 			
 			
-			<h2 id="Writer">type <a href="http://localhost:9090/src/archive/tar/writer.go?s=898:1458#L23">Writer</a></h2>
+			<h2 id="Writer">type <a href="http://localhost:9090/src/archive/tar/writer.go?s=898:1418#L23">Writer</a>
+				<a class="permalink" href="index.html#Writer">&#xb6;</a>
+			</h2>
 			<pre>type Writer struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -429,7 +448,9 @@ writing at most hdr.Size bytes in total.
 
 			
 				
-				<h3 id="NewWriter">func <a href="http://localhost:9090/src/archive/tar/writer.go?s=1565:1600#L40">NewWriter</a></h3>
+				<h3 id="NewWriter">func <a href="http://localhost:9090/src/archive/tar/writer.go?s=1525:1560#L40">NewWriter</a>
+					<a class="permalink" href="index.html#NewWriter">&#xb6;</a>
+				</h3>
 				<pre>func NewWriter(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>) *<a href="index.html#Writer">Writer</a></pre>
 				<p>
 NewWriter creates a new Writer writing to w.
@@ -441,7 +462,9 @@ NewWriter creates a new Writer writing to w.
 
 			
 				
-				<h3 id="Writer.Close">func (*Writer) <a href="http://localhost:9090/src/archive/tar/writer.go?s=11873:11904#L388">Close</a></h3>
+				<h3 id="Writer.Close">func (*Writer) <a href="http://localhost:9090/src/archive/tar/writer.go?s=11037:11068#L374">Close</a>
+					<a class="permalink" href="index.html#Writer.Close">&#xb6;</a>
+				</h3>
 				<pre>func (tw *<a href="index.html#Writer">Writer</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the tar archive, flushing any unwritten
@@ -453,7 +476,9 @@ data to the underlying writer.
 				
 			
 				
-				<h3 id="Writer.Flush">func (*Writer) <a href="http://localhost:9090/src/archive/tar/writer.go?s=1682:1713#L43">Flush</a></h3>
+				<h3 id="Writer.Flush">func (*Writer) <a href="http://localhost:9090/src/archive/tar/writer.go?s=1642:1673#L43">Flush</a>
+					<a class="permalink" href="index.html#Writer.Flush">&#xb6;</a>
+				</h3>
 				<pre>func (tw *<a href="index.html#Writer">Writer</a>) Flush() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Flush finishes writing the current file (optional).
@@ -464,7 +489,9 @@ Flush finishes writing the current file (optional).
 				
 			
 				
-				<h3 id="Writer.Write">func (*Writer) <a href="http://localhost:9090/src/archive/tar/writer.go?s=11452:11504#L366">Write</a></h3>
+				<h3 id="Writer.Write">func (*Writer) <a href="http://localhost:9090/src/archive/tar/writer.go?s=10616:10668#L352">Write</a>
+					<a class="permalink" href="index.html#Writer.Write">&#xb6;</a>
+				</h3>
 				<pre>func (tw *<a href="index.html#Writer">Writer</a>) Write(b []<a href="../../builtin/index.html#byte">byte</a>) (n <a href="../../builtin/index.html#int">int</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Write writes to the current entry in the tar archive.
@@ -477,7 +504,9 @@ hdr.Size bytes are written after WriteHeader.
 				
 			
 				
-				<h3 id="Writer.WriteHeader">func (*Writer) <a href="http://localhost:9090/src/archive/tar/writer.go?s=3857:3905#L123">WriteHeader</a></h3>
+				<h3 id="Writer.WriteHeader">func (*Writer) <a href="http://localhost:9090/src/archive/tar/writer.go?s=3817:3865#L123">WriteHeader</a>
+					<a class="permalink" href="index.html#Writer.WriteHeader">&#xb6;</a>
+				</h3>
 				<pre>func (tw *<a href="index.html#Writer">Writer</a>) WriteHeader(hdr *<a href="index.html#Header">Header</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 WriteHeader writes hdr and prepares to accept the file&#39;s contents.
@@ -501,7 +530,7 @@ Calling after a Close will return ErrWriteAfterClose.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -519,6 +548,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

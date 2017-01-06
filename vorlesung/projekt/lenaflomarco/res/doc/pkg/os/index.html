@@ -313,7 +313,7 @@ fmt.Printf(&#34;read %d bytes: %q\n&#34;, count, data[:count])
 					<dd>&nbsp; &nbsp; <a href="index.html#File.ReadAt">func (f *File) ReadAt(b []byte, off int64) (n int, err error)</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#File.Readdir">func (f *File) Readdir(n int) (fi []FileInfo, err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#File.Readdir">func (f *File) Readdir(n int) ([]FileInfo, error)</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#File.Readdirnames">func (f *File) Readdirnames(n int) (names []string, err error)</a></dd>
@@ -511,6 +511,8 @@ fmt.Printf(&#34;read %d bytes: %q\n&#34;, count, data[:count])
 			
 				<a href="http://localhost:9090/src/os/types_unix.go">types_unix.go</a>
 			
+				<a href="http://localhost:9090/src/os/wait_waitid.go">wait_waitid.go</a>
+			
 			</span>
 			</p>
 		
@@ -581,6 +583,9 @@ flags may be implemented on a given system.
 				<p>
 Seek whence values.
 </p>
+<p>
+Deprecated: Use io.SeekStart, io.SeekCurrent, and io.SeekEnd.
+</p>
 
 			
 				<pre>const (
@@ -620,6 +625,11 @@ Portable analogs of some common system call errors.
 Stdin, Stdout, and Stderr are open Files pointing to the standard input,
 standard output, and standard error file descriptors.
 </p>
+<p>
+Note that the Go runtime writes to standard error for panics and crashes;
+closing Stderr may cause those messages to go elsewhere, perhaps
+to a file opened later.
+</p>
 
 			
 				<pre>var <span id="Args">Args</span> []<a href="../builtin/index.html#string">string</a></pre>
@@ -632,7 +642,9 @@ Args hold the command-line arguments, starting with the program name.
 		
 			
 			
-			<h2 id="Chdir">func <a href="http://localhost:9090/src/os/file.go?s=6359:6387#L209">Chdir</a></h2>
+			<h2 id="Chdir">func <a href="http://localhost:9090/src/os/file.go?s=6602:6630#L215">Chdir</a>
+				<a class="permalink" href="index.html#Chdir">&#xb6;</a>
+			</h2>
 			<pre>func Chdir(dir <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 Chdir changes the current working directory to the named directory.
@@ -645,7 +657,9 @@ If there is an error, it will be of type *PathError.
 		
 			
 			
-			<h2 id="Chmod">func <a href="http://localhost:9090/src/os/file_posix.go?s=1266:1310#L40">Chmod</a></h2>
+			<h2 id="Chmod">func <a href="http://localhost:9090/src/os/file_posix.go?s=1266:1310#L40">Chmod</a>
+				<a class="permalink" href="index.html#Chmod">&#xb6;</a>
+			</h2>
 			<pre>func Chmod(name <a href="../builtin/index.html#string">string</a>, mode <a href="index.html#FileMode">FileMode</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 Chmod changes the mode of the named file to mode.
@@ -659,7 +673,9 @@ If there is an error, it will be of type *PathError.
 		
 			
 			
-			<h2 id="Chown">func <a href="http://localhost:9090/src/os/file_posix.go?s=1933:1976#L62">Chown</a></h2>
+			<h2 id="Chown">func <a href="http://localhost:9090/src/os/file_posix.go?s=1933:1976#L62">Chown</a>
+				<a class="permalink" href="index.html#Chown">&#xb6;</a>
+			</h2>
 			<pre>func Chown(name <a href="../builtin/index.html#string">string</a>, uid, gid <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 Chown changes the numeric uid and gid of the named file.
@@ -673,7 +689,9 @@ If there is an error, it will be of type *PathError.
 		
 			
 			
-			<h2 id="Chtimes">func <a href="http://localhost:9090/src/os/file_posix.go?s=3693:3758#L123">Chtimes</a></h2>
+			<h2 id="Chtimes">func <a href="http://localhost:9090/src/os/file_posix.go?s=3693:3758#L123">Chtimes</a>
+				<a class="permalink" href="index.html#Chtimes">&#xb6;</a>
+			</h2>
 			<pre>func Chtimes(name <a href="../builtin/index.html#string">string</a>, atime <a href="../time/index.html">time</a>.<a href="../time/index.html#Time">Time</a>, mtime <a href="../time/index.html">time</a>.<a href="../time/index.html#Time">Time</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 Chtimes changes the access and modification times of the named
@@ -691,7 +709,9 @@ If there is an error, it will be of type *PathError.
 		
 			
 			
-			<h2 id="Clearenv">func <a href="http://localhost:9090/src/os/env.go?s=3213:3228#L99">Clearenv</a></h2>
+			<h2 id="Clearenv">func <a href="http://localhost:9090/src/os/env.go?s=3210:3225#L99">Clearenv</a>
+				<a class="permalink" href="index.html#Clearenv">&#xb6;</a>
+			</h2>
 			<pre>func Clearenv()</pre>
 			<p>
 Clearenv deletes all environment variables.
@@ -703,7 +723,9 @@ Clearenv deletes all environment variables.
 		
 			
 			
-			<h2 id="Environ">func <a href="http://localhost:9090/src/os/env.go?s=3349:3372#L105">Environ</a></h2>
+			<h2 id="Environ">func <a href="http://localhost:9090/src/os/env.go?s=3346:3369#L105">Environ</a>
+				<a class="permalink" href="index.html#Environ">&#xb6;</a>
+			</h2>
 			<pre>func Environ() []<a href="../builtin/index.html#string">string</a></pre>
 			<p>
 Environ returns a copy of strings representing the environment,
@@ -716,7 +738,9 @@ in the form &#34;key=value&#34;.
 		
 			
 			
-			<h2 id="Exit">func <a href="http://localhost:9090/src/os/proc.go?s=1325:1344#L38">Exit</a></h2>
+			<h2 id="Exit">func <a href="http://localhost:9090/src/os/proc.go?s=1325:1344#L38">Exit</a>
+				<a class="permalink" href="index.html#Exit">&#xb6;</a>
+			</h2>
 			<pre>func Exit(code <a href="../builtin/index.html#int">int</a>)</pre>
 			<p>
 Exit causes the current program to exit with the given status code.
@@ -730,7 +754,9 @@ The program terminates immediately; deferred functions are not run.
 		
 			
 			
-			<h2 id="Expand">func <a href="http://localhost:9090/src/os/env.go?s=379:436#L3">Expand</a></h2>
+			<h2 id="Expand">func <a href="http://localhost:9090/src/os/env.go?s=378:435#L3">Expand</a>
+				<a class="permalink" href="index.html#Expand">&#xb6;</a>
+			</h2>
 			<pre>func Expand(s <a href="../builtin/index.html#string">string</a>, mapping func(<a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 Expand replaces ${var} or $var in the string based on the mapping function.
@@ -743,11 +769,13 @@ For example, os.ExpandEnv(s) is equivalent to os.Expand(s, os.Getenv).
 		
 			
 			
-			<h2 id="ExpandEnv">func <a href="http://localhost:9090/src/os/env.go?s=963:994#L22">ExpandEnv</a></h2>
+			<h2 id="ExpandEnv">func <a href="http://localhost:9090/src/os/env.go?s=961:992#L22">ExpandEnv</a>
+				<a class="permalink" href="index.html#ExpandEnv">&#xb6;</a>
+			</h2>
 			<pre>func ExpandEnv(s <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 ExpandEnv replaces ${var} or $var in the string according to the values
-of the current environment variables.  References to undefined
+of the current environment variables. References to undefined
 variables are replaced by the empty string.
 </p>
 
@@ -757,7 +785,9 @@ variables are replaced by the empty string.
 		
 			
 			
-			<h2 id="Getegid">func <a href="http://localhost:9090/src/os/proc.go?s=867:885#L27">Getegid</a></h2>
+			<h2 id="Getegid">func <a href="http://localhost:9090/src/os/proc.go?s=867:885#L27">Getegid</a>
+				<a class="permalink" href="index.html#Getegid">&#xb6;</a>
+			</h2>
 			<pre>func Getegid() <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 Getegid returns the numeric effective group id of the caller.
@@ -769,7 +799,9 @@ Getegid returns the numeric effective group id of the caller.
 		
 			
 			
-			<h2 id="Getenv">func <a href="http://localhost:9090/src/os/env.go?s=2368:2398#L69">Getenv</a></h2>
+			<h2 id="Getenv">func <a href="http://localhost:9090/src/os/env.go?s=2365:2395#L69">Getenv</a>
+				<a class="permalink" href="index.html#Getenv">&#xb6;</a>
+			</h2>
 			<pre>func Getenv(key <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 Getenv retrieves the value of the environment variable named by the key.
@@ -782,7 +814,9 @@ It returns the value, which will be empty if the variable is not present.
 		
 			
 			
-			<h2 id="Geteuid">func <a href="http://localhost:9090/src/os/proc.go?s=652:670#L21">Geteuid</a></h2>
+			<h2 id="Geteuid">func <a href="http://localhost:9090/src/os/proc.go?s=652:670#L21">Geteuid</a>
+				<a class="permalink" href="index.html#Geteuid">&#xb6;</a>
+			</h2>
 			<pre>func Geteuid() <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 Geteuid returns the numeric effective user id of the caller.
@@ -794,7 +828,9 @@ Geteuid returns the numeric effective user id of the caller.
 		
 			
 			
-			<h2 id="Getgid">func <a href="http://localhost:9090/src/os/proc.go?s=755:772#L24">Getgid</a></h2>
+			<h2 id="Getgid">func <a href="http://localhost:9090/src/os/proc.go?s=755:772#L24">Getgid</a>
+				<a class="permalink" href="index.html#Getgid">&#xb6;</a>
+			</h2>
 			<pre>func Getgid() <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 Getgid returns the numeric group id of the caller.
@@ -806,7 +842,9 @@ Getgid returns the numeric group id of the caller.
 		
 			
 			
-			<h2 id="Getgroups">func <a href="http://localhost:9090/src/os/proc.go?s=1001:1032#L30">Getgroups</a></h2>
+			<h2 id="Getgroups">func <a href="http://localhost:9090/src/os/proc.go?s=1001:1032#L30">Getgroups</a>
+				<a class="permalink" href="index.html#Getgroups">&#xb6;</a>
+			</h2>
 			<pre>func Getgroups() ([]<a href="../builtin/index.html#int">int</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Getgroups returns a list of the numeric ids of groups that the caller belongs to.
@@ -818,7 +856,9 @@ Getgroups returns a list of the numeric ids of groups that the caller belongs to
 		
 			
 			
-			<h2 id="Getpagesize">func <a href="http://localhost:9090/src/os/types.go?s=268:290#L3">Getpagesize</a></h2>
+			<h2 id="Getpagesize">func <a href="http://localhost:9090/src/os/types.go?s=268:290#L3">Getpagesize</a>
+				<a class="permalink" href="index.html#Getpagesize">&#xb6;</a>
+			</h2>
 			<pre>func Getpagesize() <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 Getpagesize returns the underlying system&#39;s memory page size.
@@ -830,7 +870,9 @@ Getpagesize returns the underlying system&#39;s memory page size.
 		
 			
 			
-			<h2 id="Getpid">func <a href="http://localhost:9090/src/os/exec.go?s=2054:2071#L57">Getpid</a></h2>
+			<h2 id="Getpid">func <a href="http://localhost:9090/src/os/exec.go?s=2128:2145#L59">Getpid</a>
+				<a class="permalink" href="index.html#Getpid">&#xb6;</a>
+			</h2>
 			<pre>func Getpid() <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 Getpid returns the process id of the caller.
@@ -842,7 +884,9 @@ Getpid returns the process id of the caller.
 		
 			
 			
-			<h2 id="Getppid">func <a href="http://localhost:9090/src/os/exec.go?s=2159:2177#L60">Getppid</a></h2>
+			<h2 id="Getppid">func <a href="http://localhost:9090/src/os/exec.go?s=2233:2251#L62">Getppid</a>
+				<a class="permalink" href="index.html#Getppid">&#xb6;</a>
+			</h2>
 			<pre>func Getppid() <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 Getppid returns the process id of the caller&#39;s parent.
@@ -854,7 +898,9 @@ Getppid returns the process id of the caller&#39;s parent.
 		
 			
 			
-			<h2 id="Getuid">func <a href="http://localhost:9090/src/os/proc.go?s=541:558#L18">Getuid</a></h2>
+			<h2 id="Getuid">func <a href="http://localhost:9090/src/os/proc.go?s=541:558#L18">Getuid</a>
+				<a class="permalink" href="index.html#Getuid">&#xb6;</a>
+			</h2>
 			<pre>func Getuid() <a href="../builtin/index.html#int">int</a></pre>
 			<p>
 Getuid returns the numeric user id of the caller.
@@ -866,11 +912,13 @@ Getuid returns the numeric user id of the caller.
 		
 			
 			
-			<h2 id="Getwd">func <a href="http://localhost:9090/src/os/getwd.go?s=621:657#L16">Getwd</a></h2>
+			<h2 id="Getwd">func <a href="http://localhost:9090/src/os/getwd.go?s=620:656#L16">Getwd</a>
+				<a class="permalink" href="index.html#Getwd">&#xb6;</a>
+			</h2>
 			<pre>func Getwd() (dir <a href="../builtin/index.html#string">string</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Getwd returns a rooted path name corresponding to the
-current directory.  If the current directory can be
+current directory. If the current directory can be
 reached via multiple paths (due to symbolic links),
 Getwd may return any one of them.
 </p>
@@ -881,7 +929,9 @@ Getwd may return any one of them.
 		
 			
 			
-			<h2 id="Hostname">func <a href="http://localhost:9090/src/os/doc.go?s=3068:3108#L86">Hostname</a></h2>
+			<h2 id="Hostname">func <a href="http://localhost:9090/src/os/doc.go?s=3066:3106#L86">Hostname</a>
+				<a class="permalink" href="index.html#Hostname">&#xb6;</a>
+			</h2>
 			<pre>func Hostname() (name <a href="../builtin/index.html#string">string</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Hostname returns the host name reported by the kernel.
@@ -893,7 +943,9 @@ Hostname returns the host name reported by the kernel.
 		
 			
 			
-			<h2 id="IsExist">func <a href="http://localhost:9090/src/os/error.go?s=1454:1482#L39">IsExist</a></h2>
+			<h2 id="IsExist">func <a href="http://localhost:9090/src/os/error.go?s=1454:1482#L39">IsExist</a>
+				<a class="permalink" href="index.html#IsExist">&#xb6;</a>
+			</h2>
 			<pre>func IsExist(err <a href="../builtin/index.html#error">error</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 			<p>
 IsExist returns a boolean indicating whether the error is known to report
@@ -907,7 +959,9 @@ well as some syscall errors.
 		
 			
 			
-			<h2 id="IsNotExist">func <a href="http://localhost:9090/src/os/error.go?s=1699:1730#L46">IsNotExist</a></h2>
+			<h2 id="IsNotExist">func <a href="http://localhost:9090/src/os/error.go?s=1699:1730#L46">IsNotExist</a>
+				<a class="permalink" href="index.html#IsNotExist">&#xb6;</a>
+			</h2>
 			<pre>func IsNotExist(err <a href="../builtin/index.html#error">error</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 			<p>
 IsNotExist returns a boolean indicating whether the error is known to
@@ -921,7 +975,9 @@ ErrNotExist as well as some syscall errors.
 		
 			
 			
-			<h2 id="IsPathSeparator">func <a href="http://localhost:9090/src/os/path_unix.go?s=441:475#L5">IsPathSeparator</a></h2>
+			<h2 id="IsPathSeparator">func <a href="http://localhost:9090/src/os/path_unix.go?s=441:475#L5">IsPathSeparator</a>
+				<a class="permalink" href="index.html#IsPathSeparator">&#xb6;</a>
+			</h2>
 			<pre>func IsPathSeparator(c <a href="../builtin/index.html#uint8">uint8</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 			<p>
 IsPathSeparator reports whether c is a directory separator character.
@@ -933,7 +989,9 @@ IsPathSeparator reports whether c is a directory separator character.
 		
 			
 			
-			<h2 id="IsPermission">func <a href="http://localhost:9090/src/os/error.go?s=1940:1973#L53">IsPermission</a></h2>
+			<h2 id="IsPermission">func <a href="http://localhost:9090/src/os/error.go?s=1940:1973#L53">IsPermission</a>
+				<a class="permalink" href="index.html#IsPermission">&#xb6;</a>
+			</h2>
 			<pre>func IsPermission(err <a href="../builtin/index.html#error">error</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 			<p>
 IsPermission returns a boolean indicating whether the error is known to
@@ -947,7 +1005,9 @@ as some syscall errors.
 		
 			
 			
-			<h2 id="Lchown">func <a href="http://localhost:9090/src/os/file_posix.go?s=2285:2329#L72">Lchown</a></h2>
+			<h2 id="Lchown">func <a href="http://localhost:9090/src/os/file_posix.go?s=2285:2329#L72">Lchown</a>
+				<a class="permalink" href="index.html#Lchown">&#xb6;</a>
+			</h2>
 			<pre>func Lchown(name <a href="../builtin/index.html#string">string</a>, uid, gid <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 Lchown changes the numeric uid and gid of the named file.
@@ -961,7 +1021,9 @@ If there is an error, it will be of type *PathError.
 		
 			
 			
-			<h2 id="Link">func <a href="http://localhost:9090/src/os/file_unix.go?s=9855:9895#L350">Link</a></h2>
+			<h2 id="Link">func <a href="http://localhost:9090/src/os/file_unix.go?s=9850:9890#L350">Link</a>
+				<a class="permalink" href="index.html#Link">&#xb6;</a>
+			</h2>
 			<pre>func Link(oldname, newname <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 Link creates newname as a hard link to the oldname file.
@@ -974,7 +1036,9 @@ If there is an error, it will be of type *LinkError.
 		
 			
 			
-			<h2 id="LookupEnv">func <a href="http://localhost:9090/src/os/env.go?s=2722:2763#L79">LookupEnv</a></h2>
+			<h2 id="LookupEnv">func <a href="http://localhost:9090/src/os/env.go?s=2719:2760#L79">LookupEnv</a>
+				<a class="permalink" href="index.html#LookupEnv">&#xb6;</a>
+			</h2>
 			<pre>func LookupEnv(key <a href="../builtin/index.html#string">string</a>) (<a href="../builtin/index.html#string">string</a>, <a href="../builtin/index.html#bool">bool</a>)</pre>
 			<p>
 LookupEnv retrieves the value of the environment variable named
@@ -990,7 +1054,9 @@ be false.
 		
 			
 			
-			<h2 id="Mkdir">func <a href="http://localhost:9090/src/os/file.go?s=5916:5960#L192">Mkdir</a></h2>
+			<h2 id="Mkdir">func <a href="http://localhost:9090/src/os/file.go?s=6159:6203#L198">Mkdir</a>
+				<a class="permalink" href="index.html#Mkdir">&#xb6;</a>
+			</h2>
 			<pre>func Mkdir(name <a href="../builtin/index.html#string">string</a>, perm <a href="index.html#FileMode">FileMode</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 Mkdir creates a new directory with the specified name and permission bits.
@@ -1003,7 +1069,9 @@ If there is an error, it will be of type *PathError.
 		
 			
 			
-			<h2 id="MkdirAll">func <a href="http://localhost:9090/src/os/path.go?s=488:535#L9">MkdirAll</a></h2>
+			<h2 id="MkdirAll">func <a href="http://localhost:9090/src/os/path.go?s=488:535#L9">MkdirAll</a>
+				<a class="permalink" href="index.html#MkdirAll">&#xb6;</a>
+			</h2>
 			<pre>func MkdirAll(path <a href="../builtin/index.html#string">string</a>, perm <a href="index.html#FileMode">FileMode</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 MkdirAll creates a directory named path,
@@ -1021,7 +1089,9 @@ and returns nil.
 		
 			
 			
-			<h2 id="NewSyscallError">func <a href="http://localhost:9090/src/os/error.go?s=1142:1195#L29">NewSyscallError</a></h2>
+			<h2 id="NewSyscallError">func <a href="http://localhost:9090/src/os/error.go?s=1142:1195#L29">NewSyscallError</a>
+				<a class="permalink" href="index.html#NewSyscallError">&#xb6;</a>
+			</h2>
 			<pre>func NewSyscallError(syscall <a href="../builtin/index.html#string">string</a>, err <a href="../builtin/index.html#error">error</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 NewSyscallError returns, as an error, a new SyscallError
@@ -1035,7 +1105,9 @@ As a convenience, if err is nil, NewSyscallError returns nil.
 		
 			
 			
-			<h2 id="Readlink">func <a href="http://localhost:9090/src/os/file_posix.go?s=451:493#L8">Readlink</a></h2>
+			<h2 id="Readlink">func <a href="http://localhost:9090/src/os/file_posix.go?s=451:493#L8">Readlink</a>
+				<a class="permalink" href="index.html#Readlink">&#xb6;</a>
+			</h2>
 			<pre>func Readlink(name <a href="../builtin/index.html#string">string</a>) (<a href="../builtin/index.html#string">string</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 			<p>
 Readlink returns the destination of the named symbolic link.
@@ -1048,7 +1120,9 @@ If there is an error, it will be of type *PathError.
 		
 			
 			
-			<h2 id="Remove">func <a href="http://localhost:9090/src/os/file_unix.go?s=8300:8330#L288">Remove</a></h2>
+			<h2 id="Remove">func <a href="http://localhost:9090/src/os/file_unix.go?s=8296:8326#L288">Remove</a>
+				<a class="permalink" href="index.html#Remove">&#xb6;</a>
+			</h2>
 			<pre>func Remove(name <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 Remove removes the named file or directory.
@@ -1061,12 +1135,14 @@ If there is an error, it will be of type *PathError.
 		
 			
 			
-			<h2 id="RemoveAll">func <a href="http://localhost:9090/src/os/path.go?s=1635:1668#L56">RemoveAll</a></h2>
+			<h2 id="RemoveAll">func <a href="http://localhost:9090/src/os/path.go?s=1634:1667#L56">RemoveAll</a>
+				<a class="permalink" href="index.html#RemoveAll">&#xb6;</a>
+			</h2>
 			<pre>func RemoveAll(path <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 RemoveAll removes path and any children it contains.
 It removes everything it can but returns the first error
-it encounters.  If the path does not exist, RemoveAll
+it encounters. If the path does not exist, RemoveAll
 returns nil (no error).
 </p>
 
@@ -1076,7 +1152,9 @@ returns nil (no error).
 		
 			
 			
-			<h2 id="Rename">func <a href="http://localhost:9090/src/os/file.go?s=7777:7819#L253">Rename</a></h2>
+			<h2 id="Rename">func <a href="http://localhost:9090/src/os/file.go?s=8019:8061#L259">Rename</a>
+				<a class="permalink" href="index.html#Rename">&#xb6;</a>
+			</h2>
 			<pre>func Rename(oldpath, newpath <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 Rename renames (moves) oldpath to newpath.
@@ -1091,7 +1169,9 @@ If there is an error, it will be of type *LinkError.
 		
 			
 			
-			<h2 id="SameFile">func <a href="http://localhost:9090/src/os/types.go?s=3885:3922#L101">SameFile</a></h2>
+			<h2 id="SameFile">func <a href="http://localhost:9090/src/os/types.go?s=3884:3921#L101">SameFile</a>
+				<a class="permalink" href="index.html#SameFile">&#xb6;</a>
+			</h2>
 			<pre>func SameFile(fi1, fi2 <a href="index.html#FileInfo">FileInfo</a>) <a href="../builtin/index.html#bool">bool</a></pre>
 			<p>
 SameFile reports whether fi1 and fi2 describe the same file.
@@ -1108,7 +1188,9 @@ It returns false in other cases.
 		
 			
 			
-			<h2 id="Setenv">func <a href="http://localhost:9090/src/os/env.go?s=2900:2936#L85">Setenv</a></h2>
+			<h2 id="Setenv">func <a href="http://localhost:9090/src/os/env.go?s=2897:2933#L85">Setenv</a>
+				<a class="permalink" href="index.html#Setenv">&#xb6;</a>
+			</h2>
 			<pre>func Setenv(key, value <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 Setenv sets the value of the environment variable named by the key.
@@ -1121,7 +1203,9 @@ It returns an error, if any.
 		
 			
 			
-			<h2 id="Symlink">func <a href="http://localhost:9090/src/os/file_unix.go?s=10131:10174#L360">Symlink</a></h2>
+			<h2 id="Symlink">func <a href="http://localhost:9090/src/os/file_unix.go?s=10126:10169#L360">Symlink</a>
+				<a class="permalink" href="index.html#Symlink">&#xb6;</a>
+			</h2>
 			<pre>func Symlink(oldname, newname <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 Symlink creates newname as a symbolic link to oldname.
@@ -1134,7 +1218,9 @@ If there is an error, it will be of type *LinkError.
 		
 			
 			
-			<h2 id="TempDir">func <a href="http://localhost:9090/src/os/file_unix.go?s=9565:9586#L336">TempDir</a></h2>
+			<h2 id="TempDir">func <a href="http://localhost:9090/src/os/file_unix.go?s=9560:9581#L336">TempDir</a>
+				<a class="permalink" href="index.html#TempDir">&#xb6;</a>
+			</h2>
 			<pre>func TempDir() <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 TempDir returns the default directory to use for temporary files.
@@ -1146,7 +1232,9 @@ TempDir returns the default directory to use for temporary files.
 		
 			
 			
-			<h2 id="Truncate">func <a href="http://localhost:9090/src/os/file_unix.go?s=8041:8085#L279">Truncate</a></h2>
+			<h2 id="Truncate">func <a href="http://localhost:9090/src/os/file_unix.go?s=8037:8081#L279">Truncate</a>
+				<a class="permalink" href="index.html#Truncate">&#xb6;</a>
+			</h2>
 			<pre>func Truncate(name <a href="../builtin/index.html#string">string</a>, size <a href="../builtin/index.html#int64">int64</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 Truncate changes the size of the named file.
@@ -1160,7 +1248,9 @@ If there is an error, it will be of type *PathError.
 		
 			
 			
-			<h2 id="Unsetenv">func <a href="http://localhost:9090/src/os/env.go?s=3099:3130#L94">Unsetenv</a></h2>
+			<h2 id="Unsetenv">func <a href="http://localhost:9090/src/os/env.go?s=3096:3127#L94">Unsetenv</a>
+				<a class="permalink" href="index.html#Unsetenv">&#xb6;</a>
+			</h2>
 			<pre>func Unsetenv(key <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#error">error</a></pre>
 			<p>
 Unsetenv unsets a single environment variable.
@@ -1173,7 +1263,9 @@ Unsetenv unsets a single environment variable.
 		
 			
 			
-			<h2 id="File">type <a href="http://localhost:9090/src/os/file_unix.go?s=597:624#L17">File</a></h2>
+			<h2 id="File">type <a href="http://localhost:9090/src/os/file_unix.go?s=597:624#L17">File</a>
+				<a class="permalink" href="index.html#File">&#xb6;</a>
+			</h2>
 			<pre>type File struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -1192,7 +1284,9 @@ File represents an open file descriptor.
 
 			
 				
-				<h3 id="Create">func <a href="http://localhost:9090/src/os/file.go?s=7381:7420#L242">Create</a></h3>
+				<h3 id="Create">func <a href="http://localhost:9090/src/os/file.go?s=7623:7662#L248">Create</a>
+					<a class="permalink" href="index.html#Create">&#xb6;</a>
+				</h3>
 				<pre>func Create(name <a href="../builtin/index.html#string">string</a>) (*<a href="index.html#File">File</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Create creates the named file with mode 0666 (before umask), truncating
@@ -1206,7 +1300,9 @@ If there is an error, it will be of type *PathError.
 				
 			
 				
-				<h3 id="NewFile">func <a href="http://localhost:9090/src/os/file_unix.go?s=1267:1310#L41">NewFile</a></h3>
+				<h3 id="NewFile">func <a href="http://localhost:9090/src/os/file_unix.go?s=1267:1310#L41">NewFile</a>
+					<a class="permalink" href="index.html#NewFile">&#xb6;</a>
+				</h3>
 				<pre>func NewFile(fd <a href="../builtin/index.html#uintptr">uintptr</a>, name <a href="../builtin/index.html#string">string</a>) *<a href="index.html#File">File</a></pre>
 				<p>
 NewFile returns a new File with the given file descriptor and name.
@@ -1216,10 +1312,12 @@ NewFile returns a new File with the given file descriptor and name.
 				
 			
 				
-				<h3 id="Open">func <a href="http://localhost:9090/src/os/file.go?s=7024:7061#L233">Open</a></h3>
+				<h3 id="Open">func <a href="http://localhost:9090/src/os/file.go?s=7266:7303#L239">Open</a>
+					<a class="permalink" href="index.html#Open">&#xb6;</a>
+				</h3>
 				<pre>func Open(name <a href="../builtin/index.html#string">string</a>) (*<a href="index.html#File">File</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
-Open opens the named file for reading.  If successful, methods on
+Open opens the named file for reading. If successful, methods on
 the returned file can be used for reading; the associated file
 descriptor has mode O_RDONLY.
 If there is an error, it will be of type *PathError.
@@ -1229,12 +1327,14 @@ If there is an error, it will be of type *PathError.
 				
 			
 				
-				<h3 id="OpenFile">func <a href="http://localhost:9090/src/os/file_unix.go?s=2432:2498#L76">OpenFile</a></h3>
+				<h3 id="OpenFile">func <a href="http://localhost:9090/src/os/file_unix.go?s=2430:2496#L76">OpenFile</a>
+					<a class="permalink" href="index.html#OpenFile">&#xb6;</a>
+				</h3>
 				<pre>func OpenFile(name <a href="../builtin/index.html#string">string</a>, flag <a href="../builtin/index.html#int">int</a>, perm <a href="index.html#FileMode">FileMode</a>) (*<a href="index.html#File">File</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 OpenFile is the generalized open call; most users will use Open
-or Create instead.  It opens the named file with specified flag
-(O_RDONLY etc.) and perm, (0666 etc.) if applicable.  If successful,
+or Create instead. It opens the named file with specified flag
+(O_RDONLY etc.) and perm, (0666 etc.) if applicable. If successful,
 methods on the returned File can be used for I/O.
 If there is an error, it will be of type *PathError.
 </p>
@@ -1243,7 +1343,9 @@ If there is an error, it will be of type *PathError.
 				
 			
 				
-				<h3 id="Pipe">func <a href="http://localhost:9090/src/os/pipe_linux.go?s=319:360#L1">Pipe</a></h3>
+				<h3 id="Pipe">func <a href="http://localhost:9090/src/os/pipe_linux.go?s=319:360#L1">Pipe</a>
+					<a class="permalink" href="index.html#Pipe">&#xb6;</a>
+				</h3>
 				<pre>func Pipe() (r *<a href="index.html#File">File</a>, w *<a href="index.html#File">File</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Pipe returns a connected pair of Files; reads from r return bytes written to w.
@@ -1256,7 +1358,9 @@ It returns the files and an error, if any.
 
 			
 				
-				<h3 id="File.Chdir">func (*File) <a href="http://localhost:9090/src/os/file.go?s=6631:6659#L219">Chdir</a></h3>
+				<h3 id="File.Chdir">func (*File) <a href="http://localhost:9090/src/os/file.go?s=6874:6902#L225">Chdir</a>
+					<a class="permalink" href="index.html#File.Chdir">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Chdir() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Chdir changes the current working directory to the file,
@@ -1269,7 +1373,9 @@ If there is an error, it will be of type *PathError.
 				
 			
 				
-				<h3 id="File.Chmod">func (*File) <a href="http://localhost:9090/src/os/file_posix.go?s=1532:1573#L49">Chmod</a></h3>
+				<h3 id="File.Chmod">func (*File) <a href="http://localhost:9090/src/os/file_posix.go?s=1532:1573#L49">Chmod</a>
+					<a class="permalink" href="index.html#File.Chmod">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Chmod(mode <a href="index.html#FileMode">FileMode</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Chmod changes the mode of the file to mode.
@@ -1281,7 +1387,9 @@ If there is an error, it will be of type *PathError.
 				
 			
 				
-				<h3 id="File.Chown">func (*File) <a href="http://localhost:9090/src/os/file_posix.go?s=2557:2597#L81">Chown</a></h3>
+				<h3 id="File.Chown">func (*File) <a href="http://localhost:9090/src/os/file_posix.go?s=2557:2597#L81">Chown</a>
+					<a class="permalink" href="index.html#File.Chown">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Chown(uid, gid <a href="../builtin/index.html#int">int</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Chown changes the numeric uid and gid of the named file.
@@ -1293,7 +1401,9 @@ If there is an error, it will be of type *PathError.
 				
 			
 				
-				<h3 id="File.Close">func (*File) <a href="http://localhost:9090/src/os/file_unix.go?s=3525:3553#L118">Close</a></h3>
+				<h3 id="File.Close">func (*File) <a href="http://localhost:9090/src/os/file_unix.go?s=3522:3550#L118">Close</a>
+					<a class="permalink" href="index.html#File.Close">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Close() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the File, rendering it unusable for I/O.
@@ -1305,7 +1415,9 @@ It returns an error, if any.
 				
 			
 				
-				<h3 id="File.Fd">func (*File) <a href="http://localhost:9090/src/os/file_unix.go?s=1100:1127#L33">Fd</a></h3>
+				<h3 id="File.Fd">func (*File) <a href="http://localhost:9090/src/os/file_unix.go?s=1100:1127#L33">Fd</a>
+					<a class="permalink" href="index.html#File.Fd">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Fd() <a href="../builtin/index.html#uintptr">uintptr</a></pre>
 				<p>
 Fd returns the integer Unix file descriptor referencing the open file.
@@ -1317,7 +1429,9 @@ The file descriptor is valid only until f.Close is called or f is garbage collec
 				
 			
 				
-				<h3 id="File.Name">func (*File) <a href="http://localhost:9090/src/os/file.go?s=1531:1559#L35">Name</a></h3>
+				<h3 id="File.Name">func (*File) <a href="http://localhost:9090/src/os/file.go?s=1531:1559#L35">Name</a>
+					<a class="permalink" href="index.html#File.Name">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Name() <a href="../builtin/index.html#string">string</a></pre>
 				<p>
 Name returns the name of the file as presented to Open.
@@ -1328,7 +1442,9 @@ Name returns the name of the file as presented to Open.
 				
 			
 				
-				<h3 id="File.Read">func (*File) <a href="http://localhost:9090/src/os/file.go?s=3218:3266#L81">Read</a></h3>
+				<h3 id="File.Read">func (*File) <a href="http://localhost:9090/src/os/file.go?s=3461:3509#L87">Read</a>
+					<a class="permalink" href="index.html#File.Read">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Read(b []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Read reads up to len(b) bytes from the File.
@@ -1341,7 +1457,9 @@ EOF is signaled by a zero count with err set to io.EOF.
 				
 			
 				
-				<h3 id="File.ReadAt">func (*File) <a href="http://localhost:9090/src/os/file.go?s=3697:3758#L99">ReadAt</a></h3>
+				<h3 id="File.ReadAt">func (*File) <a href="http://localhost:9090/src/os/file.go?s=3940:4001#L105">ReadAt</a>
+					<a class="permalink" href="index.html#File.ReadAt">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) ReadAt(b []<a href="../builtin/index.html#byte">byte</a>, off <a href="../builtin/index.html#int64">int64</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 ReadAt reads len(b) bytes from the File starting at byte offset off.
@@ -1355,8 +1473,10 @@ At end of file, that error is io.EOF.
 				
 			
 				
-				<h3 id="File.Readdir">func (*File) <a href="http://localhost:9090/src/os/doc.go?s=3941:3997#L105">Readdir</a></h3>
-				<pre>func (f *<a href="index.html#File">File</a>) Readdir(n <a href="../builtin/index.html#int">int</a>) (fi []<a href="index.html#FileInfo">FileInfo</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
+				<h3 id="File.Readdir">func (*File) <a href="http://localhost:9090/src/os/doc.go?s=3939:3988#L105">Readdir</a>
+					<a class="permalink" href="index.html#File.Readdir">&#xb6;</a>
+				</h3>
+				<pre>func (f *<a href="index.html#File">File</a>) Readdir(n <a href="../builtin/index.html#int">int</a>) ([]<a href="index.html#FileInfo">FileInfo</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Readdir reads the contents of the directory associated with file and
 returns a slice of up to n FileInfo values, as would be returned
@@ -1382,7 +1502,9 @@ and a non-nil error.
 				
 			
 				
-				<h3 id="File.Readdirnames">func (*File) <a href="http://localhost:9090/src/os/doc.go?s=4713:4775#L124">Readdirnames</a></h3>
+				<h3 id="File.Readdirnames">func (*File) <a href="http://localhost:9090/src/os/doc.go?s=4704:4766#L124">Readdirnames</a>
+					<a class="permalink" href="index.html#File.Readdirnames">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Readdirnames(n <a href="../builtin/index.html#int">int</a>) (names []<a href="../builtin/index.html#string">string</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Readdirnames reads and returns a slice of names from the directory f.
@@ -1406,7 +1528,9 @@ a non-nil error.
 				
 			
 				
-				<h3 id="File.Seek">func (*File) <a href="http://localhost:9090/src/os/file.go?s=5263:5331#L167">Seek</a></h3>
+				<h3 id="File.Seek">func (*File) <a href="http://localhost:9090/src/os/file.go?s=5506:5574#L173">Seek</a>
+					<a class="permalink" href="index.html#File.Seek">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Seek(offset <a href="../builtin/index.html#int64">int64</a>, whence <a href="../builtin/index.html#int">int</a>) (ret <a href="../builtin/index.html#int64">int64</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Seek sets the offset for the next Read or Write on file to offset, interpreted
@@ -1421,7 +1545,9 @@ The behavior of Seek on a file opened with O_APPEND is not specified.
 				
 			
 				
-				<h3 id="File.Stat">func (*File) <a href="http://localhost:9090/src/os/file_unix.go?s=4060:4099#L142">Stat</a></h3>
+				<h3 id="File.Stat">func (*File) <a href="http://localhost:9090/src/os/file_unix.go?s=4057:4096#L142">Stat</a>
+					<a class="permalink" href="index.html#File.Stat">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Stat() (<a href="index.html#FileInfo">FileInfo</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Stat returns the FileInfo structure describing file.
@@ -1433,7 +1559,9 @@ If there is an error, it will be of type *PathError.
 				
 			
 				
-				<h3 id="File.Sync">func (*File) <a href="http://localhost:9090/src/os/file_posix.go?s=3250:3277#L107">Sync</a></h3>
+				<h3 id="File.Sync">func (*File) <a href="http://localhost:9090/src/os/file_posix.go?s=3250:3277#L107">Sync</a>
+					<a class="permalink" href="index.html#File.Sync">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Sync() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Sync commits the current contents of the file to stable storage.
@@ -1446,7 +1574,9 @@ of recently written data to disk.
 				
 			
 				
-				<h3 id="File.Truncate">func (*File) <a href="http://localhost:9090/src/os/file_posix.go?s=2884:2925#L94">Truncate</a></h3>
+				<h3 id="File.Truncate">func (*File) <a href="http://localhost:9090/src/os/file_posix.go?s=2884:2925#L94">Truncate</a>
+					<a class="permalink" href="index.html#File.Truncate">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Truncate(size <a href="../builtin/index.html#int64">int64</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Truncate changes the size of the file.
@@ -1459,7 +1589,9 @@ If there is an error, it will be of type *PathError.
 				
 			
 				
-				<h3 id="File.Write">func (*File) <a href="http://localhost:9090/src/os/file.go?s=4174:4223#L122">Write</a></h3>
+				<h3 id="File.Write">func (*File) <a href="http://localhost:9090/src/os/file.go?s=4417:4466#L128">Write</a>
+					<a class="permalink" href="index.html#File.Write">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Write(b []<a href="../builtin/index.html#byte">byte</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Write writes len(b) bytes to the File.
@@ -1472,7 +1604,9 @@ Write returns a non-nil error when n != len(b).
 				
 			
 				
-				<h3 id="File.WriteAt">func (*File) <a href="http://localhost:9090/src/os/file.go?s=4640:4702#L145">WriteAt</a></h3>
+				<h3 id="File.WriteAt">func (*File) <a href="http://localhost:9090/src/os/file.go?s=4883:4945#L151">WriteAt</a>
+					<a class="permalink" href="index.html#File.WriteAt">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) WriteAt(b []<a href="../builtin/index.html#byte">byte</a>, off <a href="../builtin/index.html#int64">int64</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 WriteAt writes len(b) bytes to the File starting at byte offset off.
@@ -1485,7 +1619,9 @@ WriteAt returns a non-nil error when n != len(b).
 				
 			
 				
-				<h3 id="File.WriteString">func (*File) <a href="http://localhost:9090/src/os/file.go?s=5653:5708#L183">WriteString</a></h3>
+				<h3 id="File.WriteString">func (*File) <a href="http://localhost:9090/src/os/file.go?s=5896:5951#L189">WriteString</a>
+					<a class="permalink" href="index.html#File.WriteString">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) WriteString(s <a href="../builtin/index.html#string">string</a>) (n <a href="../builtin/index.html#int">int</a>, err <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 WriteString is like Write, but writes the contents of string s rather than
@@ -1499,7 +1635,9 @@ a slice of bytes.
 		
 			
 			
-			<h2 id="FileInfo">type <a href="http://localhost:9090/src/os/types.go?s=391:752#L6">FileInfo</a></h2>
+			<h2 id="FileInfo">type <a href="http://localhost:9090/src/os/types.go?s=391:752#L6">FileInfo</a>
+				<a class="permalink" href="index.html#FileInfo">&#xb6;</a>
+			</h2>
 			<pre>type FileInfo interface {
     Name() <a href="../builtin/index.html#string">string</a>       <span class="comment">// base name of the file</span>
     Size() <a href="../builtin/index.html#int64">int64</a>        <span class="comment">// length in bytes for regular files; system-dependent for others</span>
@@ -1523,12 +1661,14 @@ A FileInfo describes a file and is returned by Stat and Lstat.
 
 			
 				
-				<h3 id="Lstat">func <a href="http://localhost:9090/src/os/file_unix.go?s=4885:4926#L171">Lstat</a></h3>
+				<h3 id="Lstat">func <a href="http://localhost:9090/src/os/file_unix.go?s=4881:4922#L171">Lstat</a>
+					<a class="permalink" href="index.html#Lstat">&#xb6;</a>
+				</h3>
 				<pre>func Lstat(name <a href="../builtin/index.html#string">string</a>) (<a href="index.html#FileInfo">FileInfo</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Lstat returns a FileInfo describing the named file.
 If the file is a symbolic link, the returned FileInfo
-describes the symbolic link.  Lstat makes no attempt to follow the link.
+describes the symbolic link. Lstat makes no attempt to follow the link.
 If there is an error, it will be of type *PathError.
 </p>
 
@@ -1536,7 +1676,9 @@ If there is an error, it will be of type *PathError.
 				
 			
 				
-				<h3 id="Stat">func <a href="http://localhost:9090/src/os/file_unix.go?s=4429:4469#L157">Stat</a></h3>
+				<h3 id="Stat">func <a href="http://localhost:9090/src/os/file_unix.go?s=4426:4466#L157">Stat</a>
+					<a class="permalink" href="index.html#Stat">&#xb6;</a>
+				</h3>
 				<pre>func Stat(name <a href="../builtin/index.html#string">string</a>) (<a href="index.html#FileInfo">FileInfo</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Stat returns a FileInfo describing the named file.
@@ -1551,13 +1693,15 @@ If there is an error, it will be of type *PathError.
 		
 			
 			
-			<h2 id="FileMode">type <a href="http://localhost:9090/src/os/types.go?s=1044:1064#L20">FileMode</a></h2>
+			<h2 id="FileMode">type <a href="http://localhost:9090/src/os/types.go?s=1043:1063#L20">FileMode</a>
+				<a class="permalink" href="index.html#FileMode">&#xb6;</a>
+			</h2>
 			<pre>type FileMode <a href="../builtin/index.html#uint32">uint32</a></pre>
 			<p>
 A FileMode represents a file&#39;s mode and permission bits.
 The bits have the same definition on all systems, so that
 information about files can be moved from one system
-to another portably.  Not all bits apply to all systems.
+to another portably. Not all bits apply to all systems.
 The only required bit is ModeDir for directories.
 </p>
 
@@ -1604,7 +1748,9 @@ changed, although new bits might be added.
 
 			
 				
-				<h3 id="FileMode.IsDir">func (FileMode) <a href="http://localhost:9090/src/os/types.go?s=3075:3105#L77">IsDir</a></h3>
+				<h3 id="FileMode.IsDir">func (FileMode) <a href="http://localhost:9090/src/os/types.go?s=3074:3104#L77">IsDir</a>
+					<a class="permalink" href="index.html#FileMode.IsDir">&#xb6;</a>
+				</h3>
 				<pre>func (m <a href="index.html#FileMode">FileMode</a>) IsDir() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsDir reports whether m describes a directory.
@@ -1616,7 +1762,9 @@ That is, it tests for the ModeDir bit being set in m.
 				
 			
 				
-				<h3 id="FileMode.IsRegular">func (FileMode) <a href="http://localhost:9090/src/os/types.go?s=3244:3278#L83">IsRegular</a></h3>
+				<h3 id="FileMode.IsRegular">func (FileMode) <a href="http://localhost:9090/src/os/types.go?s=3243:3277#L83">IsRegular</a>
+					<a class="permalink" href="index.html#FileMode.IsRegular">&#xb6;</a>
+				</h3>
 				<pre>func (m <a href="index.html#FileMode">FileMode</a>) IsRegular() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsRegular reports whether m describes a regular file.
@@ -1628,7 +1776,9 @@ That is, it tests that no mode type bits are set.
 				
 			
 				
-				<h3 id="FileMode.Perm">func (FileMode) <a href="http://localhost:9090/src/os/types.go?s=3355:3388#L88">Perm</a></h3>
+				<h3 id="FileMode.Perm">func (FileMode) <a href="http://localhost:9090/src/os/types.go?s=3354:3387#L88">Perm</a>
+					<a class="permalink" href="index.html#FileMode.Perm">&#xb6;</a>
+				</h3>
 				<pre>func (m <a href="index.html#FileMode">FileMode</a>) Perm() <a href="index.html#FileMode">FileMode</a></pre>
 				<p>
 Perm returns the Unix permission bits in m.
@@ -1639,7 +1789,9 @@ Perm returns the Unix permission bits in m.
 				
 			
 				
-				<h3 id="FileMode.String">func (FileMode) <a href="http://localhost:9090/src/os/types.go?s=2563:2596#L49">String</a></h3>
+				<h3 id="FileMode.String">func (FileMode) <a href="http://localhost:9090/src/os/types.go?s=2562:2595#L49">String</a>
+					<a class="permalink" href="index.html#FileMode.String">&#xb6;</a>
+				</h3>
 				<pre>func (m <a href="index.html#FileMode">FileMode</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1649,7 +1801,9 @@ Perm returns the Unix permission bits in m.
 		
 			
 			
-			<h2 id="LinkError">type <a href="http://localhost:9090/src/os/file.go?s=2872:2944#L67">LinkError</a></h2>
+			<h2 id="LinkError">type <a href="http://localhost:9090/src/os/file.go?s=3115:3187#L73">LinkError</a>
+				<a class="permalink" href="index.html#LinkError">&#xb6;</a>
+			</h2>
 			<pre>type LinkError struct {
     Op  <a href="../builtin/index.html#string">string</a>
     Old <a href="../builtin/index.html#string">string</a>
@@ -1674,7 +1828,9 @@ system call and the paths that caused it.
 
 			
 				
-				<h3 id="LinkError.Error">func (*LinkError) <a href="http://localhost:9090/src/os/file.go?s=2946:2980#L74">Error</a></h3>
+				<h3 id="LinkError.Error">func (*LinkError) <a href="http://localhost:9090/src/os/file.go?s=3189:3223#L80">Error</a>
+					<a class="permalink" href="index.html#LinkError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#LinkError">LinkError</a>) Error() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1684,7 +1840,9 @@ system call and the paths that caused it.
 		
 			
 			
-			<h2 id="PathError">type <a href="http://localhost:9090/src/os/error.go?s=602:665#L10">PathError</a></h2>
+			<h2 id="PathError">type <a href="http://localhost:9090/src/os/error.go?s=602:665#L10">PathError</a>
+				<a class="permalink" href="index.html#PathError">&#xb6;</a>
+			</h2>
 			<pre>type PathError struct {
     Op   <a href="../builtin/index.html#string">string</a>
     Path <a href="../builtin/index.html#string">string</a>
@@ -1707,7 +1865,9 @@ PathError records an error and the operation and file path that caused it.
 
 			
 				
-				<h3 id="PathError.Error">func (*PathError) <a href="http://localhost:9090/src/os/error.go?s=667:701#L16">Error</a></h3>
+				<h3 id="PathError.Error">func (*PathError) <a href="http://localhost:9090/src/os/error.go?s=667:701#L16">Error</a>
+					<a class="permalink" href="index.html#PathError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#PathError">PathError</a>) Error() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1717,7 +1877,9 @@ PathError records an error and the operation and file path that caused it.
 		
 			
 			
-			<h2 id="ProcAttr">type <a href="http://localhost:9090/src/os/exec.go?s=863:1757#L26">ProcAttr</a></h2>
+			<h2 id="ProcAttr">type <a href="http://localhost:9090/src/os/exec.go?s=940:1831#L28">ProcAttr</a>
+				<a class="permalink" href="index.html#ProcAttr">&#xb6;</a>
+			</h2>
 			<pre>type ProcAttr struct {
     <span class="comment">// If Dir is non-empty, the child changes into the directory before</span>
     <span class="comment">// creating the process.</span>
@@ -1726,10 +1888,10 @@ PathError records an error and the operation and file path that caused it.
     <span class="comment">// new process in the form returned by Environ.</span>
     <span class="comment">// If it is nil, the result of Environ will be used.</span>
     Env []<a href="../builtin/index.html#string">string</a>
-    <span class="comment">// Files specifies the open files inherited by the new process.  The</span>
+    <span class="comment">// Files specifies the open files inherited by the new process. The</span>
     <span class="comment">// first three entries correspond to standard input, standard output, and</span>
-    <span class="comment">// standard error.  An implementation may support additional entries,</span>
-    <span class="comment">// depending on the underlying operating system.  A nil entry corresponds</span>
+    <span class="comment">// standard error. An implementation may support additional entries,</span>
+    <span class="comment">// depending on the underlying operating system. A nil entry corresponds</span>
     <span class="comment">// to that file being closed when the process starts.</span>
     Files []*<a href="index.html#File">File</a>
 
@@ -1759,7 +1921,9 @@ started by StartProcess.
 		
 			
 			
-			<h2 id="Process">type <a href="http://localhost:9090/src/os/exec.go?s=296:468#L4">Process</a></h2>
+			<h2 id="Process">type <a href="http://localhost:9090/src/os/exec.go?s=304:545#L5">Process</a>
+				<a class="permalink" href="index.html#Process">&#xb6;</a>
+			</h2>
 			<pre>type Process struct {
     Pid <a href="../builtin/index.html#int">int</a>
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1779,7 +1943,9 @@ Process stores the information about a process created by StartProcess.
 
 			
 				
-				<h3 id="FindProcess">func <a href="http://localhost:9090/src/os/doc.go?s=492:535#L6">FindProcess</a></h3>
+				<h3 id="FindProcess">func <a href="http://localhost:9090/src/os/doc.go?s=492:535#L6">FindProcess</a>
+					<a class="permalink" href="index.html#FindProcess">&#xb6;</a>
+				</h3>
 				<pre>func FindProcess(pid <a href="../builtin/index.html#int">int</a>) (*<a href="index.html#Process">Process</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 FindProcess looks for a running process by its pid.
@@ -1797,7 +1963,9 @@ for the given pid, regardless of whether the process exists.
 				
 			
 				
-				<h3 id="StartProcess">func <a href="http://localhost:9090/src/os/doc.go?s=844:923#L17">StartProcess</a></h3>
+				<h3 id="StartProcess">func <a href="http://localhost:9090/src/os/doc.go?s=844:923#L17">StartProcess</a>
+					<a class="permalink" href="index.html#StartProcess">&#xb6;</a>
+				</h3>
 				<pre>func StartProcess(name <a href="../builtin/index.html#string">string</a>, argv []<a href="../builtin/index.html#string">string</a>, attr *<a href="index.html#ProcAttr">ProcAttr</a>) (*<a href="index.html#Process">Process</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 StartProcess starts a new process with the program, arguments and attributes
@@ -1817,7 +1985,9 @@ If there is an error, it will be of type *PathError.
 
 			
 				
-				<h3 id="Process.Kill">func (*Process) <a href="http://localhost:9090/src/os/doc.go?s=1231:1261#L29">Kill</a></h3>
+				<h3 id="Process.Kill">func (*Process) <a href="http://localhost:9090/src/os/doc.go?s=1231:1261#L29">Kill</a>
+					<a class="permalink" href="index.html#Process.Kill">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Process">Process</a>) Kill() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Kill causes the Process to exit immediately.
@@ -1828,7 +1998,9 @@ Kill causes the Process to exit immediately.
 				
 			
 				
-				<h3 id="Process.Release">func (*Process) <a href="http://localhost:9090/src/os/doc.go?s=1124:1157#L24">Release</a></h3>
+				<h3 id="Process.Release">func (*Process) <a href="http://localhost:9090/src/os/doc.go?s=1124:1157#L24">Release</a>
+					<a class="permalink" href="index.html#Process.Release">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Process">Process</a>) Release() <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Release releases any resources associated with the Process p,
@@ -1841,7 +2013,9 @@ Release only needs to be called if Wait is not.
 				
 			
 				
-				<h3 id="Process.Signal">func (*Process) <a href="http://localhost:9090/src/os/doc.go?s=1739:1781#L44">Signal</a></h3>
+				<h3 id="Process.Signal">func (*Process) <a href="http://localhost:9090/src/os/doc.go?s=1739:1781#L44">Signal</a>
+					<a class="permalink" href="index.html#Process.Signal">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Process">Process</a>) Signal(sig <a href="index.html#Signal">Signal</a>) <a href="../builtin/index.html#error">error</a></pre>
 				<p>
 Signal sends a signal to the Process.
@@ -1853,7 +2027,9 @@ Sending Interrupt on Windows is not implemented.
 				
 			
 				
-				<h3 id="Process.Wait">func (*Process) <a href="http://localhost:9090/src/os/doc.go?s=1576:1623#L38">Wait</a></h3>
+				<h3 id="Process.Wait">func (*Process) <a href="http://localhost:9090/src/os/doc.go?s=1576:1623#L38">Wait</a>
+					<a class="permalink" href="index.html#Process.Wait">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Process">Process</a>) Wait() (*<a href="index.html#ProcessState">ProcessState</a>, <a href="../builtin/index.html#error">error</a>)</pre>
 				<p>
 Wait waits for the Process to exit, and then returns a
@@ -1870,7 +2046,9 @@ of the current process or an error will be returned.
 		
 			
 			
-			<h2 id="ProcessState">type <a href="http://localhost:9090/src/os/exec_posix.go?s=1457:1617#L47">ProcessState</a></h2>
+			<h2 id="ProcessState">type <a href="http://localhost:9090/src/os/exec_posix.go?s=1456:1616#L47">ProcessState</a>
+				<a class="permalink" href="index.html#ProcessState">&#xb6;</a>
+			</h2>
 			<pre>type ProcessState struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -1891,7 +2069,9 @@ ProcessState stores information about a process, as reported by Wait.
 
 			
 				
-				<h3 id="ProcessState.Exited">func (*ProcessState) <a href="http://localhost:9090/src/os/doc.go?s=2171:2207#L59">Exited</a></h3>
+				<h3 id="ProcessState.Exited">func (*ProcessState) <a href="http://localhost:9090/src/os/doc.go?s=2171:2207#L59">Exited</a>
+					<a class="permalink" href="index.html#ProcessState.Exited">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#ProcessState">ProcessState</a>) Exited() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Exited reports whether the program has exited.
@@ -1902,7 +2082,9 @@ Exited reports whether the program has exited.
 				
 			
 				
-				<h3 id="ProcessState.Pid">func (*ProcessState) <a href="http://localhost:9090/src/os/exec_posix.go?s=1672:1704#L54">Pid</a></h3>
+				<h3 id="ProcessState.Pid">func (*ProcessState) <a href="http://localhost:9090/src/os/exec_posix.go?s=1671:1703#L54">Pid</a>
+					<a class="permalink" href="index.html#ProcessState.Pid">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#ProcessState">ProcessState</a>) Pid() <a href="../builtin/index.html#int">int</a></pre>
 				<p>
 Pid returns the process id of the exited process.
@@ -1913,7 +2095,9 @@ Pid returns the process id of the exited process.
 				
 			
 				
-				<h3 id="ProcessState.String">func (*ProcessState) <a href="http://localhost:9090/src/os/exec_posix.go?s=2001:2039#L74">String</a></h3>
+				<h3 id="ProcessState.String">func (*ProcessState) <a href="http://localhost:9090/src/os/exec_posix.go?s=2000:2038#L74">String</a>
+					<a class="permalink" href="index.html#ProcessState.String">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#ProcessState">ProcessState</a>) String() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1921,7 +2105,9 @@ Pid returns the process id of the exited process.
 				
 			
 				
-				<h3 id="ProcessState.Success">func (*ProcessState) <a href="http://localhost:9090/src/os/doc.go?s=2331:2368#L65">Success</a></h3>
+				<h3 id="ProcessState.Success">func (*ProcessState) <a href="http://localhost:9090/src/os/doc.go?s=2331:2368#L65">Success</a>
+					<a class="permalink" href="index.html#ProcessState.Success">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#ProcessState">ProcessState</a>) Success() <a href="../builtin/index.html#bool">bool</a></pre>
 				<p>
 Success reports whether the program exited successfully,
@@ -1933,11 +2119,13 @@ such as with exit status 0 on Unix.
 				
 			
 				
-				<h3 id="ProcessState.Sys">func (*ProcessState) <a href="http://localhost:9090/src/os/doc.go?s=2576:2616#L72">Sys</a></h3>
+				<h3 id="ProcessState.Sys">func (*ProcessState) <a href="http://localhost:9090/src/os/doc.go?s=2575:2615#L72">Sys</a>
+					<a class="permalink" href="index.html#ProcessState.Sys">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#ProcessState">ProcessState</a>) Sys() interface{}</pre>
 				<p>
 Sys returns system-dependent exit information about
-the process.  Convert it to the appropriate underlying
+the process. Convert it to the appropriate underlying
 type, such as syscall.WaitStatus on Unix, to access its contents.
 </p>
 
@@ -1946,11 +2134,13 @@ type, such as syscall.WaitStatus on Unix, to access its contents.
 				
 			
 				
-				<h3 id="ProcessState.SysUsage">func (*ProcessState) <a href="http://localhost:9090/src/os/doc.go?s=2938:2983#L81">SysUsage</a></h3>
+				<h3 id="ProcessState.SysUsage">func (*ProcessState) <a href="http://localhost:9090/src/os/doc.go?s=2936:2981#L81">SysUsage</a>
+					<a class="permalink" href="index.html#ProcessState.SysUsage">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#ProcessState">ProcessState</a>) SysUsage() interface{}</pre>
 				<p>
 SysUsage returns system-dependent resource usage information about
-the exited process.  Convert it to the appropriate underlying
+the exited process. Convert it to the appropriate underlying
 type, such as *syscall.Rusage on Unix, to access its contents.
 (On Unix, *syscall.Rusage matches struct rusage as defined in the
 getrusage(2) manual page.)
@@ -1961,7 +2151,9 @@ getrusage(2) manual page.)
 				
 			
 				
-				<h3 id="ProcessState.SystemTime">func (*ProcessState) <a href="http://localhost:9090/src/os/doc.go?s=2043:2092#L54">SystemTime</a></h3>
+				<h3 id="ProcessState.SystemTime">func (*ProcessState) <a href="http://localhost:9090/src/os/doc.go?s=2043:2092#L54">SystemTime</a>
+					<a class="permalink" href="index.html#ProcessState.SystemTime">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#ProcessState">ProcessState</a>) SystemTime() <a href="../time/index.html">time</a>.<a href="../time/index.html#Duration">Duration</a></pre>
 				<p>
 SystemTime returns the system CPU time of the exited process and its children.
@@ -1972,7 +2164,9 @@ SystemTime returns the system CPU time of the exited process and its children.
 				
 			
 				
-				<h3 id="ProcessState.UserTime">func (*ProcessState) <a href="http://localhost:9090/src/os/doc.go?s=1887:1934#L49">UserTime</a></h3>
+				<h3 id="ProcessState.UserTime">func (*ProcessState) <a href="http://localhost:9090/src/os/doc.go?s=1887:1934#L49">UserTime</a>
+					<a class="permalink" href="index.html#ProcessState.UserTime">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#ProcessState">ProcessState</a>) UserTime() <a href="../time/index.html">time</a>.<a href="../time/index.html#Duration">Duration</a></pre>
 				<p>
 UserTime returns the user CPU time of the exited process and its children.
@@ -1985,7 +2179,9 @@ UserTime returns the user CPU time of the exited process and its children.
 		
 			
 			
-			<h2 id="Signal">type <a href="http://localhost:9090/src/os/exec.go?s=1913:2004#L51">Signal</a></h2>
+			<h2 id="Signal">type <a href="http://localhost:9090/src/os/exec.go?s=1987:2078#L53">Signal</a>
+				<a class="permalink" href="index.html#Signal">&#xb6;</a>
+			</h2>
 			<pre>type Signal interface {
     String() <a href="../builtin/index.html#string">string</a>
     Signal() <span class="comment">// to distinguish from other Stringers</span>
@@ -2022,7 +2218,9 @@ the process to exit).
 		
 			
 			
-			<h2 id="SyscallError">type <a href="http://localhost:9090/src/os/error.go?s=819:878#L19">SyscallError</a></h2>
+			<h2 id="SyscallError">type <a href="http://localhost:9090/src/os/error.go?s=819:878#L19">SyscallError</a>
+				<a class="permalink" href="index.html#SyscallError">&#xb6;</a>
+			</h2>
 			<pre>type SyscallError struct {
     Syscall <a href="../builtin/index.html#string">string</a>
     Err     <a href="../builtin/index.html#error">error</a>
@@ -2044,7 +2242,9 @@ SyscallError records an error from a specific system call.
 
 			
 				
-				<h3 id="SyscallError.Error">func (*SyscallError) <a href="http://localhost:9090/src/os/error.go?s=880:917#L24">Error</a></h3>
+				<h3 id="SyscallError.Error">func (*SyscallError) <a href="http://localhost:9090/src/os/error.go?s=880:917#L24">Error</a>
+					<a class="permalink" href="index.html#SyscallError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#SyscallError">SyscallError</a>) Error() <a href="../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2123,7 +2323,7 @@ SyscallError records an error from a specific system call.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -2141,6 +2341,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

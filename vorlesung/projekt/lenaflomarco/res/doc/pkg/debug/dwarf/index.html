@@ -202,6 +202,9 @@ executable files, as defined in the DWARF 2.0 Standard at
 					<dd>&nbsp; &nbsp; <a href="index.html#Data.LineReader">func (d *Data) LineReader(cu *Entry) (*LineReader, error)</a></dd>
 				
 					
+					<dd>&nbsp; &nbsp; <a href="index.html#Data.Ranges">func (d *Data) Ranges(e *Entry) ([][2]uint64, error)</a></dd>
+				
+					
 					<dd>&nbsp; &nbsp; <a href="index.html#Data.Reader">func (d *Data) Reader() *Reader</a></dd>
 				
 					
@@ -342,6 +345,9 @@ executable files, as defined in the DWARF 2.0 Standard at
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#Reader.Seek">func (r *Reader) Seek(off Offset)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Reader.SeekPC">func (r *Reader) SeekPC(pc uint64) (*Entry, error)</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#Reader.SkipChildren">func (r *Reader) SkipChildren()</a></dd>
@@ -501,7 +507,9 @@ seek PC is not covered by any entry in the line table.
 		
 			
 			
-			<h2 id="AddrType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1891:1926#L77">AddrType</a></h2>
+			<h2 id="AddrType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1890:1925#L77">AddrType</a>
+				<a class="permalink" href="index.html#AddrType">&#xb6;</a>
+			</h2>
 			<pre>type AddrType struct {
     <a href="index.html#BasicType">BasicType</a>
 }</pre>
@@ -524,7 +532,9 @@ An AddrType represents a machine address type.
 		
 			
 			
-			<h2 id="ArrayType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2420:2615#L100">ArrayType</a></h2>
+			<h2 id="ArrayType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2419:2614#L100">ArrayType</a>
+				<a class="permalink" href="index.html#ArrayType">&#xb6;</a>
+			</h2>
 			<pre>type ArrayType struct {
     <a href="index.html#CommonType">CommonType</a>
     Type          <a href="index.html#Type">Type</a>
@@ -548,7 +558,9 @@ An ArrayType represents a fixed size array type.
 
 			
 				
-				<h3 id="ArrayType.Size">func (*ArrayType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2727:2759#L111">Size</a></h3>
+				<h3 id="ArrayType.Size">func (*ArrayType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2726:2758#L111">Size</a>
+					<a class="permalink" href="index.html#ArrayType.Size">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#ArrayType">ArrayType</a>) Size() <a href="../../builtin/index.html#int64">int64</a></pre>
 				
 				
@@ -556,7 +568,9 @@ An ArrayType represents a fixed size array type.
 				
 			
 				
-				<h3 id="ArrayType.String">func (*ArrayType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2617:2652#L107">String</a></h3>
+				<h3 id="ArrayType.String">func (*ArrayType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2616:2651#L107">String</a>
+					<a class="permalink" href="index.html#ArrayType.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#ArrayType">ArrayType</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -566,7 +580,9 @@ An ArrayType represents a fixed size array type.
 		
 			
 			
-			<h2 id="Attr">type <a href="http://localhost:9090/src/debug/dwarf/const.go?s=275:291#L2">Attr</a></h2>
+			<h2 id="Attr">type <a href="http://localhost:9090/src/debug/dwarf/const.go?s=274:290#L2">Attr</a>
+				<a class="permalink" href="index.html#Attr">&#xb6;</a>
+			</h2>
 			<pre>type Attr <a href="../../builtin/index.html#uint32">uint32</a></pre>
 			<p>
 An Attr identifies the attribute type in a DWARF Entry&#39;s Field.
@@ -661,7 +677,9 @@ An Attr identifies the attribute type in a DWARF Entry&#39;s Field.
 
 			
 				
-				<h3 id="Attr.GoString">func (Attr) <a href="http://localhost:9090/src/debug/dwarf/const.go?s=5234:5265#L164">GoString</a></h3>
+				<h3 id="Attr.GoString">func (Attr) <a href="http://localhost:9090/src/debug/dwarf/const.go?s=5233:5264#L164">GoString</a>
+					<a class="permalink" href="index.html#Attr.GoString">&#xb6;</a>
+				</h3>
 				<pre>func (a <a href="index.html#Attr">Attr</a>) GoString() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -669,7 +687,9 @@ An Attr identifies the attribute type in a DWARF Entry&#39;s Field.
 				
 			
 				
-				<h3 id="Attr.String">func (Attr) <a href="http://localhost:9090/src/debug/dwarf/const.go?s=5086:5115#L154">String</a></h3>
+				<h3 id="Attr.String">func (Attr) <a href="http://localhost:9090/src/debug/dwarf/const.go?s=5085:5114#L154">String</a>
+					<a class="permalink" href="index.html#Attr.String">&#xb6;</a>
+				</h3>
 				<pre>func (a <a href="index.html#Attr">Attr</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -679,7 +699,9 @@ An Attr identifies the attribute type in a DWARF Entry&#39;s Field.
 		
 			
 			
-			<h2 id="BasicType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1009:1080#L26">BasicType</a></h2>
+			<h2 id="BasicType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1008:1079#L26">BasicType</a>
+				<a class="permalink" href="index.html#BasicType">&#xb6;</a>
+			</h2>
 			<pre>type BasicType struct {
     <a href="index.html#CommonType">CommonType</a>
     BitSize   <a href="../../builtin/index.html#int64">int64</a>
@@ -702,7 +724,9 @@ A BasicType holds fields common to all basic types.
 
 			
 				
-				<h3 id="BasicType.Basic">func (*BasicType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1082:1120#L32">Basic</a></h3>
+				<h3 id="BasicType.Basic">func (*BasicType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1081:1119#L32">Basic</a>
+					<a class="permalink" href="index.html#BasicType.Basic">&#xb6;</a>
+				</h3>
 				<pre>func (b *<a href="index.html#BasicType">BasicType</a>) Basic() *<a href="index.html#BasicType">BasicType</a></pre>
 				
 				
@@ -710,7 +734,9 @@ A BasicType holds fields common to all basic types.
 				
 			
 				
-				<h3 id="BasicType.String">func (*BasicType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1135:1170#L34">String</a></h3>
+				<h3 id="BasicType.String">func (*BasicType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1134:1169#L34">String</a>
+					<a class="permalink" href="index.html#BasicType.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#BasicType">BasicType</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -720,7 +746,9 @@ A BasicType holds fields common to all basic types.
 		
 			
 			
-			<h2 id="BoolType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1804:1839#L72">BoolType</a></h2>
+			<h2 id="BoolType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1803:1838#L72">BoolType</a>
+				<a class="permalink" href="index.html#BoolType">&#xb6;</a>
+			</h2>
 			<pre>type BoolType struct {
     <a href="index.html#BasicType">BasicType</a>
 }</pre>
@@ -743,7 +771,9 @@ A BoolType represents a boolean type.
 		
 			
 			
-			<h2 id="CharType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1276:1311#L42">CharType</a></h2>
+			<h2 id="CharType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1275:1310#L42">CharType</a>
+				<a class="permalink" href="index.html#CharType">&#xb6;</a>
+			</h2>
 			<pre>type CharType struct {
     <a href="index.html#BasicType">BasicType</a>
 }</pre>
@@ -766,10 +796,12 @@ A CharType represents a signed character type.
 		
 			
 			
-			<h2 id="Class">type <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=7391:7405#L250">Class</a></h2>
+			<h2 id="Class">type <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=7391:7405#L250">Class</a>
+				<a class="permalink" href="index.html#Class">&#xb6;</a>
+			</h2>
 			<pre>type Class <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
-A Class is the DWARF 4 class of an attibute value.
+A Class is the DWARF 4 class of an attribute value.
 </p>
 <p>
 In general, a given attribute&#39;s value may take on one of several
@@ -868,7 +900,9 @@ were only defined in DWARF 3.
 
 			
 				
-				<h3 id="Class.GoString">func (Class) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=9466:9498#L321">GoString</a></h3>
+				<h3 id="Class.GoString">func (Class) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=9466:9498#L321">GoString</a>
+					<a class="permalink" href="index.html#Class.GoString">&#xb6;</a>
+				</h3>
 				<pre>func (i <a href="index.html#Class">Class</a>) GoString() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -876,7 +910,9 @@ were only defined in DWARF 3.
 				
 			
 				
-				<h3 id="Class.String">func (Class) <a href="http://localhost:9090/src/debug/dwarf/class_string.go?s=401:431#L1">String</a></h3>
+				<h3 id="Class.String">func (Class) <a href="http://localhost:9090/src/debug/dwarf/class_string.go?s=401:431#L1">String</a>
+					<a class="permalink" href="index.html#Class.String">&#xb6;</a>
+				</h3>
 				<pre>func (i <a href="index.html#Class">Class</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -886,7 +922,9 @@ were only defined in DWARF 3.
 		
 			
 			
-			<h2 id="CommonType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=681:823#L14">CommonType</a></h2>
+			<h2 id="CommonType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=680:822#L14">CommonType</a>
+				<a class="permalink" href="index.html#CommonType">&#xb6;</a>
+			</h2>
 			<pre>type CommonType struct {
     ByteSize <a href="../../builtin/index.html#int64">int64</a>  <span class="comment">// size of value of this type, in bytes</span>
     Name     <a href="../../builtin/index.html#string">string</a> <span class="comment">// name that can be used to refer to type</span>
@@ -910,7 +948,9 @@ the zero value is used.
 
 			
 				
-				<h3 id="CommonType.Common">func (*CommonType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=825:866#L19">Common</a></h3>
+				<h3 id="CommonType.Common">func (*CommonType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=824:865#L19">Common</a>
+					<a class="permalink" href="index.html#CommonType.Common">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#CommonType">CommonType</a>) Common() *<a href="index.html#CommonType">CommonType</a></pre>
 				
 				
@@ -918,7 +958,9 @@ the zero value is used.
 				
 			
 				
-				<h3 id="CommonType.Size">func (*CommonType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=881:914#L21">Size</a></h3>
+				<h3 id="CommonType.Size">func (*CommonType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=880:913#L21">Size</a>
+					<a class="permalink" href="index.html#CommonType.Size">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#CommonType">CommonType</a>) Size() <a href="../../builtin/index.html#int64">int64</a></pre>
 				
 				
@@ -928,7 +970,9 @@ the zero value is used.
 		
 			
 			
-			<h2 id="ComplexType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1723:1761#L67">ComplexType</a></h2>
+			<h2 id="ComplexType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1722:1760#L67">ComplexType</a>
+				<a class="permalink" href="index.html#ComplexType">&#xb6;</a>
+			</h2>
 			<pre>type ComplexType struct {
     <a href="index.html#BasicType">BasicType</a>
 }</pre>
@@ -951,7 +995,9 @@ A ComplexType represents a complex floating point type.
 		
 			
 			
-			<h2 id="Data">type <a href="http://localhost:9090/src/debug/dwarf/open.go?s=511:846#L4">Data</a></h2>
+			<h2 id="Data">type <a href="http://localhost:9090/src/debug/dwarf/open.go?s=510:845#L4">Data</a>
+				<a class="permalink" href="index.html#Data">&#xb6;</a>
+			</h2>
 			<pre>type Data struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -971,7 +1017,9 @@ loaded from an executable file (for example, an ELF or Mach-O executable).
 
 			
 				
-				<h3 id="New">func <a href="http://localhost:9090/src/debug/dwarf/open.go?s=1290:1379#L31">New</a></h3>
+				<h3 id="New">func <a href="http://localhost:9090/src/debug/dwarf/open.go?s=1289:1378#L31">New</a>
+					<a class="permalink" href="index.html#New">&#xb6;</a>
+				</h3>
 				<pre>func New(abbrev, aranges, frame, info, line, pubnames, ranges, str []<a href="../../builtin/index.html#byte">byte</a>) (*<a href="index.html#Data">Data</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 New returns a new Data object initialized from the given parameters.
@@ -991,12 +1039,14 @@ the &#34;.debug_abbrev&#34; section.
 
 			
 				
-				<h3 id="Data.AddTypes">func (*Data) <a href="http://localhost:9090/src/debug/dwarf/open.go?s=2574:2630#L75">AddTypes</a></h3>
+				<h3 id="Data.AddTypes">func (*Data) <a href="http://localhost:9090/src/debug/dwarf/open.go?s=2571:2627#L75">AddTypes</a>
+					<a class="permalink" href="index.html#Data.AddTypes">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#Data">Data</a>) AddTypes(name <a href="../../builtin/index.html#string">string</a>, types []<a href="../../builtin/index.html#byte">byte</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
-AddTypes will add one .debug_types section to the DWARF data.  A
+AddTypes will add one .debug_types section to the DWARF data. A
 typical object with DWARF version 4 debug info will have multiple
-.debug_types sections.  The name is used for error reporting only,
+.debug_types sections. The name is used for error reporting only,
 and serves to distinguish one .debug_types section from another.
 </p>
 
@@ -1005,7 +1055,9 @@ and serves to distinguish one .debug_types section from another.
 				
 			
 				
-				<h3 id="Data.LineReader">func (*Data) <a href="http://localhost:9090/src/debug/dwarf/line.go?s=4441:4498#L127">LineReader</a></h3>
+				<h3 id="Data.LineReader">func (*Data) <a href="http://localhost:9090/src/debug/dwarf/line.go?s=4440:4497#L127">LineReader</a>
+					<a class="permalink" href="index.html#Data.LineReader">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#Data">Data</a>) LineReader(cu *<a href="index.html#Entry">Entry</a>) (*<a href="index.html#LineReader">LineReader</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 LineReader returns a new reader for the line table of compilation
@@ -1020,7 +1072,24 @@ If this compilation unit has no line table, it returns nil, nil.
 				
 			
 				
-				<h3 id="Data.Reader">func (*Data) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=14279:14310#L514">Reader</a></h3>
+				<h3 id="Data.Ranges">func (*Data) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=18373:18425#L674">Ranges</a>
+					<a class="permalink" href="index.html#Data.Ranges">&#xb6;</a>
+				</h3>
+				<pre>func (d *<a href="index.html#Data">Data</a>) Ranges(e *<a href="index.html#Entry">Entry</a>) ([][2]<a href="../../builtin/index.html#uint64">uint64</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
+				<p>
+Ranges returns the PC ranges covered by e, a slice of [low,high) pairs.
+Only some entry types, such as TagCompileUnit or TagSubprogram, have PC
+ranges; for others, this will return nil with no error.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Data.Reader">func (*Data) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=14278:14309#L514">Reader</a>
+					<a class="permalink" href="index.html#Data.Reader">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#Data">Data</a>) Reader() *<a href="index.html#Reader">Reader</a></pre>
 				<p>
 Reader returns a new Reader for Data.
@@ -1032,7 +1101,9 @@ The reader is positioned at byte offset 0 in the DWARF &ldquo;info&rdquo; sectio
 				
 			
 				
-				<h3 id="Data.Type">func (*Data) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=5921:5966#L267">Type</a></h3>
+				<h3 id="Data.Type">func (*Data) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=5920:5965#L267">Type</a>
+					<a class="permalink" href="index.html#Data.Type">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#Data">Data</a>) Type(off <a href="index.html#Offset">Offset</a>) (<a href="index.html#Type">Type</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Type reads the type at off in the DWARF &ldquo;info&rdquo; section.
@@ -1045,7 +1116,9 @@ Type reads the type at off in the DWARF &ldquo;info&rdquo; section.
 		
 			
 			
-			<h2 id="DecodeError">type <a href="http://localhost:9090/src/debug/dwarf/buf.go?s=3364:3436#L174">DecodeError</a></h2>
+			<h2 id="DecodeError">type <a href="http://localhost:9090/src/debug/dwarf/buf.go?s=3352:3424#L174">DecodeError</a>
+				<a class="permalink" href="index.html#DecodeError">&#xb6;</a>
+			</h2>
 			<pre>type DecodeError struct {
     Name   <a href="../../builtin/index.html#string">string</a>
     Offset <a href="index.html#Offset">Offset</a>
@@ -1065,7 +1138,9 @@ Type reads the type at off in the DWARF &ldquo;info&rdquo; section.
 
 			
 				
-				<h3 id="DecodeError.Error">func (DecodeError) <a href="http://localhost:9090/src/debug/dwarf/buf.go?s=3438:3473#L180">Error</a></h3>
+				<h3 id="DecodeError.Error">func (DecodeError) <a href="http://localhost:9090/src/debug/dwarf/buf.go?s=3426:3461#L180">Error</a>
+					<a class="permalink" href="index.html#DecodeError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#DecodeError">DecodeError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1075,7 +1150,9 @@ Type reads the type at off in the DWARF &ldquo;info&rdquo; section.
 		
 			
 			
-			<h2 id="DotDotDotType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=5246:5287#L238">DotDotDotType</a></h2>
+			<h2 id="DotDotDotType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=5245:5286#L238">DotDotDotType</a>
+				<a class="permalink" href="index.html#DotDotDotType">&#xb6;</a>
+			</h2>
 			<pre>type DotDotDotType struct {
     <a href="index.html#CommonType">CommonType</a>
 }</pre>
@@ -1096,7 +1173,9 @@ A DotDotDotType represents the variadic ... function parameter.
 
 			
 				
-				<h3 id="DotDotDotType.String">func (*DotDotDotType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=5289:5328#L242">String</a></h3>
+				<h3 id="DotDotDotType.String">func (*DotDotDotType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=5288:5327#L242">String</a>
+					<a class="permalink" href="index.html#DotDotDotType.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#DotDotDotType">DotDotDotType</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1106,7 +1185,9 @@ A DotDotDotType represents the variadic ... function parameter.
 		
 			
 			
-			<h2 id="Entry">type <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=5377:5564#L200">Entry</a></h2>
+			<h2 id="Entry">type <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=5376:5563#L200">Entry</a>
+				<a class="permalink" href="index.html#Entry">&#xb6;</a>
+			</h2>
 			<pre>type Entry struct {
     Offset   <a href="index.html#Offset">Offset</a> <span class="comment">// offset of Entry in DWARF info</span>
     Tag      <a href="index.html#Tag">Tag</a>    <span class="comment">// tag (kind of Entry)</span>
@@ -1130,7 +1211,9 @@ An entry is a sequence of attribute/value pairs.
 
 			
 				
-				<h3 id="Entry.AttrField">func (*Entry) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=10036:10076#L341">AttrField</a></h3>
+				<h3 id="Entry.AttrField">func (*Entry) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=10036:10076#L341">AttrField</a>
+					<a class="permalink" href="index.html#Entry.AttrField">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#Entry">Entry</a>) AttrField(a <a href="index.html#Attr">Attr</a>) *<a href="index.html#Field">Field</a></pre>
 				<p>
 AttrField returns the Field associated with attribute Attr in
@@ -1142,7 +1225,9 @@ Entry, or nil if there is no such attribute.
 				
 			
 				
-				<h3 id="Entry.Val">func (*Entry) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=9812:9851#L332">Val</a></h3>
+				<h3 id="Entry.Val">func (*Entry) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=9812:9851#L332">Val</a>
+					<a class="permalink" href="index.html#Entry.Val">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#Entry">Entry</a>) Val(a <a href="index.html#Attr">Attr</a>) interface{}</pre>
 				<p>
 Val returns the value associated with attribute Attr in Entry,
@@ -1162,7 +1247,9 @@ the check that the value has the expected dynamic type, as in:
 		
 			
 			
-			<h2 id="EnumType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=4411:4487#L187">EnumType</a></h2>
+			<h2 id="EnumType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=4410:4486#L187">EnumType</a>
+				<a class="permalink" href="index.html#EnumType">&#xb6;</a>
+			</h2>
 			<pre>type EnumType struct {
     <a href="index.html#CommonType">CommonType</a>
     EnumName <a href="../../builtin/index.html#string">string</a>
@@ -1187,7 +1274,9 @@ The only indication of its native integer type is its ByteSize
 
 			
 				
-				<h3 id="EnumType.String">func (*EnumType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=4596:4630#L199">String</a></h3>
+				<h3 id="EnumType.String">func (*EnumType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=4595:4629#L199">String</a>
+					<a class="permalink" href="index.html#EnumType.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#EnumType">EnumType</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1197,7 +1286,9 @@ The only indication of its native integer type is its ByteSize
 		
 			
 			
-			<h2 id="EnumValue">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=4544:4594#L194">EnumValue</a></h2>
+			<h2 id="EnumValue">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=4543:4593#L194">EnumValue</a>
+				<a class="permalink" href="index.html#EnumValue">&#xb6;</a>
+			</h2>
 			<pre>type EnumValue struct {
     Name <a href="../../builtin/index.html#string">string</a>
     Val  <a href="../../builtin/index.html#int64">int64</a>
@@ -1221,7 +1312,9 @@ An EnumValue represents a single enumeration value.
 		
 			
 			
-			<h2 id="Field">type <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=6571:6636#L230">Field</a></h2>
+			<h2 id="Field">type <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=6570:6635#L230">Field</a>
+				<a class="permalink" href="index.html#Field">&#xb6;</a>
+			</h2>
 			<pre>type Field struct {
     Attr  <a href="index.html#Attr">Attr</a>
     Val   interface{}
@@ -1270,7 +1363,9 @@ ClassUnknown.
 		
 			
 			
-			<h2 id="FloatType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1626:1662#L62">FloatType</a></h2>
+			<h2 id="FloatType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1625:1661#L62">FloatType</a>
+				<a class="permalink" href="index.html#FloatType">&#xb6;</a>
+			</h2>
 			<pre>type FloatType struct {
     <a href="index.html#BasicType">BasicType</a>
 }</pre>
@@ -1293,7 +1388,9 @@ A FloatType represents a floating point type.
 		
 			
 			
-			<h2 id="FuncType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=4883:4955#L216">FuncType</a></h2>
+			<h2 id="FuncType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=4882:4954#L216">FuncType</a>
+				<a class="permalink" href="index.html#FuncType">&#xb6;</a>
+			</h2>
 			<pre>type FuncType struct {
     <a href="index.html#CommonType">CommonType</a>
     ReturnType <a href="index.html#Type">Type</a>
@@ -1316,7 +1413,9 @@ A FuncType represents a function type.
 
 			
 				
-				<h3 id="FuncType.String">func (*FuncType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=4957:4991#L222">String</a></h3>
+				<h3 id="FuncType.String">func (*FuncType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=4956:4990#L222">String</a>
+					<a class="permalink" href="index.html#FuncType.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#FuncType">FuncType</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1326,7 +1425,9 @@ A FuncType represents a function type.
 		
 			
 			
-			<h2 id="IntType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1453:1487#L52">IntType</a></h2>
+			<h2 id="IntType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1452:1486#L52">IntType</a>
+				<a class="permalink" href="index.html#IntType">&#xb6;</a>
+			</h2>
 			<pre>type IntType struct {
     <a href="index.html#BasicType">BasicType</a>
 }</pre>
@@ -1349,7 +1450,9 @@ An IntType represents a signed integer type.
 		
 			
 			
-			<h2 id="LineEntry">type <a href="http://localhost:9090/src/debug/dwarf/line.go?s=1340:4004#L38">LineEntry</a></h2>
+			<h2 id="LineEntry">type <a href="http://localhost:9090/src/debug/dwarf/line.go?s=1339:4003#L38">LineEntry</a>
+				<a class="permalink" href="index.html#LineEntry">&#xb6;</a>
+			</h2>
 			<pre>type LineEntry struct {
     <span class="comment">// Address is the program-counter value of a machine</span>
     <span class="comment">// instruction generated by the compiler. This LineEntry</span>
@@ -1446,7 +1549,9 @@ A LineEntry is a row in a DWARF line table.
 		
 			
 			
-			<h2 id="LineFile">type <a href="http://localhost:9090/src/debug/dwarf/line.go?s=4077:4239#L117">LineFile</a></h2>
+			<h2 id="LineFile">type <a href="http://localhost:9090/src/debug/dwarf/line.go?s=4076:4238#L117">LineFile</a>
+				<a class="permalink" href="index.html#LineFile">&#xb6;</a>
+			</h2>
 			<pre>type LineFile struct {
     Name   <a href="../../builtin/index.html#string">string</a>
     Mtime  <a href="../../builtin/index.html#uint64">uint64</a> <span class="comment">// Implementation defined modification time, or 0 if unknown</span>
@@ -1471,7 +1576,9 @@ A LineFile is a source file referenced by a DWARF line table entry.
 		
 			
 			
-			<h2 id="LineReader">type <a href="http://localhost:9090/src/debug/dwarf/line.go?s=563:1291#L9">LineReader</a></h2>
+			<h2 id="LineReader">type <a href="http://localhost:9090/src/debug/dwarf/line.go?s=562:1290#L9">LineReader</a>
+				<a class="permalink" href="index.html#LineReader">&#xb6;</a>
+			</h2>
 			<pre>type LineReader struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -1496,7 +1603,9 @@ LineEntry&#39;s PC. The last entry will have its EndSequence field set.
 
 			
 				
-				<h3 id="LineReader.Next">func (*LineReader) <a href="http://localhost:9090/src/debug/dwarf/line.go?s=9606:9655#L305">Next</a></h3>
+				<h3 id="LineReader.Next">func (*LineReader) <a href="http://localhost:9090/src/debug/dwarf/line.go?s=9605:9654#L305">Next</a>
+					<a class="permalink" href="index.html#LineReader.Next">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#LineReader">LineReader</a>) Next(entry *<a href="index.html#LineEntry">LineEntry</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Next sets *entry to the next row in this line table and moves to
@@ -1513,7 +1622,9 @@ entry.Line may go forward or backward.
 				
 			
 				
-				<h3 id="LineReader.Reset">func (*LineReader) <a href="http://localhost:9090/src/debug/dwarf/line.go?s=14203:14231#L492">Reset</a></h3>
+				<h3 id="LineReader.Reset">func (*LineReader) <a href="http://localhost:9090/src/debug/dwarf/line.go?s=14197:14225#L492">Reset</a>
+					<a class="permalink" href="index.html#LineReader.Reset">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#LineReader">LineReader</a>) Reset()</pre>
 				<p>
 Reset repositions the line table reader at the beginning of the
@@ -1525,7 +1636,9 @@ line table.
 				
 			
 				
-				<h3 id="LineReader.Seek">func (*LineReader) <a href="http://localhost:9090/src/debug/dwarf/line.go?s=13901:13945#L482">Seek</a></h3>
+				<h3 id="LineReader.Seek">func (*LineReader) <a href="http://localhost:9090/src/debug/dwarf/line.go?s=13895:13939#L482">Seek</a>
+					<a class="permalink" href="index.html#LineReader.Seek">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#LineReader">LineReader</a>) Seek(pos <a href="index.html#LineReaderPos">LineReaderPos</a>)</pre>
 				<p>
 Seek restores the line table reader to a position returned by Tell.
@@ -1540,7 +1653,9 @@ line table.
 				
 			
 				
-				<h3 id="LineReader.SeekPC">func (*LineReader) <a href="http://localhost:9090/src/debug/dwarf/line.go?s=15762:15824#L541">SeekPC</a></h3>
+				<h3 id="LineReader.SeekPC">func (*LineReader) <a href="http://localhost:9090/src/debug/dwarf/line.go?s=15756:15818#L541">SeekPC</a>
+					<a class="permalink" href="index.html#LineReader.SeekPC">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#LineReader">LineReader</a>) SeekPC(pc <a href="../../builtin/index.html#uint64">uint64</a>, entry *<a href="index.html#LineEntry">LineEntry</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 SeekPC sets *entry to the LineEntry that includes pc and positions
@@ -1564,7 +1679,9 @@ should build an appropriate index of the line table.
 				
 			
 				
-				<h3 id="LineReader.Tell">func (*LineReader) <a href="http://localhost:9090/src/debug/dwarf/line.go?s=13620:13661#L474">Tell</a></h3>
+				<h3 id="LineReader.Tell">func (*LineReader) <a href="http://localhost:9090/src/debug/dwarf/line.go?s=13614:13655#L474">Tell</a>
+					<a class="permalink" href="index.html#LineReader.Tell">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#LineReader">LineReader</a>) Tell() <a href="index.html#LineReaderPos">LineReaderPos</a></pre>
 				<p>
 Tell returns the current position in the line table.
@@ -1577,7 +1694,9 @@ Tell returns the current position in the line table.
 		
 			
 			
-			<h2 id="LineReaderPos">type <a href="http://localhost:9090/src/debug/dwarf/line.go?s=13284:13562#L462">LineReaderPos</a></h2>
+			<h2 id="LineReaderPos">type <a href="http://localhost:9090/src/debug/dwarf/line.go?s=13278:13556#L462">LineReaderPos</a>
+				<a class="permalink" href="index.html#LineReaderPos">&#xb6;</a>
+			</h2>
 			<pre>type LineReaderPos struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -1600,7 +1719,9 @@ A LineReaderPos represents a position in a line table.
 		
 			
 			
-			<h2 id="Offset">type <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=10265:10283#L352">Offset</a></h2>
+			<h2 id="Offset">type <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=10265:10283#L352">Offset</a>
+				<a class="permalink" href="index.html#Offset">&#xb6;</a>
+			</h2>
 			<pre>type Offset <a href="../../builtin/index.html#uint32">uint32</a></pre>
 			<p>
 An Offset represents the location of an Entry within the DWARF info.
@@ -1622,7 +1743,9 @@ An Offset represents the location of an Entry within the DWARF info.
 		
 			
 			
-			<h2 id="PtrType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=3005:3051#L126">PtrType</a></h2>
+			<h2 id="PtrType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=3004:3050#L126">PtrType</a>
+				<a class="permalink" href="index.html#PtrType">&#xb6;</a>
+			</h2>
 			<pre>type PtrType struct {
     <a href="index.html#CommonType">CommonType</a>
     Type <a href="index.html#Type">Type</a>
@@ -1644,7 +1767,9 @@ A PtrType represents a pointer type.
 
 			
 				
-				<h3 id="PtrType.String">func (*PtrType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=3053:3086#L131">String</a></h3>
+				<h3 id="PtrType.String">func (*PtrType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=3052:3085#L131">String</a>
+					<a class="permalink" href="index.html#PtrType.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#PtrType">PtrType</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1654,7 +1779,9 @@ A PtrType represents a pointer type.
 		
 			
 			
-			<h2 id="QualType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2170:2230#L89">QualType</a></h2>
+			<h2 id="QualType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2169:2229#L89">QualType</a>
+				<a class="permalink" href="index.html#QualType">&#xb6;</a>
+			</h2>
 			<pre>type QualType struct {
     <a href="index.html#CommonType">CommonType</a>
     Qual <a href="../../builtin/index.html#string">string</a>
@@ -1677,7 +1804,9 @@ A QualType represents a type that has the C/C++ &#34;const&#34;, &#34;restrict&#
 
 			
 				
-				<h3 id="QualType.Size">func (*QualType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2310:2341#L97">Size</a></h3>
+				<h3 id="QualType.Size">func (*QualType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2309:2340#L97">Size</a>
+					<a class="permalink" href="index.html#QualType.Size">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#QualType">QualType</a>) Size() <a href="../../builtin/index.html#int64">int64</a></pre>
 				
 				
@@ -1685,7 +1814,9 @@ A QualType represents a type that has the C/C++ &#34;const&#34;, &#34;restrict&#
 				
 			
 				
-				<h3 id="QualType.String">func (*QualType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2232:2266#L95">String</a></h3>
+				<h3 id="QualType.String">func (*QualType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2231:2265#L95">String</a>
+					<a class="permalink" href="index.html#QualType.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#QualType">QualType</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1695,13 +1826,15 @@ A QualType represents a type that has the C/C++ &#34;const&#34;, &#34;restrict&#
 		
 			
 			
-			<h2 id="Reader">type <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=13924:14160#L503">Reader</a></h2>
+			<h2 id="Reader">type <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=13923:14159#L503">Reader</a>
+				<a class="permalink" href="index.html#Reader">&#xb6;</a>
+			</h2>
 			<pre>type Reader struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
 A Reader allows reading Entry structures from a DWARF &ldquo;info&rdquo; section.
-The Entry structures are arranged in a tree.  The Reader&#39;s Next function
+The Entry structures are arranged in a tree. The Reader&#39;s Next function
 return successive entries from a pre-order traversal of the tree.
 If an entry has children, its Children field will be true, and the children
 follow, terminated by an Entry with Tag 0.
@@ -1720,7 +1853,9 @@ follow, terminated by an Entry with Tag 0.
 
 			
 				
-				<h3 id="Reader.AddressSize">func (*Reader) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=14447:14481#L522">AddressSize</a></h3>
+				<h3 id="Reader.AddressSize">func (*Reader) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=14446:14480#L522">AddressSize</a>
+					<a class="permalink" href="index.html#Reader.AddressSize">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#Reader">Reader</a>) AddressSize() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 AddressSize returns the size in bytes of addresses in the current compilation
@@ -1732,7 +1867,9 @@ unit.
 				
 			
 				
-				<h3 id="Reader.Next">func (*Reader) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=15542:15581#L565">Next</a></h3>
+				<h3 id="Reader.Next">func (*Reader) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=15541:15580#L565">Next</a>
+					<a class="permalink" href="index.html#Reader.Next">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#Reader">Reader</a>) Next() (*<a href="index.html#Entry">Entry</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Next reads the next entry from the encoded entry stream.
@@ -1746,7 +1883,9 @@ offset cannot be decoded as a valid Entry.
 				
 			
 				
-				<h3 id="Reader.Seek">func (*Reader) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=14641:14674#L528">Seek</a></h3>
+				<h3 id="Reader.Seek">func (*Reader) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=14640:14673#L528">Seek</a>
+					<a class="permalink" href="index.html#Reader.Seek">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#Reader">Reader</a>) Seek(off <a href="index.html#Offset">Offset</a>)</pre>
 				<p>
 Seek positions the Reader at offset off in the encoded entry stream.
@@ -1758,11 +1897,38 @@ Offset 0 can be used to denote the first entry.
 				
 			
 				
-				<h3 id="Reader.SkipChildren">func (*Reader) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=16179:16210#L593">SkipChildren</a></h3>
+				<h3 id="Reader.SeekPC">func (*Reader) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=17618:17668#L642">SeekPC</a>
+					<a class="permalink" href="index.html#Reader.SeekPC">&#xb6;</a>
+				</h3>
+				<pre>func (r *<a href="index.html#Reader">Reader</a>) SeekPC(pc <a href="../../builtin/index.html#uint64">uint64</a>) (*<a href="index.html#Entry">Entry</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
+				<p>
+SeekPC returns the Entry for the compilation unit that includes pc,
+and positions the reader to read the children of that unit.  If pc
+is not covered by any unit, SeekPC returns ErrUnknownPC and the
+position of the reader is undefined.
+</p>
+<p>
+Because compilation units can describe multiple regions of the
+executable, in the worst case SeekPC must search through all the
+ranges in all the compilation units. Each call to SeekPC starts the
+search at the compilation unit of the last call, so in general
+looking up a series of PCs will be faster if they are sorted. If
+the caller wishes to do repeated fast PC lookups, it should build
+an appropriate index using the Ranges method.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Reader.SkipChildren">func (*Reader) <a href="http://localhost:9090/src/debug/dwarf/entry.go?s=16177:16208#L593">SkipChildren</a>
+					<a class="permalink" href="index.html#Reader.SkipChildren">&#xb6;</a>
+				</h3>
 				<pre>func (r *<a href="index.html#Reader">Reader</a>) SkipChildren()</pre>
 				<p>
 SkipChildren skips over the child entries associated with
-the last Entry returned by Next.  If that Entry did not have
+the last Entry returned by Next. If that Entry did not have
 children or Next has not been called, SkipChildren is a no-op.
 </p>
 
@@ -1773,7 +1939,9 @@ children or Next has not been called, SkipChildren is a no-op.
 		
 			
 			
-			<h2 id="StructField">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=3476:3681#L143">StructField</a></h2>
+			<h2 id="StructField">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=3475:3680#L143">StructField</a>
+				<a class="permalink" href="index.html#StructField">&#xb6;</a>
+			</h2>
 			<pre>type StructField struct {
     Name       <a href="../../builtin/index.html#string">string</a>
     Type       <a href="index.html#Type">Type</a>
@@ -1801,7 +1969,9 @@ A StructField represents a field in a struct, union, or C++ class type.
 		
 			
 			
-			<h2 id="StructType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=3184:3399#L134">StructType</a></h2>
+			<h2 id="StructType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=3183:3398#L134">StructType</a>
+				<a class="permalink" href="index.html#StructType">&#xb6;</a>
+			</h2>
 			<pre>type StructType struct {
     <a href="index.html#CommonType">CommonType</a>
     StructName <a href="../../builtin/index.html#string">string</a>
@@ -1826,7 +1996,9 @@ A StructType represents a struct, union, or C++ class type.
 
 			
 				
-				<h3 id="StructType.Defn">func (*StructType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=3807:3841#L159">Defn</a></h3>
+				<h3 id="StructType.Defn">func (*StructType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=3806:3840#L159">Defn</a>
+					<a class="permalink" href="index.html#StructType.Defn">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#StructType">StructType</a>) Defn() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1834,7 +2006,9 @@ A StructType represents a struct, union, or C++ class type.
 				
 			
 				
-				<h3 id="StructType.String">func (*StructType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=3683:3719#L152">String</a></h3>
+				<h3 id="StructType.String">func (*StructType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=3682:3718#L152">String</a>
+					<a class="permalink" href="index.html#StructType.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#StructType">StructType</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1844,7 +2018,9 @@ A StructType represents a struct, union, or C++ class type.
 		
 			
 			
-			<h2 id="Tag">type <a href="http://localhost:9090/src/debug/dwarf/const.go?s=6564:6579#L212">Tag</a></h2>
+			<h2 id="Tag">type <a href="http://localhost:9090/src/debug/dwarf/const.go?s=6563:6578#L212">Tag</a>
+				<a class="permalink" href="index.html#Tag">&#xb6;</a>
+			</h2>
 			<pre>type Tag <a href="../../builtin/index.html#uint32">uint32</a></pre>
 			<p>
 A Tag is the classification (the type) of an Entry.
@@ -1930,7 +2106,9 @@ A Tag is the classification (the type) of an Entry.
 
 			
 				
-				<h3 id="Tag.GoString">func (Tag) <a href="http://localhost:9090/src/debug/dwarf/const.go?s=11766:11796#L354">GoString</a></h3>
+				<h3 id="Tag.GoString">func (Tag) <a href="http://localhost:9090/src/debug/dwarf/const.go?s=11765:11795#L354">GoString</a>
+					<a class="permalink" href="index.html#Tag.GoString">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Tag">Tag</a>) GoString() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1938,7 +2116,9 @@ A Tag is the classification (the type) of an Entry.
 				
 			
 				
-				<h3 id="Tag.String">func (Tag) <a href="http://localhost:9090/src/debug/dwarf/const.go?s=11621:11649#L344">String</a></h3>
+				<h3 id="Tag.String">func (Tag) <a href="http://localhost:9090/src/debug/dwarf/const.go?s=11620:11648#L344">String</a>
+					<a class="permalink" href="index.html#Tag.String">&#xb6;</a>
+				</h3>
 				<pre>func (t <a href="index.html#Tag">Tag</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1948,7 +2128,9 @@ A Tag is the classification (the type) of an Entry.
 		
 			
 			
-			<h2 id="Type">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=458:534#L5">Type</a></h2>
+			<h2 id="Type">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=457:533#L5">Type</a>
+				<a class="permalink" href="index.html#Type">&#xb6;</a>
+			</h2>
 			<pre>type Type interface {
     Common() *<a href="index.html#CommonType">CommonType</a>
     String() <a href="../../builtin/index.html#string">string</a>
@@ -1974,7 +2156,9 @@ specific Type structures (CharType, StructType, etc.).
 		
 			
 			
-			<h2 id="TypedefType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=5389:5439#L245">TypedefType</a></h2>
+			<h2 id="TypedefType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=5388:5438#L245">TypedefType</a>
+				<a class="permalink" href="index.html#TypedefType">&#xb6;</a>
+			</h2>
 			<pre>type TypedefType struct {
     <a href="index.html#CommonType">CommonType</a>
     Type <a href="index.html#Type">Type</a>
@@ -1996,7 +2180,9 @@ A TypedefType represents a named type.
 
 			
 				
-				<h3 id="TypedefType.Size">func (*TypedefType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=5498:5532#L252">Size</a></h3>
+				<h3 id="TypedefType.Size">func (*TypedefType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=5497:5531#L252">Size</a>
+					<a class="permalink" href="index.html#TypedefType.Size">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#TypedefType">TypedefType</a>) Size() <a href="../../builtin/index.html#int64">int64</a></pre>
 				
 				
@@ -2004,7 +2190,9 @@ A TypedefType represents a named type.
 				
 			
 				
-				<h3 id="TypedefType.String">func (*TypedefType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=5441:5478#L250">String</a></h3>
+				<h3 id="TypedefType.String">func (*TypedefType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=5440:5477#L250">String</a>
+					<a class="permalink" href="index.html#TypedefType.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#TypedefType">TypedefType</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2014,7 +2202,9 @@ A TypedefType represents a named type.
 		
 			
 			
-			<h2 id="UcharType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1367:1403#L47">UcharType</a></h2>
+			<h2 id="UcharType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1366:1402#L47">UcharType</a>
+				<a class="permalink" href="index.html#UcharType">&#xb6;</a>
+			</h2>
 			<pre>type UcharType struct {
     <a href="index.html#BasicType">BasicType</a>
 }</pre>
@@ -2037,7 +2227,9 @@ A UcharType represents an unsigned character type.
 		
 			
 			
-			<h2 id="UintType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1540:1575#L57">UintType</a></h2>
+			<h2 id="UintType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=1539:1574#L57">UintType</a>
+				<a class="permalink" href="index.html#UintType">&#xb6;</a>
+			</h2>
 			<pre>type UintType struct {
     <a href="index.html#BasicType">BasicType</a>
 }</pre>
@@ -2060,7 +2252,9 @@ A UintType represents an unsigned integer type.
 		
 			
 			
-			<h2 id="UnspecifiedType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2014:2056#L82">UnspecifiedType</a></h2>
+			<h2 id="UnspecifiedType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2013:2055#L82">UnspecifiedType</a>
+				<a class="permalink" href="index.html#UnspecifiedType">&#xb6;</a>
+			</h2>
 			<pre>type UnspecifiedType struct {
     <a href="index.html#BasicType">BasicType</a>
 }</pre>
@@ -2083,7 +2277,9 @@ An UnspecifiedType represents an implicit, unknown, ambiguous or nonexistent typ
 		
 			
 			
-			<h2 id="VoidType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2873:2909#L119">VoidType</a></h2>
+			<h2 id="VoidType">type <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2872:2908#L119">VoidType</a>
+				<a class="permalink" href="index.html#VoidType">&#xb6;</a>
+			</h2>
 			<pre>type VoidType struct {
     <a href="index.html#CommonType">CommonType</a>
 }</pre>
@@ -2104,7 +2300,9 @@ A VoidType represents the C void type.
 
 			
 				
-				<h3 id="VoidType.String">func (*VoidType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2911:2945#L123">String</a></h3>
+				<h3 id="VoidType.String">func (*VoidType) <a href="http://localhost:9090/src/debug/dwarf/type.go?s=2910:2944#L123">String</a>
+					<a class="permalink" href="index.html#VoidType.String">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#VoidType">VoidType</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2123,7 +2321,7 @@ A VoidType represents the C void type.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -2141,6 +2339,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

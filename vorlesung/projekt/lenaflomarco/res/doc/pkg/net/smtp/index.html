@@ -98,6 +98,12 @@ STARTTLS  RFC 3207
 <p>
 Additional extensions may be handled by clients.
 </p>
+<p>
+The smtp package is frozen and not accepting new features.
+Some external packages provide more functionality. See:
+</p>
+<pre><a href="https://godoc.org/?q=smtp">https://godoc.org/?q=smtp</a>
+</pre>
 
 			</div>
 		</div>
@@ -246,7 +252,9 @@ Additional extensions may be handled by clients.
 		
 			
 			
-			<h2 id="SendMail">func <a href="http://localhost:9090/src/net/smtp/smtp.go?s=8766:8844#L290">SendMail</a></h2>
+			<h2 id="SendMail">func <a href="http://localhost:9090/src/net/smtp/smtp.go?s=8920:8998#L295">SendMail</a>
+				<a class="permalink" href="index.html#SendMail">&#xb6;</a>
+			</h2>
 			<pre>func SendMail(addr <a href="../../builtin/index.html#string">string</a>, a <a href="index.html#Auth">Auth</a>, from <a href="../../builtin/index.html#string">string</a>, to []<a href="../../builtin/index.html#string">string</a>, msg []<a href="../../builtin/index.html#byte">byte</a>) <a href="../../builtin/index.html#error">error</a></pre>
 			<p>
 SendMail connects to the server at addr, switches to TLS if
@@ -261,7 +269,7 @@ The addresses in the to parameter are the SMTP RCPT addresses.
 <p>
 The msg parameter should be an RFC 822-style email with headers
 first, a blank line, and then the message body. The lines of msg
-should be CRLF terminated.  The msg headers should usually include
+should be CRLF terminated. The msg headers should usually include
 fields such as &#34;From&#34;, &#34;To&#34;, &#34;Subject&#34;, and &#34;Cc&#34;.  Sending &#34;Bcc&#34;
 messages is accomplished by including an email address in the to
 parameter but not including it in the msg headers.
@@ -281,7 +289,9 @@ library.
 		
 			
 			
-			<h2 id="Auth">type <a href="http://localhost:9090/src/net/smtp/auth.go?s=292:1191#L5">Auth</a></h2>
+			<h2 id="Auth">type <a href="http://localhost:9090/src/net/smtp/auth.go?s=292:1191#L5">Auth</a>
+				<a class="permalink" href="index.html#Auth">&#xb6;</a>
+			</h2>
 			<pre>type Auth interface {
     <span class="comment">// Start begins an authentication with a server.</span>
     <span class="comment">// It returns the name of the authentication protocol</span>
@@ -315,7 +325,9 @@ Auth is implemented by an SMTP authentication mechanism.
 
 			
 				
-				<h3 id="CRAMMD5Auth">func <a href="http://localhost:9090/src/net/smtp/auth.go?s=2924:2970#L81">CRAMMD5Auth</a></h3>
+				<h3 id="CRAMMD5Auth">func <a href="http://localhost:9090/src/net/smtp/auth.go?s=2924:2970#L81">CRAMMD5Auth</a>
+					<a class="permalink" href="index.html#CRAMMD5Auth">&#xb6;</a>
+				</h3>
 				<pre>func CRAMMD5Auth(username, secret <a href="../../builtin/index.html#string">string</a>) <a href="index.html#Auth">Auth</a></pre>
 				<p>
 CRAMMD5Auth returns an Auth that implements the CRAM-MD5 authentication
@@ -328,7 +340,9 @@ to the server using the challenge-response mechanism.
 				
 			
 				
-				<h3 id="PlainAuth">func <a href="http://localhost:9090/src/net/smtp/auth.go?s=1820:1882#L41">PlainAuth</a></h3>
+				<h3 id="PlainAuth">func <a href="http://localhost:9090/src/net/smtp/auth.go?s=1820:1882#L41">PlainAuth</a>
+					<a class="permalink" href="index.html#PlainAuth">&#xb6;</a>
+				</h3>
 				<pre>func PlainAuth(identity, username, password, host <a href="../../builtin/index.html#string">string</a>) <a href="index.html#Auth">Auth</a></pre>
 				<p>
 PlainAuth returns an Auth that implements the PLAIN authentication
@@ -346,7 +360,9 @@ left blank to act as username.
 		
 			
 			
-			<h2 id="Client">type <a href="http://localhost:9090/src/net/smtp/smtp.go?s=583:1173#L14">Client</a></h2>
+			<h2 id="Client">type <a href="http://localhost:9090/src/net/smtp/smtp.go?s=741:1331#L19">Client</a>
+				<a class="permalink" href="index.html#Client">&#xb6;</a>
+			</h2>
 			<pre>type Client struct {
     <span class="comment">// Text is the textproto.Conn used by the Client. It is exported to allow for</span>
     <span class="comment">// clients to add extensions.</span>
@@ -368,7 +384,9 @@ A Client represents a client connection to an SMTP server.
 
 			
 				
-				<h3 id="Dial">func <a href="http://localhost:9090/src/net/smtp/smtp.go?s=1305:1344#L35">Dial</a></h3>
+				<h3 id="Dial">func <a href="http://localhost:9090/src/net/smtp/smtp.go?s=1463:1502#L40">Dial</a>
+					<a class="permalink" href="index.html#Dial">&#xb6;</a>
+				</h3>
 				<pre>func Dial(addr <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#Client">Client</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Dial returns a new Client connected to an SMTP server at addr.
@@ -379,7 +397,9 @@ The addr must include a port, as in &#34;mail.example.com:smtp&#34;.
 				
 			
 				
-				<h3 id="NewClient">func <a href="http://localhost:9090/src/net/smtp/smtp.go?s=1617:1676#L46">NewClient</a></h3>
+				<h3 id="NewClient">func <a href="http://localhost:9090/src/net/smtp/smtp.go?s=1775:1834#L51">NewClient</a>
+					<a class="permalink" href="index.html#NewClient">&#xb6;</a>
+				</h3>
 				<pre>func NewClient(conn <a href="../index.html">net</a>.<a href="../index.html#Conn">Conn</a>, host <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#Client">Client</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 NewClient returns a new Client using an existing connection and host as a
@@ -392,7 +412,9 @@ server name to be used when authenticating.
 
 			
 				
-				<h3 id="Client.Auth">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=5280:5315#L176">Auth</a></h3>
+				<h3 id="Client.Auth">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=5436:5471#L181">Auth</a>
+					<a class="permalink" href="index.html#Client.Auth">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Client">Client</a>) Auth(a <a href="index.html#Auth">Auth</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Auth authenticates a client using the provided authentication mechanism.
@@ -405,7 +427,9 @@ Only servers that advertise the AUTH extension support this function.
 				
 			
 				
-				<h3 id="Client.Close">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=1932:1962#L58">Close</a></h3>
+				<h3 id="Client.Close">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=2090:2120#L63">Close</a>
+					<a class="permalink" href="index.html#Client.Close">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Client">Client</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Close closes the connection.
@@ -416,12 +440,14 @@ Close closes the connection.
 				
 			
 				
-				<h3 id="Client.Data">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=7505:7552#L260">Data</a></h3>
+				<h3 id="Client.Data">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=7660:7707#L265">Data</a>
+					<a class="permalink" href="index.html#Client.Data">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Client">Client</a>) Data() (<a href="../../io/index.html">io</a>.<a href="../../io/index.html#WriteCloser">WriteCloser</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Data issues a DATA command to the server and returns a writer that
 can be used to write the mail headers and body. The caller should
-close the writer before calling any more methods on c.  A call to
+close the writer before calling any more methods on c. A call to
 Data must be preceded by one or more calls to Rcpt.
 </p>
 
@@ -430,7 +456,9 @@ Data must be preceded by one or more calls to Rcpt.
 				
 			
 				
-				<h3 id="Client.Extension">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=9885:9938#L342">Extension</a></h3>
+				<h3 id="Client.Extension">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=10039:10092#L347">Extension</a>
+					<a class="permalink" href="index.html#Client.Extension">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Client">Client</a>) Extension(ext <a href="../../builtin/index.html#string">string</a>) (<a href="../../builtin/index.html#bool">bool</a>, <a href="../../builtin/index.html#string">string</a>)</pre>
 				<p>
 Extension reports whether an extension is support by the server.
@@ -444,13 +472,15 @@ server specifies for the extension.
 				
 			
 				
-				<h3 id="Client.Hello">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=2515:2561#L79">Hello</a></h3>
+				<h3 id="Client.Hello">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=2671:2717#L84">Hello</a>
+					<a class="permalink" href="index.html#Client.Hello">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Client">Client</a>) Hello(localName <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Hello sends a HELO or EHLO to the server as the given host name.
 Calling this method is only necessary if the client needs control
-over the host name used.  The client will introduce itself as &#34;localhost&#34;
-automatically otherwise.  If Hello is called, it must be called before
+over the host name used. The client will introduce itself as &#34;localhost&#34;
+automatically otherwise. If Hello is called, it must be called before
 any of the other methods.
 </p>
 
@@ -459,7 +489,9 @@ any of the other methods.
 				
 			
 				
-				<h3 id="Client.Mail">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=6510:6550#L223">Mail</a></h3>
+				<h3 id="Client.Mail">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=6666:6706#L228">Mail</a>
+					<a class="permalink" href="index.html#Client.Mail">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Client">Client</a>) Mail(from <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Mail issues a MAIL command to the server using the provided email address.
@@ -473,7 +505,9 @@ This initiates a mail transaction and is followed by one or more Rcpt calls.
 				
 			
 				
-				<h3 id="Client.Quit">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=10406:10435#L365">Quit</a></h3>
+				<h3 id="Client.Quit">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=10560:10589#L370">Quit</a>
+					<a class="permalink" href="index.html#Client.Quit">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Client">Client</a>) Quit() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Quit sends the QUIT command and closes the connection to the server.
@@ -484,7 +518,9 @@ Quit sends the QUIT command and closes the connection to the server.
 				
 			
 				
-				<h3 id="Client.Rcpt">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=6971:7009#L240">Rcpt</a></h3>
+				<h3 id="Client.Rcpt">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=7127:7165#L245">Rcpt</a>
+					<a class="permalink" href="index.html#Client.Rcpt">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Client">Client</a>) Rcpt(to <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Rcpt issues a RCPT command to the server using the provided email address.
@@ -497,7 +533,9 @@ a Data call or another Rcpt call.
 				
 			
 				
-				<h3 id="Client.Reset">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=10202:10232#L356">Reset</a></h3>
+				<h3 id="Client.Reset">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=10356:10386#L361">Reset</a>
+					<a class="permalink" href="index.html#Client.Reset">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Client">Client</a>) Reset() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Reset sends the RSET command to the server, aborting the current mail
@@ -509,7 +547,9 @@ transaction.
 				
 			
 				
-				<h3 id="Client.StartTLS">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=4092:4143#L136">StartTLS</a></h3>
+				<h3 id="Client.StartTLS">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=4248:4299#L141">StartTLS</a>
+					<a class="permalink" href="index.html#Client.StartTLS">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Client">Client</a>) StartTLS(config *<a href="../../crypto/tls/index.html">tls</a>.<a href="../../crypto/tls/index.html#Config">Config</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 StartTLS sends the STARTTLS command and encrypts all further communication.
@@ -521,7 +561,9 @@ Only servers that advertise the STARTTLS extension support this function.
 				
 			
 				
-				<h3 id="Client.TLSConnectionState">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=4514:4588#L153">TLSConnectionState</a></h3>
+				<h3 id="Client.TLSConnectionState">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=4670:4744#L158">TLSConnectionState</a>
+					<a class="permalink" href="index.html#Client.TLSConnectionState">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Client">Client</a>) TLSConnectionState() (state <a href="../../crypto/tls/index.html">tls</a>.<a href="../../crypto/tls/index.html#ConnectionState">ConnectionState</a>, ok <a href="../../builtin/index.html#bool">bool</a>)</pre>
 				<p>
 TLSConnectionState returns the client&#39;s TLS connection state.
@@ -534,7 +576,9 @@ not succeed.
 				
 			
 				
-				<h3 id="Client.Verify">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=4928:4970#L165">Verify</a></h3>
+				<h3 id="Client.Verify">func (*Client) <a href="http://localhost:9090/src/net/smtp/smtp.go?s=5084:5126#L170">Verify</a>
+					<a class="permalink" href="index.html#Client.Verify">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Client">Client</a>) Verify(addr <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Verify checks the validity of an email address on the server.
@@ -550,7 +594,9 @@ will not verify addresses for security reasons.
 		
 			
 			
-			<h2 id="ServerInfo">type <a href="http://localhost:9090/src/net/smtp/auth.go?s=1249:1426#L25">ServerInfo</a></h2>
+			<h2 id="ServerInfo">type <a href="http://localhost:9090/src/net/smtp/auth.go?s=1249:1426#L25">ServerInfo</a>
+				<a class="permalink" href="index.html#ServerInfo">&#xb6;</a>
+			</h2>
 			<pre>type ServerInfo struct {
     Name <a href="../../builtin/index.html#string">string</a>   <span class="comment">// SMTP server name</span>
     TLS  <a href="../../builtin/index.html#bool">bool</a>     <span class="comment">// using TLS, with valid certificate for Name</span>
@@ -584,7 +630,7 @@ ServerInfo records information about an SMTP server.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -602,6 +648,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

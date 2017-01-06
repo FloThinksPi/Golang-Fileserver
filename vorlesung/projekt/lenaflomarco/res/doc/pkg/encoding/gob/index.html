@@ -103,7 +103,8 @@ amortizing the cost of compilation.
 A stream of gobs is self-describing.  Each data item in the stream is preceded by
 a specification of its type, expressed in terms of a small set of predefined
 types.  Pointers are not transmitted, but the things they point to are
-transmitted; that is, the values are flattened.  Recursive types work fine, but
+transmitted; that is, the values are flattened. Nil pointers are not permitted,
+as they have no value. Recursive types work fine, but
 recursive values (data with cycles) are problematic.  This may change.
 </p>
 <p>
@@ -370,6 +371,13 @@ where * signifies zero or more repetitions and the type id of a value must
 be predefined or be defined before the value in the stream.
 </p>
 <p>
+Compatibility: Any future changes to the package will endeavor to maintain
+compatibility with streams encoded using previous versions.  That is, any released
+version of this package should be able to decode data written with any previously
+released version, subject to issues such as security fixes. See the Go compatibility
+document for background: <a href="https://golang.org/doc/go1compat">https://golang.org/doc/go1compat</a>
+</p>
+<p>
 See &#34;Gobs of data&#34; for a design discussion of the gob wire format:
 <a href="https://blog.golang.org/gobs-of-data">https://blog.golang.org/gobs-of-data</a>
 </p>
@@ -518,12 +526,14 @@ See &#34;Gobs of data&#34; for a design discussion of the gob wire format:
 		
 			
 			
-			<h2 id="Register">func <a href="http://localhost:9090/src/encoding/gob/type.go?s=25464:25496#L836">Register</a></h2>
+			<h2 id="Register">func <a href="http://localhost:9090/src/encoding/gob/type.go?s=25455:25487#L836">Register</a>
+				<a class="permalink" href="index.html#Register">&#xb6;</a>
+			</h2>
 			<pre>func Register(value interface{})</pre>
 			<p>
 Register records a type, identified by a value for that type, under its
-internal type name.  That name will identify the concrete type of a value
-sent or received as an interface variable.  Only types that will be
+internal type name. That name will identify the concrete type of a value
+sent or received as an interface variable. Only types that will be
 transferred as implementations of interface values need to be registered.
 Expecting to be used only during initialization, it panics if the mapping
 between types and names is not a bijection.
@@ -535,7 +545,9 @@ between types and names is not a bijection.
 		
 			
 			
-			<h2 id="RegisterName">func <a href="http://localhost:9090/src/encoding/gob/type.go?s=24183:24232#L808">RegisterName</a></h2>
+			<h2 id="RegisterName">func <a href="http://localhost:9090/src/encoding/gob/type.go?s=24176:24225#L808">RegisterName</a>
+				<a class="permalink" href="index.html#RegisterName">&#xb6;</a>
+			</h2>
 			<pre>func RegisterName(name <a href="../../builtin/index.html#string">string</a>, value interface{})</pre>
 			<p>
 RegisterName is like Register but uses the provided name rather than the
@@ -549,7 +561,9 @@ type&#39;s default.
 		
 			
 			
-			<h2 id="CommonType">type <a href="http://localhost:9090/src/encoding/gob/type.go?s=7067:7119#L216">CommonType</a></h2>
+			<h2 id="CommonType">type <a href="http://localhost:9090/src/encoding/gob/type.go?s=7064:7116#L216">CommonType</a>
+				<a class="permalink" href="index.html#CommonType">&#xb6;</a>
+			</h2>
 			<pre>type CommonType struct {
     Name <a href="../../builtin/index.html#string">string</a>
     Id   typeId
@@ -576,7 +590,9 @@ not intended for direct use by clients.
 		
 			
 			
-			<h2 id="Decoder">type <a href="http://localhost:9090/src/encoding/gob/decoder.go?s=533:1316#L12">Decoder</a></h2>
+			<h2 id="Decoder">type <a href="http://localhost:9090/src/encoding/gob/decoder.go?s=533:1316#L12">Decoder</a>
+				<a class="permalink" href="index.html#Decoder">&#xb6;</a>
+			</h2>
 			<pre>type Decoder struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -596,7 +612,9 @@ remote side of a connection.
 
 			
 				
-				<h3 id="NewDecoder">func <a href="http://localhost:9090/src/encoding/gob/decoder.go?s=1473:1510#L27">NewDecoder</a></h3>
+				<h3 id="NewDecoder">func <a href="http://localhost:9090/src/encoding/gob/decoder.go?s=1473:1510#L27">NewDecoder</a>
+					<a class="permalink" href="index.html#NewDecoder">&#xb6;</a>
+				</h3>
 				<pre>func NewDecoder(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) *<a href="index.html#Decoder">Decoder</a></pre>
 				<p>
 NewDecoder returns a new decoder that reads from the io.Reader.
@@ -610,7 +628,9 @@ bufio.Reader.
 
 			
 				
-				<h3 id="Decoder.Decode">func (*Decoder) <a href="http://localhost:9090/src/encoding/gob/decoder.go?s=5120:5167#L164">Decode</a></h3>
+				<h3 id="Decoder.Decode">func (*Decoder) <a href="http://localhost:9090/src/encoding/gob/decoder.go?s=5117:5164#L164">Decode</a>
+					<a class="permalink" href="index.html#Decoder.Decode">&#xb6;</a>
+				</h3>
 				<pre>func (dec *<a href="index.html#Decoder">Decoder</a>) Decode(e interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Decode reads the next value from the input stream and stores
@@ -627,12 +647,14 @@ does not modify e.
 				
 			
 				
-				<h3 id="Decoder.DecodeValue">func (*Decoder) <a href="http://localhost:9090/src/encoding/gob/decoder.go?s=5925:5979#L184">DecodeValue</a></h3>
+				<h3 id="Decoder.DecodeValue">func (*Decoder) <a href="http://localhost:9090/src/encoding/gob/decoder.go?s=5920:5974#L184">DecodeValue</a>
+					<a class="permalink" href="index.html#Decoder.DecodeValue">&#xb6;</a>
+				</h3>
 				<pre>func (dec *<a href="index.html#Decoder">Decoder</a>) DecodeValue(v <a href="../../reflect/index.html">reflect</a>.<a href="../../reflect/index.html#Value">Value</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 DecodeValue reads the next value from the input stream.
 If v is the zero reflect.Value (v.Kind() == Invalid), DecodeValue discards the value.
-Otherwise, it stores the value into v.  In that case, v must represent
+Otherwise, it stores the value into v. In that case, v must represent
 a non-nil pointer to data or be an assignable reflect.Value (v.CanSet())
 If the input is at EOF, DecodeValue returns io.EOF and
 does not modify v.
@@ -645,7 +667,9 @@ does not modify v.
 		
 			
 			
-			<h2 id="Encoder">type <a href="http://localhost:9090/src/encoding/gob/encoder.go?s=326:796#L6">Encoder</a></h2>
+			<h2 id="Encoder">type <a href="http://localhost:9090/src/encoding/gob/encoder.go?s=326:796#L6">Encoder</a>
+				<a class="permalink" href="index.html#Encoder">&#xb6;</a>
+			</h2>
 			<pre>type Encoder struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -665,7 +689,9 @@ other side of a connection.
 
 			
 				
-				<h3 id="NewEncoder">func <a href="http://localhost:9090/src/encoding/gob/encoder.go?s=1171:1208#L23">NewEncoder</a></h3>
+				<h3 id="NewEncoder">func <a href="http://localhost:9090/src/encoding/gob/encoder.go?s=1171:1208#L23">NewEncoder</a>
+					<a class="permalink" href="index.html#NewEncoder">&#xb6;</a>
+				</h3>
 				<pre>func NewEncoder(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>) *<a href="index.html#Encoder">Encoder</a></pre>
 				<p>
 NewEncoder returns a new encoder that will transmit on the io.Writer.
@@ -677,11 +703,14 @@ NewEncoder returns a new encoder that will transmit on the io.Writer.
 
 			
 				
-				<h3 id="Encoder.Encode">func (*Encoder) <a href="http://localhost:9090/src/encoding/gob/encoder.go?s=5344:5391#L163">Encode</a></h3>
+				<h3 id="Encoder.Encode">func (*Encoder) <a href="http://localhost:9090/src/encoding/gob/encoder.go?s=5430:5477#L164">Encode</a>
+					<a class="permalink" href="index.html#Encoder.Encode">&#xb6;</a>
+				</h3>
 				<pre>func (enc *<a href="index.html#Encoder">Encoder</a>) Encode(e interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Encode transmits the data item represented by the empty interface value,
 guaranteeing that all necessary type information has been transmitted first.
+Passing a nil pointer to Encoder will panic, as they cannot be transmitted by gob.
 </p>
 
 				
@@ -689,11 +718,14 @@ guaranteeing that all necessary type information has been transmitted first.
 				
 			
 				
-				<h3 id="Encoder.EncodeValue">func (*Encoder) <a href="http://localhost:9090/src/encoding/gob/encoder.go?s=6720:6778#L205">EncodeValue</a></h3>
+				<h3 id="Encoder.EncodeValue">func (*Encoder) <a href="http://localhost:9090/src/encoding/gob/encoder.go?s=6895:6953#L207">EncodeValue</a>
+					<a class="permalink" href="index.html#Encoder.EncodeValue">&#xb6;</a>
+				</h3>
 				<pre>func (enc *<a href="index.html#Encoder">Encoder</a>) EncodeValue(value <a href="../../reflect/index.html">reflect</a>.<a href="../../reflect/index.html#Value">Value</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 EncodeValue transmits the data item represented by the reflection value,
 guaranteeing that all necessary type information has been transmitted first.
+Passing a nil pointer to EncodeValue will panic, as they cannot be transmitted by gob.
 </p>
 
 				
@@ -703,7 +735,9 @@ guaranteeing that all necessary type information has been transmitted first.
 		
 			
 			
-			<h2 id="GobDecoder">type <a href="http://localhost:9090/src/encoding/gob/type.go?s=23700:23940#L793">GobDecoder</a></h2>
+			<h2 id="GobDecoder">type <a href="http://localhost:9090/src/encoding/gob/type.go?s=23693:23933#L793">GobDecoder</a>
+				<a class="permalink" href="index.html#GobDecoder">&#xb6;</a>
+			</h2>
 			<pre>type GobDecoder interface {
     <span class="comment">// GobDecode overwrites the receiver, which must be a pointer,</span>
     <span class="comment">// with the value represented by the byte slice, which was written</span>
@@ -730,7 +764,9 @@ routine for decoding transmitted values sent by a GobEncoder.
 		
 			
 			
-			<h2 id="GobEncoder">type <a href="http://localhost:9090/src/encoding/gob/type.go?s=23352:23564#L784">GobEncoder</a></h2>
+			<h2 id="GobEncoder">type <a href="http://localhost:9090/src/encoding/gob/type.go?s=23345:23557#L784">GobEncoder</a>
+				<a class="permalink" href="index.html#GobEncoder">&#xb6;</a>
+			</h2>
 			<pre>type GobEncoder interface {
     <span class="comment">// GobEncode returns a byte slice representing the encoding of the</span>
     <span class="comment">// receiver for transmission to a GobDecoder, usually of the same</span>
@@ -748,7 +784,7 @@ which are not usually transmissible in gob streams.
 <p>
 Note: Since gobs can be stored permanently, it is good design
 to guarantee the encoding used by a GobEncoder is stable as the
-software evolves.  For instance, it might make sense for GobEncode
+software evolves. For instance, it might make sense for GobEncode
 to include a version number in the encoding.
 </p>
 
@@ -776,7 +812,7 @@ to include a version number in the encoding.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -794,6 +830,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

@@ -112,13 +112,13 @@ more common ones in the net/http package.
 			
 			
 				
-				<dd><a href="index.html#DumpRequest">func DumpRequest(req *http.Request, body bool) (dump []byte, err error)</a></dd>
+				<dd><a href="index.html#DumpRequest">func DumpRequest(req *http.Request, body bool) ([]byte, error)</a></dd>
 			
 				
 				<dd><a href="index.html#DumpRequestOut">func DumpRequestOut(req *http.Request, body bool) ([]byte, error)</a></dd>
 			
 				
-				<dd><a href="index.html#DumpResponse">func DumpResponse(resp *http.Response, body bool) (dump []byte, err error)</a></dd>
+				<dd><a href="index.html#DumpResponse">func DumpResponse(resp *http.Response, body bool) ([]byte, error)</a></dd>
 			
 				
 				<dd><a href="index.html#NewChunkedReader">func NewChunkedReader(r io.Reader) io.Reader</a></dd>
@@ -146,7 +146,7 @@ more common ones in the net/http package.
 					<dd>&nbsp; &nbsp; <a href="index.html#ClientConn.Close">func (cc *ClientConn) Close() error</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#ClientConn.Do">func (cc *ClientConn) Do(req *http.Request) (resp *http.Response, err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#ClientConn.Do">func (cc *ClientConn) Do(req *http.Request) (*http.Response, error)</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#ClientConn.Hijack">func (cc *ClientConn) Hijack() (c net.Conn, r *bufio.Reader)</a></dd>
@@ -158,7 +158,7 @@ more common ones in the net/http package.
 					<dd>&nbsp; &nbsp; <a href="index.html#ClientConn.Read">func (cc *ClientConn) Read(req *http.Request) (resp *http.Response, err error)</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#ClientConn.Write">func (cc *ClientConn) Write(req *http.Request) (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#ClientConn.Write">func (cc *ClientConn) Write(req *http.Request) error</a></dd>
 				
 			
 				
@@ -183,13 +183,13 @@ more common ones in the net/http package.
 					<dd>&nbsp; &nbsp; <a href="index.html#ServerConn.Close">func (sc *ServerConn) Close() error</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#ServerConn.Hijack">func (sc *ServerConn) Hijack() (c net.Conn, r *bufio.Reader)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#ServerConn.Hijack">func (sc *ServerConn) Hijack() (net.Conn, *bufio.Reader)</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#ServerConn.Pending">func (sc *ServerConn) Pending() int</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#ServerConn.Read">func (sc *ServerConn) Read() (req *http.Request, err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#ServerConn.Read">func (sc *ServerConn) Read() (*http.Request, error)</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#ServerConn.Write">func (sc *ServerConn) Write(req *http.Request, resp *http.Response) error</a></dd>
@@ -279,8 +279,10 @@ with lines that are too long.
 		
 			
 			
-			<h2 id="DumpRequest">func <a href="http://localhost:9090/src/net/http/httputil/dump.go?s=5737:5808#L184">DumpRequest</a></h2>
-			<pre>func DumpRequest(req *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>, body <a href="../../../builtin/index.html#bool">bool</a>) (dump []<a href="../../../builtin/index.html#byte">byte</a>, err <a href="../../../builtin/index.html#error">error</a>)</pre>
+			<h2 id="DumpRequest">func <a href="http://localhost:9090/src/net/http/httputil/dump.go?s=5477:5539#L176">DumpRequest</a>
+				<a class="permalink" href="index.html#DumpRequest">&#xb6;</a>
+			</h2>
+			<pre>func DumpRequest(req *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>, body <a href="../../../builtin/index.html#bool">bool</a>) ([]<a href="../../../builtin/index.html#byte">byte</a>, <a href="../../../builtin/index.html#error">error</a>)</pre>
 			<p>
 DumpRequest returns the given request in its HTTP/1.x wire
 representation. It should only be used by servers to debug client
@@ -308,7 +310,9 @@ of req are included in the dump.
 		
 			
 			
-			<h2 id="DumpRequestOut">func <a href="http://localhost:9090/src/net/http/httputil/dump.go?s=1687:1752#L51">DumpRequestOut</a></h2>
+			<h2 id="DumpRequestOut">func <a href="http://localhost:9090/src/net/http/httputil/dump.go?s=1687:1752#L51">DumpRequestOut</a>
+				<a class="permalink" href="index.html#DumpRequestOut">&#xb6;</a>
+			</h2>
 			<pre>func DumpRequestOut(req *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>, body <a href="../../../builtin/index.html#bool">bool</a>) ([]<a href="../../../builtin/index.html#byte">byte</a>, <a href="../../../builtin/index.html#error">error</a>)</pre>
 			<p>
 DumpRequestOut is like DumpRequest but for outgoing client requests. It
@@ -322,8 +326,10 @@ User-Agent.
 		
 			
 			
-			<h2 id="DumpResponse">func <a href="http://localhost:9090/src/net/http/httputil/dump.go?s=8200:8274#L273">DumpResponse</a></h2>
-			<pre>func DumpResponse(resp *<a href="../index.html">http</a>.<a href="../index.html#Response">Response</a>, body <a href="../../../builtin/index.html#bool">bool</a>) (dump []<a href="../../../builtin/index.html#byte">byte</a>, err <a href="../../../builtin/index.html#error">error</a>)</pre>
+			<h2 id="DumpResponse">func <a href="http://localhost:9090/src/net/http/httputil/dump.go?s=8005:8070#L266">DumpResponse</a>
+				<a class="permalink" href="index.html#DumpResponse">&#xb6;</a>
+			</h2>
+			<pre>func DumpResponse(resp *<a href="../index.html">http</a>.<a href="../index.html#Response">Response</a>, body <a href="../../../builtin/index.html#bool">bool</a>) ([]<a href="../../../builtin/index.html#byte">byte</a>, <a href="../../../builtin/index.html#error">error</a>)</pre>
 			<p>
 DumpResponse is like DumpRequest but dumps a response.
 </p>
@@ -334,7 +340,9 @@ DumpResponse is like DumpRequest but dumps a response.
 		
 			
 			
-			<h2 id="NewChunkedReader">func <a href="http://localhost:9090/src/net/http/httputil/httputil.go?s=688:732#L10">NewChunkedReader</a></h2>
+			<h2 id="NewChunkedReader">func <a href="http://localhost:9090/src/net/http/httputil/httputil.go?s=688:732#L10">NewChunkedReader</a>
+				<a class="permalink" href="index.html#NewChunkedReader">&#xb6;</a>
+			</h2>
 			<pre>func NewChunkedReader(r <a href="../../../io/index.html">io</a>.<a href="../../../io/index.html#Reader">Reader</a>) <a href="../../../io/index.html">io</a>.<a href="../../../io/index.html#Reader">Reader</a></pre>
 			<p>
 NewChunkedReader returns a new chunkedReader that translates the data read from r
@@ -352,7 +360,9 @@ automatically decodes chunking when reading response bodies.
 		
 			
 			
-			<h2 id="NewChunkedWriter">func <a href="http://localhost:9090/src/net/http/httputil/httputil.go?s=1309:1358#L23">NewChunkedWriter</a></h2>
+			<h2 id="NewChunkedWriter">func <a href="http://localhost:9090/src/net/http/httputil/httputil.go?s=1309:1358#L23">NewChunkedWriter</a>
+				<a class="permalink" href="index.html#NewChunkedWriter">&#xb6;</a>
+			</h2>
 			<pre>func NewChunkedWriter(w <a href="../../../io/index.html">io</a>.<a href="../../../io/index.html#Writer">Writer</a>) <a href="../../../io/index.html">io</a>.<a href="../../../io/index.html#WriteCloser">WriteCloser</a></pre>
 			<p>
 NewChunkedWriter returns a new chunkedWriter that translates writes into HTTP
@@ -374,7 +384,9 @@ length, both of which are wrong.
 		
 			
 			
-			<h2 id="BufferPool">type <a href="http://localhost:9090/src/net/http/httputil/reverseproxy.go?s=1597:1653#L48">BufferPool</a></h2>
+			<h2 id="BufferPool">type <a href="http://localhost:9090/src/net/http/httputil/reverseproxy.go?s=1597:1653#L48">BufferPool</a>
+				<a class="permalink" href="index.html#BufferPool">&#xb6;</a>
+			</h2>
 			<pre>type BufferPool interface {
     Get() []<a href="../../../builtin/index.html#byte">byte</a>
     Put([]<a href="../../../builtin/index.html#byte">byte</a>)
@@ -399,19 +411,19 @@ byte slices for use by io.CopyBuffer.
 		
 			
 			
-			<h2 id="ClientConn">type <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=6260:6628#L219">ClientConn</a></h2>
+			<h2 id="ClientConn">type <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=5881:6249#L215">ClientConn</a>
+				<a class="permalink" href="index.html#ClientConn">&#xb6;</a>
+			</h2>
 			<pre>type ClientConn struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
-A ClientConn sends request and receives headers over an underlying
-connection, while respecting the HTTP keepalive logic. ClientConn
-supports hijacking the connection calling Hijack to
-regain control of the underlying net.Conn and deal with it as desired.
+ClientConn is an artifact of Go&#39;s early HTTP implementation.
+It is low-level, old, and unused by Go&#39;s current HTTP stack.
+We should have deleted it before Go 1.
 </p>
 <p>
-ClientConn is low-level and old. Applications should instead use
-Client or Transport in the net/http package.
+Deprecated: Use Client or Transport in package net/http instead.
 </p>
 
 
@@ -425,30 +437,34 @@ Client or Transport in the net/http package.
 
 			
 				
-				<h3 id="NewClientConn">func <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=6867:6926#L237">NewClientConn</a></h3>
+				<h3 id="NewClientConn">func <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=6499:6558#L233">NewClientConn</a>
+					<a class="permalink" href="index.html#NewClientConn">&#xb6;</a>
+				</h3>
 				<pre>func NewClientConn(c <a href="../../index.html">net</a>.<a href="../../index.html#Conn">Conn</a>, r *<a href="../../../bufio/index.html">bufio</a>.<a href="../../../bufio/index.html#Reader">Reader</a>) *<a href="index.html#ClientConn">ClientConn</a></pre>
 				<p>
-NewClientConn returns a new ClientConn reading and writing c.  If r is not
-nil, it is the buffer to use when reading c.
+NewClientConn is an artifact of Go&#39;s early HTTP implementation.
+It is low-level, old, and unused by Go&#39;s current HTTP stack.
+We should have deleted it before Go 1.
 </p>
 <p>
-ClientConn is low-level and old. Applications should use Client or
-Transport in the net/http package.
+Deprecated: Use the Client or Transport in package net/http instead.
 </p>
 
 				
 				
 			
 				
-				<h3 id="NewProxyClientConn">func <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=7321:7385#L254">NewProxyClientConn</a></h3>
+				<h3 id="NewProxyClientConn">func <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=6991:7055#L250">NewProxyClientConn</a>
+					<a class="permalink" href="index.html#NewProxyClientConn">&#xb6;</a>
+				</h3>
 				<pre>func NewProxyClientConn(c <a href="../../index.html">net</a>.<a href="../../index.html#Conn">Conn</a>, r *<a href="../../../bufio/index.html">bufio</a>.<a href="../../../bufio/index.html#Reader">Reader</a>) *<a href="index.html#ClientConn">ClientConn</a></pre>
 				<p>
-NewProxyClientConn works like NewClientConn but writes Requests
-using Request&#39;s WriteProxy method.
+NewProxyClientConn is an artifact of Go&#39;s early HTTP implementation.
+It is low-level, old, and unused by Go&#39;s current HTTP stack.
+We should have deleted it before Go 1.
 </p>
 <p>
-New code should not use NewProxyClientConn. See Client or
-Transport in the net/http package instead.
+Deprecated: Use the Client or Transport in package net/http instead.
 </p>
 
 				
@@ -457,10 +473,12 @@ Transport in the net/http package instead.
 
 			
 				
-				<h3 id="ClientConn.Close">func (*ClientConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=8002:8037#L275">Close</a></h3>
+				<h3 id="ClientConn.Close">func (*ClientConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=7673:7708#L271">Close</a>
+					<a class="permalink" href="index.html#ClientConn.Close">&#xb6;</a>
+				</h3>
 				<pre>func (cc *<a href="index.html#ClientConn">ClientConn</a>) Close() <a href="../../../builtin/index.html#error">error</a></pre>
 				<p>
-Close calls Hijack and then also closes the underlying connection
+Close calls Hijack and then also closes the underlying connection.
 </p>
 
 				
@@ -468,8 +486,10 @@ Close calls Hijack and then also closes the underlying connection
 				
 			
 				
-				<h3 id="ClientConn.Do">func (*ClientConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=11320:11396#L413">Do</a></h3>
-				<pre>func (cc *<a href="index.html#ClientConn">ClientConn</a>) Do(req *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>) (resp *<a href="../index.html">http</a>.<a href="../index.html#Response">Response</a>, err <a href="../../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="ClientConn.Do">func (*ClientConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=11000:11067#L410">Do</a>
+					<a class="permalink" href="index.html#ClientConn.Do">&#xb6;</a>
+				</h3>
+				<pre>func (cc *<a href="index.html#ClientConn">ClientConn</a>) Do(req *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>) (*<a href="../index.html">http</a>.<a href="../index.html#Response">Response</a>, <a href="../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Do is convenience method that writes a request and reads a response.
 </p>
@@ -479,7 +499,9 @@ Do is convenience method that writes a request and reads a response.
 				
 			
 				
-				<h3 id="ClientConn.Hijack">func (*ClientConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=7779:7839#L264">Hijack</a></h3>
+				<h3 id="ClientConn.Hijack">func (*ClientConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=7449:7509#L260">Hijack</a>
+					<a class="permalink" href="index.html#ClientConn.Hijack">&#xb6;</a>
+				</h3>
 				<pre>func (cc *<a href="index.html#ClientConn">ClientConn</a>) Hijack() (c <a href="../../index.html">net</a>.<a href="../../index.html#Conn">Conn</a>, r *<a href="../../../bufio/index.html">bufio</a>.<a href="../../../bufio/index.html#Reader">Reader</a>)</pre>
 				<p>
 Hijack detaches the ClientConn and returns the underlying connection as well
@@ -493,7 +515,9 @@ logic. The user should not call Hijack while Read or Write is in progress.
 				
 			
 				
-				<h3 id="ClientConn.Pending">func (*ClientConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=9593:9628#L341">Pending</a></h3>
+				<h3 id="ClientConn.Pending">func (*ClientConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=9273:9308#L338">Pending</a>
+					<a class="permalink" href="index.html#ClientConn.Pending">&#xb6;</a>
+				</h3>
 				<pre>func (cc *<a href="index.html#ClientConn">ClientConn</a>) Pending() <a href="../../../builtin/index.html#int">int</a></pre>
 				<p>
 Pending returns the number of unanswered requests
@@ -505,7 +529,9 @@ that have been sent on the connection.
 				
 			
 				
-				<h3 id="ClientConn.Read">func (*ClientConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=9973:10051#L351">Read</a></h3>
+				<h3 id="ClientConn.Read">func (*ClientConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=9653:9731#L348">Read</a>
+					<a class="permalink" href="index.html#ClientConn.Read">&#xb6;</a>
+				</h3>
 				<pre>func (cc *<a href="index.html#ClientConn">ClientConn</a>) Read(req *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>) (resp *<a href="../index.html">http</a>.<a href="../index.html#Response">Response</a>, err <a href="../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Read reads the next response from the wire. A valid response might be
@@ -519,8 +545,10 @@ concurrently with Write, but not with another Read.
 				
 			
 				
-				<h3 id="ClientConn.Write">func (*ClientConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=8502:8560#L288">Write</a></h3>
-				<pre>func (cc *<a href="index.html#ClientConn">ClientConn</a>) Write(req *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>) (err <a href="../../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="ClientConn.Write">func (*ClientConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=8173:8225#L284">Write</a>
+					<a class="permalink" href="index.html#ClientConn.Write">&#xb6;</a>
+				</h3>
+				<pre>func (cc *<a href="index.html#ClientConn">ClientConn</a>) Write(req *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>) <a href="../../../builtin/index.html#error">error</a></pre>
 				<p>
 Write writes a request. An ErrPersistEOF error is returned if the connection
 has been closed in an HTTP keepalive sense. If req.Close equals true, the
@@ -536,7 +564,9 @@ underlying TCP connection, which is usually considered as graceful close.
 		
 			
 			
-			<h2 id="ReverseProxy">type <a href="http://localhost:9090/src/net/http/httputil/reverseproxy.go?s=564:1486#L17">ReverseProxy</a></h2>
+			<h2 id="ReverseProxy">type <a href="http://localhost:9090/src/net/http/httputil/reverseproxy.go?s=564:1486#L17">ReverseProxy</a>
+				<a class="permalink" href="index.html#ReverseProxy">&#xb6;</a>
+			</h2>
 			<pre>type ReverseProxy struct {
     <span class="comment">// Director must be a function which modifies</span>
     <span class="comment">// the request into a new request to be sent</span>
@@ -582,7 +612,9 @@ client.
 
 			
 				
-				<h3 id="NewSingleHostReverseProxy">func <a href="http://localhost:9090/src/net/http/httputil/reverseproxy.go?s=2298:2359#L72">NewSingleHostReverseProxy</a></h3>
+				<h3 id="NewSingleHostReverseProxy">func <a href="http://localhost:9090/src/net/http/httputil/reverseproxy.go?s=2298:2359#L72">NewSingleHostReverseProxy</a>
+					<a class="permalink" href="index.html#NewSingleHostReverseProxy">&#xb6;</a>
+				</h3>
 				<pre>func NewSingleHostReverseProxy(target *<a href="../../url/index.html">url</a>.<a href="../../url/index.html#URL">URL</a>) *<a href="index.html#ReverseProxy">ReverseProxy</a></pre>
 				<p>
 NewSingleHostReverseProxy returns a new ReverseProxy that routes
@@ -600,7 +632,9 @@ Director policy.
 
 			
 				
-				<h3 id="ReverseProxy.ServeHTTP">func (*ReverseProxy) <a href="http://localhost:9090/src/net/http/httputil/reverseproxy.go?s=3769:3844#L130">ServeHTTP</a></h3>
+				<h3 id="ReverseProxy.ServeHTTP">func (*ReverseProxy) <a href="http://localhost:9090/src/net/http/httputil/reverseproxy.go?s=3924:3999#L134">ServeHTTP</a>
+					<a class="permalink" href="index.html#ReverseProxy.ServeHTTP">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#ReverseProxy">ReverseProxy</a>) ServeHTTP(rw <a href="../index.html">http</a>.<a href="../index.html#ResponseWriter">ResponseWriter</a>, req *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>)</pre>
 				
 				
@@ -610,21 +644,19 @@ Director policy.
 		
 			
 			
-			<h2 id="ServerConn">type <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=1189:1506#L26">ServerConn</a></h2>
+			<h2 id="ServerConn">type <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=918:1235#L22">ServerConn</a>
+				<a class="permalink" href="index.html#ServerConn">&#xb6;</a>
+			</h2>
 			<pre>type ServerConn struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
-A ServerConn reads requests and sends responses over an underlying
-connection, until the HTTP keepalive logic commands an end. ServerConn
-also allows hijacking the underlying connection by calling Hijack
-to regain control over the connection. ServerConn supports pipe-lining,
-i.e. requests can be read out of sync (but in the same order) while the
-respective responses are sent.
+ServerConn is an artifact of Go&#39;s early HTTP implementation.
+It is low-level, old, and unused by Go&#39;s current HTTP stack.
+We should have deleted it before Go 1.
 </p>
 <p>
-ServerConn is low-level and old. Applications should instead use Server
-in the net/http package.
+Deprecated: Use the Server in package net/http instead.
 </p>
 
 
@@ -638,15 +670,17 @@ in the net/http package.
 
 			
 				
-				<h3 id="NewServerConn">func <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=1739:1798#L43">NewServerConn</a></h3>
+				<h3 id="NewServerConn">func <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=1472:1531#L39">NewServerConn</a>
+					<a class="permalink" href="index.html#NewServerConn">&#xb6;</a>
+				</h3>
 				<pre>func NewServerConn(c <a href="../../index.html">net</a>.<a href="../../index.html#Conn">Conn</a>, r *<a href="../../../bufio/index.html">bufio</a>.<a href="../../../bufio/index.html#Reader">Reader</a>) *<a href="index.html#ServerConn">ServerConn</a></pre>
 				<p>
-NewServerConn returns a new ServerConn reading and writing c. If r is not
-nil, it is the buffer to use when reading c.
+NewServerConn is an artifact of Go&#39;s early HTTP implementation.
+It is low-level, old, and unused by Go&#39;s current HTTP stack.
+We should have deleted it before Go 1.
 </p>
 <p>
-ServerConn is low-level and old. Applications should instead use Server
-in the net/http package.
+Deprecated: Use the Server in package net/http instead.
 </p>
 
 				
@@ -655,10 +689,12 @@ in the net/http package.
 
 			
 				
-				<h3 id="ServerConn.Close">func (*ServerConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=2436:2471#L65">Close</a></h3>
+				<h3 id="ServerConn.Close">func (*ServerConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=2173:2208#L61">Close</a>
+					<a class="permalink" href="index.html#ServerConn.Close">&#xb6;</a>
+				</h3>
 				<pre>func (sc *<a href="index.html#ServerConn">ServerConn</a>) Close() <a href="../../../builtin/index.html#error">error</a></pre>
 				<p>
-Close calls Hijack and then also closes the underlying connection
+Close calls Hijack and then also closes the underlying connection.
 </p>
 
 				
@@ -666,8 +702,10 @@ Close calls Hijack and then also closes the underlying connection
 				
 			
 				
-				<h3 id="ServerConn.Hijack">func (*ServerConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=2213:2273#L54">Hijack</a></h3>
-				<pre>func (sc *<a href="index.html#ServerConn">ServerConn</a>) Hijack() (c <a href="../../index.html">net</a>.<a href="../../index.html#Conn">Conn</a>, r *<a href="../../../bufio/index.html">bufio</a>.<a href="../../../bufio/index.html#Reader">Reader</a>)</pre>
+				<h3 id="ServerConn.Hijack">func (*ServerConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=1946:2002#L50">Hijack</a>
+					<a class="permalink" href="index.html#ServerConn.Hijack">&#xb6;</a>
+				</h3>
+				<pre>func (sc *<a href="index.html#ServerConn">ServerConn</a>) Hijack() (<a href="../../index.html">net</a>.<a href="../../index.html#Conn">Conn</a>, *<a href="../../../bufio/index.html">bufio</a>.<a href="../../../bufio/index.html#Reader">Reader</a>)</pre>
 				<p>
 Hijack detaches the ServerConn and returns the underlying connection as well
 as the read-side bufio which may have some left over data. Hijack may be
@@ -680,7 +718,9 @@ should not call Hijack while Read or Write is in progress.
 				
 			
 				
-				<h3 id="ServerConn.Pending">func (*ServerConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=4528:4563#L153">Pending</a></h3>
+				<h3 id="ServerConn.Pending">func (*ServerConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=4295:4330#L151">Pending</a>
+					<a class="permalink" href="index.html#ServerConn.Pending">&#xb6;</a>
+				</h3>
 				<pre>func (sc *<a href="index.html#ServerConn">ServerConn</a>) Pending() <a href="../../../builtin/index.html#int">int</a></pre>
 				<p>
 Pending returns the number of unanswered requests
@@ -692,8 +732,10 @@ that have been received on the connection.
 				
 			
 				
-				<h3 id="ServerConn.Read">func (*ServerConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=2806:2865#L77">Read</a></h3>
-				<pre>func (sc *<a href="index.html#ServerConn">ServerConn</a>) Read() (req *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>, err <a href="../../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="ServerConn.Read">func (*ServerConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=2543:2594#L73">Read</a>
+					<a class="permalink" href="index.html#ServerConn.Read">&#xb6;</a>
+				</h3>
+				<pre>func (sc *<a href="index.html#ServerConn">ServerConn</a>) Read() (*<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>, <a href="../../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Read returns the next request on the wire. An ErrPersistEOF is returned if
 it is gracefully determined that there are no more requests (e.g. after the
@@ -706,7 +748,9 @@ HTTP/1.1 connection).
 				
 			
 				
-				<h3 id="ServerConn.Write">func (*ServerConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=4875:4948#L162">Write</a></h3>
+				<h3 id="ServerConn.Write">func (*ServerConn) <a href="http://localhost:9090/src/net/http/httputil/persist.go?s=4642:4715#L160">Write</a>
+					<a class="permalink" href="index.html#ServerConn.Write">&#xb6;</a>
+				</h3>
 				<pre>func (sc *<a href="index.html#ServerConn">ServerConn</a>) Write(req *<a href="../index.html">http</a>.<a href="../index.html#Request">Request</a>, resp *<a href="../index.html">http</a>.<a href="../index.html#Response">Response</a>) <a href="../../../builtin/index.html#error">error</a></pre>
 				<p>
 Write writes resp in response to req. To close the connection gracefully, set the
@@ -730,7 +774,7 @@ it returns an error, regardless of any errors returned on the Read side.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -748,6 +792,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../../lib/godoc/godocs.js"></script>
 
 </body>

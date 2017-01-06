@@ -180,7 +180,9 @@ Package html provides functions for escaping and unescaping HTML text.
 		
 			
 			
-			<h2 id="EscapeString">func <a href="http://localhost:9090/src/html/escape.go?s=4385:4419#L172">EscapeString</a></h2>
+			<h2 id="EscapeString">func <a href="http://localhost:9090/src/html/escape.go?s=4324:4358#L168">EscapeString</a>
+				<a class="permalink" href="index.html#EscapeString">&#xb6;</a>
+			</h2>
 			<pre>func EscapeString(s <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 EscapeString escapes special characters like &#34;&lt;&#34; to become &#34;&amp;lt;&#34;. It
@@ -195,12 +197,14 @@ always true.
 		
 			
 			
-			<h2 id="UnescapeString">func <a href="http://localhost:9090/src/html/escape.go?s=4759:4795#L181">UnescapeString</a></h2>
+			<h2 id="UnescapeString">func <a href="http://localhost:9090/src/html/escape.go?s=4699:4735#L177">UnescapeString</a>
+				<a class="permalink" href="index.html#UnescapeString">&#xb6;</a>
+			</h2>
 			<pre>func UnescapeString(s <a href="../builtin/index.html#string">string</a>) <a href="../builtin/index.html#string">string</a></pre>
 			<p>
 UnescapeString unescapes entities like &#34;&amp;lt;&#34; to become &#34;&lt;&#34;. It unescapes a
 larger range of entities than EscapeString escapes. For example, &#34;&amp;aacute;&#34;
-unescapes to &#34;á&#34;, as does &#34;&amp;#225;&#34; and &#34;&amp;xE1;&#34;.
+unescapes to &#34;á&#34;, as does &#34;&amp;#225;&#34; and &#34;&amp;#xE1;&#34;.
 UnescapeString(EscapeString(s)) == s always holds, but the converse isn&#39;t
 always true.
 </p>
@@ -259,7 +263,7 @@ always true.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -277,6 +281,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../lib/godoc/godocs.js"></script>
 
 </body>

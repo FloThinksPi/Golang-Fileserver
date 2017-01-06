@@ -446,7 +446,9 @@ DefaultServer is the default instance of *Server.
 		
 			
 			
-			<h2 id="Accept">func <a href="http://localhost:9090/src/net/rpc/server.go?s=20231:20260#L667">Accept</a></h2>
+			<h2 id="Accept">func <a href="http://localhost:9090/src/net/rpc/server.go?s=20223:20252#L667">Accept</a>
+				<a class="permalink" href="index.html#Accept">&#xb6;</a>
+			</h2>
 			<pre>func Accept(lis <a href="../index.html">net</a>.<a href="../index.html#Listener">Listener</a>)</pre>
 			<p>
 Accept accepts connections on the listener and serves requests
@@ -460,7 +462,9 @@ Accept blocks; the caller typically invokes it in a go statement.
 		
 			
 			
-			<h2 id="HandleHTTP">func <a href="http://localhost:9090/src/net/rpc/server.go?s=21491:21508#L700">HandleHTTP</a></h2>
+			<h2 id="HandleHTTP">func <a href="http://localhost:9090/src/net/rpc/server.go?s=21483:21500#L700">HandleHTTP</a>
+				<a class="permalink" href="index.html#HandleHTTP">&#xb6;</a>
+			</h2>
 			<pre>func HandleHTTP()</pre>
 			<p>
 HandleHTTP registers an HTTP handler for RPC messages to DefaultServer
@@ -474,7 +478,9 @@ It is still necessary to invoke http.Serve(), typically in a go statement.
 		
 			
 			
-			<h2 id="Register">func <a href="http://localhost:9090/src/net/rpc/server.go?s=18260:18297#L619">Register</a></h2>
+			<h2 id="Register">func <a href="http://localhost:9090/src/net/rpc/server.go?s=18254:18291#L619">Register</a>
+				<a class="permalink" href="index.html#Register">&#xb6;</a>
+			</h2>
 			<pre>func Register(rcvr interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 			<p>
 Register publishes the receiver&#39;s methods in the DefaultServer.
@@ -486,7 +492,9 @@ Register publishes the receiver&#39;s methods in the DefaultServer.
 		
 			
 			
-			<h2 id="RegisterName">func <a href="http://localhost:9090/src/net/rpc/server.go?s=18456:18510#L623">RegisterName</a></h2>
+			<h2 id="RegisterName">func <a href="http://localhost:9090/src/net/rpc/server.go?s=18450:18504#L623">RegisterName</a>
+				<a class="permalink" href="index.html#RegisterName">&#xb6;</a>
+			</h2>
 			<pre>func RegisterName(name <a href="../../builtin/index.html#string">string</a>, rcvr interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 			<p>
 RegisterName is like Register but uses the provided name for the type
@@ -499,7 +507,9 @@ instead of the receiver&#39;s concrete type.
 		
 			
 			
-			<h2 id="ServeCodec">func <a href="http://localhost:9090/src/net/rpc/server.go?s=19757:19791#L654">ServeCodec</a></h2>
+			<h2 id="ServeCodec">func <a href="http://localhost:9090/src/net/rpc/server.go?s=19749:19783#L654">ServeCodec</a>
+				<a class="permalink" href="index.html#ServeCodec">&#xb6;</a>
+			</h2>
 			<pre>func ServeCodec(codec <a href="index.html#ServerCodec">ServerCodec</a>)</pre>
 			<p>
 ServeCodec is like ServeConn but uses the specified codec to
@@ -512,14 +522,16 @@ decode requests and encode responses.
 		
 			
 			
-			<h2 id="ServeConn">func <a href="http://localhost:9090/src/net/rpc/server.go?s=19576:19615#L648">ServeConn</a></h2>
+			<h2 id="ServeConn">func <a href="http://localhost:9090/src/net/rpc/server.go?s=19568:19607#L648">ServeConn</a>
+				<a class="permalink" href="index.html#ServeConn">&#xb6;</a>
+			</h2>
 			<pre>func ServeConn(conn <a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReadWriteCloser">ReadWriteCloser</a>)</pre>
 			<p>
 ServeConn runs the DefaultServer on a single connection.
 ServeConn blocks, serving the connection until the client hangs up.
 The caller typically invokes ServeConn in a go statement.
 ServeConn uses the gob wire format (see package gob) on the
-connection.  To use an alternate codec, use ServeCodec.
+connection. To use an alternate codec, use ServeCodec.
 </p>
 
 			
@@ -528,7 +540,9 @@ connection.  To use an alternate codec, use ServeCodec.
 		
 			
 			
-			<h2 id="ServeRequest">func <a href="http://localhost:9090/src/net/rpc/server.go?s=19956:19998#L660">ServeRequest</a></h2>
+			<h2 id="ServeRequest">func <a href="http://localhost:9090/src/net/rpc/server.go?s=19948:19990#L660">ServeRequest</a>
+				<a class="permalink" href="index.html#ServeRequest">&#xb6;</a>
+			</h2>
 			<pre>func ServeRequest(codec <a href="index.html#ServerCodec">ServerCodec</a>) <a href="../../builtin/index.html#error">error</a></pre>
 			<p>
 ServeRequest is like ServeCodec but synchronously serves a single request.
@@ -542,7 +556,9 @@ It does not close the codec upon completion.
 		
 			
 			
-			<h2 id="Call">type <a href="http://localhost:9090/src/net/rpc/client.go?s=540:900#L19">Call</a></h2>
+			<h2 id="Call">type <a href="http://localhost:9090/src/net/rpc/client.go?s=540:900#L19">Call</a>
+				<a class="permalink" href="index.html#Call">&#xb6;</a>
+			</h2>
 			<pre>type Call struct {
     ServiceMethod <a href="../../builtin/index.html#string">string</a>      <span class="comment">// The name of the service and method to call.</span>
     Args          interface{} <span class="comment">// The argument to the function (*struct).</span>
@@ -569,7 +585,9 @@ Call represents an active RPC.
 		
 			
 			
-			<h2 id="Client">type <a href="http://localhost:9090/src/net/rpc/client.go?s=1084:1360#L31">Client</a></h2>
+			<h2 id="Client">type <a href="http://localhost:9090/src/net/rpc/client.go?s=1084:1360#L31">Client</a>
+				<a class="permalink" href="index.html#Client">&#xb6;</a>
+			</h2>
 			<pre>type Client struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -591,7 +609,9 @@ multiple goroutines simultaneously.
 
 			
 				
-				<h3 id="Dial">func <a href="http://localhost:9090/src/net/rpc/client.go?s=7222:7273#L259">Dial</a></h3>
+				<h3 id="Dial">func <a href="http://localhost:9090/src/net/rpc/client.go?s=7220:7271#L259">Dial</a>
+					<a class="permalink" href="index.html#Dial">&#xb6;</a>
+				</h3>
 				<pre>func Dial(network, address <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#Client">Client</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Dial connects to an RPC server at the specified network address.
@@ -601,7 +621,9 @@ Dial connects to an RPC server at the specified network address.
 				
 			
 				
-				<h3 id="DialHTTP">func <a href="http://localhost:9090/src/net/rpc/client.go?s=6275:6330#L226">DialHTTP</a></h3>
+				<h3 id="DialHTTP">func <a href="http://localhost:9090/src/net/rpc/client.go?s=6273:6328#L226">DialHTTP</a>
+					<a class="permalink" href="index.html#DialHTTP">&#xb6;</a>
+				</h3>
 				<pre>func DialHTTP(network, address <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#Client">Client</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 DialHTTP connects to an HTTP RPC server at the specified network address
@@ -612,7 +634,9 @@ listening on the default HTTP RPC path.
 				
 			
 				
-				<h3 id="DialHTTPPath">func <a href="http://localhost:9090/src/net/rpc/client.go?s=6484:6549#L232">DialHTTPPath</a></h3>
+				<h3 id="DialHTTPPath">func <a href="http://localhost:9090/src/net/rpc/client.go?s=6482:6547#L232">DialHTTPPath</a>
+					<a class="permalink" href="index.html#DialHTTPPath">&#xb6;</a>
+				</h3>
 				<pre>func DialHTTPPath(network, address, path <a href="../../builtin/index.html#string">string</a>) (*<a href="index.html#Client">Client</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 DialHTTPPath connects to an HTTP RPC server
@@ -623,7 +647,9 @@ at the specified network address and path.
 				
 			
 				
-				<h3 id="NewClient">func <a href="http://localhost:9090/src/net/rpc/client.go?s=5073:5120#L178">NewClient</a></h3>
+				<h3 id="NewClient">func <a href="http://localhost:9090/src/net/rpc/client.go?s=5071:5118#L178">NewClient</a>
+					<a class="permalink" href="index.html#NewClient">&#xb6;</a>
+				</h3>
 				<pre>func NewClient(conn <a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReadWriteCloser">ReadWriteCloser</a>) *<a href="index.html#Client">Client</a></pre>
 				<p>
 NewClient returns a new Client to handle requests to the
@@ -636,7 +662,9 @@ the header and payload are sent as a unit.
 				
 			
 				
-				<h3 id="NewClientWithCodec">func <a href="http://localhost:9090/src/net/rpc/client.go?s=5394:5444#L186">NewClientWithCodec</a></h3>
+				<h3 id="NewClientWithCodec">func <a href="http://localhost:9090/src/net/rpc/client.go?s=5392:5442#L186">NewClientWithCodec</a>
+					<a class="permalink" href="index.html#NewClientWithCodec">&#xb6;</a>
+				</h3>
 				<pre>func NewClientWithCodec(codec <a href="index.html#ClientCodec">ClientCodec</a>) *<a href="index.html#Client">Client</a></pre>
 				<p>
 NewClientWithCodec is like NewClient but uses the specified
@@ -649,7 +677,9 @@ codec to encode requests and decode responses.
 
 			
 				
-				<h3 id="Client.Call">func (*Client) <a href="http://localhost:9090/src/net/rpc/client.go?s=8636:8727#L304">Call</a></h3>
+				<h3 id="Client.Call">func (*Client) <a href="http://localhost:9090/src/net/rpc/client.go?s=8630:8721#L304">Call</a>
+					<a class="permalink" href="index.html#Client.Call">&#xb6;</a>
+				</h3>
 				<pre>func (client *<a href="index.html#Client">Client</a>) Call(serviceMethod <a href="../../builtin/index.html#string">string</a>, args interface{}, reply interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Call invokes the named function, waits for it to complete, and returns its error status.
@@ -660,7 +690,9 @@ Call invokes the named function, waits for it to complete, and returns its error
 				
 			
 				
-				<h3 id="Client.Close">func (*Client) <a href="http://localhost:9090/src/net/rpc/client.go?s=7387:7422#L267">Close</a></h3>
+				<h3 id="Client.Close">func (*Client) <a href="http://localhost:9090/src/net/rpc/client.go?s=7385:7420#L267">Close</a>
+					<a class="permalink" href="index.html#Client.Close">&#xb6;</a>
+				</h3>
 				<pre>func (client *<a href="index.html#Client">Client</a>) Close() <a href="../../builtin/index.html#error">error</a></pre>
 				
 				
@@ -668,12 +700,14 @@ Call invokes the named function, waits for it to complete, and returns its error
 				
 			
 				
-				<h3 id="Client.Go">func (*Client) <a href="http://localhost:9090/src/net/rpc/client.go?s=7910:8016#L282">Go</a></h3>
+				<h3 id="Client.Go">func (*Client) <a href="http://localhost:9090/src/net/rpc/client.go?s=7905:8011#L282">Go</a>
+					<a class="permalink" href="index.html#Client.Go">&#xb6;</a>
+				</h3>
 				<pre>func (client *<a href="index.html#Client">Client</a>) Go(serviceMethod <a href="../../builtin/index.html#string">string</a>, args interface{}, reply interface{}, done chan *<a href="index.html#Call">Call</a>) *<a href="index.html#Call">Call</a></pre>
 				<p>
-Go invokes the function asynchronously.  It returns the Call structure representing
-the invocation.  The done channel will signal when the call is complete by returning
-the same Call object.  If done is nil, Go will allocate a new channel.
+Go invokes the function asynchronously. It returns the Call structure representing
+the invocation. The done channel will signal when the call is complete by returning
+the same Call object. If done is nil, Go will allocate a new channel.
 If non-nil, done must be buffered or Go will deliberately crash.
 </p>
 
@@ -684,7 +718,9 @@ If non-nil, done must be buffered or Go will deliberately crash.
 		
 			
 			
-			<h2 id="ClientCodec">type <a href="http://localhost:9090/src/net/rpc/client.go?s=1823:2059#L52">ClientCodec</a></h2>
+			<h2 id="ClientCodec">type <a href="http://localhost:9090/src/net/rpc/client.go?s=1822:2058#L52">ClientCodec</a>
+				<a class="permalink" href="index.html#ClientCodec">&#xb6;</a>
+			</h2>
 			<pre>type ClientCodec interface {
     <span class="comment">// WriteRequest must be safe for concurrent use by multiple goroutines.</span>
     WriteRequest(*<a href="index.html#Request">Request</a>, interface{}) <a href="../../builtin/index.html#error">error</a>
@@ -698,7 +734,7 @@ A ClientCodec implements writing of RPC requests and
 reading of RPC responses for the client side of an RPC session.
 The client calls WriteRequest to write a request to the connection
 and calls ReadResponseHeader and ReadResponseBody in pairs
-to read responses.  The client calls Close when finished with the
+to read responses. The client calls Close when finished with the
 connection. ReadResponseBody may be called with a nil
 argument to force the body of the response to be read and then
 discarded.
@@ -719,14 +755,16 @@ discarded.
 		
 			
 			
-			<h2 id="Request">type <a href="http://localhost:9090/src/net/rpc/server.go?s=5048:5234#L158">Request</a></h2>
+			<h2 id="Request">type <a href="http://localhost:9090/src/net/rpc/server.go?s=5045:5231#L158">Request</a>
+				<a class="permalink" href="index.html#Request">&#xb6;</a>
+			</h2>
 			<pre>type Request struct {
     ServiceMethod <a href="../../builtin/index.html#string">string</a> <span class="comment">// format: &#34;Service.Method&#34;</span>
     Seq           <a href="../../builtin/index.html#uint64">uint64</a> <span class="comment">// sequence number chosen by client</span>
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
-Request is a header written before every RPC call.  It is used internally
+Request is a header written before every RPC call. It is used internally
 but documented here as an aid to debugging, such as when analyzing
 network traffic.
 </p>
@@ -746,7 +784,9 @@ network traffic.
 		
 			
 			
-			<h2 id="Response">type <a href="http://localhost:9090/src/net/rpc/server.go?s=5406:5635#L167">Response</a></h2>
+			<h2 id="Response">type <a href="http://localhost:9090/src/net/rpc/server.go?s=5402:5631#L167">Response</a>
+				<a class="permalink" href="index.html#Response">&#xb6;</a>
+			</h2>
 			<pre>type Response struct {
     ServiceMethod <a href="../../builtin/index.html#string">string</a> <span class="comment">// echoes that of the Request</span>
     Seq           <a href="../../builtin/index.html#uint64">uint64</a> <span class="comment">// echoes that of the request</span>
@@ -754,7 +794,7 @@ network traffic.
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
-Response is a header written before every RPC return.  It is used internally
+Response is a header written before every RPC return. It is used internally
 but documented here as an aid to debugging, such as when analyzing
 network traffic.
 </p>
@@ -774,7 +814,9 @@ network traffic.
 		
 			
 			
-			<h2 id="Server">type <a href="http://localhost:9090/src/net/rpc/server.go?s=5673:5909#L175">Server</a></h2>
+			<h2 id="Server">type <a href="http://localhost:9090/src/net/rpc/server.go?s=5669:5905#L175">Server</a>
+				<a class="permalink" href="index.html#Server">&#xb6;</a>
+			</h2>
 			<pre>type Server struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -793,7 +835,9 @@ Server represents an RPC Server.
 
 			
 				
-				<h3 id="NewServer">func <a href="http://localhost:9090/src/net/rpc/server.go?s=5946:5970#L185">NewServer</a></h3>
+				<h3 id="NewServer">func <a href="http://localhost:9090/src/net/rpc/server.go?s=5942:5966#L185">NewServer</a>
+					<a class="permalink" href="index.html#NewServer">&#xb6;</a>
+				</h3>
 				<pre>func NewServer() *<a href="index.html#Server">Server</a></pre>
 				<p>
 NewServer returns a new Server.
@@ -805,7 +849,9 @@ NewServer returns a new Server.
 
 			
 				
-				<h3 id="Server.Accept">func (*Server) <a href="http://localhost:9090/src/net/rpc/server.go?s=17995:18041#L607">Accept</a></h3>
+				<h3 id="Server.Accept">func (*Server) <a href="http://localhost:9090/src/net/rpc/server.go?s=17989:18035#L607">Accept</a>
+					<a class="permalink" href="index.html#Server.Accept">&#xb6;</a>
+				</h3>
 				<pre>func (server *<a href="index.html#Server">Server</a>) Accept(lis <a href="../index.html">net</a>.<a href="../index.html#Listener">Listener</a>)</pre>
 				<p>
 Accept accepts connections on the listener and serves requests
@@ -819,7 +865,9 @@ go statement.
 				
 			
 				
-				<h3 id="Server.HandleHTTP">func (*Server) <a href="http://localhost:9090/src/net/rpc/server.go?s=21135:21194#L692">HandleHTTP</a></h3>
+				<h3 id="Server.HandleHTTP">func (*Server) <a href="http://localhost:9090/src/net/rpc/server.go?s=21127:21186#L692">HandleHTTP</a>
+					<a class="permalink" href="index.html#Server.HandleHTTP">&#xb6;</a>
+				</h3>
 				<pre>func (server *<a href="index.html#Server">Server</a>) HandleHTTP(rpcPath, debugPath <a href="../../builtin/index.html#string">string</a>)</pre>
 				<p>
 HandleHTTP registers an HTTP handler for RPC messages on rpcPath,
@@ -832,7 +880,9 @@ It is still necessary to invoke http.Serve(), typically in a go statement.
 				
 			
 				
-				<h3 id="Server.Register">func (*Server) <a href="http://localhost:9090/src/net/rpc/server.go?s=7103:7157#L218">Register</a></h3>
+				<h3 id="Server.Register">func (*Server) <a href="http://localhost:9090/src/net/rpc/server.go?s=7099:7153#L218">Register</a>
+					<a class="permalink" href="index.html#Server.Register">&#xb6;</a>
+				</h3>
 				<pre>func (server *<a href="index.html#Server">Server</a>) Register(rcvr interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Register publishes in the server the set of methods of the
@@ -855,7 +905,9 @@ where Type is the receiver&#39;s concrete type.
 				
 			
 				
-				<h3 id="Server.RegisterName">func (*Server) <a href="http://localhost:9090/src/net/rpc/server.go?s=7321:7392#L224">RegisterName</a></h3>
+				<h3 id="Server.RegisterName">func (*Server) <a href="http://localhost:9090/src/net/rpc/server.go?s=7317:7388#L224">RegisterName</a>
+					<a class="permalink" href="index.html#Server.RegisterName">&#xb6;</a>
+				</h3>
 				<pre>func (server *<a href="index.html#Server">Server</a>) RegisterName(name <a href="../../builtin/index.html#string">string</a>, rcvr interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 RegisterName is like Register but uses the provided name for the type
@@ -867,7 +919,9 @@ instead of the receiver&#39;s concrete type.
 				
 			
 				
-				<h3 id="Server.ServeCodec">func (*Server) <a href="http://localhost:9090/src/net/rpc/server.go?s=13822:13873#L449">ServeCodec</a></h3>
+				<h3 id="Server.ServeCodec">func (*Server) <a href="http://localhost:9090/src/net/rpc/server.go?s=13817:13868#L449">ServeCodec</a>
+					<a class="permalink" href="index.html#Server.ServeCodec">&#xb6;</a>
+				</h3>
 				<pre>func (server *<a href="index.html#Server">Server</a>) ServeCodec(codec <a href="index.html#ServerCodec">ServerCodec</a>)</pre>
 				<p>
 ServeCodec is like ServeConn but uses the specified codec to
@@ -879,14 +933,16 @@ decode requests and encode responses.
 				
 			
 				
-				<h3 id="Server.ServeConn">func (*Server) <a href="http://localhost:9090/src/net/rpc/server.go?s=13479:13535#L436">ServeConn</a></h3>
+				<h3 id="Server.ServeConn">func (*Server) <a href="http://localhost:9090/src/net/rpc/server.go?s=13474:13530#L436">ServeConn</a>
+					<a class="permalink" href="index.html#Server.ServeConn">&#xb6;</a>
+				</h3>
 				<pre>func (server *<a href="index.html#Server">Server</a>) ServeConn(conn <a href="../../io/index.html">io</a>.<a href="../../io/index.html#ReadWriteCloser">ReadWriteCloser</a>)</pre>
 				<p>
 ServeConn runs the server on a single connection.
 ServeConn blocks, serving the connection until the client hangs up.
 The caller typically invokes ServeConn in a go statement.
 ServeConn uses the gob wire format (see package gob) on the
-connection.  To use an alternate codec, use ServeCodec.
+connection. To use an alternate codec, use ServeCodec.
 </p>
 
 				
@@ -894,7 +950,9 @@ connection.  To use an alternate codec, use ServeCodec.
 				
 			
 				
-				<h3 id="Server.ServeHTTP">func (*Server) <a href="http://localhost:9090/src/net/rpc/server.go?s=20463:20536#L673">ServeHTTP</a></h3>
+				<h3 id="Server.ServeHTTP">func (*Server) <a href="http://localhost:9090/src/net/rpc/server.go?s=20455:20528#L673">ServeHTTP</a>
+					<a class="permalink" href="index.html#Server.ServeHTTP">&#xb6;</a>
+				</h3>
 				<pre>func (server *<a href="index.html#Server">Server</a>) ServeHTTP(w <a href="../http/index.html">http</a>.<a href="../http/index.html#ResponseWriter">ResponseWriter</a>, req *<a href="../http/index.html">http</a>.<a href="../http/index.html#Request">Request</a>)</pre>
 				<p>
 ServeHTTP implements an http.Handler that answers RPC requests.
@@ -905,7 +963,9 @@ ServeHTTP implements an http.Handler that answers RPC requests.
 				
 			
 				
-				<h3 id="Server.ServeRequest">func (*Server) <a href="http://localhost:9090/src/net/rpc/server.go?s=14536:14595#L474">ServeRequest</a></h3>
+				<h3 id="Server.ServeRequest">func (*Server) <a href="http://localhost:9090/src/net/rpc/server.go?s=14531:14590#L474">ServeRequest</a>
+					<a class="permalink" href="index.html#Server.ServeRequest">&#xb6;</a>
+				</h3>
 				<pre>func (server *<a href="index.html#Server">Server</a>) ServeRequest(codec <a href="index.html#ServerCodec">ServerCodec</a>) <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 ServeRequest is like ServeCodec but synchronously serves a single request.
@@ -919,7 +979,9 @@ It does not close the codec upon completion.
 		
 			
 			
-			<h2 id="ServerCodec">type <a href="http://localhost:9090/src/net/rpc/server.go?s=19024:19260#L634">ServerCodec</a></h2>
+			<h2 id="ServerCodec">type <a href="http://localhost:9090/src/net/rpc/server.go?s=19017:19253#L634">ServerCodec</a>
+				<a class="permalink" href="index.html#ServerCodec">&#xb6;</a>
+			</h2>
 			<pre>type ServerCodec interface {
     ReadRequestHeader(*<a href="index.html#Request">Request</a>) <a href="../../builtin/index.html#error">error</a>
     ReadRequestBody(interface{}) <a href="../../builtin/index.html#error">error</a>
@@ -933,7 +995,7 @@ A ServerCodec implements reading of RPC requests and writing of
 RPC responses for the server side of an RPC session.
 The server calls ReadRequestHeader and ReadRequestBody in pairs
 to read requests from the connection, and it calls WriteResponse to
-write a response back.  The server calls Close when finished with the
+write a response back. The server calls Close when finished with the
 connection. ReadRequestBody may be called with a nil
 argument to force the body of the request to be read and discarded.
 </p>
@@ -953,7 +1015,9 @@ argument to force the body of the request to be read and discarded.
 		
 			
 			
-			<h2 id="ServerError">type <a href="http://localhost:9090/src/net/rpc/client.go?s=365:388#L10">ServerError</a></h2>
+			<h2 id="ServerError">type <a href="http://localhost:9090/src/net/rpc/client.go?s=365:388#L10">ServerError</a>
+				<a class="permalink" href="index.html#ServerError">&#xb6;</a>
+			</h2>
 			<pre>type ServerError <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 ServerError represents an error that has been returned from
@@ -973,7 +1037,9 @@ the remote side of the RPC connection.
 
 			
 				
-				<h3 id="ServerError.Error">func (ServerError) <a href="http://localhost:9090/src/net/rpc/client.go?s=390:425#L12">Error</a></h3>
+				<h3 id="ServerError.Error">func (ServerError) <a href="http://localhost:9090/src/net/rpc/client.go?s=390:425#L12">Error</a>
+					<a class="permalink" href="index.html#ServerError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#ServerError">ServerError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1030,7 +1096,7 @@ the remote side of the RPC connection.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -1048,6 +1114,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

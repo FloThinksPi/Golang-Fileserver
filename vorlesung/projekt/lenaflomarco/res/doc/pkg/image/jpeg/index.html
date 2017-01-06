@@ -229,7 +229,9 @@ DefaultQuality is the default quality encoding parameter.
 		
 			
 			
-			<h2 id="Decode">func <a href="http://localhost:9090/src/image/jpeg/reader.go?s=21757:21802#L751">Decode</a></h2>
+			<h2 id="Decode">func <a href="http://localhost:9090/src/image/jpeg/reader.go?s=21862:21907#L757">Decode</a>
+				<a class="permalink" href="index.html#Decode">&#xb6;</a>
+			</h2>
 			<pre>func Decode(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) (<a href="../index.html">image</a>.<a href="../index.html#Image">Image</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 Decode reads a JPEG image from r and returns it as an image.Image.
@@ -241,7 +243,9 @@ Decode reads a JPEG image from r and returns it as an image.Image.
 		
 			
 			
-			<h2 id="DecodeConfig">func <a href="http://localhost:9090/src/image/jpeg/reader.go?s=21959:22011#L758">DecodeConfig</a></h2>
+			<h2 id="DecodeConfig">func <a href="http://localhost:9090/src/image/jpeg/reader.go?s=22064:22116#L764">DecodeConfig</a>
+				<a class="permalink" href="index.html#DecodeConfig">&#xb6;</a>
+			</h2>
 			<pre>func DecodeConfig(r <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>) (<a href="../index.html">image</a>.<a href="../index.html#Config">Config</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 DecodeConfig returns the color model and dimensions of a JPEG image without
@@ -254,7 +258,9 @@ decoding the entire image.
 		
 			
 			
-			<h2 id="Encode">func <a href="http://localhost:9090/src/image/jpeg/writer.go?s=15419:15476#L538">Encode</a></h2>
+			<h2 id="Encode">func <a href="http://localhost:9090/src/image/jpeg/writer.go?s=15419:15476#L538">Encode</a>
+				<a class="permalink" href="index.html#Encode">&#xb6;</a>
+			</h2>
 			<pre>func Encode(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, m <a href="../index.html">image</a>.<a href="../index.html#Image">Image</a>, o *<a href="index.html#Options">Options</a>) <a href="../../builtin/index.html#error">error</a></pre>
 			<p>
 Encode writes the Image m to w in JPEG 4:2:0 baseline format with the given
@@ -268,7 +274,9 @@ options. Default parameters are used if a nil *Options is passed.
 		
 			
 			
-			<h2 id="FormatError">type <a href="http://localhost:9090/src/image/jpeg/reader.go?s=582:605#L11">FormatError</a></h2>
+			<h2 id="FormatError">type <a href="http://localhost:9090/src/image/jpeg/reader.go?s=582:605#L11">FormatError</a>
+				<a class="permalink" href="index.html#FormatError">&#xb6;</a>
+			</h2>
 			<pre>type FormatError <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 A FormatError reports that the input is not a valid JPEG.
@@ -287,7 +295,9 @@ A FormatError reports that the input is not a valid JPEG.
 
 			
 				
-				<h3 id="FormatError.Error">func (FormatError) <a href="http://localhost:9090/src/image/jpeg/reader.go?s=607:642#L13">Error</a></h3>
+				<h3 id="FormatError.Error">func (FormatError) <a href="http://localhost:9090/src/image/jpeg/reader.go?s=607:642#L13">Error</a>
+					<a class="permalink" href="index.html#FormatError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#FormatError">FormatError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -297,7 +307,9 @@ A FormatError reports that the input is not a valid JPEG.
 		
 			
 			
-			<h2 id="Options">type <a href="http://localhost:9090/src/image/jpeg/writer.go?s=15233:15269#L532">Options</a></h2>
+			<h2 id="Options">type <a href="http://localhost:9090/src/image/jpeg/writer.go?s=15233:15269#L532">Options</a>
+				<a class="permalink" href="index.html#Options">&#xb6;</a>
+			</h2>
 			<pre>type Options struct {
     Quality <a href="../../builtin/index.html#int">int</a>
 }</pre>
@@ -321,7 +333,9 @@ Quality ranges from 1 to 100 inclusive, higher is better.
 		
 			
 			
-			<h2 id="Reader">type <a href="http://localhost:9090/src/image/jpeg/reader.go?s=2840:2891#L83">Reader</a></h2>
+			<h2 id="Reader">type <a href="http://localhost:9090/src/image/jpeg/reader.go?s=2840:2891#L83">Reader</a>
+				<a class="permalink" href="index.html#Reader">&#xb6;</a>
+			</h2>
 			<pre>type Reader interface {
     <a href="../../io/index.html">io</a>.<a href="../../io/index.html#ByteReader">ByteReader</a>
     <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>
@@ -345,7 +359,9 @@ Deprecated: Reader is deprecated.
 		
 			
 			
-			<h2 id="UnsupportedError">type <a href="http://localhost:9090/src/image/jpeg/reader.go?s=782:810#L16">UnsupportedError</a></h2>
+			<h2 id="UnsupportedError">type <a href="http://localhost:9090/src/image/jpeg/reader.go?s=782:810#L16">UnsupportedError</a>
+				<a class="permalink" href="index.html#UnsupportedError">&#xb6;</a>
+			</h2>
 			<pre>type UnsupportedError <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 An UnsupportedError reports that the input uses a valid but unimplemented JPEG feature.
@@ -364,7 +380,9 @@ An UnsupportedError reports that the input uses a valid but unimplemented JPEG f
 
 			
 				
-				<h3 id="UnsupportedError.Error">func (UnsupportedError) <a href="http://localhost:9090/src/image/jpeg/reader.go?s=812:852#L18">Error</a></h3>
+				<h3 id="UnsupportedError.Error">func (UnsupportedError) <a href="http://localhost:9090/src/image/jpeg/reader.go?s=812:852#L18">Error</a>
+					<a class="permalink" href="index.html#UnsupportedError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#UnsupportedError">UnsupportedError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -383,7 +401,7 @@ An UnsupportedError reports that the input uses a valid but unimplemented JPEG f
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -401,6 +419,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

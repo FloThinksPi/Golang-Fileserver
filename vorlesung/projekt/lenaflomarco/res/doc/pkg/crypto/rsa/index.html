@@ -103,7 +103,7 @@ possible.
 </p>
 <p>
 Two sets of interfaces are included in this package. When a more abstract
-interface isn&#39;t neccessary, there are functions for encrypting/decrypting
+interface isn&#39;t necessary, there are functions for encrypting/decrypting
 with v1.5/OAEP and signing/verifying with v1.5/PSS. If one needs to abstract
 over the public-key primitive, the PrivateKey struct implements the
 Decrypter and Signer interfaces from the crypto package.
@@ -131,28 +131,28 @@ Decrypter and Signer interfaces from the crypto package.
 			
 			
 				
-				<dd><a href="index.html#DecryptOAEP">func DecryptOAEP(hash hash.Hash, random io.Reader, priv *PrivateKey, ciphertext []byte, label []byte) (msg []byte, err error)</a></dd>
+				<dd><a href="index.html#DecryptOAEP">func DecryptOAEP(hash hash.Hash, random io.Reader, priv *PrivateKey, ciphertext []byte, label []byte) ([]byte, error)</a></dd>
 			
 				
-				<dd><a href="index.html#DecryptPKCS1v15">func DecryptPKCS1v15(rand io.Reader, priv *PrivateKey, ciphertext []byte) (out []byte, err error)</a></dd>
+				<dd><a href="index.html#DecryptPKCS1v15">func DecryptPKCS1v15(rand io.Reader, priv *PrivateKey, ciphertext []byte) ([]byte, error)</a></dd>
 			
 				
-				<dd><a href="index.html#DecryptPKCS1v15SessionKey">func DecryptPKCS1v15SessionKey(rand io.Reader, priv *PrivateKey, ciphertext []byte, key []byte) (err error)</a></dd>
+				<dd><a href="index.html#DecryptPKCS1v15SessionKey">func DecryptPKCS1v15SessionKey(rand io.Reader, priv *PrivateKey, ciphertext []byte, key []byte) error</a></dd>
 			
 				
-				<dd><a href="index.html#EncryptOAEP">func EncryptOAEP(hash hash.Hash, random io.Reader, pub *PublicKey, msg []byte, label []byte) (out []byte, err error)</a></dd>
+				<dd><a href="index.html#EncryptOAEP">func EncryptOAEP(hash hash.Hash, random io.Reader, pub *PublicKey, msg []byte, label []byte) ([]byte, error)</a></dd>
 			
 				
-				<dd><a href="index.html#EncryptPKCS1v15">func EncryptPKCS1v15(rand io.Reader, pub *PublicKey, msg []byte) (out []byte, err error)</a></dd>
+				<dd><a href="index.html#EncryptPKCS1v15">func EncryptPKCS1v15(rand io.Reader, pub *PublicKey, msg []byte) ([]byte, error)</a></dd>
 			
 				
-				<dd><a href="index.html#SignPKCS1v15">func SignPKCS1v15(rand io.Reader, priv *PrivateKey, hash crypto.Hash, hashed []byte) (s []byte, err error)</a></dd>
+				<dd><a href="index.html#SignPKCS1v15">func SignPKCS1v15(rand io.Reader, priv *PrivateKey, hash crypto.Hash, hashed []byte) ([]byte, error)</a></dd>
 			
 				
-				<dd><a href="index.html#SignPSS">func SignPSS(rand io.Reader, priv *PrivateKey, hash crypto.Hash, hashed []byte, opts *PSSOptions) (s []byte, err error)</a></dd>
+				<dd><a href="index.html#SignPSS">func SignPSS(rand io.Reader, priv *PrivateKey, hash crypto.Hash, hashed []byte, opts *PSSOptions) ([]byte, error)</a></dd>
 			
 				
-				<dd><a href="index.html#VerifyPKCS1v15">func VerifyPKCS1v15(pub *PublicKey, hash crypto.Hash, hashed []byte, sig []byte) (err error)</a></dd>
+				<dd><a href="index.html#VerifyPKCS1v15">func VerifyPKCS1v15(pub *PublicKey, hash crypto.Hash, hashed []byte, sig []byte) error</a></dd>
 			
 				
 				<dd><a href="index.html#VerifyPSS">func VerifyPSS(pub *PublicKey, hash crypto.Hash, hashed []byte, sig []byte, opts *PSSOptions) error</a></dd>
@@ -190,10 +190,10 @@ Decrypter and Signer interfaces from the crypto package.
 				<dd><a href="index.html#PrivateKey">type PrivateKey</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#GenerateKey">func GenerateKey(random io.Reader, bits int) (priv *PrivateKey, err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#GenerateKey">func GenerateKey(random io.Reader, bits int) (*PrivateKey, error)</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#GenerateMultiPrimeKey">func GenerateMultiPrimeKey(random io.Reader, nprimes int, bits int) (priv *PrivateKey, err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#GenerateMultiPrimeKey">func GenerateMultiPrimeKey(random io.Reader, nprimes int, bits int) (*PrivateKey, error)</a></dd>
 				
 				
 					
@@ -319,8 +319,10 @@ It is deliberately vague to avoid adaptive attacks.
 		
 			
 			
-			<h2 id="DecryptOAEP">func <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=16896:17021#L558">DecryptOAEP</a></h2>
-			<pre>func DecryptOAEP(hash <a href="../../hash/index.html">hash</a>.<a href="../../hash/index.html#Hash">Hash</a>, random <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, priv *<a href="index.html#PrivateKey">PrivateKey</a>, ciphertext []<a href="../../builtin/index.html#byte">byte</a>, label []<a href="../../builtin/index.html#byte">byte</a>) (msg []<a href="../../builtin/index.html#byte">byte</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+			<h2 id="DecryptOAEP">func <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=16914:17031#L558">DecryptOAEP</a>
+				<a class="permalink" href="index.html#DecryptOAEP">&#xb6;</a>
+			</h2>
+			<pre>func DecryptOAEP(hash <a href="../../hash/index.html">hash</a>.<a href="../../hash/index.html#Hash">Hash</a>, random <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, priv *<a href="index.html#PrivateKey">PrivateKey</a>, ciphertext []<a href="../../builtin/index.html#byte">byte</a>, label []<a href="../../builtin/index.html#byte">byte</a>) ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 OAEP is parameterised by a hash function that is used as a random oracle.
 Encryption and decryption of a given message must use the same hash function
@@ -342,8 +344,10 @@ EncryptOAEP for details.
 		
 			
 			
-			<h2 id="DecryptPKCS1v15">func <a href="http://localhost:9090/src/crypto/rsa/pkcs1v15.go?s=2346:2443#L62">DecryptPKCS1v15</a></h2>
-			<pre>func DecryptPKCS1v15(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, priv *<a href="index.html#PrivateKey">PrivateKey</a>, ciphertext []<a href="../../builtin/index.html#byte">byte</a>) (out []<a href="../../builtin/index.html#byte">byte</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+			<h2 id="DecryptPKCS1v15">func <a href="http://localhost:9090/src/crypto/rsa/pkcs1v15.go?s=2350:2439#L62">DecryptPKCS1v15</a>
+				<a class="permalink" href="index.html#DecryptPKCS1v15">&#xb6;</a>
+			</h2>
+			<pre>func DecryptPKCS1v15(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, priv *<a href="index.html#PrivateKey">PrivateKey</a>, ciphertext []<a href="../../builtin/index.html#byte">byte</a>) ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 DecryptPKCS1v15 decrypts a plaintext using RSA and the padding scheme from PKCS#1 v1.5.
 If rand != nil, it uses RSA blinding to avoid timing side-channel attacks.
@@ -362,8 +366,10 @@ DecryptPKCS1v15SessionKey for a way of solving this problem.
 		
 			
 			
-			<h2 id="DecryptPKCS1v15SessionKey">func <a href="http://localhost:9090/src/crypto/rsa/pkcs1v15.go?s=3987:4094#L96">DecryptPKCS1v15SessionKey</a></h2>
-			<pre>func DecryptPKCS1v15SessionKey(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, priv *<a href="index.html#PrivateKey">PrivateKey</a>, ciphertext []<a href="../../builtin/index.html#byte">byte</a>, key []<a href="../../builtin/index.html#byte">byte</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+			<h2 id="DecryptPKCS1v15SessionKey">func <a href="http://localhost:9090/src/crypto/rsa/pkcs1v15.go?s=3990:4091#L95">DecryptPKCS1v15SessionKey</a>
+				<a class="permalink" href="index.html#DecryptPKCS1v15SessionKey">&#xb6;</a>
+			</h2>
+			<pre>func DecryptPKCS1v15SessionKey(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, priv *<a href="index.html#PrivateKey">PrivateKey</a>, ciphertext []<a href="../../builtin/index.html#byte">byte</a>, key []<a href="../../builtin/index.html#byte">byte</a>) <a href="../../builtin/index.html#error">error</a></pre>
 			<p>
 DecryptPKCS1v15SessionKey decrypts a session key using RSA and the padding scheme from PKCS#1 v1.5.
 If rand != nil, it uses RSA blinding to avoid timing side-channel attacks.
@@ -393,8 +399,10 @@ function. Using at least a 16-byte key will protect against this attack.
 		
 			
 			
-			<h2 id="EncryptOAEP">func <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=11100:11216#L341">EncryptOAEP</a></h2>
-			<pre>func EncryptOAEP(hash <a href="../../hash/index.html">hash</a>.<a href="../../hash/index.html#Hash">Hash</a>, random <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, pub *<a href="index.html#PublicKey">PublicKey</a>, msg []<a href="../../builtin/index.html#byte">byte</a>, label []<a href="../../builtin/index.html#byte">byte</a>) (out []<a href="../../builtin/index.html#byte">byte</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+			<h2 id="EncryptOAEP">func <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=11109:11217#L342">EncryptOAEP</a>
+				<a class="permalink" href="index.html#EncryptOAEP">&#xb6;</a>
+			</h2>
+			<pre>func EncryptOAEP(hash <a href="../../hash/index.html">hash</a>.<a href="../../hash/index.html#Hash">Hash</a>, random <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, pub *<a href="index.html#PublicKey">PublicKey</a>, msg []<a href="../../builtin/index.html#byte">byte</a>, label []<a href="../../builtin/index.html#byte">byte</a>) ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 EncryptOAEP encrypts the given message with RSA-OAEP.
 </p>
@@ -425,19 +433,23 @@ twice the hash length plus 2.
 		
 			
 			
-			<h2 id="EncryptPKCS1v15">func <a href="http://localhost:9090/src/crypto/rsa/pkcs1v15.go?s=1218:1306#L25">EncryptPKCS1v15</a></h2>
-			<pre>func EncryptPKCS1v15(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, pub *<a href="index.html#PublicKey">PublicKey</a>, msg []<a href="../../builtin/index.html#byte">byte</a>) (out []<a href="../../builtin/index.html#byte">byte</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+			<h2 id="EncryptPKCS1v15">func <a href="http://localhost:9090/src/crypto/rsa/pkcs1v15.go?s=1225:1305#L27">EncryptPKCS1v15</a>
+				<a class="permalink" href="index.html#EncryptPKCS1v15">&#xb6;</a>
+			</h2>
+			<pre>func EncryptPKCS1v15(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, pub *<a href="index.html#PublicKey">PublicKey</a>, msg []<a href="../../builtin/index.html#byte">byte</a>) ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
-EncryptPKCS1v15 encrypts the given message with RSA and the padding scheme from PKCS#1 v1.5.
-The message must be no longer than the length of the public modulus minus 11 bytes.
+EncryptPKCS1v15 encrypts the given message with RSA and the padding
+scheme from PKCS#1 v1.5.  The message must be no longer than the
+length of the public modulus minus 11 bytes.
 </p>
 <p>
-The rand parameter is used as a source of entropy to ensure that encrypting
-the same message twice doesn&#39;t result in the same ciphertext.
+The rand parameter is used as a source of entropy to ensure that
+encrypting the same message twice doesn&#39;t result in the same
+ciphertext.
 </p>
 <p>
-WARNING: use of this function to encrypt plaintexts other than session keys
-is dangerous. Use RSA OAEP in new protocols.
+WARNING: use of this function to encrypt plaintexts other than
+session keys is dangerous. Use RSA OAEP in new protocols.
 </p>
 
 			
@@ -446,22 +458,26 @@ is dangerous. Use RSA OAEP in new protocols.
 		
 			
 			
-			<h2 id="SignPKCS1v15">func <a href="http://localhost:9090/src/crypto/rsa/pkcs1v15.go?s=8750:8856#L217">SignPKCS1v15</a></h2>
-			<pre>func SignPKCS1v15(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, priv *<a href="index.html#PrivateKey">PrivateKey</a>, hash <a href="../index.html">crypto</a>.<a href="../index.html#Hash">Hash</a>, hashed []<a href="../../builtin/index.html#byte">byte</a>) (s []<a href="../../builtin/index.html#byte">byte</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+			<h2 id="SignPKCS1v15">func <a href="http://localhost:9090/src/crypto/rsa/pkcs1v15.go?s=8762:8862#L218">SignPKCS1v15</a>
+				<a class="permalink" href="index.html#SignPKCS1v15">&#xb6;</a>
+			</h2>
+			<pre>func SignPKCS1v15(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, priv *<a href="index.html#PrivateKey">PrivateKey</a>, hash <a href="../index.html">crypto</a>.<a href="../index.html#Hash">Hash</a>, hashed []<a href="../../builtin/index.html#byte">byte</a>) ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
-SignPKCS1v15 calculates the signature of hashed using RSASSA-PKCS1-V1_5-SIGN from RSA PKCS#1 v1.5.
-Note that hashed must be the result of hashing the input message using the
-given hash function. If hash is zero, hashed is signed directly. This isn&#39;t
+SignPKCS1v15 calculates the signature of hashed using
+RSASSA-PKCS1-V1_5-SIGN from RSA PKCS#1 v1.5.  Note that hashed must
+be the result of hashing the input message using the given hash
+function. If hash is zero, hashed is signed directly. This isn&#39;t
 advisable except for interoperability.
 </p>
 <p>
-If rand is not nil then RSA blinding will be used to avoid timing side-channel attacks.
+If rand is not nil then RSA blinding will be used to avoid timing
+side-channel attacks.
 </p>
 <p>
-This function is deterministic. Thus, if the set of possible messages is
-small, an attacker may be able to build a map from messages to signatures
-and identify the signed messages. As ever, signatures provide authenticity,
-not confidentiality.
+This function is deterministic. Thus, if the set of possible
+messages is small, an attacker may be able to build a map from
+messages to signatures and identify the signed messages. As ever,
+signatures provide authenticity, not confidentiality.
 </p>
 
 			
@@ -470,8 +486,10 @@ not confidentiality.
 		
 			
 			
-			<h2 id="SignPSS">func <a href="http://localhost:9090/src/crypto/rsa/pss.go?s=6955:7074#L239">SignPSS</a></h2>
-			<pre>func SignPSS(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, priv *<a href="index.html#PrivateKey">PrivateKey</a>, hash <a href="../index.html">crypto</a>.<a href="../index.html#Hash">Hash</a>, hashed []<a href="../../builtin/index.html#byte">byte</a>, opts *<a href="index.html#PSSOptions">PSSOptions</a>) (s []<a href="../../builtin/index.html#byte">byte</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+			<h2 id="SignPSS">func <a href="http://localhost:9090/src/crypto/rsa/pss.go?s=6954:7067#L239">SignPSS</a>
+				<a class="permalink" href="index.html#SignPSS">&#xb6;</a>
+			</h2>
+			<pre>func SignPSS(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, priv *<a href="index.html#PrivateKey">PrivateKey</a>, hash <a href="../index.html">crypto</a>.<a href="../index.html#Hash">Hash</a>, hashed []<a href="../../builtin/index.html#byte">byte</a>, opts *<a href="index.html#PSSOptions">PSSOptions</a>) ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 SignPSS calculates the signature of hashed using RSASSA-PSS [1].
 Note that hashed must be the result of hashing the input message using the
@@ -485,8 +503,10 @@ defaults are used.
 		
 			
 			
-			<h2 id="VerifyPKCS1v15">func <a href="http://localhost:9090/src/crypto/rsa/pkcs1v15.go?s=9744:9836#L254">VerifyPKCS1v15</a></h2>
-			<pre>func VerifyPKCS1v15(pub *<a href="index.html#PublicKey">PublicKey</a>, hash <a href="../index.html">crypto</a>.<a href="../index.html#Hash">Hash</a>, hashed []<a href="../../builtin/index.html#byte">byte</a>, sig []<a href="../../builtin/index.html#byte">byte</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+			<h2 id="VerifyPKCS1v15">func <a href="http://localhost:9090/src/crypto/rsa/pkcs1v15.go?s=9768:9854#L254">VerifyPKCS1v15</a>
+				<a class="permalink" href="index.html#VerifyPKCS1v15">&#xb6;</a>
+			</h2>
+			<pre>func VerifyPKCS1v15(pub *<a href="index.html#PublicKey">PublicKey</a>, hash <a href="../index.html">crypto</a>.<a href="../index.html#Hash">Hash</a>, hashed []<a href="../../builtin/index.html#byte">byte</a>, sig []<a href="../../builtin/index.html#byte">byte</a>) <a href="../../builtin/index.html#error">error</a></pre>
 			<p>
 VerifyPKCS1v15 verifies an RSA PKCS#1 v1.5 signature.
 hashed is the result of hashing the input message using the given hash
@@ -501,7 +521,9 @@ isn&#39;t advisable except for interoperability.
 		
 			
 			
-			<h2 id="VerifyPSS">func <a href="http://localhost:9090/src/crypto/rsa/pss.go?s=7774:7873#L264">VerifyPSS</a></h2>
+			<h2 id="VerifyPSS">func <a href="http://localhost:9090/src/crypto/rsa/pss.go?s=7777:7876#L264">VerifyPSS</a>
+				<a class="permalink" href="index.html#VerifyPSS">&#xb6;</a>
+			</h2>
 			<pre>func VerifyPSS(pub *<a href="index.html#PublicKey">PublicKey</a>, hash <a href="../index.html">crypto</a>.<a href="../index.html#Hash">Hash</a>, hashed []<a href="../../builtin/index.html#byte">byte</a>, sig []<a href="../../builtin/index.html#byte">byte</a>, opts *<a href="index.html#PSSOptions">PSSOptions</a>) <a href="../../builtin/index.html#error">error</a></pre>
 			<p>
 VerifyPSS verifies a PSS signature.
@@ -518,7 +540,9 @@ defaults are used.
 		
 			
 			
-			<h2 id="CRTValue">type <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=4921:5092#L138">CRTValue</a></h2>
+			<h2 id="CRTValue">type <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=4920:5091#L138">CRTValue</a>
+				<a class="permalink" href="index.html#CRTValue">&#xb6;</a>
+			</h2>
 			<pre>type CRTValue struct {
     Exp   *<a href="../../math/big/index.html">big</a>.<a href="../../math/big/index.html#Int">Int</a> <span class="comment">// D mod (prime-1).</span>
     Coeff *<a href="../../math/big/index.html">big</a>.<a href="../../math/big/index.html#Int">Int</a> <span class="comment">// R·Coeff ≡ 1 mod Prime.</span>
@@ -543,7 +567,9 @@ CRTValue contains the precomputed Chinese remainder theorem values.
 		
 			
 			
-			<h2 id="OAEPOptions">type <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=1463:1692#L34">OAEPOptions</a></h2>
+			<h2 id="OAEPOptions">type <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=1462:1691#L34">OAEPOptions</a>
+				<a class="permalink" href="index.html#OAEPOptions">&#xb6;</a>
+			</h2>
 			<pre>type OAEPOptions struct {
     <span class="comment">// Hash is the hash function that will be used when generating the mask.</span>
     Hash <a href="../index.html">crypto</a>.<a href="../index.html#Hash">Hash</a>
@@ -571,7 +597,9 @@ crypto.Decrypter interface.
 		
 			
 			
-			<h2 id="PKCS1v15DecryptOptions">type <a href="http://localhost:9090/src/crypto/rsa/pkcs1v15.go?s=433:756#L9">PKCS1v15DecryptOptions</a></h2>
+			<h2 id="PKCS1v15DecryptOptions">type <a href="http://localhost:9090/src/crypto/rsa/pkcs1v15.go?s=433:756#L9">PKCS1v15DecryptOptions</a>
+				<a class="permalink" href="index.html#PKCS1v15DecryptOptions">&#xb6;</a>
+			</h2>
 			<pre>type PKCS1v15DecryptOptions struct {
     <span class="comment">// SessionKeyLen is the length of the session key that is being</span>
     <span class="comment">// decrypted. If not zero, then a padding error during decryption will</span>
@@ -599,7 +627,9 @@ the crypto.Decrypter interface.
 		
 			
 			
-			<h2 id="PSSOptions">type <a href="http://localhost:9090/src/crypto/rsa/pss.go?s=6035:6429#L210">PSSOptions</a></h2>
+			<h2 id="PSSOptions">type <a href="http://localhost:9090/src/crypto/rsa/pss.go?s=6034:6428#L210">PSSOptions</a>
+				<a class="permalink" href="index.html#PSSOptions">&#xb6;</a>
+			</h2>
 			<pre>type PSSOptions struct {
     <span class="comment">// SaltLength controls the length of the salt used in the PSS</span>
     <span class="comment">// signature. It can either be a number of bytes, or one of the special</span>
@@ -628,7 +658,9 @@ PSSOptions contains options for creating and verifying PSS signatures.
 
 			
 				
-				<h3 id="PSSOptions.HashFunc">func (*PSSOptions) <a href="http://localhost:9090/src/crypto/rsa/pss.go?s=6516:6565#L224">HashFunc</a></h3>
+				<h3 id="PSSOptions.HashFunc">func (*PSSOptions) <a href="http://localhost:9090/src/crypto/rsa/pss.go?s=6515:6564#L224">HashFunc</a>
+					<a class="permalink" href="index.html#PSSOptions.HashFunc">&#xb6;</a>
+				</h3>
 				<pre>func (pssOpts *<a href="index.html#PSSOptions">PSSOptions</a>) HashFunc() <a href="../index.html">crypto</a>.<a href="../index.html#Hash">Hash</a></pre>
 				<p>
 HashFunc returns pssOpts.Hash so that PSSOptions implements
@@ -642,7 +674,9 @@ crypto.SignerOpts.
 		
 			
 			
-			<h2 id="PrecomputedValues">type <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=4483:4848#L126">PrecomputedValues</a></h2>
+			<h2 id="PrecomputedValues">type <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=4482:4847#L126">PrecomputedValues</a>
+				<a class="permalink" href="index.html#PrecomputedValues">&#xb6;</a>
+			</h2>
 			<pre>type PrecomputedValues struct {
     Dp, Dq *<a href="../../math/big/index.html">big</a>.<a href="../../math/big/index.html#Int">Int</a> <span class="comment">// D mod (P-1) (or mod Q-1)</span>
     Qinv   *<a href="../../math/big/index.html">big</a>.<a href="../../math/big/index.html#Int">Int</a> <span class="comment">// Q^-1 mod P</span>
@@ -669,7 +703,9 @@ crypto.SignerOpts.
 		
 			
 			
-			<h2 id="PrivateKey">type <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=2444:2742#L67">PrivateKey</a></h2>
+			<h2 id="PrivateKey">type <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=2443:2741#L67">PrivateKey</a>
+				<a class="permalink" href="index.html#PrivateKey">&#xb6;</a>
+			</h2>
 			<pre>type PrivateKey struct {
     <a href="index.html#PublicKey">PublicKey</a>            <span class="comment">// public part.</span>
     D         *<a href="../../math/big/index.html">big</a>.<a href="../../math/big/index.html#Int">Int</a>   <span class="comment">// private exponent</span>
@@ -694,8 +730,10 @@ A PrivateKey represents an RSA key
 
 			
 				
-				<h3 id="GenerateKey">func <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=6490:6564#L184">GenerateKey</a></h3>
-				<pre>func GenerateKey(random <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, bits <a href="../../builtin/index.html#int">int</a>) (priv *<a href="index.html#PrivateKey">PrivateKey</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="GenerateKey">func <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=6489:6554#L184">GenerateKey</a>
+					<a class="permalink" href="index.html#GenerateKey">&#xb6;</a>
+				</h3>
+				<pre>func GenerateKey(random <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, bits <a href="../../builtin/index.html#int">int</a>) (*<a href="index.html#PrivateKey">PrivateKey</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 GenerateKey generates an RSA keypair of the given bit size using the
 random source random (for example, crypto/rand.Reader).
@@ -705,8 +743,10 @@ random source random (for example, crypto/rand.Reader).
 				
 			
 				
-				<h3 id="GenerateMultiPrimeKey">func <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=7206:7303#L199">GenerateMultiPrimeKey</a></h3>
-				<pre>func GenerateMultiPrimeKey(random <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, nprimes <a href="../../builtin/index.html#int">int</a>, bits <a href="../../builtin/index.html#int">int</a>) (priv *<a href="index.html#PrivateKey">PrivateKey</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
+				<h3 id="GenerateMultiPrimeKey">func <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=7196:7284#L199">GenerateMultiPrimeKey</a>
+					<a class="permalink" href="index.html#GenerateMultiPrimeKey">&#xb6;</a>
+				</h3>
+				<pre>func GenerateMultiPrimeKey(random <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, nprimes <a href="../../builtin/index.html#int">int</a>, bits <a href="../../builtin/index.html#int">int</a>) (*<a href="index.html#PrivateKey">PrivateKey</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 GenerateMultiPrimeKey generates a multi-prime RSA keypair of the given bit
 size and the given random source, as suggested in [1]. Although the public
@@ -729,7 +769,9 @@ Table 1 in [2] suggests maximum numbers of primes for a given size.
 
 			
 				
-				<h3 id="PrivateKey.Decrypt">func (*PrivateKey) <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=3689:3812#L98">Decrypt</a></h3>
+				<h3 id="PrivateKey.Decrypt">func (*PrivateKey) <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=3688:3811#L98">Decrypt</a>
+					<a class="permalink" href="index.html#PrivateKey.Decrypt">&#xb6;</a>
+				</h3>
 				<pre>func (priv *<a href="index.html#PrivateKey">PrivateKey</a>) Decrypt(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, ciphertext []<a href="../../builtin/index.html#byte">byte</a>, opts <a href="../index.html">crypto</a>.<a href="../index.html#DecrypterOpts">DecrypterOpts</a>) (plaintext []<a href="../../builtin/index.html#byte">byte</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Decrypt decrypts ciphertext with priv. If opts is nil or of type
@@ -742,7 +784,9 @@ opts must have type *OAEPOptions and OAEP decryption is done.
 				
 			
 				
-				<h3 id="PrivateKey.Precompute">func (*PrivateKey) <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=13148:13184#L421">Precompute</a></h3>
+				<h3 id="PrivateKey.Precompute">func (*PrivateKey) <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=13166:13202#L421">Precompute</a>
+					<a class="permalink" href="index.html#PrivateKey.Precompute">&#xb6;</a>
+				</h3>
 				<pre>func (priv *<a href="index.html#PrivateKey">PrivateKey</a>) Precompute()</pre>
 				<p>
 Precompute performs some calculations that speed up private key operations
@@ -754,7 +798,9 @@ in the future.
 				
 			
 				
-				<h3 id="PrivateKey.Public">func (*PrivateKey) <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=2800:2849#L78">Public</a></h3>
+				<h3 id="PrivateKey.Public">func (*PrivateKey) <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=2799:2848#L78">Public</a>
+					<a class="permalink" href="index.html#PrivateKey.Public">&#xb6;</a>
+				</h3>
 				<pre>func (priv *<a href="index.html#PrivateKey">PrivateKey</a>) Public() <a href="../index.html">crypto</a>.<a href="../index.html#PublicKey">PublicKey</a></pre>
 				<p>
 Public returns the public key corresponding to priv.
@@ -765,7 +811,9 @@ Public returns the public key corresponding to priv.
 				
 			
 				
-				<h3 id="PrivateKey.Sign">func (*PrivateKey) <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=3215:3311#L87">Sign</a></h3>
+				<h3 id="PrivateKey.Sign">func (*PrivateKey) <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=3214:3310#L87">Sign</a>
+					<a class="permalink" href="index.html#PrivateKey.Sign">&#xb6;</a>
+				</h3>
 				<pre>func (priv *<a href="index.html#PrivateKey">PrivateKey</a>) Sign(rand <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Reader">Reader</a>, msg []<a href="../../builtin/index.html#byte">byte</a>, opts <a href="../index.html">crypto</a>.<a href="../index.html#SignerOpts">SignerOpts</a>) ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 Sign signs msg with priv, reading randomness from rand. If opts is a
@@ -780,7 +828,9 @@ functions in this package.
 				
 			
 				
-				<h3 id="PrivateKey.Validate">func (*PrivateKey) <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=5225:5265#L146">Validate</a></h3>
+				<h3 id="PrivateKey.Validate">func (*PrivateKey) <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=5224:5264#L146">Validate</a>
+					<a class="permalink" href="index.html#PrivateKey.Validate">&#xb6;</a>
+				</h3>
 				<pre>func (priv *<a href="index.html#PrivateKey">PrivateKey</a>) Validate() <a href="../../builtin/index.html#error">error</a></pre>
 				<p>
 Validate performs basic sanity checks on the key.
@@ -794,7 +844,9 @@ It returns nil if the key is valid, or else an error describing a problem.
 		
 			
 			
-			<h2 id="PublicKey">type <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=1271:1350#L27">PublicKey</a></h2>
+			<h2 id="PublicKey">type <a href="http://localhost:9090/src/crypto/rsa/rsa.go?s=1270:1349#L27">PublicKey</a>
+				<a class="permalink" href="index.html#PublicKey">&#xb6;</a>
+			</h2>
 			<pre>type PublicKey struct {
     N *<a href="../../math/big/index.html">big</a>.<a href="../../math/big/index.html#Int">Int</a> <span class="comment">// modulus</span>
     E <a href="../../builtin/index.html#int">int</a>      <span class="comment">// public exponent</span>
@@ -827,7 +879,7 @@ A PublicKey represents the public part of an RSA key.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -845,6 +897,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

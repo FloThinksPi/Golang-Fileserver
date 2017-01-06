@@ -266,7 +266,9 @@ by the gc compilers.
 		
 			
 			
-			<h2 id="DecodingError">type <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=15653:15720#L687">DecodingError</a></h2>
+			<h2 id="DecodingError">type <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=15830:15897#L696">DecodingError</a>
+				<a class="permalink" href="index.html#DecodingError">&#xb6;</a>
+			</h2>
 			<pre>type DecodingError struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -288,7 +290,9 @@ the symbol table.
 
 			
 				
-				<h3 id="DecodingError.Error">func (*DecodingError) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=15722:15760#L693">Error</a></h3>
+				<h3 id="DecodingError.Error">func (*DecodingError) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=15899:15937#L702">Error</a>
+					<a class="permalink" href="index.html#DecodingError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#DecodingError">DecodingError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -298,7 +302,9 @@ the symbol table.
 		
 			
 			
-			<h2 id="Func">type <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=1804:1951#L59">Func</a></h2>
+			<h2 id="Func">type <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=2000:2147#L68">Func</a>
+				<a class="permalink" href="index.html#Func">&#xb6;</a>
+			</h2>
 			<pre>type Func struct {
     Entry <a href="../../builtin/index.html#uint64">uint64</a>
     *<a href="index.html#Sym">Sym</a>
@@ -328,7 +334,9 @@ A Func collects information about a single function.
 		
 			
 			
-			<h2 id="LineTable">type <a href="http://localhost:9090/src/debug/gosym/pclntab.go?s=1002:1326#L19">LineTable</a></h2>
+			<h2 id="LineTable">type <a href="http://localhost:9090/src/debug/gosym/pclntab.go?s=1001:1325#L19">LineTable</a>
+				<a class="permalink" href="index.html#LineTable">&#xb6;</a>
+			</h2>
 			<pre>type LineTable struct {
     Data []<a href="../../builtin/index.html#byte">byte</a>
     PC   <a href="../../builtin/index.html#uint64">uint64</a>
@@ -365,7 +373,9 @@ detail of the package; callers should use the methods on Table instead.
 
 			
 				
-				<h3 id="NewLineTable">func <a href="http://localhost:9090/src/debug/gosym/pclntab.go?s=3486:3540#L112">NewLineTable</a></h3>
+				<h3 id="NewLineTable">func <a href="http://localhost:9090/src/debug/gosym/pclntab.go?s=3484:3538#L112">NewLineTable</a>
+					<a class="permalink" href="index.html#NewLineTable">&#xb6;</a>
+				</h3>
 				<pre>func NewLineTable(data []<a href="../../builtin/index.html#byte">byte</a>, text <a href="../../builtin/index.html#uint64">uint64</a>) *<a href="index.html#LineTable">LineTable</a></pre>
 				<p>
 NewLineTable returns a new PC/line table
@@ -380,7 +390,9 @@ corresponding text segment.
 
 			
 				
-				<h3 id="LineTable.LineToPC">func (*LineTable) <a href="http://localhost:9090/src/debug/gosym/pclntab.go?s=3076:3135#L96">LineToPC</a></h3>
+				<h3 id="LineTable.LineToPC">func (*LineTable) <a href="http://localhost:9090/src/debug/gosym/pclntab.go?s=3074:3133#L96">LineToPC</a>
+					<a class="permalink" href="index.html#LineTable.LineToPC">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#LineTable">LineTable</a>) LineToPC(line <a href="../../builtin/index.html#int">int</a>, maxpc <a href="../../builtin/index.html#uint64">uint64</a>) <a href="../../builtin/index.html#uint64">uint64</a></pre>
 				<p>
 LineToPC returns the program counter for the given line number,
@@ -393,7 +405,9 @@ Callers should use Table&#39;s LineToPC method instead.
 				
 			
 				
-				<h3 id="LineTable.PCToLine">func (*LineTable) <a href="http://localhost:9090/src/debug/gosym/pclntab.go?s=2762:2805#L85">PCToLine</a></h3>
+				<h3 id="LineTable.PCToLine">func (*LineTable) <a href="http://localhost:9090/src/debug/gosym/pclntab.go?s=2760:2803#L85">PCToLine</a>
+					<a class="permalink" href="index.html#LineTable.PCToLine">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#LineTable">LineTable</a>) PCToLine(pc <a href="../../builtin/index.html#uint64">uint64</a>) <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 PCToLine returns the line number for the given program counter.
@@ -407,7 +421,9 @@ Callers should use Table&#39;s PCToLine method instead.
 		
 			
 			
-			<h2 id="Obj">type <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=2381:2696#L81">Obj</a></h2>
+			<h2 id="Obj">type <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=2577:2892#L90">Obj</a>
+				<a class="permalink" href="index.html#Obj">&#xb6;</a>
+			</h2>
 			<pre>type Obj struct {
     <span class="comment">// Funcs is a list of functions in the Obj.</span>
     Funcs []<a href="index.html#Func">Func</a>
@@ -451,7 +467,9 @@ In Go 1.2, there is a single Obj for the entire program.
 		
 			
 			
-			<h2 id="Sym">type <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=745:898#L18">Sym</a></h2>
+			<h2 id="Sym">type <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=731:884#L18">Sym</a>
+				<a class="permalink" href="index.html#Sym">&#xb6;</a>
+			</h2>
 			<pre>type Sym struct {
     Value  <a href="../../builtin/index.html#uint64">uint64</a>
     Type   <a href="../../builtin/index.html#byte">byte</a>
@@ -477,7 +495,9 @@ A Sym represents a single symbol table entry.
 
 			
 				
-				<h3 id="Sym.BaseName">func (*Sym) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=1620:1651#L51">BaseName</a></h3>
+				<h3 id="Sym.BaseName">func (*Sym) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=1816:1847#L60">BaseName</a>
+					<a class="permalink" href="index.html#Sym.BaseName">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Sym">Sym</a>) BaseName() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 BaseName returns the symbol name without the package or receiver name.
@@ -488,7 +508,9 @@ BaseName returns the symbol name without the package or receiver name.
 				
 			
 				
-				<h3 id="Sym.PackageName">func (*Sym) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=1135:1169#L32">PackageName</a></h3>
+				<h3 id="Sym.PackageName">func (*Sym) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=1121:1155#L32">PackageName</a>
+					<a class="permalink" href="index.html#Sym.PackageName">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Sym">Sym</a>) PackageName() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 PackageName returns the package part of the symbol name,
@@ -500,7 +522,9 @@ or the empty string if there is none.
 				
 			
 				
-				<h3 id="Sym.ReceiverName">func (*Sym) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=1361:1396#L41">ReceiverName</a></h3>
+				<h3 id="Sym.ReceiverName">func (*Sym) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=1443:1478#L46">ReceiverName</a>
+					<a class="permalink" href="index.html#Sym.ReceiverName">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Sym">Sym</a>) ReceiverName() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 ReceiverName returns the receiver type name of this symbol,
@@ -512,7 +536,9 @@ or the empty string if there is none.
 				
 			
 				
-				<h3 id="Sym.Static">func (*Sym) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=980:1007#L28">Static</a></h3>
+				<h3 id="Sym.Static">func (*Sym) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=966:993#L28">Static</a>
+					<a class="permalink" href="index.html#Sym.Static">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Sym">Sym</a>) Static() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 Static reports whether this symbol is static (not visible outside its file).
@@ -525,7 +551,9 @@ Static reports whether this symbol is static (not visible outside its file).
 		
 			
 			
-			<h2 id="Table">type <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=2896:3114#L99">Table</a></h2>
+			<h2 id="Table">type <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=3091:3309#L108">Table</a>
+				<a class="permalink" href="index.html#Table">&#xb6;</a>
+			</h2>
 			<pre>type Table struct {
     Syms  []<a href="index.html#Sym">Sym</a>
     Funcs []<a href="index.html#Func">Func</a>
@@ -534,7 +562,7 @@ Static reports whether this symbol is static (not visible outside its file).
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 			<p>
-Table represents a Go symbol table.  It stores all of the
+Table represents a Go symbol table. It stores all of the
 symbols decoded from the program and provides methods to translate
 between symbols, names, and addresses.
 </p>
@@ -550,7 +578,9 @@ between symbols, names, and addresses.
 
 			
 				
-				<h3 id="NewTable">func <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=6517:6578#L263">NewTable</a></h3>
+				<h3 id="NewTable">func <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=6712:6773#L272">NewTable</a>
+					<a class="permalink" href="index.html#NewTable">&#xb6;</a>
+				</h3>
 				<pre>func NewTable(symtab []<a href="../../builtin/index.html#byte">byte</a>, pcln *<a href="index.html#LineTable">LineTable</a>) (*<a href="index.html#Table">Table</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 NewTable decodes the Go symbol table in data,
@@ -563,11 +593,13 @@ returning an in-memory representation.
 
 			
 				
-				<h3 id="Table.LineToPC">func (*Table) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=11678:11758#L498">LineToPC</a></h3>
+				<h3 id="Table.LineToPC">func (*Table) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=11855:11935#L507">LineToPC</a>
+					<a class="permalink" href="index.html#Table.LineToPC">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Table">Table</a>) LineToPC(file <a href="../../builtin/index.html#string">string</a>, line <a href="../../builtin/index.html#int">int</a>) (pc <a href="../../builtin/index.html#uint64">uint64</a>, fn *<a href="index.html#Func">Func</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 LineToPC looks up the first program counter on the given line in
-the named file.  It returns UnknownPathError or UnknownLineError if
+the named file. It returns UnknownPathError or UnknownLineError if
 there is an error looking up this line.
 </p>
 
@@ -576,7 +608,9 @@ there is an error looking up this line.
 				
 			
 				
-				<h3 id="Table.LookupFunc">func (*Table) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=12739:12784#L544">LookupFunc</a></h3>
+				<h3 id="Table.LookupFunc">func (*Table) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=12916:12961#L553">LookupFunc</a>
+					<a class="permalink" href="index.html#Table.LookupFunc">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Table">Table</a>) LookupFunc(name <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Func">Func</a></pre>
 				<p>
 LookupFunc returns the text, data, or bss symbol with the given name,
@@ -588,7 +622,9 @@ or nil if no such symbol is found.
 				
 			
 				
-				<h3 id="Table.LookupSym">func (*Table) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=12377:12420#L528">LookupSym</a></h3>
+				<h3 id="Table.LookupSym">func (*Table) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=12554:12597#L537">LookupSym</a>
+					<a class="permalink" href="index.html#Table.LookupSym">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Table">Table</a>) LookupSym(name <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Sym">Sym</a></pre>
 				<p>
 LookupSym returns the text, data, or bss symbol with the given name,
@@ -600,7 +636,9 @@ or nil if no such symbol is found.
 				
 			
 				
-				<h3 id="Table.PCToFunc">func (*Table) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=10783:10824#L463">PCToFunc</a></h3>
+				<h3 id="Table.PCToFunc">func (*Table) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=10961:11002#L472">PCToFunc</a>
+					<a class="permalink" href="index.html#Table.PCToFunc">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Table">Table</a>) PCToFunc(pc <a href="../../builtin/index.html#uint64">uint64</a>) *<a href="index.html#Func">Func</a></pre>
 				<p>
 PCToFunc returns the function containing the program counter pc,
@@ -612,7 +650,9 @@ or nil if there is no such function.
 				
 			
 				
-				<h3 id="Table.PCToLine">func (*Table) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=11190:11259#L482">PCToLine</a></h3>
+				<h3 id="Table.PCToLine">func (*Table) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=11368:11437#L491">PCToLine</a>
+					<a class="permalink" href="index.html#Table.PCToLine">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Table">Table</a>) PCToLine(pc <a href="../../builtin/index.html#uint64">uint64</a>) (file <a href="../../builtin/index.html#string">string</a>, line <a href="../../builtin/index.html#int">int</a>, fn *<a href="index.html#Func">Func</a>)</pre>
 				<p>
 PCToLine looks up line number information for a program counter.
@@ -624,7 +664,9 @@ If there is no information, it returns fn == nil.
 				
 			
 				
-				<h3 id="Table.SymByAddr">func (*Table) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=12974:13017#L555">SymByAddr</a></h3>
+				<h3 id="Table.SymByAddr">func (*Table) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=13151:13194#L564">SymByAddr</a>
+					<a class="permalink" href="index.html#Table.SymByAddr">&#xb6;</a>
+				</h3>
 				<pre>func (t *<a href="index.html#Table">Table</a>) SymByAddr(addr <a href="../../builtin/index.html#uint64">uint64</a>) *<a href="index.html#Sym">Sym</a></pre>
 				<p>
 SymByAddr returns the text, data, or bss symbol starting at the given address.
@@ -637,7 +679,9 @@ SymByAddr returns the text, data, or bss symbol starting at the given address.
 		
 			
 			
-			<h2 id="UnknownFileError">type <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=15109:15137#L669">UnknownFileError</a></h2>
+			<h2 id="UnknownFileError">type <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=15286:15314#L678">UnknownFileError</a>
+				<a class="permalink" href="index.html#UnknownFileError">&#xb6;</a>
+			</h2>
 			<pre>type UnknownFileError <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 UnknownFileError represents a failure to find the specific file in
@@ -657,7 +701,9 @@ the symbol table.
 
 			
 				
-				<h3 id="UnknownFileError.Error">func (UnknownFileError) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=15139:15179#L671">Error</a></h3>
+				<h3 id="UnknownFileError.Error">func (UnknownFileError) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=15316:15356#L680">Error</a>
+					<a class="permalink" href="index.html#UnknownFileError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e <a href="index.html#UnknownFileError">UnknownFileError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -667,7 +713,9 @@ the symbol table.
 		
 			
 			
-			<h2 id="UnknownLineError">type <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=15408:15463#L676">UnknownLineError</a></h2>
+			<h2 id="UnknownLineError">type <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=15585:15640#L685">UnknownLineError</a>
+				<a class="permalink" href="index.html#UnknownLineError">&#xb6;</a>
+			</h2>
 			<pre>type UnknownLineError struct {
     File <a href="../../builtin/index.html#string">string</a>
     Line <a href="../../builtin/index.html#int">int</a>
@@ -691,7 +739,9 @@ or because there is no code on the given line.
 
 			
 				
-				<h3 id="UnknownLineError.Error">func (*UnknownLineError) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=15465:15506#L681">Error</a></h3>
+				<h3 id="UnknownLineError.Error">func (*UnknownLineError) <a href="http://localhost:9090/src/debug/gosym/symtab.go?s=15642:15683#L690">Error</a>
+					<a class="permalink" href="index.html#UnknownLineError.Error">&#xb6;</a>
+				</h3>
 				<pre>func (e *<a href="index.html#UnknownLineError">UnknownLineError</a>) Error() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -710,7 +760,7 @@ or because there is no code on the given line.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -728,6 +778,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

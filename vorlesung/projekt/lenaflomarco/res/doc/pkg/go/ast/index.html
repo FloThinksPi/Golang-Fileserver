@@ -122,7 +122,7 @@ packages.
 				<dd><a href="index.html#FilterPackage">func FilterPackage(pkg *Package, f Filter) bool</a></dd>
 			
 				
-				<dd><a href="index.html#Fprint">func Fprint(w io.Writer, fset *token.FileSet, x interface{}, f FieldFilter) (err error)</a></dd>
+				<dd><a href="index.html#Fprint">func Fprint(w io.Writer, fset *token.FileSet, x interface{}, f FieldFilter) error</a></dd>
 			
 				
 				<dd><a href="index.html#Inspect">func Inspect(node Node, f func(Node) bool)</a></dd>
@@ -958,7 +958,9 @@ packages.
 		
 			
 			
-			<h2 id="FileExports">func <a href="http://localhost:9090/src/go/ast/filter.go?s=869:901#L18">FileExports</a></h2>
+			<h2 id="FileExports">func <a href="http://localhost:9090/src/go/ast/filter.go?s=869:901#L18">FileExports</a>
+				<a class="permalink" href="index.html#FileExports">&#xb6;</a>
+			</h2>
 			<pre>func FileExports(src *<a href="index.html#File">File</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 FileExports trims the AST for a Go source file in place such that
@@ -977,7 +979,9 @@ FileExports reports whether there are exported declarations.
 		
 			
 			
-			<h2 id="FilterDecl">func <a href="http://localhost:9090/src/go/ast/filter.go?s=4820:4861#L194">FilterDecl</a></h2>
+			<h2 id="FilterDecl">func <a href="http://localhost:9090/src/go/ast/filter.go?s=4820:4861#L194">FilterDecl</a>
+				<a class="permalink" href="index.html#FilterDecl">&#xb6;</a>
+			</h2>
 			<pre>func FilterDecl(decl <a href="index.html#Decl">Decl</a>, f <a href="index.html#Filter">Filter</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 FilterDecl trims the AST for a Go declaration in place by removing
@@ -995,7 +999,9 @@ filtering.
 		
 			
 			
-			<h2 id="FilterFile">func <a href="http://localhost:9090/src/go/ast/filter.go?s=5630:5671#L219">FilterFile</a></h2>
+			<h2 id="FilterFile">func <a href="http://localhost:9090/src/go/ast/filter.go?s=5630:5671#L219">FilterFile</a>
+				<a class="permalink" href="index.html#FilterFile">&#xb6;</a>
+			</h2>
 			<pre>func FilterFile(src *<a href="index.html#File">File</a>, f <a href="index.html#Filter">Filter</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 FilterFile trims the AST for a Go file in place by removing all
@@ -1016,7 +1022,9 @@ left after filtering.
 		
 			
 			
-			<h2 id="FilterPackage">func <a href="http://localhost:9090/src/go/ast/filter.go?s=6446:6493#L246">FilterPackage</a></h2>
+			<h2 id="FilterPackage">func <a href="http://localhost:9090/src/go/ast/filter.go?s=6446:6493#L246">FilterPackage</a>
+				<a class="permalink" href="index.html#FilterPackage">&#xb6;</a>
+			</h2>
 			<pre>func FilterPackage(pkg *<a href="index.html#Package">Package</a>, f <a href="index.html#Filter">Filter</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 FilterPackage trims the AST for a Go package in place by removing
@@ -1038,8 +1046,10 @@ left after filtering.
 		
 			
 			
-			<h2 id="Fprint">func <a href="http://localhost:9090/src/go/ast/print.go?s=1168:1255#L30">Fprint</a></h2>
-			<pre>func Fprint(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, fset *<a href="../token/index.html">token</a>.<a href="../token/index.html#FileSet">FileSet</a>, x interface{}, f <a href="index.html#FieldFilter">FieldFilter</a>) (err <a href="../../builtin/index.html#error">error</a>)</pre>
+			<h2 id="Fprint">func <a href="http://localhost:9090/src/go/ast/print.go?s=1165:1246#L29">Fprint</a>
+				<a class="permalink" href="index.html#Fprint">&#xb6;</a>
+			</h2>
+			<pre>func Fprint(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, fset *<a href="../token/index.html">token</a>.<a href="../token/index.html#FileSet">FileSet</a>, x interface{}, f <a href="index.html#FieldFilter">FieldFilter</a>) <a href="../../builtin/index.html#error">error</a></pre>
 			<p>
 Fprint prints the (sub-)tree starting at AST node x to w.
 If fset != nil, position information is interpreted relative
@@ -1059,7 +1069,9 @@ struct fields are never printed.
 		
 			
 			
-			<h2 id="Inspect">func <a href="http://localhost:9090/src/go/ast/walk.go?s=6291:6333#L374">Inspect</a></h2>
+			<h2 id="Inspect">func <a href="http://localhost:9090/src/go/ast/walk.go?s=6291:6333#L374">Inspect</a>
+				<a class="permalink" href="index.html#Inspect">&#xb6;</a>
+			</h2>
 			<pre>func Inspect(node <a href="index.html#Node">Node</a>, f func(<a href="index.html#Node">Node</a>) <a href="../../builtin/index.html#bool">bool</a>)</pre>
 			<p>
 Inspect traverses an AST in depth-first order: It starts by calling
@@ -1074,7 +1086,9 @@ call of f(nil).
 		
 			
 			
-			<h2 id="IsExported">func <a href="http://localhost:9090/src/go/ast/ast.go?s=16340:16373#L516">IsExported</a></h2>
+			<h2 id="IsExported">func <a href="http://localhost:9090/src/go/ast/ast.go?s=16330:16363#L516">IsExported</a>
+				<a class="permalink" href="index.html#IsExported">&#xb6;</a>
+			</h2>
 			<pre>func IsExported(name <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 IsExported reports whether name is an exported Go symbol
@@ -1087,7 +1101,9 @@ IsExported reports whether name is an exported Go symbol
 		
 			
 			
-			<h2 id="NotNilFilter">func <a href="http://localhost:9090/src/go/ast/print.go?s=500:549#L12">NotNilFilter</a></h2>
+			<h2 id="NotNilFilter">func <a href="http://localhost:9090/src/go/ast/print.go?s=500:549#L12">NotNilFilter</a>
+				<a class="permalink" href="index.html#NotNilFilter">&#xb6;</a>
+			</h2>
 			<pre>func NotNilFilter(_ <a href="../../builtin/index.html#string">string</a>, v <a href="../../reflect/index.html">reflect</a>.<a href="../../reflect/index.html#Value">Value</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 NotNilFilter returns true for field values that are not nil;
@@ -1100,7 +1116,9 @@ it returns false otherwise.
 		
 			
 			
-			<h2 id="PackageExports">func <a href="http://localhost:9090/src/go/ast/filter.go?s=1258:1296#L29">PackageExports</a></h2>
+			<h2 id="PackageExports">func <a href="http://localhost:9090/src/go/ast/filter.go?s=1258:1296#L29">PackageExports</a>
+				<a class="permalink" href="index.html#PackageExports">&#xb6;</a>
+			</h2>
 			<pre>func PackageExports(pkg *<a href="index.html#Package">Package</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 PackageExports trims the AST for a Go package in place such that
@@ -1118,7 +1136,9 @@ it returns false otherwise.
 		
 			
 			
-			<h2 id="Print">func <a href="http://localhost:9090/src/go/ast/print.go?s=1837:1889#L60">Print</a></h2>
+			<h2 id="Print">func <a href="http://localhost:9090/src/go/ast/print.go?s=1951:2003#L63">Print</a>
+				<a class="permalink" href="index.html#Print">&#xb6;</a>
+			</h2>
 			<pre>func Print(fset *<a href="../token/index.html">token</a>.<a href="../token/index.html#FileSet">FileSet</a>, x interface{}) <a href="../../builtin/index.html#error">error</a></pre>
 			<p>
 Print prints x to standard output, skipping nil fields.
@@ -1131,7 +1151,9 @@ Print(fset, x) is the same as Fprint(os.Stdout, fset, x, NotNilFilter).
 		
 			
 			
-			<h2 id="SortImports">func <a href="http://localhost:9090/src/go/ast/import.go?s=378:424#L5">SortImports</a></h2>
+			<h2 id="SortImports">func <a href="http://localhost:9090/src/go/ast/import.go?s=378:424#L5">SortImports</a>
+				<a class="permalink" href="index.html#SortImports">&#xb6;</a>
+			</h2>
 			<pre>func SortImports(fset *<a href="../token/index.html">token</a>.<a href="../token/index.html#FileSet">FileSet</a>, f *<a href="index.html#File">File</a>)</pre>
 			<p>
 SortImports sorts runs of consecutive import lines in import blocks in f.
@@ -1144,7 +1166,9 @@ It also removes duplicate imports when it is possible to do so without data loss
 		
 			
 			
-			<h2 id="Walk">func <a href="http://localhost:9090/src/go/ast/walk.go?s=1311:1342#L41">Walk</a></h2>
+			<h2 id="Walk">func <a href="http://localhost:9090/src/go/ast/walk.go?s=1311:1342#L41">Walk</a>
+				<a class="permalink" href="index.html#Walk">&#xb6;</a>
+			</h2>
 			<pre>func Walk(v <a href="index.html#Visitor">Visitor</a>, node <a href="index.html#Node">Node</a>)</pre>
 			<p>
 Walk traverses an AST in depth-first order: It starts by calling
@@ -1161,7 +1185,9 @@ w.Visit(nil).
 		
 			
 			
-			<h2 id="ArrayType">type <a href="http://localhost:9090/src/go/ast/ast.go?s=10422:10596#L365">ArrayType</a></h2>
+			<h2 id="ArrayType">type <a href="http://localhost:9090/src/go/ast/ast.go?s=10414:10588#L365">ArrayType</a>
+				<a class="permalink" href="index.html#ArrayType">&#xb6;</a>
+			</h2>
 			<pre>type ArrayType struct {
     Lbrack <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;[&#34;</span>
     Len    <a href="index.html#Expr">Expr</a>      <span class="comment">// Ellipsis node for [...]T array types, nil for slice types</span>
@@ -1184,7 +1210,9 @@ An ArrayType node represents an array or slice type.
 
 			
 				
-				<h3 id="ArrayType.End">func (*ArrayType) <a href="http://localhost:9090/src/go/ast/ast.go?s=14568:14603#L466">End</a></h3>
+				<h3 id="ArrayType.End">func (*ArrayType) <a href="http://localhost:9090/src/go/ast/ast.go?s=14558:14593#L466">End</a>
+					<a class="permalink" href="index.html#ArrayType.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#ArrayType">ArrayType</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1192,7 +1220,9 @@ An ArrayType node represents an array or slice type.
 				
 			
 				
-				<h3 id="ArrayType.Pos">func (*ArrayType) <a href="http://localhost:9090/src/go/ast/ast.go?s=12950:12985#L433">Pos</a></h3>
+				<h3 id="ArrayType.Pos">func (*ArrayType) <a href="http://localhost:9090/src/go/ast/ast.go?s=12940:12975#L433">Pos</a>
+					<a class="permalink" href="index.html#ArrayType.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#ArrayType">ArrayType</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1202,7 +1232,9 @@ An ArrayType node represents an array or slice type.
 		
 			
 			
-			<h2 id="AssignStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=18314:18457#L593">AssignStmt</a></h2>
+			<h2 id="AssignStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=18304:18447#L593">AssignStmt</a>
+				<a class="permalink" href="index.html#AssignStmt">&#xb6;</a>
+			</h2>
 			<pre>type AssignStmt struct {
     Lhs    []<a href="index.html#Expr">Expr</a>
     TokPos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>   <span class="comment">// position of Tok</span>
@@ -1227,7 +1259,9 @@ a short variable declaration.
 
 			
 				
-				<h3 id="AssignStmt.End">func (*AssignStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23473:23509#L739">End</a></h3>
+				<h3 id="AssignStmt.End">func (*AssignStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23461:23497#L739">End</a>
+					<a class="permalink" href="index.html#AssignStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#AssignStmt">AssignStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1235,7 +1269,9 @@ a short variable declaration.
 				
 			
 				
-				<h3 id="AssignStmt.Pos">func (*AssignStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22139:22175#L710">Pos</a></h3>
+				<h3 id="AssignStmt.Pos">func (*AssignStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22127:22163#L710">Pos</a>
+					<a class="permalink" href="index.html#AssignStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#AssignStmt">AssignStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1245,7 +1281,9 @@ a short variable declaration.
 		
 			
 			
-			<h2 id="BadDecl">type <a href="http://localhost:9090/src/go/ast/ast.go?s=28016:28093#L889">BadDecl</a></h2>
+			<h2 id="BadDecl">type <a href="http://localhost:9090/src/go/ast/ast.go?s=28002:28079#L889">BadDecl</a>
+				<a class="permalink" href="index.html#BadDecl">&#xb6;</a>
+			</h2>
 			<pre>type BadDecl struct {
     From, To <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position range of bad declaration</span>
 }</pre>
@@ -1268,7 +1306,9 @@ created.
 
 			
 				
-				<h3 id="BadDecl.End">func (*BadDecl) <a href="http://localhost:9090/src/go/ast/ast.go?s=29399:29432#L929">End</a></h3>
+				<h3 id="BadDecl.End">func (*BadDecl) <a href="http://localhost:9090/src/go/ast/ast.go?s=29383:29416#L929">End</a>
+					<a class="permalink" href="index.html#BadDecl.End">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#BadDecl">BadDecl</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1276,12 +1316,11 @@ created.
 				
 			
 				
-				<h3 id="BadDecl.Pos">func (*BadDecl) <a href="http://localhost:9090/src/go/ast/ast.go?s=29231:29264#L925">Pos</a></h3>
+				<h3 id="BadDecl.Pos">func (*BadDecl) <a href="http://localhost:9090/src/go/ast/ast.go?s=29215:29248#L925">Pos</a>
+					<a class="permalink" href="index.html#BadDecl.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#BadDecl">BadDecl</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
-				<p>
-Pos and End implementations for declaration nodes.
-</p>
-
+				
 				
 				
 				
@@ -1289,7 +1328,9 @@ Pos and End implementations for declaration nodes.
 		
 			
 			
-			<h2 id="BadExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=6315:6391#L223">BadExpr</a></h2>
+			<h2 id="BadExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=6307:6383#L223">BadExpr</a>
+				<a class="permalink" href="index.html#BadExpr">&#xb6;</a>
+			</h2>
 			<pre>type BadExpr struct {
     From, To <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position range of bad expression</span>
 }</pre>
@@ -1312,7 +1353,9 @@ created.
 
 			
 				
-				<h3 id="BadExpr.End">func (*BadExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=13449:13482#L445">End</a></h3>
+				<h3 id="BadExpr.End">func (*BadExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=13439:13472#L445">End</a>
+					<a class="permalink" href="index.html#BadExpr.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#BadExpr">BadExpr</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1320,12 +1363,11 @@ created.
 				
 			
 				
-				<h3 id="BadExpr.Pos">func (*BadExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=11945:11978#L412">Pos</a></h3>
+				<h3 id="BadExpr.Pos">func (*BadExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=11935:11968#L412">Pos</a>
+					<a class="permalink" href="index.html#BadExpr.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#BadExpr">BadExpr</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
-				<p>
-Pos and End implementations for expression/type nodes.
-</p>
-
+				
 				
 				
 				
@@ -1333,7 +1375,9 @@ Pos and End implementations for expression/type nodes.
 		
 			
 			
-			<h2 id="BadStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=17082:17157#L544">BadStmt</a></h2>
+			<h2 id="BadStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=17072:17147#L544">BadStmt</a>
+				<a class="permalink" href="index.html#BadStmt">&#xb6;</a>
+			</h2>
 			<pre>type BadStmt struct {
     From, To <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position range of bad statement</span>
 }</pre>
@@ -1356,7 +1400,9 @@ created.
 
 			
 				
-				<h3 id="BadStmt.End">func (*BadStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22981:23014#L725">End</a></h3>
+				<h3 id="BadStmt.End">func (*BadStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22969:23002#L725">End</a>
+					<a class="permalink" href="index.html#BadStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#BadStmt">BadStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1364,12 +1410,11 @@ created.
 				
 			
 				
-				<h3 id="BadStmt.Pos">func (*BadStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=21696:21729#L703">Pos</a></h3>
+				<h3 id="BadStmt.Pos">func (*BadStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=21684:21717#L703">Pos</a>
+					<a class="permalink" href="index.html#BadStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#BadStmt">BadStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
-				<p>
-Pos and End implementations for statement nodes.
-</p>
-
+				
 				
 				
 				
@@ -1377,7 +1422,9 @@ Pos and End implementations for statement nodes.
 		
 			
 			
-			<h2 id="BasicLit">type <a href="http://localhost:9090/src/go/ast/ast.go?s=6897:7156#L243">BasicLit</a></h2>
+			<h2 id="BasicLit">type <a href="http://localhost:9090/src/go/ast/ast.go?s=6889:7148#L243">BasicLit</a>
+				<a class="permalink" href="index.html#BasicLit">&#xb6;</a>
+			</h2>
 			<pre>type BasicLit struct {
     ValuePos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>   <span class="comment">// literal position</span>
     Kind     <a href="../token/index.html">token</a>.<a href="../token/index.html#Token">Token</a> <span class="comment">// token.INT, token.FLOAT, token.IMAG, token.CHAR, or token.STRING</span>
@@ -1400,7 +1447,9 @@ A BasicLit node represents a literal of basic type.
 
 			
 				
-				<h3 id="BasicLit.End">func (*BasicLit) <a href="http://localhost:9090/src/go/ast/ast.go?s=13703:13737#L453">End</a></h3>
+				<h3 id="BasicLit.End">func (*BasicLit) <a href="http://localhost:9090/src/go/ast/ast.go?s=13693:13727#L453">End</a>
+					<a class="permalink" href="index.html#BasicLit.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#BasicLit">BasicLit</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1408,7 +1457,9 @@ A BasicLit node represents a literal of basic type.
 				
 			
 				
-				<h3 id="BasicLit.Pos">func (*BasicLit) <a href="http://localhost:9090/src/go/ast/ast.go?s=12111:12145#L415">Pos</a></h3>
+				<h3 id="BasicLit.Pos">func (*BasicLit) <a href="http://localhost:9090/src/go/ast/ast.go?s=12101:12135#L415">Pos</a>
+					<a class="permalink" href="index.html#BasicLit.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#BasicLit">BasicLit</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1418,7 +1469,9 @@ A BasicLit node represents a literal of basic type.
 		
 			
 			
-			<h2 id="BinaryExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=9743:9908#L332">BinaryExpr</a></h2>
+			<h2 id="BinaryExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=9735:9900#L332">BinaryExpr</a>
+				<a class="permalink" href="index.html#BinaryExpr">&#xb6;</a>
+			</h2>
 			<pre>type BinaryExpr struct {
     X     <a href="index.html#Expr">Expr</a>        <span class="comment">// left operand</span>
     OpPos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>   <span class="comment">// position of Op</span>
@@ -1442,7 +1495,9 @@ A BinaryExpr node represents a binary expression.
 
 			
 				
-				<h3 id="BinaryExpr.End">func (*BinaryExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=14440:14476#L464">End</a></h3>
+				<h3 id="BinaryExpr.End">func (*BinaryExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=14430:14466#L464">End</a>
+					<a class="permalink" href="index.html#BinaryExpr.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#BinaryExpr">BinaryExpr</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1450,7 +1505,9 @@ A BinaryExpr node represents a binary expression.
 				
 			
 				
-				<h3 id="BinaryExpr.Pos">func (*BinaryExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12824:12860#L431">Pos</a></h3>
+				<h3 id="BinaryExpr.Pos">func (*BinaryExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12814:12850#L431">Pos</a>
+					<a class="permalink" href="index.html#BinaryExpr.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#BinaryExpr">BinaryExpr</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1460,7 +1517,9 @@ A BinaryExpr node represents a binary expression.
 		
 			
 			
-			<h2 id="BlockStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=19242:19355#L628">BlockStmt</a></h2>
+			<h2 id="BlockStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=19232:19345#L628">BlockStmt</a>
+				<a class="permalink" href="index.html#BlockStmt">&#xb6;</a>
+			</h2>
 			<pre>type BlockStmt struct {
     Lbrace <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;{&#34;</span>
     List   []<a href="index.html#Stmt">Stmt</a>
@@ -1483,7 +1542,9 @@ A BlockStmt node represents a braced statement list.
 
 			
 				
-				<h3 id="BlockStmt.End">func (*BlockStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23957:23992#L754">End</a></h3>
+				<h3 id="BlockStmt.End">func (*BlockStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23945:23980#L754">End</a>
+					<a class="permalink" href="index.html#BlockStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#BlockStmt">BlockStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1491,7 +1552,9 @@ A BlockStmt node represents a braced statement list.
 				
 			
 				
-				<h3 id="BlockStmt.Pos">func (*BlockStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22445:22480#L715">Pos</a></h3>
+				<h3 id="BlockStmt.Pos">func (*BlockStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22433:22468#L715">Pos</a>
+					<a class="permalink" href="index.html#BlockStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#BlockStmt">BlockStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1501,7 +1564,9 @@ A BlockStmt node represents a braced statement list.
 		
 			
 			
-			<h2 id="BranchStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=19002:19182#L621">BranchStmt</a></h2>
+			<h2 id="BranchStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=18992:19172#L621">BranchStmt</a>
+				<a class="permalink" href="index.html#BranchStmt">&#xb6;</a>
+			</h2>
 			<pre>type BranchStmt struct {
     TokPos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>   <span class="comment">// position of Tok</span>
     Tok    <a href="../token/index.html">token</a>.<a href="../token/index.html#Token">Token</a> <span class="comment">// keyword token (BREAK, CONTINUE, GOTO, FALLTHROUGH)</span>
@@ -1525,7 +1590,9 @@ or fallthrough statement.
 
 			
 				
-				<h3 id="BranchStmt.End">func (*BranchStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23814:23850#L748">End</a></h3>
+				<h3 id="BranchStmt.End">func (*BranchStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23802:23838#L748">End</a>
+					<a class="permalink" href="index.html#BranchStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#BranchStmt">BranchStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1533,7 +1600,9 @@ or fallthrough statement.
 				
 			
 				
-				<h3 id="BranchStmt.Pos">func (*BranchStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22384:22420#L714">Pos</a></h3>
+				<h3 id="BranchStmt.Pos">func (*BranchStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22372:22408#L714">Pos</a>
+					<a class="permalink" href="index.html#BranchStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#BranchStmt">BranchStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1543,7 +1612,9 @@ or fallthrough statement.
 		
 			
 			
-			<h2 id="CallExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=8962:9207#L306">CallExpr</a></h2>
+			<h2 id="CallExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=8954:9199#L306">CallExpr</a>
+				<a class="permalink" href="index.html#CallExpr">&#xb6;</a>
+			</h2>
 			<pre>type CallExpr struct {
     Fun      <a href="index.html#Expr">Expr</a>      <span class="comment">// function expression</span>
     Lparen   <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;(&#34;</span>
@@ -1568,7 +1639,9 @@ A CallExpr node represents an expression followed by an argument list.
 
 			
 				
-				<h3 id="CallExpr.End">func (*CallExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=14251:14285#L461">End</a></h3>
+				<h3 id="CallExpr.End">func (*CallExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=14241:14275#L461">End</a>
+					<a class="permalink" href="index.html#CallExpr.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#CallExpr">CallExpr</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1576,7 +1649,9 @@ A CallExpr node represents an expression followed by an argument list.
 				
 			
 				
-				<h3 id="CallExpr.Pos">func (*CallExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12641:12675#L428">Pos</a></h3>
+				<h3 id="CallExpr.Pos">func (*CallExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12631:12665#L428">Pos</a>
+					<a class="permalink" href="index.html#CallExpr.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#CallExpr">CallExpr</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1586,7 +1661,9 @@ A CallExpr node represents an expression followed by an argument list.
 		
 			
 			
-			<h2 id="CaseClause">type <a href="http://localhost:9090/src/go/ast/ast.go?s=19685:19923#L644">CaseClause</a></h2>
+			<h2 id="CaseClause">type <a href="http://localhost:9090/src/go/ast/ast.go?s=19675:19913#L644">CaseClause</a>
+				<a class="permalink" href="index.html#CaseClause">&#xb6;</a>
+			</h2>
 			<pre>type CaseClause struct {
     Case  <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;case&#34; or &#34;default&#34; keyword</span>
     List  []<a href="index.html#Expr">Expr</a>    <span class="comment">// list of expressions or types; nil means default case</span>
@@ -1610,7 +1687,9 @@ A CaseClause represents a case of an expression or type switch statement.
 
 			
 				
-				<h3 id="CaseClause.End">func (*CaseClause) <a href="http://localhost:9090/src/go/ast/ast.go?s=24120:24156#L761">End</a></h3>
+				<h3 id="CaseClause.End">func (*CaseClause) <a href="http://localhost:9090/src/go/ast/ast.go?s=24108:24144#L761">End</a>
+					<a class="permalink" href="index.html#CaseClause.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#CaseClause">CaseClause</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1618,7 +1697,9 @@ A CaseClause represents a case of an expression or type switch statement.
 				
 			
 				
-				<h3 id="CaseClause.Pos">func (*CaseClause) <a href="http://localhost:9090/src/go/ast/ast.go?s=22563:22599#L717">Pos</a></h3>
+				<h3 id="CaseClause.Pos">func (*CaseClause) <a href="http://localhost:9090/src/go/ast/ast.go?s=22551:22587#L717">Pos</a>
+					<a class="permalink" href="index.html#CaseClause.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#CaseClause">CaseClause</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1628,7 +1709,9 @@ A CaseClause represents a case of an expression or type switch statement.
 		
 			
 			
-			<h2 id="ChanDir">type <a href="http://localhost:9090/src/go/ast/ast.go?s=10177:10193#L352">ChanDir</a></h2>
+			<h2 id="ChanDir">type <a href="http://localhost:9090/src/go/ast/ast.go?s=10169:10185#L352">ChanDir</a>
+				<a class="permalink" href="index.html#ChanDir">&#xb6;</a>
+			</h2>
 			<pre>type ChanDir <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 The direction of a channel type is indicated by one
@@ -1656,7 +1739,9 @@ of the following constants.
 		
 			
 			
-			<h2 id="ChanType">type <a href="http://localhost:9090/src/go/ast/ast.go?s=11637:11880#L402">ChanType</a></h2>
+			<h2 id="ChanType">type <a href="http://localhost:9090/src/go/ast/ast.go?s=11629:11872#L402">ChanType</a>
+				<a class="permalink" href="index.html#ChanType">&#xb6;</a>
+			</h2>
 			<pre>type ChanType struct {
     Begin <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;chan&#34; keyword or &#34;&lt;-&#34; (whichever comes first)</span>
     Arrow <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;&lt;-&#34; (token.NoPos if there is no &#34;&lt;-&#34;)</span>
@@ -1680,7 +1765,9 @@ A ChanType node represents a channel type.
 
 			
 				
-				<h3 id="ChanType.End">func (*ChanType) <a href="http://localhost:9090/src/go/ast/ast.go?s=14944:14978#L476">End</a></h3>
+				<h3 id="ChanType.End">func (*ChanType) <a href="http://localhost:9090/src/go/ast/ast.go?s=14934:14968#L476">End</a>
+					<a class="permalink" href="index.html#ChanType.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#ChanType">ChanType</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1688,7 +1775,9 @@ A ChanType node represents a channel type.
 				
 			
 				
-				<h3 id="ChanType.Pos">func (*ChanType) <a href="http://localhost:9090/src/go/ast/ast.go?s=13389:13423#L443">Pos</a></h3>
+				<h3 id="ChanType.Pos">func (*ChanType) <a href="http://localhost:9090/src/go/ast/ast.go?s=13379:13413#L443">Pos</a>
+					<a class="permalink" href="index.html#ChanType.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#ChanType">ChanType</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1698,7 +1787,9 @@ A ChanType node represents a channel type.
 		
 			
 			
-			<h2 id="CommClause">type <a href="http://localhost:9090/src/go/ast/ast.go?s=20562:20797#L668">CommClause</a></h2>
+			<h2 id="CommClause">type <a href="http://localhost:9090/src/go/ast/ast.go?s=20552:20787#L668">CommClause</a>
+				<a class="permalink" href="index.html#CommClause">&#xb6;</a>
+			</h2>
 			<pre>type CommClause struct {
     Case  <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;case&#34; or &#34;default&#34; keyword</span>
     Comm  <a href="index.html#Stmt">Stmt</a>      <span class="comment">// send or receive statement; nil means default case</span>
@@ -1722,7 +1813,9 @@ A CommClause node represents a case of a select statement.
 
 			
 				
-				<h3 id="CommClause.End">func (*CommClause) <a href="http://localhost:9090/src/go/ast/ast.go?s=24371:24407#L769">End</a></h3>
+				<h3 id="CommClause.End">func (*CommClause) <a href="http://localhost:9090/src/go/ast/ast.go?s=24359:24395#L769">End</a>
+					<a class="permalink" href="index.html#CommClause.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#CommClause">CommClause</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1730,7 +1823,9 @@ A CommClause node represents a case of a select statement.
 				
 			
 				
-				<h3 id="CommClause.Pos">func (*CommClause) <a href="http://localhost:9090/src/go/ast/ast.go?s=22744:22780#L720">Pos</a></h3>
+				<h3 id="CommClause.Pos">func (*CommClause) <a href="http://localhost:9090/src/go/ast/ast.go?s=22732:22768#L720">Pos</a>
+					<a class="permalink" href="index.html#CommClause.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#CommClause">CommClause</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1740,7 +1835,9 @@ A CommClause node represents a case of a select statement.
 		
 			
 			
-			<h2 id="Comment">type <a href="http://localhost:9090/src/go/ast/ast.go?s=1830:1982#L52">Comment</a></h2>
+			<h2 id="Comment">type <a href="http://localhost:9090/src/go/ast/ast.go?s=1830:1982#L52">Comment</a>
+				<a class="permalink" href="index.html#Comment">&#xb6;</a>
+			</h2>
 			<pre>type Comment struct {
     Slash <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;/&#34; starting the comment</span>
     Text  <a href="../../builtin/index.html#string">string</a>    <span class="comment">// comment text (excluding &#39;\n&#39; for //-style comments)</span>
@@ -1762,7 +1859,9 @@ A Comment node represents a single //-style or /*-style comment.
 
 			
 				
-				<h3 id="Comment.End">func (*Comment) <a href="http://localhost:9090/src/go/ast/ast.go?s=2037:2070#L58">End</a></h3>
+				<h3 id="Comment.End">func (*Comment) <a href="http://localhost:9090/src/go/ast/ast.go?s=2037:2070#L58">End</a>
+					<a class="permalink" href="index.html#Comment.End">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Comment">Comment</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1770,7 +1869,9 @@ A Comment node represents a single //-style or /*-style comment.
 				
 			
 				
-				<h3 id="Comment.Pos">func (*Comment) <a href="http://localhost:9090/src/go/ast/ast.go?s=1984:2017#L57">Pos</a></h3>
+				<h3 id="Comment.Pos">func (*Comment) <a href="http://localhost:9090/src/go/ast/ast.go?s=1984:2017#L57">Pos</a>
+					<a class="permalink" href="index.html#Comment.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (c *<a href="index.html#Comment">Comment</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1780,7 +1881,9 @@ A Comment node represents a single //-style or /*-style comment.
 		
 			
 			
-			<h2 id="CommentGroup">type <a href="http://localhost:9090/src/go/ast/ast.go?s=2228:2290#L63">CommentGroup</a></h2>
+			<h2 id="CommentGroup">type <a href="http://localhost:9090/src/go/ast/ast.go?s=2228:2290#L63">CommentGroup</a>
+				<a class="permalink" href="index.html#CommentGroup">&#xb6;</a>
+			</h2>
 			<pre>type CommentGroup struct {
     List []*<a href="index.html#Comment">Comment</a> <span class="comment">// len(List) &gt; 0</span>
 }</pre>
@@ -1802,7 +1905,9 @@ with no other tokens and no empty lines between.
 
 			
 				
-				<h3 id="CommentGroup.End">func (*CommentGroup) <a href="http://localhost:9090/src/go/ast/ast.go?s=2358:2396#L68">End</a></h3>
+				<h3 id="CommentGroup.End">func (*CommentGroup) <a href="http://localhost:9090/src/go/ast/ast.go?s=2358:2396#L68">End</a>
+					<a class="permalink" href="index.html#CommentGroup.End">&#xb6;</a>
+				</h3>
 				<pre>func (g *<a href="index.html#CommentGroup">CommentGroup</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1810,7 +1915,9 @@ with no other tokens and no empty lines between.
 				
 			
 				
-				<h3 id="CommentGroup.Pos">func (*CommentGroup) <a href="http://localhost:9090/src/go/ast/ast.go?s=2292:2330#L67">Pos</a></h3>
+				<h3 id="CommentGroup.Pos">func (*CommentGroup) <a href="http://localhost:9090/src/go/ast/ast.go?s=2292:2330#L67">Pos</a>
+					<a class="permalink" href="index.html#CommentGroup.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (g *<a href="index.html#CommentGroup">CommentGroup</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1818,7 +1925,9 @@ with no other tokens and no empty lines between.
 				
 			
 				
-				<h3 id="CommentGroup.Text">func (*CommentGroup) <a href="http://localhost:9090/src/go/ast/ast.go?s=2968:3004#L86">Text</a></h3>
+				<h3 id="CommentGroup.Text">func (*CommentGroup) <a href="http://localhost:9090/src/go/ast/ast.go?s=2968:3004#L86">Text</a>
+					<a class="permalink" href="index.html#CommentGroup.Text">&#xb6;</a>
+				</h3>
 				<pre>func (g *<a href="index.html#CommentGroup">CommentGroup</a>) Text() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 Text returns the text of the comment.
@@ -1835,7 +1944,9 @@ is empty, it is newline-terminated.
 		
 			
 			
-			<h2 id="CommentMap">type <a href="http://localhost:9090/src/go/ast/commentmap.go?s=932:972#L25">CommentMap</a></h2>
+			<h2 id="CommentMap">type <a href="http://localhost:9090/src/go/ast/commentmap.go?s=932:972#L25">CommentMap</a>
+				<a class="permalink" href="index.html#CommentMap">&#xb6;</a>
+			</h2>
 			<pre>type CommentMap map[<a href="index.html#Node">Node</a>][]*<a href="index.html#CommentGroup">CommentGroup</a></pre>
 			<p>
 A CommentMap maps an AST node to a list of comment groups
@@ -1854,7 +1965,9 @@ the association.
 
 			
 				
-				<h3 id="NewCommentMap">func <a href="http://localhost:9090/src/go/ast/commentmap.go?s=3964:4051#L133">NewCommentMap</a></h3>
+				<h3 id="NewCommentMap">func <a href="http://localhost:9090/src/go/ast/commentmap.go?s=3964:4051#L133">NewCommentMap</a>
+					<a class="permalink" href="index.html#NewCommentMap">&#xb6;</a>
+				</h3>
 				<pre>func NewCommentMap(fset *<a href="../token/index.html">token</a>.<a href="../token/index.html#FileSet">FileSet</a>, node <a href="index.html#Node">Node</a>, comments []*<a href="index.html#CommentGroup">CommentGroup</a>) <a href="index.html#CommentMap">CommentMap</a></pre>
 				<p>
 NewCommentMap creates a new comment map by associating comment groups
@@ -1882,11 +1995,13 @@ assignment rather than just the last operand in the assignment.
 
 			
 				
-				<h3 id="CommentMap.Comments">func (CommentMap) <a href="http://localhost:9090/src/go/ast/commentmap.go?s=7690:7739#L262">Comments</a></h3>
+				<h3 id="CommentMap.Comments">func (CommentMap) <a href="http://localhost:9090/src/go/ast/commentmap.go?s=7690:7739#L262">Comments</a>
+					<a class="permalink" href="index.html#CommentMap.Comments">&#xb6;</a>
+				</h3>
 				<pre>func (cmap <a href="index.html#CommentMap">CommentMap</a>) Comments() []*<a href="index.html#CommentGroup">CommentGroup</a></pre>
 				<p>
 Comments returns the list of comment groups in the comment map.
-The result is sorted is source order.
+The result is sorted in source order.
 </p>
 
 				
@@ -1894,7 +2009,9 @@ The result is sorted is source order.
 				
 			
 				
-				<h3 id="CommentMap.Filter">func (CommentMap) <a href="http://localhost:9090/src/go/ast/commentmap.go?s=7379:7430#L248">Filter</a></h3>
+				<h3 id="CommentMap.Filter">func (CommentMap) <a href="http://localhost:9090/src/go/ast/commentmap.go?s=7379:7430#L248">Filter</a>
+					<a class="permalink" href="index.html#CommentMap.Filter">&#xb6;</a>
+				</h3>
 				<pre>func (cmap <a href="index.html#CommentMap">CommentMap</a>) Filter(node <a href="index.html#Node">Node</a>) <a href="index.html#CommentMap">CommentMap</a></pre>
 				<p>
 Filter returns a new comment map consisting of only those
@@ -1907,7 +2024,9 @@ the AST specified by node.
 				
 			
 				
-				<h3 id="CommentMap.String">func (CommentMap) <a href="http://localhost:9090/src/go/ast/commentmap.go?s=8595:8633#L307">String</a></h3>
+				<h3 id="CommentMap.String">func (CommentMap) <a href="http://localhost:9090/src/go/ast/commentmap.go?s=8595:8633#L307">String</a>
+					<a class="permalink" href="index.html#CommentMap.String">&#xb6;</a>
+				</h3>
 				<pre>func (cmap <a href="index.html#CommentMap">CommentMap</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -1915,7 +2034,9 @@ the AST specified by node.
 				
 			
 				
-				<h3 id="CommentMap.Update">func (CommentMap) <a href="http://localhost:9090/src/go/ast/commentmap.go?s=7055:7104#L236">Update</a></h3>
+				<h3 id="CommentMap.Update">func (CommentMap) <a href="http://localhost:9090/src/go/ast/commentmap.go?s=7055:7104#L236">Update</a>
+					<a class="permalink" href="index.html#CommentMap.Update">&#xb6;</a>
+				</h3>
 				<pre>func (cmap <a href="index.html#CommentMap">CommentMap</a>) Update(old, new <a href="index.html#Node">Node</a>) <a href="index.html#Node">Node</a></pre>
 				<p>
 Update replaces an old node in the comment map with the new node
@@ -1930,7 +2051,9 @@ old node are associated with the new node.
 		
 			
 			
-			<h2 id="CompositeLit">type <a href="http://localhost:9090/src/go/ast/ast.go?s=7357:7557#L256">CompositeLit</a></h2>
+			<h2 id="CompositeLit">type <a href="http://localhost:9090/src/go/ast/ast.go?s=7349:7549#L256">CompositeLit</a>
+				<a class="permalink" href="index.html#CompositeLit">&#xb6;</a>
+			</h2>
 			<pre>type CompositeLit struct {
     Type   <a href="index.html#Expr">Expr</a>      <span class="comment">// literal type; or nil</span>
     Lbrace <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;{&#34;</span>
@@ -1954,7 +2077,9 @@ A CompositeLit node represents a composite literal.
 
 			
 				
-				<h3 id="CompositeLit.End">func (*CompositeLit) <a href="http://localhost:9090/src/go/ast/ast.go?s=13862:13900#L455">End</a></h3>
+				<h3 id="CompositeLit.End">func (*CompositeLit) <a href="http://localhost:9090/src/go/ast/ast.go?s=13852:13890#L455">End</a>
+					<a class="permalink" href="index.html#CompositeLit.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#CompositeLit">CompositeLit</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1962,7 +2087,9 @@ A CompositeLit node represents a composite literal.
 				
 			
 				
-				<h3 id="CompositeLit.Pos">func (*CompositeLit) <a href="http://localhost:9090/src/go/ast/ast.go?s=12227:12265#L417">Pos</a></h3>
+				<h3 id="CompositeLit.Pos">func (*CompositeLit) <a href="http://localhost:9090/src/go/ast/ast.go?s=12217:12255#L417">Pos</a>
+					<a class="permalink" href="index.html#CompositeLit.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#CompositeLit">CompositeLit</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -1972,7 +2099,9 @@ A CompositeLit node represents a composite literal.
 		
 			
 			
-			<h2 id="Decl">type <a href="http://localhost:9090/src/go/ast/ast.go?s=1626:1667#L43">Decl</a></h2>
+			<h2 id="Decl">type <a href="http://localhost:9090/src/go/ast/ast.go?s=1626:1667#L43">Decl</a>
+				<a class="permalink" href="index.html#Decl">&#xb6;</a>
+			</h2>
 			<pre>type Decl interface {
     <a href="index.html#Node">Node</a>
     <span class="comment">// contains filtered or unexported methods</span>
@@ -1996,7 +2125,9 @@ All declaration nodes implement the Decl interface.
 		
 			
 			
-			<h2 id="DeclStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=17226:17301#L549">DeclStmt</a></h2>
+			<h2 id="DeclStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=17216:17291#L549">DeclStmt</a>
+				<a class="permalink" href="index.html#DeclStmt">&#xb6;</a>
+			</h2>
 			<pre>type DeclStmt struct {
     Decl <a href="index.html#Decl">Decl</a> <span class="comment">// *GenDecl with CONST, TYPE, or VAR token</span>
 }</pre>
@@ -2017,7 +2148,9 @@ A DeclStmt node represents a declaration in a statement list.
 
 			
 				
-				<h3 id="DeclStmt.End">func (*DeclStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23032:23066#L726">End</a></h3>
+				<h3 id="DeclStmt.End">func (*DeclStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23020:23054#L726">End</a>
+					<a class="permalink" href="index.html#DeclStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#DeclStmt">DeclStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2025,7 +2158,9 @@ A DeclStmt node represents a declaration in a statement list.
 				
 			
 				
-				<h3 id="DeclStmt.Pos">func (*DeclStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=21755:21789#L704">Pos</a></h3>
+				<h3 id="DeclStmt.Pos">func (*DeclStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=21743:21777#L704">Pos</a>
+					<a class="permalink" href="index.html#DeclStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#DeclStmt">DeclStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2035,7 +2170,9 @@ A DeclStmt node represents a declaration in a statement list.
 		
 			
 			
-			<h2 id="DeferStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=18639:18727#L607">DeferStmt</a></h2>
+			<h2 id="DeferStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=18629:18717#L607">DeferStmt</a>
+				<a class="permalink" href="index.html#DeferStmt">&#xb6;</a>
+			</h2>
 			<pre>type DeferStmt struct {
     Defer <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;defer&#34; keyword</span>
     Call  *<a href="index.html#CallExpr">CallExpr</a>
@@ -2057,7 +2194,9 @@ A DeferStmt node represents a defer statement.
 
 			
 				
-				<h3 id="DeferStmt.End">func (*DeferStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23608:23643#L741">End</a></h3>
+				<h3 id="DeferStmt.End">func (*DeferStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23596:23631#L741">End</a>
+					<a class="permalink" href="index.html#DeferStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#DeferStmt">DeferStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2065,7 +2204,9 @@ A DeferStmt node represents a defer statement.
 				
 			
 				
-				<h3 id="DeferStmt.Pos">func (*DeferStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22263:22298#L712">Pos</a></h3>
+				<h3 id="DeferStmt.Pos">func (*DeferStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22251:22286#L712">Pos</a>
+					<a class="permalink" href="index.html#DeferStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#DeferStmt">DeferStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2075,7 +2216,9 @@ A DeferStmt node represents a defer statement.
 		
 			
 			
-			<h2 id="Ellipsis">type <a href="http://localhost:9090/src/go/ast/ast.go?s=6699:6838#L237">Ellipsis</a></h2>
+			<h2 id="Ellipsis">type <a href="http://localhost:9090/src/go/ast/ast.go?s=6691:6830#L237">Ellipsis</a>
+				<a class="permalink" href="index.html#Ellipsis">&#xb6;</a>
+			</h2>
 			<pre>type Ellipsis struct {
     Ellipsis <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;...&#34;</span>
     Elt      <a href="index.html#Expr">Expr</a>      <span class="comment">// ellipsis element type (parameter lists only); or nil</span>
@@ -2098,7 +2241,9 @@ parameter list or the &#34;...&#34; length in an array type.
 
 			
 				
-				<h3 id="Ellipsis.End">func (*Ellipsis) <a href="http://localhost:9090/src/go/ast/ast.go?s=13584:13618#L447">End</a></h3>
+				<h3 id="Ellipsis.End">func (*Ellipsis) <a href="http://localhost:9090/src/go/ast/ast.go?s=13574:13608#L447">End</a>
+					<a class="permalink" href="index.html#Ellipsis.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#Ellipsis">Ellipsis</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2106,7 +2251,9 @@ parameter list or the &#34;...&#34; length in an array type.
 				
 			
 				
-				<h3 id="Ellipsis.Pos">func (*Ellipsis) <a href="http://localhost:9090/src/go/ast/ast.go?s=12054:12088#L414">Pos</a></h3>
+				<h3 id="Ellipsis.Pos">func (*Ellipsis) <a href="http://localhost:9090/src/go/ast/ast.go?s=12044:12078#L414">Pos</a>
+					<a class="permalink" href="index.html#Ellipsis.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#Ellipsis">Ellipsis</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2116,7 +2263,9 @@ parameter list or the &#34;...&#34; length in an array type.
 		
 			
 			
-			<h2 id="EmptyStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=17486:17621#L557">EmptyStmt</a></h2>
+			<h2 id="EmptyStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=17476:17611#L557">EmptyStmt</a>
+				<a class="permalink" href="index.html#EmptyStmt">&#xb6;</a>
+			</h2>
 			<pre>type EmptyStmt struct {
     Semicolon <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of following &#34;;&#34;</span>
     Implicit  <a href="../../builtin/index.html#bool">bool</a>      <span class="comment">// if set, &#34;;&#34; was omitted in the source</span>
@@ -2140,7 +2289,9 @@ of the immediately following (explicit or implicit) semicolon.
 
 			
 				
-				<h3 id="EmptyStmt.End">func (*EmptyStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23091:23126#L727">End</a></h3>
+				<h3 id="EmptyStmt.End">func (*EmptyStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23079:23114#L727">End</a>
+					<a class="permalink" href="index.html#EmptyStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#EmptyStmt">EmptyStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2148,7 +2299,9 @@ of the immediately following (explicit or implicit) semicolon.
 				
 			
 				
-				<h3 id="EmptyStmt.Pos">func (*EmptyStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=21820:21855#L705">Pos</a></h3>
+				<h3 id="EmptyStmt.Pos">func (*EmptyStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=21808:21843#L705">Pos</a>
+					<a class="permalink" href="index.html#EmptyStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#EmptyStmt">EmptyStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2158,7 +2311,9 @@ of the immediately following (explicit or implicit) semicolon.
 		
 			
 			
-			<h2 id="Expr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=1432:1473#L31">Expr</a></h2>
+			<h2 id="Expr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=1432:1473#L31">Expr</a>
+				<a class="permalink" href="index.html#Expr">&#xb6;</a>
+			</h2>
 			<pre>type Expr interface {
     <a href="index.html#Node">Node</a>
     <span class="comment">// contains filtered or unexported methods</span>
@@ -2182,7 +2337,9 @@ All expression nodes implement the Expr interface.
 		
 			
 			
-			<h2 id="ExprStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=17858:17901#L572">ExprStmt</a></h2>
+			<h2 id="ExprStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=17848:17891#L572">ExprStmt</a>
+				<a class="permalink" href="index.html#ExprStmt">&#xb6;</a>
+			</h2>
 			<pre>type ExprStmt struct {
     X <a href="index.html#Expr">Expr</a> <span class="comment">// expression</span>
 }</pre>
@@ -2204,7 +2361,9 @@ in a statement list.
 
 			
 				
-				<h3 id="ExprStmt.End">func (*ExprStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23273:23307#L734">End</a></h3>
+				<h3 id="ExprStmt.End">func (*ExprStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23261:23295#L734">End</a>
+					<a class="permalink" href="index.html#ExprStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#ExprStmt">ExprStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2212,7 +2371,9 @@ in a statement list.
 				
 			
 				
-				<h3 id="ExprStmt.Pos">func (*ExprStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=21950:21984#L707">Pos</a></h3>
+				<h3 id="ExprStmt.Pos">func (*ExprStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=21938:21972#L707">Pos</a>
+					<a class="permalink" href="index.html#ExprStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#ExprStmt">ExprStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2222,7 +2383,9 @@ in a statement list.
 		
 			
 			
-			<h2 id="Field">type <a href="http://localhost:9090/src/go/ast/ast.go?s=4452:4760#L147">Field</a></h2>
+			<h2 id="Field">type <a href="http://localhost:9090/src/go/ast/ast.go?s=4444:4752#L147">Field</a>
+				<a class="permalink" href="index.html#Field">&#xb6;</a>
+			</h2>
 			<pre>type Field struct {
     Doc     *<a href="index.html#CommentGroup">CommentGroup</a> <span class="comment">// associated documentation; or nil</span>
     Names   []*<a href="index.html#Ident">Ident</a>      <span class="comment">// field/method/parameter names; or nil if anonymous field</span>
@@ -2249,7 +2412,9 @@ in a signature.
 
 			
 				
-				<h3 id="Field.End">func (*Field) <a href="http://localhost:9090/src/go/ast/ast.go?s=4872:4903#L162">End</a></h3>
+				<h3 id="Field.End">func (*Field) <a href="http://localhost:9090/src/go/ast/ast.go?s=4864:4895#L162">End</a>
+					<a class="permalink" href="index.html#Field.End">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#Field">Field</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2257,7 +2422,9 @@ in a signature.
 				
 			
 				
-				<h3 id="Field.Pos">func (*Field) <a href="http://localhost:9090/src/go/ast/ast.go?s=4762:4793#L155">Pos</a></h3>
+				<h3 id="Field.Pos">func (*Field) <a href="http://localhost:9090/src/go/ast/ast.go?s=4754:4785#L155">Pos</a>
+					<a class="permalink" href="index.html#Field.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#Field">Field</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2267,7 +2434,9 @@ in a signature.
 		
 			
 			
-			<h2 id="FieldFilter">type <a href="http://localhost:9090/src/go/ast/print.go?s=343:403#L8">FieldFilter</a></h2>
+			<h2 id="FieldFilter">type <a href="http://localhost:9090/src/go/ast/print.go?s=343:403#L8">FieldFilter</a>
+				<a class="permalink" href="index.html#FieldFilter">&#xb6;</a>
+			</h2>
 			<pre>type FieldFilter func(name <a href="../../builtin/index.html#string">string</a>, value <a href="../../reflect/index.html">reflect</a>.<a href="../../reflect/index.html#Value">Value</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			<p>
 A FieldFilter may be provided to Fprint to control the output.
@@ -2288,7 +2457,9 @@ A FieldFilter may be provided to Fprint to control the output.
 		
 			
 			
-			<h2 id="FieldList">type <a href="http://localhost:9090/src/go/ast/ast.go?s=5052:5254#L170">FieldList</a></h2>
+			<h2 id="FieldList">type <a href="http://localhost:9090/src/go/ast/ast.go?s=5044:5246#L170">FieldList</a>
+				<a class="permalink" href="index.html#FieldList">&#xb6;</a>
+			</h2>
 			<pre>type FieldList struct {
     Opening <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of opening parenthesis/brace, if any</span>
     List    []*<a href="index.html#Field">Field</a>  <span class="comment">// field list; or nil</span>
@@ -2311,7 +2482,9 @@ A FieldList represents a list of Fields, enclosed by parentheses or braces.
 
 			
 				
-				<h3 id="FieldList.End">func (*FieldList) <a href="http://localhost:9090/src/go/ast/ast.go?s=5509:5544#L188">End</a></h3>
+				<h3 id="FieldList.End">func (*FieldList) <a href="http://localhost:9090/src/go/ast/ast.go?s=5501:5536#L188">End</a>
+					<a class="permalink" href="index.html#FieldList.End">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FieldList">FieldList</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2319,7 +2492,9 @@ A FieldList represents a list of Fields, enclosed by parentheses or braces.
 				
 			
 				
-				<h3 id="FieldList.NumFields">func (*FieldList) <a href="http://localhost:9090/src/go/ast/ast.go?s=5856:5891#L201">NumFields</a></h3>
+				<h3 id="FieldList.NumFields">func (*FieldList) <a href="http://localhost:9090/src/go/ast/ast.go?s=5848:5883#L201">NumFields</a>
+					<a class="permalink" href="index.html#FieldList.NumFields">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FieldList">FieldList</a>) NumFields() <a href="../../builtin/index.html#int">int</a></pre>
 				<p>
 NumFields returns the number of (named and anonymous fields) in a FieldList.
@@ -2330,7 +2505,9 @@ NumFields returns the number of (named and anonymous fields) in a FieldList.
 				
 			
 				
-				<h3 id="FieldList.Pos">func (*FieldList) <a href="http://localhost:9090/src/go/ast/ast.go?s=5256:5291#L176">Pos</a></h3>
+				<h3 id="FieldList.Pos">func (*FieldList) <a href="http://localhost:9090/src/go/ast/ast.go?s=5248:5283#L176">Pos</a>
+					<a class="permalink" href="index.html#FieldList.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#FieldList">FieldList</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2340,7 +2517,9 @@ NumFields returns the number of (named and anonymous fields) in a FieldList.
 		
 			
 			
-			<h2 id="File">type <a href="http://localhost:9090/src/go/ast/ast.go?s=30178:30681#L959">File</a></h2>
+			<h2 id="File">type <a href="http://localhost:9090/src/go/ast/ast.go?s=30162:30665#L959">File</a>
+				<a class="permalink" href="index.html#File">&#xb6;</a>
+			</h2>
 			<pre>type File struct {
     Doc        *<a href="index.html#CommentGroup">CommentGroup</a>   <span class="comment">// associated documentation; or nil</span>
     Package    <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>       <span class="comment">// position of &#34;package&#34; keyword</span>
@@ -2371,7 +2550,9 @@ via Doc and Comment fields.
 
 			
 				
-				<h3 id="MergePackageFiles">func <a href="http://localhost:9090/src/go/ast/filter.go?s=8206:8264#L305">MergePackageFiles</a></h3>
+				<h3 id="MergePackageFiles">func <a href="http://localhost:9090/src/go/ast/filter.go?s=8206:8264#L305">MergePackageFiles</a>
+					<a class="permalink" href="index.html#MergePackageFiles">&#xb6;</a>
+				</h3>
 				<pre>func MergePackageFiles(pkg *<a href="index.html#Package">Package</a>, mode <a href="index.html#MergeMode">MergeMode</a>) *<a href="index.html#File">File</a></pre>
 				<p>
 MergePackageFiles creates a file AST by merging the ASTs of the
@@ -2384,7 +2565,9 @@ files belonging to a package. The mode flags control merging behavior.
 
 			
 				
-				<h3 id="File.End">func (*File) <a href="http://localhost:9090/src/go/ast/ast.go?s=30735:30765#L971">End</a></h3>
+				<h3 id="File.End">func (*File) <a href="http://localhost:9090/src/go/ast/ast.go?s=30719:30749#L971">End</a>
+					<a class="permalink" href="index.html#File.End">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2392,7 +2575,9 @@ files belonging to a package. The mode flags control merging behavior.
 				
 			
 				
-				<h3 id="File.Pos">func (*File) <a href="http://localhost:9090/src/go/ast/ast.go?s=30683:30713#L970">Pos</a></h3>
+				<h3 id="File.Pos">func (*File) <a href="http://localhost:9090/src/go/ast/ast.go?s=30667:30697#L970">Pos</a>
+					<a class="permalink" href="index.html#File.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (f *<a href="index.html#File">File</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2402,7 +2587,9 @@ files belonging to a package. The mode flags control merging behavior.
 		
 			
 			
-			<h2 id="Filter">type <a href="http://localhost:9090/src/go/ast/filter.go?s=1451:1480#L36">Filter</a></h2>
+			<h2 id="Filter">type <a href="http://localhost:9090/src/go/ast/filter.go?s=1451:1480#L36">Filter</a>
+				<a class="permalink" href="index.html#Filter">&#xb6;</a>
+			</h2>
 			<pre>type Filter func(<a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			
 
@@ -2420,7 +2607,9 @@ files belonging to a package. The mode flags control merging behavior.
 		
 			
 			
-			<h2 id="ForStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=21013:21240#L682">ForStmt</a></h2>
+			<h2 id="ForStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=21003:21230#L682">ForStmt</a>
+				<a class="permalink" href="index.html#ForStmt">&#xb6;</a>
+			</h2>
 			<pre>type ForStmt struct {
     For  <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;for&#34; keyword</span>
     Init <a href="index.html#Stmt">Stmt</a>      <span class="comment">// initialization statement; or nil</span>
@@ -2445,7 +2634,9 @@ A ForStmt represents a for statement.
 
 			
 				
-				<h3 id="ForStmt.End">func (*ForStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=24553:24586#L776">End</a></h3>
+				<h3 id="ForStmt.End">func (*ForStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=24541:24574#L776">End</a>
+					<a class="permalink" href="index.html#ForStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#ForStmt">ForStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2453,7 +2644,9 @@ A ForStmt represents a for statement.
 				
 			
 				
-				<h3 id="ForStmt.Pos">func (*ForStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22864:22897#L722">Pos</a></h3>
+				<h3 id="ForStmt.Pos">func (*ForStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22852:22885#L722">Pos</a>
+					<a class="permalink" href="index.html#ForStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#ForStmt">ForStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2463,7 +2656,9 @@ A ForStmt represents a for statement.
 		
 			
 			
-			<h2 id="FuncDecl">type <a href="http://localhost:9090/src/go/ast/ast.go?s=28821:29170#L914">FuncDecl</a></h2>
+			<h2 id="FuncDecl">type <a href="http://localhost:9090/src/go/ast/ast.go?s=28807:29156#L914">FuncDecl</a>
+				<a class="permalink" href="index.html#FuncDecl">&#xb6;</a>
+			</h2>
 			<pre>type FuncDecl struct {
     Doc  *<a href="index.html#CommentGroup">CommentGroup</a> <span class="comment">// associated documentation; or nil</span>
     Recv *<a href="index.html#FieldList">FieldList</a>    <span class="comment">// receiver (methods); or nil (functions)</span>
@@ -2488,7 +2683,9 @@ A FuncDecl node represents a function declaration.
 
 			
 				
-				<h3 id="FuncDecl.End">func (*FuncDecl) <a href="http://localhost:9090/src/go/ast/ast.go?s=29562:29596#L936">End</a></h3>
+				<h3 id="FuncDecl.End">func (*FuncDecl) <a href="http://localhost:9090/src/go/ast/ast.go?s=29546:29580#L936">End</a>
+					<a class="permalink" href="index.html#FuncDecl.End">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#FuncDecl">FuncDecl</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2496,7 +2693,9 @@ A FuncDecl node represents a function declaration.
 				
 			
 				
-				<h3 id="FuncDecl.Pos">func (*FuncDecl) <a href="http://localhost:9090/src/go/ast/ast.go?s=29339:29373#L927">Pos</a></h3>
+				<h3 id="FuncDecl.Pos">func (*FuncDecl) <a href="http://localhost:9090/src/go/ast/ast.go?s=29323:29357#L927">Pos</a>
+					<a class="permalink" href="index.html#FuncDecl.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#FuncDecl">FuncDecl</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2506,7 +2705,9 @@ A FuncDecl node represents a function declaration.
 		
 			
 			
-			<h2 id="FuncLit">type <a href="http://localhost:9090/src/go/ast/ast.go?s=7209:7298#L250">FuncLit</a></h2>
+			<h2 id="FuncLit">type <a href="http://localhost:9090/src/go/ast/ast.go?s=7201:7290#L250">FuncLit</a>
+				<a class="permalink" href="index.html#FuncLit">&#xb6;</a>
+			</h2>
 			<pre>type FuncLit struct {
     Type *<a href="index.html#FuncType">FuncType</a>  <span class="comment">// function type</span>
     Body *<a href="index.html#BlockStmt">BlockStmt</a> <span class="comment">// function body</span>
@@ -2528,7 +2729,9 @@ A FuncLit node represents a function literal.
 
 			
 				
-				<h3 id="FuncLit.End">func (*FuncLit) <a href="http://localhost:9090/src/go/ast/ast.go?s=13797:13830#L454">End</a></h3>
+				<h3 id="FuncLit.End">func (*FuncLit) <a href="http://localhost:9090/src/go/ast/ast.go?s=13787:13820#L454">End</a>
+					<a class="permalink" href="index.html#FuncLit.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#FuncLit">FuncLit</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2536,7 +2739,9 @@ A FuncLit node represents a function literal.
 				
 			
 				
-				<h3 id="FuncLit.Pos">func (*FuncLit) <a href="http://localhost:9090/src/go/ast/ast.go?s=12168:12201#L416">Pos</a></h3>
+				<h3 id="FuncLit.Pos">func (*FuncLit) <a href="http://localhost:9090/src/go/ast/ast.go?s=12158:12191#L416">Pos</a>
+					<a class="permalink" href="index.html#FuncLit.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#FuncLit">FuncLit</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2546,7 +2751,9 @@ A FuncLit node represents a function literal.
 		
 			
 			
-			<h2 id="FuncType">type <a href="http://localhost:9090/src/go/ast/ast.go?s=10967:11180#L381">FuncType</a></h2>
+			<h2 id="FuncType">type <a href="http://localhost:9090/src/go/ast/ast.go?s=10959:11172#L381">FuncType</a>
+				<a class="permalink" href="index.html#FuncType">&#xb6;</a>
+			</h2>
 			<pre>type FuncType struct {
     Func    <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>  <span class="comment">// position of &#34;func&#34; keyword (token.NoPos if there is no &#34;func&#34;)</span>
     Params  *<a href="index.html#FieldList">FieldList</a> <span class="comment">// (incoming) parameters; non-nil</span>
@@ -2569,7 +2776,9 @@ A FuncType node represents a function type.
 
 			
 				
-				<h3 id="FuncType.End">func (*FuncType) <a href="http://localhost:9090/src/go/ast/ast.go?s=14699:14733#L468">End</a></h3>
+				<h3 id="FuncType.End">func (*FuncType) <a href="http://localhost:9090/src/go/ast/ast.go?s=14689:14723#L468">End</a>
+					<a class="permalink" href="index.html#FuncType.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#FuncType">FuncType</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2577,7 +2786,9 @@ A FuncType node represents a function type.
 				
 			
 				
-				<h3 id="FuncType.Pos">func (*FuncType) <a href="http://localhost:9090/src/go/ast/ast.go?s=13072:13106#L435">Pos</a></h3>
+				<h3 id="FuncType.Pos">func (*FuncType) <a href="http://localhost:9090/src/go/ast/ast.go?s=13062:13096#L435">Pos</a>
+					<a class="permalink" href="index.html#FuncType.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#FuncType">FuncType</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2587,7 +2798,9 @@ A FuncType node represents a function type.
 		
 			
 			
-			<h2 id="GenDecl">type <a href="http://localhost:9090/src/go/ast/ast.go?s=28480:28763#L904">GenDecl</a></h2>
+			<h2 id="GenDecl">type <a href="http://localhost:9090/src/go/ast/ast.go?s=28466:28749#L904">GenDecl</a>
+				<a class="permalink" href="index.html#GenDecl">&#xb6;</a>
+			</h2>
 			<pre>type GenDecl struct {
     Doc    *<a href="index.html#CommentGroup">CommentGroup</a> <span class="comment">// associated documentation; or nil</span>
     TokPos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>     <span class="comment">// position of Tok</span>
@@ -2623,7 +2836,9 @@ token.VAR     *ValueSpec
 
 			
 				
-				<h3 id="GenDecl.End">func (*GenDecl) <a href="http://localhost:9090/src/go/ast/ast.go?s=29449:29482#L930">End</a></h3>
+				<h3 id="GenDecl.End">func (*GenDecl) <a href="http://localhost:9090/src/go/ast/ast.go?s=29433:29466#L930">End</a>
+					<a class="permalink" href="index.html#GenDecl.End">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#GenDecl">GenDecl</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2631,7 +2846,9 @@ token.VAR     *ValueSpec
 				
 			
 				
-				<h3 id="GenDecl.Pos">func (*GenDecl) <a href="http://localhost:9090/src/go/ast/ast.go?s=29284:29317#L926">Pos</a></h3>
+				<h3 id="GenDecl.Pos">func (*GenDecl) <a href="http://localhost:9090/src/go/ast/ast.go?s=29268:29301#L926">Pos</a>
+					<a class="permalink" href="index.html#GenDecl.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#GenDecl">GenDecl</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2641,7 +2858,9 @@ token.VAR     *ValueSpec
 		
 			
 			
-			<h2 id="GoStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=18505:18585#L601">GoStmt</a></h2>
+			<h2 id="GoStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=18495:18575#L601">GoStmt</a>
+				<a class="permalink" href="index.html#GoStmt">&#xb6;</a>
+			</h2>
 			<pre>type GoStmt struct {
     Go   <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;go&#34; keyword</span>
     Call *<a href="index.html#CallExpr">CallExpr</a>
@@ -2663,7 +2882,9 @@ A GoStmt node represents a go statement.
 
 			
 				
-				<h3 id="GoStmt.End">func (*GoStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23547:23579#L740">End</a></h3>
+				<h3 id="GoStmt.End">func (*GoStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23535:23567#L740">End</a>
+					<a class="permalink" href="index.html#GoStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#GoStmt">GoStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2671,7 +2892,9 @@ A GoStmt node represents a go statement.
 				
 			
 				
-				<h3 id="GoStmt.Pos">func (*GoStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22206:22238#L711">Pos</a></h3>
+				<h3 id="GoStmt.Pos">func (*GoStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22194:22226#L711">Pos</a>
+					<a class="permalink" href="index.html#GoStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#GoStmt">GoStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2681,7 +2904,9 @@ A GoStmt node represents a go statement.
 		
 			
 			
-			<h2 id="Ident">type <a href="http://localhost:9090/src/go/ast/ast.go?s=6438:6583#L228">Ident</a></h2>
+			<h2 id="Ident">type <a href="http://localhost:9090/src/go/ast/ast.go?s=6430:6575#L228">Ident</a>
+				<a class="permalink" href="index.html#Ident">&#xb6;</a>
+			</h2>
 			<pre>type Ident struct {
     NamePos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// identifier position</span>
     Name    <a href="../../builtin/index.html#string">string</a>    <span class="comment">// identifier name</span>
@@ -2702,7 +2927,9 @@ An Ident node represents an identifier.
 
 			
 				
-				<h3 id="NewIdent">func <a href="http://localhost:9090/src/go/ast/ast.go?s=16141:16174#L511">NewIdent</a></h3>
+				<h3 id="NewIdent">func <a href="http://localhost:9090/src/go/ast/ast.go?s=16131:16164#L511">NewIdent</a>
+					<a class="permalink" href="index.html#NewIdent">&#xb6;</a>
+				</h3>
 				<pre>func NewIdent(name <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Ident">Ident</a></pre>
 				<p>
 NewIdent creates a new Ident without position.
@@ -2715,7 +2942,9 @@ Useful for ASTs generated by code other than the Go parser.
 
 			
 				
-				<h3 id="Ident.End">func (*Ident) <a href="http://localhost:9090/src/go/ast/ast.go?s=13499:13530#L446">End</a></h3>
+				<h3 id="Ident.End">func (*Ident) <a href="http://localhost:9090/src/go/ast/ast.go?s=13489:13520#L446">End</a>
+					<a class="permalink" href="index.html#Ident.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#Ident">Ident</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2723,7 +2952,9 @@ Useful for ASTs generated by code other than the Go parser.
 				
 			
 				
-				<h3 id="Ident.IsExported">func (*Ident) <a href="http://localhost:9090/src/go/ast/ast.go?s=16566:16600#L524">IsExported</a></h3>
+				<h3 id="Ident.IsExported">func (*Ident) <a href="http://localhost:9090/src/go/ast/ast.go?s=16556:16590#L524">IsExported</a>
+					<a class="permalink" href="index.html#Ident.IsExported">&#xb6;</a>
+				</h3>
 				<pre>func (id *<a href="index.html#Ident">Ident</a>) IsExported() <a href="../../builtin/index.html#bool">bool</a></pre>
 				<p>
 IsExported reports whether id is an exported Go symbol
@@ -2735,7 +2966,9 @@ IsExported reports whether id is an exported Go symbol
 				
 			
 				
-				<h3 id="Ident.Pos">func (*Ident) <a href="http://localhost:9090/src/go/ast/ast.go?s=11998:12029#L413">Pos</a></h3>
+				<h3 id="Ident.Pos">func (*Ident) <a href="http://localhost:9090/src/go/ast/ast.go?s=11988:12019#L413">Pos</a>
+					<a class="permalink" href="index.html#Ident.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#Ident">Ident</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2743,7 +2976,9 @@ IsExported reports whether id is an exported Go symbol
 				
 			
 				
-				<h3 id="Ident.String">func (*Ident) <a href="http://localhost:9090/src/go/ast/ast.go?s=16633:16665#L526">String</a></h3>
+				<h3 id="Ident.String">func (*Ident) <a href="http://localhost:9090/src/go/ast/ast.go?s=16623:16655#L526">String</a>
+					<a class="permalink" href="index.html#Ident.String">&#xb6;</a>
+				</h3>
 				<pre>func (id *<a href="index.html#Ident">Ident</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -2753,7 +2988,9 @@ IsExported reports whether id is an exported Go symbol
 		
 			
 			
-			<h2 id="IfStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=19405:19604#L635">IfStmt</a></h2>
+			<h2 id="IfStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=19395:19594#L635">IfStmt</a>
+				<a class="permalink" href="index.html#IfStmt">&#xb6;</a>
+			</h2>
 			<pre>type IfStmt struct {
     If   <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;if&#34; keyword</span>
     Init <a href="index.html#Stmt">Stmt</a>      <span class="comment">// initialization statement; or nil</span>
@@ -2778,7 +3015,9 @@ An IfStmt node represents an if statement.
 
 			
 				
-				<h3 id="IfStmt.End">func (*IfStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=24017:24049#L755">End</a></h3>
+				<h3 id="IfStmt.End">func (*IfStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=24005:24037#L755">End</a>
+					<a class="permalink" href="index.html#IfStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#IfStmt">IfStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2786,7 +3025,9 @@ An IfStmt node represents an if statement.
 				
 			
 				
-				<h3 id="IfStmt.Pos">func (*IfStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22506:22538#L716">Pos</a></h3>
+				<h3 id="IfStmt.Pos">func (*IfStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22494:22526#L716">Pos</a>
+					<a class="permalink" href="index.html#IfStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#IfStmt">IfStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2796,7 +3037,9 @@ An IfStmt node represents an if statement.
 		
 			
 			
-			<h2 id="ImportSpec">type <a href="http://localhost:9090/src/go/ast/ast.go?s=25927:26238#L818">ImportSpec</a></h2>
+			<h2 id="ImportSpec">type <a href="http://localhost:9090/src/go/ast/ast.go?s=25915:26226#L818">ImportSpec</a>
+				<a class="permalink" href="index.html#ImportSpec">&#xb6;</a>
+			</h2>
 			<pre>type ImportSpec struct {
     Doc     *<a href="index.html#CommentGroup">CommentGroup</a> <span class="comment">// associated documentation; or nil</span>
     Name    *<a href="index.html#Ident">Ident</a>        <span class="comment">// local package name (including &#34;.&#34;); or nil</span>
@@ -2821,7 +3064,9 @@ An ImportSpec node represents a single package import.
 
 			
 				
-				<h3 id="ImportSpec.End">func (*ImportSpec) <a href="http://localhost:9090/src/go/ast/ast.go?s=27258:27294#L857">End</a></h3>
+				<h3 id="ImportSpec.End">func (*ImportSpec) <a href="http://localhost:9090/src/go/ast/ast.go?s=27244:27280#L857">End</a>
+					<a class="permalink" href="index.html#ImportSpec.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#ImportSpec">ImportSpec</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2829,12 +3074,11 @@ An ImportSpec node represents a single package import.
 				
 			
 				
-				<h3 id="ImportSpec.Pos">func (*ImportSpec) <a href="http://localhost:9090/src/go/ast/ast.go?s=27026:27062#L848">Pos</a></h3>
+				<h3 id="ImportSpec.Pos">func (*ImportSpec) <a href="http://localhost:9090/src/go/ast/ast.go?s=27012:27048#L848">Pos</a>
+					<a class="permalink" href="index.html#ImportSpec.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#ImportSpec">ImportSpec</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
-				<p>
-Pos and End implementations for spec nodes.
-</p>
-
+				
 				
 				
 				
@@ -2842,7 +3086,9 @@ Pos and End implementations for spec nodes.
 		
 			
 			
-			<h2 id="Importer">type <a href="http://localhost:9090/src/go/ast/resolve.go?s=1752:1836#L53">Importer</a></h2>
+			<h2 id="Importer">type <a href="http://localhost:9090/src/go/ast/resolve.go?s=1751:1835#L53">Importer</a>
+				<a class="permalink" href="index.html#Importer">&#xb6;</a>
+			</h2>
 			<pre>type Importer func(imports map[<a href="../../builtin/index.html#string">string</a>]*<a href="index.html#Object">Object</a>, path <a href="../../builtin/index.html#string">string</a>) (pkg *<a href="index.html#Object">Object</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 An Importer resolves import paths to package Objects.
@@ -2850,7 +3096,7 @@ The imports map records the packages already imported,
 indexed by package id (canonical import path).
 An Importer must determine the canonical import path and
 check the map to see if it is already present in the imports map.
-If so, the Importer can return the map entry.  Otherwise, the
+If so, the Importer can return the map entry. Otherwise, the
 Importer should load the package data for the given path into
 a new *Object (pkg), record pkg in the imports map, and then
 return pkg.
@@ -2871,7 +3117,9 @@ return pkg.
 		
 			
 			
-			<h2 id="IncDecStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=18111:18222#L584">IncDecStmt</a></h2>
+			<h2 id="IncDecStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=18101:18212#L584">IncDecStmt</a>
+				<a class="permalink" href="index.html#IncDecStmt">&#xb6;</a>
+			</h2>
 			<pre>type IncDecStmt struct {
     X      <a href="index.html#Expr">Expr</a>
     TokPos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>   <span class="comment">// position of Tok</span>
@@ -2894,7 +3142,9 @@ An IncDecStmt node represents an increment or decrement statement.
 
 			
 				
-				<h3 id="IncDecStmt.End">func (*IncDecStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23395:23431#L736">End</a></h3>
+				<h3 id="IncDecStmt.End">func (*IncDecStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23383:23419#L736">End</a>
+					<a class="permalink" href="index.html#IncDecStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#IncDecStmt">IncDecStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2902,7 +3152,9 @@ An IncDecStmt node represents an increment or decrement statement.
 				
 			
 				
-				<h3 id="IncDecStmt.Pos">func (*IncDecStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22077:22113#L709">Pos</a></h3>
+				<h3 id="IncDecStmt.Pos">func (*IncDecStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22065:22101#L709">Pos</a>
+					<a class="permalink" href="index.html#IncDecStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#IncDecStmt">IncDecStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2912,7 +3164,9 @@ An IncDecStmt node represents an increment or decrement statement.
 		
 			
 			
-			<h2 id="IndexExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=7994:8163#L277">IndexExpr</a></h2>
+			<h2 id="IndexExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=7986:8155#L277">IndexExpr</a>
+				<a class="permalink" href="index.html#IndexExpr">&#xb6;</a>
+			</h2>
 			<pre>type IndexExpr struct {
     X      <a href="index.html#Expr">Expr</a>      <span class="comment">// expression</span>
     Lbrack <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;[&#34;</span>
@@ -2936,7 +3190,9 @@ An IndexExpr node represents an expression followed by an index.
 
 			
 				
-				<h3 id="IndexExpr.End">func (*IndexExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=14056:14091#L458">End</a></h3>
+				<h3 id="IndexExpr.End">func (*IndexExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=14046:14081#L458">End</a>
+					<a class="permalink" href="index.html#IndexExpr.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#IndexExpr">IndexExpr</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2944,7 +3200,9 @@ An IndexExpr node represents an expression followed by an index.
 				
 			
 				
-				<h3 id="IndexExpr.Pos">func (*IndexExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12455:12490#L425">Pos</a></h3>
+				<h3 id="IndexExpr.Pos">func (*IndexExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12445:12480#L425">Pos</a>
+					<a class="permalink" href="index.html#IndexExpr.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#IndexExpr">IndexExpr</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2954,7 +3212,9 @@ An IndexExpr node represents an expression followed by an index.
 		
 			
 			
-			<h2 id="InterfaceType">type <a href="http://localhost:9090/src/go/ast/ast.go?s=11239:11450#L388">InterfaceType</a></h2>
+			<h2 id="InterfaceType">type <a href="http://localhost:9090/src/go/ast/ast.go?s=11231:11442#L388">InterfaceType</a>
+				<a class="permalink" href="index.html#InterfaceType">&#xb6;</a>
+			</h2>
 			<pre>type InterfaceType struct {
     Interface  <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>  <span class="comment">// position of &#34;interface&#34; keyword</span>
     Methods    *<a href="index.html#FieldList">FieldList</a> <span class="comment">// list of methods</span>
@@ -2977,7 +3237,9 @@ An InterfaceType node represents an interface type.
 
 			
 				
-				<h3 id="InterfaceType.End">func (*InterfaceType) <a href="http://localhost:9090/src/go/ast/ast.go?s=14812:14851#L474">End</a></h3>
+				<h3 id="InterfaceType.End">func (*InterfaceType) <a href="http://localhost:9090/src/go/ast/ast.go?s=14802:14841#L474">End</a>
+					<a class="permalink" href="index.html#InterfaceType.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#InterfaceType">InterfaceType</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2985,7 +3247,9 @@ An InterfaceType node represents an interface type.
 				
 			
 				
-				<h3 id="InterfaceType.Pos">func (*InterfaceType) <a href="http://localhost:9090/src/go/ast/ast.go?s=13269:13308#L441">Pos</a></h3>
+				<h3 id="InterfaceType.Pos">func (*InterfaceType) <a href="http://localhost:9090/src/go/ast/ast.go?s=13259:13298#L441">Pos</a>
+					<a class="permalink" href="index.html#InterfaceType.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#InterfaceType">InterfaceType</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -2995,7 +3259,9 @@ An InterfaceType node represents an interface type.
 		
 			
 			
-			<h2 id="KeyValueExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=9997:10084#L342">KeyValueExpr</a></h2>
+			<h2 id="KeyValueExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=9989:10076#L342">KeyValueExpr</a>
+				<a class="permalink" href="index.html#KeyValueExpr">&#xb6;</a>
+			</h2>
 			<pre>type KeyValueExpr struct {
     Key   <a href="index.html#Expr">Expr</a>
     Colon <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;:&#34;</span>
@@ -3019,7 +3285,9 @@ in composite literals.
 
 			
 				
-				<h3 id="KeyValueExpr.End">func (*KeyValueExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=14502:14540#L465">End</a></h3>
+				<h3 id="KeyValueExpr.End">func (*KeyValueExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=14492:14530#L465">End</a>
+					<a class="permalink" href="index.html#KeyValueExpr.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#KeyValueExpr">KeyValueExpr</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3027,7 +3295,9 @@ in composite literals.
 				
 			
 				
-				<h3 id="KeyValueExpr.Pos">func (*KeyValueExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12886:12924#L432">Pos</a></h3>
+				<h3 id="KeyValueExpr.Pos">func (*KeyValueExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12876:12914#L432">Pos</a>
+					<a class="permalink" href="index.html#KeyValueExpr.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#KeyValueExpr">KeyValueExpr</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3037,7 +3307,9 @@ in composite literals.
 		
 			
 			
-			<h2 id="LabeledStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=17679:17767#L563">LabeledStmt</a></h2>
+			<h2 id="LabeledStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=17669:17757#L563">LabeledStmt</a>
+				<a class="permalink" href="index.html#LabeledStmt">&#xb6;</a>
+			</h2>
 			<pre>type LabeledStmt struct {
     Label *<a href="index.html#Ident">Ident</a>
     Colon <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;:&#34;</span>
@@ -3060,7 +3332,9 @@ A LabeledStmt node represents a labeled statement.
 
 			
 				
-				<h3 id="LabeledStmt.End">func (*LabeledStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23211:23248#L733">End</a></h3>
+				<h3 id="LabeledStmt.End">func (*LabeledStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23199:23236#L733">End</a>
+					<a class="permalink" href="index.html#LabeledStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#LabeledStmt">LabeledStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3068,7 +3342,9 @@ A LabeledStmt node represents a labeled statement.
 				
 			
 				
-				<h3 id="LabeledStmt.Pos">func (*LabeledStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=21884:21921#L706">Pos</a></h3>
+				<h3 id="LabeledStmt.Pos">func (*LabeledStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=21872:21909#L706">Pos</a>
+					<a class="permalink" href="index.html#LabeledStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#LabeledStmt">LabeledStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3078,7 +3354,9 @@ A LabeledStmt node represents a labeled statement.
 		
 			
 			
-			<h2 id="MapType">type <a href="http://localhost:9090/src/go/ast/ast.go?s=11495:11587#L395">MapType</a></h2>
+			<h2 id="MapType">type <a href="http://localhost:9090/src/go/ast/ast.go?s=11487:11579#L395">MapType</a>
+				<a class="permalink" href="index.html#MapType">&#xb6;</a>
+			</h2>
 			<pre>type MapType struct {
     Map   <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;map&#34; keyword</span>
     Key   <a href="index.html#Expr">Expr</a>
@@ -3101,7 +3379,9 @@ A MapType node represents a map type.
 
 			
 				
-				<h3 id="MapType.End">func (*MapType) <a href="http://localhost:9090/src/go/ast/ast.go?s=14879:14912#L475">End</a></h3>
+				<h3 id="MapType.End">func (*MapType) <a href="http://localhost:9090/src/go/ast/ast.go?s=14869:14902#L475">End</a>
+					<a class="permalink" href="index.html#MapType.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#MapType">MapType</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3109,7 +3389,9 @@ A MapType node represents a map type.
 				
 			
 				
-				<h3 id="MapType.Pos">func (*MapType) <a href="http://localhost:9090/src/go/ast/ast.go?s=13332:13365#L442">Pos</a></h3>
+				<h3 id="MapType.Pos">func (*MapType) <a href="http://localhost:9090/src/go/ast/ast.go?s=13322:13355#L442">Pos</a>
+					<a class="permalink" href="index.html#MapType.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#MapType">MapType</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3119,7 +3401,9 @@ A MapType node represents a map type.
 		
 			
 			
-			<h2 id="MergeMode">type <a href="http://localhost:9090/src/go/ast/filter.go?s=6906:6925#L264">MergeMode</a></h2>
+			<h2 id="MergeMode">type <a href="http://localhost:9090/src/go/ast/filter.go?s=6906:6925#L264">MergeMode</a>
+				<a class="permalink" href="index.html#MergeMode">&#xb6;</a>
+			</h2>
 			<pre>type MergeMode <a href="../../builtin/index.html#uint">uint</a></pre>
 			<p>
 The MergeMode flags control the behavior of MergePackageFiles.
@@ -3151,7 +3435,9 @@ The MergeMode flags control the behavior of MergePackageFiles.
 		
 			
 			
-			<h2 id="Node">type <a href="http://localhost:9090/src/go/ast/ast.go?s=1208:1376#L25">Node</a></h2>
+			<h2 id="Node">type <a href="http://localhost:9090/src/go/ast/ast.go?s=1208:1376#L25">Node</a>
+				<a class="permalink" href="index.html#Node">&#xb6;</a>
+			</h2>
 			<pre>type Node interface {
     Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of first character belonging to the node</span>
     End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of first character immediately after the node</span>
@@ -3175,7 +3461,9 @@ All node types implement the Node interface.
 		
 			
 			
-			<h2 id="ObjKind">type <a href="http://localhost:9090/src/go/ast/scope.go?s=3641:3657#L129">ObjKind</a></h2>
+			<h2 id="ObjKind">type <a href="http://localhost:9090/src/go/ast/scope.go?s=3641:3657#L129">ObjKind</a>
+				<a class="permalink" href="index.html#ObjKind">&#xb6;</a>
+			</h2>
 			<pre>type ObjKind <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 ObjKind describes what an object represents.
@@ -3208,7 +3496,9 @@ The list of possible Object kinds.
 
 			
 				
-				<h3 id="ObjKind.String">func (ObjKind) <a href="http://localhost:9090/src/go/ast/scope.go?s=4082:4117#L152">String</a></h3>
+				<h3 id="ObjKind.String">func (ObjKind) <a href="http://localhost:9090/src/go/ast/scope.go?s=4082:4117#L152">String</a>
+					<a class="permalink" href="index.html#ObjKind.String">&#xb6;</a>
+				</h3>
 				<pre>func (kind <a href="index.html#ObjKind">ObjKind</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				
 				
@@ -3218,7 +3508,9 @@ The list of possible Object kinds.
 		
 			
 			
-			<h2 id="Object">type <a href="http://localhost:9090/src/go/ast/scope.go?s=2129:2416#L68">Object</a></h2>
+			<h2 id="Object">type <a href="http://localhost:9090/src/go/ast/scope.go?s=2129:2416#L68">Object</a>
+				<a class="permalink" href="index.html#Object">&#xb6;</a>
+			</h2>
 			<pre>type Object struct {
     Kind <a href="index.html#ObjKind">ObjKind</a>
     Name <a href="../../builtin/index.html#string">string</a>      <span class="comment">// declared name</span>
@@ -3251,7 +3543,9 @@ Typ     *Scope            (used as method scope during type checking - transient
 
 			
 				
-				<h3 id="NewObj">func <a href="http://localhost:9090/src/go/ast/scope.go?s=2475:2521#L77">NewObj</a></h3>
+				<h3 id="NewObj">func <a href="http://localhost:9090/src/go/ast/scope.go?s=2475:2521#L77">NewObj</a>
+					<a class="permalink" href="index.html#NewObj">&#xb6;</a>
+				</h3>
 				<pre>func NewObj(kind <a href="index.html#ObjKind">ObjKind</a>, name <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Object">Object</a></pre>
 				<p>
 NewObj creates a new object of a given kind and name.
@@ -3263,7 +3557,9 @@ NewObj creates a new object of a given kind and name.
 
 			
 				
-				<h3 id="Object.Pos">func (*Object) <a href="http://localhost:9090/src/go/ast/scope.go?s=2748:2782#L84">Pos</a></h3>
+				<h3 id="Object.Pos">func (*Object) <a href="http://localhost:9090/src/go/ast/scope.go?s=2748:2782#L84">Pos</a>
+					<a class="permalink" href="index.html#Object.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (obj *<a href="index.html#Object">Object</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				<p>
 Pos computes the source position of the declaration of an object name.
@@ -3278,7 +3574,9 @@ The result may be an invalid position if it cannot be computed
 		
 			
 			
-			<h2 id="Package">type <a href="http://localhost:9090/src/go/ast/ast.go?s=30947:31202#L981">Package</a></h2>
+			<h2 id="Package">type <a href="http://localhost:9090/src/go/ast/ast.go?s=30931:31186#L981">Package</a>
+				<a class="permalink" href="index.html#Package">&#xb6;</a>
+			</h2>
 			<pre>type Package struct {
     Name    <a href="../../builtin/index.html#string">string</a>             <span class="comment">// package name</span>
     Scope   *<a href="index.html#Scope">Scope</a>             <span class="comment">// package scope across all files</span>
@@ -3301,7 +3599,9 @@ collectively building a Go package.
 
 			
 				
-				<h3 id="NewPackage">func <a href="http://localhost:9090/src/go/ast/resolve.go?s=2446:2560#L64">NewPackage</a></h3>
+				<h3 id="NewPackage">func <a href="http://localhost:9090/src/go/ast/resolve.go?s=2445:2559#L64">NewPackage</a>
+					<a class="permalink" href="index.html#NewPackage">&#xb6;</a>
+				</h3>
 				<pre>func NewPackage(fset *<a href="../token/index.html">token</a>.<a href="../token/index.html#FileSet">FileSet</a>, files map[<a href="../../builtin/index.html#string">string</a>]*<a href="index.html#File">File</a>, importer <a href="index.html#Importer">Importer</a>, universe *<a href="index.html#Scope">Scope</a>) (*<a href="index.html#Package">Package</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 				<p>
 NewPackage creates a new Package node from a set of File nodes. It resolves
@@ -3320,7 +3620,9 @@ The result is a package node and a scanner.ErrorList if there were errors.
 
 			
 				
-				<h3 id="Package.End">func (*Package) <a href="http://localhost:9090/src/go/ast/ast.go?s=31261:31294#L989">End</a></h3>
+				<h3 id="Package.End">func (*Package) <a href="http://localhost:9090/src/go/ast/ast.go?s=31245:31278#L989">End</a>
+					<a class="permalink" href="index.html#Package.End">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Package">Package</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3328,7 +3630,9 @@ The result is a package node and a scanner.ErrorList if there were errors.
 				
 			
 				
-				<h3 id="Package.Pos">func (*Package) <a href="http://localhost:9090/src/go/ast/ast.go?s=31204:31237#L988">Pos</a></h3>
+				<h3 id="Package.Pos">func (*Package) <a href="http://localhost:9090/src/go/ast/ast.go?s=31188:31221#L988">Pos</a>
+					<a class="permalink" href="index.html#Package.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Package">Package</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3338,7 +3642,9 @@ The result is a package node and a scanner.ErrorList if there were errors.
 		
 			
 			
-			<h2 id="ParenExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=7620:7764#L264">ParenExpr</a></h2>
+			<h2 id="ParenExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=7612:7756#L264">ParenExpr</a>
+				<a class="permalink" href="index.html#ParenExpr">&#xb6;</a>
+			</h2>
 			<pre>type ParenExpr struct {
     Lparen <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;(&#34;</span>
     X      <a href="index.html#Expr">Expr</a>      <span class="comment">// parenthesized expression</span>
@@ -3361,7 +3667,9 @@ A ParenExpr node represents a parenthesized expression.
 
 			
 				
-				<h3 id="ParenExpr.End">func (*ParenExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=13927:13962#L456">End</a></h3>
+				<h3 id="ParenExpr.End">func (*ParenExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=13917:13952#L456">End</a>
+					<a class="permalink" href="index.html#ParenExpr.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#ParenExpr">ParenExpr</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3369,7 +3677,9 @@ A ParenExpr node represents a parenthesized expression.
 				
 			
 				
-				<h3 id="ParenExpr.Pos">func (*ParenExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12332:12367#L423">Pos</a></h3>
+				<h3 id="ParenExpr.Pos">func (*ParenExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12322:12357#L423">Pos</a>
+					<a class="permalink" href="index.html#ParenExpr.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#ParenExpr">ParenExpr</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3379,7 +3689,9 @@ A ParenExpr node represents a parenthesized expression.
 		
 			
 			
-			<h2 id="RangeStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=21307:21637#L691">RangeStmt</a></h2>
+			<h2 id="RangeStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=21297:21627#L691">RangeStmt</a>
+				<a class="permalink" href="index.html#RangeStmt">&#xb6;</a>
+			</h2>
 			<pre>type RangeStmt struct {
     For        <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>   <span class="comment">// position of &#34;for&#34; keyword</span>
     Key, Value <a href="index.html#Expr">Expr</a>        <span class="comment">// Key, Value may be nil</span>
@@ -3405,7 +3717,9 @@ A RangeStmt represents a for statement with a range clause.
 
 			
 				
-				<h3 id="RangeStmt.End">func (*RangeStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=24614:24649#L777">End</a></h3>
+				<h3 id="RangeStmt.End">func (*RangeStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=24602:24637#L777">End</a>
+					<a class="permalink" href="index.html#RangeStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RangeStmt">RangeStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3413,7 +3727,9 @@ A RangeStmt represents a for statement with a range clause.
 				
 			
 				
-				<h3 id="RangeStmt.Pos">func (*RangeStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22922:22957#L723">Pos</a></h3>
+				<h3 id="RangeStmt.Pos">func (*RangeStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22910:22945#L723">Pos</a>
+					<a class="permalink" href="index.html#RangeStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#RangeStmt">RangeStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3423,7 +3739,9 @@ A RangeStmt represents a for statement with a range clause.
 		
 			
 			
-			<h2 id="ReturnStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=18783:18907#L613">ReturnStmt</a></h2>
+			<h2 id="ReturnStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=18773:18897#L613">ReturnStmt</a>
+				<a class="permalink" href="index.html#ReturnStmt">&#xb6;</a>
+			</h2>
 			<pre>type ReturnStmt struct {
     Return  <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;return&#34; keyword</span>
     Results []<a href="index.html#Expr">Expr</a>    <span class="comment">// result expressions; or nil</span>
@@ -3445,7 +3763,9 @@ A ReturnStmt node represents a return statement.
 
 			
 				
-				<h3 id="ReturnStmt.End">func (*ReturnStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23669:23705#L742">End</a></h3>
+				<h3 id="ReturnStmt.End">func (*ReturnStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23657:23693#L742">End</a>
+					<a class="permalink" href="index.html#ReturnStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#ReturnStmt">ReturnStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3453,7 +3773,9 @@ A ReturnStmt node represents a return statement.
 				
 			
 				
-				<h3 id="ReturnStmt.Pos">func (*ReturnStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22323:22359#L713">Pos</a></h3>
+				<h3 id="ReturnStmt.Pos">func (*ReturnStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22311:22347#L713">Pos</a>
+					<a class="permalink" href="index.html#ReturnStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#ReturnStmt">ReturnStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3463,7 +3785,9 @@ A ReturnStmt node represents a return statement.
 		
 			
 			
-			<h2 id="Scope">type <a href="http://localhost:9090/src/go/ast/scope.go?s=419:484#L9">Scope</a></h2>
+			<h2 id="Scope">type <a href="http://localhost:9090/src/go/ast/scope.go?s=419:484#L9">Scope</a>
+				<a class="permalink" href="index.html#Scope">&#xb6;</a>
+			</h2>
 			<pre>type Scope struct {
     Outer   *<a href="index.html#Scope">Scope</a>
     Objects map[<a href="../../builtin/index.html#string">string</a>]*<a href="index.html#Object">Object</a>
@@ -3485,7 +3809,9 @@ scope.
 
 			
 				
-				<h3 id="NewScope">func <a href="http://localhost:9090/src/go/ast/scope.go?s=545:579#L15">NewScope</a></h3>
+				<h3 id="NewScope">func <a href="http://localhost:9090/src/go/ast/scope.go?s=545:579#L15">NewScope</a>
+					<a class="permalink" href="index.html#NewScope">&#xb6;</a>
+				</h3>
 				<pre>func NewScope(outer *<a href="index.html#Scope">Scope</a>) *<a href="index.html#Scope">Scope</a></pre>
 				<p>
 NewScope creates a new scope nested in the outer scope.
@@ -3497,7 +3823,9 @@ NewScope creates a new scope nested in the outer scope.
 
 			
 				
-				<h3 id="Scope.Insert">func (*Scope) <a href="http://localhost:9090/src/go/ast/scope.go?s=1120:1169#L33">Insert</a></h3>
+				<h3 id="Scope.Insert">func (*Scope) <a href="http://localhost:9090/src/go/ast/scope.go?s=1120:1169#L33">Insert</a>
+					<a class="permalink" href="index.html#Scope.Insert">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) Insert(obj *<a href="index.html#Object">Object</a>) (alt *<a href="index.html#Object">Object</a>)</pre>
 				<p>
 Insert attempts to insert a named object obj into the scope s.
@@ -3511,7 +3839,9 @@ it inserts obj and returns nil.
 				
 			
 				
-				<h3 id="Scope.Lookup">func (*Scope) <a href="http://localhost:9090/src/go/ast/scope.go?s=812:855#L24">Lookup</a></h3>
+				<h3 id="Scope.Lookup">func (*Scope) <a href="http://localhost:9090/src/go/ast/scope.go?s=812:855#L24">Lookup</a>
+					<a class="permalink" href="index.html#Scope.Lookup">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) Lookup(name <a href="../../builtin/index.html#string">string</a>) *<a href="index.html#Object">Object</a></pre>
 				<p>
 Lookup returns the object with the given name if it is
@@ -3524,7 +3854,9 @@ are ignored.
 				
 			
 				
-				<h3 id="Scope.String">func (*Scope) <a href="http://localhost:9090/src/go/ast/scope.go?s=1279:1310#L41">String</a></h3>
+				<h3 id="Scope.String">func (*Scope) <a href="http://localhost:9090/src/go/ast/scope.go?s=1279:1310#L41">String</a>
+					<a class="permalink" href="index.html#Scope.String">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#Scope">Scope</a>) String() <a href="../../builtin/index.html#string">string</a></pre>
 				<p>
 Debugging support
@@ -3537,7 +3869,9 @@ Debugging support
 		
 			
 			
-			<h2 id="SelectStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=20854:20968#L676">SelectStmt</a></h2>
+			<h2 id="SelectStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=20844:20958#L676">SelectStmt</a>
+				<a class="permalink" href="index.html#SelectStmt">&#xb6;</a>
+			</h2>
 			<pre>type SelectStmt struct {
     Select <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>  <span class="comment">// position of &#34;select&#34; keyword</span>
     Body   *<a href="index.html#BlockStmt">BlockStmt</a> <span class="comment">// CommClauses only</span>
@@ -3559,7 +3893,9 @@ An SelectStmt node represents a select statement.
 
 			
 				
-				<h3 id="SelectStmt.End">func (*SelectStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=24492:24528#L775">End</a></h3>
+				<h3 id="SelectStmt.End">func (*SelectStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=24480:24516#L775">End</a>
+					<a class="permalink" href="index.html#SelectStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#SelectStmt">SelectStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3567,7 +3903,9 @@ An SelectStmt node represents a select statement.
 				
 			
 				
-				<h3 id="SelectStmt.Pos">func (*SelectStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22803:22839#L721">Pos</a></h3>
+				<h3 id="SelectStmt.Pos">func (*SelectStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22791:22827#L721">Pos</a>
+					<a class="permalink" href="index.html#SelectStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#SelectStmt">SelectStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3577,7 +3915,9 @@ An SelectStmt node represents a select statement.
 		
 			
 			
-			<h2 id="SelectorExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=7840:7922#L271">SelectorExpr</a></h2>
+			<h2 id="SelectorExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=7832:7914#L271">SelectorExpr</a>
+				<a class="permalink" href="index.html#SelectorExpr">&#xb6;</a>
+			</h2>
 			<pre>type SelectorExpr struct {
     X   <a href="index.html#Expr">Expr</a>   <span class="comment">// expression</span>
     Sel *<a href="index.html#Ident">Ident</a> <span class="comment">// field selector</span>
@@ -3599,7 +3939,9 @@ A SelectorExpr node represents an expression followed by a selector.
 
 			
 				
-				<h3 id="SelectorExpr.End">func (*SelectorExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=13992:14030#L457">End</a></h3>
+				<h3 id="SelectorExpr.End">func (*SelectorExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=13982:14020#L457">End</a>
+					<a class="permalink" href="index.html#SelectorExpr.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#SelectorExpr">SelectorExpr</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3607,7 +3949,9 @@ A SelectorExpr node represents an expression followed by a selector.
 				
 			
 				
-				<h3 id="SelectorExpr.Pos">func (*SelectorExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12393:12431#L424">Pos</a></h3>
+				<h3 id="SelectorExpr.Pos">func (*SelectorExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12383:12421#L424">Pos</a>
+					<a class="permalink" href="index.html#SelectorExpr.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#SelectorExpr">SelectorExpr</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3617,7 +3961,9 @@ A SelectorExpr node represents an expression followed by a selector.
 		
 			
 			
-			<h2 id="SendStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=17953:18037#L577">SendStmt</a></h2>
+			<h2 id="SendStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=17943:18027#L577">SendStmt</a>
+				<a class="permalink" href="index.html#SendStmt">&#xb6;</a>
+			</h2>
 			<pre>type SendStmt struct {
     Chan  <a href="index.html#Expr">Expr</a>
     Arrow <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;&lt;-&#34;</span>
@@ -3640,7 +3986,9 @@ A SendStmt node represents a send statement.
 
 			
 				
-				<h3 id="SendStmt.End">func (*SendStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23332:23366#L735">End</a></h3>
+				<h3 id="SendStmt.End">func (*SendStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=23320:23354#L735">End</a>
+					<a class="permalink" href="index.html#SendStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#SendStmt">SendStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3648,7 +3996,9 @@ A SendStmt node represents a send statement.
 				
 			
 				
-				<h3 id="SendStmt.Pos">func (*SendStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22012:22046#L708">Pos</a></h3>
+				<h3 id="SendStmt.Pos">func (*SendStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22000:22034#L708">Pos</a>
+					<a class="permalink" href="index.html#SendStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#SendStmt">SendStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3658,7 +4008,9 @@ A SendStmt node represents a send statement.
 		
 			
 			
-			<h2 id="SliceExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=8240:8589#L285">SliceExpr</a></h2>
+			<h2 id="SliceExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=8232:8581#L285">SliceExpr</a>
+				<a class="permalink" href="index.html#SliceExpr">&#xb6;</a>
+			</h2>
 			<pre>type SliceExpr struct {
     X      <a href="index.html#Expr">Expr</a>      <span class="comment">// expression</span>
     Lbrack <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;[&#34;</span>
@@ -3685,7 +4037,9 @@ An SliceExpr node represents an expression followed by slice indices.
 
 			
 				
-				<h3 id="SliceExpr.End">func (*SliceExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=14121:14156#L459">End</a></h3>
+				<h3 id="SliceExpr.End">func (*SliceExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=14111:14146#L459">End</a>
+					<a class="permalink" href="index.html#SliceExpr.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#SliceExpr">SliceExpr</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3693,7 +4047,9 @@ An SliceExpr node represents an expression followed by slice indices.
 				
 			
 				
-				<h3 id="SliceExpr.Pos">func (*SliceExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12517:12552#L426">Pos</a></h3>
+				<h3 id="SliceExpr.Pos">func (*SliceExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12507:12542#L426">Pos</a>
+					<a class="permalink" href="index.html#SliceExpr.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#SliceExpr">SliceExpr</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3703,7 +4059,9 @@ An SliceExpr node represents an expression followed by slice indices.
 		
 			
 			
-			<h2 id="Spec">type <a href="http://localhost:9090/src/go/ast/ast.go?s=25826:25865#L812">Spec</a></h2>
+			<h2 id="Spec">type <a href="http://localhost:9090/src/go/ast/ast.go?s=25814:25853#L812">Spec</a>
+				<a class="permalink" href="index.html#Spec">&#xb6;</a>
+			</h2>
 			<pre>type Spec interface {
     <a href="index.html#Node">Node</a>
     <span class="comment">// contains filtered or unexported methods</span>
@@ -3727,7 +4085,9 @@ The Spec type stands for any of *ImportSpec, *ValueSpec, and *TypeSpec.
 		
 			
 			
-			<h2 id="StarExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=9359:9443#L317">StarExpr</a></h2>
+			<h2 id="StarExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=9351:9435#L317">StarExpr</a>
+				<a class="permalink" href="index.html#StarExpr">&#xb6;</a>
+			</h2>
 			<pre>type StarExpr struct {
     Star <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;*&#34;</span>
     X    <a href="index.html#Expr">Expr</a>      <span class="comment">// operand</span>
@@ -3750,7 +4110,9 @@ Semantically it could be a unary &#34;*&#34; expression, or a pointer type.
 
 			
 				
-				<h3 id="StarExpr.End">func (*StarExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=14316:14350#L462">End</a></h3>
+				<h3 id="StarExpr.End">func (*StarExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=14306:14340#L462">End</a>
+					<a class="permalink" href="index.html#StarExpr.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#StarExpr">StarExpr</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3758,7 +4120,9 @@ Semantically it could be a unary &#34;*&#34; expression, or a pointer type.
 				
 			
 				
-				<h3 id="StarExpr.Pos">func (*StarExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12705:12739#L429">Pos</a></h3>
+				<h3 id="StarExpr.Pos">func (*StarExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12695:12729#L429">Pos</a>
+					<a class="permalink" href="index.html#StarExpr.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#StarExpr">StarExpr</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3768,7 +4132,9 @@ Semantically it could be a unary &#34;*&#34; expression, or a pointer type.
 		
 			
 			
-			<h2 id="Stmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=1528:1569#L37">Stmt</a></h2>
+			<h2 id="Stmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=1528:1569#L37">Stmt</a>
+				<a class="permalink" href="index.html#Stmt">&#xb6;</a>
+			</h2>
 			<pre>type Stmt interface {
     <a href="index.html#Node">Node</a>
     <span class="comment">// contains filtered or unexported methods</span>
@@ -3792,7 +4158,9 @@ All statement nodes implement the Stmt interface.
 		
 			
 			
-			<h2 id="StructType">type <a href="http://localhost:9090/src/go/ast/ast.go?s=10647:10861#L372">StructType</a></h2>
+			<h2 id="StructType">type <a href="http://localhost:9090/src/go/ast/ast.go?s=10639:10853#L372">StructType</a>
+				<a class="permalink" href="index.html#StructType">&#xb6;</a>
+			</h2>
 			<pre>type StructType struct {
     Struct     <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>  <span class="comment">// position of &#34;struct&#34; keyword</span>
     Fields     *<a href="index.html#FieldList">FieldList</a> <span class="comment">// list of field declarations</span>
@@ -3815,7 +4183,9 @@ A StructType node represents a struct type.
 
 			
 				
-				<h3 id="StructType.End">func (*StructType) <a href="http://localhost:9090/src/go/ast/ast.go?s=14632:14668#L467">End</a></h3>
+				<h3 id="StructType.End">func (*StructType) <a href="http://localhost:9090/src/go/ast/ast.go?s=14622:14658#L467">End</a>
+					<a class="permalink" href="index.html#StructType.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#StructType">StructType</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3823,7 +4193,9 @@ A StructType node represents a struct type.
 				
 			
 				
-				<h3 id="StructType.Pos">func (*StructType) <a href="http://localhost:9090/src/go/ast/ast.go?s=13011:13047#L434">Pos</a></h3>
+				<h3 id="StructType.Pos">func (*StructType) <a href="http://localhost:9090/src/go/ast/ast.go?s=13001:13037#L434">Pos</a>
+					<a class="permalink" href="index.html#StructType.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#StructType">StructType</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3833,7 +4205,9 @@ A StructType node represents a struct type.
 		
 			
 			
-			<h2 id="SwitchStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=19991:20207#L652">SwitchStmt</a></h2>
+			<h2 id="SwitchStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=19981:20197#L652">SwitchStmt</a>
+				<a class="permalink" href="index.html#SwitchStmt">&#xb6;</a>
+			</h2>
 			<pre>type SwitchStmt struct {
     Switch <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>  <span class="comment">// position of &#34;switch&#34; keyword</span>
     Init   <a href="index.html#Stmt">Stmt</a>       <span class="comment">// initialization statement; or nil</span>
@@ -3857,7 +4231,9 @@ A SwitchStmt node represents an expression switch statement.
 
 			
 				
-				<h3 id="SwitchStmt.End">func (*SwitchStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=24241:24277#L767">End</a></h3>
+				<h3 id="SwitchStmt.End">func (*SwitchStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=24229:24265#L767">End</a>
+					<a class="permalink" href="index.html#SwitchStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#SwitchStmt">SwitchStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3865,7 +4241,9 @@ A SwitchStmt node represents an expression switch statement.
 				
 			
 				
-				<h3 id="SwitchStmt.Pos">func (*SwitchStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22622:22658#L718">Pos</a></h3>
+				<h3 id="SwitchStmt.Pos">func (*SwitchStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22610:22646#L718">Pos</a>
+					<a class="permalink" href="index.html#SwitchStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#SwitchStmt">SwitchStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3875,7 +4253,9 @@ A SwitchStmt node represents an expression switch statement.
 		
 			
 			
-			<h2 id="TypeAssertExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=8681:8884#L298">TypeAssertExpr</a></h2>
+			<h2 id="TypeAssertExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=8673:8876#L298">TypeAssertExpr</a>
+				<a class="permalink" href="index.html#TypeAssertExpr">&#xb6;</a>
+			</h2>
 			<pre>type TypeAssertExpr struct {
     X      <a href="index.html#Expr">Expr</a>      <span class="comment">// expression</span>
     Lparen <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position of &#34;(&#34;</span>
@@ -3900,7 +4280,9 @@ type assertion.
 
 			
 				
-				<h3 id="TypeAssertExpr.End">func (*TypeAssertExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=14186:14226#L460">End</a></h3>
+				<h3 id="TypeAssertExpr.End">func (*TypeAssertExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=14176:14216#L460">End</a>
+					<a class="permalink" href="index.html#TypeAssertExpr.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#TypeAssertExpr">TypeAssertExpr</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3908,7 +4290,9 @@ type assertion.
 				
 			
 				
-				<h3 id="TypeAssertExpr.Pos">func (*TypeAssertExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12579:12619#L427">Pos</a></h3>
+				<h3 id="TypeAssertExpr.Pos">func (*TypeAssertExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12569:12609#L427">Pos</a>
+					<a class="permalink" href="index.html#TypeAssertExpr.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#TypeAssertExpr">TypeAssertExpr</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3918,7 +4302,9 @@ type assertion.
 		
 			
 			
-			<h2 id="TypeSpec">type <a href="http://localhost:9090/src/go/ast/ast.go?s=26709:26972#L838">TypeSpec</a></h2>
+			<h2 id="TypeSpec">type <a href="http://localhost:9090/src/go/ast/ast.go?s=26697:26960#L838">TypeSpec</a>
+				<a class="permalink" href="index.html#TypeSpec">&#xb6;</a>
+			</h2>
 			<pre>type TypeSpec struct {
     Doc     *<a href="index.html#CommentGroup">CommentGroup</a> <span class="comment">// associated documentation; or nil</span>
     Name    *<a href="index.html#Ident">Ident</a>        <span class="comment">// type name</span>
@@ -3942,7 +4328,9 @@ A TypeSpec node represents a type declaration (TypeSpec production).
 
 			
 				
-				<h3 id="TypeSpec.End">func (*TypeSpec) <a href="http://localhost:9090/src/go/ast/ast.go?s=27549:27583#L873">End</a></h3>
+				<h3 id="TypeSpec.End">func (*TypeSpec) <a href="http://localhost:9090/src/go/ast/ast.go?s=27535:27569#L873">End</a>
+					<a class="permalink" href="index.html#TypeSpec.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#TypeSpec">TypeSpec</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3950,7 +4338,9 @@ A TypeSpec node represents a type declaration (TypeSpec production).
 				
 			
 				
-				<h3 id="TypeSpec.Pos">func (*TypeSpec) <a href="http://localhost:9090/src/go/ast/ast.go?s=27197:27231#L855">Pos</a></h3>
+				<h3 id="TypeSpec.Pos">func (*TypeSpec) <a href="http://localhost:9090/src/go/ast/ast.go?s=27183:27217#L855">Pos</a>
+					<a class="permalink" href="index.html#TypeSpec.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#TypeSpec">TypeSpec</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3960,7 +4350,9 @@ A TypeSpec node represents a type declaration (TypeSpec production).
 		
 			
 			
-			<h2 id="TypeSwitchStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=20273:20496#L660">TypeSwitchStmt</a></h2>
+			<h2 id="TypeSwitchStmt">type <a href="http://localhost:9090/src/go/ast/ast.go?s=20263:20486#L660">TypeSwitchStmt</a>
+				<a class="permalink" href="index.html#TypeSwitchStmt">&#xb6;</a>
+			</h2>
 			<pre>type TypeSwitchStmt struct {
     Switch <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>  <span class="comment">// position of &#34;switch&#34; keyword</span>
     Init   <a href="index.html#Stmt">Stmt</a>       <span class="comment">// initialization statement; or nil</span>
@@ -3984,7 +4376,9 @@ An TypeSwitchStmt node represents a type switch statement.
 
 			
 				
-				<h3 id="TypeSwitchStmt.End">func (*TypeSwitchStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=24306:24346#L768">End</a></h3>
+				<h3 id="TypeSwitchStmt.End">func (*TypeSwitchStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=24294:24334#L768">End</a>
+					<a class="permalink" href="index.html#TypeSwitchStmt.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#TypeSwitchStmt">TypeSwitchStmt</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -3992,7 +4386,9 @@ An TypeSwitchStmt node represents a type switch statement.
 				
 			
 				
-				<h3 id="TypeSwitchStmt.Pos">func (*TypeSwitchStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22683:22723#L719">Pos</a></h3>
+				<h3 id="TypeSwitchStmt.Pos">func (*TypeSwitchStmt) <a href="http://localhost:9090/src/go/ast/ast.go?s=22671:22711#L719">Pos</a>
+					<a class="permalink" href="index.html#TypeSwitchStmt.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#TypeSwitchStmt">TypeSwitchStmt</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -4002,7 +4398,9 @@ An TypeSwitchStmt node represents a type switch statement.
 		
 			
 			
-			<h2 id="UnaryExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=9564:9686#L325">UnaryExpr</a></h2>
+			<h2 id="UnaryExpr">type <a href="http://localhost:9090/src/go/ast/ast.go?s=9556:9678#L325">UnaryExpr</a>
+				<a class="permalink" href="index.html#UnaryExpr">&#xb6;</a>
+			</h2>
 			<pre>type UnaryExpr struct {
     OpPos <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a>   <span class="comment">// position of Op</span>
     Op    <a href="../token/index.html">token</a>.<a href="../token/index.html#Token">Token</a> <span class="comment">// operator</span>
@@ -4026,7 +4424,9 @@ Unary &#34;*&#34; expressions are represented via StarExpr nodes.
 
 			
 				
-				<h3 id="UnaryExpr.End">func (*UnaryExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=14378:14413#L463">End</a></h3>
+				<h3 id="UnaryExpr.End">func (*UnaryExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=14368:14403#L463">End</a>
+					<a class="permalink" href="index.html#UnaryExpr.End">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#UnaryExpr">UnaryExpr</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -4034,7 +4434,9 @@ Unary &#34;*&#34; expressions are represented via StarExpr nodes.
 				
 			
 				
-				<h3 id="UnaryExpr.Pos">func (*UnaryExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12764:12799#L430">Pos</a></h3>
+				<h3 id="UnaryExpr.Pos">func (*UnaryExpr) <a href="http://localhost:9090/src/go/ast/ast.go?s=12754:12789#L430">Pos</a>
+					<a class="permalink" href="index.html#UnaryExpr.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (x *<a href="index.html#UnaryExpr">UnaryExpr</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -4044,7 +4446,9 @@ Unary &#34;*&#34; expressions are represented via StarExpr nodes.
 		
 			
 			
-			<h2 id="ValueSpec">type <a href="http://localhost:9090/src/go/ast/ast.go?s=26351:26633#L829">ValueSpec</a></h2>
+			<h2 id="ValueSpec">type <a href="http://localhost:9090/src/go/ast/ast.go?s=26339:26621#L829">ValueSpec</a>
+				<a class="permalink" href="index.html#ValueSpec">&#xb6;</a>
+			</h2>
 			<pre>type ValueSpec struct {
     Doc     *<a href="index.html#CommentGroup">CommentGroup</a> <span class="comment">// associated documentation; or nil</span>
     Names   []*<a href="index.html#Ident">Ident</a>      <span class="comment">// value names (len(Names) &gt; 0)</span>
@@ -4070,7 +4474,9 @@ A ValueSpec node represents a constant or variable declaration
 
 			
 				
-				<h3 id="ValueSpec.End">func (*ValueSpec) <a href="http://localhost:9090/src/go/ast/ast.go?s=27362:27397#L864">End</a></h3>
+				<h3 id="ValueSpec.End">func (*ValueSpec) <a href="http://localhost:9090/src/go/ast/ast.go?s=27348:27383#L864">End</a>
+					<a class="permalink" href="index.html#ValueSpec.End">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#ValueSpec">ValueSpec</a>) End() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -4078,7 +4484,9 @@ A ValueSpec node represents a constant or variable declaration
 				
 			
 				
-				<h3 id="ValueSpec.Pos">func (*ValueSpec) <a href="http://localhost:9090/src/go/ast/ast.go?s=27133:27168#L854">Pos</a></h3>
+				<h3 id="ValueSpec.Pos">func (*ValueSpec) <a href="http://localhost:9090/src/go/ast/ast.go?s=27119:27154#L854">Pos</a>
+					<a class="permalink" href="index.html#ValueSpec.Pos">&#xb6;</a>
+				</h3>
 				<pre>func (s *<a href="index.html#ValueSpec">ValueSpec</a>) Pos() <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a></pre>
 				
 				
@@ -4088,7 +4496,9 @@ A ValueSpec node represents a constant or variable declaration
 		
 			
 			
-			<h2 id="Visitor">type <a href="http://localhost:9090/src/go/ast/walk.go?s=400:456#L2">Visitor</a></h2>
+			<h2 id="Visitor">type <a href="http://localhost:9090/src/go/ast/walk.go?s=400:456#L2">Visitor</a>
+				<a class="permalink" href="index.html#Visitor">&#xb6;</a>
+			</h2>
 			<pre>type Visitor interface {
     Visit(node <a href="index.html#Node">Node</a>) (w <a href="index.html#Visitor">Visitor</a>)
 }</pre>
@@ -4122,7 +4532,7 @@ of node with the visitor w, followed by a call of w.Visit(nil).
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -4140,6 +4550,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

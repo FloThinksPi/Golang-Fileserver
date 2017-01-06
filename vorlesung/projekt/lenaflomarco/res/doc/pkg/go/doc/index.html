@@ -252,7 +252,9 @@ Package doc extracts source code documentation from a Go AST.
 		
 			
 			
-			<h2 id="Examples">func <a href="http://localhost:9090/src/go/doc/example.go?s=1574:1618#L36">Examples</a></h2>
+			<h2 id="Examples">func <a href="http://localhost:9090/src/go/doc/example.go?s=1588:1632#L37">Examples</a>
+				<a class="permalink" href="index.html#Examples">&#xb6;</a>
+			</h2>
 			<pre>func Examples(files ...*<a href="../ast/index.html">ast</a>.<a href="../ast/index.html#File">File</a>) []*<a href="index.html#Example">Example</a></pre>
 			<p>
 Examples returns the examples found in the files, sorted by Name field.
@@ -278,7 +280,9 @@ circumstances:
 		
 			
 			
-			<h2 id="Synopsis">func <a href="http://localhost:9090/src/go/doc/synopsis.go?s=1726:1756#L58">Synopsis</a></h2>
+			<h2 id="Synopsis">func <a href="http://localhost:9090/src/go/doc/synopsis.go?s=1726:1756#L58">Synopsis</a>
+				<a class="permalink" href="index.html#Synopsis">&#xb6;</a>
+			</h2>
 			<pre>func Synopsis(s <a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#string">string</a></pre>
 			<p>
 Synopsis returns a cleaned version of the first sentence in s.
@@ -295,7 +299,9 @@ is the empty string.
 		
 			
 			
-			<h2 id="ToHTML">func <a href="http://localhost:9090/src/go/doc/comment.go?s=7154:7216#L279">ToHTML</a></h2>
+			<h2 id="ToHTML">func <a href="http://localhost:9090/src/go/doc/comment.go?s=7152:7214#L279">ToHTML</a>
+				<a class="permalink" href="index.html#ToHTML">&#xb6;</a>
+			</h2>
 			<pre>func ToHTML(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, text <a href="../../builtin/index.html#string">string</a>, words map[<a href="../../builtin/index.html#string">string</a>]<a href="../../builtin/index.html#string">string</a>)</pre>
 			<p>
 ToHTML converts comment text to formatted HTML.
@@ -332,12 +338,14 @@ into a link.
 		
 			
 			
-			<h2 id="ToText">func <a href="http://localhost:9090/src/go/doc/comment.go?s=9580:9654#L393">ToText</a></h2>
+			<h2 id="ToText">func <a href="http://localhost:9090/src/go/doc/comment.go?s=9577:9651#L393">ToText</a>
+				<a class="permalink" href="index.html#ToText">&#xb6;</a>
+			</h2>
 			<pre>func ToText(w <a href="../../io/index.html">io</a>.<a href="../../io/index.html#Writer">Writer</a>, text <a href="../../builtin/index.html#string">string</a>, indent, preIndent <a href="../../builtin/index.html#string">string</a>, width <a href="../../builtin/index.html#int">int</a>)</pre>
 			<p>
 ToText prepares comment text for presentation in textual output.
 It wraps paragraphs of text to width or fewer Unicode code points
-and then prefixes each line with the indent.  In preformatted sections
+and then prefixes each line with the indent. In preformatted sections
 (such as program text), it prefixes each non-blank line with preIndent.
 </p>
 
@@ -348,7 +356,9 @@ and then prefixes each line with the indent.  In preformatted sections
 		
 			
 			
-			<h2 id="Example">type <a href="http://localhost:9090/src/go/doc/example.go?s=398:782#L12">Example</a></h2>
+			<h2 id="Example">type <a href="http://localhost:9090/src/go/doc/example.go?s=398:796#L12">Example</a>
+				<a class="permalink" href="index.html#Example">&#xb6;</a>
+			</h2>
 			<pre>type Example struct {
     Name        <a href="../../builtin/index.html#string">string</a> <span class="comment">// name of the item being exemplified</span>
     Doc         <a href="../../builtin/index.html#string">string</a> <span class="comment">// example function doc string</span>
@@ -356,8 +366,9 @@ and then prefixes each line with the indent.  In preformatted sections
     Play        *<a href="../ast/index.html">ast</a>.<a href="../ast/index.html#File">File</a> <span class="comment">// a whole program version of the example</span>
     Comments    []*<a href="../ast/index.html">ast</a>.<a href="../ast/index.html#CommentGroup">CommentGroup</a>
     Output      <a href="../../builtin/index.html#string">string</a> <span class="comment">// expected output</span>
-    EmptyOutput <a href="../../builtin/index.html#bool">bool</a>   <span class="comment">// expect empty output</span>
-    Order       <a href="../../builtin/index.html#int">int</a>    <span class="comment">// original source code order</span>
+    Unordered   <a href="../../builtin/index.html#bool">bool</a>
+    EmptyOutput <a href="../../builtin/index.html#bool">bool</a> <span class="comment">// expect empty output</span>
+    Order       <a href="../../builtin/index.html#int">int</a>  <span class="comment">// original source code order</span>
 }</pre>
 			<p>
 An Example represents an example function found in a source files.
@@ -378,7 +389,9 @@ An Example represents an example function found in a source files.
 		
 			
 			
-			<h2 id="Filter">type <a href="http://localhost:9090/src/go/doc/filter.go?s=190:219#L1">Filter</a></h2>
+			<h2 id="Filter">type <a href="http://localhost:9090/src/go/doc/filter.go?s=190:219#L1">Filter</a>
+				<a class="permalink" href="index.html#Filter">&#xb6;</a>
+			</h2>
 			<pre>type Filter func(<a href="../../builtin/index.html#string">string</a>) <a href="../../builtin/index.html#bool">bool</a></pre>
 			
 
@@ -396,7 +409,9 @@ An Example represents an example function found in a source files.
 		
 			
 			
-			<h2 id="Func">type <a href="http://localhost:9090/src/go/doc/doc.go?s=1393:1686#L46">Func</a></h2>
+			<h2 id="Func">type <a href="http://localhost:9090/src/go/doc/doc.go?s=1393:1686#L46">Func</a>
+				<a class="permalink" href="index.html#Func">&#xb6;</a>
+			</h2>
 			<pre>type Func struct {
     Doc  <a href="../../builtin/index.html#string">string</a>
     Name <a href="../../builtin/index.html#string">string</a>
@@ -427,7 +442,9 @@ Func is the documentation for a func declaration.
 		
 			
 			
-			<h2 id="Mode">type <a href="http://localhost:9090/src/go/doc/doc.go?s=2229:2242#L69">Mode</a></h2>
+			<h2 id="Mode">type <a href="http://localhost:9090/src/go/doc/doc.go?s=2229:2242#L69">Mode</a>
+				<a class="permalink" href="index.html#Mode">&#xb6;</a>
+			</h2>
 			<pre>type Mode <a href="../../builtin/index.html#int">int</a></pre>
 			<p>
 Mode values control the operation of New.
@@ -459,7 +476,9 @@ Mode values control the operation of New.
 		
 			
 			
-			<h2 id="Note">type <a href="http://localhost:9090/src/go/doc/doc.go?s=2000:2182#L62">Note</a></h2>
+			<h2 id="Note">type <a href="http://localhost:9090/src/go/doc/doc.go?s=2000:2182#L62">Note</a>
+				<a class="permalink" href="index.html#Note">&#xb6;</a>
+			</h2>
 			<pre>type Note struct {
     Pos, End <a href="../token/index.html">token</a>.<a href="../token/index.html#Pos">Pos</a> <span class="comment">// position range of the comment containing the marker</span>
     UID      <a href="../../builtin/index.html#string">string</a>    <span class="comment">// uid found with the marker</span>
@@ -487,7 +506,9 @@ Notes are collected in the Package.Notes map indexed by the notes marker.
 		
 			
 			
-			<h2 id="Package">type <a href="http://localhost:9090/src/go/doc/doc.go?s=327:695#L4">Package</a></h2>
+			<h2 id="Package">type <a href="http://localhost:9090/src/go/doc/doc.go?s=327:695#L4">Package</a>
+				<a class="permalink" href="index.html#Package">&#xb6;</a>
+			</h2>
 			<pre>type Package struct {
     Doc        <a href="../../builtin/index.html#string">string</a>
     Name       <a href="../../builtin/index.html#string">string</a>
@@ -521,7 +542,9 @@ Package is the documentation for an entire package.
 
 			
 				
-				<h3 id="New">func <a href="http://localhost:9090/src/go/doc/doc.go?s=2620:2685#L84">New</a></h3>
+				<h3 id="New">func <a href="http://localhost:9090/src/go/doc/doc.go?s=2620:2685#L84">New</a>
+					<a class="permalink" href="index.html#New">&#xb6;</a>
+				</h3>
 				<pre>func New(pkg *<a href="../ast/index.html">ast</a>.<a href="../ast/index.html#Package">Package</a>, importPath <a href="../../builtin/index.html#string">string</a>, mode <a href="index.html#Mode">Mode</a>) *<a href="index.html#Package">Package</a></pre>
 				<p>
 New computes the package documentation for the given package AST.
@@ -534,7 +557,9 @@ New takes ownership of the AST pkg and may edit or overwrite it.
 
 			
 				
-				<h3 id="Package.Filter">func (*Package) <a href="http://localhost:9090/src/go/doc/filter.go?s=1932:1966#L89">Filter</a></h3>
+				<h3 id="Package.Filter">func (*Package) <a href="http://localhost:9090/src/go/doc/filter.go?s=1932:1966#L89">Filter</a>
+					<a class="permalink" href="index.html#Package.Filter">&#xb6;</a>
+				</h3>
 				<pre>func (p *<a href="index.html#Package">Package</a>) Filter(f <a href="index.html#Filter">Filter</a>)</pre>
 				<p>
 Filter eliminates documentation for names that don&#39;t pass through the filter f.
@@ -548,7 +573,9 @@ TODO(gri): Recognize &#34;Type.Method&#34; as a name.
 		
 			
 			
-			<h2 id="Type">type <a href="http://localhost:9090/src/go/doc/doc.go?s=959:1338#L33">Type</a></h2>
+			<h2 id="Type">type <a href="http://localhost:9090/src/go/doc/doc.go?s=959:1338#L33">Type</a>
+				<a class="permalink" href="index.html#Type">&#xb6;</a>
+			</h2>
 			<pre>type Type struct {
     Doc  <a href="../../builtin/index.html#string">string</a>
     Name <a href="../../builtin/index.html#string">string</a>
@@ -579,7 +606,9 @@ Type is the documentation for a type declaration.
 		
 			
 			
-			<h2 id="Value">type <a href="http://localhost:9090/src/go/doc/doc.go?s=778:904#L24">Value</a></h2>
+			<h2 id="Value">type <a href="http://localhost:9090/src/go/doc/doc.go?s=778:904#L24">Value</a>
+				<a class="permalink" href="index.html#Value">&#xb6;</a>
+			</h2>
 			<pre>type Value struct {
     Doc   <a href="../../builtin/index.html#string">string</a>
     Names []<a href="../../builtin/index.html#string">string</a> <span class="comment">// var or const names in declaration order</span>
@@ -614,7 +643,7 @@ Value is the documentation for a (possibly grouped) var or const declaration.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -632,6 +661,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

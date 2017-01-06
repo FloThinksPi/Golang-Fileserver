@@ -205,7 +205,9 @@ without doing anything.
 		
 			
 			
-			<h2 id="NopCloser">func <a href="http://localhost:9090/src/io/ioutil/ioutil.go?s=3643:3684#L112">NopCloser</a></h2>
+			<h2 id="NopCloser">func <a href="http://localhost:9090/src/io/ioutil/ioutil.go?s=3641:3682#L112">NopCloser</a>
+				<a class="permalink" href="index.html#NopCloser">&#xb6;</a>
+			</h2>
 			<pre>func NopCloser(r <a href="../index.html">io</a>.<a href="../index.html#Reader">Reader</a>) <a href="../index.html">io</a>.<a href="../index.html#ReadCloser">ReadCloser</a></pre>
 			<p>
 NopCloser returns a ReadCloser with a no-op Close method wrapping
@@ -218,7 +220,9 @@ the provided Reader r.
 		
 			
 			
-			<h2 id="ReadAll">func <a href="http://localhost:9090/src/io/ioutil/ioutil.go?s=1147:1188#L31">ReadAll</a></h2>
+			<h2 id="ReadAll">func <a href="http://localhost:9090/src/io/ioutil/ioutil.go?s=1147:1188#L31">ReadAll</a>
+				<a class="permalink" href="index.html#ReadAll">&#xb6;</a>
+			</h2>
 			<pre>func ReadAll(r <a href="../index.html">io</a>.<a href="../index.html#Reader">Reader</a>) ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 ReadAll reads from r until an error or EOF and returns the data it read.
@@ -233,7 +237,9 @@ as an error to be reported.
 		
 			
 			
-			<h2 id="ReadDir">func <a href="http://localhost:9090/src/io/ioutil/ioutil.go?s=3220:3271#L90">ReadDir</a></h2>
+			<h2 id="ReadDir">func <a href="http://localhost:9090/src/io/ioutil/ioutil.go?s=3218:3269#L90">ReadDir</a>
+				<a class="permalink" href="index.html#ReadDir">&#xb6;</a>
+			</h2>
 			<pre>func ReadDir(dirname <a href="../../builtin/index.html#string">string</a>) ([]<a href="../../os/index.html">os</a>.<a href="../../os/index.html#FileInfo">FileInfo</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 ReadDir reads the directory named by dirname and returns
@@ -246,7 +252,9 @@ a list of directory entries sorted by filename.
 		
 			
 			
-			<h2 id="ReadFile">func <a href="http://localhost:9090/src/io/ioutil/ioutil.go?s=1464:1510#L39">ReadFile</a></h2>
+			<h2 id="ReadFile">func <a href="http://localhost:9090/src/io/ioutil/ioutil.go?s=1464:1510#L39">ReadFile</a>
+				<a class="permalink" href="index.html#ReadFile">&#xb6;</a>
+			</h2>
 			<pre>func ReadFile(filename <a href="../../builtin/index.html#string">string</a>) ([]<a href="../../builtin/index.html#byte">byte</a>, <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 ReadFile reads the file named by filename and returns the contents.
@@ -261,15 +269,17 @@ to be reported.
 		
 			
 			
-			<h2 id="TempDir">func <a href="http://localhost:9090/src/io/ioutil/tempfile.go?s=2143:2200#L66">TempDir</a></h2>
+			<h2 id="TempDir">func <a href="http://localhost:9090/src/io/ioutil/tempfile.go?s=2138:2195#L66">TempDir</a>
+				<a class="permalink" href="index.html#TempDir">&#xb6;</a>
+			</h2>
 			<pre>func TempDir(dir, prefix <a href="../../builtin/index.html#string">string</a>) (name <a href="../../builtin/index.html#string">string</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 TempDir creates a new temporary directory in the directory dir
 with a name beginning with prefix and returns the path of the
-new directory.  If dir is the empty string, TempDir uses the
+new directory. If dir is the empty string, TempDir uses the
 default directory for temporary files (see os.TempDir).
 Multiple programs calling TempDir simultaneously
-will not choose the same directory.  It is the caller&#39;s responsibility
+will not choose the same directory. It is the caller&#39;s responsibility
 to remove the directory when no longer needed.
 </p>
 
@@ -279,7 +289,9 @@ to remove the directory when no longer needed.
 		
 			
 			
-			<h2 id="TempFile">func <a href="http://localhost:9090/src/io/ioutil/tempfile.go?s=1288:1345#L37">TempFile</a></h2>
+			<h2 id="TempFile">func <a href="http://localhost:9090/src/io/ioutil/tempfile.go?s=1285:1342#L37">TempFile</a>
+				<a class="permalink" href="index.html#TempFile">&#xb6;</a>
+			</h2>
 			<pre>func TempFile(dir, prefix <a href="../../builtin/index.html#string">string</a>) (f *<a href="../../os/index.html">os</a>.<a href="../../os/index.html#File">File</a>, err <a href="../../builtin/index.html#error">error</a>)</pre>
 			<p>
 TempFile creates a new temporary file in the directory dir
@@ -288,8 +300,8 @@ and writing, and returns the resulting *os.File.
 If dir is the empty string, TempFile uses the default directory
 for temporary files (see os.TempDir).
 Multiple programs calling TempFile simultaneously
-will not choose the same file.  The caller can use f.Name()
-to find the pathname of the file.  It is the caller&#39;s responsibility
+will not choose the same file. The caller can use f.Name()
+to find the pathname of the file. It is the caller&#39;s responsibility
 to remove the file when no longer needed.
 </p>
 
@@ -299,7 +311,9 @@ to remove the file when no longer needed.
 		
 			
 			
-			<h2 id="WriteFile">func <a href="http://localhost:9090/src/io/ioutil/ioutil.go?s=2520:2588#L66">WriteFile</a></h2>
+			<h2 id="WriteFile">func <a href="http://localhost:9090/src/io/ioutil/ioutil.go?s=2518:2586#L66">WriteFile</a>
+				<a class="permalink" href="index.html#WriteFile">&#xb6;</a>
+			</h2>
 			<pre>func WriteFile(filename <a href="../../builtin/index.html#string">string</a>, data []<a href="../../builtin/index.html#byte">byte</a>, perm <a href="../../os/index.html">os</a>.<a href="../../os/index.html#FileMode">FileMode</a>) <a href="../../builtin/index.html#error">error</a></pre>
 			<p>
 WriteFile writes data to a file named by filename.
@@ -323,7 +337,7 @@ otherwise WriteFile truncates it before writing.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -341,6 +355,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../lib/godoc/godocs.js"></script>
 
 </body>

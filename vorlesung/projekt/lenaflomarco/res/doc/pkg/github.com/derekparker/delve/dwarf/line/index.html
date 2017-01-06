@@ -243,7 +243,9 @@ Extended opcodes
 		
 			
 			
-			<h2 id="DebugLineInfo">type <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/line_parser.go?s=335:504#L12">DebugLineInfo</a></h2>
+			<h2 id="DebugLineInfo">type <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/line_parser.go?s=335:504#L12">DebugLineInfo</a>
+				<a class="permalink" href="index.html#DebugLineInfo">&#xb6;</a>
+			</h2>
 			<pre>type DebugLineInfo struct {
     Prologue     *<a href="index.html#DebugLinePrologue">DebugLinePrologue</a>
     IncludeDirs  []<a href="../../../../../builtin/index.html#string">string</a>
@@ -267,7 +269,9 @@ Extended opcodes
 		
 			
 			
-			<h2 id="DebugLinePrologue">type <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/line_parser.go?s=98:333#L1">DebugLinePrologue</a></h2>
+			<h2 id="DebugLinePrologue">type <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/line_parser.go?s=98:333#L1">DebugLinePrologue</a>
+				<a class="permalink" href="index.html#DebugLinePrologue">&#xb6;</a>
+			</h2>
 			<pre>type DebugLinePrologue struct {
     UnitLength     <a href="../../../../../builtin/index.html#uint32">uint32</a>
     Version        <a href="../../../../../builtin/index.html#uint16">uint16</a>
@@ -295,7 +299,9 @@ Extended opcodes
 		
 			
 			
-			<h2 id="DebugLines">type <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/line_parser.go?s=613:645#L27">DebugLines</a></h2>
+			<h2 id="DebugLines">type <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/line_parser.go?s=613:645#L27">DebugLines</a>
+				<a class="permalink" href="index.html#DebugLines">&#xb6;</a>
+			</h2>
 			<pre>type DebugLines []*<a href="index.html#DebugLineInfo">DebugLineInfo</a></pre>
 			
 
@@ -309,7 +315,9 @@ Extended opcodes
 
 			
 				
-				<h3 id="Parse">func <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/line_parser.go?s=854:888#L39">Parse</a></h3>
+				<h3 id="Parse">func <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/line_parser.go?s=854:888#L39">Parse</a>
+					<a class="permalink" href="index.html#Parse">&#xb6;</a>
+				</h3>
 				<pre>func Parse(data []<a href="../../../../../builtin/index.html#byte">byte</a>) <a href="index.html#DebugLines">DebugLines</a></pre>
 				
 				
@@ -318,7 +326,9 @@ Extended opcodes
 
 			
 				
-				<h3 id="DebugLines.AllPCsBetween">func (*DebugLines) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/state_machine.go?s=2572:2653#L99">AllPCsBetween</a></h3>
+				<h3 id="DebugLines.AllPCsBetween">func (*DebugLines) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/state_machine.go?s=2572:2653#L99">AllPCsBetween</a>
+					<a class="permalink" href="index.html#DebugLines.AllPCsBetween">&#xb6;</a>
+				</h3>
 				<pre>func (dbl *<a href="index.html#DebugLines">DebugLines</a>) AllPCsBetween(begin, end <a href="../../../../../builtin/index.html#uint64">uint64</a>, filename <a href="../../../../../builtin/index.html#string">string</a>) []<a href="../../../../../builtin/index.html#uint64">uint64</a></pre>
 				
 				
@@ -326,7 +336,9 @@ Extended opcodes
 				
 			
 				
-				<h3 id="DebugLines.AllPCsForFileLine">func (*DebugLines) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/state_machine.go?s=1679:1751#L67">AllPCsForFileLine</a></h3>
+				<h3 id="DebugLines.AllPCsForFileLine">func (*DebugLines) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/state_machine.go?s=1679:1751#L67">AllPCsForFileLine</a>
+					<a class="permalink" href="index.html#DebugLines.AllPCsForFileLine">&#xb6;</a>
+				</h3>
 				<pre>func (dbl *<a href="index.html#DebugLines">DebugLines</a>) AllPCsForFileLine(f <a href="../../../../../builtin/index.html#string">string</a>, l <a href="../../../../../builtin/index.html#int">int</a>) (pcs []<a href="../../../../../builtin/index.html#uint64">uint64</a>)</pre>
 				<p>
 Returns all PCs for a given file/line. Useful for loops where the &#39;for&#39; line
@@ -338,7 +350,9 @@ could be split amongst 2 PCs.
 				
 			
 				
-				<h3 id="DebugLines.GetLineInfo">func (*DebugLines) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/line_parser.go?s=647:707#L29">GetLineInfo</a></h3>
+				<h3 id="DebugLines.GetLineInfo">func (*DebugLines) <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/line_parser.go?s=647:707#L29">GetLineInfo</a>
+					<a class="permalink" href="index.html#DebugLines.GetLineInfo">&#xb6;</a>
+				</h3>
 				<pre>func (d *<a href="index.html#DebugLines">DebugLines</a>) GetLineInfo(name <a href="../../../../../builtin/index.html#string">string</a>) *<a href="index.html#DebugLineInfo">DebugLineInfo</a></pre>
 				
 				
@@ -348,7 +362,9 @@ could be split amongst 2 PCs.
 		
 			
 			
-			<h2 id="FileEntry">type <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/line_parser.go?s=506:611#L20">FileEntry</a></h2>
+			<h2 id="FileEntry">type <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/line_parser.go?s=506:611#L20">FileEntry</a>
+				<a class="permalink" href="index.html#FileEntry">&#xb6;</a>
+			</h2>
 			<pre>type FileEntry struct {
     Name        <a href="../../../../../builtin/index.html#string">string</a>
     DirIdx      <a href="../../../../../builtin/index.html#uint64">uint64</a>
@@ -371,7 +387,9 @@ could be split amongst 2 PCs.
 		
 			
 			
-			<h2 id="Location">type <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/state_machine.go?s=105:187#L1">Location</a></h2>
+			<h2 id="Location">type <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/state_machine.go?s=105:187#L1">Location</a>
+				<a class="permalink" href="index.html#Location">&#xb6;</a>
+			</h2>
 			<pre>type Location struct {
     File    <a href="../../../../../builtin/index.html#string">string</a>
     Line    <a href="../../../../../builtin/index.html#int">int</a>
@@ -394,7 +412,9 @@ could be split amongst 2 PCs.
 		
 			
 			
-			<h2 id="StateMachine">type <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/state_machine.go?s=189:449#L8">StateMachine</a></h2>
+			<h2 id="StateMachine">type <a href="http://localhost:9090/src/github.com/derekparker/delve/dwarf/line/state_machine.go?s=189:449#L8">StateMachine</a>
+				<a class="permalink" href="index.html#StateMachine">&#xb6;</a>
+			</h2>
 			<pre>type StateMachine struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -423,7 +443,7 @@ could be split amongst 2 PCs.
 
 
 <div id="footer">
-Build version go1.6.3.<br>
+Build version go1.7.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
@@ -441,6 +461,7 @@ and code is licensed under a <a href="http://localhost:9090/LICENSE">BSD license
 <script type="text/javascript" src="../../../../../../lib/godoc/jquery.treeview.edit.js"></script>
 
 
+<script>var goVersion = "go1.7";</script>
 <script type="text/javascript" src="../../../../../../lib/godoc/godocs.js"></script>
 
 </body>
