@@ -85,7 +85,6 @@ func DeleteDataHandler(w http.ResponseWriter, r *http.Request) {
 	fullPath := filepath.Join(getAbsUserPath(r),path)
 	Utils.LogDebug("File Deleted by DeleteDataHandler:	" + fullPath)
 	os.Remove(fullPath)
-	w.Header().Set("Refresh", "0; url=http://www.w3.org/pub/WWW/People.html")
 	http.Redirect(w,r,r.Header.Get("Referer"), http.StatusTemporaryRedirect)
 }
 
@@ -132,7 +131,6 @@ func NewFolderHandler(w http.ResponseWriter, r *http.Request) {
 	err := os.MkdirAll(path, os.ModePerm)
 	if err != nil {
 		Utils.LogError("Error creating directory")
-		w.Write("Error Creating directory")
 		log.Println(err)
 		return
 	}
