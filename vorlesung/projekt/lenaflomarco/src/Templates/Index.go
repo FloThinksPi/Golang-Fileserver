@@ -14,7 +14,6 @@ import (
 	"Flags"
 	"SessionManager"
 	"github.com/pkg/errors"
-	"os/user"
 )
 
 type IndexData struct {
@@ -116,4 +115,5 @@ func getAbsUserPath(r *http.Request) string{
 	} else {
 		Utils.HandlePanic(errors.New("Inconsistency in Session Storage !"))
 	}
+	return ""
 }
