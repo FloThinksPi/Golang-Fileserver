@@ -16,7 +16,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-const TESTFILEPATH = "testdir/tmp.db"
+const TESTFILEPATH = "testdir/userdatabase"
 const TESTFOLDER = "testdir"
 
 func TestMain(m *testing.M) {
@@ -110,7 +110,7 @@ func readWriteTest(t *testing.T) {
 		errors.Wrap(err, "Error while reading a user with function 'ReadUser'")
 		t.Error(err)
 	}
-	err = writeUser(aUserRecord,TESTFILEPATH)
+	err = writeUser(aUserRecord,TESTFOLDER)
 	if err != nil {
 		errors.Wrap(err, "Error while writing a user with function 'writeUser'")
 		t.Error(err)
@@ -127,7 +127,7 @@ func Test_SyncToFileSystem(t *testing.T) {
 	var LocalTestStorage UserStorage
 
 	//Test Variable got modifyed
-	err = writeUser(UserRecord{UID: 3, Email: "someone@somemail.com", Name: "someone", HashedPassword: "???", Salt: "???"},TESTFILEPATH)
+	err = writeUser(UserRecord{UID: 3, Email: "someone@somemail.com", Name: "someone", HashedPassword: "???", Salt: "???"},TESTFOLDER)
 	if err != nil {
 		errors.Wrap(err, "Error while writing a user with function 'writeUser'")
 		t.Error(err)

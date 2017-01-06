@@ -255,7 +255,7 @@ func docHandler(w http.ResponseWriter, r *http.Request) {
 
 	if (r.URL.EscapedPath()[1:] == "doc/" || r.URL.EscapedPath()[1:] == "doc") {
 		Utils.LogDebug("Redirecting from doc to doc/pkg/fileServer.html")
-		http.Redirect(w, r, "pkg/FileServer.html", 302)
+		http.Redirect(w, r, "pkg/FileServer/src/", 302)
 	} else {
 		http.ServeFile(w, r, path)
 	}
