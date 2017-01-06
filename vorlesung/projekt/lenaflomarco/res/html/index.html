@@ -79,7 +79,7 @@
 
     <fieldset>
         <legend>Upload</legend>
-        <form action="/ops/upload" method="post" enctype="multipart/form-data">
+        <form action="/ops/upload?folderPath={{.FolderPath}}" method="post" enctype="multipart/form-data">
             <label for="uploadFile">Datei: </label>
             <input type="file" name="uploadfile" id="uploadFile">
             <input type="hidden" name="folderPath" value={{.FolderPath}}>
