@@ -18,16 +18,23 @@
 
 <fieldset>
     <form action="/ops/settings" method="post">
-        <label for="passwordOld">Passwort alt: </label>
-        <input type="password" name="passwordOld" id="passwordOld">
-        <br>
-        <label for="passwordNew">Passwort neu: </label>
-        <input type="password" name="passwordNew" id="passwordNew">
-        <br>
-        <label for="passwordNew2">Passwort neu (wiederholen): </label>
-        <input type="password" name="passwordNew2" id="passwordNew2">
-        <br>
-        <input class="btn" type="submit" value="Kennwort ändern">
+        <table border="0">
+            <tr>
+                <td><label for="passwordOld">Passwort alt: </label></td>
+                <td><input type="password" name="passwordOld" id="passwordOld"></td>
+            </tr>
+            <tr>
+                <td><label for="passwordNew">Passwort neu: </label></td>
+                <td><input type="password" name="passwordNew" id="passwordNew"></td>
+            </tr>
+            <tr>
+                <td><label for="passwordNew2">Passwort neu (wiederholen): </label></td>
+                <td><input type="password" name="passwordNew2" id="passwordNew2"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input class="btn" type="submit" value="Kennwort ändern"></td>
+            </tr>
+        </table>
     </form>
 </fieldset>
 </body>
