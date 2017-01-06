@@ -18,31 +18,46 @@
         <form id="login" action="/ops/login" method="post">
             <fieldset class="fieldsetLogin">
                 <input type="hidden" name="intent" value="login">
-                <label for="email">E-Mail: </label>
-                    <input type="text" name="email" id="email">
-                    <br>
-                <label for="password">Passwort: </label>
-                    <input type="password" name="password" id="password">
-                    <br>
-                <input class="btn" type="submit" value="Anmelden">
+                <table border="0">
+                    <tr>
+                        <td><label for="email">E-Mail: </label></td>
+                        <td> <input type="text" name="email" id="email"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Passwort: </label></td>
+                        <td><input type="password" name="password" id="password"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input class="btn" type="submit" value="Anmelden"></td>
+                    </tr>
+                </table>
             </fieldset>
         </form>
         <form id="register" action="/ops/login" method="post">
             <fieldset class="fieldsetLogin">
                 <input type="hidden" name="intent" value="register">
-                <label for="name">Name: </label>
-                    <input type="text" name="name" id="name">
-                    <br>
-                <label for="emailR">E-Mail: </label>
-                    <input type="text" name="email" id="emailR">
-                    <br>
-                <label for="passwordR">Passwort: </label>
-                    <input type="password" name="password" id="passwordR">
-                    <br>
-                <label for="passwordR2">Passwort (wiederholen): </label>
-                    <input type="password" name="password2" id="passwordR2">
-                    <br>
-                <input class="btn" type="submit" value="Registrieren">
+                <table border="0">
+                    <tr>
+                        <td><label for="name">Name: </label></td>
+                        <td><input type="text" name="name" id="name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="emailR">E-Mail: </label></td>
+                        <td><input type="text" name="email" id="emailR"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="passwordR">Passwort: </label></td>
+                        <td><input type="password" name="password" id="passwordR"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="passwordR2">Passwort (wiederholen): </label></td>
+                        <td><input type="password" name="password2" id="passwordR2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input class="btn" type="submit" value="Registrieren"></td>
+                    </tr>
+
+                </table>
             </fieldset>
         </form>
     </div>

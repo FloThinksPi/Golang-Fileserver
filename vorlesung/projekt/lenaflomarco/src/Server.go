@@ -12,6 +12,7 @@ import (
 	"regexp"
 	"Templates"
 	"time"
+	"strings"
 )
 
 const (
@@ -134,7 +135,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 		case "/index.html":
 			Templates.IndexHandler(w, r, path)
 			Utils.LogDebug("File Accessed with TemplateEngine:	" + path)
-		case "/settings.html":
+		case "settings.html":
 			Templates.SettingHandler(w, r, path)
 			Utils.LogDebug("File Accessed with TemplateEngine:	" + path)
 		default:
@@ -154,7 +155,7 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 	intent := r.FormValue("intent")
 	if (intent == "login") {
 		Utils.LogDebug("Intent=Login")
-		email := r.FormValue("email")
+		email := strings.ToLower(r.FormValue("email"))
 		password := r.FormValue("password")
 		if (UserManager.VerifyUser(email, password)) {
 
@@ -171,7 +172,7 @@ func authHandler(w http.ResponseWriter, r *http.Request) {
 	} else if (intent == "register") {
 		Utils.LogDebug("Intent=Register")
 		name := r.FormValue("name")
-		email := r.FormValue("email")
+		email := strings.ToLower(r.FormValue("email"))
 		password := r.FormValue("password")
 		password2 := r.FormValue("password2")
 
