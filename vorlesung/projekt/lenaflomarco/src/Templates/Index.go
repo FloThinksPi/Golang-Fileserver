@@ -90,10 +90,12 @@ func DeleteDataHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func DownloadDataHandler(w http.ResponseWriter, r *http.Request) {
-
 	path := r.URL.Query().Get("filepath")
 	fullPath := filepath.Join(getAbsUserPath(r),path)
 	Utils.LogDebug("File Accessed by DownloadDataHandler:	" + fullPath)
+
+	w.Header().Set("Content-Type", "application/octet-stream")
+	w.Header().Set("Content-disposition", `attachment; filename="`+filepath.Base(path)+`"`)
 	http.ServeFile(w, r, fullPath)
 
 }
@@ -107,6 +109,8 @@ func DownloadBasicAuthDataHandler(w http.ResponseWriter, r *http.Request) {
 
 		fullPath := filepath.Join(Flags.GetWorkDir(),"/",strconv.Itoa(int(usr.UID)),"/",path[1:])
 		Utils.LogDebug("File Accessed by DownloadBasicAuthDataHandler:	" + fullPath)
+		w.Header().Set("Content-Type", "application/octet-stream")
+		w.Header().Set("Content-disposition", `attachment; filename="`+filepath.Base(path)+`"`)
 		http.ServeFile(w, r, fullPath)
 	} else {
 		Utils.HandlePanic(errors.New("Inconsistency in User Storage!"))
