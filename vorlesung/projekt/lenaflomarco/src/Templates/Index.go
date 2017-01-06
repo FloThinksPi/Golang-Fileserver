@@ -14,6 +14,7 @@ import (
 	"Flags"
 	"SessionManager"
 	"github.com/pkg/errors"
+	"os/user"
 )
 
 type IndexData struct {
@@ -41,24 +42,12 @@ func DeleteDataHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func DownloadDataHandler(w http.ResponseWriter, r *http.Request) {
-	cookie, err := r.Cookie("Session")
-	Utils.HandlePrint(err)
-	session, present := SessionManager.GetSessionRecord(cookie.Value)
-	if present {
-		user, present, err := UserManager.ReadUser(session.Email)
-		Utils.HandlePrint(err)
-		if present {
-			path := r.URL.Query().Get("filepath")
 
-			fullPath := Flags.GetWorkDir() + "/" + strconv.Itoa(int(user.UID)) + "/" + path
-			Utils.LogDebug("File Accessed by DownloadDataHandler:	" + fullPath)
-			http.ServeFile(w, r, fullPath)
-		} else {
-			Utils.HandlePanic(errors.New("Inconsistency in Session to User Storage!"))
-		}
-	} else {
-		Utils.HandlePanic(errors.New("Inconsistency in Session Storage !"))
-	}
+	path := r.URL.Query().Get("filepath")
+	fullPath := getAbsUserPath(r) + path
+	Utils.LogDebug("File Accessed by DownloadDataHandler:	" + fullPath)
+	http.ServeFile(w, r, fullPath)
+
 }
 
 func DownloadBasicAuthDataHandler(w http.ResponseWriter, r *http.Request) {
@@ -72,7 +61,7 @@ func DownloadBasicAuthDataHandler(w http.ResponseWriter, r *http.Request) {
 		Utils.LogDebug("File Accessed by DownloadBasicAuthDataHandler:	" + fullPath)
 		http.ServeFile(w, r, fullPath)
 	} else {
-		Utils.HandlePanic(errors.New("Inconsistency in Session to User Storage!"))
+		Utils.HandlePanic(errors.New("Inconsistency in User Storage!"))
 	}
 }
 
@@ -112,3 +101,19 @@ func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
 
 
 
+func getAbsUserPath(r *http.Request) string{
+	cookie, err := r.Cookie("Session")
+	Utils.HandlePrint(err)
+	session, present := SessionManager.GetSessionRecord(cookie.Value)
+	if present {
+		user, present, err := UserManager.ReadUser(session.Email)
+		Utils.HandlePrint(err)
+		if present {
+			return Flags.GetWorkDir() + "/" + strconv.Itoa(int(user.UID)) + "/"
+		} else {
+			Utils.HandlePanic(errors.New("Inconsistency in Session to User Storage!"))
+		}
+	} else {
+		Utils.HandlePanic(errors.New("Inconsistency in Session Storage !"))
+	}
+}
