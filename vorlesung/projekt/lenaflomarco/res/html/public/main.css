@@ -72,19 +72,17 @@ fieldset{
 	display: inline-block;
     position: relative;
     height: 32px;
-    border-radius: 2px;
     font-size: 0.9em;
     color: #646464;
-    background-color: #FFFFFF; 
+    background-color: white;
     overflow: hidden;
     margin-top: 5px;
 }
 
 .btn:hover {
   background: #FF5722;
-  color: #FFFFFF;
+  color: white;
   text-decoration: none;
-  border: none;
 }
 
 /* ----------TABLES----------- */
