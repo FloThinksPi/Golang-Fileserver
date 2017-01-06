@@ -95,6 +95,8 @@ func sessionCheckHandler(w http.ResponseWriter, r *http.Request) {
 	cookie, err := r.Cookie("Session")
 	if err != nil {
 		Utils.LogDebug(err.Error())
+		cookie := http.Cookie{Name: "Session", Value: "empty", Expires: time.Now().Add(365 * 24 * time.Hour), Path: "/"}
+		http.SetCookie(w, &cookie)
 		http.Redirect(w, r, loginPageURL, 302)
 		return
 	} else {
