@@ -43,7 +43,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request, path string) {
 
 	for _, f := range files {
 		if f.IsDir() {
-			Data = append(Data, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"folder", ObjectPath: wantedPath + f.Name(),IsFolder:true})
+			Data = append(Data, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"folder", ObjectPath: wantedPath +"/"+ f.Name(),IsFolder:true})
 		} else {
 			Data = append(Data, IndexData{Name:f.Name(), FolderPath: wantedPath, Size:f.Size(), Date:f.ModTime(), Image:"file", ObjectPath: wantedPath +"/"+ f.Name(),IsFolder:false})
 		}
