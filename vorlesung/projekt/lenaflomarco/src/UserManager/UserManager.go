@@ -65,7 +65,7 @@ func RegisterUser(name, email, password string) bool {
 	writeUser(record, Flags.GetWorkDir())	//TODO Error Handling
 
 	Utils.LogDebug("UID (Foldername): "+strconv.Itoa(int(uid)))
-	err := os.Mkdir(workdir + "/" + strconv.Itoa(int(uid)), 777)
+	err := os.Mkdir(workdir + "/" + strconv.Itoa(int(uid)), 0777)
 
 	if err != nil {
 		Utils.LogError("Error in creating user directory")
