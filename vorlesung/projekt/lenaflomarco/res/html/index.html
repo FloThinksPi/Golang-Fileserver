@@ -61,9 +61,9 @@
 
 <fieldset>
     <legend>Upload</legend>
-    <form action="/ops/upload" method="post">
+    <form action="/ops/upload" method="post" enctype="multipart/form-data">
         <label for="uploadFile">Datei: </label>
-        <input type="file" name="uploadFile" id="uploadFile">
+        <input type="file" name="uploadfile" id="uploadFile">
         <br>
         <input class="btn" type="submit" value="Datei hochladen">
     </form>

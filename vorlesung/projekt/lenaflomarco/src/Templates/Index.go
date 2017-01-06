@@ -3,6 +3,13 @@ package Templates
 import (
 	"net/http"
 	"Utils"
+	"fmt"
+	"time"
+	"crypto/md5"
+	"io"
+	"strconv"
+	"os"
+	"html/template"
 )
 
 type IndexData struct {
@@ -39,7 +46,33 @@ func NewFolderHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
-	Utils.LogDebug("UploadDataDataHandler Not Implemented")
+	fmt.Println("method:", r.Method)
+	if r.Method == "GET" {
+		crutime := time.Now().Unix()
+		h := md5.New()
+		io.WriteString(h, strconv.FormatInt(crutime, 10))
+		token := fmt.Sprintf("%x", h.Sum(nil))
+
+		t, _ := template.ParseFiles("upload.gtpl")
+		t.Execute(w, token)
+	} else {
+		r.ParseMultipartForm(32 << 20)
+		file, handler, err := r.FormFile("uploadfile")
+		if err != nil {
+			Utils.LogError(err)
+			return
+		}
+		defer file.Close()
+		fmt.Fprintf(w, "%v", handler.Header)
+		//TODO: Path ./test durch Userpath ersetzen, anlegen, falls nicht vorhanden...
+		f, err := os.OpenFile("./test/"+handler.Filename, os.O_WRONLY|os.O_CREATE, 0666)
+		if err != nil {
+			Utils.LogError(err)
+			return
+		}
+		defer f.Close()
+		io.Copy(f, file)
+	}
 }
 
 
