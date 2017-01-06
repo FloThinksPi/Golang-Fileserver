@@ -14,6 +14,8 @@ import (
 	"Flags"
 	"SessionManager"
 	"github.com/pkg/errors"
+	"log"
+	"path/filepath"
 )
 
 type IndexData struct {
@@ -65,7 +67,21 @@ func DownloadBasicAuthDataHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func NewFolderHandler(w http.ResponseWriter, r *http.Request) {
-	Utils.LogDebug("NewFolderHandler Not Implemented")
+	//Todo tested yet
+	//read folderName
+	r.ParseForm()
+	folderName := r.FormValue("folderName")
+
+	//join Foldername to UserPath
+	path := filepath.Join(getAbsUserPath(r), folderName)
+
+	//Try make Dir
+	err := os.MkdirAll(path,os.ModePerm)
+	if err != nil {
+		Utils.LogError("Error creating directory")
+		log.Println(err)
+		return
+	}
 }
 
 func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
@@ -87,8 +103,8 @@ func UploadDataDataHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		defer file.Close()
 		fmt.Fprintf(w, "%v", handler.Header)
-		//TODO: Path ./test durch Userpath ersetzen, anlegen, falls nicht vorhanden...
-		f, err := os.OpenFile("./test/" + handler.Filename, os.O_WRONLY | os.O_CREATE, 0666)
+		path := filepath.Join(getAbsUserPath(r), handler.Filename)
+		f, err := os.OpenFile(path, os.O_WRONLY | os.O_CREATE, 0666)
 		if err != nil {
 			Utils.LogError("Not such a directory or File")
 			return
