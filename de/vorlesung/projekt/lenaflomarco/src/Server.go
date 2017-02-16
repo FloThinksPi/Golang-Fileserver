@@ -70,7 +70,6 @@ func main() {
 	requestMultiplexer.HandleFunc(basicAuthURL, basicAuthHandler(Templates.DownloadBasicAuthDataHandler))
 
 	// General Handlers for Website + Godoc
-	requestMultiplexer.HandleFunc(docURL, docHandler)
 	requestMultiplexer.HandleFunc(rootURL, sessionCheckHandler(rootHandler))
 
 	cfg := &tls.Config{
@@ -242,22 +241,6 @@ func basicAuthHandler(handler http.HandlerFunc) http.HandlerFunc {
 			http.Error(w, "Unauthorized.", http.StatusUnauthorized)
 		}
 
-	}
-}
-
-func docHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
-
-	path, err := filepath.Abs("res/" + r.URL.EscapedPath()[1:])
-	Utils.HandlePrint(err)
-
-	Utils.LogDebug("File Accessed:	" + path)
-
-	if (r.URL.EscapedPath()[1:] == "doc/" || r.URL.EscapedPath()[1:] == "doc") {
-		Utils.LogDebug("Redirecting from doc to doc/pkg/fileServer.html")
-		http.Redirect(w, r, "pkg/FileServer/src/", 302)
-	} else {
-		http.ServeFile(w, r, path)
 	}
 }
 
